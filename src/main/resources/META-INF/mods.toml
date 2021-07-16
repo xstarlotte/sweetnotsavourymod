@@ -1,0 +1,25 @@
+modLoader="javafml" 
+loaderVersion="[35,)" 
+license="MIT"
+[[mods]]
+modId="sweetnotsavourymod" 
+version="${file.jarVersion}" 
+displayName="Sweet Not Savoury Mod" 
+logoFile="tutorialmod.png"
+credits="Sweet Not Savoury Mod by Charlotte"
+description='''
+Mod by Charlotte.
+'''
+
+[[dependencies.tutorialmod]]
+    modId="forge" 
+    mandatory=true 
+    versionRange="[35,)" 
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.tutorialmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.4,)"
+    ordering="NONE"
+    side="BOTH"
