@@ -10,6 +10,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 
+import net.minecraft.item.DyeColor;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -44,7 +45,8 @@ public class BlockInit {
 			() -> new Block(AbstractBlock.Properties.from(Blocks.DIAMOND_ORE)));
 	
 	public static final RegistryObject<Block> STRAWBERRYICECREAMBED = BLOCKS.register("strawberryicecreambed",
-			() -> new StrawberryIceCreamBed(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD)));
+			() -> new StrawberryIceCreamBed( DyeColor.RED,AbstractBlock.Properties.create(Material.WOOD,
+					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD)));
 					
 }
 
