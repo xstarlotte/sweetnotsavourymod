@@ -46,7 +46,7 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> STRAWBERRYICECREAMBED = BLOCKS.register("strawberryicecreambed",
 			() -> new StrawberryIceCreamBed( DyeColor.RED,AbstractBlock.Properties.create(Material.WOOD,
-					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD)));
+					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
 					
 }
 

@@ -1,9 +1,12 @@
 package com.charlotte.sweetnotsavourymod.core.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.common.block.StrawberryIceCreamBed;
 import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.StrawberryIceCreamBedTeRenderer;
+import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,11 +19,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(value= {Dist.CLIENT}, modid = SweetNotSavouryMod.MOD_ID, bus= Mod.EventBusSubscriber.Bus.MOD)
 public class ModEvents{
-    public static final ResourceLocation STRAWBERRYICECREAMBED = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/strawberryicecreambedmodel");
+    public static final ResourceLocation STRAWBERRYICECREAMBED = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/strawberryicecreambed");
 
     @SubscribeEvent
     public static void onClientSetup( ModelRegistryEvent event ){
         ModelLoader.addSpecialModel(STRAWBERRYICECREAMBED);
+        RenderTypeLookup.setRenderLayer( BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.getCutout() );
     }
 
     @SubscribeEvent

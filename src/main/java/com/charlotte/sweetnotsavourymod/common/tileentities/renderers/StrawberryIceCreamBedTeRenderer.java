@@ -2,6 +2,7 @@ package com.charlotte.sweetnotsavourymod.common.tileentities.renderers;
 
 import com.charlotte.sweetnotsavourymod.common.tileentities.StrawberryIceCreamBedTe;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.block.BedBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
@@ -26,6 +27,8 @@ public class StrawberryIceCreamBedTeRenderer extends TileEntityRenderer<Strawber
     public StrawberryIceCreamBedTeRenderer( TileEntityRendererDispatcher rendererDispatcherIn ){
         super( rendererDispatcherIn );
     }
+
+
 
     @Override
     public void render( StrawberryIceCreamBedTe te , float partialTicks , MatrixStack matrixStackIn , IRenderTypeBuffer bufferIn , int combinedLightIn , int combinedOverlayIn ){
@@ -69,13 +72,17 @@ public class StrawberryIceCreamBedTeRenderer extends TileEntityRenderer<Strawber
 
             IBakedModel strawberryicecreambed = Minecraft.getInstance().getModelManager().getModel( STRAWBERRYICECREAMBED );
             RenderType renderType = RenderTypeLookup.func_239220_a_( state , false );
-
             matrixStackIn.push();
             matrixStackIn.rotate( Vector3f.YP.rotationDegrees(rotation) );
             matrixStackIn.translate( tx, 0, tz );
-            Minecraft.getInstance().getBlockRendererDispatcher().getBlockModelRenderer().renderModel( level , strawberryicecreambed , state , pos , matrixStackIn , bufferIn.getBuffer( renderType ) , false , level.rand , state.getPositionRandom( pos ) , OverlayTexture.NO_OVERLAY ,
+            Minecraft.getInstance().getBlockRendererDispatcher().getBlockModelRenderer().renderModelFlat( level , strawberryicecreambed , state , pos , matrixStackIn , bufferIn.getBuffer( renderType ) , false , level.rand , state.getPositionRandom( pos ) , OverlayTexture.NO_OVERLAY ,
                     net.minecraftforge.client.model.data.EmptyModelData.INSTANCE );
             matrixStackIn.pop();
 
+    }
+
+    @Override
+    public boolean isGlobalRenderer( StrawberryIceCreamBedTe te ){
+        return true;
     }
 }
