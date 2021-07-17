@@ -1,5 +1,7 @@
 package com.charlotte.sweetnotsavourymod;
 
+import com.charlotte.sweetnotsavourymod.core.events.ModEvents;
+import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,9 +31,11 @@ public class SweetNotSavouryMod {
     
     public SweetNotSavouryMod() {
     	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-    	
+
+		MinecraftForge.EVENT_BUS.register(new ModEvents());
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
+		TileEntityTypesInit.TILE_ENTITY_TYPE.register( bus );
     	
     	MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::addOres);
     	
