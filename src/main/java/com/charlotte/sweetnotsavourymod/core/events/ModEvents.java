@@ -1,7 +1,6 @@
 package com.charlotte.sweetnotsavourymod.core.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.BaseBedTeRenderer;
 import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.StrawberryIceCreamBedTeRenderer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;

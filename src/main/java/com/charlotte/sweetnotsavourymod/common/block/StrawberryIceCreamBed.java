@@ -1,21 +1,16 @@
 package com.charlotte.sweetnotsavourymod.common.block;
 
 
-import javax.annotation.Nullable;
-
-import com.charlotte.sweetnotsavourymod.common.tileentities.StrawberryIceCreamBedTe;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 import net.minecraft.block.BedBlock;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.DyeColor;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+
+import javax.annotation.Nullable;
 
 public class StrawberryIceCreamBed extends BedBlock{
 

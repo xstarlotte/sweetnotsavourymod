@@ -18,9 +18,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.world.World;
 
-import static com.charlotte.sweetnotsavourymod.core.events.ModEvents.STRAWBERRYICECREAMBEDBOTTOM;
-import static com.charlotte.sweetnotsavourymod.core.events.ModEvents.STRAWBERRYICECREAMBEDHEAD;
-
 public abstract class BaseBedTeRenderer extends TileEntityRenderer<TileEntity>{
 
     protected TileEntity te;
@@ -40,10 +37,6 @@ public abstract class BaseBedTeRenderer extends TileEntityRenderer<TileEntity>{
         BlockState state = te.getBlockState();
         BlockPos pos = te.getPos();
         switch((te.getBlockState().get( BlockStateProperties.HORIZONTAL_FACING ))){
-            case DOWN:
-                break;
-            case UP:
-                break;
             case NORTH:
                 int zn = pos.getZ() + 1;
                 if (state.get( BedBlock.PART) == BedPart.FOOT ){

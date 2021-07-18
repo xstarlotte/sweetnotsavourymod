@@ -16,7 +16,7 @@ public class StrawberryIceCreamBedTeRenderer extends  BaseBedTeRenderer{
     @Override
     protected void setTileEntityAndModels( TileEntity te ){
         if(te instanceof StrawberryIceCreamBedTe)
-            this.te = (StrawberryIceCreamBedTe) te;
+            this.te = te;
         this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel( STRAWBERRYICECREAMBEDBOTTOM );
         this.headbedmodel = Minecraft.getInstance().getModelManager().getModel( STRAWBERRYICECREAMBEDHEAD );
 
