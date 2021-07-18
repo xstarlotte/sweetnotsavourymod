@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "sweetnotsavourymod:blocks/strawberryicecreambed"
+		"0": "sweetnotsavourymod:blocks/strawberryicecreambedheadpart"
 	},
 	"elements": [
 		{
@@ -388,6 +388,19 @@
 				"west": {"uv": [5, 11.5, 6.5, 12.5], "texture": "#0"},
 				"up": {"uv": [5, 11.5, 1.5, 10], "texture": "#0"},
 				"down": {"uv": [8.5, 10, 5, 11.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 2.9, 0],
+			"to": [16, 7.9, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2.9, -17]},
+			"faces": {
+				"north": {"uv": [2.25, 2.25, 6.25, 3.5], "texture": "#0"},
+				"east": {"uv": [0, 2.25, 2.25, 3.5], "texture": "#0"},
+				"south": {"uv": [8.5, 2.25, 12.5, 3.5], "texture": "#0"},
+				"west": {"uv": [6.25, 2.25, 8.5, 3.5], "texture": "#0"},
+				"up": {"uv": [6.25, 2.25, 2.25, 0], "texture": "#0"},
+				"down": {"uv": [10.25, 0, 6.25, 2.25], "texture": "#0"}
 			}
 		},
 		{
@@ -1608,7 +1621,7 @@
 			"name": "Duvet",
 			"origin": [0, 0, 0],
 			"color": 0,
-			"children": [28]
+			"children": [28, 29]
 		},
 		{
 			"name": "mainpillow",
@@ -1619,13 +1632,13 @@
 					"name": "bone",
 					"origin": [0, 5.64882, 8.52545],
 					"color": 0,
-					"children": [29]
+					"children": [30]
 				},
 				{
 					"name": "bone2",
 					"origin": [0, 7.71231, 11.51744],
 					"color": 0,
-					"children": [30]
+					"children": [31]
 				}
 			]
 		},
@@ -1633,29 +1646,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [31, 32, 33, 34, 35,
+			"children": [32, 33, 34, 35, 36,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [36,
+					"children": [37,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
-							"color": 0,
-							"children": [37]
-						},
-						{
-							"name": "pillowtop14",
-							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
 							"children": [38]
 						},
 						{
+							"name": "pillowtop14",
+							"origin": [3.12781, 11, 6.83788],
+							"color": 0,
+							"children": [39]
+						},
+						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [39]
+							"children": [40]
 						}
 					]
 				}
@@ -1665,29 +1678,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [40, 41, 42, 43, 44,
+			"children": [41, 42, 43, 44, 45,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [45,
+					"children": [46,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
-							"color": 0,
-							"children": [46]
-						},
-						{
-							"name": "pillowtop14",
-							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
 							"children": [47]
 						},
 						{
+							"name": "pillowtop14",
+							"origin": [3.12781, 11, 6.83788],
+							"color": 0,
+							"children": [48]
+						},
+						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [48]
+							"children": [49]
 						}
 					]
 				}
@@ -1697,29 +1710,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [49, 50, 51, 52, 53,
+			"children": [50, 51, 52, 53, 54,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [54,
+					"children": [55,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
-							"color": 0,
-							"children": [55]
-						},
-						{
-							"name": "pillowtop14",
-							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
 							"children": [56]
 						},
 						{
+							"name": "pillowtop14",
+							"origin": [3.12781, 11, 6.83788],
+							"color": 0,
+							"children": [57]
+						},
+						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [57]
+							"children": [58]
 						}
 					]
 				}
@@ -1729,29 +1742,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [58, 59, 60, 61, 62,
+			"children": [59, 60, 61, 62, 63,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [63,
+					"children": [64,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
-							"color": 0,
-							"children": [64]
-						},
-						{
-							"name": "pillowtop14",
-							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
 							"children": [65]
 						},
 						{
+							"name": "pillowtop14",
+							"origin": [3.12781, 11, 6.83788],
+							"color": 0,
+							"children": [66]
+						},
+						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [66]
+							"children": [67]
 						}
 					]
 				}
@@ -1761,29 +1774,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [67, 68, 69, 70, 71,
+			"children": [68, 69, 70, 71, 72,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [72,
+					"children": [73,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
-							"color": 0,
-							"children": [73]
-						},
-						{
-							"name": "pillowtop14",
-							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
 							"children": [74]
 						},
 						{
+							"name": "pillowtop14",
+							"origin": [3.12781, 11, 6.83788],
+							"color": 0,
+							"children": [75]
+						},
+						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [75]
+							"children": [76]
 						}
 					]
 				}
@@ -1793,29 +1806,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [76, 77, 78, 79, 80,
+			"children": [77, 78, 79, 80, 81,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [81,
+					"children": [82,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
-							"color": 0,
-							"children": [82]
-						},
-						{
-							"name": "pillowtop14",
-							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
 							"children": [83]
 						},
 						{
+							"name": "pillowtop14",
+							"origin": [3.12781, 11, 6.83788],
+							"color": 0,
+							"children": [84]
+						},
+						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [84]
+							"children": [85]
 						}
 					]
 				}
@@ -1825,29 +1838,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [85, 86, 87, 88, 89,
+			"children": [86, 87, 88, 89, 90,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [90,
+					"children": [91,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
-							"color": 0,
-							"children": [91]
-						},
-						{
-							"name": "pillowtop14",
-							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
 							"children": [92]
 						},
 						{
+							"name": "pillowtop14",
+							"origin": [3.12781, 11, 6.83788],
+							"color": 0,
+							"children": [93]
+						},
+						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [93]
+							"children": [94]
 						}
 					]
 				}
@@ -1857,29 +1870,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [94, 95, 96, 97, 98,
+			"children": [95, 96, 97, 98, 99,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [99,
+					"children": [100,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
-							"color": 0,
-							"children": [100]
-						},
-						{
-							"name": "pillowtop14",
-							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
 							"children": [101]
 						},
 						{
+							"name": "pillowtop14",
+							"origin": [3.12781, 11, 6.83788],
+							"color": 0,
+							"children": [102]
+						},
+						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [102]
+							"children": [103]
 						}
 					]
 				}
@@ -1889,29 +1902,29 @@
 			"name": "pillow4",
 			"origin": [3.3, -7, 20.4],
 			"color": 0,
-			"children": [103, 104, 105, 106, 107,
+			"children": [104, 105, 106, 107, 108,
 				{
 					"name": "pillowtop12",
 					"origin": [4.3, 11, 7.4],
 					"color": 0,
-					"children": [108,
+					"children": [109,
 						{
 							"name": "pillowtop13",
 							"origin": [3.98994, 11, 7.58403],
 							"color": 0,
-							"children": [109]
+							"children": [110]
 						},
 						{
 							"name": "pillowtop14",
 							"origin": [3.12781, 11, 6.83788],
 							"color": 0,
-							"children": [110]
+							"children": [111]
 						},
 						{
 							"name": "pillowtop15",
 							"origin": [3.40123, 11, 7.3529],
 							"color": 0,
-							"children": [111]
+							"children": [112]
 						}
 					]
 				}

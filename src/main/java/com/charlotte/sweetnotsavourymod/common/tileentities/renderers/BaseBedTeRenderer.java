@@ -40,7 +40,7 @@ public abstract class BaseBedTeRenderer extends TileEntityRenderer<TileEntity>{
             case NORTH:
                 int zn = pos.getZ() + 1;
                 if (state.get( BedBlock.PART) == BedPart.FOOT ){
-                    renderBottomBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 180 , -1 , 0 );
+                    renderBottomBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 180 , -1 , -1 );
                 }
                 if (state.get( BedBlock.PART) == BedPart.HEAD ){
                     renderHeadBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 180 , -1 , -1 );
@@ -49,7 +49,7 @@ public abstract class BaseBedTeRenderer extends TileEntityRenderer<TileEntity>{
             case SOUTH:
                 int zs = pos.getZ() - 1;
                 if (state.get( BedBlock.PART) == BedPart.FOOT ){
-                    renderBottomBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 0 , 0 , 1 );
+                    renderBottomBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 0 , 0 , 0 );
                 }
                 if (state.get( BedBlock.PART) == BedPart.HEAD ){
                     renderHeadBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 0 , 0 , 0 );
@@ -58,7 +58,7 @@ public abstract class BaseBedTeRenderer extends TileEntityRenderer<TileEntity>{
             case WEST:
                 int xw = pos.getX() + 1;
                 if (state.get( BedBlock.PART) == BedPart.FOOT ){
-                    renderBottomBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 270 , 0 , 0 );
+                    renderBottomBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 270 , 0 , -1 );
                 }
                 if (state.get( BedBlock.PART) == BedPart.HEAD ){
                     renderHeadBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 270 , 0 , -1 );
@@ -67,7 +67,7 @@ public abstract class BaseBedTeRenderer extends TileEntityRenderer<TileEntity>{
             case EAST:
                 int xe = pos.getX() - 1;
                 if (state.get( BedBlock.PART) == BedPart.FOOT ){
-                    renderBottomBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 90 , -1 , 1 );
+                    renderBottomBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 90 , -1 , 0 );
                 }
                 if (state.get( BedBlock.PART) == BedPart.HEAD ){
                     renderHeadBedCorrectly( level , pos , state , matrixStackIn , te , bufferIn , 90 , -1 , 0 );
