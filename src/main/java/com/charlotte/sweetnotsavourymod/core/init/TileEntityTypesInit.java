@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.tileentities.StrawberryIceCreamBedTe;
-import net.minecraft.item.DyeColor;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
