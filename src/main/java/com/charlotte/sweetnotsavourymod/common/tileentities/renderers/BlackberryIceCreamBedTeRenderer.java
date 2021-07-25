@@ -1,7 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.tileentities.renderers;
 
-import static com.charlotte.sweetnotsavourymod.core.events.ModEvents.BLACKBERRYICECREAMBEDBOTTOM;
-import static com.charlotte.sweetnotsavourymod.core.events.ModEvents.BLACKBERRYICECREAMBEDHEAD;
+import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLACKBERRYICECREAMBEDBOTTOM;
+import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLACKBERRYICECREAMBEDHEAD;
 
 import com.charlotte.sweetnotsavourymod.common.tileentities.BlackberryIceCreamBedTe;
 

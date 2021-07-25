@@ -5,8 +5,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.tileentity.TileEntity;
 
-import static com.charlotte.sweetnotsavourymod.core.events.ModEvents.STRAWBERRYICECREAMBEDBOTTOM;
-import static com.charlotte.sweetnotsavourymod.core.events.ModEvents.STRAWBERRYICECREAMBEDHEAD;
+import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.STRAWBERRYICECREAMBEDBOTTOM;
+import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.STRAWBERRYICECREAMBEDHEAD;
 
 public class StrawberryIceCreamBedTeRenderer extends  BaseBedTeRenderer{
     public StrawberryIceCreamBedTeRenderer( TileEntityRendererDispatcher rendererDispatcherIn ){

@@ -1,7 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entity;
 
-import com.charlotte.sweetnotsavourymod.client.entity.AI.PoisonBerryMeleeAttackGoal;
-import com.charlotte.sweetnotsavourymod.client.entity.AI.PoisonBerryOpensMiniDoorGoal;
+import com.charlotte.sweetnotsavourymod.common.entity.ai.PoisonBerryMeleeAttackGoal;
+import com.charlotte.sweetnotsavourymod.common.entity.ai.PoisonBerryOpensMiniDoorGoal;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
@@ -11,11 +11,9 @@ import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.ai.goal.OpenDoorGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.pathfinding.GroundPathNavigator;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -26,9 +24,6 @@ public class PoisonBerryAttackerEntity extends MonsterEntity {
 	
 	public PoisonBerryAttackerEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
 		super(type, worldIn);
-	
-		((GroundPathNavigator)this.getNavigator()).setBreakDoors(true);
-		
 	}
 
 	public static AttributeModifierMap.MutableAttribute setAttributes() {
@@ -49,7 +44,6 @@ public class PoisonBerryAttackerEntity extends MonsterEntity {
 		this.goalSelector.addGoal(4, new LookAtGoal(this, PlayerEntity.class, 8.0f));
 		this.goalSelector.addGoal(1, new PoisonBerryMeleeAttackGoal(this, 0.12D, false)); 
 		this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
-		
 		this.targetSelector.addGoal(1,  new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
 	  
