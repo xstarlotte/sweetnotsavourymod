@@ -52,6 +52,12 @@ public class BlockInit {
 	public static final RegistryObject<Block> STRAWBERRYCANDYOREBLOCK = BLOCKS.register("strawberrycandyoreblock",
 			() -> new Block(AbstractBlock.Properties.from(Blocks.DIAMOND_ORE)));
 	
+	public static final RegistryObject<Block> RASPBERRYCANDYOREBLOCK = BLOCKS.register("raspberrycandyoreblock",
+			() -> new Block(AbstractBlock.Properties.from(Blocks.DIAMOND_ORE)));
+	
+	public static final RegistryObject<Block> LEMONCANDYOREBLOCK = BLOCKS.register("lemoncandyoreblock",
+			() -> new Block(AbstractBlock.Properties.from(Blocks.DIAMOND_ORE)));
+	
 	public static final RegistryObject<Block> STRAWBERRYICECREAMBED = BLOCKS.register("strawberryicecreambed",
 			() -> new StrawberryIceCreamBed( DyeColor.RED,AbstractBlock.Properties.create(Material.WOOD,
 					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));

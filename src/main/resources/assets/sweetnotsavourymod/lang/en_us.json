@@ -1,14 +1,29 @@
 {
 	"item.sweetnotsavourymod.sprinkles": "Sprinkles",
 	"item.sweetnotsavourymod.strawberrycandy": "Strawberry Candy",
+	"item.sweetnotsavourymod.wrappedstrawberrycandy": "Wrapped Strawberry Candy",
+	"item.sweetnotsavourymod.strawberrylollipop": "Strawberry Lollipop",
+	"item.sweetnotsavourymod.raspberrycandy": "Raspberry Candy",
+	"item.sweetnotsavourymod.wrappedraspberrycandy": "Wrapped Raspberry Candy",
+	"item.sweetnotsavourymod.raspberrylollipop": "Raspberry Lollipop",
+	"item.sweetnotsavourymod.lemoncandy": "Lemon Candy",
+	"item.sweetnotsavourymod.wrappedlemoncandy": "Wrapped Lemon Candy",
+	"item.sweetnotsavourymod.lemonlollipop": "Lemon Lollipop",
+	
 	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
 	"block.sweetnotsavourymod.raspberrycandyblock": "Raspberry Candy Block",
 	"block.sweetnotsavourymod.strawberrycandyblock": "Strawberry Candy Block",
 	"block.sweetnotsavourymod.lemoncandyblock": "Lemon Candy Block",
+	
 	"block.sweetnotsavourymod.strawberrycandyoreblock": "Strawberry Candy Ore Block",
+	"block.sweetnotsavourymod.raspberrycandyoreblock": "Raspberry Candy Ore Block",
+	"block.sweetnotsavourymod.lemoncandyoreblock": "Lemon Candy Ore Block",
+	
 	"block.sweetnotsavourymod.strawberryicecreambed": "Strawberry Ice Cream Bed",
 	"block.sweetnotsavourymod.blackberryicecreambed": "Blackberry Ice Cream Bed",
+	
 	"block.sweetnotsavourymod.poisonoakminidoor": "Poison Oak Mini Door",
+	
 	"entity.sweetnotsavourymod.poisonberryattacker": "Poison Berry Attacker",
 	
 	"itemGroup.sweetnotsavourymod": "Sweet Not Savoury Mod"
