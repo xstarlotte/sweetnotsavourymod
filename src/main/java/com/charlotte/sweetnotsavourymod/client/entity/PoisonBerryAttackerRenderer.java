@@ -16,7 +16,7 @@ PoisonBerryAttackerModel<PoisonBerryAttackerEntity>> {
 	
 	public PoisonBerryAttackerRenderer(EntityRendererManager manager) {
 		
-		super(manager, new PoisonBerryAttackerModel<>(), 0.7f);
+		super(manager, new PoisonBerryAttackerModel<>(), 0.1f);
 		
 	}
 

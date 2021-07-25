@@ -16,7 +16,8 @@ public class EntityTypesInit {
 			SweetNotSavouryMod.MOD_ID);
 	
 	public static final RegistryObject<EntityType<PoisonBerryAttackerEntity>> POISONBERRYATTACKER = ENTITY_TYPES
-			.register("poisonberryattacker", () -> EntityType.Builder.create(PoisonBerryAttackerEntity::new, EntityClassification.MONSTER).size(1.0f, 1.0f)
+			.register("poisonberryattacker", () -> EntityType.Builder.create(PoisonBerryAttackerEntity::new, EntityClassification.MONSTER)
+					.size(0.5f, 0.5f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "poisonberryattacker").toString()));
 	
 }

@@ -1,16 +1,17 @@
 package com.charlotte.sweetnotsavourymod;
 
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
-import com.charlotte.sweetnotsavourymod.core.events.ModEvents;
-import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
+import com.charlotte.sweetnotsavourymod.core.events.ModEvents;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.FeatureInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
+import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
+
 
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.BlockItem;
@@ -36,19 +37,25 @@ public class SweetNotSavouryMod {
     
     public SweetNotSavouryMod() {
     	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+    	
 
 		MinecraftForge.EVENT_BUS.register(new ModEvents());
+		bus.addListener(this::commonSetup);
 		
 		
 		
-		EntityTypesInit.ENTITY_TYPES.register(bus);
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
 		TileEntityTypesInit.TILE_ENTITY_TYPE.register( bus );
+		EntityTypesInit.ENTITY_TYPES.register(bus);
     	
     	MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::addOres);
     	
         MinecraftForge.EVENT_BUS.register(this);
+        
+        
+        
+        
     } 
     
     @SubscribeEvent
@@ -71,7 +78,10 @@ public class SweetNotSavouryMod {
     	});
     	
     	
+    	
     }
     
+  
+  
     
 }

@@ -1,0 +1,101 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "sweetnotsavourymod:blocks/poisonoakminidoor"
+	},
+	"elements": [
+		{
+			"from": [15, 0, 0],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"north": {"uv": [4, 4, 4.25, 8], "texture": "#0"},
+				"east": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"south": {"uv": [4, 0, 4.25, 4], "texture": "#0"},
+				"west": {"uv": [0, 4, 4, 8], "texture": "#0"},
+				"up": {"uv": [8.25, 0.25, 4.25, 0], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [8.25, 0.25, 4.25, 0.5], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [14.5, 7, 11],
+			"to": [15.5, 9, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"north": {"uv": [4.5, 2.5, 4.75, 3], "texture": "#0"},
+				"east": {"uv": [4.25, 1.5, 4.75, 2], "texture": "#0"},
+				"south": {"uv": [4.25, 4, 4.5, 4.5], "texture": "#0"},
+				"west": {"uv": [4.25, 2, 4.75, 2.5], "texture": "#0"},
+				"up": {"uv": [5, 3.25, 4.5, 3], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [5, 3.25, 4.5, 3.5], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [15.5, 7, 11],
+			"to": [16.5, 9, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"north": {"uv": [4.25, 3, 4.5, 3.5], "texture": "#0"},
+				"east": {"uv": [4.25, 0.5, 4.75, 1], "texture": "#0"},
+				"south": {"uv": [4.25, 2.5, 4.5, 3], "texture": "#0"},
+				"west": {"uv": [4.25, 1, 4.75, 1.5], "texture": "#0"},
+				"up": {"uv": [4.75, 3.75, 4.25, 3.5], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [4.75, 3.75, 4.25, 4], "rotation": 270, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 0, -3.75],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -90, 0],
+			"translation": [0, 0, -4],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 0],
+			"translation": [0, -2, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, 0],
+			"translation": [0, -1.75, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 0.5, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [0, -90, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"head": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 14.5, -6.25]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 0, -8]
+		}
+	},
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0,
+				{
+					"name": "doorknob",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [1, 2]
+				}
+			]
+		}
+	]
+}
