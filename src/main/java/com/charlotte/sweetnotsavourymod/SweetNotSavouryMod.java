@@ -1,10 +1,11 @@
 package com.charlotte.sweetnotsavourymod;
 
+import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
-import com.charlotte.sweetnotsavourymod.core.events.ModEvents;
+import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.FeatureInit;
@@ -37,9 +38,10 @@ public class SweetNotSavouryMod {
     
     public SweetNotSavouryMod() {
     	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-    	
 
-		MinecraftForge.EVENT_BUS.register(new ModEvents());
+
+		MinecraftForge.EVENT_BUS.register(new ClientEvents());
+		MinecraftForge.EVENT_BUS.register(new EntityEvents());
 		bus.addListener(this::commonSetup);
 		
 		
