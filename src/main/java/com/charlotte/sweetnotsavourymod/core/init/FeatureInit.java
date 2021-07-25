@@ -14,8 +14,13 @@ public class FeatureInit {
 	public static void addOres(final BiomeLoadingEvent event) {
 		addOre(event, OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD,
 				BlockInit.STRAWBERRYCANDYOREBLOCK.get().getDefaultState(), 4, 0, 60, 20);
+	
+		addOre(event, OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD,
+				BlockInit.RASPBERRYCANDYOREBLOCK.get().getDefaultState(), 4, 0, 60, 20);
 		
-	}
+		addOre(event, OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD,
+				BlockInit.LEMONCANDYOREBLOCK.get().getDefaultState(), 4, 0, 60, 20);
+	}	
 	
 	public static void addOre(final BiomeLoadingEvent event, RuleTest rule, BlockState state, int veinSize, int minHeight, int maxHeight, int amount) {
 		event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 

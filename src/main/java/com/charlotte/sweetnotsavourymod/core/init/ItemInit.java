@@ -12,16 +12,23 @@ public class ItemInit {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SweetNotSavouryMod.MOD_ID);
 	
 	public static final RegistryObject<Item> SPRINKLES = ITEMS.register("sprinkles", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+	public static final RegistryObject<Item> CINNAMONROLL = ITEMS.register("cinnamonroll", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+	public static final RegistryObject<Item> STRAWBERRYSWISSROLL = ITEMS.register("strawberryswissroll", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+	
+	public static final RegistryObject<Item> VANILLAICECREAMSWORD = ITEMS.register("vanillaicecreamsword", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	
 	public static final RegistryObject<Item> STRAWBERRYCANDY = ITEMS.register("strawberrycandy", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	public static final RegistryObject<Item> WRAPPEDSTRAWBERRYCANDY = ITEMS.register("wrappedstrawberrycandy", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	public static final RegistryObject<Item> STRAWBERRYLOLLIPOP = ITEMS.register("strawberrylollipop", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+	public static final RegistryObject<Item> STRAWBERRYICECREAMSWORD = ITEMS.register("strawberryicecreamsword", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	
 	public static final RegistryObject<Item> RASPBERRYCANDY = ITEMS.register("raspberrycandy", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	public static final RegistryObject<Item> WRAPPEDRASPBERRYCANDY = ITEMS.register("wrappedraspberrycandy", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	public static final RegistryObject<Item> RASPBERRYLOLLIPOP = ITEMS.register("raspberrylollipop", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+	public static final RegistryObject<Item> RASPBERRYICECREAMSWORD = ITEMS.register("raspberryicecreamsword", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 
 	public static final RegistryObject<Item> LEMONCANDY = ITEMS.register("lemoncandy", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	public static final RegistryObject<Item> WRAPPEDLEMONCANDY = ITEMS.register("wrappedlemoncandy", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	public static final RegistryObject<Item> LEMONLOLLIPOP = ITEMS.register("lemonlollipop", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+	public static final RegistryObject<Item> LEMONICECREAMSWORD = ITEMS.register("lemonicecreamsword", () -> new Item(new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 }
