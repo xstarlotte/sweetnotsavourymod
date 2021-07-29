@@ -14,6 +14,9 @@ public class ItemInit {
 	
 	public static final RegistryObject<CustomSpawnEggItem> POISONBERRYATTACKERSPAWNEGG = ITEMS.register("poisonberryattackerspawnegg", 
 			() -> new CustomSpawnEggItem(EntityTypesInit.POISONBERRYATTACKER, 0x2e0d39, 0x055330, new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+
+	public static final RegistryObject<CustomSpawnEggItem> POISONBERRYARCHERSPAWNEGG = ITEMS.register("poisonberryarcherspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.POISONBERRYARCHER, 0x2e0d39, 0x055330, new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	
 	public static final RegistryObject<CustomSpawnEggItem> STRAWBERRYPUGSPAWNEGG = ITEMS.register("strawberrypugspawnegg", 
 			() -> new CustomSpawnEggItem(EntityTypesInit.STRAWBERRYPUG, 0x730813, 0xbe9129, new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
