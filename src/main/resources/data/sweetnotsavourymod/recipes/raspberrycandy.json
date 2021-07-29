@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "sweetnotsavourymod:raspberrycandyblock"
+		}
+	],
+	
+	"result": {
+		"item": "sweetnotsavourymod:raspberrycandy",
+		"count": 9
+	}
+}

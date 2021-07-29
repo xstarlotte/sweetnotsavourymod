@@ -12,6 +12,21 @@
 	"item.sweetnotsavourymod.cinnamonroll": "Cinnamon Roll",
 	"item.sweetnotsavourymod.strawberryswissroll": "Strawberry Swiss Roll",
 	
+	"item.sweetnotsavourymod.poisonberryattackerspawnegg": "Poison Berry Attacker Spawn Egg",
+	"item.sweetnotsavourymod.strawberrypugspawnegg": "Strawberry Pug Spawn Egg",
+	"item.sweetnotsavourymod.toffeeicecreampugspawnegg": "Toffee Ice Cream Pug Spawn Egg",
+	"item.sweetnotsavourymod.blueberryicecreampugspawnegg": "Blueberry Ice Cream Pug Spawn Egg",
+	"item.sweetnotsavourymod.chocolateicecreampugspawnegg": "Chocolate Ice Cream Pug Spawn Egg",
+	"item.sweetnotsavourymod.raspberryicecreampugspawnegg": "Raspberry Ice Cream Pug Spawn Egg",
+	"item.sweetnotsavourymod.strawberryicecreampugspawnegg": "Strawberry Ice Cream Pug Spawn Egg",
+	"item.sweetnotsavourymod.strawberryelfspawnegg": "Strawberry Elf Spawn Egg",
+	"item.sweetnotsavourymod.strawberrypigspawnegg": "Strawberry Pig Spawn Egg",
+	"item.sweetnotsavourymod.carrotcakerabbitspawnegg": "Carrot Cake Rabbit Spawn Egg",
+	"item.sweetnotsavourymod.chocolatecherrycakerabbitspawnegg": "Chocolate Cherry Cake Rabbit Spawn Egg",
+	"item.sweetnotsavourymod.bananabreadrabbitspawnegg": "Banana Bread Rabbit Spawn Egg",
+	"item.sweetnotsavourymod.angelcakerabbitspawnegg": "Angel Cake Rabbit Spawn Egg",
+	"item.sweetnotsavourymod.zebracakezebraspawnegg": "Zebra Cake Zebra Spawn Egg",
+	
 	"item.sweetnotsavourymod.lemonicecreamsword": "Lemon Ice Cream Sword",
 	"item.sweetnotsavourymod.strawberryicecreamsword": "Strawberry Ice Cream Sword",
 	"item.sweetnotsavourymod.raspberryicecreamsword": "Raspberry Ice Cream Sword",
@@ -32,6 +47,19 @@
 	"block.sweetnotsavourymod.poisonoakminidoor": "Poison Oak Mini Door",
 	
 	"entity.sweetnotsavourymod.poisonberryattacker": "Poison Berry Attacker",
+	"entity.sweetnotsavourymod.strawberrypug": "Strawberry Pug",
+	"entity.sweetnotsavourymod.toffeeicecreampug": "Toffee Ice Cream Pug",
+	"entity.sweetnotsavourymod.blueberryicecreampug": "Blueberry Ice Cream Pug",
+	"entity.sweetnotsavourymod.chocolateicecreampug": "Chocolate Ice Cream Pug",
+	"entity.sweetnotsavourymod.raspberryicecreampug": "Raspberry Ice Cream Pug",
+	"entity.sweetnotsavourymod.strawberryicecreampug": "Strawberry Ice Cream Pug",
+	"entity.sweetnotsavourymod.strawberryelf": "Strawberry Elf",
+	"entity.sweetnotsavourymod.strawberrypig": "Strawberry Pig",
+	"entity.sweetnotsavourymod.carrotcakerabbit": "Carrot Cake Rabbit",
+	"entity.sweetnotsavourymod.chocolatecherrycakerabbit": "Chocolate Cherry Cake Rabbit",
+	"entity.sweetnotsavourymod.bananabreadrabbit": "Banana Bread Rabbit",
+	"entity.sweetnotsavourymod.angelcakerabbit": "Angel Cake Rabbit",
+	"entity.sweetnotsavourymod.zebracakezebra": "Zebra Cake Zebra",
 	
 	"itemGroup.sweetnotsavourymod": "Sweet Not Savoury Mod"
 }

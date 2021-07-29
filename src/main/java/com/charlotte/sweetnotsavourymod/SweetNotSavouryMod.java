@@ -1,11 +1,25 @@
 package com.charlotte.sweetnotsavourymod;
 
-import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
 import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
+import com.charlotte.sweetnotsavourymod.common.entity.AngelCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.BananaBreadRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.BlueberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.CarrotCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.ChocolateCherryCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.ChocolateIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.RaspberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.StrawberryElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.StrawberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPigEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.ToffeeIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.ZebraCakeZebraEntity;
+import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
+import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.FeatureInit;
@@ -13,7 +27,7 @@ import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 
-
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -72,6 +86,11 @@ public class SweetNotSavouryMod {
     	});
     }
     
+    @SubscribeEvent
+    public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event) {
+    	CustomSpawnEggItem.initSpawnEggs();
+    }
+//Where to code my entities    
     @SuppressWarnings("deprecation")
 	public void commonSetup(final FMLCommonSetupEvent event) {
     	
@@ -79,11 +98,61 @@ public class SweetNotSavouryMod {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.POISONBERRYATTACKER.get(), PoisonBerryAttackerEntity.setAttributes().create());
     	});
     	
-    	
-    	
-    }
     
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPUG.get(), StrawberryPugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.TOFFEEICECREAMPUG.get(), ToffeeIceCreamPugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYICECREAMPUG.get(), BlueberryIceCreamPugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.CHOCOLATEICECREAMPUG.get(), ChocolateIceCreamPugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.RASPBERRYICECREAMPUG.get(), RaspberryIceCreamPugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYICECREAMPUG.get(), StrawberryIceCreamPugEntity.setAttributes().create());
+    	});
   
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYELF.get(), StrawberryElfEntity.setAttributes().create());
+    	});
   
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPIG.get(), StrawberryPigEntity.setAttributes().create());
+    	});
+      
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.CARROTCAKERABBIT.get(), CarrotCakeRabbitEntity.setAttributes().create());
+    	});
+  
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.CHOCOLATECHERRYCAKERABBIT.get(), ChocolateCherryCakeRabbitEntity.setAttributes().create());
+    	});
+  
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.BANANABREADRABBIT.get(), BananaBreadRabbitEntity.setAttributes().create());
+    	});
+  
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.ANGELCAKERABBIT.get(), AngelCakeRabbitEntity.setAttributes().create());
+    	});
+  
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.ZEBRACAKEZEBRA.get(), ZebraCakeZebraEntity.setAttributes().create());
+    	});
+  
+    	
+    	
+    } 
     
 }

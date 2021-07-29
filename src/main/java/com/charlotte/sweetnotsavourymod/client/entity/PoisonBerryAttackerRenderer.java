@@ -1,8 +1,12 @@
 package com.charlotte.sweetnotsavourymod.client.entity;
 
+import org.antlr.v4.runtime.misc.NotNull;
+
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.model.PoisonBerryAttackerModel;
 import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPugEntity;
+import com.mojang.blaze3d.matrix.MatrixStack;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -25,5 +29,10 @@ PoisonBerryAttackerModel<PoisonBerryAttackerEntity>> {
 		return TEXTURE;
 	}
 	
-	
+	@Override
+	protected void preRenderCallback(@NotNull PoisonBerryAttackerEntity entitylivingbaseIn, @NotNull MatrixStack matrixStackIn,
+			float partialTickTime) {
+		matrixStackIn.scale(0.64F, 0.64F, 0.64F);
+		
+	}
 }
