@@ -1,23 +1,10 @@
 package com.charlotte.sweetnotsavourymod;
 
+import com.charlotte.sweetnotsavourymod.common.entity.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
-import com.charlotte.sweetnotsavourymod.common.entity.AngelCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BananaBreadRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BlueberryIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.CarrotCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ChocolateCherryCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ChocolateIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.RaspberryIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPigEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ToffeeIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ZebraCakeZebraEntity;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
@@ -97,7 +84,10 @@ public class SweetNotSavouryMod {
     	DeferredWorkQueue.runLater(() -> {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.POISONBERRYATTACKER.get(), PoisonBerryAttackerEntity.setAttributes().create());
     	});
-    	
+
+		DeferredWorkQueue.runLater(() -> {
+			GlobalEntityTypeAttributes.put(EntityTypesInit.POISONBERRYARCHER.get(), PoisonBerryArcherEntity.setAttributes().create());
+		});
     
     	DeferredWorkQueue.runLater(() -> {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPUG.get(), StrawberryPugEntity.setAttributes().create());

@@ -1,20 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.entity.AngelCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BananaBreadRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BlueberryIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.CarrotCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ChocolateCherryCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ChocolateIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.RaspberryIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPigEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ToffeeIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ZebraCakeZebraEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.*;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -32,6 +19,11 @@ public class EntityTypesInit {
 			.register("poisonberryattacker", () -> EntityType.Builder.create(PoisonBerryAttackerEntity::new, EntityClassification.MONSTER)
 					.size(0.5f, 0.5f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "poisonberryattacker").toString()));
+
+	public static final RegistryObject<EntityType<PoisonBerryArcherEntity>> POISONBERRYARCHER = ENTITY_TYPES
+			.register("poisonberryarcher", () -> EntityType.Builder.create( PoisonBerryArcherEntity::new, EntityClassification.MONSTER)
+					.size(0.5f, 0.5f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "poisonberryarcher").toString()));
 	
 	public static final RegistryObject<EntityType<StrawberryPugEntity>> STRAWBERRYPUG = ENTITY_TYPES
 			.register("strawberrypug", () -> EntityType.Builder.create(StrawberryPugEntity::new, EntityClassification.CREATURE)
