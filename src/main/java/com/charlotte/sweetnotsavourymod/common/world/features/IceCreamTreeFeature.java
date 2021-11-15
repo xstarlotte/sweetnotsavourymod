@@ -18,10 +18,11 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.IWorldGenerationBaseReader;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 
-public class IceCreamTreeFeature extends Feature<NoFeatureConfig>{
+public class IceCreamTreeFeature extends Feature<BaseTreeFeatureConfig>{
 	
 	private static final Direction[] DIRECTIONS = new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH,
 			Direction.WEST };
@@ -29,10 +30,9 @@ public class IceCreamTreeFeature extends Feature<NoFeatureConfig>{
 	private static final BlockState LOG = BlockInit.WAFERWOODBLOCK.get().getDefaultState();
 	private static final BlockState LEAVES = BlockInit.RAINBOWFROSTINGLEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
 
-	public IceCreamTreeFeature(Codec<NoFeatureConfig> codec) {
+	public IceCreamTreeFeature(Codec<BaseTreeFeatureConfig> codec) {
 		super(codec);		
 	}
-
 	@SuppressWarnings("deprecation")
 	public boolean isAirOrLeaves(IWorldGenerationBaseReader reader, BlockPos pos) {
 		if (!(reader instanceof IWorldReader)) {
@@ -44,7 +44,7 @@ public class IceCreamTreeFeature extends Feature<NoFeatureConfig>{
 	
 	@Override
 	public boolean generate(ISeedReader reader, ChunkGenerator generator, Random rand, BlockPos pos,
-			NoFeatureConfig config) {
+							BaseTreeFeatureConfig config) {
 		
 		while (pos.getY() > 1 && isAirOrLeaves(reader, pos)) {
 			pos = pos.down();

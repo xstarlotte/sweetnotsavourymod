@@ -10,6 +10,7 @@ import com.charlotte.sweetnotsavourymod.common.world.features.WhiteChocolateChip
 
 import net.minecraft.block.BlockState;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
@@ -35,7 +36,7 @@ public class FeatureInit {
 			() -> new WhiteChocolateChipCookieFeature(NoFeatureConfig.field_236558_a_));
 	
 	public static final RegistryObject<IceCreamTreeFeature> ICECREAMTREE = FEATURES.register("icecreamtree",
-			() -> new IceCreamTreeFeature(NoFeatureConfig.field_236558_a_));
+			() -> new IceCreamTreeFeature( BaseTreeFeatureConfig.CODEC));
 	
 	
 	public static void addOres(final BiomeLoadingEvent event) {
