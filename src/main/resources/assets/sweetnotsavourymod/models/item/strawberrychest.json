@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/strawberrychest",
+  "textures": {
+    "layer1": "sweetnotsavourymod:blocks/strawberrychest"
+  }
+}

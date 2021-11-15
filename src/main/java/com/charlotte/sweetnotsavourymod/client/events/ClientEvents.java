@@ -34,6 +34,12 @@ public class ClientEvents{
         ModelLoader.addSpecialModel(BLACKBERRYICECREAMBEDBOTTOM);
         ModelLoader.addSpecialModel(BLACKBERRYICECREAMBEDHEAD);
         RenderTypeLookup.setRenderLayer( BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.getCutout() );
+        
+        RenderTypeLookup.setRenderLayer(BlockInit.CANDYCANESUGARCANEBLOCK.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.CANDYCANEBUSH.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.POISONBERRYPLANT.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.POISONBERRYLANTERN.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.STRAWBERRYCHEST.get(), RenderType.getCutout());
     }
 
     @SubscribeEvent

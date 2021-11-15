@@ -1,6 +1,7 @@
 {
-	"parent": "block/cube_all",
+	"parent": "block/cube_column",
 	"textures": {
-		"all": "sweetnotsavourymod:blocks/waferwoodblock"
+		"end": "sweetnotsavourymod:blocks/waferwoodblock",
+		"side": "sweetnotsavourymod:blocks/waferwoodblock"
 	}
 }

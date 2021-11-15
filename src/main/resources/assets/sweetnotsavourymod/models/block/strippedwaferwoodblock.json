@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"end": "sweetnotsavourymod:blocks/strippedwaferwoodblock",
+		"side": "sweetnotsavourymod:blocks/strippedwaferwoodblock"
+	}
+}

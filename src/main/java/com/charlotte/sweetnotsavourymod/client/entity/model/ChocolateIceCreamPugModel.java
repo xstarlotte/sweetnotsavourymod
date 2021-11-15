@@ -6,6 +6,7 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.util.math.MathHelper;
 
 public class ChocolateIceCreamPugModel<T extends ChocolateIceCreamPugEntity> extends EntityModel<T>  {
 	private final ModelRenderer head;
@@ -71,20 +72,20 @@ public class ChocolateIceCreamPugModel<T extends ChocolateIceCreamPugEntity> ext
 		mane_rotation.setTextureOffset(21, 0).addBox(-4.0F, -5.5F, -3.5F, 8.0F, 4.0F, 7.0F, 0.0F, false);
 
 		leg1 = new ModelRenderer(this);
-		leg1.setRotationPoint(2.5F, 16.0F, 7.0F);
-		leg1.setTextureOffset(0, 18).addBox(-5.0F, 4.0F, -4.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
+		leg1.setRotationPoint(-1.5F, 20.0F, 4.0F);
+		leg1.setTextureOffset(0, 18).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
 
 		leg2 = new ModelRenderer(this);
-		leg2.setRotationPoint(-0.5F, 16.0F, 7.0F);
-		leg2.setTextureOffset(0, 18).addBox(1.0F, 4.0F, -4.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
+		leg2.setRotationPoint(1.5F, 20.0F, 4.0F);
+		leg2.setTextureOffset(0, 18).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
 
 		leg3 = new ModelRenderer(this);
-		leg3.setRotationPoint(2.5F, 16.0F, -4.0F);
-		leg3.setTextureOffset(0, 18).addBox(-5.0F, 4.0F, -1.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
+		leg3.setRotationPoint(-1.5F, 20.0F, -4.0F);
+		leg3.setTextureOffset(0, 18).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
 
 		leg4 = new ModelRenderer(this);
-		leg4.setRotationPoint(-0.5F, 16.0F, -4.0F);
-		leg4.setTextureOffset(0, 18).addBox(1.0F, 4.0F, -1.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
+		leg4.setRotationPoint(1.5F, 20.0F, -4.0F);
+		leg4.setTextureOffset(0, 18).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
 
 		tail = new ModelRenderer(this);
 		tail.setRotationPoint(1.0F, 12.0F, 10.0F);
@@ -116,7 +117,11 @@ public class ChocolateIceCreamPugModel<T extends ChocolateIceCreamPugEntity> ext
 	@Override
 	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
 			float netHeadYaw, float headPitch) {
-		// TODO Auto-generated method stub
+		this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 0.855F * limbSwingAmount;
+	      this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 0.85F * limbSwingAmount;
+		
+	      this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 0.85F * limbSwingAmount;
+	      this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 0.85F * limbSwingAmount; 
 		
 	}
 }

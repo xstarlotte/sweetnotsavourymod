@@ -116,14 +116,14 @@ protected void playStepSound(BlockPos pos, BlockState blockIn) {
     this.playSound(SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, 0.15F, 1.0F);
  }
 protected SoundEvent getAmbientSound() {
-	return SoundEvents.ENTITY_WOLF_AMBIENT;
+	return SoundEvents.ENTITY_DOLPHIN_AMBIENT;
 }
 protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-    return SoundEvents.ENTITY_WOLF_HURT;
+    return SoundEvents.ENTITY_DOLPHIN_HURT;
  }
 
  protected SoundEvent getDeathSound() {
-    return SoundEvents.ENTITY_WOLF_DEATH;
+    return SoundEvents.ENTITY_DOLPHIN_DEATH;
  }
  protected float getSoundVolume() {
      return 0.2F;

@@ -1,0 +1,167 @@
+{
+  "surface_builder": "sweetnotsavourymod:icecreamforest",
+  "depth": 0.1,
+  "scale": 0.2,
+  "temperature": 0.5,
+  "downfall": 0.6,
+  "precipitation": "snow",
+  "category": "forest",
+  "player_spawn_friendly": true,
+  "effects": {
+    "sky_color": 8037887,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
+    }
+  },
+ "starts": [
+    "minecraft:village_snowy",
+    "minecraft:igloo",
+    "minecraft:mineshaft",
+    "minecraft:stronghold",
+    "minecraft:pillager_outpost",
+    "minecraft:ruined_portal"
+  ],
+  "spawners": {
+    "creature": [
+      {
+        "type": "sweetnotsavourymod:strawberrywaferschund",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:strawberryicecreampug",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:raspberryicecreampug",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:blueberryicecreampug",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:lemonicecreampug",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:toffeeicecreampug",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:chocolateicecreampug",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:strawberryicecreamparrot",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:raspberryicecreamparrot",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:lemonicecreamparrot",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:blueberryicecreamparrot",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "sweetnotsavourymod:chocolateicecreamparrot",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      }
+    ],
+    "ambient": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_water",
+      "minecraft:lake_lava"
+    ],
+    [],
+    [
+      "minecraft:monster_room"
+    ],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite",
+      "minecraft:ore_diorite",
+      "minecraft:ore_andesite",
+      "minecraft:ore_coal",
+      "minecraft:ore_iron",
+      "minecraft:ore_gold",
+      "minecraft:ore_redstone",
+      "minecraft:ore_diamond",
+      "minecraft:ore_lapis",
+      "sweetnotsavourymod:raspberrycandyoreblock",
+      "sweetnotsavourymod:strawberrycandyoreblock",
+      "sweetnotsavourymod:blueberrycandyoreblock",
+      "sweetnotsavourymod:lemoncandyoreblock",
+      "sweetnotsavourymod:orangecandyoreblock",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
+    ],
+    [],
+    [
+      "minecraft:forest_flower_vegetation",
+      "minecraft:trees_birch",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_forest",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin",
+      "minecraft:spring_water",
+      "minecraft:spring_lava",
+      "sweetnotsavourymod:icecreamtree"
+    ],
+    [    
+    ]
+  ]
+}

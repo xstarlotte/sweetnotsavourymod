@@ -46,11 +46,11 @@ public class PoisonBerryArcherEntity extends MonsterEntity implements IRangedAtt
 	protected void registerGoals() {
 		super.registerGoals();
 		
+		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 0.22D, 40 ,15));
 		this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 		this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 0.12D));
 		this.goalSelector.addGoal(4, new LookAtGoal(this, PlayerEntity.class, 8.0f));
 		this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
-		this.goalSelector.addGoal(6, new RangedAttackGoal(this, 0.22D, 10 ,20));
 		this.targetSelector.addGoal(1,  new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
 	  

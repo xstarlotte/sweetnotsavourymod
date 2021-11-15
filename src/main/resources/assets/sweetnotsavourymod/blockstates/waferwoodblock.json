@@ -1,5 +1,16 @@
 {
 	"variants": {
-		"": { "model": "sweetnotsavourymod:block/waferwoodblock" }
+		"axis=x": {
+			 "model": "sweetnotsavourymod:block/waferwoodblock",
+			 "x": 90,
+			 "y": 90
+		 },
+		 "axis=z": {
+		 	"model": "sweetnotsavourymod:block/waferwoodblock",
+		 	"x": 90
+	},
+		"axis=y": {
+		 	"model": "sweetnotsavourymod:block/waferwoodblock"
+		 	}
 	}
 }

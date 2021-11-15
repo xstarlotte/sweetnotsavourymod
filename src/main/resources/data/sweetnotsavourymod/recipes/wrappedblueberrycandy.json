@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"   ",
+		"SAS",
+		"   "
+	],
+	"key": {
+		"S": {
+			"item": "sweetnotsavourymod:sugarwrapper"
+		},
+
+		"A": {
+			"item": "sweetnotsavourymod:blueberrycandy"
+		}
+	},
+	"result": {
+		"item": "sweetnotsavourymod:wrappedblueberrycandy",
+		"count": 1
+	}
+	
+}

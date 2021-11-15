@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/poisonberrylantern",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/poisonberrylantern"
+  }
+}

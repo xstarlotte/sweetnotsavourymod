@@ -27,23 +27,23 @@ public class BananaBreadRabbitModel<T extends BananaBreadRabbitEntity> extends E
 
 		head = new ModelRenderer(this);
 		head.setRotationPoint(0.0F, 16.5F, -3.0F);
-		head.setTextureOffset(32, 0).addBox(-2.5F, -4.0F, -5.0F, 5.0F, 4.0F, 5.0F, 0.0F, false);
+		head.setTextureOffset(32, 0).addBox(-2.5F, -3.0F, -5.0F, 5.0F, 4.0F, 5.0F, 0.0F, false);
 
 		nose = new ModelRenderer(this);
 		nose.setRotationPoint(0.0F, 16.5F, -3.0F);
-		nose.setTextureOffset(32, 9).addBox(-0.5F, -2.5F, -5.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		nose.setTextureOffset(32, 9).addBox(-0.5F, -1.5F, -5.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 
 		left_ear = new ModelRenderer(this);
 		left_ear.setRotationPoint(0.0F, 16.5F, -3.0F);
-		left_ear.setTextureOffset(58, 0).addBox(0.5F, -9.0F, -1.0F, 2.0F, 5.0F, 1.0F, 0.0F, false);
+		left_ear.setTextureOffset(58, 0).addBox(0.5F, -8.0F, -1.0F, 2.0F, 5.0F, 1.0F, 0.0F, false);
 
 		right_ear = new ModelRenderer(this);
 		right_ear.setRotationPoint(0.0F, 16.5F, -3.0F);
-		right_ear.setTextureOffset(52, 0).addBox(-2.5F, -9.0F, -1.0F, 2.0F, 5.0F, 1.0F, 0.0F, false);
+		right_ear.setTextureOffset(52, 0).addBox(-2.5F, -8.0F, -1.0F, 2.0F, 5.0F, 1.0F, 0.0F, false);
 
 		body = new ModelRenderer(this);
 		body.setRotationPoint(0.0F, 16.0F, 7.0F);
-		body.setTextureOffset(0, 0).addBox(-3.0F, -2.0F, -10.0F, 6.0F, 5.0F, 10.0F, 0.0F, false);
+		body.setTextureOffset(0, 0).addBox(-3.0F, 0.0F, -10.0F, 6.0F, 5.0F, 10.0F, 0.0F, false);
 
 		left_arm = new ModelRenderer(this);
 		left_arm.setRotationPoint(-3.0F, 17.0F, -3.0F);
@@ -55,23 +55,23 @@ public class BananaBreadRabbitModel<T extends BananaBreadRabbitEntity> extends E
 
 		left_thigh = new ModelRenderer(this);
 		left_thigh.setRotationPoint(-3.0F, 16.0F, 2.5F);
-		left_thigh.setTextureOffset(16, 15).addBox(5.0F, 0.0F, 0.0F, 2.0F, 4.0F, 5.0F, 0.0F, false);
+		left_thigh.setTextureOffset(16, 15).addBox(5.0F, 3.0F, 0.0F, 2.0F, 4.0F, 5.0F, 0.0F, false);
 
 		right_thigh = new ModelRenderer(this);
 		right_thigh.setRotationPoint(3.0F, 16.0F, 2.5F);
-		right_thigh.setTextureOffset(30, 15).addBox(-7.0F, 0.0F, 0.0F, 2.0F, 4.0F, 5.0F, 0.0F, false);
+		right_thigh.setTextureOffset(30, 15).addBox(-7.0F, 3.0F, 0.0F, 2.0F, 4.0F, 5.0F, 0.0F, false);
 
 		left_foot = new ModelRenderer(this);
 		left_foot.setRotationPoint(-3.0F, 14.5F, 4.2F);
-		left_foot.setTextureOffset(26, 24).addBox(5.0F, 5.5F, -3.7F, 2.0F, 1.0F, 7.0F, 0.0F, false);
+		left_foot.setTextureOffset(26, 24).addBox(5.0F, 8.5F, -3.7F, 2.0F, 1.0F, 7.0F, 0.0F, false);
 
 		right_foot = new ModelRenderer(this);
 		right_foot.setRotationPoint(3.0F, 14.5F, 4.2F);
-		right_foot.setTextureOffset(8, 24).addBox(-7.0F, 5.5F, -3.7F, 2.0F, 1.0F, 7.0F, 0.0F, false);
+		right_foot.setTextureOffset(8, 24).addBox(-7.0F, 8.5F, -3.7F, 2.0F, 1.0F, 7.0F, 0.0F, false);
 
 		tail = new ModelRenderer(this);
 		tail.setRotationPoint(0.0F, 17.25F, 6.5F);
-		tail.setTextureOffset(52, 6).addBox(-1.5F, -1.5F, 0.0F, 3.0F, 3.0F, 2.0F, 0.0F, false);
+		tail.setTextureOffset(52, 6).addBox(-1.5F, -2.5F, 0.0F, 3.0F, 3.0F, 2.0F, 0.0F, false);
 	}
 
 	

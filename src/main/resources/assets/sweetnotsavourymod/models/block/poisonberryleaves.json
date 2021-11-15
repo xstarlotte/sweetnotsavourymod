@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+	"particle": "sweetnotsavourymod:blocks/floweringpoisonberryleaves",
+		"all": "sweetnotsavourymod:blocks/poisonberryleaves"
+	}
+}

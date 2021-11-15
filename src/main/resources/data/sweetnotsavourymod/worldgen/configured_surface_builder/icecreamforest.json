@@ -1,0 +1,17 @@
+{
+	"config": {
+		"top_material": {
+			"Name": "sweetnotsavourymod:meltingchocolateblock"
+		},
+		
+		"under_material": {
+			"Name": "sweetnotsavourymod:meltingchocolateblock"
+		},
+		
+		"underwater_material": {
+			"Name": "sweetnotsavourymod:meltingchocolateblock"
+		}
+			
+	},
+	"type": "sweetnotsavourymod:icecreamforest"
+}

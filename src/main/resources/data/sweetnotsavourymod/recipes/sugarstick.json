@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"   ",
+		" S ",
+		"A  "
+	],
+	"key": {
+		"S": {
+			"item": "minecraft:sugar"
+		},
+
+		"A": {
+			"item": "minecraft:sugar"
+		}
+	},
+	"result": {
+		"item": "sweetnotsavourymod:sugarstick",
+		"count": 2
+	}
+	
+}
+
