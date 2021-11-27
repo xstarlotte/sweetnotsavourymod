@@ -1,45 +1,45 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.entity.AngelCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BananaBreadRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.BananaMonkeyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.BananaMonkeyKingEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BlueberryElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BlueberryIceCreamParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BlueberryIceCreamPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.CandyCaneWolfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.CarrotCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ChocolateCherryCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ChocolateIceCreamParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ChocolateIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.CinnamonSquirrollEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.LemonCurdCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.LemonElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.LemonIceCreamParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.LemonParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.LemonPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.OrangeElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryArcherEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerrySpriteEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.RaspberryElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.RaspberryIceCreamParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.RaspberryIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.RedVelvetCakeRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryCheesecakeMouseEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryIceCreamParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryIceCreamPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPigEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberrySwissSquirrollEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.ToffeeIceCreamPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ToffeeToadEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.VanillaCakeRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.VanillaElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ZebraCakeZebraEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.BlueberryElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.LemonElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.OrangeElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.RaspberryElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.StrawberryElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.VanillaElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.BlueberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.ChocolateIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.LemonIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.LemonParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.RaspberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.StrawberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryArcherEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryAttackerEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerrySpriteEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.BlueberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.ChocolateIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.LemonPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.RaspberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.StrawberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.StrawberryPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.ToffeeIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.AngelCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.BananaBreadRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.CarrotCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.ChocolateCherryCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.LemonCurdCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.RedVelvetCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.VanillaCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.squirrels.CinnamonSquirrollEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.squirrels.StrawberrySwissSquirrollEntity;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -175,7 +175,7 @@ public class EntityTypesInit {
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "bananabreadrabbit").toString()));
 	
 	public static final RegistryObject<EntityType<AngelCakeRabbitEntity>>ANGELCAKERABBIT = ENTITY_TYPES
-			.register("angelcakerabbit", () -> EntityType.Builder.create(AngelCakeRabbitEntity::new, EntityClassification.CREATURE)
+			.register("angelcakerabbit", () -> EntityType.Builder.create(AngelCakeRabbitEntity::new, EntityClassification.CREATURE)					
 					.size(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "angelcakerabbit").toString()));
 	

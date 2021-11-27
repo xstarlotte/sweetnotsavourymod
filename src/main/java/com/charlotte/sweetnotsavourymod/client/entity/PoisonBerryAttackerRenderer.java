@@ -4,8 +4,8 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.model.PoisonBerryAttackerModel;
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryAttackerEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.StrawberryPugEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;

@@ -3,38 +3,30 @@ package com.charlotte.sweetnotsavourymod.client.entity;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.client.entity.model.AngelCakeRabbitModel;
 import com.charlotte.sweetnotsavourymod.client.entity.model.RedVelvetCakeRabbitModel;
-import com.charlotte.sweetnotsavourymod.common.entity.RedVelvetCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.AngelCakeRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rabbits.RedVelvetCakeRabbitEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class RedVelvetCakeRabbitRenderer extends MobRenderer <RedVelvetCakeRabbitEntity, 
-RedVelvetCakeRabbitModel<RedVelvetCakeRabbitEntity>> {
+public class RedVelvetCakeRabbitRenderer extends GeoEntityRenderer <RedVelvetCakeRabbitEntity> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(SweetNotSavouryMod.MOD_ID, 
 			"textures/entity/redvelvetcakerabbit/redvelvetcakerabbit.png");
 	
-	public RedVelvetCakeRabbitRenderer(EntityRendererManager manager) {
+	public RedVelvetCakeRabbitRenderer(EntityRendererManager renderManager) {
 		
-		super(manager, new RedVelvetCakeRabbitModel<>(), 0.3f);
-		
+		super(renderManager, new RedVelvetCakeRabbitModel()); 
+		this.shadowSize = 0.7F;			
 	}
-	
 
-	@Override
-	protected void preRenderCallback(@NotNull RedVelvetCakeRabbitEntity entitylivingbaseIn, @NotNull MatrixStack matrixStackIn,
-			float partialTickTime) {
-		matrixStackIn.scale(0.45F, 0.45F, 0.45F);
-		
-	}
-	
 	@Override
 	public ResourceLocation getEntityTexture(RedVelvetCakeRabbitEntity entity) {
 		return TEXTURE;
-	}
-	
-	
+	}				
 }

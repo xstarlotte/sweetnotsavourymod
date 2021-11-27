@@ -4,7 +4,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.model.CinnamonSquirrollModel;
-import com.charlotte.sweetnotsavourymod.common.entity.CinnamonSquirrollEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.squirrels.CinnamonSquirrollEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;

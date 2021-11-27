@@ -4,7 +4,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.model.ChocolateIceCreamPugModel;
-import com.charlotte.sweetnotsavourymod.common.entity.ChocolateIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.ChocolateIceCreamPugEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;

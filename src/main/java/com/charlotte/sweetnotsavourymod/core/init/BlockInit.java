@@ -2,16 +2,25 @@ package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.block.BlackberryIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.BlackberryLamp;
+import com.charlotte.sweetnotsavourymod.common.block.BlueberryIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.BlueberryLamp;
 import com.charlotte.sweetnotsavourymod.common.block.CandyCaneSugarCaneBlock;
 import com.charlotte.sweetnotsavourymod.common.block.IceCreamTreeSaplingBlock;
+import com.charlotte.sweetnotsavourymod.common.block.LemonIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.LemonLamp;
 import com.charlotte.sweetnotsavourymod.common.block.PoisonBerryLantern;
 import com.charlotte.sweetnotsavourymod.common.block.PoisonOakMiniDoor;
+import com.charlotte.sweetnotsavourymod.common.block.RaspberryIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.RaspberryLamp;
 import com.charlotte.sweetnotsavourymod.common.block.StrawberryChest;
 import com.charlotte.sweetnotsavourymod.common.block.StrawberryIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.StrawberryLamp;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.GrassBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
@@ -50,6 +59,86 @@ public class BlockInit {
 					.sound(SoundType.PLANT),
 					TreeInit.ICECREAMTREE));
 	
+	public static final RegistryObject<Block> RAINBOWFROSTINGGRASSBLOCK = BLOCKS.register("rainbowfrostinggrassblock",
+			() -> new GrassBlock(AbstractBlock.Properties.create(Material.ORGANIC, MaterialColor.GRASS)
+					.hardnessAndResistance(0.2f,1f)
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.GROUND)));
+	
+	public static final RegistryObject<Block> FROSTINGBLOCK = BLOCKS.register("frostingblock",
+			() -> new GrassBlock(AbstractBlock.Properties.create(Material.ORGANIC, MaterialColor.GRASS)
+					.hardnessAndResistance(0.2f,1f)
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.GROUND)));
+	
+	public static final RegistryObject<Block> FROSTINGFLOWER = BLOCKS.register("frostingflower",
+			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
+					.doesNotBlockMovement().
+					zeroHardnessAndResistance()
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.PLANT)));
+	
+	public static final RegistryObject<Block> FROSTINGGRASS = BLOCKS.register("frostinggrass",
+			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
+					.doesNotBlockMovement().
+					zeroHardnessAndResistance()
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.PLANT)));
+	
+//CANDY-STUFF
+	
+	public static final RegistryObject<Block> STRAWBERRYCANDYBUSH = BLOCKS.register("strawberrycandybush",
+			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
+					.doesNotBlockMovement().
+					zeroHardnessAndResistance()
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.PLANT)));
+	
+	public static final RegistryObject<Block> RASPBERRYCANDYBUSH = BLOCKS.register("raspberrycandybush",
+			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
+					.doesNotBlockMovement().
+					zeroHardnessAndResistance()
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.PLANT)));
+	
+	public static final RegistryObject<Block> BLUEBERRYCANDYBUSH = BLOCKS.register("blueberrycandybush",
+			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
+					.doesNotBlockMovement().
+					zeroHardnessAndResistance()
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.PLANT)));
+	
+	public static final RegistryObject<Block> LEMONCANDYBUSH = BLOCKS.register("lemoncandybush",
+			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
+					.doesNotBlockMovement().
+					zeroHardnessAndResistance()
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.PLANT)));
+	
+	public static final RegistryObject<Block> ORANGECANDYBUSH = BLOCKS.register("orangecandybush",
+			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
+					.doesNotBlockMovement().
+					zeroHardnessAndResistance()
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.PLANT)));
+	
+	public static final RegistryObject<Block> CHOCOLATECINERARIA = BLOCKS.register("chocolatecineraria",
+			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
+					.doesNotBlockMovement().
+					zeroHardnessAndResistance()
+					.tickRandomly()
+					.notSolid()
+					.sound(SoundType.PLANT)));
+	
 //POISONBERRY-STUFF	
 	
 	public static final RegistryObject<Block> POISONBERRYWOODPLANKS = BLOCKS.register("poisonberrywoodplanks",
@@ -75,7 +164,7 @@ public class BlockInit {
 					.sound(SoundType.PLANT)));
 	
 	public static final RegistryObject<Block> POISONGRASSBLOCK = BLOCKS.register("poisongrassblock",
-			() -> new Block(AbstractBlock.Properties.create(Material.LEAVES, MaterialColor.WHITE_TERRACOTTA)
+			() -> new Block(AbstractBlock.Properties.create(Material.ORGANIC, MaterialColor.GRASS)
 					.hardnessAndResistance(0.2f,1f)
 					.tickRandomly()
 					.notSolid()
@@ -88,7 +177,7 @@ public class BlockInit {
 					.tickRandomly()
 					.notSolid()
 					.sound(SoundType.PLANT)));
-	
+	//other
 	public static final RegistryObject<Block> CANDYCANEBUSH = BLOCKS.register("candycanebush",
 			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.RED)
 					.doesNotBlockMovement()
@@ -261,11 +350,18 @@ public class BlockInit {
 					.harvestLevel(1)
 					.sound(SoundType.NETHER_BRICK)));
 	
+	public static final RegistryObject<Block> WAFERWOODPLANKS = BLOCKS.register("waferwoodplanks",
+			() -> new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).sound(SoundType.BAMBOO)
+					.hardnessAndResistance(2f, 10f).harvestLevel(0).harvestTool(ToolType.AXE)));
+	
 	
 	public static final RegistryObject<Block> STRAWBERRYCHEST = BLOCKS.register("strawberrychest", 
 			() -> new StrawberryChest(AbstractBlock.Properties.create(Material.WOOD)
 					.hardnessAndResistance(2.5F).sound(SoundType.WOOD), null
 					));				
+	
+	public static final RegistryObject<Block> POPCORNBLOCK = BLOCKS.register("popcornblock",
+			() -> new Block(AbstractBlock.Properties.from(Blocks.COBBLESTONE)));
 	
 	public static final RegistryObject<Block> STRAWBERRYCANDYOREBLOCK = BLOCKS.register("strawberrycandyoreblock",
 			() -> new Block(AbstractBlock.Properties.from(Blocks.DIAMOND_ORE)));
@@ -281,6 +377,10 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> ORANGECANDYOREBLOCK = BLOCKS.register("orangecandyoreblock",
 			() -> new Block(AbstractBlock.Properties.from(Blocks.DIAMOND_ORE)));
+
+	
+	
+	//beds
 	
 	public static final RegistryObject<Block> STRAWBERRYICECREAMBED = BLOCKS.register("strawberryicecreambed",
 			() -> new StrawberryIceCreamBed( DyeColor.RED,AbstractBlock.Properties.create(Material.WOOD,
@@ -290,12 +390,28 @@ public class BlockInit {
 			() -> new BlackberryIceCreamBed( DyeColor.PURPLE,AbstractBlock.Properties.create(Material.WOOD,
 					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
 	
+	public static final RegistryObject<Block> BLUEBERRYICECREAMBED = BLOCKS.register("blueberryicecreambed",
+			() -> new BlueberryIceCreamBed( DyeColor.BLUE,AbstractBlock.Properties.create(Material.WOOD,
+					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
+	
+	public static final RegistryObject<Block> RASPBERRYICECREAMBED = BLOCKS.register("raspberryicecreambed",
+			() -> new RaspberryIceCreamBed( DyeColor.PINK,AbstractBlock.Properties.create(Material.WOOD,
+					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
+	
+	public static final RegistryObject<Block> LEMONICECREAMBED = BLOCKS.register("lemonicecreambed",
+			() -> new LemonIceCreamBed( DyeColor.YELLOW,AbstractBlock.Properties.create(Material.WOOD,
+					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
+
+//doors	
+	
 	public static final RegistryObject<Block> POISONOAKMINIDOOR = BLOCKS.register("poisonoakminidoor",
 			() -> new PoisonOakMiniDoor(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN)
 					.hardnessAndResistance(0.6f,1200f)
 					.harvestTool(ToolType.AXE)
 					.harvestLevel(0)
 					.sound(SoundType.BAMBOO)));	
+
+//lanterns	
 	
 	      public static final RegistryObject<Block> POISONBERRYLANTERN = BLOCKS.register("poisonberrylantern",
 	  			() -> new PoisonBerryLantern(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
@@ -305,6 +421,51 @@ public class BlockInit {
 	  					.setLightLevel((state) -> {
 	  				      return 15;  })
 	  					.notSolid()));		
+	      
+	      public static final RegistryObject<Block> STRAWBERRYLAMP = BLOCKS.register("strawberrylamp",
+		  			() -> new StrawberryLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> RASPBERRYLAMP = BLOCKS.register("raspberrylamp",
+		  			() -> new RaspberryLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> BLUEBERRYLAMP = BLOCKS.register("blueberrylamp",
+		  			() -> new BlueberryLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> BLACKBERRYLAMP = BLOCKS.register("blackberrylamp",
+		  			() -> new BlackberryLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> LEMONLAMP = BLOCKS.register("lemonlamp",
+		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
 	  					
 }
 

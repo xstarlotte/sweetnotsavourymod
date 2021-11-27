@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.client.entity.model;
 
-import com.charlotte.sweetnotsavourymod.common.entity.BlueberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.BlueberryIceCreamParrotEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 

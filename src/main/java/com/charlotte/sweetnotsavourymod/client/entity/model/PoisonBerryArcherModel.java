@@ -3,8 +3,8 @@ package com.charlotte.sweetnotsavourymod.client.entity.model;// Made with Blockb
 // Paste this class into your mod and generate all required imports
 
 
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryArcherEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.PoisonBerryAttackerEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryArcherEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryAttackerEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;

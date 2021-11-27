@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=east": {
+            "model": "sweetnotsavourymod:block/lemonicecreambed",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "sweetnotsavourymod:block/lemonicecreambed"
+        },
+        "facing=south": {
+            "model": "sweetnotsavourymod:block/lemonicecreambed",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "sweetnotsavourymod:block/lemonicecreambed",
+            "y": 270
+        }
+    }
+}

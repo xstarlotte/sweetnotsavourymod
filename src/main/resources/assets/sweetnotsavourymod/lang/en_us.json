@@ -111,9 +111,12 @@
 	"block.sweetnotsavourymod.poisongrassblock": "Poison Grass Block",
 	"block.sweetnotsavourymod.floweringpoisonberryleaves": "Flowering Poison Berry Leaves",
 	
+	"block.sweetnotsavourymod.waferwoodplanks": "Wafer Wood Planks",
 	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
 	"block.sweetnotsavourymod.strippedwaferwoodblock": "Stripped Wafer Wood Block",
 	"block.sweetnotsavourymod.icecreamtreesapling": "Ice Cream Tree Sapling",
+	
+	"block.sweetnotsavourymod.popcornblock": "Popcorn Block",
 	
 	"block.sweetnotsavourymod.strawberrycandyblock": "Strawberry Candy Block",
 	"block.sweetnotsavourymod.raspberrycandyblock": "Raspberry Candy Block",
@@ -144,6 +147,16 @@
 	
 	"block.sweetnotsavourymod.raspberryicingblock": "Raspberry Icing Block",
 	"block.sweetnotsavourymod.rainbowfrostingleaves": "Rainbow Frosting Leaves",
+	"block.sweetnotsavourymod.frostinggrass": "Frosting Grass",
+	"block.sweetnotsavourymod.frostingflower": "Frosting Flower",
+	"block.sweetnotsavourymod.frostingblock": "Frosting Block",
+	"block.sweetnotsavourymod.rainbowfrostinggrassblock": "Rainbow Frosting Grass Block",
+	"block.sweetnotsavourymod.strawberrycandybush": "Strawberry Candy Bush",
+	"block.sweetnotsavourymod.raspberrycandybush": "Raspberry Candy Bush",
+	"block.sweetnotsavourymod.blueberrycandybush": "Blueberry Candy Bush",
+	"block.sweetnotsavourymod.lemoncandybush": "Lemon Candy Bush",
+	"block.sweetnotsavourymod.orangecandybush": "Orange Candy Bush",
+	
 	
 	
 	"block.sweetnotsavourymod.strawberrycandyoreblock": "Strawberry Candy Ore Block",
@@ -154,6 +167,16 @@
 	
 	"block.sweetnotsavourymod.strawberryicecreambed": "Strawberry Ice Cream Bed",
 	"block.sweetnotsavourymod.blackberryicecreambed": "Blackberry Ice Cream Bed",
+	"block.sweetnotsavourymod.blueberryicecreambed": "Blueberry Ice Cream Bed",
+	"block.sweetnotsavourymod.raspberryicecreambed": "Raspberry Ice Cream Bed",
+	"block.sweetnotsavourymod.lemonicecreambed": "Lemon Ice Cream Bed",
+	
+	"block.sweetnotsavourymod.strawberrylamp": "Strawberry Lamp",
+	"block.sweetnotsavourymod.blackberrylamp": "Blackberry Lamp",
+	"block.sweetnotsavourymod.blueberrylamp": "Blueberry Lamp",
+	"block.sweetnotsavourymod.raspberrylamp": "Raspberry Lamp",
+	"block.sweetnotsavourymod.lemonlamp": "Lemon Lamp",
+	"block.sweetnotsavourymod.poisonberrylantern": "Poison Berry Lantern",
 	
 	"block.sweetnotsavourymod.poisonoakminidoor": "Poison Oak Mini Door",
 	
