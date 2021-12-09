@@ -1,12 +1,12 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.tileentities.BlackberryIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.BlueberryIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.LemonIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.RaspberryIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.StrawberryChestTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.StrawberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.tileentities.beds.BlackberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.tileentities.beds.BlueberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.tileentities.beds.LemonIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.tileentities.beds.RaspberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.tileentities.beds.StrawberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.tileentities.chests.StrawberryChestTe;
 
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;

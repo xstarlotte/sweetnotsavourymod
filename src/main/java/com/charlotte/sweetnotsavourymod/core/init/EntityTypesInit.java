@@ -1,10 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.entity.BananaMonkeyEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BananaMonkeyKingEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.CandyCaneWolfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryCheesecakeMouseEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.StrawberryParfaitPixieEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPigEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ToffeeToadEntity;
@@ -15,22 +12,42 @@ import com.charlotte.sweetnotsavourymod.common.entity.elves.OrangeElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.RaspberryElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.StrawberryElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.VanillaElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.mice.HazelnutCheesecakeMouseEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.mice.MarshmallowPieMouseEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.mice.StrawberryCheesecakeMouseEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.monkeys.BananaMonkeyEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.monkeys.BananaMonkeyKingEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.BlueberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.BlueberryParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.ChocolateIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.LemonIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.LemonParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.OrangeIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.OrangeParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.PeachIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.PeachParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.PineappleParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.RaspberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.RaspberryParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.StrawberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.StrawberryParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.ToffeeIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryArcherEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryAttackerEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerrySpriteEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.BlueberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.BlueberryPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.ChocolateIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.ChocolatePugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.LemonPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.OrangeIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.OrangePugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.RaspberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.RaspberryPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.StrawberryIceCreamPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.StrawberryPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.ToffeeIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.ToffeePugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.AngelCakeRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.BananaBreadRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.CarrotCakeRabbitEntity;
@@ -40,6 +57,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.rabbits.RedVelvetCakeRabbi
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.VanillaCakeRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.squirrels.CinnamonSquirrollEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.squirrels.StrawberrySwissSquirrollEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.wolves.CandyCaneWolfEntity;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -68,21 +86,67 @@ public class EntityTypesInit {
 					.size(0.5f, 0.5f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "poisonberrysprite").toString()));
 	
-	public static final RegistryObject<EntityType<StrawberryCheesecakeMouseEntity>> STRAWBERRYCHEESECAKEMOUSE = ENTITY_TYPES
-			.register("strawberrycheesecakemouse", () -> EntityType.Builder.create(StrawberryCheesecakeMouseEntity::new, EntityClassification.CREATURE)
-					.size(0.5f, 0.5f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberrycheesecakemouse").toString()));
+
 
 	
 	public static final RegistryObject<EntityType<StrawberryWaferschundEntity>> STRAWBERRYWAFERSCHUND = ENTITY_TYPES
 			.register("strawberrywaferschund", () -> EntityType.Builder.create(StrawberryWaferschundEntity::new, EntityClassification.CREATURE)
 					.size(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberrywaferschund").toString()));
-
+	
+	public static final RegistryObject<EntityType<StrawberryParfaitPixieEntity>> STRAWBERRYPARFAITPIXIE = ENTITY_TYPES
+			.register("strawberryparfaitpixie", () -> EntityType.Builder.create(StrawberryParfaitPixieEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberryparfaitpixie").toString()));
+	
+	//mice
+	
+	public static final RegistryObject<EntityType<StrawberryCheesecakeMouseEntity>> STRAWBERRYCHEESECAKEMOUSE = ENTITY_TYPES
+			.register("strawberrycheesecakemouse", () -> EntityType.Builder.create(StrawberryCheesecakeMouseEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberrycheesecakemouse").toString()));
+	
+	public static final RegistryObject<EntityType<HazelnutCheesecakeMouseEntity>> HAZELNUTCHEESECAKEMOUSE = ENTITY_TYPES
+			.register("hazelnutcheesecakemouse", () -> EntityType.Builder.create(HazelnutCheesecakeMouseEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "hazelnutcheesecakemouse").toString()));
+	
+	public static final RegistryObject<EntityType<MarshmallowPieMouseEntity>> MARSHMALLOWPIEMOUSE = ENTITY_TYPES
+			.register("marshmallowpiemouse", () -> EntityType.Builder.create(MarshmallowPieMouseEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "marshmallowpiemouse").toString()));
+	
+//pugs
+	
 	public static final RegistryObject<EntityType<StrawberryPugEntity>> STRAWBERRYPUG = ENTITY_TYPES
 			.register("strawberrypug", () -> EntityType.Builder.create(StrawberryPugEntity::new, EntityClassification.CREATURE)
 					.size(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberrypug").toString()));
+	
+	public static final RegistryObject<EntityType<BlueberryPugEntity>> BLUEBERRYPUG = ENTITY_TYPES
+			.register("blueberrypug", () -> EntityType.Builder.create(BlueberryPugEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "blueberrypug").toString()));
+	
+	public static final RegistryObject<EntityType<RaspberryPugEntity>> RASPBERRYPUG = ENTITY_TYPES
+			.register("raspberrypug", () -> EntityType.Builder.create(RaspberryPugEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "raspberrypug").toString()));
+	
+	public static final RegistryObject<EntityType<ChocolatePugEntity>> CHOCOLATEPUG = ENTITY_TYPES
+			.register("chocolatepug", () -> EntityType.Builder.create(ChocolatePugEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberrypug").toString()));
+	
+	public static final RegistryObject<EntityType<ToffeePugEntity>> TOFFEEPUG = ENTITY_TYPES
+			.register("toffeepug", () -> EntityType.Builder.create(ToffeePugEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "toffeepug").toString()));
+	
+	public static final RegistryObject<EntityType<OrangePugEntity>> ORANGEPUG = ENTITY_TYPES
+			.register("orangepug", () -> EntityType.Builder.create(OrangePugEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "orangepug").toString()));
 	
 	public static final RegistryObject<EntityType<ToffeeIceCreamPugEntity>> TOFFEEICECREAMPUG = ENTITY_TYPES
 			.register("toffeeicecreampug", () -> EntityType.Builder.create(ToffeeIceCreamPugEntity::new, EntityClassification.CREATURE)
@@ -108,6 +172,11 @@ public class EntityTypesInit {
 			.register("strawberryicecreampug", () -> EntityType.Builder.create(StrawberryIceCreamPugEntity::new, EntityClassification.CREATURE)
 					.size(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberryicecreampug").toString()));
+	
+	public static final RegistryObject<EntityType<OrangeIceCreamPugEntity>>ORANGEICECREAMPUG = ENTITY_TYPES
+			.register("orangeicecreampug", () -> EntityType.Builder.create(OrangeIceCreamPugEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "orangeicecreampug").toString()));
 	
 	public static final RegistryObject<EntityType<LemonPugEntity>>LEMONPUG = ENTITY_TYPES
 			.register("lemonpug", () -> EntityType.Builder.create(LemonPugEntity::new, EntityClassification.CREATURE)
@@ -214,10 +283,57 @@ public class EntityTypesInit {
 					.size(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "toffeetoad").toString()));
 	
+//parrots
+	
 	public static final RegistryObject<EntityType<LemonParrotEntity>>LEMONPARROT = ENTITY_TYPES
 			.register("lemonparrot", () -> EntityType.Builder.create(LemonParrotEntity::new, EntityClassification.CREATURE)
 					.size(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "lemonparrot").toString()));
+	
+	public static final RegistryObject<EntityType<BlueberryParrotEntity>>BLUEBERRYPARROT = ENTITY_TYPES
+			.register("blueberryparrot", () -> EntityType.Builder.create(BlueberryParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "blueberryparrot").toString()));
+	
+	public static final RegistryObject<EntityType<RaspberryParrotEntity>>RASPBERRYPARROT = ENTITY_TYPES
+			.register("raspberryparrot", () -> EntityType.Builder.create(RaspberryParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "raspberryparrot").toString()));
+	
+	public static final RegistryObject<EntityType<PineappleParrotEntity>>PINEAPPLEPARROT = ENTITY_TYPES
+			.register("pineappleparrot", () -> EntityType.Builder.create(PineappleParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "pineappleparrot").toString()));
+	
+	public static final RegistryObject<EntityType<OrangeParrotEntity>>ORANGEPARROT = ENTITY_TYPES
+			.register("orangeparrot", () -> EntityType.Builder.create(OrangeParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "orangeparrot").toString()));
+	
+	public static final RegistryObject<EntityType<PeachParrotEntity>>PEACHPARROT = ENTITY_TYPES
+			.register("peachparrot", () -> EntityType.Builder.create(PeachParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "peachparrot").toString()));
+	
+	public static final RegistryObject<EntityType<OrangeIceCreamParrotEntity>>ORANGEICECREAMPARROT = ENTITY_TYPES
+			.register("orangeicecreamparrot", () -> EntityType.Builder.create(OrangeIceCreamParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "orangeicecreamparrot").toString()));
+	
+	public static final RegistryObject<EntityType<PeachIceCreamParrotEntity>>PEACHICECREAMPARROT = ENTITY_TYPES
+			.register("peachicecreamparrot", () -> EntityType.Builder.create(PeachIceCreamParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "peachicecreamparrot").toString()));
+	
+	public static final RegistryObject<EntityType<ToffeeIceCreamParrotEntity>>TOFFEEICECREAMPARROT = ENTITY_TYPES
+			.register("toffeeicecreamparrot", () -> EntityType.Builder.create(ToffeeIceCreamParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "toffeeicecreamparrot").toString()));
+	
+	public static final RegistryObject<EntityType<StrawberryParrotEntity>>STRAWBERRYPARROT = ENTITY_TYPES
+			.register("strawberryparrot", () -> EntityType.Builder.create(StrawberryParrotEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberryparrot").toString()));
 	
 	public static final RegistryObject<EntityType<LemonIceCreamParrotEntity>>LEMONICECREAMPARROT = ENTITY_TYPES
 			.register("lemonicecreamparrot", () -> EntityType.Builder.create(LemonIceCreamParrotEntity::new, EntityClassification.CREATURE)

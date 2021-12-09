@@ -1,0 +1,192 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.waferschund.idle": {
+			"loop": true,
+			"animation_length": 3.36,
+			"bones": {
+				"body": {
+					"position": {
+						"vector": [0, "-0.2-math.sin(query.anim_time*150)*0.1", 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*150)*10"]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*150)*1", 0, 0]
+					}
+				},
+				"ear1": {
+					"rotation": {
+						"vector": [0, 0, "-7.5+math.sin(query.anim_time*150)*5"]
+					}
+				},
+				"ear2": {
+					"rotation": {
+						"vector": [0, 0, "7.5-math.sin(query.anim_time*150)*5"]
+					}
+				},
+				"mouth": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*150)*1", 0, 0]
+					}
+				},
+				"jaw": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*150)*10", 0, 0]
+					}
+				}
+			}
+		},
+		"animation.waferschund.sitting": {
+			"loop": true,
+			"animation_length": 2.56,
+			"bones": {
+				"leg4": {
+					"rotation": {
+						"vector": [0, 42.5, 0]
+					},
+					"position": {
+						"vector": [-1, 0, 0]
+					}
+				},
+				"leg2": {
+					"position": {
+						"vector": [0, 0, 1]
+					}
+				},
+				"leg3": {
+					"rotation": {
+						"vector": [0, -45, 0]
+					},
+					"position": {
+						"vector": [1.2, 0, -0.3]
+					}
+				},
+				"leg1": {
+					"position": {
+						"vector": [0, 0, 1]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [-35, 0, 0]
+					},
+					"position": {
+						"vector": [0, "-1-0.2-math.sin(query.anim_time*150)*0.1", 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": [-57.5, "math.sin(query.anim_time*150)*10", 0]
+					},
+					"position": {
+						"vector": [0, 0.8, 1.6]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": ["37.5+math.sin(query.anim_time*150)*1", 0, 0]
+					}
+				},
+				"ear1": {
+					"rotation": {
+						"vector": [0, 0, "-7.5+math.sin(query.anim_time*150)*5"]
+					}
+				},
+				"ear2": {
+					"rotation": {
+						"vector": [0, 0, "7.5-math.sin(query.anim_time*150)*5"]
+					}
+				},
+				"mouth": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*150)*1", 0, 0]
+					}
+				},
+				"jaw": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*150)*10", 0, 0]
+					}
+				}
+			}
+		},
+		"animation.waferschund.running": {
+			"loop": true,
+			"bones": {
+				"wholebody": {
+					"rotation": {
+						"vector": ["-math.sin(query.anim_time*1800)*5", 0, 0]
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*1800)*0.4", 0]
+					}
+				},
+				"leg4": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*900+60)*40", 0, 0]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"vector": ["-12.5-math.sin(query.anim_time*900+60)*40", 0, 0]
+					}
+				},
+				"leg3": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*900)*40", 0, 0]
+					}
+				},
+				"leg1": {
+					"rotation": {
+						"vector": ["-math.sin(query.anim_time*900)*40", 0, 0]
+					}
+				},
+				"body": {
+					"position": {
+						"vector": [0, -0.3, 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": ["-87.5-math.sin(query.anim_time*1800)*5", "math.sin(query.anim_time*1800)*5", "math.sin(query.anim_time*1800)*5"]
+					},
+					"position": {
+						"vector": [0, 0.1, 1.7]
+					}
+				},
+				"ear1": {
+					"rotation": {
+						"vector": [52.5, "37.5-math.sin(query.anim_time*900)*25", -10]
+					},
+					"position": {
+						"vector": [-0.7, -1, 0]
+					}
+				},
+				"ear2": {
+					"rotation": {
+						"vector": [52.5, "-37.5+math.sin(query.anim_time*900)*25", 10]
+					},
+					"position": {
+						"vector": [0.7, -1, 0]
+					}
+				},
+				"mouth": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*900)*1", 0, 0]
+					}
+				},
+				"jaw": {
+					"rotation": {
+						"vector": ["25+math.sin(query.anim_time*900)*20", 0, 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

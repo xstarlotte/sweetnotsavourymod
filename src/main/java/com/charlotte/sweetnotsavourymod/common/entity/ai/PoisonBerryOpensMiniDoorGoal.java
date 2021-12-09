@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.ai;
 
-import com.charlotte.sweetnotsavourymod.common.block.PoisonOakMiniDoor;
+import com.charlotte.sweetnotsavourymod.common.block.poisonberry.PoisonOakMiniDoor;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.MobEntity;

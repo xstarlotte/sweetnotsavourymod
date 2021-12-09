@@ -52,12 +52,18 @@
 	"item.sweetnotsavourymod.poisonberryarcherspawnegg": "Poison Berry Archer Spawn Egg",
 	
 	"item.sweetnotsavourymod.lemonpugspawnegg": "Lemon Pug Spawn Egg",
+	"item.sweetnotsavourymod.blueberrypugspawnegg": "Blueberry Pug Spawn Egg",
+	"item.sweetnotsavourymod.raspberrypugspawnegg": "Raspberry Pug Spawn Egg",
+	"item.sweetnotsavourymod.toffeepugspawnegg": "Toffee Pug Spawn Egg",
+	"item.sweetnotsavourymod.chocolatepugspawnegg": "Chocolate Pug Spawn Egg",
+	"item.sweetnotsavourymod.orangepugspawnegg": "Orange Pug Spawn Egg",
 	"item.sweetnotsavourymod.strawberrypugspawnegg": "Strawberry Pug Spawn Egg",
 	"item.sweetnotsavourymod.toffeeicecreampugspawnegg": "Toffee Ice Cream Pug Spawn Egg",
 	"item.sweetnotsavourymod.blueberryicecreampugspawnegg": "Blueberry Ice Cream Pug Spawn Egg",
 	"item.sweetnotsavourymod.chocolateicecreampugspawnegg": "Chocolate Ice Cream Pug Spawn Egg",
 	"item.sweetnotsavourymod.raspberryicecreampugspawnegg": "Raspberry Ice Cream Pug Spawn Egg",
 	"item.sweetnotsavourymod.strawberryicecreampugspawnegg": "Strawberry Ice Cream Pug Spawn Egg",
+	"item.sweetnotsavourymod.orangeicecreampugspawnegg": "Orange Ice Cream Pug Spawn Egg",
 	
 	"item.sweetnotsavourymod.strawberryelfspawnegg": "Strawberry Elf Spawn Egg",
 	"item.sweetnotsavourymod.blueberryelfspawnegg": "Blueberry Elf Spawn Egg",
@@ -88,14 +94,29 @@
 	"item.sweetnotsavourymod.cinnamonsquirrollspawnegg": "Cinnamon Squirroll Spawn Egg",
 	"item.sweetnotsavourymod.strawberryswisssquirrollspawnegg": "Strawberry Swiss Squirroll Spawn Egg",
 	
+	"item.sweetnotsavourymod.strawberrycheesecakemousespawnegg": "Strawberry Cheesecake Mouse Spawn Egg",
+	"item.sweetnotsavourymod.hazelnutcheesecakemousespawnegg": "Hazelnut Cheesecake Mouse Spawn Egg",
+	"item.sweetnotsavourymod.marshmallowpiemousespawnegg": "Marshmallow Pie Mouse Spawn Egg",
+	
 	"item.sweetnotsavourymod.toffeetoadspawnegg": "Toffee Toad Spawn Egg",
 	
 	"item.sweetnotsavourymod.lemonparrotspawnegg": "Lemon Parrot Spawn Egg",
+	"item.sweetnotsavourymod.orangeparrotspawnegg": "Orange Parrot Spawn Egg",
+	"item.sweetnotsavourymod.raspberryparrotspawnegg": "Raspberry Parrot Spawn Egg",
+	"item.sweetnotsavourymod.peachparrotspawnegg": "Peach Parrot Spawn Egg",
+	"item.sweetnotsavourymod.pineappleparrotspawnegg": "Pineapple Parrot Spawn Egg",
+	"item.sweetnotsavourymod.blueberryparrotspawnegg": "Blueberry Parrot Spawn Egg",
+	"item.sweetnotsavourymod.strawberryparrotspawnegg": "Strawberry Parrot Spawn Egg",
 	"item.sweetnotsavourymod.lemonicecreamparrotspawnegg": "Lemon Ice Cream Parrot Spawn Egg",
 	"item.sweetnotsavourymod.strawberryicecreamparrotspawnegg": "Strawberry Ice Cream Parrot Spawn Egg",
 	"item.sweetnotsavourymod.raspberryicecreamparrotspawnegg": "Raspberry Ice Cream Parrot Spawn Egg",
 	"item.sweetnotsavourymod.blueberryicecreamparrotspawnegg": "Blueberry Ice Cream Parrot Spawn Egg",
 	"item.sweetnotsavourymod.chocolateicecreamparrotspawnegg": "Chocolate Ice Cream Parrot Spawn Egg",
+	"item.sweetnotsavourymod.peachicecreamparrotspawnegg": "Peach Ice Cream Parrot Spawn Egg",
+	"item.sweetnotsavourymod.orangeicecreamparrotspawnegg": "Orange Ice Cream Parrot Spawn Egg",
+	"item.sweetnotsavourymod.toffeeicecreamparrotspawnegg": "Toffee Ice Cream Parrot Spawn Egg",
+	
+	"item.sweetnotsavourymod.strawberryparfaitpixiespawnegg": "Strawberry Parfait Pixie Spawn Egg",
 	
 	"item.sweetnotsavourymod.orangeicecreamsword": "Orange Ice Cream Sword",
 	"item.sweetnotsavourymod.lemonicecreamsword": "Lemon Ice Cream Sword",
@@ -136,7 +157,7 @@
 	"block.sweetnotsavourymod.candycaneblock": "Candy Cane Block",
 	"block.sweetnotsavourymod.chocolatechipcookieblock": "Chocolate Chip Cookie Block",
 	"block.sweetnotsavourymod.whitechocolatechipcookieblock": "White Chocolate Chip Cookie Block",
-	"block.sweetnotsavourymod.rainbowchocolatechipcookieblock": "Rainbow Cookie Block",
+	"block.sweetnotsavourymod.rainbowcookieblock": "Rainbow Cookie Block",
 	
 	"block.sweetnotsavourymod.meltingchocolateblock": "Melting Chocolate",
 	"block.sweetnotsavourymod.meltingstrawberrychocolateblock": "Melting Strawberry Chocolate",
@@ -157,6 +178,8 @@
 	"block.sweetnotsavourymod.lemoncandybush": "Lemon Candy Bush",
 	"block.sweetnotsavourymod.orangecandybush": "Orange Candy Bush",
 	
+	"block.sweetnotsavourymod.candycanebush": "CandyCaneBush",
+	"block.sweetnotsavourymod.chocolatecineraria": "Chocolate Cineraria",
 	
 	
 	"block.sweetnotsavourymod.strawberrycandyoreblock": "Strawberry Candy Ore Block",
@@ -176,6 +199,13 @@
 	"block.sweetnotsavourymod.blueberrylamp": "Blueberry Lamp",
 	"block.sweetnotsavourymod.raspberrylamp": "Raspberry Lamp",
 	"block.sweetnotsavourymod.lemonlamp": "Lemon Lamp",
+	"block.sweetnotsavourymod.orangelamp": "Orange Lamp",
+	"block.sweetnotsavourymod.strawberrylollipoplamp": "Strawberry Lollipop Lamp",
+	"block.sweetnotsavourymod.blackberrylollipoplamp": "Blackberry Lollipop Lamp",
+	"block.sweetnotsavourymod.blueberrylollipoplamp": "Blueberry Lollipop Lamp",
+	"block.sweetnotsavourymod.raspberrylollipoplamp": "Raspberry Lollipop Lamp",
+	"block.sweetnotsavourymod.orangelollipoplamp": "Orange Lollipop Lamp",
+	"block.sweetnotsavourymod.lemonlollipoplamp": "Lemon Lollipop Lamp",
 	"block.sweetnotsavourymod.poisonberrylantern": "Poison Berry Lantern",
 	
 	"block.sweetnotsavourymod.poisonoakminidoor": "Poison Oak Mini Door",
@@ -186,11 +216,17 @@
 	
 	"entity.sweetnotsavourymod.strawberrypug": "Strawberry Pug",
 	"entity.sweetnotsavourymod.lemonpug": "Lemon Pug",
+	"entity.sweetnotsavourymod.orangepug": "Orange Pug",
+	"entity.sweetnotsavourymod.toffeepug": "Toffee Pug",
+	"entity.sweetnotsavourymod.chocolatepug": "Chocolate Pug",
+	"entity.sweetnotsavourymod.blueberrypug": "Blueberry Pug",
+	"entity.sweetnotsavourymod.raspberrypug": "Raspberry Pug",
 	"entity.sweetnotsavourymod.toffeeicecreampug": "Toffee Ice Cream Pug",
 	"entity.sweetnotsavourymod.blueberryicecreampug": "Blueberry Ice Cream Pug",
 	"entity.sweetnotsavourymod.chocolateicecreampug": "Chocolate Ice Cream Pug",
 	"entity.sweetnotsavourymod.raspberryicecreampug": "Raspberry Ice Cream Pug",
 	"entity.sweetnotsavourymod.strawberryicecreampug": "Strawberry Ice Cream Pug",
+	"entity.sweetnotsavourymod.orangeicecreampug": "Orange Ice Cream Pug",
 	
 	"entity.sweetnotsavourymod.strawberryelf": "Strawberry Elf",
 	"entity.sweetnotsavourymod.blueberryelf": "Blueberry Elf",
@@ -221,14 +257,31 @@
 	"entity.sweetnotsavourymod.cinnamonsquirroll": "Cinnamon Squirroll",
 	"entity.sweetnotsavourymod.strawberryswisssquirroll": "Strawberry Swiss Squirroll",
 	
+	"entity.sweetnotsavourymod.strawberrycheesecakemouse": "Strawberry Cheesecake Mouse",
+	"entity.sweetnotsavourymod.hazelnutcheesecakemouse": "Hazelnut Cheesecake Mouse",
+	"entity.sweetnotsavourymod.marshmallowpiemouse": "Marshmallow Pie Mouse",
+	
 	"entity.sweetnotsavourymod.toffeetoad": "Toffee Toad",
 	
 	"entity.sweetnotsavourymod.lemonparrot": "Lemon Parrot",
+	"entity.sweetnotsavourymod.strawberryparrot": "Strawberry Parrot",
+	"entity.sweetnotsavourymod.raspberryparrot": "Raspberry Parrot",
+	"entity.sweetnotsavourymod.blueberryparrot": "Blueberry Parrot",
+	"entity.sweetnotsavourymod.orangeparrot": "Orange Parrot",
+	"entity.sweetnotsavourymod.peachparrot": "Peach Parrot",
+	"entity.sweetnotsavourymod.pineappleparrot": "Pineapple Parrot",
 	"entity.sweetnotsavourymod.lemonicecreamparrot": "Lemon Ice Cream Parrot",
+	"entity.sweetnotsavourymod.orangeicecreamparrot": "Orange Ice Cream Parrot",
+	"entity.sweetnotsavourymod.peachicecreamparrot": "Peach Ice Cream Parrot",
+	"entity.sweetnotsavourymod.toffeeicecreamparrot": "Toffee Ice Cream Parrot",
 	"entity.sweetnotsavourymod.strawberryicecreamparrot": "Strawberry Ice Cream Parrot",
 	"entity.sweetnotsavourymod.raspberryicecreamparrot": "Raspberry Ice Cream Parrot",
 	"entity.sweetnotsavourymod.blueberryicecreamparrot": "Blueberry Ice Cream Parrot",
 	"entity.sweetnotsavourymod.chocolateicecreamparrot": "Chocolate Ice Cream Parrot",
+	
+	"entity.sweetnotsavourymod.strawberryparfaitpixie": "Strawberry Parfait Pixie",
+	
+	"block.sweetnotsavourymod.strawberrychest": "Strawberry Chest",
 	
 	"biome.sweetnotsavourymod.icecreamforestbiome": "Ice Cream Forest Biome",
 	"biome.sweetnotsavourymod.candycaneplainsbiome": "Candy Cane Plains Biome",

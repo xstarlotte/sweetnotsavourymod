@@ -4,9 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
-import com.charlotte.sweetnotsavourymod.common.entity.BananaMonkeyEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.BananaMonkeyKingEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.CandyCaneWolfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.StrawberryParfaitPixieEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPigEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ToffeeToadEntity;
@@ -17,22 +15,42 @@ import com.charlotte.sweetnotsavourymod.common.entity.elves.OrangeElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.RaspberryElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.StrawberryElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.VanillaElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.mice.HazelnutCheesecakeMouseEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.mice.MarshmallowPieMouseEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.mice.StrawberryCheesecakeMouseEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.monkeys.BananaMonkeyEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.monkeys.BananaMonkeyKingEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.BlueberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.BlueberryParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.ChocolateIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.LemonIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.LemonParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.OrangeIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.OrangeParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.PeachIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.PeachParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.PineappleParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.RaspberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.RaspberryParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.StrawberryIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.StrawberryParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.ToffeeIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryArcherEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryAttackerEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerrySpriteEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.BlueberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.BlueberryPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.ChocolateIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.ChocolatePugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.LemonPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.OrangeIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.OrangePugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.RaspberryIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.RaspberryPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.StrawberryIceCreamPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.StrawberryPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.ToffeeIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pugs.ToffeePugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.AngelCakeRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.BananaBreadRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.CarrotCakeRabbitEntity;
@@ -42,6 +60,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.rabbits.RedVelvetCakeRabbi
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.VanillaCakeRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.squirrels.CinnamonSquirrollEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.squirrels.StrawberrySwissSquirrollEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.wolves.CandyCaneWolfEntity;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
 import com.charlotte.sweetnotsavourymod.core.init.BiomeInit;
@@ -145,10 +164,48 @@ public class SweetNotSavouryMod {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYWAFERSCHUND.get(), StrawberryWaferschundEntity.setAttributes().create());
     	});
 		
+		DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPARFAITPIXIE.get(), StrawberryParfaitPixieEntity.setAttributes().create());
+    	});
+		
+	//mice
+		
+		DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYCHEESECAKEMOUSE.get(), StrawberryCheesecakeMouseEntity.setAttributes().create());
+    	});
+		
+		DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.HAZELNUTCHEESECAKEMOUSE.get(), HazelnutCheesecakeMouseEntity.setAttributes().create());
+    	});
+		
+		DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.MARSHMALLOWPIEMOUSE.get(), MarshmallowPieMouseEntity.setAttributes().create());
+    	});
+		
 		
   //Pugs  
     	DeferredWorkQueue.runLater(() -> {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPUG.get(), StrawberryPugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.RASPBERRYPUG.get(), RaspberryPugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYPUG.get(), BlueberryPugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.TOFFEEPUG.get(), ToffeePugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.CHOCOLATEPUG.get(), ChocolatePugEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEPUG.get(), OrangePugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
@@ -170,6 +227,12 @@ public class SweetNotSavouryMod {
     	DeferredWorkQueue.runLater(() -> {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYICECREAMPUG.get(), StrawberryIceCreamPugEntity.setAttributes().create());
     	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEICECREAMPUG.get(), OrangeIceCreamPugEntity.setAttributes().create());
+    	});
+    	
+  
     	
     	DeferredWorkQueue.runLater(() -> {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.LEMONPUG.get(), LemonPugEntity.setAttributes().create());
@@ -266,6 +329,42 @@ public class SweetNotSavouryMod {
     	
     	DeferredWorkQueue.runLater(() -> {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.LEMONPARROT.get(), LemonParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEPARROT.get(), OrangeParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.PEACHPARROT.get(), PeachParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.PINEAPPLEPARROT.get(), PineappleParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYPARROT.get(), BlueberryParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.RASPBERRYPARROT.get(), RaspberryParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEICECREAMPARROT.get(), OrangeIceCreamParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.PEACHICECREAMPARROT.get(), PeachIceCreamParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.TOFFEEICECREAMPARROT.get(), ToffeeIceCreamParrotEntity.setAttributes().create());
+    	});
+    	
+    	DeferredWorkQueue.runLater(() -> {
+    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPARROT.get(), StrawberryParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {

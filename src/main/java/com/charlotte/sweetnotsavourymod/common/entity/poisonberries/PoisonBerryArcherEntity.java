@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.poisonberries;
 
-import com.charlotte.sweetnotsavourymod.client.entity.PoisonBerryArcherRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.poisonberries.PoisonBerryArcherRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.ai.PoisonBerryMeleeAttackGoal;
 import com.charlotte.sweetnotsavourymod.common.entity.ai.PoisonBerryOpensMiniDoorGoal;
 import net.minecraft.block.BlockState;

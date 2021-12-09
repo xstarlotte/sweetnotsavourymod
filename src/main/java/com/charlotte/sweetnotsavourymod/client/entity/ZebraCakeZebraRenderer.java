@@ -3,11 +3,13 @@ package com.charlotte.sweetnotsavourymod.client.entity;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.model.AngelCakeRabbitModel;
 import com.charlotte.sweetnotsavourymod.client.entity.model.ZebraCakeZebraModel;
+import com.charlotte.sweetnotsavourymod.client.entity.model.rabbits.AngelCakeRabbitModel;
+import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ZebraCakeZebraEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.AngelCakeRabbitEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -40,6 +42,16 @@ public class ZebraCakeZebraRenderer extends GeoEntityRenderer <ZebraCakeZebraEnt
 
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}
+	
+	@Override
+    public void renderEarly(ZebraCakeZebraEntity animatable, MatrixStack stackIn, float ticks,
+                            IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn,
+                            float red, float green, float blue, float partialTicks) {
+        super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+                red, green, blue, partialTicks);
+        stackIn.scale(1.6F, 1.6F, 1.6F);
+    }
+	
 	
 }
 

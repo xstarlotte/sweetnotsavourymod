@@ -140,34 +140,37 @@ public void makeTamed(PlayerEntity player) {
 @Override
 public ActionResultType func_230254_b_(PlayerEntity player, Hand hand)
 {
-	ItemStack itemstack = player.getHeldItem(hand);
-	Item item = itemstack.getItem();
-	
-	if (item == Items.SUGAR && !isTamed()) {
-		if (world.isRemote) {
-			return ActionResultType.CONSUME;
-		} else {
-			if (!player.abilities.isCreativeMode) {
-				itemstack.shrink(1);
-			}
+    ItemStack itemstack = player.getHeldItem(hand);
+    Item item = itemstack.getItem();
 
-			if (!ForgeEventFactory.onAnimalTame(this, player)) {
-				makeTamed(player);
-				setSitting(true);
-			}
-			
-			
-			return ActionResultType.SUCCESS;
-		}
-	}
-	
-	if (itemstack.getItem() == Items.SUGAR) {
-		return ActionResultType.PASS;
-	}
-	
-	return super.func_230254_b_(player, hand);
+    if (item == Items.SUGAR && !isTamed()) {
+        if (world.isRemote) {
+            return ActionResultType.CONSUME;
+        } else {
+            if (!player.abilities.isCreativeMode) {
+                itemstack.shrink(1);
+            }
+
+            if (!ForgeEventFactory.onAnimalTame(this, player)) {
+                makeTamed(player);
+                setSitting(true);
+            }
+            
+            return ActionResultType.SUCCESS;
+        }
+    }
+
+    if(isTamed() && !world.isRemote() && hand == Hand.MAIN_HAND) {
+        setSitting(!isSitting());
+        return ActionResultType.SUCCESS;
+    }
+    
+    if (itemstack.getItem() == Items.SUGAR) {
+        return ActionResultType.PASS;
+    }
+    
+    return super.func_230254_b_(player, hand);
 }
-
 public void setSitting(boolean sitting) {
     this.dataManager.set(SITTING, sitting);
 }

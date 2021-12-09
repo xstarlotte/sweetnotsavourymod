@@ -1,21 +1,21 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.block.BlackberryIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.BlackberryLamp;
-import com.charlotte.sweetnotsavourymod.common.block.BlueberryIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.BlueberryLamp;
-import com.charlotte.sweetnotsavourymod.common.block.CandyCaneSugarCaneBlock;
-import com.charlotte.sweetnotsavourymod.common.block.IceCreamTreeSaplingBlock;
-import com.charlotte.sweetnotsavourymod.common.block.LemonIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.LemonLamp;
-import com.charlotte.sweetnotsavourymod.common.block.PoisonBerryLantern;
-import com.charlotte.sweetnotsavourymod.common.block.PoisonOakMiniDoor;
-import com.charlotte.sweetnotsavourymod.common.block.RaspberryIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.RaspberryLamp;
-import com.charlotte.sweetnotsavourymod.common.block.StrawberryChest;
-import com.charlotte.sweetnotsavourymod.common.block.StrawberryIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.StrawberryLamp;
+import com.charlotte.sweetnotsavourymod.common.block.beds.BlackberryIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.beds.BlueberryIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.beds.LemonIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.beds.RaspberryIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.beds.StrawberryIceCreamBed;
+import com.charlotte.sweetnotsavourymod.common.block.chests.StrawberryChest;
+import com.charlotte.sweetnotsavourymod.common.block.lamps.BlackberryLamp;
+import com.charlotte.sweetnotsavourymod.common.block.lamps.BlueberryLamp;
+import com.charlotte.sweetnotsavourymod.common.block.lamps.LemonLamp;
+import com.charlotte.sweetnotsavourymod.common.block.lamps.PoisonBerryLantern;
+import com.charlotte.sweetnotsavourymod.common.block.lamps.RaspberryLamp;
+import com.charlotte.sweetnotsavourymod.common.block.lamps.StrawberryLamp;
+import com.charlotte.sweetnotsavourymod.common.block.plantscrops.CandyCaneSugarCaneBlock;
+import com.charlotte.sweetnotsavourymod.common.block.plantscrops.IceCreamTreeSaplingBlock;
+import com.charlotte.sweetnotsavourymod.common.block.poisonberry.PoisonOakMiniDoor;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -466,6 +466,71 @@ public class BlockInit {
 		  					.setLightLevel((state) -> {
 		  				      return 15;  })
 		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> ORANGELAMP = BLOCKS.register("orangelamp",
+		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> BLUEBERRYLOLLIPOPLAMP = BLOCKS.register("blueberrylollipoplamp",
+		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> STRAWBERRYLOLLIPOPLAMP = BLOCKS.register("strawberrylollipoplamp",
+		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> BLACKBERRYLOLLIPOPLAMP = BLOCKS.register("blackberrylollipoplamp",
+		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	  					
+	      public static final RegistryObject<Block> RASPBERRYLOLLIPOPLAMP = BLOCKS.register("raspberrylollipoplamp",
+		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> ORANGELOLLIPOPLAMP = BLOCKS.register("orangelollipoplamp",
+		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	      
+	      public static final RegistryObject<Block> LEMONLOLLIPOPLAMP = BLOCKS.register("lemonlollipoplamp",
+		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
+		  					.hardnessAndResistance(3.5f)
+		  					.setRequiresTool()
+		  					.sound(SoundType.LANTERN)
+		  					.setLightLevel((state) -> {
+		  				      return 15;  })
+		  					.notSolid()));	
+	  					
+	  								
 	  					
 }
 

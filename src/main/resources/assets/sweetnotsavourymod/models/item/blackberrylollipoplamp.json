@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/blackberrylollipoplamp",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/blackberrylollipoplamp"
+  }
+}

@@ -1,40 +1,39 @@
 package com.charlotte.sweetnotsavourymod.client.entity;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.model.ToffeeToadModel;
 import com.charlotte.sweetnotsavourymod.common.entity.ToffeeToadEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
 
+import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class ToffeeToadRenderer extends MobRenderer <ToffeeToadEntity, 
-ToffeeToadModel<ToffeeToadEntity>> {
+public class ToffeeToadRenderer extends GeoEntityRenderer <ToffeeToadEntity> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(SweetNotSavouryMod.MOD_ID, 
 			"textures/entity/toffeetoad/toffeetoad.png");
 	
-	public ToffeeToadRenderer(EntityRendererManager manager) {
+	public ToffeeToadRenderer(EntityRendererManager renderManager) {
 		
-		super(manager, new ToffeeToadModel<>(), 0.3f);
-		
+		super(renderManager, new ToffeeToadModel()); 
+		this.shadowSize = 0.2F;			
 	}
-	
 
-	@Override
-	protected void preRenderCallback(@NotNull ToffeeToadEntity entitylivingbaseIn, @NotNull MatrixStack matrixStackIn,
-			float partialTickTime) {
-		matrixStackIn.scale(0.45F, 0.45F, 0.45F);
-		
-	}
-	
 	@Override
 	public ResourceLocation getEntityTexture(ToffeeToadEntity entity) {
 		return TEXTURE;
-	}
+	}	
 	
+	@Override
+    public void renderEarly(ToffeeToadEntity animatable, MatrixStack stackIn, float ticks,
+                            IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn,
+                            float red, float green, float blue, float partialTicks) {
+        super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+                red, green, blue, partialTicks);
+        stackIn.scale(0.4F, 0.4F, 0.4F);
+    }
 	
 }

@@ -1,11 +1,11 @@
 package com.charlotte.sweetnotsavourymod.client.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.BlackberryIceCreamBedTeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.BlueberryIceCreamBedTeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.LemonIceCreamBedTeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.RaspberryIceCreamBedTeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.StrawberryIceCreamBedTeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.BlackberryIceCreamBedTeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.BlueberryIceCreamBedTeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.LemonIceCreamBedTeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.RaspberryIceCreamBedTeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.StrawberryIceCreamBedTeRenderer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 
@@ -67,6 +67,13 @@ public class ClientEvents{
         RenderTypeLookup.setRenderLayer(BlockInit.RASPBERRYLAMP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.BLACKBERRYLAMP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.BLUEBERRYLAMP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.ORANGELAMP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.BLUEBERRYLOLLIPOPLAMP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.STRAWBERRYLOLLIPOPLAMP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.RASPBERRYLOLLIPOPLAMP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.BLACKBERRYLOLLIPOPLAMP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.ORANGELOLLIPOPLAMP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.LEMONLOLLIPOPLAMP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.LEMONLAMP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.STRAWBERRYCHEST.get(), RenderType.getCutout());
     }

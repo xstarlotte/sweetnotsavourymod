@@ -15,6 +15,7 @@ import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.OwnerHurtByTargetGoal;
 import net.minecraft.entity.ai.goal.OwnerHurtTargetGoal;
+import net.minecraft.entity.ai.goal.SitGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.passive.TameableEntity;
@@ -98,73 +99,78 @@ public class LemonElfEntity extends TameableEntity implements IAnimatable
 
 	}
 		
-protected void registerGoals() {
-    this.goalSelector.addGoal(1, new SwimGoal(this));
-    this.goalSelector.addGoal(2, new LeapAtTargetGoal(this, 0.4F));
-    this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.0D, true));
-    this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
-    this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-    this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
-    this.goalSelector.addGoal(7, new LookRandomlyGoal(this));
-    this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-    this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
-    this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setCallsForHelp());
+	protected void registerGoals() {
+	    this.goalSelector.addGoal(1, new SwimGoal(this));
+	    this.goalSelector.addGoal(2, new SitGoal(this));
+	    this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
+	    this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
+	    this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
+	    this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+	    this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+	    this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
+	    this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
+	    this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+	    this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setCallsForHelp());
 
- }
-	
-@Override
-public void setTamed(boolean tamed)
-{
-	super.setTamed(tamed);
-	if (tamed) {
-		getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
-		getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
-		getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.6f);
-		this.setHealth(20.0F);
-	} else {
-		getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
-		getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
-	}
-}
-
-public void makeTamed(PlayerEntity player) {
-	if (!world.isRemote) {
-		super.setTamedBy(player);
-		this.navigator.clearPath();
-		this.setAttackTarget(null);
-		this.world.setEntityState(this, (byte)7);
-	}
-}
-@Override
-public ActionResultType func_230254_b_(PlayerEntity player, Hand hand)
-{
-	ItemStack itemstack = player.getHeldItem(hand);
-	Item item = itemstack.getItem();
-	
-	if (item == Items.SUGAR && !isTamed()) {
-		if (world.isRemote) {
-			return ActionResultType.CONSUME;
+	 }
+		
+	@Override
+	public void setTamed(boolean tamed)
+	{
+		super.setTamed(tamed);
+		if (tamed) {
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.6f);
+			this.setHealth(20.0F);
 		} else {
-			if (!player.abilities.isCreativeMode) {
-				itemstack.shrink(1);
-			}
-
-			if (!ForgeEventFactory.onAnimalTame(this, player)) {
-				makeTamed(player);
-				setSitting(true);
-			}
-			
-			
-			return ActionResultType.SUCCESS;
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
 		}
 	}
-	
-	if (itemstack.getItem() == Items.SUGAR) {
-		return ActionResultType.PASS;
+
+	public void makeTamed(PlayerEntity player) {
+		if (!world.isRemote) {
+			super.setTamedBy(player);
+			this.navigator.clearPath();
+			this.setAttackTarget(null);
+			this.world.setEntityState(this, (byte)7);
+		}
 	}
-	
-	return super.func_230254_b_(player, hand);
-}
+	@Override
+	public ActionResultType func_230254_b_(PlayerEntity player, Hand hand)
+	{
+	    ItemStack itemstack = player.getHeldItem(hand);
+	    Item item = itemstack.getItem();
+
+	    if (item == Items.SUGAR && !isTamed()) {
+	        if (world.isRemote) {
+	            return ActionResultType.CONSUME;
+	        } else {
+	            if (!player.abilities.isCreativeMode) {
+	                itemstack.shrink(1);
+	            }
+
+	            if (!ForgeEventFactory.onAnimalTame(this, player)) {
+	                makeTamed(player);
+	                setSitting(true);
+	            }
+	            
+	            return ActionResultType.SUCCESS;
+	        }
+	    }
+
+	    if(isTamed() && !world.isRemote() && hand == Hand.MAIN_HAND) {
+	        setSitting(!isSitting());
+	        return ActionResultType.SUCCESS;
+	    }
+	    
+	    if (itemstack.getItem() == Items.SUGAR) {
+	        return ActionResultType.PASS;
+	    }
+	    
+	    return super.func_230254_b_(player, hand);
+	}
 
 public void setSitting(boolean sitting) {
     this.dataManager.set(SITTING, sitting);
