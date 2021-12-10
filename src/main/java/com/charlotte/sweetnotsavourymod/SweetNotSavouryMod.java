@@ -167,6 +167,10 @@ public class SweetNotSavouryMod {
 		DeferredWorkQueue.runLater(() -> {
     		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPARFAITPIXIE.get(), StrawberryParfaitPixieEntity.setAttributes().create());
     	});
+
+		DeferredWorkQueue.runLater(() -> {
+			GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYPARFAITPIXIE.get(), BlueberryParfaitPixieEntity.setAttributes().create());
+		});
 		
 	//mice
 		

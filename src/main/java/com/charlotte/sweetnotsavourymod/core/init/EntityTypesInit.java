@@ -98,7 +98,12 @@ public class EntityTypesInit {
 			.register("strawberryparfaitpixie", () -> EntityType.Builder.create(StrawberryParfaitPixieEntity::new, EntityClassification.CREATURE)
 					.size(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberryparfaitpixie").toString()));
-	
+
+	public static final RegistryObject<EntityType<BlueberryParfaitPixieEntity>> BLUEBERRYPARFAITPIXIE = ENTITY_TYPES
+			.register("blueberryparfaitpixie", () -> EntityType.Builder.create(BlueberryParfaitPixieEntity::new, EntityClassification.CREATURE)
+					.size(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "blueberryparfaitpixie").toString()));
+
 	//mice
 	
 	public static final RegistryObject<EntityType<StrawberryCheesecakeMouseEntity>> STRAWBERRYCHEESECAKEMOUSE = ENTITY_TYPES
