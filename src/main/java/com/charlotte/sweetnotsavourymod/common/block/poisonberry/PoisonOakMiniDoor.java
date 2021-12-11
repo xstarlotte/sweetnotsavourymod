@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 
 import net.minecraft.sounds.SoundEvents;
 
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 
@@ -86,7 +87,7 @@ public class PoisonOakMiniDoor extends Block{
 
     public static final EnumProperty<DoorHingeSide> HINGE = BlockStateProperties.DOOR_HINGE;
 
-    private DoorHingeSide getHingeSide( BlockItemUseContext context ){
+    private DoorHingeSide getHingeSide( BlockPlaceContext context ){
         return DoorHingeSide.LEFT;
     }
 

@@ -6,15 +6,17 @@ import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
 
-public enum IceCreamToolMaterial implements IItemTier {
+public enum IceCreamToolMaterial implements Tier {
 	
-	STRAWBERRYICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.fromItems(ItemInit.SPRINKLES.get())),
-	ORANGEICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.fromItems(ItemInit.SPRINKLES.get())),
-	VANILLAICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.fromItems(ItemInit.SPRINKLES.get())),
-	BLUEBERRYICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.fromItems(ItemInit.SPRINKLES.get())),
-	LEMONICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.fromItems(ItemInit.SPRINKLES.get())),
-	RASPBERRYICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.fromItems(ItemInit.SPRINKLES.get()));
+	STRAWBERRYICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.of(ItemInit.SPRINKLES.get())),
+	ORANGEICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.of(ItemInit.SPRINKLES.get())),
+	VANILLAICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.of(ItemInit.SPRINKLES.get())),
+	BLUEBERRYICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.of(ItemInit.SPRINKLES.get())),
+	LEMONICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.of(ItemInit.SPRINKLES.get())),
+	RASPBERRYICECREAMSWORD(4, 4000, 15f, 10f, 20, () -> Ingredient.of(ItemInit.SPRINKLES.get()));
 	
 	private final int harvestLevel;
 	private final int maxUses;

@@ -1,30 +1,28 @@
 package com.charlotte.sweetnotsavourymod.common.material;
 
 import java.util.function.Supplier;
-
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
 
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
-
-public enum IceCreamArmorMaterial implements IArmorMaterial{
+public enum IceCreamArmorMaterial implements ArmorMaterial {
 	
 	//boots->leggings->chestplate->helmet
-	VANILLAICECREAMARMOR("vanilla_ice_cream_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 4f, 0.2f, 
-			() -> Ingredient.fromItems(ItemInit.SPRINKLES.get())),
-	LEMONCANDYARMOR("lemon_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 4f, 0.2f, 
-			() -> Ingredient.fromItems(ItemInit.LEMONCANDY.get())),
-	STRAWBERRYCANDYARMOR("strawberry_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 4f, 0.2f, 
-			() -> Ingredient.fromItems(ItemInit.STRAWBERRYCANDY.get())),
-	RASPBERRYCANDYARMOR("raspberry_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 4f, 0.2f, 
-			() -> Ingredient.fromItems(ItemInit.RASPBERRYCANDY.get())),
-	ORANGECANDYARMOR("orange_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 4f, 0.2f, 
-			() -> Ingredient.fromItems(ItemInit.ORANGECANDY.get())),
-	BLUEBERRYCANDYARMOR("blueberry_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 4f, 0.2f, 
-			() -> Ingredient.fromItems(ItemInit.BLUEBERRYCANDY.get()));
+	VANILLAICECREAMARMOR("vanilla_ice_cream_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ARMOR_EQUIP_TURTLE, 4f, 0.2f,
+			() -> Ingredient.of(ItemInit.SPRINKLES.get())),
+	LEMONCANDYARMOR("lemon_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ARMOR_EQUIP_TURTLE, 4f, 0.2f,
+			() -> Ingredient.of(ItemInit.LEMONCANDY.get())),
+	STRAWBERRYCANDYARMOR("strawberry_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ARMOR_EQUIP_TURTLE, 4f, 0.2f,
+			() -> Ingredient.of(ItemInit.STRAWBERRYCANDY.get())),
+	RASPBERRYCANDYARMOR("raspberry_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ARMOR_EQUIP_TURTLE, 4f, 0.2f,
+			() -> Ingredient.of(ItemInit.RASPBERRYCANDY.get())),
+	ORANGECANDYARMOR("orange_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ARMOR_EQUIP_TURTLE, 4f, 0.2f,
+			() -> Ingredient.of(ItemInit.ORANGECANDY.get())),
+	BLUEBERRYCANDYARMOR("blueberry_candy_armor", 10, new int[] {4, 7, 9, 4}, 20, SoundEvents.ARMOR_EQUIP_TURTLE, 4f, 0.2f,
+			() -> Ingredient.of(ItemInit.BLUEBERRYCANDY.get()));
 	
 	private static final int[] baseDurability = { 128, 144, 160, 122 };
 	private final String name;
@@ -49,12 +47,12 @@ public enum IceCreamArmorMaterial implements IArmorMaterial{
 	}
 
 	@Override
-	public int getDamageReductionAmount(EquipmentSlotType slot) {
+	public int getDamageReductionAmount(EquipmentSlot slot) {
 		return this.armorVal[slot.getIndex()];
 	}
 
 	@Override
-	public int getDurability(EquipmentSlotType slot) {
+	public int getDurability(EquipmentSlot slot) {
 		return baseDurability[slot.getIndex()] * this.durabilityMultiplier;
 	}
 
