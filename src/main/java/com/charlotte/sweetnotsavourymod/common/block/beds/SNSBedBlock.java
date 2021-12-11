@@ -2,10 +2,7 @@ package com.charlotte.sweetnotsavourymod.common.block.beds;
 
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
-import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
-
 import net.minecraft.core.BlockPos;
-
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.BlockGetter;
