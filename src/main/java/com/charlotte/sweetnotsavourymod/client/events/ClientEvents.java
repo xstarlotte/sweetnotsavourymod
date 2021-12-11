@@ -6,19 +6,15 @@ import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.Blue
 import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.LemonIceCreamBedBeRenderer;
 import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.RaspberryIceCreamBedBeRenderer;
 import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.StrawberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
-
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-
 import net.minecraft.resources.ResourceLocation;
-
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -43,54 +39,53 @@ public class ClientEvents{
     public static void onClientSetup( ModelRegistryEvent event ){
         ModelLoader.addSpecialModel(STRAWBERRYICECREAMBEDBOTTOM);
         ModelLoader.addSpecialModel(STRAWBERRYICECREAMBEDHEAD);
-        RenderTypeLookup.setRenderLayer( BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.getCutout() );
+        ItemBlockRenderTypes.setRenderLayer( BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.cutout() );
         
         ModelLoader.addSpecialModel(BLACKBERRYICECREAMBEDBOTTOM);
         ModelLoader.addSpecialModel(BLACKBERRYICECREAMBEDHEAD);
-        RenderTypeLookup.setRenderLayer( BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.getCutout() );
+        ItemBlockRenderTypes.setRenderLayer( BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.cutout() );
         
         ModelLoader.addSpecialModel(LEMONICECREAMBEDBOTTOM);
         ModelLoader.addSpecialModel(LEMONICECREAMBEDHEAD);
-        RenderTypeLookup.setRenderLayer( BlockInit.LEMONICECREAMBED.get(), RenderType.getCutout() );
-        
+        ItemBlockRenderTypes.setRenderLayer( BlockInit.LEMONICECREAMBED.get(), RenderType.cutout() );
+
         ModelLoader.addSpecialModel(BLUEBERRYICECREAMBEDBOTTOM);
         ModelLoader.addSpecialModel(BLUEBERRYICECREAMBEDHEAD);
-        RenderTypeLookup.setRenderLayer( BlockInit.BLUEBERRYICECREAMBED.get(), RenderType.getCutout() );
+        ItemBlockRenderTypes.setRenderLayer( BlockInit.BLUEBERRYICECREAMBED.get(), RenderType.cutout() );
         
         ModelLoader.addSpecialModel(RASPBERRYICECREAMBEDBOTTOM);
         ModelLoader.addSpecialModel(RASPBERRYICECREAMBEDHEAD);
-        RenderTypeLookup.setRenderLayer( BlockInit.RASPBERRYICECREAMBED.get(), RenderType.getCutout() );
-        
-        RenderTypeLookup.setRenderLayer(BlockInit.CANDYCANESUGARCANEBLOCK.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.CANDYCANEBUSH.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.POISONBERRYPLANT.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.POISONBERRYLANTERN.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.STRAWBERRYLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.RASPBERRYLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.BLACKBERRYLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.BLUEBERRYLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.ORANGELAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.BLUEBERRYLOLLIPOPLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.STRAWBERRYLOLLIPOPLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.RASPBERRYLOLLIPOPLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.BLACKBERRYLOLLIPOPLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.ORANGELOLLIPOPLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.LEMONLOLLIPOPLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.LEMONLAMP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BlockInit.STRAWBERRYCHEST.get(), RenderType.getCutout());
+        ItemBlockRenderTypes.setRenderLayer( BlockInit.RASPBERRYICECREAMBED.get(), RenderType.cutout() );
+
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANESUGARCANEBLOCK.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANEBUSH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYPLANT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYLANTERN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGELAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYLOLLIPOPLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYLOLLIPOPLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYLOLLIPOPLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYLOLLIPOPLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGELOLLIPOPLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONLOLLIPOPLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONLAMP.get(), RenderType.cutout());
     }
 
     @SubscribeEvent
     public static void onClientSetup( FMLClientSetupEvent event){
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.STRAWBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), StrawberryIceCreamBedBeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.STRAWBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), StrawberryIceCreamBedBeRenderer::new);
         
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.BLACKBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlackberryIceCreamBedBeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.BLACKBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlackberryIceCreamBedBeRenderer::new);
         
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.BLUEBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlueberryIceCreamBedBeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.BLUEBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlueberryIceCreamBedBeRenderer::new);
         
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.RASPBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), RaspberryIceCreamBedBeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.RASPBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), RaspberryIceCreamBedBeRenderer::new);
         
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.LEMONICECREAMBED_TILE_ENTITY_TYPE.get(), LemonIceCreamBedBeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.LEMONICECREAMBED_TILE_ENTITY_TYPE.get(), LemonIceCreamBedBeRenderer::new);
     }
     
     

@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.AxeItem;
+import net.minecraft.world.item.AxeItem;
 
 public class StrippingMap {
 	public static void createStrippable(Block input, Block output) {

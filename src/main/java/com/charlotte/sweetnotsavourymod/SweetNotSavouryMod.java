@@ -61,10 +61,11 @@ import com.charlotte.sweetnotsavourymod.common.entity.squirrels.StrawberrySwissS
 import com.charlotte.sweetnotsavourymod.common.entity.wolves.CandyCaneWolfEntity;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
+import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
+
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
 
@@ -107,12 +108,8 @@ public class SweetNotSavouryMod {
 		
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
-		TileEntityTypesInit.TILE_ENTITY_TYPE.register( bus );
+		BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register( bus );
 		EntityTypesInit.ENTITY_TYPES.register(bus);
-		FeatureInit.FEATURES.register(bus);
-		SurfaceBuilderInit.SURFACE_BUILDERS.register(bus);
-		BiomeInit.BIOMES.register(bus);
-		BiomeInit.registerBiomes();
     	
         MinecraftForge.EVENT_BUS.register(this);
         
