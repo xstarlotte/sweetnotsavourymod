@@ -1,22 +1,24 @@
 package com.charlotte.sweetnotsavourymod.client.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.BlackberryIceCreamBedTeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.BlueberryIceCreamBedTeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.LemonIceCreamBedTeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.RaspberryIceCreamBedTeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.StrawberryIceCreamBedTeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.BlackberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.BlueberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.LemonIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.RaspberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.StrawberryIceCreamBedBeRenderer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.util.ResourceLocation;
+
+import net.minecraft.resources.ResourceLocation;
+
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
+
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
+
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -80,15 +82,15 @@ public class ClientEvents{
 
     @SubscribeEvent
     public static void onClientSetup( FMLClientSetupEvent event){
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.STRAWBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), StrawberryIceCreamBedTeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.STRAWBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), StrawberryIceCreamBedBeRenderer::new);
         
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.BLACKBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlackberryIceCreamBedTeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.BLACKBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlackberryIceCreamBedBeRenderer::new);
         
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.BLUEBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlueberryIceCreamBedTeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.BLUEBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlueberryIceCreamBedBeRenderer::new);
         
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.RASPBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), RaspberryIceCreamBedTeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.RASPBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), RaspberryIceCreamBedBeRenderer::new);
         
-        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.LEMONICECREAMBED_TILE_ENTITY_TYPE.get(), LemonIceCreamBedTeRenderer::new);
+        ClientRegistry.bindTileEntityRenderer( TileEntityTypesInit.LEMONICECREAMBED_TILE_ENTITY_TYPE.get(), LemonIceCreamBedBeRenderer::new);
     }
     
     

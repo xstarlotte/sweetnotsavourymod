@@ -9,8 +9,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.tileentity.TileEntity;
 
-public class BlackberryIceCreamBedTeRenderer extends BaseBedTeRenderer{
-    public BlackberryIceCreamBedTeRenderer( TileEntityRendererDispatcher rendererDispatcherIn ){
+public class BlackberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
+    public BlackberryIceCreamBedBeRenderer(TileEntityRendererDispatcher rendererDispatcherIn ){
         super( rendererDispatcherIn );
     }
 

@@ -4,25 +4,25 @@ import javax.annotation.Nullable;
 
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 
-import net.minecraft.block.BedBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.AbstractBlock.Properties;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.DyeColor;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
 
-public class RaspberryIceCreamBed extends BedBlock{
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.BedBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+
+public class RaspberryIceCreamBed extends BedBlock {
 
 
-    public RaspberryIceCreamBed( DyeColor colorIn , Properties properties ){
+    public RaspberryIceCreamBed(DyeColor colorIn , Properties properties ){
         super( colorIn , properties );
     }
 
     @Nullable
     @Override
-    public TileEntity createTileEntity( BlockState state , IBlockReader world ){
+    public BlockEntity createTileEntity(BlockState state , BlockGetter world ){
         return TileEntityTypesInit.RASPBERRYICECREAMBED_TILE_ENTITY_TYPE.get().create();
     }
 
@@ -32,7 +32,7 @@ public class RaspberryIceCreamBed extends BedBlock{
     }
 
     @Override
-    public boolean isBed(BlockState state, IBlockReader world, BlockPos pos, Entity player) {
+    public boolean isBed(BlockState state, BlockGetter world, BlockPos pos, Entity player) {
     	return true;
     }
 }

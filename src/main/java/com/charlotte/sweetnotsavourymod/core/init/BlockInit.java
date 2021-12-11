@@ -1,18 +1,8 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.block.beds.BlackberryIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.beds.BlueberryIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.beds.LemonIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.beds.RaspberryIceCreamBed;
-import com.charlotte.sweetnotsavourymod.common.block.beds.StrawberryIceCreamBed;
 import com.charlotte.sweetnotsavourymod.common.block.chests.StrawberryChest;
-import com.charlotte.sweetnotsavourymod.common.block.lamps.BlackberryLamp;
-import com.charlotte.sweetnotsavourymod.common.block.lamps.BlueberryLamp;
-import com.charlotte.sweetnotsavourymod.common.block.lamps.LemonLamp;
-import com.charlotte.sweetnotsavourymod.common.block.lamps.PoisonBerryLantern;
-import com.charlotte.sweetnotsavourymod.common.block.lamps.RaspberryLamp;
-import com.charlotte.sweetnotsavourymod.common.block.lamps.StrawberryLamp;
+import com.charlotte.sweetnotsavourymod.common.block.lamps.SNSLampBlock;
 import com.charlotte.sweetnotsavourymod.common.block.plantscrops.CandyCaneSugarCaneBlock;
 import com.charlotte.sweetnotsavourymod.common.block.plantscrops.IceCreamTreeSaplingBlock;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.PoisonOakMiniDoor;
@@ -27,10 +17,17 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class BlockInit {
 	
@@ -72,7 +69,7 @@ public class BlockInit {
 					.tickRandomly()
 					.notSolid()
 					.sound(SoundType.GROUND)));
-	
+
 	public static final RegistryObject<Block> FROSTINGFLOWER = BLOCKS.register("frostingflower",
 			() -> new Block(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.FOLIAGE)
 					.doesNotBlockMovement().
@@ -383,23 +380,23 @@ public class BlockInit {
 	//beds
 	
 	public static final RegistryObject<Block> STRAWBERRYICECREAMBED = BLOCKS.register("strawberryicecreambed",
-			() -> new StrawberryIceCreamBed( DyeColor.RED,AbstractBlock.Properties.create(Material.WOOD,
+			() -> new SNSBedBlock( DyeColor.RED,AbstractBlock.Properties.create(Material.WOOD,
 					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
 	
 	public static final RegistryObject<Block> BLACKBERRYICECREAMBED = BLOCKS.register("blackberryicecreambed",
-			() -> new BlackberryIceCreamBed( DyeColor.PURPLE,AbstractBlock.Properties.create(Material.WOOD,
+			() -> new SNSBedBlock( DyeColor.PURPLE,AbstractBlock.Properties.create(Material.WOOD,
 					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
 	
 	public static final RegistryObject<Block> BLUEBERRYICECREAMBED = BLOCKS.register("blueberryicecreambed",
-			() -> new BlueberryIceCreamBed( DyeColor.BLUE,AbstractBlock.Properties.create(Material.WOOD,
+			() -> new SNSBedBlock( DyeColor.BLUE,AbstractBlock.Properties.create(Material.WOOD,
 					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
 	
 	public static final RegistryObject<Block> RASPBERRYICECREAMBED = BLOCKS.register("raspberryicecreambed",
-			() -> new RaspberryIceCreamBed( DyeColor.PINK,AbstractBlock.Properties.create(Material.WOOD,
+			() -> new SNSBedBlock( DyeColor.PINK,AbstractBlock.Properties.create(Material.WOOD,
 					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
 	
 	public static final RegistryObject<Block> LEMONICECREAMBED = BLOCKS.register("lemonicecreambed",
-			() -> new LemonIceCreamBed( DyeColor.YELLOW,AbstractBlock.Properties.create(Material.WOOD,
+			() -> new SNSBedBlock( DyeColor.YELLOW,AbstractBlock.Properties.create(Material.WOOD,
 					MaterialColor.RED).hardnessAndResistance(10f).sound(SoundType.WOOD).notSolid()));
 
 //doors	
@@ -414,121 +411,147 @@ public class BlockInit {
 //lanterns	
 	
 	      public static final RegistryObject<Block> POISONBERRYLANTERN = BLOCKS.register("poisonberrylantern",
-	  			() -> new PoisonBerryLantern(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-	  					.hardnessAndResistance(3.5f)
-	  					.setRequiresTool()
-	  					.sound(SoundType.LANTERN)
-	  					.setLightLevel((state) -> {
-	  				      return 15;  })
-	  					.notSolid()));		
+	  			() -> new SNSLampBlock(BlockBehaviour
+						.Properties
+						.of(Material.METAL)
+						.requiresCorrectToolForDrops()
+						.strength(3.5F).sound(SoundType
+								.LANTERN)
+						.lightLevel((p_187433_) -> {
+							return 15;
+						}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> STRAWBERRYLAMP = BLOCKS.register("strawberrylamp",
-		  			() -> new StrawberryLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> RASPBERRYLAMP = BLOCKS.register("raspberrylamp",
-		  			() -> new RaspberryLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> BLUEBERRYLAMP = BLOCKS.register("blueberrylamp",
-		  			() -> new BlueberryLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> BLACKBERRYLAMP = BLOCKS.register("blackberrylamp",
-		  			() -> new BlackberryLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> LEMONLAMP = BLOCKS.register("lemonlamp",
-		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> ORANGELAMP = BLOCKS.register("orangelamp",
-		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> BLUEBERRYLOLLIPOPLAMP = BLOCKS.register("blueberrylollipoplamp",
-		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> STRAWBERRYLOLLIPOPLAMP = BLOCKS.register("strawberrylollipoplamp",
-		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> BLACKBERRYLOLLIPOPLAMP = BLOCKS.register("blackberrylollipoplamp",
-		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	  					
 	      public static final RegistryObject<Block> RASPBERRYLOLLIPOPLAMP = BLOCKS.register("raspberrylollipoplamp",
-		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> ORANGELOLLIPOPLAMP = BLOCKS.register("orangelollipoplamp",
-		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	      
 	      public static final RegistryObject<Block> LEMONLOLLIPOPLAMP = BLOCKS.register("lemonlollipoplamp",
-		  			() -> new LemonLamp(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BROWN)
-		  					.hardnessAndResistance(3.5f)
-		  					.setRequiresTool()
-		  					.sound(SoundType.LANTERN)
-		  					.setLightLevel((state) -> {
-		  				      return 15;  })
-		  					.notSolid()));	
+		  			() -> new SNSLampBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.requiresCorrectToolForDrops()
+							.strength(3.5F).sound(SoundType
+									.LANTERN)
+							.lightLevel((p_187433_) -> {
+								return 15;
+							}).noOcclusion()));
 	  					
 	  								
 	  					

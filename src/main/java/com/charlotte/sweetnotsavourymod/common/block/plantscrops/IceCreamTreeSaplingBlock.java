@@ -3,12 +3,11 @@ package com.charlotte.sweetnotsavourymod.common.block.plantscrops;
 import java.util.Random;
 
 import com.charlotte.sweetnotsavourymod.common.world.TreeSpawner;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SaplingBlock;
-import net.minecraft.block.trees.Tree;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.server.ServerWorld;
 
 public class IceCreamTreeSaplingBlock extends SaplingBlock {
 	
@@ -20,12 +19,12 @@ public class IceCreamTreeSaplingBlock extends SaplingBlock {
 	}
 	
 	@Override
-	public void placeTree(ServerWorld world, BlockPos pos, BlockState state, Random rand) {
+	public void placeTree(ServerLevel world, BlockPos pos, BlockState state, Random rand) {
 		if (state.get(STAGE) == 0) {
-			world.setBlockState(pos, state.func_235896_a_(STAGE), 4);
+			world.setBlockState(pos, state.cycle(STAGE), 4);
 		}
 		else {
-			tree.spawn(world, world.getChunkProvider().getChunkGenerator(), pos, state, rand);
+			tree.spawn(world, world.getChunkSource().getChunkGenerator(), pos, state, rand);
 			
 		}
 	}

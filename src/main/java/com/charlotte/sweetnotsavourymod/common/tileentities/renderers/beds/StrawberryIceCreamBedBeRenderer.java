@@ -9,8 +9,8 @@ import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.STRAWB
 
 import com.charlotte.sweetnotsavourymod.common.tileentities.beds.StrawberryIceCreamBedTe;
 
-public class StrawberryIceCreamBedTeRenderer extends  BaseBedTeRenderer{
-    public StrawberryIceCreamBedTeRenderer( TileEntityRendererDispatcher rendererDispatcherIn ){
+public class StrawberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
+    public StrawberryIceCreamBedBeRenderer(TileEntityRendererDispatcher rendererDispatcherIn ){
         super( rendererDispatcherIn );
     }
 

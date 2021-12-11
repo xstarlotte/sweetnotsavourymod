@@ -1,7 +1,6 @@
 package com.charlotte.sweetnotsavourymod;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryParfaitPixieEntity;
@@ -73,24 +72,28 @@ import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
 
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegistryObject;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 @Mod("sweetnotsavourymod")
-@Mod.EventBusSubscriber(modid = SweetNotSavouryMod.MOD_ID, bus = Bus.MOD)
+@Mod.EventBusSubscriber(modid = SweetNotSavouryMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SweetNotSavouryMod {
 	
     public static final Logger LOGGER = LogManager.getLogger();
@@ -129,7 +132,7 @@ public class SweetNotSavouryMod {
     	.map(RegistryObject::get).forEach(block -> {
     		event.getRegistry()
     		.register(new BlockItem(block, new Item.Properties()
-    				.group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD))
+    				.tab(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD))
     				.setRegistryName(block.getRegistryName()));
     	});
     }
@@ -147,252 +150,252 @@ public class SweetNotSavouryMod {
 	public void commonSetup(final FMLCommonSetupEvent event) {
  //Poison Berries   	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.POISONBERRYATTACKER.get(), PoisonBerryAttackerEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.POISONBERRYATTACKER.get(), PoisonBerryAttackerEntity.setAttributes().create());
     	});
 
 		DeferredWorkQueue.runLater(() -> {
-			GlobalEntityTypeAttributes.put(EntityTypesInit.POISONBERRYARCHER.get(), PoisonBerryArcherEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.POISONBERRYARCHER.get(), PoisonBerryArcherEntity.setAttributes().create());
 		});
 		
 		DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.POISONBERRYSPRITE.get(), PoisonBerrySpriteEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.POISONBERRYSPRITE.get(), PoisonBerrySpriteEntity.setAttributes().create());
     	});
 		
 	//Waferschunds
 		
 		DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYWAFERSCHUND.get(), StrawberryWaferschundEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYWAFERSCHUND.get(), StrawberryWaferschundEntity.setAttributes().create());
     	});
 		
 		DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPARFAITPIXIE.get(), StrawberryParfaitPixieEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYPARFAITPIXIE.get(), StrawberryParfaitPixieEntity.setAttributes().create());
     	});
 
 		DeferredWorkQueue.runLater(() -> {
-			GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYPARFAITPIXIE.get(), BlueberryParfaitPixieEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BLUEBERRYPARFAITPIXIE.get(), BlueberryParfaitPixieEntity.setAttributes().create());
 		});
 		
 	//mice
 		
 		DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYCHEESECAKEMOUSE.get(), StrawberryCheesecakeMouseEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYCHEESECAKEMOUSE.get(), StrawberryCheesecakeMouseEntity.setAttributes().create());
     	});
 		
 		DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.HAZELNUTCHEESECAKEMOUSE.get(), HazelnutCheesecakeMouseEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.HAZELNUTCHEESECAKEMOUSE.get(), HazelnutCheesecakeMouseEntity.setAttributes().create());
     	});
 		
 		DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.MARSHMALLOWPIEMOUSE.get(), MarshmallowPieMouseEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.MARSHMALLOWPIEMOUSE.get(), MarshmallowPieMouseEntity.setAttributes().create());
     	});
 		
 		
   //Pugs  
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPUG.get(), StrawberryPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYPUG.get(), StrawberryPugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.RASPBERRYPUG.get(), RaspberryPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.RASPBERRYPUG.get(), RaspberryPugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYPUG.get(), BlueberryPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BLUEBERRYPUG.get(), BlueberryPugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.TOFFEEPUG.get(), ToffeePugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.TOFFEEPUG.get(), ToffeePugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.CHOCOLATEPUG.get(), ChocolatePugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.CHOCOLATEPUG.get(), ChocolatePugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEPUG.get(), OrangePugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.ORANGEPUG.get(), OrangePugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.TOFFEEICECREAMPUG.get(), ToffeeIceCreamPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.TOFFEEICECREAMPUG.get(), ToffeeIceCreamPugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYICECREAMPUG.get(), BlueberryIceCreamPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BLUEBERRYICECREAMPUG.get(), BlueberryIceCreamPugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.CHOCOLATEICECREAMPUG.get(), ChocolateIceCreamPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.CHOCOLATEICECREAMPUG.get(), ChocolateIceCreamPugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.RASPBERRYICECREAMPUG.get(), RaspberryIceCreamPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.RASPBERRYICECREAMPUG.get(), RaspberryIceCreamPugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYICECREAMPUG.get(), StrawberryIceCreamPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYICECREAMPUG.get(), StrawberryIceCreamPugEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEICECREAMPUG.get(), OrangeIceCreamPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.ORANGEICECREAMPUG.get(), OrangeIceCreamPugEntity.setAttributes().create());
     	});
     	
   
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.LEMONPUG.get(), LemonPugEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.LEMONPUG.get(), LemonPugEntity.setAttributes().create());
     	});
     	
   //Elves
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYELF.get(), StrawberryElfEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYELF.get(), StrawberryElfEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYELF.get(), BlueberryElfEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BLUEBERRYELF.get(), BlueberryElfEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.LEMONELF.get(), LemonElfEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.LEMONELF.get(), LemonElfEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.VANILLAELF.get(), VanillaElfEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.VANILLAELF.get(), VanillaElfEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEELF.get(), OrangeElfEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.ORANGEELF.get(), OrangeElfEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.RASPBERRYELF.get(), RaspberryElfEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.RASPBERRYELF.get(), RaspberryElfEntity.setAttributes().create());
     	});
     	
   //Pigs
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPIG.get(), StrawberryPigEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYPIG.get(), StrawberryPigEntity.setAttributes().create());
     	});
     	
  //Monkeys
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.BANANAMONKEY.get(), BananaMonkeyEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BANANAMONKEY.get(), BananaMonkeyEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.BANANAMONKEYKING.get(), BananaMonkeyKingEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BANANAMONKEYKING.get(), BananaMonkeyKingEntity.setAttributes().create());
     	});
     	
  //Rabbits     
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.CARROTCAKERABBIT.get(), CarrotCakeRabbitEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.CARROTCAKERABBIT.get(), CarrotCakeRabbitEntity.setAttributes().create());
     	});
   
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.CHOCOLATECHERRYCAKERABBIT.get(), ChocolateCherryCakeRabbitEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.CHOCOLATECHERRYCAKERABBIT.get(), ChocolateCherryCakeRabbitEntity.setAttributes().create());
     	});
   
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.BANANABREADRABBIT.get(), BananaBreadRabbitEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BANANABREADRABBIT.get(), BananaBreadRabbitEntity.setAttributes().create());
     	});
   
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.ANGELCAKERABBIT.get(), AngelCakeRabbitEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.ANGELCAKERABBIT.get(), AngelCakeRabbitEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.VANILLACAKERABBIT.get(), VanillaCakeRabbitEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.VANILLACAKERABBIT.get(), VanillaCakeRabbitEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.LEMONCURDCAKERABBIT.get(), LemonCurdCakeRabbitEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.LEMONCURDCAKERABBIT.get(), LemonCurdCakeRabbitEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.REDVELVETCAKERABBIT.get(), RedVelvetCakeRabbitEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.REDVELVETCAKERABBIT.get(), RedVelvetCakeRabbitEntity.setAttributes().create());
     	});
     	
  //Zebra 
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.ZEBRACAKEZEBRA.get(), ZebraCakeZebraEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.ZEBRACAKEZEBRA.get(), ZebraCakeZebraEntity.setAttributes().create());
     	});
   //Squirrolls
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.CINNAMONSQUIRROLL.get(), CinnamonSquirrollEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.CINNAMONSQUIRROLL.get(), CinnamonSquirrollEntity.setAttributes().create());
     	});
   
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYSWISSSQUIRROLL.get(), StrawberrySwissSquirrollEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYSWISSSQUIRROLL.get(), StrawberrySwissSquirrollEntity.setAttributes().create());
     	});
     	
    //Toads
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.TOFFEETOAD.get(), ToffeeToadEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.TOFFEETOAD.get(), ToffeeToadEntity.setAttributes().create());
     	});
    //Parrots
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.LEMONPARROT.get(), LemonParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.LEMONPARROT.get(), LemonParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEPARROT.get(), OrangeParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.ORANGEPARROT.get(), OrangeParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.PEACHPARROT.get(), PeachParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.PEACHPARROT.get(), PeachParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.PINEAPPLEPARROT.get(), PineappleParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.PINEAPPLEPARROT.get(), PineappleParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYPARROT.get(), BlueberryParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BLUEBERRYPARROT.get(), BlueberryParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.RASPBERRYPARROT.get(), RaspberryParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.RASPBERRYPARROT.get(), RaspberryParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.ORANGEICECREAMPARROT.get(), OrangeIceCreamParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.ORANGEICECREAMPARROT.get(), OrangeIceCreamParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.PEACHICECREAMPARROT.get(), PeachIceCreamParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.PEACHICECREAMPARROT.get(), PeachIceCreamParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.TOFFEEICECREAMPARROT.get(), ToffeeIceCreamParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.TOFFEEICECREAMPARROT.get(), ToffeeIceCreamParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYPARROT.get(), StrawberryParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYPARROT.get(), StrawberryParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.LEMONICECREAMPARROT.get(), LemonIceCreamParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.LEMONICECREAMPARROT.get(), LemonIceCreamParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.BLUEBERRYICECREAMPARROT.get(), BlueberryIceCreamParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.BLUEBERRYICECREAMPARROT.get(), BlueberryIceCreamParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.RASPBERRYICECREAMPARROT.get(), RaspberryIceCreamParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.RASPBERRYICECREAMPARROT.get(), RaspberryIceCreamParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.STRAWBERRYICECREAMPARROT.get(), StrawberryIceCreamParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.STRAWBERRYICECREAMPARROT.get(), StrawberryIceCreamParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.CHOCOLATEICECREAMPARROT.get(), ChocolateIceCreamParrotEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.CHOCOLATEICECREAMPARROT.get(), ChocolateIceCreamParrotEntity.setAttributes().create());
     	});
     	
     	DeferredWorkQueue.runLater(() -> {
-    		GlobalEntityTypeAttributes.put(EntityTypesInit.CANDYCANEWOLF.get(), CandyCaneWolfEntity.setAttributes().create());
+			DefaultAttributes.put(EntityTypesInit.CANDYCANEWOLF.get(), CandyCaneWolfEntity.setAttributes().create());
     	});
    	
     } 

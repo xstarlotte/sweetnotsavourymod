@@ -1,9 +1,8 @@
 package com.charlotte.sweetnotsavourymod.common.block.beds;
 
-import javax.annotation.Nullable;
 
+import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
-
 
 import net.minecraft.core.BlockPos;
 
@@ -14,21 +13,23 @@ import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BlackberryIceCreamBed extends BedBlock {
+import javax.annotation.Nullable;
+
+public class SNSBedBlock extends BedBlock {
 
 
-    public BlackberryIceCreamBed(DyeColor colorIn , Properties properties ){
+    public SNSBedBlock(DyeColor colorIn , Properties properties ){
         super( colorIn , properties );
     }
 
     @Nullable
     @Override
-    public BlockEntity createTileEntity(BlockState state , BlockGetter world ){
-        return TileEntityTypesInit.BLACKBERRYICECREAMBED_TILE_ENTITY_TYPE.get().create();
+    public BlockEntity createBlockEntity(BlockPos pos , BlockState state ){
+        return BlockEntityTypesInit.SNS_BLOCK_ENTITY_TYPE.get().create();
     }
 
     @Override
-    public boolean hasTileEntity( BlockState state ){
+    public boolean hasBlockEntity( BlockState state ){
         return true;
     }
 
