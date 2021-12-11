@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.core.util;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.StrawberryParfaitPixieRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.StrawberryPigRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.StrawberryWaferschundRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.ToffeeToadRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.ZebraCakeZebraRenderer;
@@ -189,7 +188,7 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RASPBERRYELF.get(), manager -> new RaspberryElfRenderer(manager));
 		
 		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYPIG.get(), StrawberryPigRenderer::new);
+
 		
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CARROTCAKERABBIT.get(), CarrotCakeRabbitRenderer::new);

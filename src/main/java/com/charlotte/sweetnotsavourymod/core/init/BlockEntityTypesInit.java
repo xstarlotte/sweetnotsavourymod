@@ -1,12 +1,8 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.BlackberryIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.BlueberryIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.LemonIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.RaspberryIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.StrawberryIceCreamBedTe;
-import com.charlotte.sweetnotsavourymod.common.tileentities.chests.StrawberryChestTe;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.StrawberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.blockentities.chests.StrawberryChestTe;
 
 
 import net.minecraft.world.level.block.entity.BlockEntityType;

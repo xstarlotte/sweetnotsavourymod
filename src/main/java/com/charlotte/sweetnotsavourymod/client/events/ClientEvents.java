@@ -1,11 +1,11 @@
 package com.charlotte.sweetnotsavourymod.client.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.BlackberryIceCreamBedBeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.BlueberryIceCreamBedBeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.LemonIceCreamBedBeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.RaspberryIceCreamBedBeRenderer;
-import com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds.StrawberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.BlackberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.BlueberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.LemonIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.RaspberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.StrawberryIceCreamBedBeRenderer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 

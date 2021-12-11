@@ -102,8 +102,7 @@ public class ItemInit {
 	public static final RegistryObject<CustomSpawnEggItem> BANANAMONKEYKINGSPAWNEGG = ITEMS.register("bananamonkeykingspawnegg", 
 			() -> new CustomSpawnEggItem(EntityTypesInit.BANANAMONKEYKING, 0xf1f09a, 0x496138, new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
 	//pigs-1
-	public static final RegistryObject<CustomSpawnEggItem> STRAWBERRYPIGSPAWNEGG = ITEMS.register("strawberrypigspawnegg", 
-			() -> new CustomSpawnEggItem(EntityTypesInit.STRAWBERRYPIG, 0x730813, 0xbe9129, new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+
 	//wolves-1
 	public static final RegistryObject<CustomSpawnEggItem> CANDYCANEWOLFSPAWNEGG = ITEMS.register("candycanewolfspawnegg", 
 			() -> new CustomSpawnEggItem(EntityTypesInit.CANDYCANEWOLF, 0xac0e1c, 0xfffcfd, new Item.Properties().group(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));

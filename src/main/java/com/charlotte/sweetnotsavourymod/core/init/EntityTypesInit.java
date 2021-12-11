@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryParfaitPixieEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPigEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ToffeeToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ZebraCakeZebraEntity;
@@ -141,7 +140,7 @@ public class EntityTypesInit {
 	public static final RegistryObject<EntityType<ChocolatePugEntity>> CHOCOLATEPUG = ENTITY_TYPES
 			.register("chocolatepug", () -> EntityType.Builder.create(ChocolatePugEntity::new, EntityClassification.CREATURE)
 					.size(0.6f, 0.6f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberrypug").toString()));
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "chocolatepug").toString()));
 	
 	public static final RegistryObject<EntityType<ToffeePugEntity>> TOFFEEPUG = ENTITY_TYPES
 			.register("toffeepug", () -> EntityType.Builder.create(ToffeePugEntity::new, EntityClassification.CREATURE)
@@ -228,10 +227,7 @@ public class EntityTypesInit {
 					.size(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "bananamonkeyking").toString()));
 	
-	public static final RegistryObject<EntityType<StrawberryPigEntity>>STRAWBERRYPIG = ENTITY_TYPES
-			.register("strawberrypig", () -> EntityType.Builder.create(StrawberryPigEntity::new, EntityClassification.CREATURE)
-					.size(0.6f, 0.6f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberrypig").toString()));
+
 	
 	public static final RegistryObject<EntityType<CarrotCakeRabbitEntity>>CARROTCAKERABBIT = ENTITY_TYPES
 			.register("carrotcakerabbit", () -> EntityType.Builder.create(CarrotCakeRabbitEntity::new, EntityClassification.CREATURE)

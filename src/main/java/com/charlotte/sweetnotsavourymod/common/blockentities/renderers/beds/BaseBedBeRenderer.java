@@ -1,4 +1,4 @@
-package com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds;
+package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 
 
 import com.mojang.blaze3d.vertex.PoseStack;

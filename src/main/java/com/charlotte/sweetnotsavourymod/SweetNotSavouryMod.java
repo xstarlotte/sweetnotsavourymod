@@ -4,7 +4,6 @@ package com.charlotte.sweetnotsavourymod;
 
 import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryParfaitPixieEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryPigEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ToffeeToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ZebraCakeZebraEntity;
@@ -62,12 +61,9 @@ import com.charlotte.sweetnotsavourymod.common.entity.squirrels.StrawberrySwissS
 import com.charlotte.sweetnotsavourymod.common.entity.wolves.CandyCaneWolfEntity;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
-import com.charlotte.sweetnotsavourymod.core.init.BiomeInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
-import com.charlotte.sweetnotsavourymod.core.init.FeatureInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import com.charlotte.sweetnotsavourymod.core.init.SurfaceBuilderInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
@@ -271,10 +267,7 @@ public class SweetNotSavouryMod {
     	});
     	
   //Pigs
-    	
-    	DeferredWorkQueue.runLater(() -> {
-			DefaultAttributes.put(EntityTypesInit.STRAWBERRYPIG.get(), StrawberryPigEntity.setAttributes().create());
-    	});
+
     	
  //Monkeys
     	DeferredWorkQueue.runLater(() -> {

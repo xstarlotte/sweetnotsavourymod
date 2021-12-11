@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.common.block.plantscrops;
 
 import java.util.Random;
 
-import com.charlotte.sweetnotsavourymod.common.world.TreeSpawner;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.SaplingBlock;

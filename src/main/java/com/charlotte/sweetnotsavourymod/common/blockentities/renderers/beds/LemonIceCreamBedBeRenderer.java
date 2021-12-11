@@ -1,8 +1,8 @@
-package com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds;
+package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.LEMONICECREAMBEDHEAD;
 
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.LemonIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.LemonIceCreamBedTe;
 
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.LEMONICECREAMBEDBOTTOM;
 import net.minecraft.client.Minecraft;

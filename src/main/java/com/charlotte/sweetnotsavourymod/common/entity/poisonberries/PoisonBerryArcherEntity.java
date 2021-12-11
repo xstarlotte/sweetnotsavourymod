@@ -95,7 +95,7 @@ public class PoisonBerryArcherEntity extends Monster {
 		double d2 = target.getPosZ() - this.getPosZ();
 		double d3 = (double) MathHelper.sqrt(d0 * d0 + d2 * d2);
 		abstractarrowentity.shoot(d0, d1 + d3 * 0.20000000298023224D, d2, 1.6F, (float)(14 - this.world.getDifficulty().getId() * 4));
-		this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+		this.playSound(SoundEvents.SKELETON_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 		this.world.addEntity(abstractarrowentity);
 	}
 

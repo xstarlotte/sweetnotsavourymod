@@ -1,4 +1,4 @@
-package com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds;
+package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.STRAWBERRYICECREAMBEDBOTTOM;
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.STRAWBERRYICECREAMBEDHEAD;
 
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.StrawberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.StrawberryIceCreamBedTe;
 
 public class StrawberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     public StrawberryIceCreamBedBeRenderer(TileEntityRendererDispatcher rendererDispatcherIn ){

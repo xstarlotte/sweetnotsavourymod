@@ -1,4 +1,4 @@
-package com.charlotte.sweetnotsavourymod.common.tileentities.beds;
+package com.charlotte.sweetnotsavourymod.common.blockentities.beds;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.TileEntityTypesInit;

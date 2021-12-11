@@ -1,9 +1,9 @@
-package com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds;
+package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLACKBERRYICECREAMBEDBOTTOM;
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLACKBERRYICECREAMBEDHEAD;
 
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.BlackberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.BlackberryIceCreamBedTe;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;

@@ -1,7 +1,7 @@
-package com.charlotte.sweetnotsavourymod.common.tileentities.renderers.beds;
+package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLUEBERRYICECREAMBEDHEAD;
 
-import com.charlotte.sweetnotsavourymod.common.tileentities.beds.BlueberryIceCreamBedTe;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.BlueberryIceCreamBedTe;
 
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLUEBERRYICECREAMBEDBOTTOM;
 
