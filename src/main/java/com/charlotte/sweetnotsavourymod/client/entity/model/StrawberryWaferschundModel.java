@@ -2,16 +2,9 @@ package com.charlotte.sweetnotsavourymod.client.entity.model;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.pugs.LemonPugEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
 
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
-
+/*
 public class StrawberryWaferschundModel extends AnimatedGeoModel<StrawberryWaferschundEntity>
 {
 	@Override
@@ -33,3 +26,4 @@ public class StrawberryWaferschundModel extends AnimatedGeoModel<StrawberryWafer
 	}
 	
 }
+*/

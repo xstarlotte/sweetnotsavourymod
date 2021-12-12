@@ -1,19 +1,11 @@
 package com.charlotte.sweetnotsavourymod.client.entity.wolves;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.model.pugs.LemonPugModel;
 import com.charlotte.sweetnotsavourymod.client.entity.model.wolves.CandyCaneWolfModel;
-import com.charlotte.sweetnotsavourymod.common.entity.pugs.LemonPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.wolves.CandyCaneWolfEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
 
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
-
+/*
 public class CandyCaneWolfRenderer extends GeoEntityRenderer <CandyCaneWolfEntity> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(SweetNotSavouryMod.MOD_ID, 
@@ -30,3 +22,4 @@ public class CandyCaneWolfRenderer extends GeoEntityRenderer <CandyCaneWolfEntit
 		return TEXTURE;
 	}				
 }
+*/

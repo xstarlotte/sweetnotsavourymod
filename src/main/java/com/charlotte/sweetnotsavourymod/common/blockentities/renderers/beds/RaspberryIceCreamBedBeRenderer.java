@@ -1,14 +1,11 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
-import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.RASPBERRYICECREAMBEDHEAD;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.beds.RaspberryIceCreamBedTe;
+import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.RASPBERRYICECREAMBEDHEAD;
 
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.RASPBERRYICECREAMBEDBOTTOM;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
-import net.minecraft.tileentity.TileEntity;
-
+/*
 public class RaspberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     public RaspberryIceCreamBedBeRenderer(TileEntityRendererDispatcher rendererDispatcherIn ){
         super( rendererDispatcherIn );
@@ -24,4 +21,4 @@ public class RaspberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     }
 
 
-}
+}*/

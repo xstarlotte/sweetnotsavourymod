@@ -1,35 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entity.monkeys;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.AgeableEntity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.goal.FollowOwnerGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
-import net.minecraft.entity.ai.goal.LeapAtTargetGoal;
-import net.minecraft.entity.ai.goal.LookAtGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.ai.goal.OwnerHurtByTargetGoal;
-import net.minecraft.entity.ai.goal.OwnerHurtTargetGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
-import net.minecraft.entity.passive.TameableEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
-
+/*
 public class BananaMonkeyEntity extends TameableEntity {
 
 	public BananaMonkeyEntity(EntityType<? extends TameableEntity> type, World worldIn) {
@@ -137,3 +109,4 @@ public AgeableEntity func_241840_a(ServerWorld p_241840_1_, AgeableEntity p_2418
 }
 
 
+*/

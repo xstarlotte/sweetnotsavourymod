@@ -24,7 +24,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-
+/*
 public abstract class BaseBedBeRenderer extends BlockEntityRenderer<BlockEntity> {
 
     protected BlockEntity be;
@@ -112,3 +112,4 @@ public abstract class BaseBedBeRenderer extends BlockEntityRenderer<BlockEntity>
             return true;
     }
 }
+*/

@@ -3,14 +3,9 @@ package com.charlotte.sweetnotsavourymod.client.entity.squirrels;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.model.squirrels.StrawberrySwissSquirrollModel;
 import com.charlotte.sweetnotsavourymod.common.entity.squirrels.StrawberrySwissSquirrollEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
 
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
-
+/*
 public class StrawberrySwissSquirrollRenderer extends GeoEntityRenderer <StrawberrySwissSquirrollEntity> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(SweetNotSavouryMod.MOD_ID, 
@@ -37,3 +32,4 @@ public class StrawberrySwissSquirrollRenderer extends GeoEntityRenderer <Strawbe
     }
 	
 }
+*/

@@ -3,9 +3,8 @@ package com.charlotte.sweetnotsavourymod.client.entity.model.mice;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.mice.HazelnutCheesecakeMouseEntity;
 
-import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
-
+/*
 public class HazelnutCheesecakeMouseModel extends AnimatedGeoModel<HazelnutCheesecakeMouseEntity>
 {
 	@Override
@@ -25,5 +24,5 @@ public class HazelnutCheesecakeMouseModel extends AnimatedGeoModel<HazelnutChees
 	{
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/mouse.animation.json");
 	}
-	
 }
+*/

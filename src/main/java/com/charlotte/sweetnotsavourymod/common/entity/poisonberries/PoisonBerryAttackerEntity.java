@@ -44,8 +44,8 @@ public class PoisonBerryAttackerEntity extends Monster {
 		this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.12D));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(1, new PoisonBerryMeleeAttackGoal(this, 0.12D, false)); 
-		this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
+		//this.goalSelector.addGoal(1, new PoisonBerryMeleeAttackGoal(this, 0.12D, false));
+		//this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
 		this.targetSelector.addGoal(1,  new NearestAttackableTargetGoal<>(this, Player.class, true));
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
 	  

@@ -49,8 +49,8 @@ public class PoisonBerryArcherEntity extends Monster {
 		this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.12D));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(1, new PoisonBerryMeleeAttackGoal(this, 0.12D, false));
-		this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
+		//this.goalSelector.addGoal(1, new PoisonBerryMeleeAttackGoal(this, 0.12D, false));
+		//this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
 		this.targetSelector.addGoal(1,  new NearestAttackableTargetGoal<>(this, Player.class, true));
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
 
@@ -84,7 +84,7 @@ public class PoisonBerryArcherEntity extends Monster {
 		return SoundEvents.BEE_DEATH;
 
 	}
-
+/*
 	public void attackEntityWithRangedAttack(LivingEntity target, float distanceFactor) {
 		ItemStack itemstack = this.getProjectile(Items.BOW.getDefaultInstance());
 		AbstractArrow abstractarrowentity = this.fireArrow(itemstack, distanceFactor);
@@ -101,7 +101,7 @@ public class PoisonBerryArcherEntity extends Monster {
 
 	protected AbstractArrowEntity fireArrow(ItemStack arrowStack, float distanceFactor) {
 		return ProjectileHelper.fireArrow(this, arrowStack, distanceFactor);
-	}
+	}*/
 }
 
 

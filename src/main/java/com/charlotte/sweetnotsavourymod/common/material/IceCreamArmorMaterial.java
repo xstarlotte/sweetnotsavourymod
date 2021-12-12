@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -32,7 +33,7 @@ public enum IceCreamArmorMaterial implements ArmorMaterial {
 	private final SoundEvent equipSound;
 	private final float toughness;
 	private final float knockbackResistance;
-	private final Ingredient repairIngredient;
+	private final LazyLoadedValue<Ingredient> repairIngredient;
 	
 	IceCreamArmorMaterial(String name, int durabilityMultiplier, int[] armorVal, int enchantability,
 			SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
@@ -43,48 +44,39 @@ public enum IceCreamArmorMaterial implements ArmorMaterial {
 		this.equipSound = equipSound;
 		this.toughness = toughness;
 		this.knockbackResistance = knockbackResistance;
-		this.repairIngredient = repairIngredient.get();
+		this.repairIngredient = new LazyLoadedValue<>(repairIngredient);
 	}
 
-	@Override
-	public int getDamageReductionAmount(EquipmentSlot slot) {
-		return this.armorVal[slot.getIndex()];
+	public int getDurabilityForSlot(EquipmentSlot p_40484_) {
+		return baseDurability[p_40484_.getIndex()] * this.durabilityMultiplier;
 	}
 
-	@Override
-	public int getDurability(EquipmentSlot slot) {
-		return baseDurability[slot.getIndex()] * this.durabilityMultiplier;
+	public int getDefenseForSlot(EquipmentSlot p_40487_) {
+		return this.armorVal[p_40487_.getIndex()];
 	}
 
-	@Override
-	public int getEnchantability() {
+	public int getEnchantmentValue() {
 		return this.enchantability;
 	}
 
-	@Override
-	public float getKnockbackResistance() {
-		return this.knockbackResistance;
+	public SoundEvent getEquipSound() {
+		return this.equipSound;
 	}
 
-	@Override
+	public Ingredient getRepairIngredient() {
+		return this.repairIngredient.get();
+	}
+
 	public String getName() {
 		return this.name;
 	}
 
-	@Override
-	public Ingredient getRepairMaterial() {
-		return this.repairIngredient;
-	}
-		
-
-	@Override
-	public SoundEvent getSoundEvent() {
-		return this.equipSound;
-	}
-
-	@Override
 	public float getToughness() {
 		return this.toughness;
+	}
+
+	public float getKnockbackResistance() {
+		return this.knockbackResistance;
 	}
 
 }

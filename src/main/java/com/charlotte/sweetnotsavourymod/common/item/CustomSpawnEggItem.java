@@ -4,30 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraft.block.DispenserBlock;
-import net.minecraft.dispenser.DefaultDispenseItemBehavior;
-import net.minecraft.dispenser.IBlockSource;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.Direction;
+import net.minecraft.core.BlockSource;
+import net.minecraft.core.Direction;
+import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.common.util.Lazy;
-import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
+import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
 
 public class CustomSpawnEggItem extends SpawnEggItem {
 	
 	protected static final List<CustomSpawnEggItem> EGGS_TO_ADD = new ArrayList<>();
 	protected static DefaultDispenseItemBehavior behavior = new DefaultDispenseItemBehavior() {
 		@Override
-		protected ItemStack dispenseStack(IBlockSource source, ItemStack stack) {
-			Direction direction = source.getBlockState().get(DispenserBlock.FACING);
+		public ItemStack execute(BlockSource source, ItemStack stack) {
+			Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
 			EntityType<?> eType = ((SpawnEggItem)stack.getItem()).getType(stack.getTag());
 			
-			eType.spawn(source.getWorld(), stack, null, source.getBlockPos().offset(direction), SpawnReason.DISPENSER, direction != Direction.UP, false);
+			eType.spawn(source.getLevel(), stack, null, source.getPos().relative(direction), MobSpawnType.SPAWN_EGG,
+					direction != Direction.UP, false);
 			stack.shrink(1);
 			return stack;
 		}
@@ -45,22 +47,19 @@ public class CustomSpawnEggItem extends SpawnEggItem {
 	}
 
 	public static void initSpawnEggs() {
-		final Map<EntityType<?>, SpawnEggItem> EGGS = ObfuscationReflectionHelper.getPrivateValue(SpawnEggItem.class, null, "field_195987_b");
+		final Map<EntityType<?>, SpawnEggItem> EGGS = ObfuscationReflectionHelper.getPrivateValue(SpawnEggItem.class, null, "BY_ID");
 		
 		for (final SpawnEggItem item : EGGS_TO_ADD) {
 			EGGS.put(item.getType(null), item);
-			DispenserBlock.registerDispenseBehavior(item, behavior);
+			//DispenserBlock.(item, behavior);
 		}
 		
 		EGGS_TO_ADD.clear();
 		
 	}
-	
 
 	@Override
-	public EntityType<?> getType(CompoundNBT nbt) {
+	public EntityType<?> getType(@Nullable CompoundTag p_43229_) {
 		return this.lazyEntity.get();
 	}
-	
-	
 }

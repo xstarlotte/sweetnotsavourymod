@@ -1,21 +1,10 @@
 package com.charlotte.sweetnotsavourymod.client.entity;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.model.StrawberryWaferschundModel;
-import com.charlotte.sweetnotsavourymod.client.entity.model.pugs.LemonPugModel;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.pugs.LemonPugEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
 
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
-
+/*
 public class StrawberryWaferschundRenderer extends GeoEntityRenderer <StrawberryWaferschundEntity> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(SweetNotSavouryMod.MOD_ID, 
@@ -42,3 +31,4 @@ public class StrawberryWaferschundRenderer extends GeoEntityRenderer <Strawberry
     }
 	
 }
+*/

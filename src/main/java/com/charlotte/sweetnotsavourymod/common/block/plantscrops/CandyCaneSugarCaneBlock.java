@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-
+/*
 public class CandyCaneSugarCaneBlock extends SugarCaneBlock {
 	   public static final IntegerProperty AGE = BlockStateProperties.AGE_15;
 	   protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
@@ -43,7 +43,7 @@ public class CandyCaneSugarCaneBlock extends SugarCaneBlock {
 
 	   /**
 	    * Performs a random tick on a block.
-	    */
+	    
 	   public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
 	      if (worldIn.isEmptyBlock(pos.up())) {
 	         int i;
@@ -87,5 +87,6 @@ public class CandyCaneSugarCaneBlock extends SugarCaneBlock {
 	   public BlockState getPlant(BlockGetter world, BlockPos pos) {
 	      return defaultBlockState();
 	   }
-	}
+}
 
+*/

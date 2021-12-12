@@ -3,14 +3,9 @@ package com.charlotte.sweetnotsavourymod.client.entity;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.model.ToffeeToadModel;
 import com.charlotte.sweetnotsavourymod.common.entity.ToffeeToadEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
 
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
-
+/*
 public class ToffeeToadRenderer extends GeoEntityRenderer <ToffeeToadEntity> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(SweetNotSavouryMod.MOD_ID, 
@@ -36,4 +31,4 @@ public class ToffeeToadRenderer extends GeoEntityRenderer <ToffeeToadEntity> {
         stackIn.scale(0.4F, 0.4F, 0.4F);
     }
 	
-}
+}*/

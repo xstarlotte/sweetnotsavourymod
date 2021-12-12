@@ -1,13 +1,7 @@
 package com.charlotte.sweetnotsavourymod.client.entity.model.poisonberries;
 
-import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerrySpriteEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
 
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.util.math.MathHelper;
-
+/*
 public class PoisonBerrySpriteModel<T extends PoisonBerrySpriteEntity> extends EntityModel<T> {
 	private final ModelRenderer head;
 	private final ModelRenderer cube_r1;
@@ -372,3 +366,4 @@ public class PoisonBerrySpriteModel<T extends PoisonBerrySpriteEntity> extends E
 		
 	}
 }
+*/

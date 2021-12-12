@@ -4,9 +4,8 @@ import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryParfaitPixieEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.mice.StrawberryCheesecakeMouseEntity;
 
-import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
-
+/*
 public class StrawberryCheesecakeMouseModel extends AnimatedGeoModel<StrawberryCheesecakeMouseEntity>
 {
 	@Override
@@ -28,3 +27,4 @@ public class StrawberryCheesecakeMouseModel extends AnimatedGeoModel<StrawberryC
 	}
 	
 }
+*/

@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-
+/*
 public class IceCreamTreeFeature extends Feature<TreeConfiguration> {
 	
 	private static final Direction[] DIRECTIONS = new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH,
@@ -109,3 +109,4 @@ public class IceCreamTreeFeature extends Feature<TreeConfiguration> {
 	
 }
 
+*/

@@ -1,18 +1,11 @@
 package com.charlotte.sweetnotsavourymod.client.entity.model;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.ToffeeToadEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class ToffeeToadModel extends AnimatedGeoModel<ToffeeToadEntity>
-{
+public class ToffeeToadModel extends AnimatedGeoModel<ToffeeToadEntity> {
 	@Override
 	public ResourceLocation getModelLocation(ToffeeToadEntity entity)
 	{
@@ -30,5 +23,4 @@ public class ToffeeToadModel extends AnimatedGeoModel<ToffeeToadEntity>
 	{
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/toad.animation.json");
 	}
-	
 }

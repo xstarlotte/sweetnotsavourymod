@@ -3,9 +3,8 @@ package com.charlotte.sweetnotsavourymod.client.entity.model.mice;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.mice.MarshmallowPieMouseEntity;
 
-import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
-
+/*
 public class MarshmallowPieMouseModel extends AnimatedGeoModel<MarshmallowPieMouseEntity>
 {
 	@Override
@@ -27,3 +26,4 @@ public class MarshmallowPieMouseModel extends AnimatedGeoModel<MarshmallowPieMou
 	}
 	
 }
+*/

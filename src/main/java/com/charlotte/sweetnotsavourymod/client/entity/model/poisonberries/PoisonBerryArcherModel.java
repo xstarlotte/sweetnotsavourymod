@@ -4,12 +4,7 @@ package com.charlotte.sweetnotsavourymod.client.entity.model.poisonberries;// Ma
 
 
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryArcherEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryAttackerEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.model.ModelRenderer;
-
+/*
 public class PoisonBerryArcherModel<T extends PoisonBerryArcherEntity> extends EntityModel <T>{
 	private final ModelRenderer body;
 	private final ModelRenderer feet;
@@ -83,4 +78,4 @@ public class PoisonBerryArcherModel<T extends PoisonBerryArcherEntity> extends E
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
 	}
-}
+}*/

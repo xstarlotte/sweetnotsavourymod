@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.client.entity.model.squirrels;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.squirrels.StrawberrySwissSquirrollEntity;
 
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class StrawberrySwissSquirrollModel extends AnimatedGeoModel<StrawberrySwissSquirrollEntity>

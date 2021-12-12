@@ -1,62 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.util;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.StrawberryParfaitPixieRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.StrawberryWaferschundRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.ToffeeToadRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.ZebraCakeZebraRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.elves.BlueberryElfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.elves.LemonElfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.elves.OrangeElfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.elves.RaspberryElfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.elves.StrawberryElfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.elves.VanillaElfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.mice.HazelnutCheesecakeMouseRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.mice.MarshmallowPieMouseRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.mice.StrawberryCheesecakeMouseRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.monkeys.BananaMonkeyKingRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.monkeys.BananaMonkeyRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.BlueberryIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.BlueberryParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.ChocolateIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.LemonIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.LemonParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.OrangeIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.OrangeParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.PeachIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.PeachParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.PineappleParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.RaspberryIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.RaspberryParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.StrawberryIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.StrawberryParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.ToffeeIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.poisonberries.PoisonBerryArcherRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.poisonberries.PoisonBerryAttackerRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.poisonberries.PoisonBerrySpriteRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.BlueberryIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.BlueberryPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.ChocolateIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.ChocolatePugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.LemonPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.OrangeIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.OrangePugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.RaspberryIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.RaspberryPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.StrawberryIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.StrawberryPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.ToffeeIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.ToffeePugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.rabbits.AngelCakeRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.rabbits.BananaBreadRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.rabbits.CarrotCakeRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.rabbits.ChocolateCherryCakeRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.rabbits.LemonCurdCakeRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.rabbits.RedVelvetCakeRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.rabbits.VanillaCakeRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.squirrels.CinnamonSquirrollRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.squirrels.StrawberrySwissSquirrollRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.wolves.CandyCaneWolfRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.elves.SNSElfRenderer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 
@@ -79,7 +24,7 @@ public class ClientEventBusSubscriber {
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.RAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
 
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.ICECREAMTREESAPLING.get(), RenderType.cutout());
+		// ItemBlockRenderTypes.setRenderLayer(BlockInit.ICECREAMTREESAPLING.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYPLANT.get(), RenderType.cutout());
 
@@ -127,7 +72,7 @@ public class ClientEventBusSubscriber {
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONLOLLIPOPLAMP.get(), RenderType.cutout());
         
-		
+		/*
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.POISONBERRYATTACKER.get(), PoisonBerryAttackerRenderer::new);
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.POISONBERRYARCHER.get(), PoisonBerryArcherRenderer::new);
@@ -178,10 +123,11 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYELF.get(), manager -> new StrawberryElfRenderer(manager));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BLUEBERRYELF.get(), manager -> new BlueberryElfRenderer(manager));
+		*/
+
+		EntityRenderers.register(EntityTypesInit.LEMONELF.get(), SNSElfRenderer::new);
 		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.LEMONELF.get(), manager -> new LemonElfRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ORANGEELF.get(), manager -> new OrangeElfRenderer(manager));
+		/*RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ORANGEELF.get(), manager -> new OrangeElfRenderer(manager));
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.VANILLAELF.get(), manager -> new VanillaElfRenderer(manager));
 		
@@ -255,6 +201,6 @@ public class ClientEventBusSubscriber {
 		
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CANDYCANEWOLF.get(), manager -> new CandyCaneWolfRenderer(manager));
-	}
+	*/}
 
 }

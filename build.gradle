@@ -123,8 +123,8 @@ dependencies {
 
     minecraft 'net.minecraftforge:forge:1.18-38.0.12'
 
-    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.0.106:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.0.106")
+    // compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.0.106:api")
+    // runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.0.106")
     implementation fg.deobf('software.bernie.geckolib:geckolib-1.18:3.0.1')
 
 }

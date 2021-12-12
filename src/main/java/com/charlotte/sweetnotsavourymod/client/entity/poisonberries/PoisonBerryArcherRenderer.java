@@ -1,16 +1,11 @@
 package com.charlotte.sweetnotsavourymod.client.entity.poisonberries;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.model.poisonberries.PoisonBerryArcherModel;
-import com.charlotte.sweetnotsavourymod.client.entity.model.poisonberries.PoisonBerryAttackerModel;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryArcherEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerryAttackerEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.util.ResourceLocation;
 import org.antlr.v4.runtime.misc.NotNull;
-
+/*
 public class PoisonBerryArcherRenderer extends MobRenderer<PoisonBerryArcherEntity,
 PoisonBerryArcherModel<PoisonBerryArcherEntity>> {
 
@@ -35,3 +30,4 @@ PoisonBerryArcherModel<PoisonBerryArcherEntity>> {
 		
 	}
 }
+*/

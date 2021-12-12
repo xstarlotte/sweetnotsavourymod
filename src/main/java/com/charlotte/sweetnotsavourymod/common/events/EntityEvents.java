@@ -18,9 +18,9 @@ public class EntityEvents{
     @SubscribeEvent
     public void onBerryJump(final LivingEvent.LivingJumpEvent event ){
 
-        if (event.getEntity().getType() == EntityTypesInit.POISONBERRYATTACKER.get())
-            if (event.getEntityLiving().getBlockState().getBlock() == BlockInit.POISONOAKMINIDOOR.get())
-                event.getEntityLiving().setDeltaMovement( event.getEntityLiving().getDeltaMovement().x, 0, event.getEntityLiving().getDeltaMovement().z );
+        //if (event.getEntity().getType() == EntityTypesInit.POISONBERRYATTACKER.get())
+            //if (event.getEntityLiving().getBlockState().getBlock() == BlockInit.POISONOAKMINIDOOR.get())
+            //    event.getEntityLiving().setDeltaMovement( event.getEntityLiving().getDeltaMovement().x, 0, event.getEntityLiving().getDeltaMovement().z );
 
     }
     
@@ -30,8 +30,8 @@ public class EntityEvents{
 			return;
 		MobSpawnSettingsBuilder spawns = event.getSpawns();
 		
-		if(event.getCategory().equals(Biome.biomeCategory.FOREST)) {
-			spawns.addSpawn(MobCategory.MONSTER, MobSpawnSettings.spawners(EntityTypesInit.POISONBERRYATTACKER.get(), 40, 2, 4));
+		if(event.getCategory().equals(Biome.BiomeCategory.FOREST)) {
+			// spawns.addSpawn(MobCategory.MONSTER, MobSpawnSettings.SpawnerData(EntityTypesInit.POISONBERRYATTACKER.get(), 40, 2, 4));
 		}
 	}
 }

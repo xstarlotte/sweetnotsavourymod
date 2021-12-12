@@ -3,14 +3,9 @@ package com.charlotte.sweetnotsavourymod.client.entity.poisonberries;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.model.poisonberries.PoisonBerrySpriteModel;
-import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PoisonBerrySpriteEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
 
-import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.util.ResourceLocation;
-
+/*
 public class PoisonBerrySpriteRenderer extends MobRenderer<PoisonBerrySpriteEntity, 
 PoisonBerrySpriteModel<PoisonBerrySpriteEntity>> {
 
@@ -34,5 +29,5 @@ PoisonBerrySpriteModel<PoisonBerrySpriteEntity>> {
 	public ResourceLocation getEntityTexture(PoisonBerrySpriteEntity entity) {
 		return TEXTURE;
 	}
-}
+}*/
 

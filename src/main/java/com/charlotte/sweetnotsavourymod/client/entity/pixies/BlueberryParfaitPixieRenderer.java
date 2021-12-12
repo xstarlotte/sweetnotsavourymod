@@ -1,16 +1,10 @@
-package com.charlotte.sweetnotsavourymod.client.entity;
+package com.charlotte.sweetnotsavourymod.client.entity.pixies;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.model.StrawberryParfaitPixieModel;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryParfaitPixieEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
 
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
-
+/*
 public class BlueberryParfaitPixieRenderer extends GeoEntityRenderer <BlueberryParfaitPixieEntity> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(SweetNotSavouryMod.MOD_ID, 
@@ -37,3 +31,4 @@ public class BlueberryParfaitPixieRenderer extends GeoEntityRenderer <BlueberryP
     }
 	
 }
+*/

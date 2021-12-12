@@ -36,7 +36,7 @@ public class PineappleParrotEntity extends TamableAnimal implements IAnimatable 
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private static final EntityDataAccessor<Boolean> SITTING =
-			SynchedEntityData.defineId(PineappleIceCreamParrotEntity.class, EntityDataSerializers.BOOLEAN);
+			SynchedEntityData.defineId(PineappleParrotEntity.class, EntityDataSerializers.BOOLEAN);
 
 	public PineappleParrotEntity(EntityType<? extends TamableAnimal> type, Level worldIn) {
 		super(type, worldIn);
