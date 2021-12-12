@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "sweetnotsavourymod:block/orangelamp"
+    },
+    "hanging=true": {
+      "model": "sweetnotsavourymod:block/orangelamp"
+    }
+  }
+}

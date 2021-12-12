@@ -1,40 +1,34 @@
 package com.charlotte.sweetnotsavourymod.client.entity;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.model.StrawberryWaferschundModel;
 import com.charlotte.sweetnotsavourymod.common.entity.StrawberryWaferschundEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
 
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.util.ResourceLocation;
-
-public class StrawberryWaferschundRenderer extends MobRenderer <StrawberryWaferschundEntity, 
-StrawberryWaferschundModel<StrawberryWaferschundEntity>> {
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
+/*
+public class StrawberryWaferschundRenderer extends GeoEntityRenderer <StrawberryWaferschundEntity> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(SweetNotSavouryMod.MOD_ID, 
 			"textures/entity/strawberrywaferschund/strawberrywaferschund.png");
 	
-	public StrawberryWaferschundRenderer(EntityRendererManager manager) {
+	public StrawberryWaferschundRenderer(EntityRendererManager renderManager) {
 		
-		super(manager, new StrawberryWaferschundModel<>(), 0.1f);
-		
+		super(renderManager, new StrawberryWaferschundModel()); 
+		this.shadowSize = 0.7F;			
 	}
-	
 
-	@Override
-	protected void preRenderCallback(@NotNull StrawberryWaferschundEntity entitylivingbaseIn, @NotNull MatrixStack matrixStackIn,
-			float partialTickTime) {
-		matrixStackIn.scale(0.64F, 0.64F, 0.64F);
-		
-	}
-	
 	@Override
 	public ResourceLocation getEntityTexture(StrawberryWaferschundEntity entity) {
 		return TEXTURE;
-	}
+	}	
 	
+	@Override
+    public void renderEarly(StrawberryWaferschundEntity animatable, MatrixStack stackIn, float ticks,
+                            IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn,
+                            float red, float green, float blue, float partialTicks) {
+        super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+                red, green, blue, partialTicks);
+        stackIn.scale(0.8F, 0.8F, 0.8F);
+    }
 	
 }
+*/

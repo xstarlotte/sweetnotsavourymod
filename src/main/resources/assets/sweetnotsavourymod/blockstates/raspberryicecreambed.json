@@ -1,18 +1,18 @@
 {
     "variants": {
         "facing=east": {
-            "model": "sweetnotsavourymod:block/raspberryicecreambed",
+            "model": "sweetnotsavourymod:block/beds/raspberryicecreambed",
             "y": 90
         },
         "facing=north": {
-            "model": "sweetnotsavourymod:block/raspberryicecreambed"
+            "model": "sweetnotsavourymod:block/beds/raspberryicecreambed"
         },
         "facing=south": {
-            "model": "sweetnotsavourymod:block/raspberryicecreambed",
+            "model": "sweetnotsavourymod:block/beds/raspberryicecreambed",
             "y": 180
         },
         "facing=west": {
-            "model": "sweetnotsavourymod:block/raspberryicecreambed",
+            "model": "sweetnotsavourymod:block/beds/raspberryicecreambed",
             "y": 270
         }
     }

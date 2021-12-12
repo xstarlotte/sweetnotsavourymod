@@ -1,23 +1,23 @@
 package com.charlotte.sweetnotsavourymod.common.entity.ai;
 
-import net.minecraft.entity.CreatureEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.monster.Monster;
 
-public class PoisonBerryMeleeAttackGoal extends MeleeAttackGoal{
+public class PoisonBerryMeleeAttackGoal extends MeleeAttackGoal {
     private int random;
 
-    public PoisonBerryMeleeAttackGoal( CreatureEntity creature , double speedIn , boolean useLongMemory ){
+    public PoisonBerryMeleeAttackGoal(Monster creature, double speedIn , boolean useLongMemory ){
         super( creature , speedIn , useLongMemory );
 
         this.random = 0;
     }
 
     @Override
-    protected double getAttackReachSqr( LivingEntity attackTarget ){
-        return 8.0F + attackTarget.getWidth();
+    protected double getAttackReachSqr(LivingEntity attackTarget ){
+        return 8.0F + attackTarget.getBbWidth();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class PoisonBerryMeleeAttackGoal extends MeleeAttackGoal{
         if(distToEnemySqr <= d0){
 
             if(random == 20){
-                enemy.addPotionEffect( new EffectInstance( Effects.POISON , 60 ) );
+                enemy.addEffect( new MobEffectInstance( MobEffects.POISON , 60 ) );
 
 
             }

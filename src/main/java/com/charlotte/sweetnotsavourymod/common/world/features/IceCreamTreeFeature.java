@@ -4,47 +4,44 @@ import java.util.Random;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.mojang.serialization.Codec;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.command.arguments.BlockStateInput;
-import net.minecraft.inventory.IClearable;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.CachedBlockInfo;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ISeedReader;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.IWorldGenerationBaseReader;
-import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
 
-public class IceCreamTreeFeature extends Feature<BaseTreeFeatureConfig>{
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
+
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.ChunkGenerator;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+/*
+public class IceCreamTreeFeature extends Feature<TreeConfiguration> {
 	
 	private static final Direction[] DIRECTIONS = new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH,
 			Direction.WEST };
 	
-	private static final BlockState LOG = BlockInit.WAFERWOODBLOCK.get().getDefaultState();
-	private static final BlockState LEAVES = BlockInit.RAINBOWFROSTINGLEAVES.get().getDefaultState().with(LeavesBlock.DISTANCE, 1);
+	private static final BlockState LOG = BlockInit.WAFERWOODBLOCK.get().defaultBlockState();
+	private static final BlockState LEAVES = BlockInit.RAINBOWFROSTINGLEAVES.get().defaultBlockState().with(LeavesBlock.DISTANCE, 1);
 
-	public IceCreamTreeFeature(Codec<BaseTreeFeatureConfig> codec) {
+	public IceCreamTreeFeature(Codec<TreeConfiguration> codec) {
 		super(codec);		
 	}
 	@SuppressWarnings("deprecation")
-	public boolean isAirOrLeaves(IWorldGenerationBaseReader reader, BlockPos pos) {
-		if (!(reader instanceof IWorldReader)) {
-			return reader.hasBlockState(pos,  (state) -> state.isAir() || state.isIn(BlockTags.LEAVES));
+	public boolean isAirOrLeaves(LevelSimulatedReader reader, BlockPos pos) {
+		if (!(reader instanceof LevelReader)) {
+			return reader.isStateAtPosition(pos,  (state) -> state.isAir() || state.isIn(BlockTags.LEAVES));
 		}else {
-			return reader.hasBlockState(pos, state -> state.canBeReplacedByLeaves((IWorldReader)reader, pos));
+			return reader.isStateAtPosition(pos, state -> state.canBeReplacedByLeaves((LevelReader)reader, pos));
 		}
 	}
 	
 	@Override
-	public boolean generate(ISeedReader reader, ChunkGenerator generator, Random rand, BlockPos pos,
-							BaseTreeFeatureConfig config) {
+	public boolean generate(WorldGenLevel reader, ChunkGenerator generator, Random rand, BlockPos pos,
+							TreeConfiguration config) {
 		
 		while (pos.getY() > 1 && isAirOrLeaves(reader, pos)) {
 			pos = pos.down();
@@ -74,7 +71,7 @@ public class IceCreamTreeFeature extends Feature<BaseTreeFeatureConfig>{
 			return false;
 		}
 		//Leaves		
-		for(BlockPos blockpos : BlockPos.getAllInBoxMutable(pos.getX() - 2, pos.getY() + height + 1, pos.getZ() - 2,
+		for(BlockPos blockpos : BlockPos.betweenClosed(pos.getX() - 2, pos.getY() + height + 1, pos.getZ() - 2,
 															pos.getX() + 2, pos.getY() + height + 1, pos.getZ() + 2)
 				) {
             reader.setBlockState(blockpos, LEAVES, 3);
@@ -82,16 +79,16 @@ public class IceCreamTreeFeature extends Feature<BaseTreeFeatureConfig>{
                   }
 			
 			reader.setBlockState(new BlockPos(pos.getX() - 2, pos.getY() + height + 2, pos.getZ() - 2),
-					Blocks.AIR.getDefaultState(), 3);
+					Blocks.AIR.defaultBlockState(), 3);
 			reader.setBlockState(new BlockPos(pos.getX() + 2, pos.getY() + height + 2, pos.getZ() - 2),
-					Blocks.AIR.getDefaultState(), 3);
+					Blocks.AIR.defaultBlockState(), 3);
 			reader.setBlockState(new BlockPos(pos.getX() - 2, pos.getY() + height + 2, pos.getZ() + 2),
-					Blocks.AIR.getDefaultState(), 3);
+					Blocks.AIR.defaultBlockState(), 3);
 			reader.setBlockState(new BlockPos(pos.getX() + 2, pos.getY() + height + 2, pos.getZ() + 2),
-					Blocks.AIR.getDefaultState(), 3);
+					Blocks.AIR.defaultBlockState(), 3);
             
          
-			for(BlockPos blockpos : BlockPos.getAllInBoxMutable
+			for(BlockPos blockpos : BlockPos.betweenClosed
 					(pos.getX() - 1, pos.getY() + height + 3, pos.getZ() - 1,
 					pos.getX() + 1, pos.getY() + height + 3, pos.getZ() + 1)
 					) {
@@ -112,3 +109,4 @@ public class IceCreamTreeFeature extends Feature<BaseTreeFeatureConfig>{
 	
 }
 
+*/

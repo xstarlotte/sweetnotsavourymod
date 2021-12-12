@@ -1,29 +1,27 @@
 package com.charlotte.sweetnotsavourymod.common.entity.ai;
 
-import com.charlotte.sweetnotsavourymod.common.block.PoisonOakMiniDoor;
+import com.charlotte.sweetnotsavourymod.common.block.poisonberry.PoisonOakMiniDoor;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.pathfinding.GroundPathNavigator;
-import net.minecraft.pathfinding.PathPoint;
-import net.minecraft.util.GroundPathHelper;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
+import net.minecraft.world.entity.ai.util.GoalUtils;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.Path;
 
 
-public class PoisonBerryOpensMiniDoorGoal extends Goal{
-
-
-    protected MobEntity entity;
+public class PoisonBerryOpensMiniDoorGoal extends Goal {
+    protected Mob entity;
     protected BlockPos doorPosition = BlockPos.ZERO;
     protected boolean doorInteract;
     private boolean hasStoppedDoorInteraction;
     private float entityPositionX;
     private float entityPositionZ;
 
-    public PoisonBerryOpensMiniDoorGoal( MobEntity entityIn ){
+    public PoisonBerryOpensMiniDoorGoal(Mob entityIn) {
         this.entity = entityIn;
-        if(!GroundPathHelper.isGroundNavigator( entityIn )){
+        if(!GoalUtils.hasGroundPathNavigation( entityIn )){
             throw new IllegalArgumentException( "Unsupported mob type for DoorInteractGoal" );
         }
     }
@@ -32,9 +30,9 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal{
     protected void toggleDoor( boolean open ){
 
         if(this.doorInteract){
-            BlockState blockstate = this.entity.world.getBlockState( this.doorPosition );
+            BlockState blockstate = this.entity.level.getBlockState( this.doorPosition );
             if(blockstate.getBlock() instanceof PoisonOakMiniDoor){
-                ((PoisonOakMiniDoor) blockstate.getBlock()).openDoor( this.entity.world , blockstate , this.doorPosition , open );
+                ((PoisonOakMiniDoor) blockstate.getBlock()).openDoor( this.entity.level , blockstate , this.doorPosition , open );
             }
         }
 
@@ -43,16 +41,16 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal{
     /**
      * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
      * method as well.
-     */
+     *//*
     public boolean shouldExecute(){
-        if(!GroundPathHelper.isGroundNavigator( this.entity )){
+        if(!GoalUtils.hasGroundPathNavigation( this.entity )){
             return false;
-        }else if(!this.entity.collidedHorizontally){
+        }else if(!this.entity.horizontalCollision){
             return false;
         }else{
-            GroundPathNavigator groundpathnavigator = (GroundPathNavigator) this.entity.getNavigator();
-            net.minecraft.pathfinding.Path path = groundpathnavigator.getPath();
-            if(path != null && !path.isFinished() && groundpathnavigator.getEnterDoors()){
+            GroundPathNavigation groundpathnavigator = (GroundPathNavigation) this.entity.getNavigation();
+            Path path = groundpathnavigator.getPath();
+            if(path != null && !path.isDone() && groundpathnavigator.canOpenDoors()){ // might be passDoors
                 for(int i = 0; i < Math.min( path.getCurrentPathIndex() + 2 , path.getCurrentPathLength() ); ++i){
                     PathPoint pathpoint = path.getPathPointFromIndex( i );
                     this.doorPosition = new BlockPos( pathpoint.x , pathpoint.y , pathpoint.z );
@@ -71,7 +69,7 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal{
                 return false;
             }
         }
-    }
+    }*/
 
     /**
      * Returns whether an in-progress EntityAIBase should continue executing
@@ -88,20 +86,25 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal{
      */
     public void startExecuting(){
         this.hasStoppedDoorInteraction = false;
-        this.entityPositionX = (float) ((double) this.doorPosition.getX() + 0.5D - this.entity.getPosX());
-        this.entityPositionZ = (float) ((double) this.doorPosition.getZ() + 0.5D - this.entity.getPosZ());
+        this.entityPositionX = (float) ((double) this.doorPosition.getX() + 0.5D - this.entity.getX());
+        this.entityPositionZ = (float) ((double) this.doorPosition.getZ() + 0.5D - this.entity.getZ());
         if(shouldContinueExecuting()){
             toggleDoor( true );
         }
     }
 
 
+    @Override
+    public boolean canUse() {
+        return false;
+    }
+
     /**
      * Keep ticking a continuous task that has already been started
      */
     public void tick(){
-        float f = (float) ((double) this.doorPosition.getX() + 0.5D - this.entity.getPosX());
-        float f1 = (float) ((double) this.doorPosition.getZ() + 0.5D - this.entity.getPosZ());
+        float f = (float) ((double) this.doorPosition.getX() + 0.5D - this.entity.getX());
+        float f1 = (float) ((double) this.doorPosition.getZ() + 0.5D - this.entity.getZ());
         float f2 = this.entityPositionX * f + this.entityPositionZ * f1;
         if(f2 < 0.0F){
             this.hasStoppedDoorInteraction = true;
