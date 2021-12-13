@@ -19,15 +19,15 @@ import java.util.Map;
 public class SNSElfRenderer extends GeoEntityRenderer<SNSElfEntity> {
 	public static final Map<FlavourVariant, ResourceLocation> LOCATION_BY_VARIANT =
 			Util.make(Maps.newEnumMap(FlavourVariant.class), (p_114874_) -> {
-		p_114874_.put(FlavourVariant.BLUEBERRY, new ResourceLocation("textures/entity/elves/blueberryelf.png"));
-		p_114874_.put(FlavourVariant.ORANGE, new ResourceLocation("textures/entity/elves/orangeelf.png"));
-		p_114874_.put(FlavourVariant.RASPBERRY, new ResourceLocation("textures/entity/elves/raspberryelf.png"));
-		p_114874_.put(FlavourVariant.STRAWBERRY, new ResourceLocation("textures/entity/elves/strawberryelf.png"));
-		p_114874_.put(FlavourVariant.VANILLA, new ResourceLocation("textures/entity/elves/vanillaelf.png"));
-		p_114874_.put(FlavourVariant.BLACKBERRY, new ResourceLocation("textures/entity/elves/blackberryelf.png"));
-		p_114874_.put(FlavourVariant.LEMON, new ResourceLocation("textures/entity/elves/lemonelf.png"));
-		p_114874_.put(FlavourVariant.CHOCOLATE, new ResourceLocation("textures/entity/elves/chocolateelf.png"));
-		p_114874_.put(FlavourVariant.TOFFEE, new ResourceLocation("textures/entity/elves/toffeeelf.png"));
+		p_114874_.put(FlavourVariant.BLUEBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/blueberryelf.png"));
+		p_114874_.put(FlavourVariant.ORANGE, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/orangeelf.png"));
+		p_114874_.put(FlavourVariant.RASPBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/raspberryelf.png"));
+		p_114874_.put(FlavourVariant.STRAWBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/strawberryelf.png"));
+		p_114874_.put(FlavourVariant.VANILLA, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/vanillaelf.png"));
+		p_114874_.put(FlavourVariant.BLACKBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/blackberryelf.png"));
+		p_114874_.put(FlavourVariant.LEMON, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/lemonelf.png"));
+		p_114874_.put(FlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/chocolateelf.png"));
+		p_114874_.put(FlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/toffeeelf.png"));
 	});
 
 	public SNSElfRenderer(EntityRendererProvider.Context renderManager) {

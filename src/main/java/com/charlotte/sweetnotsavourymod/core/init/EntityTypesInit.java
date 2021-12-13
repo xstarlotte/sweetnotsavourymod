@@ -167,35 +167,12 @@ public class EntityTypesInit {
 					.sized(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "orangeicecreampug").toString()));
 
-	public static final RegistryObject<EntityType<StrawberryElfEntity>>STRAWBERRYELF = ENTITY_TYPES
-			.register("strawberryelf", () -> EntityType.Builder.of(StrawberryElfEntity::new, MobCategory.CREATURE)
+	public static final RegistryObject<EntityType<SNSElfEntity>>SNSELF = ENTITY_TYPES
+			.register("snself", () -> EntityType.Builder.of(SNSElfEntity::new, MobCategory.CREATURE)
 					.sized(0.6f, 0.6f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "strawberryelf").toString()));
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snself").toString()));
 	
-	public static final RegistryObject<EntityType<SNSElfEntity>>LEMONELF = ENTITY_TYPES
-			.register("lemonelf", () -> EntityType.Builder.of(SNSElfEntity::new, MobCategory.CREATURE)
-					.sized(0.6f, 0.6f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "lemonelf").toString()));
-	
-	public static final RegistryObject<EntityType<BlueberryElfEntity>>BLUEBERRYELF = ENTITY_TYPES
-			.register("blueberryelf", () -> EntityType.Builder.of(BlueberryElfEntity::new, MobCategory.CREATURE)
-					.sized(0.6f, 0.6f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "blueberryelf").toString()));
-	
-	public static final RegistryObject<EntityType<VanillaElfEntity>>VANILLAELF = ENTITY_TYPES
-			.register("vanillaelf", () -> EntityType.Builder.of(VanillaElfEntity::new, MobCategory.CREATURE)
-					.sized(0.6f, 0.6f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "vanillaelf").toString()));
-	
-	public static final RegistryObject<EntityType<RaspberryElfEntity>>RASPBERRYELF = ENTITY_TYPES
-			.register("raspberryelf", () -> EntityType.Builder.of(RaspberryElfEntity::new, MobCategory.CREATURE)
-					.sized(0.6f, 0.6f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "raspberryelf").toString()));
-	
-	public static final RegistryObject<EntityType<OrangeElfEntity>>ORANGEELF = ENTITY_TYPES
-			.register("orangeelf", () -> EntityType.Builder.of(OrangeElfEntity::new, MobCategory.CREATURE)
-					.sized(0.6f, 0.6f)
-					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "orangeelf").toString()));
+
 	
 	//public static final RegistryObject<EntityType<BananaMonkeyEntity>>BANANAMONKEY = ENTITY_TYPES
 	//		.register("bananamonkey", () -> EntityType.Builder.of(BananaMonkeyEntity::new, MobCategory.CREATURE)

@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.elves;
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -8,6 +9,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,15 +20,16 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
-import net.minecraft.world.entity.animal.horse.Horse;
-import net.minecraft.world.entity.animal.horse.Variant;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -38,7 +41,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 	private AnimationFactory factory = new AnimationFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
-			SynchedEntityData.defineId(Horse.class, EntityDataSerializers.INT);
+			SynchedEntityData.defineId(SNSElfEntity.class, EntityDataSerializers.INT);
 
 	private static final EntityDataAccessor<Boolean> SITTING =
 			SynchedEntityData.defineId(SNSElfEntity.class, EntityDataSerializers.BOOLEAN);
@@ -53,6 +56,25 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putInt("Variant", this.getTypeVariant());
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag p_21815_) {
+		super.readAdditionalSaveData(p_21815_);
+		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
+	}
+
+	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
+										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
+										@Nullable CompoundTag p_146750_) {
+		FlavourVariant variant = Util.getRandom(FlavourVariant.values(), this.random);
+		setVariant(variant);
+		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
+	}
+
+	private void setVariant(FlavourVariant variant) {
+		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
@@ -174,11 +196,24 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 
 	public void setSitting(boolean sitting) {
 		this.entityData.set(SITTING, sitting);
+		this.setInSittingPose(sitting);
 	}
 
 	public boolean isSitting() {
 		return this.entityData.get(SITTING);
 	}
+
+	@Override
+	public Team getTeam() {
+		return super.getTeam();
+	}
+
+	@Override
+	public boolean wantsToAttack(LivingEntity attacker, LivingEntity target) {
+		return attacker.getTeam()!= target.getTeam();
+	}
+
+
 
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
 		this.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 0.15F, 1.0F);
@@ -207,5 +242,9 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 		super.defineSynchedData();
 		this.entityData.define(SITTING, false);
 		this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+
+
+
+
 	}
 }

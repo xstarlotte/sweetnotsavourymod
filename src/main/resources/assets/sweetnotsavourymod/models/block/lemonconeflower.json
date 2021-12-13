@@ -1,0 +1,7 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "sweetnotsavourymod:blocks/lemonconeflower",
+		"particle": "sweetnotsavourymod:blocks/lemonconeflower"
+	}
+}

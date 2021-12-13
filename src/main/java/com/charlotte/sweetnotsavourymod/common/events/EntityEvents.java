@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 
@@ -8,6 +9,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraftforge.common.world.MobSpawnSettingsBuilder;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -33,5 +35,13 @@ public class EntityEvents{
 		if(event.getCategory().equals(Biome.BiomeCategory.FOREST)) {
 			// spawns.addSpawn(MobCategory.MONSTER, MobSpawnSettings.SpawnerData(EntityTypesInit.POISONBERRYATTACKER.get(), 40, 2, 4));
 		}
+
+
 	}
+
+	@SubscribeEvent
+	public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+		event.put(EntityTypesInit.SNSELF.get(), SNSElfEntity.setAttributes());
+	}
+
 }

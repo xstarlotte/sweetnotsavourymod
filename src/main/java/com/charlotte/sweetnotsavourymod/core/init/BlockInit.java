@@ -60,11 +60,101 @@ public class BlockInit {
 					.randomTicks()
 					.noOcclusion()
 					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> BLACKBERRYFROSTINGFLOWER = BLOCKS.register("blackberryfrostingflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> RASPBERRYFROSTINGFLOWER = BLOCKS.register("raspberryfrostingflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> BLUEBERRYFROSTINGFLOWER = BLOCKS.register("blueberryfrostingflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> STRAWBERRYFROSTINGFLOWER = BLOCKS.register("strawberryfrostingflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> LEMONFROSTINGFLOWER = BLOCKS.register("lemonfrostingflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> ORANGEFROSTINGFLOWER = BLOCKS.register("orangefrostingflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
 	
 	public static final RegistryObject<Block> FROSTINGGRASS = BLOCKS.register("frostinggrass",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> BLACKBERRYFROSTINGBLOCK = BLOCKS.register("blackberryfrostingblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> STRAWBERRYFROSTINGBLOCK = BLOCKS.register("strawberryfrostingblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> BLUEBERRYFROSTINGBLOCK = BLOCKS.register("blueberryfrostingblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> RASPBERRYFROSTINGBLOCK = BLOCKS.register("raspberryfrostingblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> ORANGEFROSTINGBLOCK = BLOCKS.register("orangefrostingblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> LEMONFROSTINGBLOCK = BLOCKS.register("lemonfrostingblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
 					.sound(SoundType.GRASS)));
@@ -94,6 +184,14 @@ public class BlockInit {
 					.randomTicks()
 					.noOcclusion()
 					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> BLACKBERRYCANDYBUSH = BLOCKS.register("blackberrycandybush",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
 	
 	public static final RegistryObject<Block> LEMONCANDYBUSH = BLOCKS.register("lemoncandybush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
@@ -110,8 +208,88 @@ public class BlockInit {
 					.randomTicks()
 					.noOcclusion()
 					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> RAINBOWCANDYBUSH = BLOCKS.register("rainbowcandybush",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
 	
 	public static final RegistryObject<Block> CHOCOLATECINERARIA = BLOCKS.register("chocolatecineraria",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> BLACKBERRYCONEFLOWER = BLOCKS.register("blackberryconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> BLUEBERRYCONEFLOWER = BLOCKS.register("blueberryconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> RASPBERRYCONEFLOWER = BLOCKS.register("raspberryconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> STRAWBERRYCONEFLOWER = BLOCKS.register("strawberryconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> ORANGECONEFLOWER = BLOCKS.register("orangeconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> LEMONCONEFLOWER = BLOCKS.register("lemonconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> VANILLACONEFLOWER = BLOCKS.register("vanillaconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> CHOCOLATECONEFLOWER = BLOCKS.register("chocolateconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)));
+
+	public static final RegistryObject<Block> TOFFEECONEFLOWER = BLOCKS.register("toffeeconeflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
