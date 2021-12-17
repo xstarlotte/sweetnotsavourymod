@@ -48,23 +48,11 @@ public class SweetNotSavouryMod {
 		EntityTypesInit.ENTITY_TYPES.register(bus);
     	
         MinecraftForge.EVENT_BUS.register(this);
-    } 
-    
-    @SubscribeEvent
-    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
-    	BlockInit.BLOCKS.getEntries()
-    	.stream()
-    	.map(RegistryObject::get).forEach(block -> {
-    		event.getRegistry()
-    		.register(new BlockItem(block, new Item.Properties()
-    				.tab(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD))
-    				.setRegistryName(block.getRegistryName()));
-    	});
     }
 
     @SubscribeEvent
     public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event) {
-    	CustomSpawnEggItem.initSpawnEggs();
+    	//CustomSpawnEggItem.initSpawnEggs();
     }
 
     @SuppressWarnings("deprecation")

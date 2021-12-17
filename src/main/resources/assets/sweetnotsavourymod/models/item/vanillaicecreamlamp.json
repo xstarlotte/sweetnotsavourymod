@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/vanillaicecreamlamp",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/vanillaicecreamlamp"
+  }
+}

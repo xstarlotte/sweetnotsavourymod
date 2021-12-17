@@ -2,6 +2,8 @@ package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSParrotEntity;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,5 +14,7 @@ public class SNSModBusEvents {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(EntityTypesInit.SNSELF.get(), SNSElfEntity.setAttributes());
+        event.put(EntityTypesInit.SNSPARROT.get(), SNSParrotEntity.setAttributes());
+        event.put(EntityTypesInit.SNSICECREAMPARROT.get(), SNSIceCreamParrotEntity.setAttributes());
     }
 }

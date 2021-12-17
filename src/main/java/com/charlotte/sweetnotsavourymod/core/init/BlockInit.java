@@ -4,6 +4,10 @@ import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.block.lamps.SNSLampBlock;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.PoisonOakMiniDoor;
 
+import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -12,658 +16,778 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Supplier;
+
 public class BlockInit {
-	
+
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SweetNotSavouryMod.MOD_ID);
-//ICECREAM TREE - STUFF	
-	public static final RegistryObject<Block> WAFERWOODBLOCK = BLOCKS.register("waferwoodblock",
+
+	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+		RegistryObject<T> toReturn = BLOCKS.register(name, block);
+		registerBlockItem(name, toReturn, tab);
+		return toReturn;
+	}
+
+	private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
+		return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(),
+				new Item.Properties().tab(tab)));
+	}
+
+	//ICECREAM TREE - STUFF
+	public static final RegistryObject<Block> WAFERWOODBLOCK = registerBlock("waferwoodblock",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.BAMBOO)
-					.strength(2f, 10f)));
-	
-	public static final RegistryObject<Block> STRIPPEDWAFERWOODBLOCK = BLOCKS.register("strippedwaferwoodblock",
+					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> STRIPPEDWAFERWOODBLOCK = registerBlock("strippedwaferwoodblock",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.BAMBOO)
-					.strength(2f, 3f)));
-	
-	public static final RegistryObject<Block> RAINBOWFROSTINGLEAVES = BLOCKS.register("rainbowfrostingleaves",
+					.strength(2f, 3f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> RAINBOWFROSTINGLEAVES = registerBlock("rainbowfrostingleaves",
 			() -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.TERRACOTTA_WHITE)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	//public static final RegistryObject<Block> ICECREAMTREESAPLING = BLOCKS.register("icecreamtreesapling",
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	//public static final RegistryObject<Block> ICECREAMTREESAPLING = registerBlock("icecreamtreesapling",
 	//		() -> new IceCreamTreeSaplingBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.TERRACOTTA_WHITE)
 	//				.strength(0f)
 	//				.randomTicks()
 	//				.noOcclusion()
 	//				.sound(SoundType.GRASS),
-	//				TreeInit.ICECREAMTREE));
+	//				TreeInit.ICECREAMTREE), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	
-	public static final RegistryObject<Block> RAINBOWFROSTINGGRASSBLOCK = BLOCKS.register("rainbowfrostinggrassblock",
+	public static final RegistryObject<Block> RAINBOWFROSTINGGRASSBLOCK = registerBlock("rainbowfrostinggrassblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> FROSTINGBLOCK = BLOCKS.register("frostingblock",
-			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
-					.strength(0.2f,1f)
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> FROSTINGFLOWER = BLOCKS.register("frostingflower",
+	public static final RegistryObject<Block> FROSTINGBLOCK = registerBlock("frostingblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> FROSTINGFLOWER = registerBlock("frostingflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> BLACKBERRYFROSTINGFLOWER = BLOCKS.register("blackberryfrostingflower",
+	public static final RegistryObject<Block> BLACKBERRYFROSTINGFLOWER = registerBlock("blackberryfrostingflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> RASPBERRYFROSTINGFLOWER = BLOCKS.register("raspberryfrostingflower",
+	public static final RegistryObject<Block> RASPBERRYFROSTINGFLOWER = registerBlock("raspberryfrostingflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> BLUEBERRYFROSTINGFLOWER = BLOCKS.register("blueberryfrostingflower",
+	public static final RegistryObject<Block> BLUEBERRYFROSTINGFLOWER = registerBlock("blueberryfrostingflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> STRAWBERRYFROSTINGFLOWER = BLOCKS.register("strawberryfrostingflower",
+	public static final RegistryObject<Block> STRAWBERRYFROSTINGFLOWER = registerBlock("strawberryfrostingflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> LEMONFROSTINGFLOWER = BLOCKS.register("lemonfrostingflower",
+	public static final RegistryObject<Block> LEMONFROSTINGFLOWER = registerBlock("lemonfrostingflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> ORANGEFROSTINGFLOWER = BLOCKS.register("orangefrostingflower",
+	public static final RegistryObject<Block> ORANGEFROSTINGFLOWER = registerBlock("orangefrostingflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> FROSTINGGRASS = BLOCKS.register("frostinggrass",
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> FROSTINGGRASS = registerBlock("frostinggrass",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> BLACKBERRYFROSTINGBLOCK = BLOCKS.register("blackberryfrostingblock",
+	public static final RegistryObject<Block> BLACKBERRYFROSTINGBLOCK = registerBlock("blackberryfrostingblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> STRAWBERRYFROSTINGBLOCK = BLOCKS.register("strawberryfrostingblock",
+	public static final RegistryObject<Block> STRAWBERRYFROSTINGBLOCK = registerBlock("strawberryfrostingblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> BLUEBERRYFROSTINGBLOCK = BLOCKS.register("blueberryfrostingblock",
+	public static final RegistryObject<Block> BLUEBERRYFROSTINGBLOCK = registerBlock("blueberryfrostingblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> RASPBERRYFROSTINGBLOCK = BLOCKS.register("raspberryfrostingblock",
+	public static final RegistryObject<Block> RASPBERRYFROSTINGBLOCK = registerBlock("raspberryfrostingblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> ORANGEFROSTINGBLOCK = BLOCKS.register("orangefrostingblock",
+	public static final RegistryObject<Block> ORANGEFROSTINGBLOCK = registerBlock("orangefrostingblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> LEMONFROSTINGBLOCK = BLOCKS.register("lemonfrostingblock",
+	public static final RegistryObject<Block> LEMONFROSTINGBLOCK = registerBlock("lemonfrostingblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 //CANDY-STUFF
 	
-	public static final RegistryObject<Block> STRAWBERRYCANDYBUSH = BLOCKS.register("strawberrycandybush",
+	public static final RegistryObject<Block> STRAWBERRYCANDYBUSH = registerBlock("strawberrycandybush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> RASPBERRYCANDYBUSH = BLOCKS.register("raspberrycandybush",
-			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
-					.noCollission()
-					.instabreak()
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> BLUEBERRYCANDYBUSH = BLOCKS.register("blueberrycandybush",
-			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
-					.noCollission()
-					.instabreak()
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> BLACKBERRYCANDYBUSH = BLOCKS.register("blackberrycandybush",
+	public static final RegistryObject<Block> RASPBERRYCANDYBUSH = registerBlock("raspberrycandybush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> LEMONCANDYBUSH = BLOCKS.register("lemoncandybush",
-			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
-					.noCollission()
-					.instabreak()
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> ORANGECANDYBUSH = BLOCKS.register("orangecandybush",
-			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
-					.noCollission()
-					.instabreak()
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> RAINBOWCANDYBUSH = BLOCKS.register("rainbowcandybush",
+	public static final RegistryObject<Block> BLUEBERRYCANDYBUSH = registerBlock("blueberrycandybush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> CHOCOLATECINERARIA = BLOCKS.register("chocolatecineraria",
-			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
-					.noCollission()
-					.instabreak()
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> BLACKBERRYCONEFLOWER = BLOCKS.register("blackberryconeflower",
+	public static final RegistryObject<Block> BLACKBERRYCANDYBUSH = registerBlock("blackberrycandybush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> BLUEBERRYCONEFLOWER = BLOCKS.register("blueberryconeflower",
+	public static final RegistryObject<Block> LEMONCANDYBUSH = registerBlock("lemoncandybush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> RASPBERRYCONEFLOWER = BLOCKS.register("raspberryconeflower",
+	public static final RegistryObject<Block> ORANGECANDYBUSH = registerBlock("orangecandybush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> STRAWBERRYCONEFLOWER = BLOCKS.register("strawberryconeflower",
+	public static final RegistryObject<Block> RAINBOWCANDYBUSH = registerBlock("rainbowcandybush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> ORANGECONEFLOWER = BLOCKS.register("orangeconeflower",
+	public static final RegistryObject<Block> CHOCOLATECINERARIA = registerBlock("chocolatecineraria",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> LEMONCONEFLOWER = BLOCKS.register("lemonconeflower",
+	public static final RegistryObject<Block> BLACKBERRYCONEFLOWER = registerBlock("blackberryconeflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> VANILLACONEFLOWER = BLOCKS.register("vanillaconeflower",
+	public static final RegistryObject<Block> BLUEBERRYCONEFLOWER = registerBlock("blueberryconeflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> CHOCOLATECONEFLOWER = BLOCKS.register("chocolateconeflower",
+	public static final RegistryObject<Block> RASPBERRYCONEFLOWER = registerBlock("raspberryconeflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> TOFFEECONEFLOWER = BLOCKS.register("toffeeconeflower",
+	public static final RegistryObject<Block> STRAWBERRYCONEFLOWER = registerBlock("strawberryconeflower",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> ORANGECONEFLOWER = registerBlock("orangeconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> LEMONCONEFLOWER = registerBlock("lemonconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> VANILLACONEFLOWER = registerBlock("vanillaconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CHOCOLATECONEFLOWER = registerBlock("chocolateconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> TOFFEECONEFLOWER = registerBlock("toffeeconeflower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.PLANT)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 //POISONBERRY-STUFF	
 	
-	public static final RegistryObject<Block> POISONBERRYWOODPLANKS = BLOCKS.register("poisonberrywoodplanks",
+	public static final RegistryObject<Block> POISONBERRYWOODPLANKS = registerBlock("poisonberrywoodplanks",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)
-					.strength(2f, 10f)));
-	
-	public static final RegistryObject<Block> OVERGROWNPOISONBERRYWOODPLANKS = BLOCKS.register("overgrownpoisonberrywoodplanks",
+					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> OVERGROWNPOISONBERRYWOODPLANKS = registerBlock("overgrownpoisonberrywoodplanks",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)
-					.strength(2f, 10f)));
-	
-	public static final RegistryObject<Block> POISONBERRYLEAVES = BLOCKS.register("poisonberryleaves",
+					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> POISONBERRYLEAVES = registerBlock("poisonberryleaves",
 			() -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.TERRACOTTA_WHITE)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> FLOWERINGPOISONBERRYLEAVES = BLOCKS.register("floweringpoisonberryleaves",
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> FLOWERINGPOISONBERRYLEAVES = registerBlock("floweringpoisonberryleaves",
 			() -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.TERRACOTTA_WHITE)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> POISONGRASSBLOCK = BLOCKS.register("poisongrassblock",
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> POISONGRASSBLOCK = registerBlock("poisongrassblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	public static final RegistryObject<Block> POISONBERRYPLANT = BLOCKS.register("poisonberryplant",
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> POISONBERRYPLANT = registerBlock("poisonberryplant",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_PURPLE)
 					.noCollission().
 					instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	//other
-	public static final RegistryObject<Block> CANDYCANEBUSH = BLOCKS.register("candycanebush",
+	public static final RegistryObject<Block> CANDYCANEBUSH = registerBlock("candycanebush",
 			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_RED)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
 					.noOcclusion()
-					.sound(SoundType.GRASS)));
-	
-	//public static final RegistryObject<Block> CANDYCANESUGARCANEBLOCK = BLOCKS.register("candycanesugarcaneblock",
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	//public static final RegistryObject<Block> CANDYCANESUGARCANEBLOCK = registerBlock("candycanesugarcaneblock",
 	//		() -> new CandyCaneSugarCaneBlock(BlockBehaviour.Properties
 	//				.of(Material.PLANTS)
 	//				.noCollission()
 	//				.randomTicks()
 	//				.noOcclusion()
 	//				.instabreak()
-	//				.sound(SoundType.GRASS)));
+	//				.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> CANDYCANEBLOCK = BLOCKS.register("candycaneblock",
+	public static final RegistryObject<Block> CANDYCANEBLOCK = registerBlock("candycaneblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.BAMBOO)));
-	
-	public static final RegistryObject<Block> RASPBERRYICINGBLOCK = BLOCKS.register("raspberryicingblock",
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> RASPBERRYICINGBLOCK = registerBlock("raspberryicingblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_PINK)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> RASPBERRYSORBETBLOCK = BLOCKS.register("raspberrysorbetblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> RASPBERRYSORBETBLOCK = registerBlock("raspberrysorbetblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_PINK)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> LEMONSORBETBLOCK = BLOCKS.register("lemonsorbetblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> LEMONSORBETBLOCK = registerBlock("lemonsorbetblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_YELLOW)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> BLUEBERRYSORBETBLOCK = BLOCKS.register("blueberrysorbetblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> BLUEBERRYSORBETBLOCK = registerBlock("blueberrysorbetblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BLUE)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> STRAWBERRYSORBETBLOCK = BLOCKS.register("strawberrysorbetblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> STRAWBERRYSORBETBLOCK = registerBlock("strawberrysorbetblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_RED)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> PEACHMANGOSORBETBLOCK = BLOCKS.register("peachmangosorbetblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> PEACHMANGOSORBETBLOCK = registerBlock("peachmangosorbetblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_PINK)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> ORANGESORBETBLOCK = BLOCKS.register("orangesorbetblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> ORANGESORBETBLOCK = registerBlock("orangesorbetblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_ORANGE)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> MELTINGCHOCOLATEBLOCK = BLOCKS.register("meltingchocolateblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> MELTINGCHOCOLATEBLOCK = registerBlock("meltingchocolateblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> MELTINGBLUEBERRYCHOCOLATEBLOCK = BLOCKS.register("meltingblueberrychocolateblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> MELTINGBLUEBERRYCHOCOLATEBLOCK = registerBlock("meltingblueberrychocolateblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> MELTINGRASPBERRYCHOCOLATEBLOCK = BLOCKS.register("meltingraspberrychocolateblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> MELTINGRASPBERRYCHOCOLATEBLOCK = registerBlock("meltingraspberrychocolateblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> MELTINGSTRAWBERRYCHOCOLATEBLOCK = BLOCKS.register("meltingstrawberrychocolateblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> MELTINGSTRAWBERRYCHOCOLATEBLOCK = registerBlock("meltingstrawberrychocolateblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> MELTINGORANGECHOCOLATEBLOCK = BLOCKS.register("meltingorangechocolateblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> MELTINGORANGECHOCOLATEBLOCK = registerBlock("meltingorangechocolateblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> MELTINGLEMONCHOCOLATEBLOCK = BLOCKS.register("meltinglemonchocolateblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> MELTINGLEMONCHOCOLATEBLOCK = registerBlock("meltinglemonchocolateblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.HONEY_BLOCK)));
-	
-	public static final RegistryObject<Block> CHOCOLATECHIPCOOKIEBLOCK = BLOCKS.register("chocolatechipcookieblock",
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> CHOCOLATECHIPCOOKIEBLOCK = registerBlock("chocolatechipcookieblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.WET_GRASS)));
-	
-	public static final RegistryObject<Block> WHITECHOCOLATECHIPCOOKIEBLOCK = BLOCKS.register("whitechocolatechipcookieblock",
+					.sound(SoundType.WET_GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> WHITECHOCOLATECHIPCOOKIEBLOCK = registerBlock("whitechocolatechipcookieblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.WET_GRASS)));
-	
-	public static final RegistryObject<Block> RAINBOWCOOKIEBLOCK = BLOCKS.register("rainbowcookieblock",
+					.sound(SoundType.WET_GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> RAINBOWCOOKIEBLOCK = registerBlock("rainbowcookieblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.WET_GRASS)));
-	
-	
-	public static final RegistryObject<Block> RASPBERRYCANDYBLOCK = BLOCKS.register("raspberrycandyblock",
+					.sound(SoundType.WET_GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+
+	public static final RegistryObject<Block> RASPBERRYCANDYBLOCK = registerBlock("raspberrycandyblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_PINK)
 					.strength(0.6f,1200f)
-					.sound(SoundType.NETHER_BRICKS)));
-	
-	public static final RegistryObject<Block> STRAWBERRYCANDYBLOCK = BLOCKS.register("strawberrycandyblock",
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> STRAWBERRYCANDYBLOCK = registerBlock("strawberrycandyblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_RED)
 					.strength(0.6f,1200f)
-					.sound(SoundType.NETHER_BRICKS)));
-	
-	public static final RegistryObject<Block> BLUEBERRYCANDYBLOCK = BLOCKS.register("blueberrycandyblock",
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> BLUEBERRYCANDYBLOCK = registerBlock("blueberrycandyblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BLUE)
 					.strength(0.6f,1200f)
-					.sound(SoundType.NETHER_BRICKS)));
-	
-	public static final RegistryObject<Block> LEMONCANDYBLOCK = BLOCKS.register("lemoncandyblock",
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> LEMONCANDYBLOCK = registerBlock("lemoncandyblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_YELLOW)
 					.strength(0.6f,1200f)
-					.sound(SoundType.NETHER_BRICKS)));
-	
-	public static final RegistryObject<Block> ORANGECANDYBLOCK = BLOCKS.register("orangecandyblock",
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> ORANGECANDYBLOCK = registerBlock("orangecandyblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.TERRACOTTA_ORANGE)
 					.strength(0.6f,1200f)
-					.sound(SoundType.NETHER_BRICKS)));
-	
-	public static final RegistryObject<Block> WAFERWOODPLANKS = BLOCKS.register("waferwoodplanks",
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> WAFERWOODPLANKS = registerBlock("waferwoodplanks",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.BAMBOO)
-					.strength(2f, 10f)));
-	
+					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	
-	public static final RegistryObject<Block> POPCORNBLOCK = BLOCKS.register("popcornblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)));
-	
-	public static final RegistryObject<Block> STRAWBERRYCANDYOREBLOCK = BLOCKS.register("strawberrycandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));
-	
-	public static final RegistryObject<Block> RASPBERRYCANDYOREBLOCK = BLOCKS.register("raspberrycandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));
-	
-	public static final RegistryObject<Block> BLUEBERRYCANDYOREBLOCK = BLOCKS.register("blueberrycandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));
-	
-	public static final RegistryObject<Block> LEMONCANDYOREBLOCK = BLOCKS.register("lemoncandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));
-	
-	public static final RegistryObject<Block> ORANGECANDYOREBLOCK = BLOCKS.register("orangecandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));
 
-	
-	
+
+	public static final RegistryObject<Block> POPCORNBLOCK = registerBlock("popcornblock",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HARDENEDBANANASTONE = registerBlock("hardenedbananastone",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HARDENEDBANANABRICKS = registerBlock("hardenedbananabricks",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> STRAWBERRYCANDYOREBLOCK = registerBlock("strawberrycandyoreblock",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> RASPBERRYCANDYOREBLOCK = registerBlock("raspberrycandyoreblock",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> BLUEBERRYCANDYOREBLOCK = registerBlock("blueberrycandyoreblock",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> LEMONCANDYOREBLOCK = registerBlock("lemoncandyoreblock",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> ORANGECANDYOREBLOCK = registerBlock("orangecandyoreblock",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+
+
 	//beds
 	
-	//public static final RegistryObject<Block> STRAWBERRYICECREAMBED = BLOCKS.register("strawberryicecreambed",
+	//public static final RegistryObject<Block> STRAWBERRYICECREAMBED = registerBlock("strawberryicecreambed",
 	//		() -> new SNSBedBlock( DyeColor.RED,BlockBehaviour.Properties.create(Material.WOOD,
-	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()));
+	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	//
-	//public static final RegistryObject<Block> BLACKBERRYICECREAMBED = BLOCKS.register("blackberryicecreambed",
+	//public static final RegistryObject<Block> BLACKBERRYICECREAMBED = registerBlock("blackberryicecreambed",
 	//		() -> new SNSBedBlock( DyeColor.PURPLE,BlockBehaviour.Properties.create(Material.WOOD,
-	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()));
+	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	//
-	//public static final RegistryObject<Block> BLUEBERRYICECREAMBED = BLOCKS.register("blueberryicecreambed",
+	//public static final RegistryObject<Block> BLUEBERRYICECREAMBED = registerBlock("blueberryicecreambed",
 	//		() -> new SNSBedBlock( DyeColor.BLUE,BlockBehaviour.Properties.create(Material.WOOD,
-	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()));
+	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	//
-	//public static final RegistryObject<Block> RASPBERRYICECREAMBED = BLOCKS.register("raspberryicecreambed",
+	//public static final RegistryObject<Block> RASPBERRYICECREAMBED = = registerBlock("raspberryicecreambed",
 	//		() -> new SNSBedBlock( DyeColor.PINK,BlockBehaviour.Properties.create(Material.WOOD,
-	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()));
+	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	//
-	//public static final RegistryObject<Block> LEMONICECREAMBED = BLOCKS.register("lemonicecreambed",
+	//public static final RegistryObject<Block> LEMONICECREAMBED = = registerBlock("lemonicecreambed",
 	//		() -> new SNSBedBlock( DyeColor.YELLOW,BlockBehaviour.Properties.create(Material.WOOD,
-	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()));
+	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 //doors	
 	
-	public static final RegistryObject<Block> POISONOAKMINIDOOR = BLOCKS.register("poisonoakminidoor",
-			() -> new PoisonOakMiniDoor(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN)
+	public static final RegistryObject<Block> POISONOAKMINIDOOR = registerBlock("poisonoakminidoor",
+			() -> new PoisonOakMiniDoor(BlockBehaviour
+					.Properties
+					.of(Material.WOOD,
+							MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.BAMBOO)));	
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 //lanterns	
 	
-	      public static final RegistryObject<Block> POISONBERRYLANTERN = BLOCKS.register("poisonberrylantern",
-	  			() -> new SNSLampBlock(BlockBehaviour
-						.Properties
-						.of(Material.METAL)
-						.requiresCorrectToolForDrops()
-						.strength(3.5F).sound(SoundType
-								.LANTERN)
-						.lightLevel((p_187433_) -> {
-							return 15;
-						}).noOcclusion()));
+	      public static final RegistryObject<Block> POISONBERRYLANTERN = registerBlock("poisonberrylantern",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	      
-	      public static final RegistryObject<Block> STRAWBERRYLAMP = BLOCKS.register("strawberrylamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
+	      public static final RegistryObject<Block> STRAWBERRYLAMP = registerBlock("strawberrylamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	      
-	      public static final RegistryObject<Block> RASPBERRYLAMP = BLOCKS.register("raspberrylamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
+	      public static final RegistryObject<Block> RASPBERRYLAMP = registerBlock("raspberrylamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	      
-	      public static final RegistryObject<Block> BLUEBERRYLAMP = BLOCKS.register("blueberrylamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
+	      public static final RegistryObject<Block> BLUEBERRYLAMP = registerBlock("blueberrylamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	      
-	      public static final RegistryObject<Block> BLACKBERRYLAMP = BLOCKS.register("blackberrylamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
+	      public static final RegistryObject<Block> BLACKBERRYLAMP = registerBlock("blackberrylamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	      
+	      public static final RegistryObject<Block> LEMONLAMP = registerBlock("lemonlamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	      
+	      public static final RegistryObject<Block> ORANGELAMP = registerBlock("orangelamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	      
+	      public static final RegistryObject<Block> BLUEBERRYLOLLIPOPLAMP = registerBlock("blueberrylollipoplamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	      
+	      public static final RegistryObject<Block> STRAWBERRYLOLLIPOPLAMP = registerBlock("strawberrylollipoplamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	      
+	      public static final RegistryObject<Block> BLACKBERRYLOLLIPOPLAMP = registerBlock("blackberrylollipoplamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	  					
+	      public static final RegistryObject<Block> RASPBERRYLOLLIPOPLAMP = registerBlock("raspberrylollipoplamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	      
+	      public static final RegistryObject<Block> ORANGELOLLIPOPLAMP = registerBlock("orangelollipoplamp",
+				  () -> new SNSLampBlock(BlockBehaviour
+						  .Properties
+						  .of(Material.METAL)
+						  .requiresCorrectToolForDrops()
+						  .strength(3.5F).sound(SoundType
+								  .LANTERN)
+						  .lightLevel((p_187433_) -> {
+							  return 15;
+						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> LEMONLOLLIPOPLAMP = registerBlock("lemonlollipoplamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
 						return 15;
-					}).noOcclusion()));
-	      
-	      public static final RegistryObject<Block> LEMONLAMP = BLOCKS.register("lemonlamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
-	      
-	      public static final RegistryObject<Block> ORANGELAMP = BLOCKS.register("orangelamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
-	      
-	      public static final RegistryObject<Block> BLUEBERRYLOLLIPOPLAMP = BLOCKS.register("blueberrylollipoplamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
-	      
-	      public static final RegistryObject<Block> STRAWBERRYLOLLIPOPLAMP = BLOCKS.register("strawberrylollipoplamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
-	      
-	      public static final RegistryObject<Block> BLACKBERRYLOLLIPOPLAMP = BLOCKS.register("blackberrylollipoplamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
-	  					
-	      public static final RegistryObject<Block> RASPBERRYLOLLIPOPLAMP = BLOCKS.register("raspberrylollipoplamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
-	      
-	      public static final RegistryObject<Block> ORANGELOLLIPOPLAMP = BLOCKS.register("orangelollipoplamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
-	      
-	      public static final RegistryObject<Block> LEMONLOLLIPOPLAMP = BLOCKS.register("lemonlollipoplamp",
-		  			() -> new SNSLampBlock(BlockBehaviour
-							.Properties
-							.of(Material.METAL)
-							.requiresCorrectToolForDrops()
-							.strength(3.5F).sound(SoundType
-									.LANTERN)
-							.lightLevel((p_187433_) -> {
-								return 15;
-							}).noOcclusion()));
-	  					
-	  								
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> VANILLAICECREAMLAMP = registerBlock("vanillaicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CHOCOLATEICECREAMLAMP = registerBlock("chocolateicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> TOFFEEICECREAMLAMP = registerBlock("toffeeicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> STRAWBERRYICECREAMLAMP = registerBlock("strawberryicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> RASPBERRYICECREAMLAMP = registerBlock("raspberryicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> BLACKBERRYICECREAMLAMP = registerBlock("blackberryicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> BLUEBERRYICECREAMLAMP = registerBlock("blueberryicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> LEMONICECREAMLAMP = registerBlock("lemonicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> ORANGEICECREAMLAMP = registerBlock("orangeicecreamlamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.METAL)
+					.requiresCorrectToolForDrops()
+					.strength(3.5F).sound(SoundType
+							.LANTERN)
+					.lightLevel((p_187433_) -> {
+						return 15;
+					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	  					
 }
 

@@ -109,10 +109,10 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 
 	public static AttributeSupplier setAttributes() {
 		return TamableAnimal.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 20.0D)
-				.add(Attributes.ATTACK_DAMAGE, 8.0f)
+				.add(Attributes.MAX_HEALTH, 30.0D)
+				.add(Attributes.ATTACK_DAMAGE, 2D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.3f).build();
+				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
 	}
 
 	protected void registerGoals() {
@@ -133,18 +133,18 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 	public void setTame(boolean tamed) {
 		super.setTame(tamed);
 		if (tamed) {
-			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
-			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.6f);
-			this.setHealth(20.0F);
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(60.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.5f);
 		} else {
-			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
-			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(30.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
 		}
 	}
 
 	public void makeTamed(Player player) {
-		if (!level.isClientSide) {
+		if (this.level.isClientSide) {
 			super.tame(player);
 			this.navigation.recomputePath();
 			this.setTarget(null);
@@ -158,7 +158,7 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 		Item item = itemstack.getItem();
 
 		if (item == Items.SUGAR && !isTame()) {
-			if (level.isClientSide) {
+			if (this.level.isClientSide) {
 				return InteractionResult.CONSUME;
 			} else {
 				if (!player.getAbilities().instabuild) {
@@ -174,7 +174,7 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 			}
 		}
 
-		if(isTame() && !level.isClientSide && hand == InteractionHand.MAIN_HAND) {
+		if(isTame() && this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
 			setSitting(!isSitting());
 			return InteractionResult.SUCCESS;
 		}
@@ -203,6 +203,8 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 		return this.entityData.get(SITTING);
 	}
 
+
+
 	@Override
 	public Team getTeam() {
 		return super.getTeam();
@@ -213,7 +215,9 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 		return attacker.getTeam()!= target.getTeam();
 	}
 
-
+	public boolean canBeLeashed(Player player) {
+		return super.canBeLeashed(player);
+	}
 
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
 		this.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 0.15F, 1.0F);
