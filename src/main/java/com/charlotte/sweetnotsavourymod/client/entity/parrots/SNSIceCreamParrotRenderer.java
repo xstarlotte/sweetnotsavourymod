@@ -4,6 +4,7 @@ import com.charlotte.sweetnotsavourymod.client.entity.model.parrots.SNSIceCreamP
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSParrotEntity;
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
+import com.charlotte.sweetnotsavourymod.core.util.IceCreamParrotFlavourVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -17,17 +18,17 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 import java.util.Map;
 
 public class SNSIceCreamParrotRenderer extends GeoEntityRenderer<SNSIceCreamParrotEntity> {
-	public static final Map<FlavourVariant, ResourceLocation> LOCATION_BY_VARIANT =
-			Util.make(Maps.newEnumMap(FlavourVariant.class), (p_114874_) -> {
-				p_114874_.put(FlavourVariant.BLUEBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/blueberryicecreamparrot.png"));
-				p_114874_.put(FlavourVariant.ORANGE, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/orangeicecreamparrot.png"));
-				p_114874_.put(FlavourVariant.RASPBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/raspberryicecreamparrot.png"));
-				p_114874_.put(FlavourVariant.STRAWBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/strawberryicecreamparrot.png"));
-				p_114874_.put(FlavourVariant.BLACKBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/blackberryicecreamparrot.png"));
-				p_114874_.put(FlavourVariant.LEMON, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/lemonicecreamparrot.png"));
-				p_114874_.put(FlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/chocolateicecreamparrot.png"));
-				p_114874_.put(FlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/toffeeicecreamparrot.png"));
-				p_114874_.put(FlavourVariant.PEACH, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/peachicecreamparrot.png"));
+	public static final Map<IceCreamParrotFlavourVariant, ResourceLocation> LOCATION_BY_VARIANT =
+			Util.make(Maps.newEnumMap(IceCreamParrotFlavourVariant.class), (p_114874_) -> {
+				p_114874_.put(IceCreamParrotFlavourVariant.BLUEBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/blueberryicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.ORANGE, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/orangeicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.RASPBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/raspberryicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.STRAWBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/strawberryicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.PEACH, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/peachicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.BLACKBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/blackberryicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.LEMON, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/lemonicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/chocolateicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/toffeeicecreamparrot.png"));
 			});
 
 	public SNSIceCreamParrotRenderer(EntityRendererProvider.Context renderManager) {

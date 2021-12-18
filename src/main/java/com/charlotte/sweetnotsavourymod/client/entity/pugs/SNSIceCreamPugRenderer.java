@@ -2,6 +2,7 @@ package com.charlotte.sweetnotsavourymod.client.entity.pugs;
 
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.SNSIceCreamPugEntity;
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
+import com.charlotte.sweetnotsavourymod.core.util.IceCreamPugFlavourVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -17,17 +18,16 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 import java.util.Map;
 
 public class SNSIceCreamPugRenderer extends GeoEntityRenderer<SNSIceCreamPugEntity> {
-	public static final Map<FlavourVariant, ResourceLocation> LOCATION_BY_VARIANT =
-			Util.make(Maps.newEnumMap(FlavourVariant.class), (p_114874_) -> {
-				p_114874_.put(FlavourVariant.BLUEBERRY, new ResourceLocation("textures/entity/pugs/blueberryicecreampug.png"));
-				p_114874_.put(FlavourVariant.ORANGE, new ResourceLocation("textures/entity/pugs/orangeicecreampug.png"));
-				p_114874_.put(FlavourVariant.RASPBERRY, new ResourceLocation("textures/entity/pugs/raspberryicecreampug.png"));
-				p_114874_.put(FlavourVariant.STRAWBERRY, new ResourceLocation("textures/entity/pugs/strawberryicecreampug.png"));
-				p_114874_.put(FlavourVariant.VANILLA, new ResourceLocation("textures/entity/pugs/vanillaicecreampug.png"));
-				p_114874_.put(FlavourVariant.BLACKBERRY, new ResourceLocation("textures/entity/pugs/blackberryicecreampug.png"));
-				p_114874_.put(FlavourVariant.LEMON, new ResourceLocation("textures/entity/pugs/lemonicecreampug.png"));
-				p_114874_.put(FlavourVariant.CHOCOLATE, new ResourceLocation("textures/entity/pugs/chocolateicecreampug.png"));
-				p_114874_.put(FlavourVariant.TOFFEE, new ResourceLocation("textures/entity/pugs/toffeeicecreampug.png"));
+	public static final Map<IceCreamPugFlavourVariant, ResourceLocation> LOCATION_BY_VARIANT =
+			Util.make(Maps.newEnumMap(IceCreamPugFlavourVariant.class), (p_114874_) -> {
+				p_114874_.put(IceCreamPugFlavourVariant.BLUEBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/blueberryicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.ORANGE, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/orangeicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.RASPBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/raspberryicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.STRAWBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/strawberryicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.BLACKBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/blackberryicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.LEMON, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/lemonicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/chocolateicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/toffeeicecreampug.png"));
 			});
 
 	public SNSIceCreamPugRenderer(EntityRendererProvider.Context renderManager) {

@@ -4,56 +4,29 @@
 	"item.sweetnotsavourymod.poisonberryattackerspawnegg": "Poison Berry Attacker Spawn Egg",
 	"item.sweetnotsavourymod.poisonberryarcherspawnegg": "Poison Berry Archer Spawn Egg",
 
-	"item.sweetnotsavourymod.lemonpugspawnegg": "Lemon Pug Spawn Egg",
-	"item.sweetnotsavourymod.blueberrypugspawnegg": "Blueberry Pug Spawn Egg",
-	"item.sweetnotsavourymod.raspberrypugspawnegg": "Raspberry Pug Spawn Egg",
-	"item.sweetnotsavourymod.toffeepugspawnegg": "Toffee Pug Spawn Egg",
-	"item.sweetnotsavourymod.chocolatepugspawnegg": "Chocolate Pug Spawn Egg",
-	"item.sweetnotsavourymod.orangepugspawnegg": "Orange Pug Spawn Egg",
-	"item.sweetnotsavourymod.strawberrypugspawnegg": "Strawberry Pug Spawn Egg",
-	"item.sweetnotsavourymod.toffeeicecreampugspawnegg": "Toffee Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.blueberryicecreampugspawnegg": "Blueberry Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.chocolateicecreampugspawnegg": "Chocolate Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.raspberryicecreampugspawnegg": "Raspberry Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.strawberryicecreampugspawnegg": "Strawberry Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.orangeicecreampugspawnegg": "Orange Ice Cream Pug Spawn Egg",
-
 	"item.sweetnotsavourymod.snselfspawnegg": "Flavoured Elf Spawn Egg",
 
+	"item.sweetnotsavourymod.snspugspawnegg": "Flavoured Pug Spawn Egg",
+	"item.sweetnotsavourymod.snsicecreampugspawnegg": "Ice Cream Pug Spawn Egg",
 
-	"item.sweetnotsavourymod.bananamonkeyspawnegg": "Banana Monkey Soldier Spawn Egg",
-	"item.sweetnotsavourymod.bananamonkeykingspawnegg": "Banana Monkey King Spawn Egg",
+	"item.sweetnotsavourymod.snscandycanewolfspawnegg": "Candy Cane Wolf Spawn Egg",
 
-	"item.sweetnotsavourymod.strawberrypigspawnegg": "Strawberry Pig Spawn Egg",
+	"item.sweetnotsavourymod.snsrabbitspawnegg": "Flavoured Rabbit Spawn Egg",
 
-	"item.sweetnotsavourymod.strawberrywaferschundspawnegg": "Strawberry Waferschund Spawn Egg",
+	"item.sweetnotsavourymod.snsmousespawnegg": "Flavoured Mouse Spawn Egg",
 
-	"item.sweetnotsavourymod.candycanewolfspawnegg": "Candy Cane Wolf Spawn Egg",
+	"item.sweetnotsavourymod.snssquirrollspawnegg": "Squirroll Spawn Egg",
 
-	"item.sweetnotsavourymod.carrotcakerabbitspawnegg": "Carrot Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.chocolatecherrycakerabbitspawnegg": "Chocolate Cherry Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.bananabreadrabbitspawnegg": "Banana Bread Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.angelcakerabbitspawnegg": "Angel Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.vanillacakerabbitspawnegg": "Vanilla Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.lemoncurdcakerabbitspawnegg": "Lemon Curd Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.redvelvetcakerabbitspawnegg": "Red Velvet Cake Rabbit Spawn Egg",
-
-	"item.sweetnotsavourymod.zebracakezebraspawnegg": "Zebra Cake Zebra Spawn Egg",
-
-	"item.sweetnotsavourymod.cinnamonsquirrollspawnegg": "Cinnamon Squirroll Spawn Egg",
-	"item.sweetnotsavourymod.strawberryswisssquirrollspawnegg": "Strawberry Swiss Squirroll Spawn Egg",
-
-	"item.sweetnotsavourymod.strawberrycheesecakemousespawnegg": "Strawberry Cheesecake Mouse Spawn Egg",
-	"item.sweetnotsavourymod.hazelnutcheesecakemousespawnegg": "Hazelnut Cheesecake Mouse Spawn Egg",
-	"item.sweetnotsavourymod.marshmallowpiemousespawnegg": "Marshmallow Pie Mouse Spawn Egg",
-
-	"item.sweetnotsavourymod.toffeetoadspawnegg": "Toffee Toad Spawn Egg",
+	"item.sweetnotsavourymod.snspixiespawnegg": "Parfait Pixie Spawn Egg",
 
 	"item.sweetnotsavourymod.snsparrotspawnegg": "Flavoured Parrot Spawn Egg",
-	"item.sweetnotsavourymod.snsicecreamparrotspawnegg": "Flavoured Ice Cream Parrot Spawn Egg",
+	"item.sweetnotsavourymod.snsicecreamparrotspawnegg": "Ice Cream Parrot Spawn Egg",
 
-	"item.sweetnotsavourymod.strawberryparfaitpixiespawnegg": "Strawberry Parfait Pixie Spawn Egg",
-	"item.sweetnotsavourymod.blueberryparfaitpixiespawnegg": "Blueberry Parfait Pixie Spawn Egg",
+	"item.sweetnotsavourymod.snszebraspawnegg": "Flavoured Zebra Spawn Egg",
+
+	"item.sweetnotsavourymod.snstoadspawnegg": "Flavoured Toad Spawn Egg",
+
+	"item.sweetnotsavourymod.snswaferschundspawnegg": "Waferschund Spawn Egg",
 
 	"item.sweetnotsavourymod.strawberrycandy": "Strawberry Candy",
 	"item.sweetnotsavourymod.raspberrycandy": "Raspberry Candy",

@@ -2,7 +2,7 @@ package com.charlotte.sweetnotsavourymod.client.entity.rabbits;
 
 import com.charlotte.sweetnotsavourymod.client.entity.model.rabbits.SNSRabbitModel;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.SNSRabbitEntity;
-import com.charlotte.sweetnotsavourymod.core.util.RabbitFlavourVariants;
+import com.charlotte.sweetnotsavourymod.core.util.RabbitFlavourVariant;
 import com.google.common.collect.Maps;
 
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -16,15 +16,18 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 import java.util.Map;
 
 public class SNSRabbitRenderer extends GeoEntityRenderer <SNSRabbitEntity> {
-	public static final Map<RabbitFlavourVariants, ResourceLocation> LOCATION_BY_VARIANT =
-			Util.make(Maps.newEnumMap(RabbitFlavourVariants.class), (p_114874_) -> {
-				p_114874_.put(RabbitFlavourVariants.ANGEL, new ResourceLocation("textures/entity/pugs/blueberrypug.png"));
-				p_114874_.put(RabbitFlavourVariants.BANANA, new ResourceLocation("textures/entity/pugs/orangepug.png"));
-				p_114874_.put(RabbitFlavourVariants.CARROT, new ResourceLocation("textures/entity/pugs/raspberrypug.png"));
-				p_114874_.put(RabbitFlavourVariants.CHOCOLATECHERRY, new ResourceLocation("textures/entity/pugs/strawberrypug.png"));
-				p_114874_.put(RabbitFlavourVariants.LEMONCURD, new ResourceLocation("textures/entity/pugs/vanillapug.png"));
-				p_114874_.put(RabbitFlavourVariants.REDVELVET, new ResourceLocation("textures/entity/pugs/blackberrypug.png"));
-				p_114874_.put(RabbitFlavourVariants.VANILLA, new ResourceLocation("textures/entity/pugs/lemonpug.png"));
+	public static final Map<RabbitFlavourVariant, ResourceLocation> LOCATION_BY_VARIANT =
+			Util.make(Maps.newEnumMap(RabbitFlavourVariant.class), (p_114874_) -> {
+				p_114874_.put(RabbitFlavourVariant.ANGEL, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/angelcakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.BANANA, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/bananabreadrabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.CARROT, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/carrotcakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.CHOCOLATECHERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/chocolatecherrycakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.LEMONCURD, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/lemoncurdcakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.REDVELVET, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/redvelvetcakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.VANILLA, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/vanillacakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.VICTORIASPONGE, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/victoriaspongecakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.CHOCOLATEORANGE, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/chocolateorangecakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.STRAWBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/strawberrycakerabbit.png"));
 			});
 
 	public SNSRabbitRenderer(EntityRendererProvider.Context renderManager) {

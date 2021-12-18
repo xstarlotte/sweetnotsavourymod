@@ -247,8 +247,5 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 		this.entityData.define(SITTING, false);
 		this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
 
-
-
-
 	}
 }

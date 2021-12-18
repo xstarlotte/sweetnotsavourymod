@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.client.entity.elves;
 
 import com.charlotte.sweetnotsavourymod.client.entity.model.elves.SNSElfModel;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
-
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;

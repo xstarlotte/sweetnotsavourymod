@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.parrots;
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
+import com.charlotte.sweetnotsavourymod.core.util.ParrotFlavourVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -69,12 +70,12 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
 										@Nullable CompoundTag p_146750_) {
-		FlavourVariant variant = Util.getRandom(FlavourVariant.values(), this.random);
+		ParrotFlavourVariant variant = Util.getRandom(ParrotFlavourVariant.values(), this.random);
 		setVariant(variant);
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
 	}
 
-	private void setVariant(FlavourVariant variant) {
+	private void setVariant(ParrotFlavourVariant variant) {
 		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
@@ -192,8 +193,8 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 		return super.mobInteract(player, hand);
 	}
 
-	public FlavourVariant getVariant() {
-		return FlavourVariant.byId(this.getTypeVariant() & 255);
+	public ParrotFlavourVariant getVariant() {
+		return ParrotFlavourVariant.byId(this.getTypeVariant() & 255);
 	}
 
 	private int getTypeVariant() {

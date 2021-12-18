@@ -25,6 +25,9 @@ public class ItemInit {
 	public static final RegistryObject<CustomSpawnEggItem> SNSELFSPAWNEGG = ITEMS.register("snselfspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSELF, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
+	public static final RegistryObject<CustomSpawnEggItem> SNSRABBITSPAWNEGG = ITEMS.register("snsrabbitspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSRABBIT, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
 	//parrot-Blackberry, Blueberry, Strawberry, Raspberry, Lemon, Orange, Vanilla, Chocolate, Toffee
 	public static final RegistryObject<CustomSpawnEggItem> SNSPARROTSPAWNEGG = ITEMS.register("snsparrotspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSPARROT, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
@@ -33,6 +36,32 @@ public class ItemInit {
 	public static final RegistryObject<CustomSpawnEggItem> SNSICECREAMPARROTSPAWNEGG = ITEMS.register("snsicecreamparrotspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSICECREAMPARROT, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
+	public static final RegistryObject<CustomSpawnEggItem> SNSICECREAMPUGSPAWNEGG = ITEMS.register("snsicecreampugspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSICECREAMPUG, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSPUGSPAWNEGG = ITEMS.register("snspugspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSPUG, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSPARFAITPIXIESPAWNEGG = ITEMS.register("snsparfaitpixiespawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSPARFAITPIXIE, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSCCWOLFSPAWNEGG = ITEMS.register("snscandycanewolfspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSCCWOLF, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSMOUSESPAWNEGG = ITEMS.register("snsmousespawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSMOUSE, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSSQUIRROLLSPAWNEGG = ITEMS.register("snssquirrollspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSSQUIRROLL, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSZEBRASPAWNEGG = ITEMS.register("snszebraspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSZEBRA, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSTOADSPAWNEGG = ITEMS.register("snstoadspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSTOAD, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSWAFERSCHUNDSPAWNEGG = ITEMS.register("snswaferschundspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSWAFERSCHUND, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
 //food	
 	public static final RegistryObject<Item> SPRINKLES = ITEMS.register("sprinkles", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
