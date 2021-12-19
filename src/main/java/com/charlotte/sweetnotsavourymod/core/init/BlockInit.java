@@ -1,12 +1,14 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.common.block.beds.SNSBedBlock;
 import com.charlotte.sweetnotsavourymod.common.block.lamps.SNSLampBlock;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.PoisonOakMiniDoor;
 
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -502,13 +504,13 @@ public class BlockInit {
 	//beds
 	
 	//public static final RegistryObject<Block> STRAWBERRYICECREAMBED = registerBlock("strawberryicecreambed",
-	//		() -> new SNSBedBlock( DyeColor.RED,BlockBehaviour.Properties.create(Material.WOOD,
-	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	//
-	//public static final RegistryObject<Block> BLACKBERRYICECREAMBED = registerBlock("blackberryicecreambed",
-	//		() -> new SNSBedBlock( DyeColor.PURPLE,BlockBehaviour.Properties.create(Material.WOOD,
-	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	//
+	//		() -> new SNSBedBlock(DyeColor.RED, BlockBehaviour.Properties.of(Material.WOOD,
+	//				MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> BLACKBERRYICECREAMBED = registerBlock("blackberryicecreambed",
+			() -> new SNSBedBlock( DyeColor.PURPLE,BlockBehaviour.Properties.of(Material.WOOD,
+					MaterialColor.COLOR_PURPLE).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 	//public static final RegistryObject<Block> BLUEBERRYICECREAMBED = registerBlock("blueberryicecreambed",
 	//		() -> new SNSBedBlock( DyeColor.BLUE,BlockBehaviour.Properties.create(Material.WOOD,
 	//				MaterialColor.RED).strength(10f).sound(SoundType.WOOD).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);

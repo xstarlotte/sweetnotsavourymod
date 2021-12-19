@@ -1,12 +1,18 @@
 package com.charlotte.sweetnotsavourymod.client.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.BlackberryIceCreamBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ForgeModelBakery;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -30,13 +36,15 @@ public class ClientEvents {
     
     @SubscribeEvent
     public static void onClientSetup( ModelRegistryEvent event ) {
-        /*ModelLoaderRegistry.blockMaterial(STRAWBERRYICECREAMBEDBOTTOM);
-        ModelLoader.addSpecialModel(STRAWBERRYICECREAMBEDHEAD);
-        ItemBlockRenderTypes.setRenderLayer( BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.cutout() );
-        
-        ModelLoader.addSpecialModel(BLACKBERRYICECREAMBEDBOTTOM);
-        ModelLoader.addSpecialModel(BLACKBERRYICECREAMBEDHEAD);
-        ItemBlockRenderTypes.setRenderLayer( BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.cutout() );
+        ForgeModelBakery.addSpecialModel(BLACKBERRYICECREAMBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(BLACKBERRYICECREAMBEDHEAD);
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.cutout());
+
+        //ModelLoaderRegistry.blockMaterial(STRAWBERRYICECREAMBEDBOTTOM);
+        //ForgeModelBakery.addSpecialModel(STRAWBERRYICECREAMBEDHEAD);
+        //ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.cutout());
+        /*
+
         
         ModelLoader.addSpecialModel(LEMONICECREAMBEDBOTTOM);
         ModelLoader.addSpecialModel(LEMONICECREAMBEDHEAD);
@@ -76,8 +84,8 @@ public class ClientEvents {
     }
 
     @SubscribeEvent
-    public static void onClientSetup( FMLClientSetupEvent event){
-        // ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.STRAWBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), StrawberryIceCreamBedBeRenderer::new);
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_BLOCK_ENTITY_TYPE.get(), BlackberryIceCreamBedBeRenderer::new);
         // ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.BLACKBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlackberryIceCreamBedBeRenderer::new);
         // ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.BLUEBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), BlueberryIceCreamBedBeRenderer::new);
         // ClientRegistry.bindTileEntityRenderer( BlockEntityTypesInit.RASPBERRYICECREAMBED_TILE_ENTITY_TYPE.get(), RaspberryIceCreamBedBeRenderer::new);

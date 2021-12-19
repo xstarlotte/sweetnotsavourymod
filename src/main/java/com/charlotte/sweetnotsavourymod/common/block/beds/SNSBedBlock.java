@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.block.beds;
 
-import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBedBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.DyeColor;
@@ -9,17 +9,14 @@ import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-import javax.annotation.Nullable;
-/*
 public class SNSBedBlock extends BedBlock {
-    public SNSBedBlock(DyeColor colorIn , Properties properties ){
-        super( colorIn , properties );
+    public SNSBedBlock(DyeColor colorIn, Properties properties){
+        super(colorIn, properties);
     }
 
-    @Nullable
     @Override
-    public BlockEntity createBlockEntity(BlockState state, BlockPos pos) {
-        // return BlockEntityTypesInit.SNS_BLOCK_ENTITY_TYPE.get().create();
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new SNSBedBlockEntity(pos, state);
     }
 
     @Override
@@ -27,4 +24,3 @@ public class SNSBedBlock extends BedBlock {
     	return true;
     }
 }
-*/
