@@ -1,5 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entity.parrots;
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
+import com.charlotte.sweetnotsavourymod.core.util.ParrotFlavourVariant;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -8,6 +10,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -24,8 +27,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -37,7 +43,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 	private AnimationFactory factory = new AnimationFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
-			SynchedEntityData.defineId(Horse.class, EntityDataSerializers.INT);
+			SynchedEntityData.defineId(SNSParrotEntity.class, EntityDataSerializers.INT);
 
 	private static final EntityDataAccessor<Boolean> SITTING =
 			SynchedEntityData.defineId(SNSParrotEntity.class, EntityDataSerializers.BOOLEAN);
@@ -52,6 +58,25 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putInt("Variant", this.getTypeVariant());
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag p_21815_) {
+		super.readAdditionalSaveData(p_21815_);
+		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
+	}
+
+	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
+										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
+										@Nullable CompoundTag p_146750_) {
+		ParrotFlavourVariant variant = Util.getRandom(ParrotFlavourVariant.values(), this.random);
+		setVariant(variant);
+		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
+	}
+
+	private void setVariant(ParrotFlavourVariant variant) {
+		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
@@ -90,10 +115,10 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 
 	public static AttributeSupplier setAttributes() {
 		return TamableAnimal.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 20.0D)
-				.add(Attributes.ATTACK_DAMAGE, 8.0f)
+				.add(Attributes.MAX_HEALTH, 30.0D)
+				.add(Attributes.ATTACK_DAMAGE, 2D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.3f).build();
+				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
 	}
 
 	protected void registerGoals() {
@@ -112,17 +137,16 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 	}
 
 	@Override
-	public void setTame(boolean tamed)
-	{
+	public void setTame(boolean tamed) {
 		super.setTame(tamed);
 		if (tamed) {
-			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
-			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.6f);
-			this.setHealth(20.0F);
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(60.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.5f);
 		} else {
-			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
-			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(30.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
 		}
 	}
 
@@ -141,7 +165,7 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 		Item item = itemstack.getItem();
 
 		if (item == Items.SUGAR && !isTame()) {
-			if (level.isClientSide) {
+			if (this.level.isClientSide) {
 				return InteractionResult.CONSUME;
 			} else {
 				if (!player.getAbilities().instabuild) {
@@ -157,7 +181,7 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 			}
 		}
 
-		if(isTame() && !level.isClientSide && hand == InteractionHand.MAIN_HAND) {
+		if(isTame() && this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
 			setSitting(!isSitting());
 			return InteractionResult.SUCCESS;
 		}
@@ -169,8 +193,8 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 		return super.mobInteract(player, hand);
 	}
 
-	public FlavourVariant getVariant() {
-		return FlavourVariant.byId(this.getTypeVariant() & 255);
+	public ParrotFlavourVariant getVariant() {
+		return ParrotFlavourVariant.byId(this.getTypeVariant() & 255);
 	}
 
 	private int getTypeVariant() {
@@ -179,10 +203,27 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 
 	public void setSitting(boolean sitting) {
 		this.entityData.set(SITTING, sitting);
+		this.setInSittingPose(sitting);
 	}
 
 	public boolean isSitting() {
 		return this.entityData.get(SITTING);
+	}
+
+
+
+	@Override
+	public Team getTeam() {
+		return super.getTeam();
+	}
+
+	@Override
+	public boolean wantsToAttack(LivingEntity attacker, LivingEntity target) {
+		return attacker.getTeam()!= target.getTeam();
+	}
+
+	public boolean canBeLeashed(Player player) {
+		return super.canBeLeashed(player);
 	}
 
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
@@ -211,5 +252,10 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(SITTING, false);
+		this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+
+
+
+
 	}
 }

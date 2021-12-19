@@ -13,6 +13,7 @@ public enum FlavourVariant {
     LEMON(6),
     CHOCOLATE(7),
     TOFFEE(8);
+   ;
 
     private static final FlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(FlavourVariant::getId)).toArray((i) -> new FlavourVariant[i]);

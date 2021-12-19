@@ -1,9 +1,0 @@
-{
-	"type": "minecraft:smelting",
-	"ingredient": {
-		"item": "sweetnotsavourymod:strawberrycandyoreblock"
-	},
-	"result": "sweetnotsavourymod:strawberrycandy",
-		"experience": 0.8,
-		"cookingtime": 60
-	}

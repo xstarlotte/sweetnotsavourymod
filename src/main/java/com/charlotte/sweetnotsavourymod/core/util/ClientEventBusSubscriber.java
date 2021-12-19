@@ -1,7 +1,22 @@
 package com.charlotte.sweetnotsavourymod.core.util;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.client.entity.mice.SNSMouseRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.pixies.SNSParfaitPixieRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.elves.SNSElfRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.parrots.SNSIceCreamParrotRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.parrots.SNSParrotRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.pretzelflies.SNSPretzelflyRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.pugs.SNSIceCreamPugRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.pugs.SNSPugRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.rabbits.SNSRabbitRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.squirrels.SNSSquirrollRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.toads.SNSToadRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.waferschunds.SNSWaferschundRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.wafflefish.SNSMiniWafflefishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.wafflefish.SNSWafflefishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.wolves.SNSCandyCaneWolfRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.zebras.SNSZebraRenderer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 
@@ -32,6 +47,18 @@ public class ClientEventBusSubscriber {
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTINGFLOWER.get(), RenderType.cutout());
 
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYFROSTINGFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYFROSTINGFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYFROSTINGFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYFROSTINGFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEFROSTINGFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONFROSTINGFLOWER.get(), RenderType.cutout());
+
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATECINERARIA.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYCANDYBUSH.get(), RenderType.cutout());
@@ -40,13 +67,53 @@ public class ClientEventBusSubscriber {
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYCANDYBUSH.get(), RenderType.cutout());
 
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYCANDYBUSH.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.RAINBOWCANDYBUSH.get(), RenderType.cutout());
+
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGECANDYBUSH.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONCANDYBUSH.get(), RenderType.cutout());
 
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYCONEFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYCONEFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYCONEFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYCONEFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGECONEFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONCONEFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.VANILLACONEFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.TOFFEECONEFLOWER.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATECONEFLOWER.get(), RenderType.cutout());
+
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTINGGRASS.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYLANTERN.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYICECREAMLAMP.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYICECREAMLAMP.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYICECREAMLAMP.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYICECREAMLAMP.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONICECREAMLAMP.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEICECREAMLAMP.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.VANILLAICECREAMLAMP.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATEICECREAMLAMP.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.TOFFEEICECREAMLAMP.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYLAMP.get(), RenderType.cutout());
 
@@ -91,52 +158,26 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.HAZELNUTCHEESECAKEMOUSE.get(), HazelnutCheesecakeMouseRenderer::new);
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MARSHMALLOWPIEMOUSE.get(), MarshmallowPieMouseRenderer::new);
-		
 
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYPUG.get(), manager -> new StrawberryPugRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.LEMONPUG.get(), manager -> new LemonPugRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ORANGEPUG.get(), manager -> new OrangePugRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BLUEBERRYPUG.get(), manager -> new BlueberryPugRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RASPBERRYPUG.get(), manager -> new RaspberryPugRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CHOCOLATEPUG.get(), manager -> new ChocolatePugRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.TOFFEEPUG.get(), manager -> new ToffeePugRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.TOFFEEICECREAMPUG.get(), ToffeeIceCreamPugRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BLUEBERRYICECREAMPUG.get(), BlueberryIceCreamPugRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CHOCOLATEICECREAMPUG.get(), ChocolateIceCreamPugRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ORANGEICECREAMPUG.get(), OrangeIceCreamPugRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RASPBERRYICECREAMPUG.get(), RaspberryIceCreamPugRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYICECREAMPUG.get(), StrawberryIceCreamPugRenderer::new);
-		
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYELF.get(), manager -> new StrawberryElfRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BLUEBERRYELF.get(), manager -> new BlueberryElfRenderer(manager));
 		*/
+		EntityRenderers.register(EntityTypesInit.SNSELF.get(), SNSElfRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSPUG.get(), SNSPugRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSICECREAMPUG.get(), SNSIceCreamPugRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSPARROT.get(), SNSParrotRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSICECREAMPARROT.get(), SNSIceCreamParrotRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSRABBIT.get(), SNSRabbitRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSPARFAITPIXIE.get(), SNSParfaitPixieRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSCCWOLF.get(), SNSCandyCaneWolfRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSMOUSE.get(), SNSMouseRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSSQUIRROLL.get(), SNSSquirrollRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSZEBRA.get(), SNSZebraRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSWAFERSCHUND.get(), SNSWaferschundRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSTOAD.get(), SNSToadRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSWAFFLEFISH.get(), SNSWafflefishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyRenderer::new);
+		/*
 
-		EntityRenderers.register(EntityTypesInit.LEMONELF.get(), SNSElfRenderer::new);
-		
-		/*RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ORANGEELF.get(), manager -> new OrangeElfRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.VANILLAELF.get(), manager -> new VanillaElfRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RASPBERRYELF.get(), manager -> new RaspberryElfRenderer(manager));
-		
-		
-
-		
-		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CARROTCAKERABBIT.get(), CarrotCakeRabbitRenderer::new);
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CHOCOLATECHERRYCAKERABBIT.get(), ChocolateCherryCakeRabbitRenderer::new);
@@ -168,37 +209,6 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BANANAMONKEYKING.get(), BananaMonkeyKingRenderer::new);
 		
 	//parrot
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.LEMONPARROT.get(), LemonParrotRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYPARROT.get(), manager -> new StrawberryParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.PINEAPPLEPARROT.get(), manager -> new PineappleParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BLUEBERRYPARROT.get(), manager -> new BlueberryParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RASPBERRYPARROT.get(), manager -> new RaspberryParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.PEACHPARROT.get(), manager -> new PeachParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ORANGEICECREAMPARROT.get(), manager -> new OrangeIceCreamParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ORANGEPARROT.get(), manager -> new OrangeParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.PEACHICECREAMPARROT.get(), manager -> new PeachIceCreamParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.TOFFEEICECREAMPARROT.get(), manager -> new ToffeeIceCreamParrotRenderer(manager));
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.LEMONICECREAMPARROT.get(), LemonIceCreamParrotRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYICECREAMPARROT.get(), StrawberryIceCreamParrotRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RASPBERRYICECREAMPARROT.get(), RaspberryIceCreamParrotRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BLUEBERRYICECREAMPARROT.get(), BlueberryIceCreamParrotRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CHOCOLATEICECREAMPARROT.get(), ChocolateIceCreamParrotRenderer::new);
-		
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CANDYCANEWOLF.get(), manager -> new CandyCaneWolfRenderer(manager));
 	*/}

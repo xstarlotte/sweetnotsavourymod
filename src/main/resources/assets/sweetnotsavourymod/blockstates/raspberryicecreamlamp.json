@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "sweetnotsavourymod:block/raspberryicecreamlamp"
+    },
+    "hanging=true": {
+      "model": "sweetnotsavourymod:block/raspberryicecreamlamp"
+    }
+  }
+}

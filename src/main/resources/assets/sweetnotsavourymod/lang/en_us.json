@@ -1,4 +1,38 @@
 {
+
+	"item.sweetnotsavourymod.poisonberryspritespawnegg": "Poison Berry Sprite Spawn Egg",
+	"item.sweetnotsavourymod.poisonberryattackerspawnegg": "Poison Berry Attacker Spawn Egg",
+	"item.sweetnotsavourymod.poisonberryarcherspawnegg": "Poison Berry Archer Spawn Egg",
+
+	"item.sweetnotsavourymod.snselfspawnegg": "Flavoured Elf Spawn Egg",
+
+	"item.sweetnotsavourymod.snspugspawnegg": "Flavoured Pug Spawn Egg",
+	"item.sweetnotsavourymod.snsicecreampugspawnegg": "Ice Cream Pug Spawn Egg",
+
+	"item.sweetnotsavourymod.snscandycanewolfspawnegg": "Candy Cane Wolf Spawn Egg",
+
+	"item.sweetnotsavourymod.snsrabbitspawnegg": "Flavoured Rabbit Spawn Egg",
+
+	"item.sweetnotsavourymod.snsmousespawnegg": "Flavoured Mouse Spawn Egg",
+
+	"item.sweetnotsavourymod.snspretzelflyspawnegg": "Pretzelfly Spawn Egg",
+
+	"item.sweetnotsavourymod.snssquirrollspawnegg": "Squirroll Spawn Egg",
+
+	"item.sweetnotsavourymod.snspixiespawnegg": "Parfait Pixie Spawn Egg",
+
+	"item.sweetnotsavourymod.snsparrotspawnegg": "Flavoured Parrot Spawn Egg",
+	"item.sweetnotsavourymod.snsicecreamparrotspawnegg": "Ice Cream Parrot Spawn Egg",
+
+	"item.sweetnotsavourymod.snszebraspawnegg": "Flavoured Zebra Spawn Egg",
+
+	"item.sweetnotsavourymod.snstoadspawnegg": "Flavoured Toad Spawn Egg",
+
+	"item.sweetnotsavourymod.snswaferschundspawnegg": "Waferschund Spawn Egg",
+
+	"item.sweetnotsavourymod.snswafflefishspawnegg": "Wafflefish Spawn Egg",
+	"item.sweetnotsavourymod.snsminiwafflefishspawnegg": "Mini Wafflefish Spawn Egg",
+
 	"item.sweetnotsavourymod.strawberrycandy": "Strawberry Candy",
 	"item.sweetnotsavourymod.raspberrycandy": "Raspberry Candy",
 	"item.sweetnotsavourymod.lemoncandy": "Lemon Candy",
@@ -16,7 +50,10 @@
 	"item.sweetnotsavourymod.lemonlollipop": "Lemon Lollipop",
 	"item.sweetnotsavourymod.orangelollipop": "Orange Lollipop",
 	"item.sweetnotsavourymod.blueberrylollipop": "Blueberry Lollipop",
-	
+	"item.sweetnotsavourymod.sprinkles": "Sprinkles",
+	"item.sweetnotsavourymod.cinnamonroll": "Cinnamon Roll",
+	"item.sweetnotsavourymod.strawberryswissroll": "Strawberry Swiss Roll",
+
 	"item.sweetnotsavourymod.vanilla_ice_cream_helmet": "Vanilla Ice Cream Helmet",
 	"item.sweetnotsavourymod.vanilla_ice_cream_chestplate": "Vanilla Ice Cream Chestplate",
 	"item.sweetnotsavourymod.vanilla_ice_cream_leggings": "Vanilla Ice Cream Leggings",
@@ -41,160 +78,101 @@
 	"item.sweetnotsavourymod.lemon_candy_chestplate": "Lemon Candy Chestplate",
 	"item.sweetnotsavourymod.lemon_candy_leggings": "Lemon Candy Leggings",
 	"item.sweetnotsavourymod.lemon_candy_boots": "Lemon Candy Boots",
-	
-	"item.sweetnotsavourymod.sprinkles": "Sprinkles",
-	
-	"item.sweetnotsavourymod.cinnamonroll": "Cinnamon Roll",
-	"item.sweetnotsavourymod.strawberryswissroll": "Strawberry Swiss Roll",
-	
-	"item.sweetnotsavourymod.poisonberryspritespawnegg": "Poison Berry Sprite Spawn Egg",
-	"item.sweetnotsavourymod.poisonberryattackerspawnegg": "Poison Berry Attacker Spawn Egg",
-	"item.sweetnotsavourymod.poisonberryarcherspawnegg": "Poison Berry Archer Spawn Egg",
-	
-	"item.sweetnotsavourymod.lemonpugspawnegg": "Lemon Pug Spawn Egg",
-	"item.sweetnotsavourymod.blueberrypugspawnegg": "Blueberry Pug Spawn Egg",
-	"item.sweetnotsavourymod.raspberrypugspawnegg": "Raspberry Pug Spawn Egg",
-	"item.sweetnotsavourymod.toffeepugspawnegg": "Toffee Pug Spawn Egg",
-	"item.sweetnotsavourymod.chocolatepugspawnegg": "Chocolate Pug Spawn Egg",
-	"item.sweetnotsavourymod.orangepugspawnegg": "Orange Pug Spawn Egg",
-	"item.sweetnotsavourymod.strawberrypugspawnegg": "Strawberry Pug Spawn Egg",
-	"item.sweetnotsavourymod.toffeeicecreampugspawnegg": "Toffee Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.blueberryicecreampugspawnegg": "Blueberry Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.chocolateicecreampugspawnegg": "Chocolate Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.raspberryicecreampugspawnegg": "Raspberry Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.strawberryicecreampugspawnegg": "Strawberry Ice Cream Pug Spawn Egg",
-	"item.sweetnotsavourymod.orangeicecreampugspawnegg": "Orange Ice Cream Pug Spawn Egg",
-	
-	"item.sweetnotsavourymod.strawberryelfspawnegg": "Strawberry Elf Spawn Egg",
-	"item.sweetnotsavourymod.blueberryelfspawnegg": "Blueberry Elf Spawn Egg",
-	"item.sweetnotsavourymod.lemonelfspawnegg": "Lemon Elf Spawn Egg",
-	"item.sweetnotsavourymod.orangeelfspawnegg": "Orange Elf Spawn Egg",
-	"item.sweetnotsavourymod.raspberryelfspawnegg": "Raspberry Elf Spawn Egg",
-	"item.sweetnotsavourymod.vanillaelfspawnegg": "Vanilla Elf Spawn Egg",
-	
-	"item.sweetnotsavourymod.bananamonkeyspawnegg": "Banana Monkey Soldier Spawn Egg",
-	"item.sweetnotsavourymod.bananamonkeykingspawnegg": "Banana Monkey King Spawn Egg",
-	
-	"item.sweetnotsavourymod.strawberrypigspawnegg": "Strawberry Pig Spawn Egg",
-	
-	"item.sweetnotsavourymod.strawberrywaferschundspawnegg": "Strawberry Waferschund Spawn Egg",
-	
-	"item.sweetnotsavourymod.candycanewolfspawnegg": "Candy Cane Wolf Spawn Egg",
-	
-	"item.sweetnotsavourymod.carrotcakerabbitspawnegg": "Carrot Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.chocolatecherrycakerabbitspawnegg": "Chocolate Cherry Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.bananabreadrabbitspawnegg": "Banana Bread Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.angelcakerabbitspawnegg": "Angel Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.vanillacakerabbitspawnegg": "Vanilla Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.lemoncurdcakerabbitspawnegg": "Lemon Curd Cake Rabbit Spawn Egg",
-	"item.sweetnotsavourymod.redvelvetcakerabbitspawnegg": "Red Velvet Cake Rabbit Spawn Egg",
-	
-	"item.sweetnotsavourymod.zebracakezebraspawnegg": "Zebra Cake Zebra Spawn Egg",
-	
-	"item.sweetnotsavourymod.cinnamonsquirrollspawnegg": "Cinnamon Squirroll Spawn Egg",
-	"item.sweetnotsavourymod.strawberryswisssquirrollspawnegg": "Strawberry Swiss Squirroll Spawn Egg",
-	
-	"item.sweetnotsavourymod.strawberrycheesecakemousespawnegg": "Strawberry Cheesecake Mouse Spawn Egg",
-	"item.sweetnotsavourymod.hazelnutcheesecakemousespawnegg": "Hazelnut Cheesecake Mouse Spawn Egg",
-	"item.sweetnotsavourymod.marshmallowpiemousespawnegg": "Marshmallow Pie Mouse Spawn Egg",
-	
-	"item.sweetnotsavourymod.toffeetoadspawnegg": "Toffee Toad Spawn Egg",
-	
-	"item.sweetnotsavourymod.lemonparrotspawnegg": "Lemon Parrot Spawn Egg",
-	"item.sweetnotsavourymod.orangeparrotspawnegg": "Orange Parrot Spawn Egg",
-	"item.sweetnotsavourymod.raspberryparrotspawnegg": "Raspberry Parrot Spawn Egg",
-	"item.sweetnotsavourymod.peachparrotspawnegg": "Peach Parrot Spawn Egg",
-	"item.sweetnotsavourymod.pineappleparrotspawnegg": "Pineapple Parrot Spawn Egg",
-	"item.sweetnotsavourymod.blueberryparrotspawnegg": "Blueberry Parrot Spawn Egg",
-	"item.sweetnotsavourymod.strawberryparrotspawnegg": "Strawberry Parrot Spawn Egg",
-	"item.sweetnotsavourymod.lemonicecreamparrotspawnegg": "Lemon Ice Cream Parrot Spawn Egg",
-	"item.sweetnotsavourymod.strawberryicecreamparrotspawnegg": "Strawberry Ice Cream Parrot Spawn Egg",
-	"item.sweetnotsavourymod.raspberryicecreamparrotspawnegg": "Raspberry Ice Cream Parrot Spawn Egg",
-	"item.sweetnotsavourymod.blueberryicecreamparrotspawnegg": "Blueberry Ice Cream Parrot Spawn Egg",
-	"item.sweetnotsavourymod.chocolateicecreamparrotspawnegg": "Chocolate Ice Cream Parrot Spawn Egg",
-	"item.sweetnotsavourymod.peachicecreamparrotspawnegg": "Peach Ice Cream Parrot Spawn Egg",
-	"item.sweetnotsavourymod.orangeicecreamparrotspawnegg": "Orange Ice Cream Parrot Spawn Egg",
-	"item.sweetnotsavourymod.toffeeicecreamparrotspawnegg": "Toffee Ice Cream Parrot Spawn Egg",
-	
-	"item.sweetnotsavourymod.strawberryparfaitpixiespawnegg": "Strawberry Parfait Pixie Spawn Egg",
-	"item.sweetnotsavourymod.blueberryparfaitpixiespawnegg": "Blueberry Parfait Pixie Spawn Egg",
-	
+
 	"item.sweetnotsavourymod.orangeicecreamsword": "Orange Ice Cream Sword",
 	"item.sweetnotsavourymod.lemonicecreamsword": "Lemon Ice Cream Sword",
 	"item.sweetnotsavourymod.strawberryicecreamsword": "Strawberry Ice Cream Sword",
 	"item.sweetnotsavourymod.raspberryicecreamsword": "Raspberry Ice Cream Sword",
 	"item.sweetnotsavourymod.vanillaicecreamsword": "Vanilla Ice Cream Sword",
 	"item.sweetnotsavourymod.blueberryicecreamsword": "Blueberry Ice Cream Sword",
-	
+
+	"block.sweetnotsavourymod.candycanesugarcaneblock": "Candy Cane Sugar Cane Block",
+
+	"block.sweetnotsavourymod.icecreamtreesapling": "Ice Cream Tree Sapling",
+
+	"block.sweetnotsavourymod.frostinggrass": "Frosting Grass",
+	"block.sweetnotsavourymod.candycanebush": "CandyCaneBush",
+	"block.sweetnotsavourymod.chocolatecineraria": "Chocolate Cineraria",
+	"block.sweetnotsavourymod.strawberrycandybush": "Strawberry Candy Bush",
+	"block.sweetnotsavourymod.raspberrycandybush": "Raspberry Candy Bush",
+	"block.sweetnotsavourymod.blackberrycandybush": "Blackberry Candy Bush",
+	"block.sweetnotsavourymod.blueberrycandybush": "Blueberry Candy Bush",
+	"block.sweetnotsavourymod.lemoncandybush": "Lemon Candy Bush",
+	"block.sweetnotsavourymod.orangecandybush": "Orange Candy Bush",
+	"block.sweetnotsavourymod.rainbowcandybush": "Rainbow Candy Bush",
+	"block.sweetnotsavourymod.frostingflower": "Frosting Flower",
+	"block.sweetnotsavourymod.strawberryfrostingflower": "Strawberry Frosting Flower",
+	"block.sweetnotsavourymod.raspberryfrostingflower": "Raspberry Frosting Flower",
+	"block.sweetnotsavourymod.blueberryfrostingflower": "Blueberry Frosting Flower",
+	"block.sweetnotsavourymod.blackberryfrostingflower": "Blackberry Frosting Flower",
+	"block.sweetnotsavourymod.orangefrostingflower": "Orange Frosting Flower",
+	"block.sweetnotsavourymod.lemonfrostingflower": "Lemon Frosting Flower",
+	"block.sweetnotsavourymod.blackberryconeflower": "Blackberry Cone Flower",
+	"block.sweetnotsavourymod.blueberryconeflower": "Blueberry Cone Flower",
+	"block.sweetnotsavourymod.raspberryconeflower": "Raspberry Cone Flower",
+	"block.sweetnotsavourymod.strawberryconeflower": "Strawberry Cone Flower",
+	"block.sweetnotsavourymod.orangeconeflower": "Orange Cone Flower",
+	"block.sweetnotsavourymod.lemonconeflower": "Lemon Cone Flower",
+	"block.sweetnotsavourymod.vanillaconeflower": "Vanilla Cone Flower",
+	"block.sweetnotsavourymod.chocolateconeflower": "Chocolate Cone Flower",
+	"block.sweetnotsavourymod.toffeeconeflower": "Toffee Cone Flower",
 	"block.sweetnotsavourymod.poisonberryplant": "Poison Berry Plant",
+
+	"block.sweetnotsavourymod.waferwoodplanks": "Wafer Wood Planks",
+	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
+	"block.sweetnotsavourymod.strippedwaferwoodblock": "Stripped Wafer Wood Block",
 	"block.sweetnotsavourymod.overgrownpoisonberrywoodplanks": "Overgrown Poison Berry Wood Planks",
 	"block.sweetnotsavourymod.poisonberrywoodplanks": "Poison Berry Wood Planks",
 	"block.sweetnotsavourymod.poisonberryleaves": "Poison Berry Leaves",
 	"block.sweetnotsavourymod.poisongrassblock": "Poison Grass Block",
 	"block.sweetnotsavourymod.floweringpoisonberryleaves": "Flowering Poison Berry Leaves",
-	
-	"block.sweetnotsavourymod.waferwoodplanks": "Wafer Wood Planks",
-	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
-	"block.sweetnotsavourymod.strippedwaferwoodblock": "Stripped Wafer Wood Block",
-	"block.sweetnotsavourymod.icecreamtreesapling": "Ice Cream Tree Sapling",
-	
 	"block.sweetnotsavourymod.popcornblock": "Popcorn Block",
-	
 	"block.sweetnotsavourymod.strawberrycandyblock": "Strawberry Candy Block",
 	"block.sweetnotsavourymod.raspberrycandyblock": "Raspberry Candy Block",
 	"block.sweetnotsavourymod.lemoncandyblock": "Lemon Candy Block",
 	"block.sweetnotsavourymod.orangecandyblock": "Orange Candy Block",
 	"block.sweetnotsavourymod.blueberrycandyblock": "Blueberry Candy Block",
-	
 	"block.sweetnotsavourymod.strawberrysorbetblock": "Strawberry Sorbet Sand",
 	"block.sweetnotsavourymod.raspberrysorbetblock": "Raspberry Sorbet Sand",
 	"block.sweetnotsavourymod.lemonsorbetblock": "Lemon Sorbet Sand",
 	"block.sweetnotsavourymod.blueberrysorbetblock": "Blueberry Sorbet Sand",
 	"block.sweetnotsavourymod.peachmangosorbetblock": "Peach and Mango Sorbet Sand",
 	"block.sweetnotsavourymod.orangesorbetblock": "Orange Sorbet Sand",
-	
-	"block.sweetnotsavourymod.candycanesugarcaneblock": "Candy Cane Sugar Cane Block",
-	
 	"block.sweetnotsavourymod.candycaneblock": "Candy Cane Block",
 	"block.sweetnotsavourymod.chocolatechipcookieblock": "Chocolate Chip Cookie Block",
 	"block.sweetnotsavourymod.whitechocolatechipcookieblock": "White Chocolate Chip Cookie Block",
 	"block.sweetnotsavourymod.rainbowcookieblock": "Rainbow Cookie Block",
-	
 	"block.sweetnotsavourymod.meltingchocolateblock": "Melting Chocolate",
 	"block.sweetnotsavourymod.meltingstrawberrychocolateblock": "Melting Strawberry Chocolate",
 	"block.sweetnotsavourymod.meltingraspberrychocolateblock": "Melting Raspberry Chocolate",
 	"block.sweetnotsavourymod.meltinglemonchocolateblock": "Melting Lemon Chocolate",
 	"block.sweetnotsavourymod.meltingblueberrychocolateblock": "Melting Blueberry Chocolate",
 	"block.sweetnotsavourymod.meltingorangechocolateblock": "Melting Orange Chocolate",
-	
 	"block.sweetnotsavourymod.raspberryicingblock": "Raspberry Icing Block",
 	"block.sweetnotsavourymod.rainbowfrostingleaves": "Rainbow Frosting Leaves",
-	"block.sweetnotsavourymod.frostinggrass": "Frosting Grass",
-	"block.sweetnotsavourymod.frostingflower": "Frosting Flower",
 	"block.sweetnotsavourymod.frostingblock": "Frosting Block",
+	"block.sweetnotsavourymod.strawberryfrostingblock": "Strawberry Frosting Grass Block",
+	"block.sweetnotsavourymod.raspberryfrostingblock": "Raspberry Frosting Grass Block",
+	"block.sweetnotsavourymod.blueberryfrostingblock": "Blueberry Frosting Grass Block",
+	"block.sweetnotsavourymod.blackberryfrostingblock": "Blackberry Frosting Grass Block",
+	"block.sweetnotsavourymod.orangefrostingblock": "Orange Frosting Grass Block",
+	"block.sweetnotsavourymod.lemonfrostingblock": "Lemon Frosting Grass Block",
 	"block.sweetnotsavourymod.rainbowfrostinggrassblock": "Rainbow Frosting Grass Block",
-	"block.sweetnotsavourymod.strawberrycandybush": "Strawberry Candy Bush",
-	"block.sweetnotsavourymod.raspberrycandybush": "Raspberry Candy Bush",
-	"block.sweetnotsavourymod.blueberrycandybush": "Blueberry Candy Bush",
-	"block.sweetnotsavourymod.lemoncandybush": "Lemon Candy Bush",
-	"block.sweetnotsavourymod.orangecandybush": "Orange Candy Bush",
-	
-	"block.sweetnotsavourymod.candycanebush": "CandyCaneBush",
-	"block.sweetnotsavourymod.chocolatecineraria": "Chocolate Cineraria",
-	
-	
+	"block.sweetnotsavourymod.hardenedbananabricks": "Hardened Banana Bricks",
+	"block.sweetnotsavourymod.hardenedbananastone": "Hardened Banana Stone",
+
 	"block.sweetnotsavourymod.strawberrycandyoreblock": "Strawberry Candy Ore Block",
 	"block.sweetnotsavourymod.raspberrycandyoreblock": "Raspberry Candy Ore Block",
 	"block.sweetnotsavourymod.lemoncandyoreblock": "Lemon Candy Ore Block",
 	"block.sweetnotsavourymod.orangecandyoreblock": "Orange Candy Ore Block",
 	"block.sweetnotsavourymod.blueberrycandyoreblock": "Blueberry Candy Ore Block",
-	
+
 	"block.sweetnotsavourymod.strawberryicecreambed": "Strawberry Ice Cream Bed",
 	"block.sweetnotsavourymod.blackberryicecreambed": "Blackberry Ice Cream Bed",
 	"block.sweetnotsavourymod.blueberryicecreambed": "Blueberry Ice Cream Bed",
 	"block.sweetnotsavourymod.raspberryicecreambed": "Raspberry Ice Cream Bed",
 	"block.sweetnotsavourymod.lemonicecreambed": "Lemon Ice Cream Bed",
-	
+
 	"block.sweetnotsavourymod.strawberrylamp": "Strawberry Lamp",
 	"block.sweetnotsavourymod.blackberrylamp": "Blackberry Lamp",
 	"block.sweetnotsavourymod.blueberrylamp": "Blueberry Lamp",
@@ -207,14 +185,23 @@
 	"block.sweetnotsavourymod.raspberrylollipoplamp": "Raspberry Lollipop Lamp",
 	"block.sweetnotsavourymod.orangelollipoplamp": "Orange Lollipop Lamp",
 	"block.sweetnotsavourymod.lemonlollipoplamp": "Lemon Lollipop Lamp",
+	"block.sweetnotsavourymod.strawberryicecreamlamp": "Strawberry Ice Cream Lamp",
+	"block.sweetnotsavourymod.raspberryicecreamlamp": "Raspberry Ice Cream Lamp",
+	"block.sweetnotsavourymod.blueberryicecreamlamp": "Blueberry Ice Cream Lamp",
+	"block.sweetnotsavourymod.blackberryicecreamlamp": "Blackberry Ice Cream Lamp",
+	"block.sweetnotsavourymod.lemonicecreamlamp": "Lemon Ice Cream Lamp",
+	"block.sweetnotsavourymod.orangeicecreamlamp": "Orange Ice Cream Lamp",
+	"block.sweetnotsavourymod.vanillaicecreamlamp": "Vanilla Ice Cream Lamp",
+	"block.sweetnotsavourymod.chocolateicecreamlamp": "Chocolate Ice Cream Lamp",
+	"block.sweetnotsavourymod.toffeeicecreamlamp": "Toffee Ice Cream Lamp",
 	"block.sweetnotsavourymod.poisonberrylantern": "Poison Berry Lantern",
-	
+
 	"block.sweetnotsavourymod.poisonoakminidoor": "Poison Oak Mini Door",
-	
+
 	"entity.sweetnotsavourymod.poisonberryattacker": "Poison Berry Attacker",
 	"entity.sweetnotsavourymod.poisonberryarcher": "Poison Berry Archer",
 	"entity.sweetnotsavourymod.poisonberrysprite": "Poison Berry Sprite",
-	
+
 	"entity.sweetnotsavourymod.strawberrypug": "Strawberry Pug",
 	"entity.sweetnotsavourymod.lemonpug": "Lemon Pug",
 	"entity.sweetnotsavourymod.orangepug": "Orange Pug",
@@ -228,23 +215,23 @@
 	"entity.sweetnotsavourymod.raspberryicecreampug": "Raspberry Ice Cream Pug",
 	"entity.sweetnotsavourymod.strawberryicecreampug": "Strawberry Ice Cream Pug",
 	"entity.sweetnotsavourymod.orangeicecreampug": "Orange Ice Cream Pug",
-	
+
 	"entity.sweetnotsavourymod.strawberryelf": "Strawberry Elf",
 	"entity.sweetnotsavourymod.blueberryelf": "Blueberry Elf",
 	"entity.sweetnotsavourymod.lemonelf": "Lemon Elf",
 	"entity.sweetnotsavourymod.raspberryelf": "Raspberry Elf",
 	"entity.sweetnotsavourymod.orangeelf": "Orange Elf",
 	"entity.sweetnotsavourymod.vanillaelf": "Vanilla Elf",
-	
+
 	"entity.sweetnotsavourymod.bananamonkey": "Banana Monkey Soldier",
 	"entity.sweetnotsavourymod.bananamonkeyking": "Banana Monkey King",
-	
+
 	"entity.sweetnotsavourymod.candycanewolf": "Candy Cane Wolf",
-	
+
 	"entity.sweetnotsavourymod.strawberrywaferschund": "Strawberry Waferschund",
-	
+
 	"entity.sweetnotsavourymod.strawberrypig": "Strawberry Pig",
-	
+
 	"entity.sweetnotsavourymod.carrotcakerabbit": "Carrot Cake Rabbit",
 	"entity.sweetnotsavourymod.chocolatecherrycakerabbit": "Chocolate Cherry Cake Rabbit",
 	"entity.sweetnotsavourymod.bananabreadrabbit": "Banana Bread Rabbit",
@@ -252,18 +239,18 @@
 	"entity.sweetnotsavourymod.lemoncurdcakerabbit": "Lemon Curd Cake Rabbit",
 	"entity.sweetnotsavourymod.vanillacakerabbit": "Vanilla Cake Rabbit",
 	"entity.sweetnotsavourymod.redvelvetcakerabbit": "Red Velvet Cake Rabbit",
-	
+
 	"entity.sweetnotsavourymod.zebracakezebra": "Zebra Cake Zebra",
-	
+
 	"entity.sweetnotsavourymod.cinnamonsquirroll": "Cinnamon Squirroll",
 	"entity.sweetnotsavourymod.strawberryswisssquirroll": "Strawberry Swiss Squirroll",
-	
+
 	"entity.sweetnotsavourymod.strawberrycheesecakemouse": "Strawberry Cheesecake Mouse",
 	"entity.sweetnotsavourymod.hazelnutcheesecakemouse": "Hazelnut Cheesecake Mouse",
 	"entity.sweetnotsavourymod.marshmallowpiemouse": "Marshmallow Pie Mouse",
-	
+
 	"entity.sweetnotsavourymod.toffeetoad": "Toffee Toad",
-	
+
 	"entity.sweetnotsavourymod.lemonparrot": "Lemon Parrot",
 	"entity.sweetnotsavourymod.strawberryparrot": "Strawberry Parrot",
 	"entity.sweetnotsavourymod.raspberryparrot": "Raspberry Parrot",
@@ -271,24 +258,28 @@
 	"entity.sweetnotsavourymod.orangeparrot": "Orange Parrot",
 	"entity.sweetnotsavourymod.peachparrot": "Peach Parrot",
 	"entity.sweetnotsavourymod.pineappleparrot": "Pineapple Parrot",
+
 	"entity.sweetnotsavourymod.lemonicecreamparrot": "Lemon Ice Cream Parrot",
-	"entity.sweetnotsavourymod.orangeicecreamparrot": "Orange Ice Cream Parrot",
-	"entity.sweetnotsavourymod.peachicecreamparrot": "Peach Ice Cream Parrot",
-	"entity.sweetnotsavourymod.toffeeicecreamparrot": "Toffee Ice Cream Parrot",
 	"entity.sweetnotsavourymod.strawberryicecreamparrot": "Strawberry Ice Cream Parrot",
 	"entity.sweetnotsavourymod.raspberryicecreamparrot": "Raspberry Ice Cream Parrot",
 	"entity.sweetnotsavourymod.blueberryicecreamparrot": "Blueberry Ice Cream Parrot",
+	"entity.sweetnotsavourymod.orangeicecreamparrot": "Orange Ice Cream Parrot",
+	"entity.sweetnotsavourymod.peachicecreamparrot": "Peach Ice Cream Parrot",
+	"entity.sweetnotsavourymod.toffeeicecreamparrot": "Toffee Ice Cream Parrot",
 	"entity.sweetnotsavourymod.chocolateicecreamparrot": "Chocolate Ice Cream Parrot",
-	
+
 	"entity.sweetnotsavourymod.strawberryparfaitpixie": "Strawberry Parfait Pixie",
 	"entity.sweetnotsavourymod.blueberryparfaitpixie": "Blueberry Parfait Pixie",
-	
+
 	"block.sweetnotsavourymod.strawberrychest": "Strawberry Chest",
-	
+
 	"biome.sweetnotsavourymod.icecreamforestbiome": "Ice Cream Forest Biome",
 	"biome.sweetnotsavourymod.candycaneplainsbiome": "Candy Cane Plains Biome",
-	
-	"itemGroup.sweetnotsavourymod": "Sweet Not Savoury Mod"
+
+	"itemGroup.snsmodfood": "Food - Sweet Not Savoury Mod",
+	"itemGroup.snsmodblocks": "Blocks - Sweet Not Savoury Mod",
+	"itemGroup.snsmoddecoration": "Decoration - Sweet Not Savoury Mod",
+	"itemGroup.snsmodspawneggs": "Spawn Eggs - Sweet Not Savoury Mod"
 }
 
 

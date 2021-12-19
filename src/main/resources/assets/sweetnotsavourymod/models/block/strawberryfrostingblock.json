@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube",
+	"textures": {
+		"particle": "sweetnotsavourymod:blocks/frostingblock",
+		"up": "sweetnotsavourymod:blocks/strawberryfrostingblock",
+		"down": "sweetnotsavourymod:blocks/frostingblock",
+		"north": "sweetnotsavourymod:blocks/strawberryfrostinggrassside",
+		"east": "sweetnotsavourymod:blocks/strawberryfrostinggrassside",
+		"south": "sweetnotsavourymod:blocks/strawberryfrostinggrassside",
+		"west": "sweetnotsavourymod:blocks/strawberryfrostinggrassside"
+	}
+}
