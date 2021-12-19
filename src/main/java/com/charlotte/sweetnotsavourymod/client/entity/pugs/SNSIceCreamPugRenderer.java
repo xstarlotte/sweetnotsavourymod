@@ -32,7 +32,7 @@ public class SNSIceCreamPugRenderer extends GeoEntityRenderer<SNSIceCreamPugEnti
 
 	public SNSIceCreamPugRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new SNSIceCreamPugModel());
-		this.shadowRadius = 0.3F;
+		this.shadowRadius = 0.4F;
 	}
 
 	@Override

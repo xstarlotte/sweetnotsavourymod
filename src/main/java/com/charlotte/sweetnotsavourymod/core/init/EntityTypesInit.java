@@ -2,8 +2,11 @@ package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.SNSParfaitPixieEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pretzelflies.SNSPretzelflyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.toads.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.waferschunds.SNSWaferschundEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.wafflefish.SNSMiniWafflefishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.wafflefish.SNSWafflefishEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.zebras.SNSZebraEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.mice.SNSMouseEntity;
@@ -80,7 +83,7 @@ public class EntityTypesInit {
 
 	public static final RegistryObject<EntityType<SNSZebraEntity>> SNSZEBRA = ENTITY_TYPES
 			.register("snszebra", () -> EntityType.Builder.of(SNSZebraEntity::new, MobCategory.CREATURE)
-					.sized(0.4f, 0.4f)
+					.sized(1.2f, 1.2f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snszebra").toString()));
 
 	public static final RegistryObject<EntityType<SNSToadEntity>> SNSTOAD = ENTITY_TYPES
@@ -92,6 +95,21 @@ public class EntityTypesInit {
 			.register("snswaferschund", () -> EntityType.Builder.of(SNSWaferschundEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snswaferschund").toString()));
+
+	public static final RegistryObject<EntityType<SNSWafflefishEntity>> SNSWAFFLEFISH = ENTITY_TYPES
+			.register("snswafflefish", () -> EntityType.Builder.of(SNSWafflefishEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snswafflefish").toString()));
+
+	public static final RegistryObject<EntityType<SNSMiniWafflefishEntity>> SNSMINIWAFFLEFISH = ENTITY_TYPES
+			.register("snsminiwafflefish", () -> EntityType.Builder.of(SNSMiniWafflefishEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsminiwafflefish").toString()));
+
+	public static final RegistryObject<EntityType<SNSPretzelflyEntity>> SNSPRETZELFLY = ENTITY_TYPES
+			.register("snspretzelfly", () -> EntityType.Builder.of(SNSPretzelflyEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snspretzelfly").toString()));
 
 
 

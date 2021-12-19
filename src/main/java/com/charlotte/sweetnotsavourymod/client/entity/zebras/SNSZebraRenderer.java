@@ -1,11 +1,9 @@
 package com.charlotte.sweetnotsavourymod.client.entity.zebras;
 
 
-import com.charlotte.sweetnotsavourymod.client.entity.model.elves.SNSElfModel;
+
 import com.charlotte.sweetnotsavourymod.client.entity.model.zebras.SNSZebraModel;
-import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.zebras.SNSZebraEntity;
-import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
 import com.charlotte.sweetnotsavourymod.core.util.ZebraFlavourVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -27,7 +25,7 @@ public class SNSZebraRenderer extends GeoEntityRenderer<SNSZebraEntity> {
 
 	public SNSZebraRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new SNSZebraModel());
-		this.shadowRadius = 0.2F;
+		this.shadowRadius = 0.8F;
 	}
 
 	@Override

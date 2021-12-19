@@ -6,12 +6,15 @@ import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.mice.SNSMouseEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.pretzelflies.SNSPretzelflyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.SNSIceCreamPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.SNSPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.SNSRabbitEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.squirrels.SNSSquirrollEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.toads.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.waferschunds.SNSWaferschundEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.wafflefish.SNSMiniWafflefishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.wafflefish.SNSWafflefishEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.wolves.SNSCandyCaneWolfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.zebras.SNSZebraEntity;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
@@ -36,5 +39,8 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.SNSZEBRA.get(), SNSZebraEntity.setAttributes());
         event.put(EntityTypesInit.SNSTOAD.get(), SNSToadEntity.setAttributes());
         event.put(EntityTypesInit.SNSWAFERSCHUND.get(), SNSWaferschundEntity.setAttributes());
+        event.put(EntityTypesInit.SNSWAFFLEFISH.get(), SNSWafflefishEntity.setAttributes());
+        event.put(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishEntity.setAttributes());
+        event.put(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyEntity.setAttributes());
     }
 }

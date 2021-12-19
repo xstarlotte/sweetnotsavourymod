@@ -6,12 +6,15 @@ import com.charlotte.sweetnotsavourymod.client.entity.pixies.SNSParfaitPixieRend
 import com.charlotte.sweetnotsavourymod.client.entity.elves.SNSElfRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.parrots.SNSIceCreamParrotRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.parrots.SNSParrotRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.pretzelflies.SNSPretzelflyRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pugs.SNSIceCreamPugRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pugs.SNSPugRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.rabbits.SNSRabbitRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.squirrels.SNSSquirrollRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.toads.SNSToadRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.waferschunds.SNSWaferschundRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.wafflefish.SNSMiniWafflefishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.wafflefish.SNSWafflefishRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.wolves.SNSCandyCaneWolfRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.zebras.SNSZebraRenderer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
@@ -170,6 +173,9 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSZEBRA.get(), SNSZebraRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSWAFERSCHUND.get(), SNSWaferschundRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSTOAD.get(), SNSToadRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSWAFFLEFISH.get(), SNSWafflefishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyRenderer::new);
 		/*
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CARROTCAKERABBIT.get(), CarrotCakeRabbitRenderer::new);

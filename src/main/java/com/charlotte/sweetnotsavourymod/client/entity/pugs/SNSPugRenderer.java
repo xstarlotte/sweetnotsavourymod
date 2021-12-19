@@ -34,7 +34,7 @@ public class SNSPugRenderer extends GeoEntityRenderer<SNSPugEntity> {
 
 	public SNSPugRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new SNSPugModel());
-		this.shadowRadius = 0.7F;
+		this.shadowRadius = 0.4F;
 	}
 
 	@Override

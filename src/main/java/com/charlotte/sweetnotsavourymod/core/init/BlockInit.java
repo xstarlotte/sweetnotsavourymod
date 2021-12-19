@@ -496,20 +496,6 @@ public class BlockInit {
 	public static final RegistryObject<Block> HARDENEDBANANABRICKS = registerBlock("hardenedbananabricks",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> STRAWBERRYCANDYOREBLOCK = registerBlock("strawberrycandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> RASPBERRYCANDYOREBLOCK = registerBlock("raspberrycandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> BLUEBERRYCANDYOREBLOCK = registerBlock("blueberrycandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> LEMONCANDYOREBLOCK = registerBlock("lemoncandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> ORANGECANDYOREBLOCK = registerBlock("orangecandyoreblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 
 
