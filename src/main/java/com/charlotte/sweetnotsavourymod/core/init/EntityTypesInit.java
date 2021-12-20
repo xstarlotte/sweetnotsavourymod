@@ -2,6 +2,7 @@ package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.SNSParfaitPixieEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.gummybears.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pretzelflies.SNSPretzelflyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.toads.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.waferschunds.SNSWaferschundEntity;
@@ -110,6 +111,11 @@ public class EntityTypesInit {
 			.register("snspretzelfly", () -> EntityType.Builder.of(SNSPretzelflyEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snspretzelfly").toString()));
+
+	public static final RegistryObject<EntityType<SNSGummyBearEntity>> SNSGUMMYBEAR = ENTITY_TYPES
+			.register("snsgummybear", () -> EntityType.Builder.of(SNSGummyBearEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsgummybear").toString()));
 
 
 

@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.util;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.client.entity.gummybears.SNSGummyBearRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.mice.SNSMouseRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pixies.SNSParfaitPixieRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.elves.SNSElfRenderer;
@@ -145,19 +146,6 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.POISONBERRYARCHER.get(), PoisonBerryArcherRenderer::new);
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.POISONBERRYSPRITE.get(), PoisonBerrySpriteRenderer::new);
-		
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYWAFERSCHUND.get(), StrawberryWaferschundRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYPARFAITPIXIE.get(), StrawberryParfaitPixieRenderer::new);
-
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BLUEBERRYPARFAITPIXIE.get(), BlueberryParfaitPixieRenderer::new);
-
-		EntityRenderers.register(EntityTypesInit.STRAWBERRYCHEESECAKEMOUSE, StrawberryCheesecakeMouseRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.HAZELNUTCHEESECAKEMOUSE.get(), HazelnutCheesecakeMouseRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MARSHMALLOWPIEMOUSE.get(), MarshmallowPieMouseRenderer::new);
 
 		*/
 		EntityRenderers.register(EntityTypesInit.SNSELF.get(), SNSElfRenderer::new);
@@ -176,41 +164,15 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSWAFFLEFISH.get(), SNSWafflefishRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSGUMMYBEAR.get(), SNSGummyBearRenderer::new);
 		/*
 
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CARROTCAKERABBIT.get(), CarrotCakeRabbitRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CHOCOLATECHERRYCAKERABBIT.get(), ChocolateCherryCakeRabbitRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BANANABREADRABBIT.get(), BananaBreadRabbitRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ANGELCAKERABBIT.get(), AngelCakeRabbitRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.VANILLACAKERABBIT.get(), VanillaCakeRabbitRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.LEMONCURDCAKERABBIT.get(), LemonCurdCakeRabbitRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.REDVELVETCAKERABBIT.get(), RedVelvetCakeRabbitRenderer::new);
-		
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ZEBRACAKEZEBRA.get(), ZebraCakeZebraRenderer::new);
-		
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CINNAMONSQUIRROLL.get(), CinnamonSquirrollRenderer::new);
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STRAWBERRYSWISSSQUIRROLL.get(), StrawberrySwissSquirrollRenderer::new);
-		
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.TOFFEETOAD.get(), ToffeeToadRenderer::new);
+
 		
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BANANAMONKEY.get(), BananaMonkeyRenderer::new);
-		
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BANANAMONKEYKING.get(), BananaMonkeyKingRenderer::new);
-		
-	//parrot
-		
-		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CANDYCANEWOLF.get(), manager -> new CandyCaneWolfRenderer(manager));
+
 	*/}
 
 }

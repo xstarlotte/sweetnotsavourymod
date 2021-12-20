@@ -3,6 +3,7 @@ package com.charlotte.sweetnotsavourymod.common.events;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.SNSParfaitPixieEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.gummybears.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.mice.SNSMouseEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSParrotEntity;
@@ -42,5 +43,6 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.SNSWAFFLEFISH.get(), SNSWafflefishEntity.setAttributes());
         event.put(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishEntity.setAttributes());
         event.put(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyEntity.setAttributes());
+        event.put(EntityTypesInit.SNSGUMMYBEAR.get(), SNSGummyBearEntity.setAttributes());
     }
 }

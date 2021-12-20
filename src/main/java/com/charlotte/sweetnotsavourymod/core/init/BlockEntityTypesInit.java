@@ -15,4 +15,20 @@ public class BlockEntityTypesInit{
     public static final RegistryObject<BlockEntityType<SNSBedBlockEntity>> SNS_BLOCK_ENTITY_TYPE = BLOCK_ENTITY_TYPE
             .register("sns_bed_entity", () -> BlockEntityType.Builder.of(SNSBedBlockEntity::new,
                     BlockInit.BLACKBERRYICECREAMBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<SNSBedBlockEntity>> SNS_STRAWBERRY_BLOCK_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_strawberrybed_entity", () -> BlockEntityType.Builder.of(SNSBedBlockEntity::new,
+                    BlockInit.STRAWBERRYICECREAMBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<SNSBedBlockEntity>> SNS_RASPBERRY_BLOCK_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_raspberrybed_entity", () -> BlockEntityType.Builder.of(SNSBedBlockEntity::new,
+                    BlockInit.RASPBERRYICECREAMBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<SNSBedBlockEntity>> SNS_BLUEBERRY_BLOCK_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_blueberrybed_entity", () -> BlockEntityType.Builder.of(SNSBedBlockEntity::new,
+                    BlockInit.BLUEBERRYICECREAMBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<SNSBedBlockEntity>> SNS_LEMON_BLOCK_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_lemonbed_entity", () -> BlockEntityType.Builder.of(SNSBedBlockEntity::new,
+                    BlockInit.LEMONICECREAMBED.get()).build(null));
 }
