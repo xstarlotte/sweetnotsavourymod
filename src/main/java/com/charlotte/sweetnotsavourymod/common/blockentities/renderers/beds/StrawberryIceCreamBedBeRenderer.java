@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBedBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBaseBedBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
@@ -14,7 +14,7 @@ public class StrawberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     }
 
     @Override
-    protected void setBlockEntityAndModels(SNSBedBlockEntity be){
+    protected void setBlockEntityAndModels(SNSBaseBedBlockEntity be){
         if(be != null) {
             this.be = be;
         }

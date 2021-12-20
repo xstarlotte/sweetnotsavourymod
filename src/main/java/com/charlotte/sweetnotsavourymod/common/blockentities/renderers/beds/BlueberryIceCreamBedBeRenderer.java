@@ -1,11 +1,10 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBedBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBaseBedBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.*;
-import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLACKBERRYICECREAMBEDHEAD;
 
 public class BlueberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     public BlueberryIceCreamBedBeRenderer(BlockEntityRendererProvider.Context context){
@@ -13,7 +12,7 @@ public class BlueberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     }
 
     @Override
-    protected void setBlockEntityAndModels(SNSBedBlockEntity be){
+    protected void setBlockEntityAndModels(SNSBaseBedBlockEntity be){
         if(be != null) {
             this.be = be;
         }
