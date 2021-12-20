@@ -1,24 +1,23 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
-import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLUEBERRYICECREAMBEDHEAD;
 
-import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLUEBERRYICECREAMBEDBOTTOM;
-
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBaseBedBlockEntity;
 import net.minecraft.client.Minecraft;
-/*
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+
+import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.*;
+
 public class BlueberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
-    public BlueberryIceCreamBedBeRenderer(TileEntityRendererDispatcher rendererDispatcherIn ){
-        super( rendererDispatcherIn );
+    public BlueberryIceCreamBedBeRenderer(BlockEntityRendererProvider.Context context){
+        super(context);
     }
 
     @Override
-    protected void setTileEntityAndModels( TileEntity te ){
-        if(te instanceof BlueberryIceCreamBedTe)
-            this.te = te;
-        this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel( BLUEBERRYICECREAMBEDBOTTOM );
-        this.headbedmodel = Minecraft.getInstance().getModelManager().getModel( BLUEBERRYICECREAMBEDHEAD );
+    protected void setBlockEntityAndModels(SNSBaseBedBlockEntity be){
+        if(be != null) {
+            this.be = be;
+        }
 
+        this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel(BLUEBERRYICECREAMBEDBOTTOM);
+        this.headbedmodel = Minecraft.getInstance().getModelManager().getModel(BLUEBERRYICECREAMBEDHEAD);
     }
-
-
 }
-*/

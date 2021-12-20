@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLACKBERRYICECREAMBEDBOTTOM;
 import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.BLACKBERRYICECREAMBEDHEAD;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBedBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBaseBedBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
@@ -13,7 +13,7 @@ public class BlackberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     }
 
     @Override
-    protected void setBlockEntityAndModels(SNSBedBlockEntity be){
+    protected void setBlockEntityAndModels(SNSBaseBedBlockEntity be){
         if(be != null) {
             this.be = be;
         }

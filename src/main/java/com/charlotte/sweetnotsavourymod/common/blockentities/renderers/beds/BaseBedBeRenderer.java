@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBedBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBaseBedBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 
@@ -10,7 +10,6 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -21,14 +20,13 @@ import net.minecraft.core.BlockPos;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BedBlock;
-import net.minecraft.world.level.block.entity.BedBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBedBlockEntity> {
-    protected SNSBedBlockEntity be;
+public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBaseBedBlockEntity> {
+    protected SNSBaseBedBlockEntity be;
     protected BakedModel headbedmodel;
     protected BakedModel bottombedmodel;
 
@@ -36,10 +34,10 @@ public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBedBlo
 
     }
 
-    protected abstract void setBlockEntityAndModels(SNSBedBlockEntity be);
+    protected abstract void setBlockEntityAndModels(SNSBaseBedBlockEntity be);
 
     @Override
-    public void render(SNSBedBlockEntity blockentity, float partialTicks , PoseStack matrixStackIn , MultiBufferSource bufferIn , int combinedLightIn , int combinedOverlayIn ){
+    public void render(SNSBaseBedBlockEntity blockentity, float partialTicks , PoseStack matrixStackIn , MultiBufferSource bufferIn , int combinedLightIn , int combinedOverlayIn ){
        setBlockEntityAndModels(blockentity);
         Level level = be.getLevel();
         BlockState state = be.getBlockState();
@@ -109,7 +107,7 @@ public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBedBlo
     }
 
     @Override
-    public boolean shouldRenderOffScreen(SNSBedBlockEntity p_112306_) {
+    public boolean shouldRenderOffScreen(SNSBaseBedBlockEntity p_112306_) {
         return true;
     }
 }

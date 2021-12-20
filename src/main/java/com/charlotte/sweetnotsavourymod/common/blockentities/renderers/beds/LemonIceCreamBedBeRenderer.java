@@ -1,24 +1,23 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds;
 
-import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.LEMONICECREAMBEDHEAD;
-
-import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.LEMONICECREAMBEDBOTTOM;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.SNSBaseBedBlockEntity;
 import net.minecraft.client.Minecraft;
-/*
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+
+import static com.charlotte.sweetnotsavourymod.client.events.ClientEvents.*;
+
 public class LemonIceCreamBedBeRenderer extends BaseBedBeRenderer {
-    public LemonIceCreamBedBeRenderer(TileEntityRendererDispatcher rendererDispatcherIn ){
-        super( rendererDispatcherIn );
+    public LemonIceCreamBedBeRenderer(BlockEntityRendererProvider.Context context){
+        super(context);
     }
 
     @Override
-    protected void setTileEntityAndModels( TileEntity te ){
-        if(te instanceof LemonIceCreamBedTe)
-            this.te = te;
-        this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel( LEMONICECREAMBEDBOTTOM );
-        this.headbedmodel = Minecraft.getInstance().getModelManager().getModel( LEMONICECREAMBEDHEAD );
+    protected void setBlockEntityAndModels(SNSBaseBedBlockEntity be){
+        if(be != null) {
+            this.be = be;
+        }
 
+        this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel(LEMONICECREAMBEDBOTTOM);
+        this.headbedmodel = Minecraft.getInstance().getModelManager().getModel(LEMONICECREAMBEDHEAD);
     }
-
-
 }
-*/
