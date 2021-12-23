@@ -53,8 +53,10 @@
 	"item.sweetnotsavourymod.orangelollipop": "Orange Lollipop",
 	"item.sweetnotsavourymod.blueberrylollipop": "Blueberry Lollipop",
 	"item.sweetnotsavourymod.sprinkles": "Sprinkles",
+	"item.sweetnotsavourymod.wafflecone": "Waffle Cone",
 	"item.sweetnotsavourymod.cinnamonroll": "Cinnamon Roll",
 	"item.sweetnotsavourymod.strawberryswissroll": "Strawberry Swiss Roll",
+	"item.sweetnotsavourymod.candycanesugar": "Candy Cane Sugar",
 
 	"item.sweetnotsavourymod.vanilla_ice_cream_helmet": "Vanilla Ice Cream Helmet",
 	"item.sweetnotsavourymod.vanilla_ice_cream_chestplate": "Vanilla Ice Cream Chestplate",
@@ -163,12 +165,6 @@
 	"block.sweetnotsavourymod.hardenedbananabricks": "Hardened Banana Bricks",
 	"block.sweetnotsavourymod.hardenedbananastone": "Hardened Banana Stone",
 
-	"block.sweetnotsavourymod.strawberrycandyoreblock": "Strawberry Candy Ore Block",
-	"block.sweetnotsavourymod.raspberrycandyoreblock": "Raspberry Candy Ore Block",
-	"block.sweetnotsavourymod.lemoncandyoreblock": "Lemon Candy Ore Block",
-	"block.sweetnotsavourymod.orangecandyoreblock": "Orange Candy Ore Block",
-	"block.sweetnotsavourymod.blueberrycandyoreblock": "Blueberry Candy Ore Block",
-
 	"block.sweetnotsavourymod.strawberryicecreambed": "Strawberry Ice Cream Bed",
 	"block.sweetnotsavourymod.blackberryicecreambed": "Blackberry Ice Cream Bed",
 	"block.sweetnotsavourymod.blueberryicecreambed": "Blueberry Ice Cream Bed",
@@ -197,6 +193,24 @@
 	"block.sweetnotsavourymod.chocolateicecreamlamp": "Chocolate Ice Cream Lamp",
 	"block.sweetnotsavourymod.toffeeicecreamlamp": "Toffee Ice Cream Lamp",
 	"block.sweetnotsavourymod.poisonberrylantern": "Poison Berry Lantern",
+
+	"block.sweetnotsavourymod.poisonberryattackerteddy": "Poison Berry Attacker Teddy",
+	"block.sweetnotsavourymod.poisonberryarcherteddy": "Poison Berry Archer Teddy",
+	"block.sweetnotsavourymod.poisonberrydefenderteddy": "Poison Berry Defender Teddy",
+	"block.sweetnotsavourymod.poisonberryhealerteddy": "Poison Berry Healer Teddy",
+	"block.sweetnotsavourymod.strawberrygummybearteddy": "Strawberry Gummy Bear Teddy",
+	"block.sweetnotsavourymod.raspberrygummybearteddy": "Raspberry Gummy Bear Teddy",
+	"block.sweetnotsavourymod.blackberrygummybearteddy": "Blackberry Gummy Bear Teddy",
+	"block.sweetnotsavourymod.blueberrygummybearteddy": "Blueberry Gummy Bear Teddy",
+	"block.sweetnotsavourymod.orangegummybearteddy": "Orange Gummy Bear Teddy",
+	"block.sweetnotsavourymod.lemongummybearteddy": "Lemon Gummy Bear Teddy",
+	"block.sweetnotsavourymod.mangogummybearteddy": "Mango Gummy Bear Teddy",
+	"block.sweetnotsavourymod.pineapplegummybearteddy": "Gummy Bear Teddy",
+	"block.sweetnotsavourymod.peachgummybearteddy": "Peach Gummy Bear Teddy",
+	"block.sweetnotsavourymod.limegummybearteddy": "Lime Gummy Bear Teddy",
+	"block.sweetnotsavourymod.cherrygummybearteddy": "Cherry Gummy Bear Teddy",
+	"block.sweetnotsavourymod.colagummybearteddy": "Cola Gummy Bear Teddy",
+	"block.sweetnotsavourymod.applegummybearteddy": "Apple Gummy Bear Teddy",
 
 	"block.sweetnotsavourymod.poisonoakminidoor": "Poison Oak Mini Door",
 
@@ -281,6 +295,8 @@
 	"itemGroup.snsmodfood": "Food - Sweet Not Savoury Mod",
 	"itemGroup.snsmodblocks": "Blocks - Sweet Not Savoury Mod",
 	"itemGroup.snsmoddecoration": "Decoration - Sweet Not Savoury Mod",
+	"itemGroup.snsmodtools": "Tools - Sweet Not Savoury Mod",
+	"itemGroup.snsmodarmour": "Armour - Sweet Not Savoury Mod",
 	"itemGroup.snsmodspawneggs": "Spawn Eggs - Sweet Not Savoury Mod"
 }
 

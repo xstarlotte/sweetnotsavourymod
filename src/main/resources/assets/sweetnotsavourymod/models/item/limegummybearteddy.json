@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/limegummybearteddy",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/limegummybearteddy"
+  }
+}

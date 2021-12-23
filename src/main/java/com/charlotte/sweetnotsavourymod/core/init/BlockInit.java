@@ -5,6 +5,7 @@ import com.charlotte.sweetnotsavourymod.common.block.beds.*;
 import com.charlotte.sweetnotsavourymod.common.block.lamps.SNSLampBlock;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.PoisonOakMiniDoor;
 
+import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -776,7 +777,179 @@ public class BlockInit {
 					.lightLevel((p_187433_) -> {
 						return 15;
 					}).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	  					
+
+	//teddies
+
+	public static final RegistryObject<Block> POISONBERRYATTACKERTEDDY = registerBlock("poisonberryattackerteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+					), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> POISONBERRYARCHERTEDDY = registerBlock("poisonberryarcherteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> POISONBERRYDEFENDERTEDDY = registerBlock("poisonberrydefenderteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> POISONBERRYHEALERTEDDY = registerBlock("poisonberryhealerteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> STRAWBERRYGUMMYBEARTEDDY = registerBlock("strawberrygummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> RASPBERRYGUMMYBEARTEDDY = registerBlock("raspberrygummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> BLACKBERRYGUMMYBEARTEDDY = registerBlock("blackberrygummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> BLUEBERRYGUMMYBEARTEDDY = registerBlock("blueberrygummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> LEMONGUMMYBEARTEDDY = registerBlock("lemongummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> ORANGEGUMMYBEARTEDDY = registerBlock("orangegummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> LIMEGUMMYBEARTEDDY = registerBlock("limegummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> MANGOGUMMYBEARTEDDY = registerBlock("mangogummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> PINEAPPLEGUMMYBEARTEDDY = registerBlock("pineapplegummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> PEACHGUMMYBEARTEDDY = registerBlock("peachgummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> COLAGUMMYBEARTEDDY = registerBlock("colagummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> APPLEGUMMYBEARTEDDY = registerBlock("applegummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CHERRYGUMMYBEARTEDDY = registerBlock("cherrygummybearteddy",
+			() -> new SNSTeddyBlock(BlockBehaviour
+					.Properties
+					.of(Material.CLOTH_DECORATION)
+					.strength(0F)
+					.sound(SoundType.WOOL)
+					.noOcclusion()
+					.noCollission()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 }
 
 

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "sweetnotsavourymod:block/poisonberrydefenderteddy", "y": 180 },
+    "facing=east": { "model": "sweetnotsavourymod:block/poisonberrydefenderteddy", "y": 270 },
+    "facing=south": { "model": "sweetnotsavourymod:block/poisonberrydefenderteddy"},
+    "facing=west": { "model": "sweetnotsavourymod:block/poisonberrydefenderteddy", "y": 90 }
+  }
+}
