@@ -129,6 +129,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.POISONBERRYWOODPLANKS.get());
         this.dropSelf(BlockInit.FLOWERINGPOISONBERRYLEAVES.get());
         this.dropSelf(BlockInit.OVERGROWNPOISONBERRYWOODPLANKS.get());
+        this.dropSelf(BlockInit.WAFERWOODWINDOW.get());
 
         this.dropSelf(BlockInit.POISONOAKMINIDOOR.get());
 

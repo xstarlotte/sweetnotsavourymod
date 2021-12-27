@@ -202,7 +202,9 @@ public class SNSRabbitEntity extends TamableAnimal implements IAnimatable {
     }
 
     public void setSitting(boolean sitting) {
+
         this.entityData.set(SITTING, sitting);
+        this.setOrderedToSit(sitting);
     }
 
     public boolean isSitting() {

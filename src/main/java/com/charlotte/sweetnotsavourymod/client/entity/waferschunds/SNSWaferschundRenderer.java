@@ -26,7 +26,7 @@ public class SNSWaferschundRenderer extends GeoEntityRenderer<SNSWaferschundEnti
 
     public SNSWaferschundRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new SNSWaferschundModel());
-        this.shadowRadius = 0.7F;
+        this.shadowRadius = 0.1F;
     }
 
     @Override

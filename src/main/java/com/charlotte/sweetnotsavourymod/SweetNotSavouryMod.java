@@ -3,6 +3,7 @@ package com.charlotte.sweetnotsavourymod;
 import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
+import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
@@ -46,6 +47,7 @@ public class SweetNotSavouryMod {
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
     	BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register( bus );
+        MenuTypesInit.MENUS.register(bus);
 		EntityTypesInit.ENTITY_TYPES.register(bus);
     	
         MinecraftForge.EVENT_BUS.register(this);

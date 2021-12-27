@@ -488,6 +488,10 @@ public class BlockInit {
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.BAMBOO)
 					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> WAFERWOODWINDOW = registerBlock("waferwoodwindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 
 
 	public static final RegistryObject<Block> POPCORNBLOCK = registerBlock("popcornblock",
@@ -498,7 +502,11 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> HARDENEDBANANABRICKS = registerBlock("hardenedbananabricks",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
+//ice-cream-machine
+public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice_cream_machine",
+		() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
+				.strength(0.6f,1200f)
+				.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 
 

@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/ice_cream_machine",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/ice_cream_machine"
+  }
+}
