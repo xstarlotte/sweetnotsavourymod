@@ -1,0 +1,6 @@
+{
+	"parent": "sweetnotsavourymod:block/poisonberryleaveschair",
+	"textures": {
+		"layer0": "sweetnotsavourymod:blocks/poisonberryleaveschair"
+	}
+}

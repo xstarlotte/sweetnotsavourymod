@@ -4,10 +4,7 @@ import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
 import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
-import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
-import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
-import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
+import com.charlotte.sweetnotsavourymod.core.init.*;
 
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
@@ -46,6 +43,7 @@ public class SweetNotSavouryMod {
 
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
+        FluidInit.FLUIDS.register(bus);
     	BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register( bus );
         MenuTypesInit.MENUS.register(bus);
 		EntityTypesInit.ENTITY_TYPES.register(bus);

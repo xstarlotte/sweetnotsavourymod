@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=east": {
+            "model": "sweetnotsavourymod:block/poisonoakdrawers",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "sweetnotsavourymod:block/poisonoakdrawers"
+        },
+        "facing=south": {
+            "model": "sweetnotsavourymod:block/poisonoakdrawers",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "sweetnotsavourymod:block/poisonoakdrawers",
+            "y": 270
+        }
+    }
+}

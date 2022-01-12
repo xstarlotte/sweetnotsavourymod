@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sweetnotsavourymod:block/poisonberrywoodwardrobe",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sweetnotsavourymod:block/poisonberrywoodwardrobe"
+    },
+    "facing=south": {
+      "model": "sweetnotsavourymod:block/poisonberrywoodwardrobe",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sweetnotsavourymod:block/poisonberrywoodwardrobe",
+      "y": 270
+    }
+  }
+}

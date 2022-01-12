@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sweetnotsavourymod:block/poisonberryleaveschair",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sweetnotsavourymod:block/poisonberryleaveschair"
+    },
+    "facing=south": {
+      "model": "sweetnotsavourymod:block/poisonberryleaveschair",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sweetnotsavourymod:block/poisonberryleaveschair",
+      "y": 270
+    }
+  }
+}

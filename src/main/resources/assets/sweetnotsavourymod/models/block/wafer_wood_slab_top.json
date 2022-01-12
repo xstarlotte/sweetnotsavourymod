@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/waferwoodblock",
+    "top": "sweetnotsavourymod:blocks/waferwoodblock",
+    "side": "sweetnotsavourymod:blocks/waferwoodblock"
+  }
+}

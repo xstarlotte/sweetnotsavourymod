@@ -33,6 +33,10 @@ public class BlockEntityTypesInit{
             .register("sns_lemonbed_entity", () -> BlockEntityType.Builder.of(LemonIceCreamBedBlockEntity::new,
                     BlockInit.LEMONICECREAMBED.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<OrangeIceCreamBedBlockEntity>> SNS_ORANGE_BLOCK_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_orangebed_entity", () -> BlockEntityType.Builder.of(OrangeIceCreamBedBlockEntity::new,
+                    BlockInit.ORANGEICECREAMBED.get()).build(null));
+
 //icecreammachine
     public static final RegistryObject<BlockEntityType<IceCreamMachineBlockEntity>> ICE_CREAM_MACHINE = BLOCK_ENTITY_TYPE
         .register("ice_cream_machine", () -> BlockEntityType.Builder.of(IceCreamMachineBlockEntity::new,
