@@ -33,6 +33,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.BLUEBERRYICECREAMBED.get());
         this.dropSelf(BlockInit.BLACKBERRYICECREAMBED.get());
         this.dropSelf(BlockInit.LEMONICECREAMBED.get());
+        this.dropSelf(BlockInit.ORANGEICECREAMBED.get());
 
         this.dropSelf(BlockInit.STRAWBERRYLAMP.get());
         this.dropSelf(BlockInit.RASPBERRYLAMP.get());
@@ -89,9 +90,14 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.WAFERWOODPLANKS.get());
         this.dropSelf(BlockInit.STRIPPEDWAFERWOODBLOCK.get());
         this.dropSelf(BlockInit.CANDYCANEBLOCK.get());
+        this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBLOCK.get());
+        this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBRICKS.get());
+        this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBARS.get());
+        this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANE_WALL.get());
 
         this.dropSelf(BlockInit.STRAWBERRYCANDYBLOCK.get());
         this.dropSelf(BlockInit.RASPBERRYCANDYBLOCK.get());
+        this.dropSelf(BlockInit.BLACKBERRYCANDYBLOCK.get());
         this.dropSelf(BlockInit.BLUEBERRYCANDYBLOCK.get());
         this.dropSelf(BlockInit.LEMONCANDYBLOCK.get());
         this.dropSelf(BlockInit.ORANGECANDYBLOCK.get());

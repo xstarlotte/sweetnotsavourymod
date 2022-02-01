@@ -35,6 +35,9 @@
 	"item.sweetnotsavourymod.snswafflefishspawnegg": "Wafflefish Spawn Egg",
 	"item.sweetnotsavourymod.snsminiwafflefishspawnegg": "Mini Wafflefish Spawn Egg",
 
+	"item.sweetnotsavourymod.snspbattackerspawnegg": "Poisonberry Attacker Spawn Egg",
+	"item.sweetnotsavourymod.cccrookspawnegg": "Candy Cane Crook Spawn Egg",
+
 	"item.sweetnotsavourymod.strawberrycandy": "Strawberry Candy",
 	"item.sweetnotsavourymod.raspberrycandy": "Raspberry Candy",
 	"item.sweetnotsavourymod.lemoncandy": "Lemon Candy",
@@ -192,6 +195,12 @@
 	"block.sweetnotsavourymod.hardenedbananabricks": "Hardened Banana Bricks",
 	"block.sweetnotsavourymod.hardenedbananastone": "Hardened Banana Stone",
 
+	"block.sweetnotsavourymod.rottenmouldycandycanechains": "Rotten Mouldy Candy Cane Chains",
+	"block.sweetnotsavourymod.rottenmouldycandycanebars": "Rotten Mouldy Candy Cane Bars",
+	"block.sweetnotsavourymod.rottenmouldycandycaneblock": "Rotten Mouldy Candy Cane Block",
+	"block.sweetnotsavourymod.rottenmouldycandycanebricks": "Rotten Mouldy Candy Cane Bricks",
+	"block.sweetnotsavourymod.rottenmouldycandycanewall": "Rotten Mouldy Candy Cane Wall",
+
 	"block.sweetnotsavourymod.wafer_wood_stairs": "Wafer Wood Stairs",
 	"block.sweetnotsavourymod.wafer_wood_fence": "Wafer Wood Fence",
 	"block.sweetnotsavourymod.wafer_wood_fence_gate": "Wafer Wood Fence Gate",
@@ -288,6 +297,7 @@
 	"block.sweetnotsavourymod.poisonberryleaveschair": "Poison Oak Chair",
 	"block.sweetnotsavourymod.poisonoakstove": "Poison Oak Stove",
 	"block.sweetnotsavourymod.poisonoakdrawers": "Poison Oak Drawers",
+	"block.sweetnotsavourymod.poisonoaktelevision": "Poison Oak Television",
 	"block.sweetnotsavourymod.poisonberrywoodwindow": "Poison Oak Window",
 
 	"entity.sweetnotsavourymod.poisonberryattacker": "Poison Berry Attacker",
@@ -364,6 +374,8 @@
 	"entity.sweetnotsavourymod.blueberryparfaitpixie": "Blueberry Parfait Pixie",
 
 	"block.sweetnotsavourymod.strawberrychest": "Strawberry Chest",
+
+	"block.sweetnotsavourymod.ice_cream_machine": "Ice Cream Machine",
 
 	"biome.sweetnotsavourymod.icecreamforestbiome": "Ice Cream Forest Biome",
 	"biome.sweetnotsavourymod.candycaneplainsbiome": "Candy Cane Plains Biome",

@@ -75,6 +75,13 @@ public class ItemInit {
 
 	public static final RegistryObject<CustomSpawnEggItem> SNSGUMMYBEARSPAWNEGG = ITEMS.register("snsgummybearspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSGUMMYBEAR, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSPBATTACKERSPAWNEGG = ITEMS.register("snspbattackerspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.POISONBERRYATTACKER, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> CCCROOKSPAWNEGG = ITEMS.register("cccrookspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.CANDYCANECROOK, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
 //liquid
 
 	public static final RegistryObject<Item> CREAMY_MILK_BUCKET = ITEMS.register("creamy_milk_bucket",

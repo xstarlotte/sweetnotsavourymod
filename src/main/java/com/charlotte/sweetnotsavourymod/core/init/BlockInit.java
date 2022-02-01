@@ -2,6 +2,7 @@ package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.block.IceCreamMachineBlock;
+import com.charlotte.sweetnotsavourymod.common.block.SNSDimensionBlock;
 import com.charlotte.sweetnotsavourymod.common.block.beds.*;
 import com.charlotte.sweetnotsavourymod.common.block.lamps.SNSLampBlock;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
@@ -439,9 +440,19 @@ public class BlockInit {
 	//				.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDYCANEBLOCK = registerBlock("candycaneblock",
-			() -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN)
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBLOCK = registerBlock("rottenmouldycandycaneblock",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBRICKS = registerBlock("rottenmouldycandycanebricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> RASPBERRYICINGBLOCK = registerBlock("raspberryicingblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_PINK)
@@ -556,6 +567,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> WAFERWOODPLANKS = registerBlock("waferwoodplanks",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.BAMBOO)
 					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+
+
+//windows
 
 	public static final RegistryObject<Block> WAFERWOODWINDOW = registerBlock("waferwoodwindow",
 			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
@@ -1063,6 +1078,17 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					.noCollission()
 			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+//chains
+
+	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANECHAINS = registerBlock("rottenmouldycandycanechains",
+			() -> new ChainBlock(BlockBehaviour
+			.Properties.of(Material.METAL, MaterialColor.NONE)
+			.strength(5.0F, 6.0F)
+			.sound(SoundType.CHAIN)
+					.noOcclusion()
+					.requiresCorrectToolForDrops()
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 //stairs
 
 	public static final RegistryObject<Block> WAFER_WOOD_STAIRS = registerBlock
@@ -1265,6 +1291,15 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							.requiresCorrectToolForDrops()),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANE_WALL = registerBlock
+			("rottenmouldycandycane_wall",
+					() -> new WallBlock(BlockBehaviour
+							.Properties
+							.of(Material.METAL)
+							.strength(5f)
+							.requiresCorrectToolForDrops()),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 //gate
 
 	public static final RegistryObject<Block> WAFER_WOOD_FENCE_GATE = registerBlock
@@ -1393,6 +1428,26 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							.strength(5f)
 							.requiresCorrectToolForDrops()),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	//test
+
+	public static final RegistryObject<Block> SNS_DIMENSION_BLOCK = registerBlock("sns_dimension_block",
+			() -> new SNSDimensionBlock(BlockBehaviour.Properties
+					.of(Material.STONE)
+					.strength(5f)
+					.requiresCorrectToolForDrops()),
+			SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	//bar
+
+	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBARS = registerBlock("rottenmouldycandycanebars",
+			() -> new IronBarsBlock(BlockBehaviour
+			.Properties.of(Material.METAL, MaterialColor.NONE)
+			.requiresCorrectToolForDrops()
+			.strength(5.0F, 6.0F)
+			.sound(SoundType.METAL)
+			.noOcclusion()),
+			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 }
 

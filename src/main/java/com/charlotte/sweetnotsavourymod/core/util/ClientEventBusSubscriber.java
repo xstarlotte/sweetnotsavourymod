@@ -1,12 +1,14 @@
 package com.charlotte.sweetnotsavourymod.core.util;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.client.entity.crooks.CandyCaneCrookRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.gummybears.SNSGummyBearRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.mice.SNSMouseRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pixies.SNSParfaitPixieRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.elves.SNSElfRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.parrots.SNSIceCreamParrotRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.parrots.SNSParrotRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.poisonberries.PBAttackerRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pretzelflies.SNSPretzelflyRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pugs.SNSIceCreamPugRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pugs.SNSPugRenderer;
@@ -123,6 +125,8 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRY_CANDY_WINDOW.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGE_CANDY_WINDOW.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMON_CANDY_WINDOW.get(), RenderType.translucent());
+
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTENMOULDYCANDYCANECHAINS.get(), RenderType.cutout());
         
 		/*
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.POISONBERRYATTACKER.get(), PoisonBerryAttackerRenderer::new);
@@ -149,6 +153,8 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSGUMMYBEAR.get(), SNSGummyBearRenderer::new);
+		EntityRenderers.register(EntityTypesInit.POISONBERRYATTACKER.get(), PBAttackerRenderer::new);
+		EntityRenderers.register(EntityTypesInit.CANDYCANECROOK.get(), CandyCaneCrookRenderer::new);
 		/*
 
 
