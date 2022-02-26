@@ -5,21 +5,27 @@ import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
 import com.charlotte.sweetnotsavourymod.common.material.IceCreamArmorMaterial;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 
+import com.charlotte.sweetnotsavourymod.core.sound.SoundsInit;
 import net.minecraft.client.renderer.EffectInstance;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemInit {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SweetNotSavouryMod.MOD_ID);
+
+//MUSIC_DISCS
+
+	public static final RegistryObject<Item> CARTOON_WHY_WE_LOSE_RECORD = ITEMS.register("cartoon_why_we_lose_record",
+			() -> new RecordItem(4, SoundsInit.CARTOON_WHY_WE_LOSE,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODMUSIC).stacksTo(1)));
+
+
 //SPAWN EGGS
 
 	//elf-Blackberry, Blueberry, Strawberry, Raspberry, Lemon, Orange, Vanilla, Chocolate, Toffee
@@ -330,21 +336,232 @@ public class ItemInit {
 					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
 					.saturationMod(1.2f)
 					.build())));
+
+	public static final RegistryObject<Item> ANGELCAKE = ITEMS.register("angelcake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> CARROTCAKE = ITEMS.register("carrotcake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> STRAWBERRYCAKE = ITEMS.register("strawberrycake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> CHOCOLATEORANGECAKE = ITEMS.register("chocolateorangecake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> CHOCOLATECHERRYCAKE = ITEMS.register("chocolatecherrycake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> VICTORIASPONGECAKE = ITEMS.register("victoriaspongecake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> VANILLACAKE = ITEMS.register("vanillacake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> LEMONCURDCAKE = ITEMS.register("lemoncurdcake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> BANANABREAD = ITEMS.register("bananabread", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETBANANA = ITEMS.register("sweetbanana", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETCARROT = ITEMS.register("sweetcarrot", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETPEACH = ITEMS.register("sweetpeach", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETBLACKBERRY = ITEMS.register("sweetblackberry", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETSTRAWBERRY = ITEMS.register("sweetstrawberry", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETBLUEBERRY = ITEMS.register("sweetblueberry", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETRASPBERRY = ITEMS.register("sweetraspberry", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETLEMON = ITEMS.register("sweetlemon", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETLIME = ITEMS.register("sweetlime", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETORANGE = ITEMS.register("sweetorange", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETMANGO = ITEMS.register("sweetmango", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> SWEETPINEAPPLE = ITEMS.register("sweetpineapple", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> VANILLA = ITEMS.register("vanilla", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> CHOCOLATE = ITEMS.register("chocolate", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> TOFFEE = ITEMS.register("toffee", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> CARAMEL = ITEMS.register("caramel", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> BONBONS = ITEMS.register("bonbons", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> MINTIMPERIALS = ITEMS.register("mintimperials", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> COLABOTTLE = ITEMS.register("colabottle", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
 	
-//weapons
-	
-	// public static final RegistryObject<Item> VANILLAICECREAMSWORD = ITEMS.register("vanillaicecreamsword",
-	 	//	() -> new SwordItem(IceCreamToolMaterial.VANILLAICECREAMSWORD, 5, -1f, new Item.Properties().tab(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
-	// public static final RegistryObject<Item> STRAWBERRYICECREAMSWORD = ITEMS.register("strawberryicecreamsword",
-		//	() -> new SwordItem(IceCreamToolMaterial.STRAWBERRYICECREAMSWORD, 5, -1f, new Item.Properties().tab(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
-	// public static final RegistryObject<Item> RASPBERRYICECREAMSWORD = ITEMS.register("raspberryicecreamsword",
-	 	//	() -> new SwordItem(IceCreamToolMaterial.RASPBERRYICECREAMSWORD, 5, -1f, new Item.Properties().tab(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
-	// public static final RegistryObject<Item> LEMONICECREAMSWORD = ITEMS.register("lemonicecreamsword",
-	 	//	() -> new SwordItem(IceCreamToolMaterial.LEMONICECREAMSWORD, 5, -1f, new Item.Properties().tab(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
-	// public static final RegistryObject<Item> ORANGEICECREAMSWORD = ITEMS.register("orangeicecreamsword",
-	 	//	() -> new SwordItem(IceCreamToolMaterial.ORANGEICECREAMSWORD, 5, -1f, new Item.Properties().tab(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
-	// public static final RegistryObject<Item> BLUEBERRYICECREAMSWORD = ITEMS.register("blueberryicecreamsword",
- 		//() -> new SwordItem(IceCreamToolMaterial.BLUEBERRYICECREAMSWORD, 5, -1f, new Item.Properties().tab(SweetNotSavouryModItemGroup.SWEETNOTSAVOURYMOD)));
+
 	
 //armor
 	//ice_cream

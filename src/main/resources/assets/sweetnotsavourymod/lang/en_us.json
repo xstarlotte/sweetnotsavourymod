@@ -1,5 +1,8 @@
 {
 
+	"item.sweetnotsavourymod.cartoon_why_we_lose_record": "'Cartoon - Why We Lose' Music Disc",
+	"item.sweetnotsavourymod.cartoon_why_we_lose_record.desc": "Cartoon - Why We Lose (feat. Coleman Trapp) [NCS Release]",
+
 	"item.sweetnotsavourymod.poisonberryspritespawnegg": "Poison Berry Sprite Spawn Egg",
 	"item.sweetnotsavourymod.poisonberryattackerspawnegg": "Poison Berry Attacker Spawn Egg",
 	"item.sweetnotsavourymod.poisonberryarcherspawnegg": "Poison Berry Archer Spawn Egg",
@@ -75,6 +78,38 @@
 	"item.sweetnotsavourymod.blueberryicecream": "Blueberry Ice Cream",
 	"item.sweetnotsavourymod.lemonicecream": "Lemon Ice Cream",
 	"item.sweetnotsavourymod.orangeicecream": "Orange Ice Cream",
+
+	"item.sweetnotsavourymod.angelcake": "Angel Cake",
+	"item.sweetnotsavourymod.carrotcake": "Carrot Cake",
+	"item.sweetnotsavourymod.strawberrycake": "Strawberry Cake",
+	"item.sweetnotsavourymod.chocolateorangecake": "Chocolate Orange Cake",
+	"item.sweetnotsavourymod.chocolatecherrycake": "Chocolate Cherry Cake",
+	"item.sweetnotsavourymod.victoriaspongecake": "Victoria Sponge Cake",
+	"item.sweetnotsavourymod.vanillacake": "Vanilla Cake",
+	"item.sweetnotsavourymod.lemoncurdcake": "Lemon Curd Cake",
+	"item.sweetnotsavourymod.bananabread": "Banana Bread",
+
+	"item.sweetnotsavourymod.sweetbanana": "Sweet Banana",
+	"item.sweetnotsavourymod.sweetcarrot": "Sweet Carrot",
+	"item.sweetnotsavourymod.sweetpeach": "Sweet Peach",
+	"item.sweetnotsavourymod.sweetblackberry": "Sweet Blackberry",
+	"item.sweetnotsavourymod.sweetstrawberry": "Sweet Strawberry",
+	"item.sweetnotsavourymod.sweetblueberry": "Sweet Blueberry",
+	"item.sweetnotsavourymod.sweetraspberry": "Sweet Raspberry",
+	"item.sweetnotsavourymod.sweetlemon": "Sweet Lemon",
+	"item.sweetnotsavourymod.sweetlime": "Sweet Lime",
+	"item.sweetnotsavourymod.sweetorange": "Sweet Orange",
+	"item.sweetnotsavourymod.sweetmango": "Sweet Mango",
+	"item.sweetnotsavourymod.sweetpineapple": "Sweet Pineapple",
+
+	"item.sweetnotsavourymod.vanilla": "Vanilla",
+	"item.sweetnotsavourymod.chocolate": "Chocolate",
+	"item.sweetnotsavourymod.toffee": "Toffee",
+	"item.sweetnotsavourymod.caramel": "Caramel",
+	"item.sweetnotsavourymod.bonbons": "Bon Bons",
+	"item.sweetnotsavourymod.mintimperials": "Mint Imperials",
+	"item.sweetnotsavourymod.colabottle": "Cola Bottle",
+
 
 	"item.sweetnotsavourymod.creamy_milk_bucket": "Creamy Milk Bucket",
 
