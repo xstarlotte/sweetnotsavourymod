@@ -8,8 +8,8 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.ai.util.GoalUtils;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.Node;
 import net.minecraft.world.level.pathfinder.Path;
-
 
 public class PoisonBerryOpensMiniDoorGoal extends Goal {
     protected Mob entity;
@@ -41,8 +41,8 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal {
     /**
      * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
      * method as well.
-     *//*
-    public boolean shouldExecute(){
+     */
+    public boolean canUse() {
         if(!GoalUtils.hasGroundPathNavigation( this.entity )){
             return false;
         }else if(!this.entity.horizontalCollision){
@@ -51,30 +51,33 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal {
             GroundPathNavigation groundpathnavigator = (GroundPathNavigation) this.entity.getNavigation();
             Path path = groundpathnavigator.getPath();
             if(path != null && !path.isDone() && groundpathnavigator.canOpenDoors()){ // might be passDoors
-                for(int i = 0; i < Math.min( path.getCurrentPathIndex() + 2 , path.getCurrentPathLength() ); ++i){
-                    PathPoint pathpoint = path.getPathPointFromIndex( i );
+                for(int i = 0; i < Math.min(path.getNextNodeIndex() + 2 , path.getNodeCount()); ++i){
+                    Node pathpoint = path.getNode(i);
                     this.doorPosition = new BlockPos( pathpoint.x , pathpoint.y , pathpoint.z );
-                    if(!(this.entity.getDistanceSq( (double) this.doorPosition.getX() , this.entity.getPosY() , (double) this.doorPosition.getZ() ) > 2.25D)){
-                        this.doorInteract = (this.entity.world.getBlockState( this.doorPosition ).getBlock() == BlockInit.POISONOAKMINIDOOR.get());
+                    if(!(this.entity.distanceToSqr(this.doorPosition.getX(), this.entity.getY(),
+                            this.doorPosition.getZ() ) > 2.25D)){
+                        this.doorInteract = (this.entity.level.getBlockState(this.doorPosition).getBlock()
+                                == BlockInit.POISONOAKMINIDOOR.get());
                         if(this.doorInteract){
                             return true;
                         }
                     }
                 }
 
-                this.doorPosition = this.entity.getPosition();
-                this.doorInteract = (this.entity.world.getBlockState( this.doorPosition ).getBlock() == BlockInit.POISONOAKMINIDOOR.get());
+                this.doorPosition = this.entity.blockPosition();
+                this.doorInteract = (this.entity.level.getBlockState(this.doorPosition).getBlock()
+                        == BlockInit.POISONOAKMINIDOOR.get());
                 return this.doorInteract;
             }else{
                 return false;
             }
         }
-    }*/
+    }
 
     /**
      * Returns whether an in-progress EntityAIBase should continue executing
      */
-    public boolean shouldContinueExecuting(){
+    public boolean shouldContinueExecuting() {
         if(this.hasStoppedDoorInteraction){
             toggleDoor( false );
         }
@@ -84,7 +87,7 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal {
     /**
      * Execute a one shot task or start executing a continuous task
      */
-    public void startExecuting(){
+    public void start() {
         this.hasStoppedDoorInteraction = false;
         this.entityPositionX = (float) ((double) this.doorPosition.getX() + 0.5D - this.entity.getX());
         this.entityPositionZ = (float) ((double) this.doorPosition.getZ() + 0.5D - this.entity.getZ());
@@ -93,22 +96,20 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal {
         }
     }
 
-
     @Override
-    public boolean canUse() {
-        return false;
+    public void stop() {
+        toggleDoor( false );
     }
 
     /**
      * Keep ticking a continuous task that has already been started
      */
-    public void tick(){
+    public void tick() {
         float f = (float) ((double) this.doorPosition.getX() + 0.5D - this.entity.getX());
         float f1 = (float) ((double) this.doorPosition.getZ() + 0.5D - this.entity.getZ());
         float f2 = this.entityPositionX * f + this.entityPositionZ * f1;
-        if(f2 < 0.0F){
+        if(f2 < 1.0F) {
             this.hasStoppedDoorInteraction = true;
         }
     }
 }
-
