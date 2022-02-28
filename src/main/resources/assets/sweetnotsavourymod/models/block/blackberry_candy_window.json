@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "sweetnotsavourymod:blocks/blackberry_candy_window"
+  }
+}

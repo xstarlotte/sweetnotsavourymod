@@ -2,8 +2,12 @@ package com.charlotte.sweetnotsavourymod.client.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.*;
+import com.charlotte.sweetnotsavourymod.common.screen.IceCreamMachineScreen;
+import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
+import com.charlotte.sweetnotsavourymod.core.init.FluidInit;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -31,6 +35,9 @@ public class ClientEvents {
     
     public static final ResourceLocation LEMONICECREAMBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/lemonicecreambedheadpart");
     public static final ResourceLocation LEMONICECREAMBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/lemonicecreambedbottompart");
+
+    public static final ResourceLocation ORANGEICECREAMBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/orangeicecreambedheadpart");
+    public static final ResourceLocation ORANGEICECREAMBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/orangeicecreambedbottompart");
     
     @SubscribeEvent
     public static void onClientSetup( ModelRegistryEvent event ) {
@@ -46,6 +53,10 @@ public class ClientEvents {
         ForgeModelBakery.addSpecialModel(LEMONICECREAMBEDBOTTOM);
         ForgeModelBakery.addSpecialModel(LEMONICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONICECREAMBED.get(), RenderType.cutout());
+
+        ForgeModelBakery.addSpecialModel(ORANGEICECREAMBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(ORANGEICECREAMBEDHEAD);
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEICECREAMBED.get(), RenderType.cutout());
 
         ForgeModelBakery.addSpecialModel(RASPBERRYICECREAMBEDBOTTOM);
         ForgeModelBakery.addSpecialModel(RASPBERRYICECREAMBEDHEAD);
@@ -78,6 +89,37 @@ public class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGELOLLIPOPLAMP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONLOLLIPOPLAMP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONLAMP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYATTACKERTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYARCHERTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYHEALERTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYDEFENDERTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGOGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACHGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLEGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.LIMEGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.APPLEGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.COLAGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRYGUMMYBEARTEDDY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYWOODWARDROBE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYWOODBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYLEAVESCHAIR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKSTOVE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKTELEVISION.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKDRAWERS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ICE_CREAM_MACHINE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_FLUID.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_FLOWING.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTENMOULDYCANDYCANECHAINS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTENMOULDYCANDYCANEBARS.get(), RenderType.translucent());
+
+
     }
 
     @SubscribeEvent
@@ -86,6 +128,8 @@ public class ClientEvents {
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_STRAWBERRY_BLOCK_ENTITY_TYPE.get(), StrawberryIceCreamBedBeRenderer::new);
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_RASPBERRY_BLOCK_ENTITY_TYPE.get(), RaspberryIceCreamBedBeRenderer::new);
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_LEMON_BLOCK_ENTITY_TYPE.get(), LemonIceCreamBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_ORANGE_BLOCK_ENTITY_TYPE.get(), OrangeIceCreamBedBeRenderer::new);
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_BLUEBERRY_BLOCK_ENTITY_TYPE.get(), BlueberryIceCreamBedBeRenderer::new);
+        MenuScreens.register(MenuTypesInit.ICE_CREAM_MACHINE_MENU.get(), IceCreamMachineScreen::new);
     }
 }

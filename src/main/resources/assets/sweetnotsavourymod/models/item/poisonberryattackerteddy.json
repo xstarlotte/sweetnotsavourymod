@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/poisonberryattackerteddy",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/poisonberryattackerteddy"
+  }
+}

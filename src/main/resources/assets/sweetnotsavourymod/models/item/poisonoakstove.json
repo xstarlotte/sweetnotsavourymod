@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/poisonoakstove",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/poisonoakstove"
+  }
+}

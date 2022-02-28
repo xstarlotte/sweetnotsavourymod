@@ -181,7 +181,7 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 			}
 		}
 
-		if(isTame() && this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
+		if(isTame() && !this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
 			setSitting(!isSitting());
 			return InteractionResult.SUCCESS;
 		}
@@ -203,7 +203,7 @@ public class SNSParrotEntity extends TamableAnimal implements IAnimatable {
 
 	public void setSitting(boolean sitting) {
 		this.entityData.set(SITTING, sitting);
-		this.setInSittingPose(sitting);
+		this.setOrderedToSit(sitting);
 	}
 
 	public boolean isSitting() {

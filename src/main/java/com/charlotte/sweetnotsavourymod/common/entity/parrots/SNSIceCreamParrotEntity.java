@@ -182,7 +182,7 @@ public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatabl
 			}
 		}
 
-		if(isTame() && this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
+		if(isTame() && !this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
 			setSitting(!isSitting());
 			return InteractionResult.SUCCESS;
 		}
@@ -204,7 +204,7 @@ public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatabl
 
 	public void setSitting(boolean sitting) {
 		this.entityData.set(SITTING, sitting);
-		this.setInSittingPose(sitting);
+		this.setOrderedToSit(sitting);
 	}
 
 	public boolean isSitting() {

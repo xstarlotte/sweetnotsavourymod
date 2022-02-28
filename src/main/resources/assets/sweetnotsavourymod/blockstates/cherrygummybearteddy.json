@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "sweetnotsavourymod:block/cherrygummybearteddy", "y": 180 },
+    "facing=east": { "model": "sweetnotsavourymod:block/cherrygummybearteddy", "y": 270 },
+    "facing=south": { "model": "sweetnotsavourymod:block/cherrygummybearteddy"},
+    "facing=west": { "model": "sweetnotsavourymod:block/cherrygummybearteddy", "y": 90 }
+  }
+}

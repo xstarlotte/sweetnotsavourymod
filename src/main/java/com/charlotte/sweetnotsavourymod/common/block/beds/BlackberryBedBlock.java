@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.block.beds;
 
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.BlackberryIceCreamBedBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.BlueberryIceCreamBedBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.entity.BlockEntity;

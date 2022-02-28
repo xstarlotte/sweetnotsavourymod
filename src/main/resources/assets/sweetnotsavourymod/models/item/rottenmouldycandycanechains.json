@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/rottenmouldycandycanechains",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/rottenmouldycandycanechains"
+  }
+}

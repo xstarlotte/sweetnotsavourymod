@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "sweetnotsavourymod:block/rottenmouldycandycanechains",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "sweetnotsavourymod:block/rottenmouldycandycanechains"
+    },
+    "axis=z": {
+      "model": "sweetnotsavourymod:block/rottenmouldycandycanechains",
+      "x": 90
+    }
+  }
+}

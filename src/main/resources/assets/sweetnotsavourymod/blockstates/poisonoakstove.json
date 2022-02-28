@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=east": {
+            "model": "sweetnotsavourymod:block/poisonoakstove",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "sweetnotsavourymod:block/poisonoakstove"
+        },
+        "facing=south": {
+            "model": "sweetnotsavourymod:block/poisonoakstove",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "sweetnotsavourymod:block/poisonoakstove",
+            "y": 270
+        }
+    }
+}

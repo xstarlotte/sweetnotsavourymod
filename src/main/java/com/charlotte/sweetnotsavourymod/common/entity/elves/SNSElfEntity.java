@@ -144,7 +144,7 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 	}
 
 	public void makeTamed(Player player) {
-		if (this.level.isClientSide) {
+		if (!this.level.isClientSide) {
 			super.tame(player);
 			this.navigation.recomputePath();
 			this.setTarget(null);
@@ -174,7 +174,7 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 			}
 		}
 
-		if(isTame() && this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
+		if(isTame() && !this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
 			setSitting(!isSitting());
 			return InteractionResult.SUCCESS;
 		}
@@ -196,7 +196,7 @@ public class SNSElfEntity extends TamableAnimal implements IAnimatable {
 
 	public void setSitting(boolean sitting) {
 		this.entityData.set(SITTING, sitting);
-		this.setInSittingPose(sitting);
+		this.setOrderedToSit(sitting);
 	}
 
 	public boolean isSitting() {

@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/poisonoaktelevision",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/poisonoaktelevision"
+  }
+}

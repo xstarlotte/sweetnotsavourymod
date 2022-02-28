@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/poisonberryhealerteddy",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/poisonberryhealerteddy"
+  }
+}

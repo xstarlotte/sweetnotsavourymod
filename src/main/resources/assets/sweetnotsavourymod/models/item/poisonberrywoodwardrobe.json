@@ -1,0 +1,6 @@
+{
+	"parent": "sweetnotsavourymod:block/poisonberrywoodwardrobe",
+	"textures": {
+		"layer0": "sweetnotsavourymod:blocks/poisonberrywoodwardrobe"
+	}
+}

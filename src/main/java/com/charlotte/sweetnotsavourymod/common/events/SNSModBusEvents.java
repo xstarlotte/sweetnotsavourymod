@@ -44,5 +44,7 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishEntity.setAttributes());
         event.put(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyEntity.setAttributes());
         event.put(EntityTypesInit.SNSGUMMYBEAR.get(), SNSGummyBearEntity.setAttributes());
+        event.put(EntityTypesInit.POISONBERRYATTACKER.get(), SNSGummyBearEntity.setAttributes());
+        event.put(EntityTypesInit.CANDYCANECROOK.get(), SNSGummyBearEntity.setAttributes());
     }
 }
