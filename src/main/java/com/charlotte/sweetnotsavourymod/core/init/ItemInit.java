@@ -647,7 +647,7 @@ public class ItemInit {
 	public static final RegistryObject<Item> ORANGE_CANDY_BOOTS = ITEMS.register("orange_candy_boots",
 			() -> new ArmorItem(IceCreamArmorMaterial.ORANGECANDYARMOR, EquipmentSlot.FEET,
 			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-//currency
+
 //currency
 	
 	public static final RegistryObject<Item> WRAPPEDSTRAWBERRYCANDY = ITEMS.register("wrappedstrawberrycandy", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
