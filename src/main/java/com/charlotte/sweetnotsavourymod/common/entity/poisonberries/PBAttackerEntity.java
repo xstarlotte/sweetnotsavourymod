@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entity.poisonberries;
 
 
+import com.charlotte.sweetnotsavourymod.common.entity.ai.PoisonBerryOpensMiniDoorGoal;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import net.minecraft.core.BlockPos;
 
@@ -74,6 +75,7 @@ public class PBAttackerEntity extends Monster implements IAnimatable {
     protected void addBehaviourGoals() {
         this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(PBAttackerEntity.class));
+		this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
 

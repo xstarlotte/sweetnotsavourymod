@@ -22,6 +22,8 @@ public class SNSSquirrollRenderer extends GeoEntityRenderer <SNSSquirrollEntity>
 			Util.make(Maps.newEnumMap(SquirrollFlavourVariant.class), (p_114874_) -> {
 				p_114874_.put(SquirrollFlavourVariant.CINNAMON, new ResourceLocation("sweetnotsavourymod:textures/entity/squirrolls/cinnamonsquirroll.png"));
 				p_114874_.put(SquirrollFlavourVariant.STRAWBERRYSWISS, new ResourceLocation("sweetnotsavourymod:textures/entity/squirrolls/strawberryswisssquirroll.png"));
+				p_114874_.put(SquirrollFlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/squirrolls/chocolatesquirroll.png"));
+
 
 			});
 

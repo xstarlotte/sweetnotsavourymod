@@ -5,7 +5,8 @@ import java.util.Comparator;
 
 public enum SquirrollFlavourVariant {
     CINNAMON(0),
-    STRAWBERRYSWISS(1);
+    STRAWBERRYSWISS(1),
+    CHOCOLATE(2);
 
     private static final SquirrollFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(SquirrollFlavourVariant::getId)).toArray(SquirrollFlavourVariant[]::new);

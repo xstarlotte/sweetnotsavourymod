@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "sweetnotsavourymod:items/strawberry_candy_door"
+  }
+}

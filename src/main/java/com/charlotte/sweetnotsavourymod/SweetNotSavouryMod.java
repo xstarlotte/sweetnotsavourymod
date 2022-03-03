@@ -3,6 +3,7 @@ package com.charlotte.sweetnotsavourymod;
 import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
+import com.charlotte.sweetnotsavourymod.common.painting.ModPaintings;
 import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.*;
 
@@ -44,6 +45,7 @@ public class SweetNotSavouryMod {
 
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
+        ModPaintings.PAINTING_MOTIVES.register(bus);
         SoundsInit.SOUND_EVENTS.register(bus);
         FluidInit.FLUIDS.register(bus);
     	BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register( bus );
