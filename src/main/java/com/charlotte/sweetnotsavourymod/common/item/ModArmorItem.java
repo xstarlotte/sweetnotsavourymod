@@ -15,13 +15,12 @@ import net.minecraft.world.level.Level;
 import java.util.Map;
 
 public class ModArmorItem extends ArmorItem {
-    private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
+    private static final Map<ArmorMaterial, MobEffectInstance[]> MATERIAL_TO_EFFECT_MAP =
+            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance[]>())
                     .put(ModArmorMaterials.RASPBERRY_CANDY,
-                            new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 1)).build();
-
-
-
+                            new MobEffectInstance[] {
+                                    new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 1),
+                                    new MobEffectInstance(MobEffects.GLOWING, 200, 1) }).build();
 
 
     public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
@@ -38,9 +37,9 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private void evaluateArmorEffects(Player player) {
-        for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
+        for (Map.Entry<ArmorMaterial, MobEffectInstance[]> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             ArmorMaterial mapArmorMaterial = entry.getKey();
-            MobEffectInstance mapStatusEffect = entry.getValue();
+            MobEffectInstance[] mapStatusEffect = entry.getValue();
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
@@ -49,16 +48,27 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
-                                            MobEffectInstance mapStatusEffect) {
-        boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
+                                            MobEffectInstance[] mapStatusEffect) {
+        boolean hasPlayerEffect = true;
+
+        for (MobEffectInstance instance : mapStatusEffect) {
+            hasPlayerEffect = player.hasEffect(instance.getEffect());
+        }
 
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
-            player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
-                    mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+
+            applyMultipleEffects(player, mapStatusEffect);
 
             //if(new Random().nextFloat() > 0.6f) { // 40% of damaging the armor! Possibly!
             //    player.getInventory().hurtArmor(DamageSource.MAGIC, 1f, new int[]{0, 1, 2, 3});
             //}
+        }
+    }
+
+    private void applyMultipleEffects(Player player, MobEffectInstance[] mapStatusEffect) {
+        for (MobEffectInstance instance : mapStatusEffect) {
+            player.addEffect(new MobEffectInstance(instance.getEffect(),
+                    instance.getDuration(), instance.getAmplifier()));
         }
     }
 
@@ -73,12 +83,18 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private boolean hasCorrectArmorOn(ArmorMaterial material, Player player) {
+        for (ItemStack armorStack: player.getInventory().armor) {
+            if(!(armorStack.getItem() instanceof ArmorItem)) {
+                return false;
+            }
+        }
+
         ArmorItem boots = ((ArmorItem)player.getInventory().getArmor(0).getItem());
         ArmorItem leggings = ((ArmorItem)player.getInventory().getArmor(1).getItem());
         ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmor(2).getItem());
         ArmorItem helmet = ((ArmorItem)player.getInventory().getArmor(3).getItem());
 
-        return helmet.getMaterial() == material && breastplate.getMaterial() == material &&
-                leggings.getMaterial() == material && boots.getMaterial() == material;
+        return helmet.getMaterial() == material && breastplate.getMaterial() == material
+                && leggings.getMaterial() == material && boots.getMaterial() == material;
     }
 }
