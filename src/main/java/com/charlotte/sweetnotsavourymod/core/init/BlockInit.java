@@ -430,6 +430,54 @@ public class BlockInit {
 					.noOcclusion()
 					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+	public static final RegistryObject<Block> CANDY_CANE_FLOWER = registerBlock("candy_cane_flower",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_RED)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDY_CANE_FLOWER_2 = registerBlock("candy_cane_flower_2",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_RED)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDY_CANE_FLOWER_3 = registerBlock("candy_cane_flower_3",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_RED)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDY_CANE_FLOWER_4 = registerBlock("candy_cane_flower_4",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_RED)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDY_CANE_GRASS = registerBlock("candy_cane_grass",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_RED)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDY_CANE_GRASS_LONG = registerBlock("candy_cane_grass_long",
+			() -> new Block(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_RED)
+					.noCollission()
+					.instabreak()
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 	//public static final RegistryObject<Block> CANDYCANESUGARCANEBLOCK = registerBlock("candycanesugarcaneblock",
 	//		() -> new CandyCaneSugarCaneBlock(BlockBehaviour.Properties
 	//				.of(Material.PLANTS)
@@ -661,6 +709,54 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
 					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> STRAWBERRY_CANDY_DOOR = registerBlock("strawberry_candy_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> BLUEBERRY_CANDY_DOOR = registerBlock("blueberry_candy_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> BLACKBERRY_CANDY_DOOR = registerBlock("blackberry_candy_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> RASPBERRY_CANDY_DOOR = registerBlock("raspberry_candy_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> ORANGE_CANDY_DOOR = registerBlock("orange_candy_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> LEMON_CANDY_DOOR = registerBlock("lemon_candy_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> WAFER_WOOD_DOOR = registerBlock("wafer_wood_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CHOCOLATE_WAFER_WOOD_DOOR = registerBlock("chocolate_wafer_wood_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> WAFER_PLANK_DOOR = registerBlock("wafer_plank_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CHOCOLATE_WAFER_PLANK_DOOR = registerBlock("chocolate_wafer_plank_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> FROSTING_DOOR = registerBlock("frosting_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> ROTTEN_MOULDY_CANDY_CANE_DOOR = registerBlock("rotten_mouldy_candy_cane_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 //lanterns	
 	

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "sweetnotsavourymod:items/rotten_mouldy_candy_cane_door"
+  }
+}

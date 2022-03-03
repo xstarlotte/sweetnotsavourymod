@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "top": "sweetnotsavourymod:blocks/frosting_door_top",
+    "bottom": "sweetnotsavourymod:blocks/frosting_door_bottom"
+  }
+}

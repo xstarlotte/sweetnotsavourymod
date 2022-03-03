@@ -9,6 +9,14 @@
 
 	"item.sweetnotsavourymod.snselfspawnegg": "Flavoured Elf Spawn Egg",
 
+	"item.sweetnotsavourymod.snsboarryspawnegg": "Boarry Spawn Egg",
+
+	"item.sweetnotsavourymod.snscccatspawnegg": "Candy Cane Cat Spawn Egg",
+
+	"item.sweetnotsavourymod.icecreamcowspawnegg": "Ice Cream Cow Spawn Egg",
+
+	"item.sweetnotsavourymod.snsspiderspawnegg": "Lace Spider Spawn Egg",
+
 	"item.sweetnotsavourymod.snspugspawnegg": "Flavoured Pug Spawn Egg",
 	"item.sweetnotsavourymod.snsicecreampugspawnegg": "Ice Cream Pug Spawn Egg",
 
@@ -113,6 +121,12 @@
 
 	"item.sweetnotsavourymod.creamy_milk_bucket": "Creamy Milk Bucket",
 
+	"item.sweetnotsavourymod.candy_cane_sword": "Candy Cane Sword",
+	"item.sweetnotsavourymod.candy_cane_shovel": "Candy Cane Shovel",
+	"item.sweetnotsavourymod.candy_cane_axe": "Candy Cane Axe",
+	"item.sweetnotsavourymod.candy_cane_pickaxe": "Candy Cane Pickaxe",
+	"item.sweetnotsavourymod.candy_cane_hoe": "Candy Cane Hoe",
+
 	"item.sweetnotsavourymod.vanilla_ice_cream_helmet": "Vanilla Ice Cream Helmet",
 	"item.sweetnotsavourymod.vanilla_ice_cream_chestplate": "Vanilla Ice Cream Chestplate",
 	"item.sweetnotsavourymod.vanilla_ice_cream_leggings": "Vanilla Ice Cream Leggings",
@@ -150,7 +164,13 @@
 	"block.sweetnotsavourymod.icecreamtreesapling": "Ice Cream Tree Sapling",
 
 	"block.sweetnotsavourymod.frostinggrass": "Frosting Grass",
-	"block.sweetnotsavourymod.candycanebush": "CandyCaneBush",
+	"block.sweetnotsavourymod.candycanebush": "Candy Cane Bush",
+	"block.sweetnotsavourymod.candy_cane_flower": "Candy Cane Flower",
+	"block.sweetnotsavourymod.candy_cane_flower_2": "Candy Cane Flower",
+	"block.sweetnotsavourymod.candy_cane_flower_3": "Candy Cane Flower",
+	"block.sweetnotsavourymod.candy_cane_flower_4": "Candy Cane Flower",
+	"block.sweetnotsavourymod.candy_cane_grass": "Candy Cane Grass",
+	"block.sweetnotsavourymod.candy_cane_grass_long": "Long Candy Cane Grass",
 	"block.sweetnotsavourymod.chocolatecineraria": "Chocolate Cineraria",
 	"block.sweetnotsavourymod.strawberrycandybush": "Strawberry Candy Bush",
 	"block.sweetnotsavourymod.raspberrycandybush": "Raspberry Candy Bush",
@@ -284,6 +304,19 @@
 	"block.sweetnotsavourymod.lemonicecreambed": "Lemon Ice Cream Bed",
 	"block.sweetnotsavourymod.orangeicecreambed": "Orange Ice Cream Bed",
 
+	"block.sweetnotsavourymod.strawberry_candy_door": "Strawberry Candy Door",
+	"block.sweetnotsavourymod.blueberry_candy_door": "Blueberry Candy Door",
+	"block.sweetnotsavourymod.blackberry_candy_door": "Blackberry Candy Door",
+	"block.sweetnotsavourymod.raspberry_candy_door": "Raspberry Candy Door",
+	"block.sweetnotsavourymod.orange_candy_door": "Orange Candy Door",
+	"block.sweetnotsavourymod.lemon_candy_door": "Lemon Candy Door",
+	"block.sweetnotsavourymod.wafer_wood_door": "Wafer Wood Candy Door",
+	"block.sweetnotsavourymod.chocolate_wafer_wood_door": "Chocolate Wafer Wood Door",
+	"block.sweetnotsavourymod.wafer_plank_door": "Wafer Plank Door",
+	"block.sweetnotsavourymod.chocolate_wafer_plank_door": "Chocolate Wafer Plank Door",
+	"block.sweetnotsavourymod.frosting_door": "Frosting Door",
+	"block.sweetnotsavourymod.rotten_mouldy_candy_cane_door": "Rotten Mouldy Candy Cane Door",
+
 	"block.sweetnotsavourymod.strawberrylamp": "Strawberry Lamp",
 	"block.sweetnotsavourymod.blackberrylamp": "Blackberry Lamp",
 	"block.sweetnotsavourymod.blueberrylamp": "Blueberry Lamp",
@@ -407,6 +440,8 @@
 
 	"entity.sweetnotsavourymod.strawberryparfaitpixie": "Strawberry Parfait Pixie",
 	"entity.sweetnotsavourymod.blueberryparfaitpixie": "Blueberry Parfait Pixie",
+
+
 
 	"block.sweetnotsavourymod.strawberrychest": "Strawberry Chest",
 
