@@ -12,15 +12,17 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 
 public class ModArmorItem extends ArmorItem {
-    private static final Map<ArmorMaterial, MobEffectInstance[]> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance[]>())
+    private static final Map<ArmorMaterial, Supplier<MobEffectInstance[]>> MATERIAL_TO_EFFECT_MAP =
+            (new ImmutableMap.Builder<ArmorMaterial, Supplier<MobEffectInstance[]>>())
                     .put(ModArmorMaterials.RASPBERRY_CANDY,
-                            new MobEffectInstance[] {
+                            () -> new MobEffectInstance[] {
                                     new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 1),
-                                    new MobEffectInstance(MobEffects.GLOWING, 200, 1) }).build();
+                                    new MobEffectInstance(MobEffects.GLOWING, 200, 1)}).build();
 
 
     public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
@@ -37,9 +39,9 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private void evaluateArmorEffects(Player player) {
-        for (Map.Entry<ArmorMaterial, MobEffectInstance[]> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
+        for (Map.Entry<ArmorMaterial, Supplier<MobEffectInstance[]>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             ArmorMaterial mapArmorMaterial = entry.getKey();
-            MobEffectInstance[] mapStatusEffect = entry.getValue();
+            MobEffectInstance[] mapStatusEffect = entry.getValue().get();
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
