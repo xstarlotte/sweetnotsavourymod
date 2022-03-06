@@ -5,6 +5,7 @@ import com.charlotte.sweetnotsavourymod.client.entity.boarries.SNSBoarryRenderer
 import com.charlotte.sweetnotsavourymod.client.entity.cats.SNSCCCatRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.cows.IceCreamCowRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.crooks.CandyCaneCrookRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.guineapigs.SNSGPRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.gummybears.SNSGummyBearRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.mice.SNSMouseRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pixies.SNSParfaitPixieRenderer;
@@ -180,6 +181,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSSPIDER.get(), SNSSpiderRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSCCCAT.get(), SNSCCCatRenderer::new);
 		EntityRenderers.register(EntityTypesInit.ICECREAMCOW.get(), IceCreamCowRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSGP.get(), SNSGPRenderer::new);
 		EntityRenderers.register(EntityTypesInit.POISONBERRYATTACKER.get(), PBAttackerRenderer::new);
 		EntityRenderers.register(EntityTypesInit.CANDYCANECROOK.get(), CandyCaneCrookRenderer::new);
 		/*

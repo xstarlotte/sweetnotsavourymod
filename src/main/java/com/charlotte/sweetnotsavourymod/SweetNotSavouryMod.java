@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod;
 
 import com.charlotte.sweetnotsavourymod.client.events.ClientEvents;
+import com.charlotte.sweetnotsavourymod.common.effects.ModEffects;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
 import com.charlotte.sweetnotsavourymod.common.painting.ModPaintings;
@@ -15,6 +16,8 @@ import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 
@@ -27,6 +30,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.awt.print.Book;
 
 @Mod("sweetnotsavourymod")
 @Mod.EventBusSubscriber(modid = SweetNotSavouryMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -42,7 +47,9 @@ public class SweetNotSavouryMod {
 		MinecraftForge.EVENT_BUS.register(new EntityEvents());
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::onLoadComplete);
+        bus.addListener(this::setup);
 
+        ModEffects.register(bus);
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
         ModPaintings.PAINTING_MOTIVES.register(bus);
@@ -68,4 +75,42 @@ public class SweetNotSavouryMod {
     public void onLoadComplete(final FMLLoadCompleteEvent event) {
     	StrippingMap.registerStrippables();
     }
+
+    private void setup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDYCANEBUSH.getId(), BlockInit.POTTED_CANDYCANEBUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDY_CANE_FLOWER.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDY_CANE_FLOWER_2.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER_2);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDY_CANE_FLOWER_3.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER_3);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDY_CANE_FLOWER_4.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER_4);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDY_CANE_GRASS.getId(), BlockInit.POTTED_CANDY_CANE_GRASS);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDY_CANE_GRASS_LONG.getId(), BlockInit.POTTED_CANDY_CANE_GRASS_LONG);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.POISONBERRYPLANT.getId(), BlockInit.POTTED_POISONBERRYPLANT);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.FROSTINGFLOWER.getId(), BlockInit.POTTED_FROSTINGFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.STRAWBERRYFROSTINGFLOWER.getId(), BlockInit.POTTED_STRAWBERRYFROSTINGFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.RASPBERRYFROSTINGFLOWER.getId(), BlockInit.POTTED_RASPBERRYFROSTINGFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.BLUEBERRYFROSTINGFLOWER.getId(), BlockInit.POTTED_BLUEBERRYFROSTINGFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.BLACKBERRYFROSTINGFLOWER.getId(), BlockInit.POTTED_BLACKBERRYFROSTINGFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.ORANGEFROSTINGFLOWER.getId(), BlockInit.POTTED_ORANGEFROSTINGFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.LEMONFROSTINGFLOWER.getId(), BlockInit.POTTED_LEMONFROSTINGFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CHOCOLATECINERARIA.getId(), BlockInit.POTTED_CHOCOLATECINERARIA);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.STRAWBERRYCANDYBUSH.getId(), BlockInit.POTTED_STRAWBERRYCANDYBUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.RASPBERRYCANDYBUSH.getId(), BlockInit.POTTED_RASPBERRYCANDYBUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.BLACKBERRYCANDYBUSH.getId(), BlockInit.POTTED_BLACKBERRYCANDYBUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.BLUEBERRYCANDYBUSH.getId(), BlockInit.POTTED_BLUEBERRYCANDYBUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.LEMONCANDYBUSH.getId(), BlockInit.POTTED_LEMONCANDYBUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.ORANGECANDYBUSH.getId(), BlockInit.POTTED_ORANGECANDYBUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.RAINBOWCANDYBUSH.getId(), BlockInit.POTTED_RAINBOWCANDYBUSH);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.BLACKBERRYCONEFLOWER.getId(), BlockInit.POTTED_BLACKBERRYCONEFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.STRAWBERRYCONEFLOWER.getId(), BlockInit.POTTED_STRAWBERRYCONEFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.BLUEBERRYCONEFLOWER.getId(), BlockInit.POTTED_BLUEBERRYCONEFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.RASPBERRYCONEFLOWER.getId(), BlockInit.POTTED_RASPBERRYCONEFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.LEMONCONEFLOWER.getId(), BlockInit.POTTED_LEMONCONEFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.ORANGECONEFLOWER.getId(), BlockInit.POTTED_ORANGECONEFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.VANILLACONEFLOWER.getId(), BlockInit.POTTED_VANILLACONEFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.TOFFEECONEFLOWER.getId(), BlockInit.POTTED_TOFFEECONEFLOWER);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CHOCOLATECONEFLOWER.getId(), BlockInit.POTTED_CHOCOLATECONEFLOWER);
+        });
+    }
+
 }

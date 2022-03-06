@@ -5,7 +5,13 @@ import java.util.Comparator;
 
 public enum ZebraFlavourVariant {
 
-    ZEBRACAKE(0);
+    ZEBRACAKE(0),
+    CANDYCANE(1),
+    PEPPERMINTCANDYCANE(2),
+    MINTCANDYCANE(3),
+    SPEARMINTCANDYCANE(4),
+    LEMONCANDYCANE(5),
+    CHOCOLATEORANGECAKE(6);
    ;
 
     private static final ZebraFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

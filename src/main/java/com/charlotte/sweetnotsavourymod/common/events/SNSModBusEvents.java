@@ -6,6 +6,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.boarries.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.guineapigs.SNSGPEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.gummybears.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.mice.SNSMouseEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSIceCreamParrotEntity;
@@ -52,6 +53,7 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.SNSSPIDER.get(), SNSSpiderEntity.setAttributes());
         event.put(EntityTypesInit.SNSCCCAT.get(), SNSCCCatEntity.setAttributes());
         event.put(EntityTypesInit.ICECREAMCOW.get(), IceCreamCowEntity.setAttributes());
+        event.put(EntityTypesInit.SNSGP.get(), SNSGPEntity.setAttributes());
         event.put(EntityTypesInit.POISONBERRYATTACKER.get(), SNSGummyBearEntity.setAttributes());
         event.put(EntityTypesInit.CANDYCANECROOK.get(), SNSGummyBearEntity.setAttributes());
     }

@@ -6,6 +6,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.boarries.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.crooks.CandyCaneCrookEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.guineapigs.SNSGPEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.gummybears.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PBAttackerEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pretzelflies.SNSPretzelflyEntity;
@@ -42,6 +43,11 @@ public class EntityTypesInit {
 			.register("snspug", () -> EntityType.Builder.of(SNSPugEntity::new, MobCategory.CREATURE)
 					.sized(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snspug").toString()));
+
+	public static final RegistryObject<EntityType<SNSGPEntity>>SNSGP = ENTITY_TYPES
+			.register("snsgp", () -> EntityType.Builder.of(SNSGPEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsgp").toString()));
 
 	public static final RegistryObject<EntityType<IceCreamCowEntity>>ICECREAMCOW = ENTITY_TYPES
 			.register("icecreamcow", () -> EntityType.Builder.of(IceCreamCowEntity::new, MobCategory.CREATURE)

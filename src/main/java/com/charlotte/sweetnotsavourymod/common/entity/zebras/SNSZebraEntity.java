@@ -1,10 +1,12 @@
 package com.charlotte.sweetnotsavourymod.common.entity.zebras;
 
 import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
+import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
 import com.charlotte.sweetnotsavourymod.core.util.ZebraFlavourVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -23,13 +25,17 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
@@ -41,7 +47,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class SNSZebraEntity extends TamableAnimal implements IAnimatable {
+public class SNSZebraEntity extends TamableAnimal implements PlayerRideable, IAnimatable {
 	private AnimationFactory factory = new AnimationFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(SNSZebraEntity.class, EntityDataSerializers.INT);
@@ -66,7 +72,6 @@ public class SNSZebraEntity extends TamableAnimal implements IAnimatable {
 		super.readAdditionalSaveData(p_21815_);
 		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
 	}
-
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
@@ -156,37 +161,50 @@ public class SNSZebraEntity extends TamableAnimal implements IAnimatable {
 	}
 
 	@Override
-	public InteractionResult mobInteract(Player player, InteractionHand hand) {
-		ItemStack itemstack = player.getItemInHand(hand);
+	public InteractionResult mobInteract(Player player, InteractionHand pHand) {
+		ItemStack itemstack = player.getItemInHand(pHand);
 		Item item = itemstack.getItem();
+		Item tameableItem = ItemInit.CANDYCANESUGAR.get();
 
-		if (item == Items.SUGAR && !isTame()) {
-			if (this.level.isClientSide) {
-				return InteractionResult.CONSUME;
-			} else {
+		if (this.level.isClientSide) {
+			boolean flag = this.isOwnedBy(player) || this.isTame() || item == tameableItem
+					&& !this.isTame();
+			return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
+		} else {
+			if (this.isTame()) {
+				if(player.isCrouching() && pHand == InteractionHand.MAIN_HAND) {
+					setSitting(!isSitting());
+				}
+
+				if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+					if (!player.getAbilities().instabuild) {
+						itemstack.shrink(1);
+					}
+
+					this.heal((float)item.getFoodProperties().getNutrition());
+					return InteractionResult.SUCCESS;
+				}
+				player.startRiding(this);
+			} else if (item == tameableItem && !this.isOnFire()) {
 				if (!player.getAbilities().instabuild) {
 					itemstack.shrink(1);
 				}
 
-				if (!ForgeEventFactory.onAnimalTame(this, player)) {
-					makeTamed(player);
-					setSitting(true);
-				}
+				if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+					this.tame(player);
+					this.navigation.stop();
 
+					this.setTarget((LivingEntity)null);
+					this.setOrderedToSit(true);
+					this.level.broadcastEntityEvent(this, (byte)7);
+				} else {
+					this.level.broadcastEntityEvent(this, (byte)6);
+				}
 				return InteractionResult.SUCCESS;
 			}
-		}
 
-		if(isTame() && !this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
-			setSitting(!isSitting());
-			return InteractionResult.SUCCESS;
+			return super.mobInteract(player, pHand);
 		}
-
-		if (itemstack.getItem() == Items.SUGAR) {
-			return InteractionResult.PASS;
-		}
-
-		return super.mobInteract(player, hand);
 	}
 
 	public ZebraFlavourVariant getVariant() {
@@ -242,6 +260,76 @@ public class SNSZebraEntity extends TamableAnimal implements IAnimatable {
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
 		return null;
+	}
+
+	public boolean canBeControlledByRider() {
+		return this.getControllingPassenger() instanceof LivingEntity;
+	}
+
+	@Nullable
+	public Entity getControllingPassenger() {
+		return this.getFirstPassenger();
+	}
+
+	public void travel(Vec3 pTravelVector) {
+		if (this.isAlive()) {
+			if (this.isVehicle() && this.canBeControlledByRider()) {
+				LivingEntity livingentity = (LivingEntity)this.getControllingPassenger();
+				this.setYRot(livingentity.getYRot());
+				this.yRotO = this.getYRot();
+				this.setXRot(livingentity.getXRot() * 0.5F);
+				this.setRot(this.getYRot(), this.getXRot());
+				this.yBodyRot = this.getYRot();
+				this.yHeadRot = this.yBodyRot;
+				float f = livingentity.xxa * 0.5F;
+				float f1 = livingentity.zza;
+				if (f1 <= 0.0F) {
+					f1 *= 0.25F;
+				}
+
+				if (this.isControlledByLocalInstance()) {
+					this.setSpeed((float)this.getAttributeValue(Attributes.MOVEMENT_SPEED));
+					super.travel(new Vec3((double)f, pTravelVector.y, (double)f1));
+				} else if (livingentity instanceof Player) {
+					this.setDeltaMovement(Vec3.ZERO);
+				}
+
+				this.calculateEntityAnimation(this, false);
+				this.tryCheckInsideBlocks();
+			} else {
+				super.travel(pTravelVector);
+			}
+		}
+	}
+
+	@Override
+	public Vec3 getDismountLocationForPassenger(LivingEntity pLivingEntity) {
+		Direction direction = this.getMotionDirection();
+		if (direction.getAxis() == Direction.Axis.Y) {
+			return super.getDismountLocationForPassenger(pLivingEntity);
+		} else {
+			int[][] aint = DismountHelper.offsetsForDirection(direction);
+			BlockPos blockpos = this.blockPosition();
+			BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
+
+			for(Pose pose : pLivingEntity.getDismountPoses()) {
+				AABB axisalignedbb = pLivingEntity.getLocalBoundsForPose(pose);
+
+				for(int[] aint1 : aint) {
+					blockpos$mutable.set(blockpos.getX() + aint1[0], blockpos.getY(), blockpos.getZ() + aint1[1]);
+					double d0 = this.level.getBlockFloorHeight(blockpos$mutable);
+					if (DismountHelper.isBlockFloorValid(d0)) {
+						Vec3 vec3 = Vec3.upFromBottomCenterOf(blockpos$mutable, d0);
+						if (DismountHelper.canDismountTo(this.level, pLivingEntity, axisalignedbb.move(vec3))) {
+							pLivingEntity.setPose(pose);
+							return vec3;
+						}
+					}
+				}
+			}
+
+			return super.getDismountLocationForPassenger(pLivingEntity);
+		}
 	}
 
 	@Override

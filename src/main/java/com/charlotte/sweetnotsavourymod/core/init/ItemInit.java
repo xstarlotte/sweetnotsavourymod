@@ -2,6 +2,7 @@ package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
+import com.charlotte.sweetnotsavourymod.common.item.ModArmorItem;
 import com.charlotte.sweetnotsavourymod.common.item.ModArmorMaterials;
 import com.charlotte.sweetnotsavourymod.common.item.ModTiers;
 import com.charlotte.sweetnotsavourymod.common.item.SweetTier.SweetSwordItem;
@@ -94,6 +95,9 @@ public class ItemInit {
 
 	public static final RegistryObject<CustomSpawnEggItem> ICECREAMCOWSPAWNEGG = ITEMS.register("icecreamcowspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.ICECREAMCOW, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> SNSGPSPAWNEGG = ITEMS.register("snsgpspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSGP, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
 	public static final RegistryObject<CustomSpawnEggItem> SNSPBATTACKERSPAWNEGG = ITEMS.register("snspbattackerspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.POISONBERRYATTACKER, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
@@ -663,7 +667,7 @@ public class ItemInit {
 	
 	//raspberry_candy
 	public static final RegistryObject<Item> RASPBERRY_CANDY_HELMET = ITEMS.register("raspberry_candy_helmet",
-			() -> new ArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.HEAD,
+			() -> new ModArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.HEAD,
 			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> RASPBERRY_CANDY_CHESTPLATE = ITEMS.register("raspberry_candy_chestplate",
 			() -> new ArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.CHEST,

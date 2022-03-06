@@ -21,6 +21,12 @@ public class SNSZebraRenderer extends GeoEntityRenderer<SNSZebraEntity> {
 	public static final Map<ZebraFlavourVariant, ResourceLocation> LOCATION_BY_VARIANT =
 			Util.make(Maps.newEnumMap(ZebraFlavourVariant.class), (p_114874_) -> {
 				p_114874_.put(ZebraFlavourVariant.ZEBRACAKE, new ResourceLocation("sweetnotsavourymod:textures/entity/zebras/zebracakezebra.png"));
+				p_114874_.put(ZebraFlavourVariant.CHOCOLATEORANGECAKE, new ResourceLocation("sweetnotsavourymod:textures/entity/zebras/chocolateorangecakezebra.png"));
+				p_114874_.put(ZebraFlavourVariant.MINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/zebras/mintcandycanezebra.png"));
+				p_114874_.put(ZebraFlavourVariant.CANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/zebras/candycanezebra.png"));
+				p_114874_.put(ZebraFlavourVariant.PEPPERMINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/zebras/peppermintcandycanezebra.png"));
+				p_114874_.put(ZebraFlavourVariant.SPEARMINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/zebras/spearmintcandycanezebra.png"));
+				p_114874_.put(ZebraFlavourVariant.LEMONCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/zebras/lemoncandycanezebra.png"));
 			});
 
 	public SNSZebraRenderer(EntityRendererProvider.Context renderManager) {
@@ -37,7 +43,7 @@ public class SNSZebraRenderer extends GeoEntityRenderer<SNSZebraEntity> {
 	public RenderType getRenderType(SNSZebraEntity animatable, float partialTicks, PoseStack stack,
 									MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
 									ResourceLocation textureLocation) {
-		stack.scale(1.6F, 1.6F, 1.6F);
+		stack.scale(1.4F, 1.4F, 1.4F);
 		return super.getRenderType(animatable, partialTicks, stack,
 				renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
 	}

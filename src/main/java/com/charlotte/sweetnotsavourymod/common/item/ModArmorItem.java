@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.item;
 
+import com.charlotte.sweetnotsavourymod.common.effects.ModEffects;
 import com.charlotte.sweetnotsavourymod.common.item.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 
@@ -22,7 +23,7 @@ public class ModArmorItem extends ArmorItem {
                     .put(ModArmorMaterials.RASPBERRY_CANDY,
                             () -> new MobEffectInstance[] {
                                     new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 1),
-                                    new MobEffectInstance(MobEffects.GLOWING, 200, 1)}).build();
+                                    new MobEffectInstance(ModEffects.POISON_RESISTANCE.get(), 200, 1)}).build();
 
 
     public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
