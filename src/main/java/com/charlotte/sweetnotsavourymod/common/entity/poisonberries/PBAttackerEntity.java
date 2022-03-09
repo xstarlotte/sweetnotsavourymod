@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entity.poisonberries;
 
 
+import com.charlotte.sweetnotsavourymod.common.entity.ai.PoisonBerryMeleeAttackGoal;
 import com.charlotte.sweetnotsavourymod.common.entity.ai.PoisonBerryOpensMiniDoorGoal;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import net.minecraft.core.BlockPos;
@@ -69,30 +70,34 @@ public class PBAttackerEntity extends Monster implements IAnimatable {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(3, new PoisonBerryMeleeAttackGoal(this, 1, false));
         this.addBehaviourGoals();
     }
 
     protected void addBehaviourGoals() {
-        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(PBAttackerEntity.class));
 		this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, true));
+
 
     }
 
-    public static AttributeSupplier.Builder createAttributes() {
+    public static AttributeSupplier createAttributes() {
         return Monster
                 .createMonsterAttributes()
-                .add(Attributes.FOLLOW_RANGE, 35.0D)
+                .add(Attributes.FOLLOW_RANGE, 70.0D)
                 .add(Attributes.MOVEMENT_SPEED, (double)0.46F)
-                .add(Attributes.ATTACK_DAMAGE, 3.0D)
-                .add(Attributes.ARMOR, 2.0D);
+                .add(Attributes.ATTACK_DAMAGE, 1.0D)
+                .add(Attributes.ARMOR, 2.0D)
+				.build();
+
     }
 
 	@Override
 	protected int getExperienceReward(Player p_21511_) {
-		return 6;
+		return 10;
 	}
 	
 	 protected SoundEvent getAmbientSound() {

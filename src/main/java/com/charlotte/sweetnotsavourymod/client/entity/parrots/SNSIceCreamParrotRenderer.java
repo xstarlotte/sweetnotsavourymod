@@ -29,6 +29,8 @@ public class SNSIceCreamParrotRenderer extends GeoEntityRenderer<SNSIceCreamParr
 				p_114874_.put(IceCreamParrotFlavourVariant.LEMON, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/lemonicecreamparrot.png"));
 				p_114874_.put(IceCreamParrotFlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/chocolateicecreamparrot.png"));
 				p_114874_.put(IceCreamParrotFlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/toffeeicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.MANGO, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/mangoicecreamparrot.png"));
+				p_114874_.put(IceCreamParrotFlavourVariant.LIME, new ResourceLocation("sweetnotsavourymod:textures/entity/icecreamparrots/limeicecreamparrot.png"));
 			});
 
 	public SNSIceCreamParrotRenderer(EntityRendererProvider.Context renderManager) {

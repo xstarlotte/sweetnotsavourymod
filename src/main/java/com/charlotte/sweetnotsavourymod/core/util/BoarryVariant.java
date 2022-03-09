@@ -5,7 +5,10 @@ import java.util.Comparator;
 
 public enum BoarryVariant {
 
-    BLACKBOARRY(0);
+    BLACKBOARRY(0),
+    BLUEBOARRY(1),
+    RASPBOARRY(2),
+    STRAWBOARRY(3);
    ;
 
     private static final BoarryVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

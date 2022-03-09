@@ -112,13 +112,14 @@ public class CandyCaneCrookEntity extends Monster implements IAnimatable {
 
     }
 
-    public static AttributeSupplier.Builder createAttributes() {
+    public static AttributeSupplier createAttributes() {
         return Monster
                 .createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 35.0D)
                 .add(Attributes.MOVEMENT_SPEED, (double)0.46F)
                 .add(Attributes.ATTACK_DAMAGE, 3.0D)
-                .add(Attributes.ARMOR, 2.0D);
+                .add(Attributes.ARMOR, 2.0D)
+				.build();
     }
 
 	public CCCrookVariant getVariant() {

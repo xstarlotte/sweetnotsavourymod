@@ -28,6 +28,8 @@ public class SNSParrotRenderer extends GeoEntityRenderer<SNSParrotEntity> {
 				p_114874_.put(ParrotFlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/parrots/chocolateparrot.png"));
 				p_114874_.put(ParrotFlavourVariant.PINEAPPLE, new ResourceLocation("sweetnotsavourymod:textures/entity/parrots/pineappleparrot.png"));
 				p_114874_.put(ParrotFlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/parrots/toffeeparrot.png"));
+				p_114874_.put(ParrotFlavourVariant.MANGO, new ResourceLocation("sweetnotsavourymod:textures/entity/parrots/mangoparrot.png"));
+				p_114874_.put(ParrotFlavourVariant.LIME, new ResourceLocation("sweetnotsavourymod:textures/entity/parrots/limeparrot.png"));
 			});
 
 	public SNSParrotRenderer(EntityRendererProvider.Context renderManager) {

@@ -5,7 +5,18 @@ import java.util.Comparator;
 
 public enum WaferschundVariant {
 
-    STRAWBERRY(0);
+    STRAWBERRY(0),
+    PEACH(1),
+    MANGO(2),
+    WHITECHOCOLATE(3),
+    BLACKBERRY(4),
+    BLUEBERRY(5),
+    PINEAPPLE(6),
+    LIME(7),
+    RASPBERRY(8),
+    LEMON(9),
+    CHOCOLATE(10),
+    ORANGE(11);
    ;
 
     private static final WaferschundVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

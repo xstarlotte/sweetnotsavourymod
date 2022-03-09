@@ -13,7 +13,10 @@ public enum ParrotFlavourVariant {
     LEMON(6),
     CHOCOLATE(7),
     PINEAPPLE(8),
-    TOFFEE(9);
+    TOFFEE(9),
+    LIME(10),
+    MANGO(11);
+
    ;
 
     private static final ParrotFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

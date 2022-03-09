@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.poisonberry.idle": {
+			"loop": true,
+			"bones": {
+				"leaf": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*150)*5"]
+					}
+				}
+			}
+		},
+		"animation.poisonberry.walking": {
+			"loop": true,
+			"bones": {
+				"leaf": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*150)*5"]
+					}
+				},
+				"body": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*900)*0.1", 0]
+					}
+				},
+				"feet1": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*450)*15", 0, 0]
+					}
+				},
+				"feet2": {
+					"rotation": {
+						"vector": ["-math.sin(query.anim_time*450)*15", 0, 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

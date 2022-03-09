@@ -11,7 +11,9 @@ public enum IceCreamPugFlavourVariant {
     BLACKBERRY(4),
     LEMON(5),
     CHOCOLATE(6),
-    TOFFEE(7);
+    TOFFEE(7),
+    MANGO(8),
+    LIME(9);
    ;
 
     private static final IceCreamPugFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

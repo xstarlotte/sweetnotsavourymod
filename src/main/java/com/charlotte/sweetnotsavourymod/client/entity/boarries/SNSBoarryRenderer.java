@@ -20,6 +20,9 @@ public class SNSBoarryRenderer extends GeoEntityRenderer<SNSBoarryEntity> {
     public static final Map<BoarryVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(BoarryVariant.class), (p_114874_) -> {
                 p_114874_.put(BoarryVariant.BLACKBOARRY, new ResourceLocation("sweetnotsavourymod:textures/entity/boarries/blackboarry.png"));
+                p_114874_.put(BoarryVariant.RASPBOARRY, new ResourceLocation("sweetnotsavourymod:textures/entity/boarries/raspboarry.png"));
+                p_114874_.put(BoarryVariant.BLUEBOARRY, new ResourceLocation("sweetnotsavourymod:textures/entity/boarries/blueboarry.png"));
+                p_114874_.put(BoarryVariant.STRAWBOARRY, new ResourceLocation("sweetnotsavourymod:textures/entity/boarries/strawboarry.png"));
             });
 
     public SNSBoarryRenderer(EntityRendererProvider.Context renderManager) {

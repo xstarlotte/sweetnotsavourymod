@@ -30,6 +30,8 @@ public class SNSPugRenderer extends GeoEntityRenderer<SNSPugEntity> {
 				p_114874_.put(PugFlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/toffeepug.png"));
 				p_114874_.put(PugFlavourVariant.PEACH, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/peachpug.png"));
 				p_114874_.put(PugFlavourVariant.PINEAPPLE, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/pineapplepug.png"));
+				p_114874_.put(PugFlavourVariant.MANGO, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/mangopug.png"));
+				p_114874_.put(PugFlavourVariant.LIME, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/limepug.png"));
 			});
 
 	public SNSPugRenderer(EntityRendererProvider.Context renderManager) {

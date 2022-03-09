@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.animal.Chicken;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 import java.util.Map;
@@ -27,6 +28,11 @@ public class SNSElfRenderer extends GeoEntityRenderer<SNSElfEntity> {
 		p_114874_.put(FlavourVariant.LEMON, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/lemonelf.png"));
 		p_114874_.put(FlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/chocolateelf.png"));
 		p_114874_.put(FlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/toffeeelf.png"));
+		p_114874_.put(FlavourVariant.PEACH, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/peachelf.png"));
+		p_114874_.put(FlavourVariant.MANGO, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/mangoelf.png"));
+		p_114874_.put(FlavourVariant.LIME, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/limeelf.png"));
+		p_114874_.put(FlavourVariant.PINEAPPLE, new ResourceLocation("sweetnotsavourymod:textures/entity/elves/pineappleelf.png"));
+
 	});
 
 	public SNSElfRenderer(EntityRendererProvider.Context renderManager) {

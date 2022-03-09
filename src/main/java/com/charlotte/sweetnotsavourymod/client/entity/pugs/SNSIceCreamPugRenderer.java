@@ -28,6 +28,8 @@ public class SNSIceCreamPugRenderer extends GeoEntityRenderer<SNSIceCreamPugEnti
 				p_114874_.put(IceCreamPugFlavourVariant.LEMON, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/lemonicecreampug.png"));
 				p_114874_.put(IceCreamPugFlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/chocolateicecreampug.png"));
 				p_114874_.put(IceCreamPugFlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/toffeeicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.MANGO, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/mangoicecreampug.png"));
+				p_114874_.put(IceCreamPugFlavourVariant.LIME, new ResourceLocation("sweetnotsavourymod:textures/entity/pugs/limeicecreampug.png"));
 			});
 
 	public SNSIceCreamPugRenderer(EntityRendererProvider.Context renderManager) {

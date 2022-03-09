@@ -16,7 +16,9 @@ public enum PugFlavourVariant {
     CHOCOLATE(7),
     TOFFEE(8),
     PEACH(9),
-    PINEAPPLE(10);
+    PINEAPPLE(10),
+    LIME(11),
+    MANGO(12);
    ;
 
     private static final PugFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

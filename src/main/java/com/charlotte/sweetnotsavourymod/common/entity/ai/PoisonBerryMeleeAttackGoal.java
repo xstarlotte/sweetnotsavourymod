@@ -29,7 +29,7 @@ public class PoisonBerryMeleeAttackGoal extends MeleeAttackGoal {
 
         if(distToEnemySqr <= d0){
 
-            if(random == 20){
+            if(random >= 15){
                 enemy.addEffect( new MobEffectInstance( MobEffects.POISON , 60 ) );
 
 

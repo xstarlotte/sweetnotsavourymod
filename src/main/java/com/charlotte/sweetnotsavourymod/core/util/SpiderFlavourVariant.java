@@ -5,7 +5,9 @@ import java.util.Comparator;
 
 public enum SpiderFlavourVariant {
     STRAWBERRYLACE(0),
-    COLALACE(1);
+    COLALACE(1),
+    LEMONLACE(2),
+    LIMELACE(3);
 
 
     private static final SpiderFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

@@ -5,7 +5,10 @@ import java.util.Comparator;
 
 public enum ToadFlavourVariant {
 
-    TOFFEE(0);
+    TOFFEE(0),
+    HONEY(1),
+    CHOCOLATE(2),
+    WHITECHOCOLATE(3);
    ;
 
     private static final ToadFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

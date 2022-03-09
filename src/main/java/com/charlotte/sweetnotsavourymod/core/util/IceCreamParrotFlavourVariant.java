@@ -12,7 +12,9 @@ public enum IceCreamParrotFlavourVariant {
     BLACKBERRY(5),
     LEMON(6),
     CHOCOLATE(7),
-    TOFFEE(8);
+    TOFFEE(8),
+    MANGO(9),
+    LIME(10);
    ;
 
     private static final IceCreamParrotFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

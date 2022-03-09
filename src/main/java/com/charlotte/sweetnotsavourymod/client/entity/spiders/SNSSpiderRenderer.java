@@ -19,6 +19,8 @@ public class SNSSpiderRenderer extends GeoEntityRenderer<SNSSpiderEntity> {
             Util.make(Maps.newEnumMap(SpiderFlavourVariant.class), (p_114874_) -> {
                 p_114874_.put(SpiderFlavourVariant.STRAWBERRYLACE, new ResourceLocation("sweetnotsavourymod:textures/entity/spiders/strawberrylacespider.png"));
                 p_114874_.put(SpiderFlavourVariant.COLALACE, new ResourceLocation("sweetnotsavourymod:textures/entity/spiders/colalacespider.png"));
+                p_114874_.put(SpiderFlavourVariant.LIMELACE, new ResourceLocation("sweetnotsavourymod:textures/entity/spiders/limelacespider.png"));
+                p_114874_.put(SpiderFlavourVariant.LEMONLACE, new ResourceLocation("sweetnotsavourymod:textures/entity/spiders/lemonlacespider.png"));
             });
 
     public SNSSpiderRenderer(EntityRendererProvider.Context renderManager) {

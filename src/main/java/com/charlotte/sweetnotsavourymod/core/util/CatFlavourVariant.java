@@ -4,7 +4,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum CatFlavourVariant {
-    CANDYCANE(0);
+    CANDYCANE(0),
+    MINTCANDYCANE(1),
+    PEPPERMINTCANDYCANE(2),
+    SPEARMINTCANDYCANE(3),
+    LEMONCANDYCANE(4);
 
 
 

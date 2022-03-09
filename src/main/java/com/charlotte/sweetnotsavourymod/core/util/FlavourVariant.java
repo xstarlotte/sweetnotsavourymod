@@ -12,7 +12,11 @@ public enum FlavourVariant {
     BLACKBERRY(5),
     LEMON(6),
     CHOCOLATE(7),
-    TOFFEE(8);
+    TOFFEE(8),
+    PEACH(9),
+    PINEAPPLE(10),
+    LIME(11),
+    MANGO(12);
    ;
 
     private static final FlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

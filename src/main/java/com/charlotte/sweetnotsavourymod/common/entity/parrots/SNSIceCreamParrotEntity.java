@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.parrots;
 
+import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
 import com.charlotte.sweetnotsavourymod.core.util.IceCreamParrotFlavourVariant;
 import net.minecraft.Util;
@@ -143,7 +144,7 @@ public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatabl
 		if (tamed) {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(60.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.5f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.35f);
 		} else {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(30.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
@@ -165,7 +166,7 @@ public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatabl
 		ItemStack itemstack = player.getItemInHand(hand);
 		Item item = itemstack.getItem();
 
-		if (item == Items.SUGAR && !isTame()) {
+		if (item == ItemInit.CANDYCANESUGAR.get() && !isTame()) {
 			if (this.level.isClientSide) {
 				return InteractionResult.CONSUME;
 			} else {
@@ -173,9 +174,15 @@ public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatabl
 					itemstack.shrink(1);
 				}
 
-				if (!ForgeEventFactory.onAnimalTame(this, player)) {
-					makeTamed(player);
-					setSitting(true);
+				if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+					this.tame(player);
+					this.navigation.stop();
+
+					this.setTarget((LivingEntity)null);
+					this.setOrderedToSit(true);
+					this.level.broadcastEntityEvent(this, (byte)7);
+				} else {
+					this.level.broadcastEntityEvent(this, (byte)6);
 				}
 
 				return InteractionResult.SUCCESS;

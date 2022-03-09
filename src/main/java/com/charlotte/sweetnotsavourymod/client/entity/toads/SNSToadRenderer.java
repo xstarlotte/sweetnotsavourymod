@@ -18,6 +18,9 @@ public class SNSToadRenderer extends GeoEntityRenderer<SNSToadEntity> {
     public static final Map<ToadFlavourVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(ToadFlavourVariant.class), (p_114874_) -> {
                 p_114874_.put(ToadFlavourVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/toads/toffeetoad.png"));
+                p_114874_.put(ToadFlavourVariant.HONEY, new ResourceLocation("sweetnotsavourymod:textures/entity/toads/honeytoad.png"));
+                p_114874_.put(ToadFlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/toads/chocolatetoad.png"));
+                p_114874_.put(ToadFlavourVariant.WHITECHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/toads/whitechocolatetoad.png"));
             });
 
     public SNSToadRenderer(EntityRendererProvider.Context renderManager) {

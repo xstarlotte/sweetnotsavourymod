@@ -14,10 +14,14 @@ import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
 
 
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 
@@ -110,6 +114,117 @@ public class SweetNotSavouryMod {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.VANILLACONEFLOWER.getId(), BlockInit.POTTED_VANILLACONEFLOWER);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.TOFFEECONEFLOWER.getId(), BlockInit.POTTED_TOFFEECONEFLOWER);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CHOCOLATECONEFLOWER.getId(), BlockInit.POTTED_CHOCOLATECONEFLOWER);
+
+            //spawn placements
+
+//water
+            SpawnPlacements.register(EntityTypesInit.SNSWAFFLEFISH.get(),
+                    SpawnPlacements.Type.IN_WATER,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSMINIWAFFLEFISH.get(),
+                    SpawnPlacements.Type.IN_WATER,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+            //ground
+
+            SpawnPlacements.register(EntityTypesInit.SNSPUG.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSICECREAMPUG.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSPARROT.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSICECREAMPARROT.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSRABBIT.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSGP.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSMOUSE.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSSQUIRROLL.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSZEBRA.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSCCWOLF.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSCCCAT.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSSPIDER.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSTOAD.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSWAFERSCHUND.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSGUMMYBEAR.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSBOARRY.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSPARFAITPIXIE.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.SNSELF.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
+            SpawnPlacements.register(EntityTypesInit.ICECREAMCOW.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
         });
     }
 

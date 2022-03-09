@@ -2,6 +2,7 @@ package com.charlotte.sweetnotsavourymod.client.entity.model.zebras;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entity.elves.SNSElfRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.zebras.SNSZebraRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.zebras.SNSZebraEntity;
 
@@ -16,7 +17,7 @@ public class SNSZebraModel extends AnimatedGeoModel<SNSZebraEntity> {
 
 	@Override
 	public ResourceLocation getTextureLocation(SNSZebraEntity entity)	{
-		return SNSElfRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
+		return SNSZebraRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override

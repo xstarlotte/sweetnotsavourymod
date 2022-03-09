@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.boarries;
 
+import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.BoarryVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -40,6 +41,9 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class SNSBoarryEntity extends TamableAnimal implements IAnimatable {
+
+	public int eggTime = this.random.nextInt(6000) + 6000;
+
 	private AnimationFactory factory = new AnimationFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(SNSBoarryEntity.class, EntityDataSerializers.INT);
@@ -57,12 +61,17 @@ public class SNSBoarryEntity extends TamableAnimal implements IAnimatable {
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putInt("Variant", this.getTypeVariant());
+		tag.putInt("EggLayTime", this.eggTime);
 	}
+
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag p_21815_) {
 		super.readAdditionalSaveData(p_21815_);
 		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
+		if (p_21815_.contains("EggLayTime")) {
+			this.eggTime = p_21815_.getInt("EggLayTime");
+		}
 	}
 
 	@Override
@@ -142,7 +151,7 @@ public class SNSBoarryEntity extends TamableAnimal implements IAnimatable {
 		if (tamed) {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.6f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.35f);
 			this.setHealth(20.0F);
 		} else {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
@@ -159,12 +168,21 @@ public class SNSBoarryEntity extends TamableAnimal implements IAnimatable {
 		}
 	}
 
+	public void aiStep() {
+		super.aiStep();
+		if (!this.level.isClientSide && this.isAlive()  && --this.eggTime <= 0) {
+			this.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+			this.spawnAtLocation(Items.SWEET_BERRIES);
+			this.eggTime = this.random.nextInt(6000) + 6000;
+		}
+	}
+
 	@Override
 	public InteractionResult mobInteract(Player player, InteractionHand hand) {
 		ItemStack itemstack = player.getItemInHand(hand);
 		Item item = itemstack.getItem();
 
-		if (item == Items.SUGAR && !isTame()) {
+		if (item == ItemInit.CANDYCANESUGAR.get() && !isTame()) {
 			if (level.isClientSide) {
 				return InteractionResult.CONSUME;
 			} else {
@@ -172,9 +190,15 @@ public class SNSBoarryEntity extends TamableAnimal implements IAnimatable {
 					itemstack.shrink(1);
 				}
 
-				if (!ForgeEventFactory.onAnimalTame(this, player)) {
-					makeTamed(player);
-					setSitting(true);
+				if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+					this.tame(player);
+					this.navigation.stop();
+
+					this.setTarget((LivingEntity)null);
+					this.setOrderedToSit(true);
+					this.level.broadcastEntityEvent(this, (byte)7);
+				} else {
+					this.level.broadcastEntityEvent(this, (byte)6);
 				}
 
 				return InteractionResult.SUCCESS;
