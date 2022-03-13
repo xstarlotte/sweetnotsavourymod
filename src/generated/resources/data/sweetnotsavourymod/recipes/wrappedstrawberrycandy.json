@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASA"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:strawberrycandy"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:sugarwrapper"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:wrappedstrawberrycandy"
+  }
+}

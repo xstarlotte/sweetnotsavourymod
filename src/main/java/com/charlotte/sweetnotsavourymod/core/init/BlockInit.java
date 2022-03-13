@@ -8,14 +8,19 @@ import com.charlotte.sweetnotsavourymod.common.block.lamps.SNSLampBlock;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
 
 import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
+import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTreeGrower;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -55,19 +60,27 @@ public class BlockInit {
 					.strength(2f, 3f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> RAINBOWFROSTINGLEAVES = registerBlock("rainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.TERRACOTTA_WHITE)
-					.strength(0.2f,1f)
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
+				@Override
+				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return true;
+				}
 
-	//public static final RegistryObject<Block> ICECREAMTREESAPLING = registerBlock("icecreamtreesapling",
-	//		() -> new IceCreamTreeSaplingBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.TERRACOTTA_WHITE)
-	//				.strength(0f)
-	//				.randomTicks()
-	//				.noOcclusion()
-	//				.sound(SoundType.GRASS),
-	//				TreeInit.ICECREAMTREE), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+				@Override
+				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return 60;
+				}
+
+				@Override
+				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return 30;
+				}
+
+			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> ICECREAMTREESAPLING = registerBlock("icecreamtreesapling",
+			() -> new SaplingBlock(new IceCreamTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)),
+	SweetNotSavouryModItemGroup.SNSMODDECORATION);
 	
 	public static final RegistryObject<Block> RAINBOWFROSTINGGRASSBLOCK = registerBlock("rainbowfrostinggrassblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
