@@ -6,6 +6,9 @@ import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
 import com.charlotte.sweetnotsavourymod.common.painting.ModPaintings;
 import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
+import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTrunkPlacer;
+import com.charlotte.sweetnotsavourymod.common.world.features.tree.ModFoliagePlacerTypes;
+import com.charlotte.sweetnotsavourymod.common.world.features.tree.ModTrunkPlacerTypes;
 import com.charlotte.sweetnotsavourymod.core.init.*;
 
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
@@ -13,6 +16,8 @@ import com.charlotte.sweetnotsavourymod.core.sound.SoundsInit;
 import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
 
 
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
@@ -22,6 +27,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 
@@ -62,6 +68,7 @@ public class SweetNotSavouryMod {
     	BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register( bus );
         MenuTypesInit.MENUS.register(bus);
 		EntityTypesInit.ENTITY_TYPES.register(bus);
+        ModFoliagePlacerTypes.FOLIAGE_PLACER_TYPES.register(bus);
     	
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -82,6 +89,8 @@ public class SweetNotSavouryMod {
 
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            ModTrunkPlacerTypes.register();
+
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDYCANEBUSH.getId(), BlockInit.POTTED_CANDYCANEBUSH);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDY_CANE_FLOWER.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(BlockInit.CANDY_CANE_FLOWER_2.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER_2);

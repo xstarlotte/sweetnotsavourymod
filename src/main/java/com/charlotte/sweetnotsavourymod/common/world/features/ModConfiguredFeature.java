@@ -1,5 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.world.features;
 
+import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamFoliagePlacer;
+import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTrunkPlacer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -20,12 +22,11 @@ import java.util.OptionalInt;
 public class ModConfiguredFeature {
     public static final ConfiguredFeature<TreeConfiguration, ?> ICE_CREAM_TREE =
             FeatureUtils.register("ice_cream_tree",
-                    new IceCreamTreeFeature(TreeConfiguration.CODEC)
-                    .configured((new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider
-                            .simple(Blocks.DARK_OAK_LOG),
-                            new DarkOakTrunkPlacer(6, 2, 1),
-                            BlockStateProvider.simple(Blocks.DARK_OAK_LEAVES),
-                            new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+                    Feature.TREE.configured((new TreeConfiguration.TreeConfigurationBuilder(
+                            BlockStateProvider.simple(BlockInit.WAFERWOODBLOCK.get()),
+                            new IceCreamTrunkPlacer(0, 0, 0),
+                            BlockStateProvider.simple(BlockInit.RAINBOWFROSTINGLEAVES.get()),
+                            new IceCreamFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
                             new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
                     )).ignoreVines().build()));
 }
