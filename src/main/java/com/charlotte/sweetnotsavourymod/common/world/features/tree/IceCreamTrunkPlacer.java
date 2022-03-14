@@ -43,8 +43,8 @@ public class IceCreamTrunkPlacer extends TrunkPlacer {
                                                             BiConsumer<BlockPos, BlockState> stateBiConsumer,
                                                             Random random, int p_161871_, BlockPos pos,
                                                             TreeConfiguration configuration) {
-        int height = 5;
-        for (int i = pos.getY() + 1; i < pos.getY() + height + 1; i++) {
+        int height = 4;
+        for (int i = pos.getY(); i < pos.getY() + height + 1; i++) {
             placeLog(reader, stateBiConsumer, random, new BlockPos(pos.getX(), i, pos.getZ()), configuration, (state) -> LOG);
 
             for (Direction d : DIRECTIONS) {

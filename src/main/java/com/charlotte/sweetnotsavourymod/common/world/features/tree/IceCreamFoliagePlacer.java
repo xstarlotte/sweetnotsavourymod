@@ -37,28 +37,38 @@ public class IceCreamFoliagePlacer extends FoliagePlacer {
     protected void createFoliage(LevelSimulatedReader reader, BiConsumer<BlockPos, BlockState> stateBiConsumer, Random random,
                                  TreeConfiguration configuration, int p_161426_, FoliageAttachment foliageAttachment,
                                  int p_161428_, int p_161429_, int p_161430_) {
-        int height = 5;
+        int height = 4;
         BlockPos pos = foliageAttachment.pos();
         for(BlockPos blockpos : BlockPos.betweenClosed(pos.getX() - 2, pos.getY() + height + 1, pos.getZ() - 2,
-                pos.getX() + 2, pos.getY() + height + 1, pos.getZ() + 2)
+                pos.getX() + 2, pos.getY() + height + 2, pos.getZ() + 2)
         ) {
+//gets rid of all corners. All the variables of 2 get rid of the corners on height + 3 leaves layer.
+            if (blockpos.getX() == (pos.getX() - 2) && blockpos.getY() == pos.getY() + height + 2 && blockpos.getZ() == pos.getZ() - 2) {
+                continue;
+            }
+
+            if (blockpos.getX() == (pos.getX() + 2) && blockpos.getY() == pos.getY() + height + 2 && blockpos.getZ() == pos.getZ() + 2) {
+                continue;
+            }
+
+            if (blockpos.getX() == (pos.getX() - 2) && blockpos.getY() == pos.getY() + height + 2 && blockpos.getZ() == pos.getZ() + 2) {
+                continue;
+            }
+
+            if (blockpos.getX() == (pos.getX() + 2) && blockpos.getY() == pos.getY() + height + 2 && blockpos.getZ() == pos.getZ() - 2) {
+                continue;
+            }
+
             tryPlaceLeaf(reader, stateBiConsumer, random, configuration, blockpos);
-            tryPlaceLeaf(reader, stateBiConsumer, random, configuration, blockpos.offset(0, 1, 0));
+           // tryPlaceLeaf(reader, stateBiConsumer, random, configuration, blockpos.offset(0, 1, 0));
         }
 
-        tryPlaceLeaf(reader, stateBiConsumer, random, configuration, new BlockPos(pos.getX() - 2,
-                pos.getY() + height + 2, pos.getZ() - 2));
-        tryPlaceLeaf(reader, stateBiConsumer, random, configuration, new BlockPos(pos.getX() + 2,
-                pos.getY() + height + 2, pos.getZ() - 2));
-        tryPlaceLeaf(reader, stateBiConsumer, random, configuration, new BlockPos(pos.getX() - 2,
-                pos.getY() + height + 2, pos.getZ() + 2));
-        tryPlaceLeaf(reader, stateBiConsumer, random, configuration, new BlockPos(pos.getX() + 2,
-                pos.getY() + height + 2, pos.getZ() + 2));
-
+//for the 3x3 leaves
         for(BlockPos blockpos : BlockPos.betweenClosed
                 (pos.getX() - 1, pos.getY() + height + 3, pos.getZ() - 1,
                         pos.getX() + 1, pos.getY() + height + 3, pos.getZ() + 1)
         ) {
+
             tryPlaceLeaf(reader, stateBiConsumer, random, configuration, blockpos);
         }
 
