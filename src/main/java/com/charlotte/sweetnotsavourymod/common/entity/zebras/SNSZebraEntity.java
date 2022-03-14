@@ -83,16 +83,6 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
 	}
 
-	public static AttributeSupplier.Builder createBaseHorseAttributes() {
-		return Mob.createMobAttributes()
-				.add(Attributes.JUMP_STRENGTH)
-				.add(Attributes.MAX_HEALTH, 53.0D)
-				.add(Attributes.MOVEMENT_SPEED, (double)0.225F);
-	}
-
-
-
-
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
@@ -347,10 +337,12 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 					f1 *= 0.25F;
 				}
 
-				if (this.onGround && this.playerJumpPendingScale == 0.0F && this.isTame() && !this.allowStandSliding) {
-					f = 0.0F;
-					f1 = 0.0F;
-				}
+				// idk wtf this does, but not having it seems fine
+				// THANKS MOJANK!
+				//if (this.onGround && this.playerJumpPendingScale == 0.0F && this.isTame() && !this.allowStandSliding) {
+				//	f = 0.0F;
+				//	f1 = 0.0F;
+				//}
 
 				if (this.playerJumpPendingScale > 0.0F && !this.isJumping() && this.onGround) {
 					double d0 = this.getCustomJump() * (double)this.playerJumpPendingScale * (double)this.getBlockJumpFactor();
@@ -416,7 +408,7 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 
 	@Override
 	public void handleStartJump(int p_21695_) {
-
+		this.allowStandSliding = true;
 	}
 
 	@Override
