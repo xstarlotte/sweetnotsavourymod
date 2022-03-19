@@ -46,8 +46,15 @@ public class IceCreamCowRenderer extends GeoEntityRenderer<IceCreamCowEntity> {
     public void renderEarly(IceCreamCowEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
 							VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
 							float partialTicks) {
-        super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
-                red, green, blue, partialTicks);
-        stackIn.scale(1F, 1F, 1F);
-    }
+		if(animatable.isBaby()) {
+			stackIn.scale(0.5F, 0.5F, 0.5F);
+		} else {
+			stackIn.scale(1F, 1F, 1F);
+		}
+
+
+		super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+				red, green, blue, partialTicks);
+
+	}
 }

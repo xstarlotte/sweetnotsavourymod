@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SAS",
+    "SAS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:orangecandyblock"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:sugarstick"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:orange_candy_fence"
+  }
+}

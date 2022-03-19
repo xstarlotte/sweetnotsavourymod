@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/banana_baker",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/banana_baker"
+  }
+}

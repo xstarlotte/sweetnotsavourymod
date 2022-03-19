@@ -1,8 +1,8 @@
 package com.charlotte.sweetnotsavourymod.common.entity.unicorns;
 
+import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.UnicornFlavourVariant;
-import com.charlotte.sweetnotsavourymod.core.util.ZebraFlavourVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,6 +13,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -44,7 +45,12 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, IAnimatable {
+public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJumping, IAnimatable {
+
+	protected boolean isJumping;
+	protected float playerJumpPendingScale;
+	private boolean allowStandSliding;
+
 	private AnimationFactory factory = new AnimationFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(SNSUnicornEntity.class, EntityDataSerializers.INT);
@@ -54,8 +60,12 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 
 	public SNSUnicornEntity(EntityType<? extends TamableAnimal> type, Level worldIn) {
 		super(type, worldIn);
+		this.maxUpStep = 1.0F;
 		setTame(false);
 		this.noCulling = true;
+
+
+
 	}
 
 	@Override
@@ -69,6 +79,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 		super.readAdditionalSaveData(p_21815_);
 		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
 	}
+
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
@@ -114,15 +125,17 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 
 	public static AttributeSupplier setAttributes() {
 		return TamableAnimal.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 30.0D)
+				.add(Attributes.MAX_HEALTH, 40.0D)
 				.add(Attributes.ATTACK_DAMAGE, 2D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
+				.add(Attributes.JUMP_STRENGTH, 1f)
 				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
 	}
 
 	protected void registerGoals() {
 		this.goalSelector.addGoal(1, new FloatGoal(this));
 		this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
+		this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
 		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
@@ -141,10 +154,12 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(60.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
 			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.5f);
+
 		} else {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(30.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
 			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
+
 		}
 	}
 
@@ -204,6 +219,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 		}
 	}
 
+
 	public UnicornFlavourVariant getVariant() {
 		return UnicornFlavourVariant.byId(this.getTypeVariant() & 255);
 	}
@@ -221,7 +237,42 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 		return this.entityData.get(SITTING);
 	}
 
+	public boolean isJumping() {
+		return this.isJumping;
+	}
 
+	public void setIsJumping(boolean p_30656_) {
+		this.isJumping = p_30656_;
+	}
+
+	public double getCustomJump() {
+		return this.getAttributeValue(Attributes.JUMP_STRENGTH);
+	}
+
+	public boolean causeFallDamage(float p_149499_, float p_149500_, DamageSource p_149501_) {
+		if (p_149499_ > 1.0F) {
+			this.playSound(SoundEvents.HORSE_LAND, 0.4F, 1.0F);
+		}
+
+		int i = this.calculateFallDamage(p_149499_, p_149500_);
+		if (i <= 0) {
+			return false;
+		} else {
+			this.hurt(p_149501_, (float)i);
+			if (this.isVehicle()) {
+				for(Entity entity : this.getIndirectPassengers()) {
+					entity.hurt(p_149501_, (float)i);
+				}
+			}
+
+			this.playBlockFallSound();
+			return true;
+		}
+	}
+
+	protected int calculateFallDamage(float p_30606_, float p_30607_) {
+		return Mth.ceil((p_30606_ * 0.5F - 3.0F) * p_30607_);
+	}
 
 	@Override
 	public Team getTeam() {
@@ -254,9 +305,15 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 		return 0.2F;
 	}
 
+	@Nullable
 	@Override
-	public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
-		return null;
+	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
+		return EntityTypesInit.SNSUNICORN.get().create(serverLevel);
+	}
+
+	@Override
+	public boolean isFood(ItemStack pStack) {
+		return pStack.getItem() == ItemInit.SPRINKLES.get();
 	}
 
 	public boolean canBeControlledByRider() {
@@ -284,6 +341,32 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 					f1 *= 0.25F;
 				}
 
+				// idk wtf this does, but not having it seems fine
+				// THANKS MOJANK!
+				//if (this.onGround && this.playerJumpPendingScale == 0.0F && this.isTame() && !this.allowStandSliding) {
+				//	f = 0.0F;
+				//	f1 = 0.0F;
+				//}
+
+				if (this.playerJumpPendingScale > 0.0F && !this.isJumping() && this.onGround) {
+					double d0 = this.getCustomJump() * (double)this.playerJumpPendingScale * (double)this.getBlockJumpFactor();
+					double d1 = d0 + this.getJumpBoostPower();
+					Vec3 vec3 = this.getDeltaMovement();
+					this.setDeltaMovement(vec3.x, d1, vec3.z);
+					this.setIsJumping(true);
+					this.hasImpulse = true;
+					net.minecraftforge.common.ForgeHooks.onLivingJump(this);
+					if (f1 > 0.0F) {
+						float f2 = Mth.sin(this.getYRot() * ((float)Math.PI / 180F));
+						float f3 = Mth.cos(this.getYRot() * ((float)Math.PI / 180F));
+						this.setDeltaMovement(this.getDeltaMovement().add((double)(-0.4F * f2 * this.playerJumpPendingScale),
+								0.0D, (double)(0.4F * f3 * this.playerJumpPendingScale)));
+					}
+
+					this.playerJumpPendingScale = 0.0F;
+				}
+
+				this.flyingSpeed = this.getSpeed() * 0.1F;
 				if (this.isControlledByLocalInstance()) {
 					this.setSpeed((float)this.getAttributeValue(Attributes.MOVEMENT_SPEED));
 					super.travel(new Vec3((double)f, pTravelVector.y, (double)f1));
@@ -291,12 +374,54 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideable, I
 					this.setDeltaMovement(Vec3.ZERO);
 				}
 
+				if (this.onGround) {
+					this.playerJumpPendingScale = 0.0F;
+					this.setIsJumping(false);
+				}
+
 				this.calculateEntityAnimation(this, false);
 				this.tryCheckInsideBlocks();
 			} else {
+				this.flyingSpeed = 0.02F;
 				super.travel(pTravelVector);
 			}
+
 		}
+	}
+
+	public void onPlayerJump(int p_30591_) {
+		if (this.isTame()) {
+			if (p_30591_ < 0) {
+				p_30591_ = 0;
+			} else {
+				this.allowStandSliding = true;
+			}
+
+			if (p_30591_ >= 90) {
+				this.playerJumpPendingScale = 1.0F;
+			} else {
+				this.playerJumpPendingScale = 0.4F + 0.4F * (float)p_30591_ / 90.0F;
+			}
+
+		}
+	}
+
+	public boolean canJump() {
+		return this.isTame();
+	}
+
+	@Override
+	public void handleStartJump(int p_21695_) {
+		this.allowStandSliding = true;
+	}
+
+	@Override
+	public void handleStopJump() {
+
+	}
+
+	protected double generateRandomJumpStrength() {
+		return (double)0.4F + this.random.nextDouble() * 0.2D + this.random.nextDouble() * 0.2D + this.random.nextDouble() * 0.2D;
 	}
 
 	@Override

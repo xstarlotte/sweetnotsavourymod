@@ -36,10 +36,10 @@ public class IceCreamMachineMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SNSFuelSlot(handler, 0, 6, 36));
-            this.addSlot(new SlotItemHandler(handler, 1, 15, 36));
-            this.addSlot(new SlotItemHandler(handler, 2, 24, 36));
-            this.addSlot(new SNSResultSlot(handler, 3, 65, 36));
+            this.addSlot(new SNSFuelSlot(handler, 0, 80, 64));
+            this.addSlot(new SlotItemHandler(handler, 1, 98, 64));
+            this.addSlot(new SlotItemHandler(handler, 2, 116, 64));
+            this.addSlot(new SNSResultSlot(handler, 3, 152, 64));
         });
     }
 

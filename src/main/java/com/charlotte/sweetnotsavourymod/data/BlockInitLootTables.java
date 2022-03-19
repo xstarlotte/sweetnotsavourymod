@@ -58,6 +58,23 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.TOFFEEICECREAMLAMP.get());
         this.dropSelf(BlockInit.POISONBERRYLANTERN.get());
 
+        this.dropSelf(BlockInit.BANANA_CROP.get());
+        this.dropSelf(BlockInit.VANILLA_CROP.get());
+        this.dropSelf(BlockInit.MINT_CROP.get());
+        this.dropSelf(BlockInit.PEACH_CROP.get());
+        this.dropSelf(BlockInit.PINEAPPLE_CROP.get());
+        this.dropSelf(BlockInit.ORANGE_CROP.get());
+        this.dropSelf(BlockInit.MANGO_CROP.get());
+        this.dropSelf(BlockInit.BLACKBERRY_CROP.get());
+        this.dropSelf(BlockInit.STRAWBERRY_CROP.get());
+        this.dropSelf(BlockInit.BLUEBERRY_CROP.get());
+        this.dropSelf(BlockInit.RASPBERRY_CROP.get());
+        this.dropSelf(BlockInit.LIME_CROP.get());
+        this.dropSelf(BlockInit.LEMON_CROP.get());
+        this.dropSelf(BlockInit.CARROT_CROP.get());
+
+
+        this.dropSelf(BlockInit.ICECREAMTREESAPLING.get());
         this.dropSelf(BlockInit.STRAWBERRYCANDYBUSH.get());
         this.dropSelf(BlockInit.RASPBERRYCANDYBUSH.get());
         this.dropSelf(BlockInit.BLACKBERRYCANDYBUSH.get());
@@ -83,8 +100,47 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.FROSTINGFLOWER.get());
         this.dropSelf(BlockInit.FROSTINGGRASS.get());
         this.dropSelf(BlockInit.CANDYCANEBUSH.get());
+        this.dropSelf(BlockInit.CANDY_CANE_FLOWER.get());
+        this.dropSelf(BlockInit.CANDY_CANE_FLOWER_2.get());
+        this.dropSelf(BlockInit.CANDY_CANE_FLOWER_3.get());
+        this.dropSelf(BlockInit.CANDY_CANE_FLOWER_4.get());
+        this.dropSelf(BlockInit.CANDY_CANE_GRASS.get());
+        this.dropSelf(BlockInit.CANDY_CANE_GRASS_LONG.get());
         this.dropSelf(BlockInit.CHOCOLATECINERARIA.get());
         this.dropSelf(BlockInit.POISONBERRYPLANT.get());
+
+        this.dropSelf(BlockInit.POTTED_STRAWBERRYCANDYBUSH.get());
+        this.dropSelf(BlockInit.POTTED_RASPBERRYCANDYBUSH.get());
+        this.dropSelf(BlockInit.POTTED_BLACKBERRYCANDYBUSH.get());
+        this.dropSelf(BlockInit.POTTED_BLUEBERRYCANDYBUSH.get());
+        this.dropSelf(BlockInit.POTTED_LEMONCANDYBUSH.get());
+        this.dropSelf(BlockInit.POTTED_ORANGECANDYBUSH.get());
+        this.dropSelf(BlockInit.POTTED_RAINBOWCANDYBUSH.get());
+        this.dropSelf(BlockInit.POTTED_STRAWBERRYCONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_RASPBERRYCONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_BLACKBERRYCONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_BLUEBERRYCONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_LEMONCONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_ORANGECONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_VANILLACONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_CHOCOLATECONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_TOFFEECONEFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_STRAWBERRYFROSTINGFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_RASPBERRYFROSTINGFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_BLACKBERRYFROSTINGFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_BLUEBERRYFROSTINGFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_LEMONFROSTINGFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_ORANGEFROSTINGFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_FROSTINGFLOWER.get());
+        this.dropSelf(BlockInit.POTTED_CANDYCANEBUSH.get());
+        this.dropSelf(BlockInit.POTTED_CANDY_CANE_FLOWER.get());
+        this.dropSelf(BlockInit.POTTED_CANDY_CANE_FLOWER_2.get());
+        this.dropSelf(BlockInit.POTTED_CANDY_CANE_FLOWER_3.get());
+        this.dropSelf(BlockInit.POTTED_CANDY_CANE_FLOWER_4.get());
+        this.dropSelf(BlockInit.POTTED_CANDY_CANE_GRASS.get());
+        this.dropSelf(BlockInit.POTTED_CANDY_CANE_GRASS_LONG.get());
+        this.dropSelf(BlockInit.POTTED_CHOCOLATECINERARIA.get());
+        this.dropSelf(BlockInit.POTTED_POISONBERRYPLANT.get());
 
         this.dropSelf(BlockInit.WAFERWOODBLOCK.get());
         this.dropSelf(BlockInit.WAFERWOODPLANKS.get());
@@ -93,6 +149,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBLOCK.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBRICKS.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBARS.get());
+        this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANECHAINS.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANE_WALL.get());
 
         this.dropSelf(BlockInit.STRAWBERRYCANDYBLOCK.get());
@@ -135,9 +192,82 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.POISONBERRYWOODPLANKS.get());
         this.dropSelf(BlockInit.FLOWERINGPOISONBERRYLEAVES.get());
         this.dropSelf(BlockInit.OVERGROWNPOISONBERRYWOODPLANKS.get());
+
         this.dropSelf(BlockInit.WAFERWOODWINDOW.get());
+        this.dropSelf(BlockInit.CANDYCANEWINDOW.get());
+        this.dropSelf(BlockInit.CANDYCANEWINDOW2.get());
+        this.dropSelf(BlockInit.STRAWBERRY_CANDY_WINDOW.get());
+        this.dropSelf(BlockInit.RASPBERRY_CANDY_WINDOW.get());
+        this.dropSelf(BlockInit.BLACKBERRY_CANDY_WINDOW.get());
+        this.dropSelf(BlockInit.BLUEBERRY_CANDY_WINDOW.get());
+        this.dropSelf(BlockInit.ORANGE_CANDY_WINDOW.get());
+        this.dropSelf(BlockInit.LEMON_CANDY_WINDOW.get());
+        this.dropSelf(BlockInit.POISONBERRYWOODWINDOW.get());
+        this.dropSelf(BlockInit.POISONOAKWINDOW.get());
+
+        this.dropSelf(BlockInit.BLACKBERRY_CANDY_STAIRS.get());
+        this.dropSelf(BlockInit.BLUEBERRY_CANDY_STAIRS.get());
+        this.dropSelf(BlockInit.RASPBERRY_CANDY_STAIRS.get());
+        this.dropSelf(BlockInit.STRAWBERRY_CANDY_STAIRS.get());
+        this.dropSelf(BlockInit.ORANGE_CANDY_STAIRS.get());
+        this.dropSelf(BlockInit.LEMON_CANDY_STAIRS.get());
+        this.dropSelf(BlockInit.WAFER_WOOD_STAIRS.get());
+
+        this.dropSelf(BlockInit.BLACKBERRY_CANDY_WALL.get());
+        this.dropSelf(BlockInit.STRAWBERRY_CANDY_WALL.get());
+        this.dropSelf(BlockInit.RASPBERRY_CANDY_WALL.get());
+        this.dropSelf(BlockInit.BLUEBERRY_CANDY_WALL.get());
+        this.dropSelf(BlockInit.LEMON_CANDY_WALL.get());
+        this.dropSelf(BlockInit.ORANGE_CANDY_WALL.get());
+        this.dropSelf(BlockInit.WAFER_WOOD_WALL.get());
+
+        this.dropSelf(BlockInit.BLACKBERRY_CANDY_FENCE.get());
+        this.dropSelf(BlockInit.STRAWBERRY_CANDY_FENCE.get());
+        this.dropSelf(BlockInit.RASPBERRY_CANDY_FENCE.get());
+        this.dropSelf(BlockInit.BLUEBERRY_CANDY_FENCE.get());
+        this.dropSelf(BlockInit.LEMON_CANDY_FENCE.get());
+        this.dropSelf(BlockInit.ORANGE_CANDY_FENCE.get());
+        this.dropSelf(BlockInit.WAFER_WOOD_FENCE.get());
+
+        this.dropSelf(BlockInit.BLACKBERRY_CANDY_FENCE_GATE.get());
+        this.dropSelf(BlockInit.RASPBERRY_CANDY_FENCE_GATE.get());
+        this.dropSelf(BlockInit.STRAWBERRY_CANDY_FENCE_GATE.get());
+        this.dropSelf(BlockInit.BLUEBERRY_CANDY_FENCE_GATE.get());
+        this.dropSelf(BlockInit.LEMON_CANDY_FENCE_GATE.get());
+        this.dropSelf(BlockInit.ORANGE_CANDY_FENCE_GATE.get());
+        this.dropSelf(BlockInit.WAFER_WOOD_FENCE_GATE.get());
+
+        this.dropSelf(BlockInit.BLACKBERRY_CANDY_SLAB.get());
+        this.dropSelf(BlockInit.STRAWBERRY_CANDY_SLAB.get());
+        this.dropSelf(BlockInit.BLUEBERRY_CANDY_SLAB.get());
+        this.dropSelf(BlockInit.RASPBERRY_CANDY_SLAB.get());
+        this.dropSelf(BlockInit.LEMON_CANDY_SLAB.get());
+        this.dropSelf(BlockInit.ORANGE_CANDY_SLAB.get());
+        this.dropSelf(BlockInit.WAFER_WOOD_SLAB.get());
+
+        this.dropSelf(BlockInit.BLACKBERRY_CANDY_DOOR.get());
+        this.dropSelf(BlockInit.STRAWBERRY_CANDY_DOOR.get());
+        this.dropSelf(BlockInit.BLUEBERRY_CANDY_DOOR.get());
+        this.dropSelf(BlockInit.RASPBERRY_CANDY_DOOR.get());
+        this.dropSelf(BlockInit.LEMON_CANDY_DOOR.get());
+        this.dropSelf(BlockInit.ORANGE_CANDY_DOOR.get());
+        this.dropSelf(BlockInit.WAFER_WOOD_DOOR.get());
+        this.dropSelf(BlockInit.WAFER_PLANK_DOOR.get());
+        this.dropSelf(BlockInit.CHOCOLATE_WAFER_WOOD_DOOR.get());
+        this.dropSelf(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get());
+        this.dropSelf(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get());
+        this.dropSelf(BlockInit.FROSTING_DOOR.get());
 
         this.dropSelf(BlockInit.POISONOAKMINIDOOR.get());
+        this.dropSelf(BlockInit.POISONOAKDRAWERS.get());
+        this.dropSelf(BlockInit.POISONOAKSTOVE.get());
+        this.dropSelf(BlockInit.POISONOAKTELEVISION.get());
+        this.dropSelf(BlockInit.POISONBERRYLEAVESCHAIR.get());
+        this.dropSelf(BlockInit.POISONBERRYWOODWARDROBE.get());
+        this.dropSelf(BlockInit.POISONBERRYWOODBED.get());
+
+        this.dropSelf(BlockInit.ICE_CREAM_MACHINE.get());
+        this.dropSelf(BlockInit.SNS_DIMENSION_BLOCK.get());
 
     }
 

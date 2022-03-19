@@ -43,8 +43,15 @@ public class SNSToadRenderer extends GeoEntityRenderer<SNSToadEntity> {
     public void renderEarly(SNSToadEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
                             VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
+        if(animatable.isBaby()) {
+            stackIn.scale(0.25F, 0.25F, 0.25F);
+        } else {
+            stackIn.scale(0.5F, 0.5F, 0.5F);
+        }
+
+
         super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
                 red, green, blue, partialTicks);
-        stackIn.scale(0.5F, 0.5F, 0.5F);
+
     }
 }

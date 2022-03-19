@@ -49,8 +49,15 @@ public class SNSWaferschundRenderer extends GeoEntityRenderer<SNSWaferschundEnti
     public void renderEarly(SNSWaferschundEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
                             VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
+        if(animatable.isBaby()) {
+            stackIn.scale(0.35F, 0.35F, 0.35F);
+        } else {
+            stackIn.scale(0.7F, 0.7F, 0.7F);
+        }
+
+
         super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
                 red, green, blue, partialTicks);
-        stackIn.scale(0.7F, 0.7F, 0.7F);
+
     }
 }

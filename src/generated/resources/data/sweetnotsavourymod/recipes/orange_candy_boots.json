@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:orangecandy"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:orange_candy_boots"
+  }
+}

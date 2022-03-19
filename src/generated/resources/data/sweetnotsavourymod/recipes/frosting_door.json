@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:frostingblock"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:frosting_door"
+  }
+}

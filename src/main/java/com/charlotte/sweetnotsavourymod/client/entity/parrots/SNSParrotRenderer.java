@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.client.entity.parrots;
 
 import com.charlotte.sweetnotsavourymod.client.entity.model.parrots.SNSParrotModel;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSParrotEntity;
 import com.charlotte.sweetnotsavourymod.core.util.ParrotFlavourVariant;
 import com.google.common.collect.Maps;
@@ -43,11 +44,18 @@ public class SNSParrotRenderer extends GeoEntityRenderer<SNSParrotEntity> {
 	}
 
 	@Override
-	public RenderType getRenderType(SNSParrotEntity animatable, float partialTicks, PoseStack stack,
-									MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
-									ResourceLocation textureLocation) {
-		stack.scale(0.6F, 0.6F, 0.6F);
-		return super.getRenderType(animatable, partialTicks, stack,
-				renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
+	public void renderEarly(SNSParrotEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
+							VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
+							float partialTicks) {
+		if(animatable.isBaby()) {
+			stackIn.scale(0.3F, 0.3F, 0.3F);
+		} else {
+			stackIn.scale(0.6F, 0.6F, 0.6F);
+		}
+
+
+		super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+				red, green, blue, partialTicks);
+
 	}
 }

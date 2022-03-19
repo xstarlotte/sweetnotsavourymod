@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.client.entity.wolves;
 
 import com.charlotte.sweetnotsavourymod.client.entity.model.wolves.SNSCandyCaneWolfModel;
+import com.charlotte.sweetnotsavourymod.common.entity.waferschunds.SNSWaferschundEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.wolves.SNSCandyCaneWolfEntity;
 
 import com.charlotte.sweetnotsavourymod.core.util.CCWolfFlavourVariant;
@@ -37,11 +38,19 @@ public class SNSCandyCaneWolfRenderer extends GeoEntityRenderer<SNSCandyCaneWolf
     }
 
     @Override
-    public RenderType getRenderType(SNSCandyCaneWolfEntity animatable, float partialTicks, PoseStack stack,
-                                    MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
-                                    ResourceLocation textureLocation) {
-        stack.scale(1F, 1F, 1F);
-        return super.getRenderType(animatable, partialTicks, stack,
-                renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
+    public void renderEarly(SNSCandyCaneWolfEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
+                            VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
+                            float partialTicks) {
+        if(animatable.isBaby()) {
+            stackIn.scale(0.5F, 0.5F, 0.5F);
+        } else {
+            stackIn.scale(1F, 1F, 1F);
+        }
+
+
+        super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+                red, green, blue, partialTicks);
+
     }
 }
+

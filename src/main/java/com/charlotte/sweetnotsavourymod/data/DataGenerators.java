@@ -13,6 +13,8 @@ public class DataGenerators {
     public static void gatherData(GatherDataEvent event) {
             DataGenerator generator = event.getGenerator();
             generator.addProvider(new ModRecipeProvider(generator));
+            generator.addProvider(new ModLootTableProvider(generator));
+
 
     }
 

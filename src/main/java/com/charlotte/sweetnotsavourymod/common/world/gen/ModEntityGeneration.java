@@ -72,6 +72,8 @@ public class ModEntityGeneration {
 
         addEntityToSpecificBiomes(event, EntityTypesInit.CANDYCANECROOK.get(),
                 10, 1, 2, Biomes.SNOWY_PLAINS);
+        addEntityToSpecificBiomes(event, EntityTypesInit.RSWMUMMY.get(),
+                10, 1, 2, Biomes.SNOWY_PLAINS);
         addEntityToSpecificBiomes(event, EntityTypesInit.POISONBERRYATTACKER.get(),
                 10, 1, 2, Biomes.SNOWY_PLAINS);
         addEntityToSpecificBiomes(event, EntityTypesInit.POISONBERRYARCHER.get(),

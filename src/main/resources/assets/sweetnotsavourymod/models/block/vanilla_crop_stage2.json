@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "sweetnotsavourymod:blocks/vanilla_stage2"
+  }
+}

@@ -1,10 +1,12 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.common.block.BananaBakerBlock;
 import com.charlotte.sweetnotsavourymod.common.block.IceCreamMachineBlock;
 import com.charlotte.sweetnotsavourymod.common.block.SNSDimensionBlock;
 import com.charlotte.sweetnotsavourymod.common.block.beds.*;
 import com.charlotte.sweetnotsavourymod.common.block.lamps.SNSLampBlock;
+import com.charlotte.sweetnotsavourymod.common.block.plantscrops.SNSCropBlock;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
 
 import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
@@ -12,6 +14,7 @@ import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTreeG
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.item.BlockItem;
@@ -688,13 +691,95 @@ public static final RegistryObject<Block> FROSTINGFLOWER = registerBlock("frosti
 
 	public static final RegistryObject<Block> HARDENEDBANANABRICKS = registerBlock("hardenedbananabricks",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-//ice-cream-machine
+
+
+
+
+//machines
 public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice_cream_machine",
 		() -> new IceCreamMachineBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
 				.strength(0.6f,1200f)
 				.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> BANANA_BAKER = registerBlock("banana_baker",
+			() -> new BananaBakerBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+
+
+
+//crops
+
+	public static final RegistryObject<Block> BANANA_CROP = BLOCKS.register("banana_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETBANANA.get()));
+
+	public static final RegistryObject<Block> CARROT_CROP = BLOCKS.register("carrot_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETCARROT.get()));
+
+	public static final RegistryObject<Block> PEACH_CROP = BLOCKS.register("peach_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETPEACH.get()));
+
+	public static final RegistryObject<Block> BLACKBERRY_CROP = BLOCKS.register("blackberry_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETBLACKBERRY.get()));
+
+	public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETSTRAWBERRY.get()));
+
+	public static final RegistryObject<Block> BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETBLUEBERRY.get()));
+
+	public static final RegistryObject<Block> RASPBERRY_CROP = BLOCKS.register("raspberry_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETRASPBERRY.get()));
+
+	public static final RegistryObject<Block> LEMON_CROP = BLOCKS.register("lemon_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETLEMON.get()));
+
+	public static final RegistryObject<Block> LIME_CROP = BLOCKS.register("lime_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETLIME.get()));
+
+	public static final RegistryObject<Block> ORANGE_CROP = BLOCKS.register("orange_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETORANGE.get()));
+
+	public static final RegistryObject<Block> MANGO_CROP = BLOCKS.register("mango_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETMANGO.get()));
+
+	public static final RegistryObject<Block> PINEAPPLE_CROP = BLOCKS.register("pineapple_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.SWEETPINEAPPLE.get()));
+
+	public static final RegistryObject<Block> VANILLA_CROP = BLOCKS.register("vanilla_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.VANILLA.get()));
+
+	public static final RegistryObject<Block> MINT_CROP = BLOCKS.register("mint_crop",
+			() -> new SNSCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)
+					.strength(2f).noCollission().noOcclusion(),
+					() -> ItemInit.MINT.get()));
 
 	//beds
 	

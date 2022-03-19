@@ -4,6 +4,7 @@ package com.charlotte.sweetnotsavourymod.client.entity.unicorns;
 
 import com.charlotte.sweetnotsavourymod.client.entity.model.unicorns.SNSUnicornModel;
 import com.charlotte.sweetnotsavourymod.client.entity.model.zebras.SNSZebraModel;
+import com.charlotte.sweetnotsavourymod.common.entity.toads.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.unicorns.SNSUnicornEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.zebras.SNSZebraEntity;
 import com.charlotte.sweetnotsavourymod.core.util.UnicornFlavourVariant;
@@ -39,11 +40,18 @@ public class SNSUnicornRenderer extends GeoEntityRenderer<SNSUnicornEntity> {
 	}
 
 	@Override
-	public RenderType getRenderType(SNSUnicornEntity animatable, float partialTicks, PoseStack stack,
-									MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
-									ResourceLocation textureLocation) {
-		stack.scale(1.4F, 1.4F, 1.4F);
-		return super.getRenderType(animatable, partialTicks, stack,
-				renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
+	public void renderEarly(SNSUnicornEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
+							VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
+							float partialTicks) {
+		if(animatable.isBaby()) {
+			stackIn.scale(0.7F, 0.7F, 0.7F);
+		} else {
+			stackIn.scale(1.4F, 1.4F, 1.4F);
+		}
+
+
+		super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+				red, green, blue, partialTicks);
+
 	}
 }

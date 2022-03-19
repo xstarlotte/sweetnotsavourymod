@@ -48,8 +48,15 @@ public class SNSCCCatRenderer extends GeoEntityRenderer<SNSCCCatEntity> {
     public void renderEarly(SNSCCCatEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
                             VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
+        if(animatable.isBaby()) {
+        stackIn.scale(0.3F, 0.3F, 0.3F);
+    } else {
+        stackIn.scale(0.6F, 0.6F, 0.6F);
+    }
+
+
         super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
                 red, green, blue, partialTicks);
-        stackIn.scale(0.6F, 0.6F, 0.6F);
+
     }
 }

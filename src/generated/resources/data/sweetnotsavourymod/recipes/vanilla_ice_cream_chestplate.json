@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S S",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:vanillaicecream"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:vanilla_ice_cream_chestplate"
+  }
+}

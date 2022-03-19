@@ -26,6 +26,7 @@ public class ModArmorItem extends ArmorItem {
                                     new MobEffectInstance(ModEffects.POISON_RESISTANCE.get(), 200, 1)}).build();
 
 
+
     public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
         super(material, slot, settings);
     }

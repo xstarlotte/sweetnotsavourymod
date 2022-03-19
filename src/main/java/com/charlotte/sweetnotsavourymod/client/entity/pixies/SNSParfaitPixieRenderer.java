@@ -43,11 +43,18 @@ public class SNSParfaitPixieRenderer extends GeoEntityRenderer<SNSParfaitPixieEn
     }
 
     @Override
-    public RenderType getRenderType(SNSParfaitPixieEntity animatable, float partialTicks, PoseStack stack,
-                                    MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
-                                    ResourceLocation textureLocation) {
-        stack.scale(0.6F, 0.6F, 0.6F);
-        return super.getRenderType(animatable, partialTicks, stack,
-                renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
+    public void renderEarly(SNSParfaitPixieEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
+                            VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
+                            float partialTicks) {
+        if(animatable.isBaby()) {
+            stackIn.scale(0.3F, 0.3F, 0.3F);
+        } else {
+            stackIn.scale(0.6F, 0.6F, 0.6F);
+        }
+
+
+        super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+                red, green, blue, partialTicks);
+
     }
 }

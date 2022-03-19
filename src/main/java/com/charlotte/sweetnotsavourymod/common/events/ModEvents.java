@@ -163,6 +163,18 @@ public class ModEvents {
 
         }
 
+        if(event.getType() == VillagerProfession.FARMER) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ItemInit.CANDYCANESUGAR.get(), 1);
+            int villagerLevel = 1;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.APPLE, 1),
+                    stack,10,3,0.02F));
+
+
+        }
+
     }
 }
 

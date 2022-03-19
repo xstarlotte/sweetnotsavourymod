@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:rottenmouldycandycanebricks"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:rotten_mouldy_candy_cane_door"
+  }
+}

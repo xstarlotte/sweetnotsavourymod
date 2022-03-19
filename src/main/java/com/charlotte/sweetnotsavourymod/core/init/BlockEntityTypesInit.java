@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.common.blockentities.BananaBakerBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.blockentities.IceCreamMachineBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.*;
 import net.minecraft.world.level.block.Block;
@@ -41,4 +42,8 @@ public class BlockEntityTypesInit{
     public static final RegistryObject<BlockEntityType<IceCreamMachineBlockEntity>> ICE_CREAM_MACHINE = BLOCK_ENTITY_TYPE
         .register("ice_cream_machine", () -> BlockEntityType.Builder.of(IceCreamMachineBlockEntity::new,
                 BlockInit.ICE_CREAM_MACHINE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BananaBakerBlockEntity>> BANANA_BAKER = BLOCK_ENTITY_TYPE
+            .register("banana_baker", () -> BlockEntityType.Builder.of(BananaBakerBlockEntity::new,
+                    BlockInit.BANANA_BAKER.get()).build(null));
 }

@@ -4,6 +4,7 @@ import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.SNSParfaitPixieEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.angelfish.SNSAngelFishEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.boarries.SNSBoarryEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.chipmunks.SNSChipmunkEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
@@ -11,8 +12,12 @@ import com.charlotte.sweetnotsavourymod.common.entity.crooks.CandyCaneCrookEntit
 import com.charlotte.sweetnotsavourymod.common.entity.guineapigs.SNSGPEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.gummybears.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.icecreamfish.SNSICFishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.jamsters.SNSJamsterEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.mummies.RSWMummyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PBAttackerEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PBDefenderEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pretzelflies.SNSPretzelflyEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.spiders.SNSSpiderEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.toads.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.unicorns.SNSUnicornEntity;
@@ -109,6 +114,11 @@ public class EntityTypesInit {
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snschipmunk").toString()));
 
+	public static final RegistryObject<EntityType<SNSJamsterEntity>> SNSJAMSTER = ENTITY_TYPES
+			.register("snsjamster", () -> EntityType.Builder.of(SNSJamsterEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsjamster").toString()));
+
 	public static final RegistryObject<EntityType<SNSZebraEntity>> SNSZEBRA = ENTITY_TYPES
 			.register("snszebra", () -> EntityType.Builder.of(SNSZebraEntity::new, MobCategory.CREATURE)
 					.sized(1.4f, 1.4f)
@@ -150,6 +160,11 @@ public class EntityTypesInit {
 					.sized(1.4f, 1.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsunicorn").toString()));
 
+	public static final RegistryObject<EntityType<SNSSheepEntity>>SNSSHEEP = ENTITY_TYPES
+			.register("snssheep", () -> EntityType.Builder.of(SNSSheepEntity::new, MobCategory.CREATURE)
+					.sized(1f, 1f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snssheep").toString()));
+
 //AMBIENT
 
 	public static final RegistryObject<EntityType<SNSWafflefishEntity>> SNSWAFFLEFISH = ENTITY_TYPES
@@ -189,10 +204,20 @@ public class EntityTypesInit {
 					.sized(0.5f, 0.5f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "candycanecrook").toString()));
 
+	public static final RegistryObject<EntityType<RSWMummyEntity>> RSWMUMMY = ENTITY_TYPES
+			.register("rswmummy", () -> EntityType.Builder.of(RSWMummyEntity::new, MobCategory.MONSTER)
+					.sized(1f, 1f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "rswmummy").toString()));
+
 	public static final RegistryObject<EntityType<PBAttackerEntity>> POISONBERRYATTACKER = ENTITY_TYPES
 			.register("poisonberryattacker", () -> EntityType.Builder.of(PBAttackerEntity::new, MobCategory.MONSTER)
 					.sized(0.5f, 0.5f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "poisonberryattacker").toString()));
+
+	public static final RegistryObject<EntityType<PBDefenderEntity>> POISONBERRYDEFENDER = ENTITY_TYPES
+			.register("poisonberrydefender", () -> EntityType.Builder.of(PBDefenderEntity::new, MobCategory.MONSTER)
+					.sized(0.5f, 0.5f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "poisonberrydefender").toString()));
 
 	public static final RegistryObject<EntityType<PBArcherEntity>> POISONBERRYARCHER = ENTITY_TYPES
 			.register("poisonberryarcher", () -> EntityType.Builder.of( PBArcherEntity::new, MobCategory.MONSTER)
@@ -206,7 +231,13 @@ public class EntityTypesInit {
 
 
 
+//boats
 
+	public static final RegistryObject<EntityType<ModBoatEntity>> BOAT_ENTITY =
+			ENTITY_TYPES.register("mod_boat", () -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							MobCategory.MISC).fireImmune().sized(1.375F, 0.5625F)
+					.setCustomClientFactory((spawnEntity, world) -> new ModBoatEntity(world, 0, 0, 0))
+					.build("mod_boat"));
 
 	
 	

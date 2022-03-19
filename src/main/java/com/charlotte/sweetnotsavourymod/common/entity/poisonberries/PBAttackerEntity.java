@@ -71,12 +71,14 @@ public class PBAttackerEntity extends Monster implements IAnimatable {
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(3, new PoisonBerryMeleeAttackGoal(this, 1, false));
+		this.goalSelector.addGoal(3, new FloatGoal(this));
         this.addBehaviourGoals();
     }
 
     protected void addBehaviourGoals() {
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(PBAttackerEntity.class));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(PBAttackerEntity.class,
+				PBDefenderEntity.class, PBArcherEntity.class));
 		this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, true));

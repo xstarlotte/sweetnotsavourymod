@@ -2,6 +2,7 @@ package com.charlotte.sweetnotsavourymod.client.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.*;
+import com.charlotte.sweetnotsavourymod.common.screen.BananaBakerScreen;
 import com.charlotte.sweetnotsavourymod.common.screen.IceCreamMachineScreen;
 import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
@@ -208,6 +209,21 @@ public class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_TOFFEECONEFLOWER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_CHOCOLATECONEFLOWER.get(), RenderType.cutout());
 
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BANANA_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACH_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGO_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLE_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGE_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMON_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.LIME_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.VANILLA_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.MINT_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRY_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRY_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRY_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRY_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CARROT_CROP.get(), RenderType.cutout());
+
     }
 
     @SubscribeEvent
@@ -219,5 +235,6 @@ public class ClientEvents {
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_ORANGE_BLOCK_ENTITY_TYPE.get(), OrangeIceCreamBedBeRenderer::new);
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_BLUEBERRY_BLOCK_ENTITY_TYPE.get(), BlueberryIceCreamBedBeRenderer::new);
         MenuScreens.register(MenuTypesInit.ICE_CREAM_MACHINE_MENU.get(), IceCreamMachineScreen::new);
+        MenuScreens.register(MenuTypesInit.BANANA_BAKER_MENU.get(), BananaBakerScreen::new);
     }
 }

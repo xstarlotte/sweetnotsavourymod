@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.client.entity.pugs;
 
 import com.charlotte.sweetnotsavourymod.client.entity.model.pugs.SNSPugModel;
+import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.pugs.SNSPugEntity;
 
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
@@ -43,13 +44,20 @@ public class SNSPugRenderer extends GeoEntityRenderer<SNSPugEntity> {
 	public ResourceLocation getTextureLocation(SNSPugEntity entity) {
 		return LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
-	
+
 	@Override
-    public void renderEarly(SNSPugEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
+	public void renderEarly(SNSPugEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
 							VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
 							float partialTicks) {
-        super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
-                red, green, blue, partialTicks);
-        stackIn.scale(0.8F, 0.8F, 0.8F);
-    }
+		if(animatable.isBaby()) {
+			stackIn.scale(0.4F, 0.4F, 0.4F);
+		} else {
+			stackIn.scale(0.8F, 0.8F, 0.8F);
+		}
+
+
+		super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
+				red, green, blue, partialTicks);
+
+	}
 }

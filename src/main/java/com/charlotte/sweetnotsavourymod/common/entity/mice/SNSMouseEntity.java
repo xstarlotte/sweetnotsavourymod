@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entity.mice;
 
 import com.charlotte.sweetnotsavourymod.common.entity.rabbits.SNSRabbitEntity;
+import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.MouseFlavourVariant;
 import com.charlotte.sweetnotsavourymod.core.util.RabbitFlavourVariant;
@@ -126,6 +127,7 @@ public class SNSMouseEntity extends TamableAnimal implements IAnimatable {
 	protected void registerGoals() {
 		this.goalSelector.addGoal(1, new FloatGoal(this));
 		this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
+		this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
 		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
@@ -252,9 +254,15 @@ public class SNSMouseEntity extends TamableAnimal implements IAnimatable {
 		return 0.2F;
 	}
 
+	@Nullable
 	@Override
-	public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
-		return null;
+	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
+		return EntityTypesInit.SNSMOUSE.get().create(serverLevel);
+	}
+
+	@Override
+	public boolean isFood(ItemStack pStack) {
+		return pStack.getItem() == ItemInit.SPRINKLES.get();
 	}
 
 	@Override

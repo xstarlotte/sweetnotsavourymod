@@ -4,12 +4,18 @@
 	"item.sweetnotsavourymod.cartoon_why_we_lose_record.desc": "Cartoon - Why We Lose (feat. Coleman Trapp) [NCS Release]",
 
 	"item.sweetnotsavourymod.poisonberryspritespawnegg": "Poison Berry Sprite Spawn Egg",
-	"item.sweetnotsavourymod.poisonberryattackerspawnegg": "Poison Berry Attacker Spawn Egg",
-	"item.sweetnotsavourymod.poisonberryarcherspawnegg": "Poison Berry Archer Spawn Egg",
+	"item.sweetnotsavourymod.snspbattackerspawnegg": "Poison Berry Attacker Spawn Egg",
+	"item.sweetnotsavourymod.snspbarcherspawnegg": "Poison Berry Archer Spawn Egg",
+	"item.sweetnotsavourymod.snspbdefenderspawnegg": "Poison Berry Defender Spawn Egg",
+	"item.sweetnotsavourymod.rswmummyspawnegg": "Rotten Sugar Wrapper Mummy Spawn Egg",
 
 	"item.sweetnotsavourymod.snselfspawnegg": "Flavoured Elf Spawn Egg",
 
 	"item.sweetnotsavourymod.snsboarryspawnegg": "Boarry Spawn Egg",
+
+	"item.sweetnotsavourymod.snsjamsterspawnegg": "Jamster Spawn Egg",
+
+	"item.sweetnotsavourymod.snssheepspawnegg": "Candyfloss Sheep Spawn Egg",
 
 	"item.sweetnotsavourymod.snscccatspawnegg": "Candy Cane Cat Spawn Egg",
 
@@ -54,10 +60,6 @@
 	"item.sweetnotsavourymod.snsangelfishspawnegg": "Angelfish Spawn Egg",
 	"item.sweetnotsavourymod.snswaferwhalespawnegg": "Wafer Whale Spawn Egg",
 
-	"item.sweetnotsavourymod.snspbattackerspawnegg": "Poisonberry Attacker Spawn Egg",
-	"item.sweetnotsavourymod.snspbarcherspawnegg": "Poisonberry Archer Spawn Egg",
-	"item.sweetnotsavourymod.cccrookspawnegg": "Candy Cane Crook Spawn Egg",
-
 	"item.sweetnotsavourymod.strawberrycandy": "Strawberry Candy",
 	"item.sweetnotsavourymod.raspberrycandy": "Raspberry Candy",
 	"item.sweetnotsavourymod.lemoncandy": "Lemon Candy",
@@ -85,6 +87,7 @@
 	"item.sweetnotsavourymod.candycanesugar": "Candy Cane Sugar",
 	"item.sweetnotsavourymod.vanillaicecreamscoop": "Vanilla Ice Cream Scoop",
 	"item.sweetnotsavourymod.strawberryicecreamscoop": "Strawberry Ice Cream Scoop",
+	"item.sweetnotsavourymod.blackberryicecreamscoop": "Blackberry Ice Cream Scoop",
 	"item.sweetnotsavourymod.raspberryicecreamscoop": "Raspberry Ice Cream Scoop",
 	"item.sweetnotsavourymod.blueberryicecreamscoop": "Blueberry Ice Cream Scoop",
 	"item.sweetnotsavourymod.lemonicecreamscoop": "Lemon Ice Cream Scoop",
@@ -93,6 +96,7 @@
 	"item.sweetnotsavourymod.strawberryicecream": "Strawberry Ice Cream",
 	"item.sweetnotsavourymod.raspberryicecream": "Raspberry Ice Cream",
 	"item.sweetnotsavourymod.blueberryicecream": "Blueberry Ice Cream",
+	"item.sweetnotsavourymod.blackberryicecream": "Blackberry Ice Cream",
 	"item.sweetnotsavourymod.lemonicecream": "Lemon Ice Cream",
 	"item.sweetnotsavourymod.orangeicecream": "Orange Ice Cream",
 
@@ -161,6 +165,8 @@
 	"item.sweetnotsavourymod.lemon_candy_leggings": "Lemon Candy Leggings",
 	"item.sweetnotsavourymod.lemon_candy_boots": "Lemon Candy Boots",
 
+	"item.sweetnotsavourymod.waferwood_boat": "Wafer Wood Boat",
+
 	"item.sweetnotsavourymod.orangeicecreamsword": "Orange Ice Cream Sword",
 	"item.sweetnotsavourymod.lemonicecreamsword": "Lemon Ice Cream Sword",
 	"item.sweetnotsavourymod.strawberryicecreamsword": "Strawberry Ice Cream Sword",
@@ -171,6 +177,21 @@
 	"block.sweetnotsavourymod.candycanesugarcaneblock": "Candy Cane Sugar Cane Block",
 
 	"block.sweetnotsavourymod.icecreamtreesapling": "Ice Cream Tree Sapling",
+
+	"block.sweetnotsavourymod.banana_crop": "Sweet Banana Crop",
+	"block.sweetnotsavourymod.peach_crop": "Sweet Peach Crop",
+	"block.sweetnotsavourymod.mango_crop": "Sweet Mango Crop",
+	"block.sweetnotsavourymod.lemon_crop": "Sweet Lemon Crop",
+	"block.sweetnotsavourymod.pineapple_crop": "Sweet Pineapple Crop",
+	"block.sweetnotsavourymod.lime_crop": "Sweet Lime Crop",
+	"block.sweetnotsavourymod.vanilla_crop": "Sweet Vanilla Crop",
+	"block.sweetnotsavourymod.mint_crop": "Mint Crop",
+	"block.sweetnotsavourymod.raspberry_crop": "Sweet Raspberry Crop",
+	"block.sweetnotsavourymod.blueberry_crop": "Sweet Blueberry Crop",
+	"block.sweetnotsavourymod.strawberry_crop": "Sweet Strawberry Crop",
+	"block.sweetnotsavourymod.orange_crop": "Sweet Orange Crop",
+	"block.sweetnotsavourymod.carrot_crop": "Sweet Carrot Crop",
+	"block.sweetnotsavourymod.blackberry_crop": "Sweet Blackberry Crop",
 
 	"block.sweetnotsavourymod.frostinggrass": "Frosting Grass",
 	"block.sweetnotsavourymod.candycanebush": "Candy Cane Bush",
@@ -455,6 +476,7 @@
 	"block.sweetnotsavourymod.strawberrychest": "Strawberry Chest",
 
 	"block.sweetnotsavourymod.ice_cream_machine": "Ice Cream Machine",
+	"block.sweetnotsavourymod.banana_baker": "Banana Baker",
 
 	"biome.sweetnotsavourymod.icecreamforestbiome": "Ice Cream Forest Biome",
 	"biome.sweetnotsavourymod.candycaneplainsbiome": "Candy Cane Plains Biome",
