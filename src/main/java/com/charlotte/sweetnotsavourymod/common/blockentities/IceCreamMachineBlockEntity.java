@@ -150,7 +150,7 @@ public class IceCreamMachineBlockEntity extends BlockEntity implements MenuProvi
 
 
 
-//below method means as long as we haven't reached maximum stack size (64) in output slot (3) we can continue to put in items.
+    //below method means as long as we haven't reached maximum stack size (64) in output slot (3) we can continue to put in items.
     private static boolean hasNotReachedStackLimit(IceCreamMachineBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(3).getCount() < entity.itemHandler.getStackInSlot(3).getMaxStackSize();
     }

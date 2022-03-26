@@ -39,8 +39,12 @@ import com.charlotte.sweetnotsavourymod.common.entity.whales.SNSWhaleEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.wolves.SNSCandyCaneWolfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.zebras.SNSZebraEntity;
 import com.charlotte.sweetnotsavourymod.common.item.StrawberryCandyArmorItem;
+import com.charlotte.sweetnotsavourymod.common.recipe.IceCreamMachineRecipe;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
+import net.minecraft.core.Registry;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -95,4 +99,8 @@ public class SNSModBusEvents {
         GeoArmorRenderer.registerArmorRenderer(StrawberryCandyArmorItem.class, new StrawberryCandyArmorRenderer());
     }
 
+    @SubscribeEvent
+    public static void registerRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>> event) {
+        Registry.register(Registry.RECIPE_TYPE, IceCreamMachineRecipe.Type.ID, IceCreamMachineRecipe.Type.INSTANCE);
+    }
 }

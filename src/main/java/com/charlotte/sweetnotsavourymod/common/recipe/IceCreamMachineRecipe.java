@@ -27,23 +27,12 @@ public class IceCreamMachineRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer pContainer, net.minecraft.world.level.Level pLevel) {
-        if(recipeItems.get(0).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
-        }
-        if(recipeItems.get(1).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
-        }
-        if(recipeItems.get(2).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
-        }
-        if(recipeItems.get(3).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
-        }
-        if(recipeItems.get(4).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
-        }
-        if(recipeItems.get(5).test(pContainer.getItem(1))) {
-            return recipeItems.get(1).test(pContainer.getItem(2));
+        int numberOfItems = 5;
+        boolean hasFiveFirstSlot = numberOfItems <= pContainer.getItem(0).getCount();
+        boolean hasFiveThirdSlot = numberOfItems <= pContainer.getItem(2).getCount();
+
+        if(recipeItems.get(0).test(pContainer.getItem(1)) && hasFiveFirstSlot) {
+            return recipeItems.get(1).test(pContainer.getItem(2)) && hasFiveThirdSlot;
         }
 
         return false;
@@ -94,7 +83,7 @@ public class IceCreamMachineRecipe implements Recipe<SimpleContainer> {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(6, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(2, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
