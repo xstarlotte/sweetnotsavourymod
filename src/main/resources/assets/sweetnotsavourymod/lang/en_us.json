@@ -17,7 +17,10 @@
 
 	"item.sweetnotsavourymod.snssheepspawnegg": "Candyfloss Sheep Spawn Egg",
 
+	"item.sweetnotsavourymod.snslionspawnegg": "Candyfloss Lion Spawn Egg",
+
 	"item.sweetnotsavourymod.snscccatspawnegg": "Candy Cane Cat Spawn Egg",
+	"item.sweetnotsavourymod.snscookiecatspawnegg": "Cookie Cat Spawn Egg",
 
 	"item.sweetnotsavourymod.icecreamcowspawnegg": "Ice Cream Cow Spawn Egg",
 
@@ -86,6 +89,10 @@
 	"item.sweetnotsavourymod.strawberryswissroll": "Strawberry Swiss Roll",
 	"item.sweetnotsavourymod.candycanesugar": "Candy Cane Sugar",
 	"item.sweetnotsavourymod.vanillaicecreamscoop": "Vanilla Ice Cream Scoop",
+	"item.sweetnotsavourymod.chocolateicecreamscoop": "Chocolate Ice Cream Scoop",
+	"item.sweetnotsavourymod.toffeeicecreamscoop": "Toffee Ice Cream Scoop",
+	"item.sweetnotsavourymod.limeicecreamscoop": "Lime Ice Cream Scoop",
+	"item.sweetnotsavourymod.mangoicecreamscoop": "Mango Ice Cream Scoop",
 	"item.sweetnotsavourymod.strawberryicecreamscoop": "Strawberry Ice Cream Scoop",
 	"item.sweetnotsavourymod.blackberryicecreamscoop": "Blackberry Ice Cream Scoop",
 	"item.sweetnotsavourymod.raspberryicecreamscoop": "Raspberry Ice Cream Scoop",
@@ -93,6 +100,10 @@
 	"item.sweetnotsavourymod.lemonicecreamscoop": "Lemon Ice Cream Scoop",
 	"item.sweetnotsavourymod.orangeicecreamscoop": "Orange Ice Cream Scoop",
 	"item.sweetnotsavourymod.vanillaicecream": "Vanilla Ice Cream",
+	"item.sweetnotsavourymod.chocolateicecream": "Chocolate Ice Cream",
+	"item.sweetnotsavourymod.toffeeicecream": "Toffee Ice Cream",
+	"item.sweetnotsavourymod.limeicecream": "Lime Ice Cream",
+	"item.sweetnotsavourymod.mangoicecream": "Mango Ice Cream",
 	"item.sweetnotsavourymod.strawberryicecream": "Strawberry Ice Cream",
 	"item.sweetnotsavourymod.raspberryicecream": "Raspberry Ice Cream",
 	"item.sweetnotsavourymod.blueberryicecream": "Blueberry Ice Cream",
@@ -130,6 +141,8 @@
 	"item.sweetnotsavourymod.bonbons": "Bon Bons",
 	"item.sweetnotsavourymod.mintimperials": "Mint Imperials",
 	"item.sweetnotsavourymod.colabottle": "Cola Bottle",
+
+	"item.sweetnotsavourymod.strawberry_jam": "Strawberry Jam",
 
 
 	"item.sweetnotsavourymod.creamy_milk_bucket": "Creamy Milk Bucket",
@@ -279,12 +292,20 @@
 	"block.sweetnotsavourymod.rainbowfrostinggrassblock": "Rainbow Frosting Grass Block",
 	"block.sweetnotsavourymod.hardenedbananabricks": "Hardened Banana Bricks",
 	"block.sweetnotsavourymod.hardenedbananastone": "Hardened Banana Stone",
+	"block.sweetnotsavourymod.hardenedbananaplanks": "Hardened Banana Planks",
+	"block.sweetnotsavourymod.smoothhardenedbananastone": "Smooth Banana Stone",
 
 	"block.sweetnotsavourymod.rottenmouldycandycanechains": "Rotten Mouldy Candy Cane Chains",
 	"block.sweetnotsavourymod.rottenmouldycandycanebars": "Rotten Mouldy Candy Cane Bars",
 	"block.sweetnotsavourymod.rottenmouldycandycaneblock": "Rotten Mouldy Candy Cane Block",
 	"block.sweetnotsavourymod.rottenmouldycandycanebricks": "Rotten Mouldy Candy Cane Bricks",
 	"block.sweetnotsavourymod.rottenmouldycandycanewall": "Rotten Mouldy Candy Cane Wall",
+
+	"block.sweetnotsavourymod.hardened_banana_stairs": "Hardened Banana Stairs",
+	"block.sweetnotsavourymod.hardened_banana_fence": "Hardened Banana Fence",
+	"block.sweetnotsavourymod.hardened_banana_fence_gate": "Hardened Banana Fence Gate",
+	"block.sweetnotsavourymod.hardened_banana_slab": "Hardened Banana Slab",
+	"block.sweetnotsavourymod.hardened_banana_wall": "Hardened Banana Wall",
 
 	"block.sweetnotsavourymod.wafer_wood_stairs": "Wafer Wood Stairs",
 	"block.sweetnotsavourymod.wafer_wood_fence": "Wafer Wood Fence",
@@ -333,6 +354,15 @@
 	"block.sweetnotsavourymod.raspberryicecreambed": "Raspberry Ice Cream Bed",
 	"block.sweetnotsavourymod.lemonicecreambed": "Lemon Ice Cream Bed",
 	"block.sweetnotsavourymod.orangeicecreambed": "Orange Ice Cream Bed",
+	"block.sweetnotsavourymod.wafflebed": "Vanilla Waffle Bed",
+	"block.sweetnotsavourymod.chocolatewafflebed": "Chocolate Waffle Bed",
+	"block.sweetnotsavourymod.toffeewafflebed": "Toffee Waffle Bed",
+	"block.sweetnotsavourymod.orangewafflebed": "Orange Waffle Bed",
+	"block.sweetnotsavourymod.lemonwafflebed": "Lemon Waffle Bed",
+	"block.sweetnotsavourymod.strawberrywafflebed": "Strawberry Waffle Bed",
+	"block.sweetnotsavourymod.raspberrywafflebed": "Raspberry Waffle Bed",
+	"block.sweetnotsavourymod.blackberrywafflebed": "Blackberry Waffle Bed",
+	"block.sweetnotsavourymod.blueberrywafflebed": "Blueberry Waffle Bed",
 
 	"block.sweetnotsavourymod.strawberry_candy_door": "Strawberry Candy Door",
 	"block.sweetnotsavourymod.blueberry_candy_door": "Blueberry Candy Door",
@@ -400,7 +430,11 @@
 
 	"entity.sweetnotsavourymod.poisonberryattacker": "Poison Berry Attacker",
 	"entity.sweetnotsavourymod.poisonberryarcher": "Poison Berry Archer",
+	"entity.sweetnotsavourymod.poisonberrydefender": "Poison Berry Defender",
 	"entity.sweetnotsavourymod.poisonberrysprite": "Poison Berry Sprite",
+
+	"entity.sweetnotsavourymod.cccrook": "Candy Cane Crook",
+	"entity.sweetnotsavourymod.rswmummy": "Rotten Sugar Wrapper Mummy",
 
 	"entity.sweetnotsavourymod.strawberrypug": "Strawberry Pug",
 	"entity.sweetnotsavourymod.lemonpug": "Lemon Pug",
@@ -409,26 +443,45 @@
 	"entity.sweetnotsavourymod.chocolatepug": "Chocolate Pug",
 	"entity.sweetnotsavourymod.blueberrypug": "Blueberry Pug",
 	"entity.sweetnotsavourymod.raspberrypug": "Raspberry Pug",
+	"entity.sweetnotsavourymod.blackberrypug": "Blackberry Pug",
+	"entity.sweetnotsavourymod.peachpug": "Peach Pug",
+	"entity.sweetnotsavourymod.pineapplepug": "Pineapple Pug",
+	"entity.sweetnotsavourymod.limepug": "Lime Pug",
+	"entity.sweetnotsavourymod.vanillapug": "Vanilla Pug",
+	"entity.sweetnotsavourymod.mangopug": "Mango Pug",
+
+
 	"entity.sweetnotsavourymod.toffeeicecreampug": "Toffee Ice Cream Pug",
 	"entity.sweetnotsavourymod.blueberryicecreampug": "Blueberry Ice Cream Pug",
 	"entity.sweetnotsavourymod.chocolateicecreampug": "Chocolate Ice Cream Pug",
 	"entity.sweetnotsavourymod.raspberryicecreampug": "Raspberry Ice Cream Pug",
+	"entity.sweetnotsavourymod.blackberryicecreampug": "Blackberry Ice Cream Pug",
 	"entity.sweetnotsavourymod.strawberryicecreampug": "Strawberry Ice Cream Pug",
 	"entity.sweetnotsavourymod.orangeicecreampug": "Orange Ice Cream Pug",
+	"entity.sweetnotsavourymod.lemonicecreampug": "Lemon Ice Cream Pug",
+	"entity.sweetnotsavourymod.limeicecreampug": "Lime Ice Cream Pug",
+	"entity.sweetnotsavourymod.mangoicecreampug": "Mango Ice Cream Pug",
 
 	"entity.sweetnotsavourymod.strawberryelf": "Strawberry Elf",
+	"entity.sweetnotsavourymod.blackberryelf": "Blackberry Elf",
 	"entity.sweetnotsavourymod.blueberryelf": "Blueberry Elf",
 	"entity.sweetnotsavourymod.lemonelf": "Lemon Elf",
+	"entity.sweetnotsavourymod.limeelf": "Lime Elf",
+	"entity.sweetnotsavourymod.peachelf": "Peach Elf",
 	"entity.sweetnotsavourymod.raspberryelf": "Raspberry Elf",
 	"entity.sweetnotsavourymod.orangeelf": "Orange Elf",
+	"entity.sweetnotsavourymod.mangoelf": "Mango Elf",
+	"entity.sweetnotsavourymod.pineappleelf": "Pineapple Elf",
 	"entity.sweetnotsavourymod.vanillaelf": "Vanilla Elf",
+	"entity.sweetnotsavourymod.chocolateelf": "Chocolate Elf",
+	"entity.sweetnotsavourymod.toffeeelf": "Toffee Elf",
 
 	"entity.sweetnotsavourymod.bananamonkey": "Banana Monkey Soldier",
 	"entity.sweetnotsavourymod.bananamonkeyking": "Banana Monkey King",
 
 	"entity.sweetnotsavourymod.candycanewolf": "Candy Cane Wolf",
 
-	"entity.sweetnotsavourymod.strawberrywaferschund": "Strawberry Waferschund",
+	"entity.sweetnotsavourymod.waferschund": "Waferschund",
 
 	"entity.sweetnotsavourymod.strawberrypig": "Strawberry Pig",
 
@@ -477,6 +530,8 @@
 
 	"block.sweetnotsavourymod.ice_cream_machine": "Ice Cream Machine",
 	"block.sweetnotsavourymod.banana_baker": "Banana Baker",
+	"block.sweetnotsavourymod.jam_presser": "Jam Presser",
+	"block.sweetnotsavourymod.waffle_cone_machine": "Waffle Cone Machine",
 
 	"biome.sweetnotsavourymod.icecreamforestbiome": "Ice Cream Forest Biome",
 	"biome.sweetnotsavourymod.candycaneplainsbiome": "Candy Cane Plains Biome",

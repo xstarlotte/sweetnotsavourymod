@@ -7,12 +7,14 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.parchmentmc:librarian:1.+'
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
 repositories {
     maven { url = 'https://maven.minecraftforge.net/' }
+    maven { url = 'https://maven.parchmentmc.org' }
     maven {
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
@@ -26,6 +28,7 @@ repositories {
     mavenCentral()
 }
 apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 apply plugin: 'eclipse'
@@ -114,8 +117,8 @@ dependencies {
 
     minecraft 'net.minecraftforge:forge:1.18.2-40.0.19'
 
-    compileOnly fg.deobf("mezz.jei:jei-1.18.1:9.1.0.47:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18.1:9.1.0.47")
+    compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143")
     implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.12')
 
 }

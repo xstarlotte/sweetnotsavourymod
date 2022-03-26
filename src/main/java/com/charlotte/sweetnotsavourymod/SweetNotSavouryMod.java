@@ -5,6 +5,8 @@ import com.charlotte.sweetnotsavourymod.common.effects.ModEffects;
 import com.charlotte.sweetnotsavourymod.common.events.EntityEvents;
 import com.charlotte.sweetnotsavourymod.common.item.CustomSpawnEggItem;
 import com.charlotte.sweetnotsavourymod.common.painting.ModPaintings;
+
+import com.charlotte.sweetnotsavourymod.common.recipe.ModRecipes;
 import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTrunkPlacer;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.ModFoliagePlacerTypes;
@@ -67,6 +69,7 @@ public class SweetNotSavouryMod {
         FluidInit.FLUIDS.register(bus);
     	BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register( bus );
         MenuTypesInit.MENUS.register(bus);
+        ModRecipes.register(bus);
 		EntityTypesInit.ENTITY_TYPES.register(bus);
         ModFoliagePlacerTypes.FOLIAGE_PLACER_TYPES.register(bus);
     	

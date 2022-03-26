@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/jam_presser",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/jam_presser"
+  }
+}

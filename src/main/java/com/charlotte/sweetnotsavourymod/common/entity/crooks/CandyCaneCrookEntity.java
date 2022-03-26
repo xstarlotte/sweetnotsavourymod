@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entity.crooks;
 
 
+import com.charlotte.sweetnotsavourymod.common.entity.ai.RSWMummyAttackGoal;
 import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.core.util.CCCrookVariant;
 import com.charlotte.sweetnotsavourymod.core.util.FlavourVariant;
@@ -108,6 +109,7 @@ public class CandyCaneCrookEntity extends Monster implements IAnimatable {
 
     protected void addBehaviourGoals() {
         this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+		this.targetSelector.addGoal(1, new RSWMummyAttackGoal(this, 1, false));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(CandyCaneCrookEntity.class));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));

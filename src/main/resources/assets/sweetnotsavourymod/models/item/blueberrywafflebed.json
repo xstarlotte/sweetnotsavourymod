@@ -1,0 +1,6 @@
+{
+	"parent": "sweetnotsavourymod:block/blueberrywafflebed",
+	"textures": {
+		"layer0": "sweetnotsavourymod:blocks/blueberrywafflebed"
+	}
+}

@@ -5,6 +5,7 @@ import com.charlotte.sweetnotsavourymod.client.entity.angelfish.SNSAngelFishRend
 import com.charlotte.sweetnotsavourymod.client.entity.boarries.SNSBoarryRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.boats.ModBoatRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.cats.SNSCCCatRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.cats.SNSCookieCatRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.chipmunk.SNSChipmunkRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.cows.IceCreamCowRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.crooks.CandyCaneCrookRenderer;
@@ -12,6 +13,7 @@ import com.charlotte.sweetnotsavourymod.client.entity.guineapigs.SNSGPRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.gummybears.SNSGummyBearRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.icecreamfish.SNSICFishRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.jamsters.SNSJamsterRenderer;
+import com.charlotte.sweetnotsavourymod.client.entity.lions.SNSLionRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.mice.SNSMouseRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.mummies.RSWMummyRenderer;
 import com.charlotte.sweetnotsavourymod.client.entity.pixies.SNSParfaitPixieRenderer;
@@ -203,11 +205,13 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSBOARRY.get(), SNSBoarryRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSSPIDER.get(), SNSSpiderRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSCCCAT.get(), SNSCCCatRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSCOOKIECAT.get(), SNSCookieCatRenderer::new);
 		EntityRenderers.register(EntityTypesInit.ICECREAMCOW.get(), IceCreamCowRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSGP.get(), SNSGPRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSUNICORN.get(), SNSUnicornRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSJAMSTER.get(), SNSJamsterRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSSHEEP.get(), SNSSheepRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSLION.get(), SNSLionRenderer::new);
 
 		EntityRenderers.register(EntityTypesInit.POISONBERRYATTACKER.get(), PBAttackerRenderer::new);
 		EntityRenderers.register(EntityTypesInit.POISONBERRYDEFENDER.get(), PBDefenderRenderer::new);

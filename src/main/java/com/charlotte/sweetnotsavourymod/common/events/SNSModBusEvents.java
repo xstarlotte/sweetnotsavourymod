@@ -1,10 +1,12 @@
 package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.client.armor.StrawberryCandyArmorRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.SNSParfaitPixieEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.angelfish.SNSAngelFishEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.boarries.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCookieCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.chipmunks.SNSChipmunkEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.crooks.CandyCaneCrookEntity;
@@ -13,6 +15,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.guineapigs.SNSGPEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.gummybears.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.icecreamfish.SNSICFishEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.jamsters.SNSJamsterEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.lions.SNSLionEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.mice.SNSMouseEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.mummies.RSWMummyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSIceCreamParrotEntity;
@@ -35,10 +38,13 @@ import com.charlotte.sweetnotsavourymod.common.entity.wafflefish.SNSWafflefishEn
 import com.charlotte.sweetnotsavourymod.common.entity.whales.SNSWhaleEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.wolves.SNSCandyCaneWolfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.zebras.SNSZebraEntity;
+import com.charlotte.sweetnotsavourymod.common.item.StrawberryCandyArmorItem;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 @Mod.EventBusSubscriber(modid = SweetNotSavouryMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SNSModBusEvents {
@@ -68,11 +74,13 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.SNSBOARRY.get(), SNSBoarryEntity.setAttributes());
         event.put(EntityTypesInit.SNSSPIDER.get(), SNSSpiderEntity.setAttributes());
         event.put(EntityTypesInit.SNSCCCAT.get(), SNSCCCatEntity.setAttributes());
+        event.put(EntityTypesInit.SNSCOOKIECAT.get(), SNSCookieCatEntity.setAttributes());
         event.put(EntityTypesInit.ICECREAMCOW.get(), IceCreamCowEntity.setAttributes());
         event.put(EntityTypesInit.SNSGP.get(), SNSGPEntity.setAttributes());
         event.put(EntityTypesInit.SNSUNICORN.get(), SNSUnicornEntity.setAttributes());
         event.put(EntityTypesInit.SNSJAMSTER.get(), SNSJamsterEntity.setAttributes());
         event.put(EntityTypesInit.SNSSHEEP.get(), SNSSheepEntity.setAttributes());
+        event.put(EntityTypesInit.SNSLION.get(), SNSLionEntity.setAttributes());
 
         event.put(EntityTypesInit.RSWMUMMY.get(), RSWMummyEntity.createAttributes());
         event.put(EntityTypesInit.POISONBERRYATTACKER.get(), PBAttackerEntity.createAttributes());
@@ -81,4 +89,10 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.CANDYCANECROOK.get(), CandyCaneCrookEntity.createAttributes());
 
     }
+
+    @SubscribeEvent
+    public static void registerRecipeTypes(final EntityRenderersEvent.AddLayers event) {
+        GeoArmorRenderer.registerArmorRenderer(StrawberryCandyArmorItem.class, new StrawberryCandyArmorRenderer());
+    }
+
 }

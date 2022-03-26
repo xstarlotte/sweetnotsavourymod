@@ -3,6 +3,8 @@ package com.charlotte.sweetnotsavourymod.core.init;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.blockentities.BananaBakerBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.blockentities.IceCreamMachineBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.JamPresserBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.WaffleConeMachineBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -38,6 +40,46 @@ public class BlockEntityTypesInit{
             .register("sns_orangebed_entity", () -> BlockEntityType.Builder.of(OrangeIceCreamBedBlockEntity::new,
                     BlockInit.ORANGEICECREAMBED.get()).build(null));
 
+
+
+
+
+    public static final RegistryObject<BlockEntityType<WaffleBedBlockEntity>> SNS_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_wafflebed_entity", () -> BlockEntityType.Builder.of(WaffleBedBlockEntity::new,
+                    BlockInit.VANILLAWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<StrawberryWaffleBedBlockEntity>> SNS_STRAWBERRY_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_strawberry_wafflebed_entity", () -> BlockEntityType.Builder.of(StrawberryWaffleBedBlockEntity::new,
+                    BlockInit.STRAWBERRYWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<RaspberryWaffleBedBlockEntity>> SNS_RASPBERRY_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_raspberry_wafflebed_entity", () -> BlockEntityType.Builder.of(RaspberryWaffleBedBlockEntity::new,
+                    BlockInit.RASPBERRYWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BlueberryWaffleBedBlockEntity>> SNS_BLUEBERRY_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_blueberry_wafflebed_entity", () -> BlockEntityType.Builder.of(BlueberryWaffleBedBlockEntity::new,
+                    BlockInit.BLUEBERRYWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BlackberryWaffleBedBlockEntity>> SNS_BLACKBERRY_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_blackberry_wafflebed_entity", () -> BlockEntityType.Builder.of(BlackberryWaffleBedBlockEntity::new,
+                    BlockInit.BLACKBERRYWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<LemonWaffleBedBlockEntity>> SNS_LEMON_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_lemon_wafflebed_entity", () -> BlockEntityType.Builder.of(LemonWaffleBedBlockEntity::new,
+                    BlockInit.LEMONWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<OrangeWaffleBedBlockEntity>> SNS_ORANGE_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_orange_wafflebed_entity", () -> BlockEntityType.Builder.of(OrangeWaffleBedBlockEntity::new,
+                    BlockInit.ORANGEWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<ChocolateWaffleBedBlockEntity>> SNS_CHOCOLATE_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_chocolate_wafflebed_entity", () -> BlockEntityType.Builder.of(ChocolateWaffleBedBlockEntity::new,
+                    BlockInit.CHOCOLATEWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<ToffeeWaffleBedBlockEntity>> SNS_TOFFEE_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_toffee_wafflebed_entity", () -> BlockEntityType.Builder.of(ToffeeWaffleBedBlockEntity::new,
+                    BlockInit.TOFFEEWAFFLEBED.get()).build(null));
+
 //icecreammachine
     public static final RegistryObject<BlockEntityType<IceCreamMachineBlockEntity>> ICE_CREAM_MACHINE = BLOCK_ENTITY_TYPE
         .register("ice_cream_machine", () -> BlockEntityType.Builder.of(IceCreamMachineBlockEntity::new,
@@ -46,4 +88,12 @@ public class BlockEntityTypesInit{
     public static final RegistryObject<BlockEntityType<BananaBakerBlockEntity>> BANANA_BAKER = BLOCK_ENTITY_TYPE
             .register("banana_baker", () -> BlockEntityType.Builder.of(BananaBakerBlockEntity::new,
                     BlockInit.BANANA_BAKER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<JamPresserBlockEntity>> JAM_PRESSER = BLOCK_ENTITY_TYPE
+            .register("jam_presser", () -> BlockEntityType.Builder.of(JamPresserBlockEntity::new,
+                    BlockInit.JAM_PRESSER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<WaffleConeMachineBlockEntity>> WAFFLE_CONE_MACHINE = BLOCK_ENTITY_TYPE
+            .register("waffle_cone_machine", () -> BlockEntityType.Builder.of(WaffleConeMachineBlockEntity::new,
+                    BlockInit.WAFFLE_CONE_MACHINE.get()).build(null));
 }

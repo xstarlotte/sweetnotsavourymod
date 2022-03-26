@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.world.gen;
 
 import com.charlotte.sweetnotsavourymod.common.world.features.ModPlacedFeatures;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
@@ -19,10 +20,10 @@ public class ModTreeGeneration {
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 
         if(types.contains(BiomeDictionary.Type.SNOWY)) {
-            List<Supplier<PlacedFeature>> base =
+            List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
-            base.add(() -> ModPlacedFeatures.ICE_CREAM_PLACED);
+            base.add(ModPlacedFeatures.ICE_CREAM_PLACED);
         }
     }
 }

@@ -2,9 +2,7 @@ package com.charlotte.sweetnotsavourymod.client.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.blockentities.renderers.beds.*;
-import com.charlotte.sweetnotsavourymod.common.screen.BananaBakerScreen;
-import com.charlotte.sweetnotsavourymod.common.screen.IceCreamMachineScreen;
-import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
+import com.charlotte.sweetnotsavourymod.common.screen.*;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.FluidInit;
@@ -44,7 +42,39 @@ public class ClientEvents {
 
     public static final ResourceLocation ORANGEICECREAMBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/orangeicecreambedheadpart");
     public static final ResourceLocation ORANGEICECREAMBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/orangeicecreambedbottompart");
-    
+
+    public static final ResourceLocation WAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/wafflebedheadpart");
+    public static final ResourceLocation WAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/wafflebedbottompart");
+
+    public static final ResourceLocation STRAWBERRYWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/strawberrywafflebedheadpart");
+    public static final ResourceLocation STRAWBERRYWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/strawberrywafflebedbottompart");
+
+    public static final ResourceLocation RASPBERRYWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/raspberrywafflebedheadpart");
+    public static final ResourceLocation RASPBERRYWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/raspberrywafflebedbottompart");
+
+    public static final ResourceLocation BLACKBERRYWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/blackberrywafflebedheadpart");
+    public static final ResourceLocation BLACKBERRYWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/blackberrywafflebedbottompart");
+
+    public static final ResourceLocation BLUEBERRYWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/blueberrywafflebedheadpart");
+    public static final ResourceLocation BLUEBERRYWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/blueberrywafflebedbottompart");
+
+    public static final ResourceLocation ORANGEWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/orangewafflebedheadpart");
+    public static final ResourceLocation ORANGEWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/orangewafflebedbottompart");
+
+    public static final ResourceLocation LEMONWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/lemonwafflebedheadpart");
+    public static final ResourceLocation LEMONWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/lemonwafflebedbottompart");
+
+    public static final ResourceLocation CHOCOLATEWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/chocolatewafflebedheadpart");
+    public static final ResourceLocation CHOCOLATEWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/chocolatewafflebedbottompart");
+
+    public static final ResourceLocation TOFFEEWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/toffeewafflebedheadpart");
+    public static final ResourceLocation TOFFEEWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/toffeewafflebedbottompart");
+
+
+
+
+
+
     @SubscribeEvent
     public static void onClientSetup( ModelRegistryEvent event ) {
         ForgeModelBakery.addSpecialModel(BLACKBERRYICECREAMBEDBOTTOM);
@@ -71,6 +101,43 @@ public class ClientEvents {
         ForgeModelBakery.addSpecialModel(STRAWBERRYICECREAMBEDBOTTOM);
         ForgeModelBakery.addSpecialModel(STRAWBERRYICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.cutout());
+
+        ForgeModelBakery.addSpecialModel(WAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(WAFFLEBEDHEAD);
+
+        ForgeModelBakery.addSpecialModel(STRAWBERRYWAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(STRAWBERRYWAFFLEBEDHEAD);
+
+        ForgeModelBakery.addSpecialModel(RASPBERRYWAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(RASPBERRYWAFFLEBEDHEAD);
+
+        ForgeModelBakery.addSpecialModel(BLACKBERRYWAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(BLACKBERRYWAFFLEBEDHEAD);
+
+        ForgeModelBakery.addSpecialModel(BLUEBERRYWAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(BLUEBERRYWAFFLEBEDHEAD);
+
+        ForgeModelBakery.addSpecialModel(ORANGEWAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(ORANGEWAFFLEBEDHEAD);
+
+        ForgeModelBakery.addSpecialModel(LEMONWAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(LEMONWAFFLEBEDHEAD);
+
+        ForgeModelBakery.addSpecialModel(CHOCOLATEWAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(CHOCOLATEWAFFLEBEDHEAD);
+
+        ForgeModelBakery.addSpecialModel(TOFFEEWAFFLEBEDBOTTOM);
+        ForgeModelBakery.addSpecialModel(TOFFEEWAFFLEBEDHEAD);
+
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYWAFFLEBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.VANILLAWAFFLEBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.TOFFEEWAFFLEBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATEWAFFLEBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYWAFFLEBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYWAFFLEBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYWAFFLEBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONWAFFLEBED.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEWAFFLEBED.get(), RenderType.cutout());
 
         // ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANESUGARCANEBLOCK.get(), RenderType.cutout());
 
@@ -114,6 +181,9 @@ public class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKDRAWERS.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(BlockInit.ICE_CREAM_MACHINE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BANANA_BAKER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.JAM_PRESSER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFFLE_CONE_MACHINE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_FLUID.get(), RenderType.translucent());
@@ -234,7 +304,21 @@ public class ClientEvents {
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_LEMON_BLOCK_ENTITY_TYPE.get(), LemonIceCreamBedBeRenderer::new);
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_ORANGE_BLOCK_ENTITY_TYPE.get(), OrangeIceCreamBedBeRenderer::new);
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_BLUEBERRY_BLOCK_ENTITY_TYPE.get(), BlueberryIceCreamBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_WAFFLE_BED_ENTITY_TYPE.get(), WaffleBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_STRAWBERRY_WAFFLE_BED_ENTITY_TYPE.get(), StrawberryWaffleBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_BLACKBERRY_WAFFLE_BED_ENTITY_TYPE.get(), BlackberryWaffleBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_RASPBERRY_WAFFLE_BED_ENTITY_TYPE.get(), RaspberryWaffleBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_BLUEBERRY_WAFFLE_BED_ENTITY_TYPE.get(), BlueberryWaffleBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_LEMON_WAFFLE_BED_ENTITY_TYPE.get(), LemonWaffleBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_ORANGE_WAFFLE_BED_ENTITY_TYPE.get(), OrangeWaffleBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_CHOCOLATE_WAFFLE_BED_ENTITY_TYPE.get(), ChocolateWaffleBedBeRenderer::new);
+        BlockEntityRenderers.register(BlockEntityTypesInit.SNS_TOFFEE_WAFFLE_BED_ENTITY_TYPE.get(), ToffeeWaffleBedBeRenderer::new);
+
+
+
         MenuScreens.register(MenuTypesInit.ICE_CREAM_MACHINE_MENU.get(), IceCreamMachineScreen::new);
         MenuScreens.register(MenuTypesInit.BANANA_BAKER_MENU.get(), BananaBakerScreen::new);
+        MenuScreens.register(MenuTypesInit.WAFFLE_CONE_MACHINE_MENU.get(), WaffleConeMachineScreen::new);
+        MenuScreens.register(MenuTypesInit.JAM_PRESSER_MENU.get(), JamPresserScreen::new);
     }
 }

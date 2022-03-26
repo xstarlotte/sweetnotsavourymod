@@ -6,6 +6,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.angelfish.SNSAngelFishEnti
 import com.charlotte.sweetnotsavourymod.common.entity.boarries.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCookieCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.chipmunks.SNSChipmunkEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.crooks.CandyCaneCrookEntity;
@@ -13,6 +14,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.guineapigs.SNSGPEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.gummybears.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.icecreamfish.SNSICFishEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.jamsters.SNSJamsterEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.lions.SNSLionEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.mummies.RSWMummyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PBAttackerEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PBDefenderEntity;
@@ -155,6 +157,11 @@ public class EntityTypesInit {
 					.sized(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snscccat").toString()));
 
+	public static final RegistryObject<EntityType<SNSCookieCatEntity>>SNSCOOKIECAT = ENTITY_TYPES
+			.register("snscookiecat", () -> EntityType.Builder.of(SNSCookieCatEntity::new, MobCategory.CREATURE)
+					.sized(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snscookiecat").toString()));
+
 	public static final RegistryObject<EntityType<SNSUnicornEntity>>SNSUNICORN = ENTITY_TYPES
 			.register("snsunicorn", () -> EntityType.Builder.of(SNSUnicornEntity::new, MobCategory.CREATURE)
 					.sized(1.4f, 1.4f)
@@ -164,6 +171,11 @@ public class EntityTypesInit {
 			.register("snssheep", () -> EntityType.Builder.of(SNSSheepEntity::new, MobCategory.CREATURE)
 					.sized(1f, 1f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snssheep").toString()));
+
+	public static final RegistryObject<EntityType<SNSLionEntity>>SNSLION = ENTITY_TYPES
+			.register("snslion", () -> EntityType.Builder.of(SNSLionEntity::new, MobCategory.CREATURE)
+					.sized(1f, 1f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snslion").toString()));
 
 //AMBIENT
 

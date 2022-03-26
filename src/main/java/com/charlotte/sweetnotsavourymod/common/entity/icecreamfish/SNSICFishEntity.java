@@ -57,7 +57,7 @@ public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatabl
     public static boolean checkTropicalFishSpawnRules(EntityType<TropicalFish> p_186232_, LevelAccessor p_186233_,
                                                       MobSpawnType p_186234_, BlockPos p_186235_, Random p_186236_) {
         return p_186233_.getFluidState(p_186235_.below()).is(FluidTags.WATER) && (Objects.equals(p_186233_
-                .getBiomeName(p_186235_), Optional.of(Biomes.LUSH_CAVES)) || WaterAnimal
+                .getBiome(p_186235_), Optional.of(Biomes.LUSH_CAVES)) || WaterAnimal
                 .checkSurfaceWaterAnimalSpawnRules(p_186232_, p_186233_, p_186234_, p_186235_, p_186236_));
     }
 

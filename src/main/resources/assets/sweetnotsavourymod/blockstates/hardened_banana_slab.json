@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/hardened_banana_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/hardenedbananaplanks"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/hardened_banana_slab_top"
+    }
+  }
+}

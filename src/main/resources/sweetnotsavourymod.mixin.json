@@ -3,7 +3,7 @@
 	"package": "com.charlotte.sweetnotsavourymod.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
-		"SugarCaneBlockMixin"
+
 	],	
 	"refmap": "sweetnotsavourymod.refmap.json"
 }			

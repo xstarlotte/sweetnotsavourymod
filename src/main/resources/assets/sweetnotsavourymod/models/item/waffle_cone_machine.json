@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/waffle_cone_machine",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/waffle_cone_machine"
+  }
+}

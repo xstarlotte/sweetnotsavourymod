@@ -1,0 +1,6 @@
+{
+	"parent": "sweetnotsavourymod:block/toffeewafflebed",
+	"textures": {
+		"layer0": "sweetnotsavourymod:blocks/toffeewafflebed"
+	}
+}

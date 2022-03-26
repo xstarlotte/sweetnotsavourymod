@@ -6,13 +6,27 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "sweetnotsavourymod:rainbowfrostingleaves"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": [
+                      "minecraft:shears"
+                    ]
+                  }
+                }
+              ],
+              "name": "sweetnotsavourymod:rainbowfrostingleaves"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "sweetnotsavourymod:sprinkles"
+            }
+          ]
         }
       ]
     }
