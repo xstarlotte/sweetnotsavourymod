@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.screen;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.BananaBakerBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.machines.BananaBakerBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.screen.slot.SNSFuelSlot;
 import com.charlotte.sweetnotsavourymod.common.screen.slot.SNSResultSlot;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;

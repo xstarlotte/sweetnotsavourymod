@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.LavaFluid;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidAttributes;
@@ -33,7 +34,7 @@ public class FluidInit {
 
     public static final ForgeFlowingFluid.Properties CREAMY_MILK_PROPERTIES = new ForgeFlowingFluid.Properties(
             () -> CREAMY_MILK_FLUID.get(), () -> CREAMY_MILK_FLOWING.get(), FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
-            .density(15).luminosity(2).viscosity(5).sound(SoundEvents.HONEY_DRINK).overlay(WATER_OVERLAY_RL)
+            .density(15).luminosity(2).viscosity(10).sound(SoundEvents.HONEY_DRINK).overlay(WATER_OVERLAY_RL)
             .color(0xbff4f2e2)).slopeFindDistance(2).levelDecreasePerBlock(2)
             .block(() -> FluidInit.CREAMY_MILK_BLOCK.get()).bucket(() -> ItemInit.CREAMY_MILK_BUCKET.get());
 

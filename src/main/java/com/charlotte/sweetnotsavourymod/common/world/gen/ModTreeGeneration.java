@@ -24,6 +24,7 @@ public class ModTreeGeneration {
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
             base.add(ModPlacedFeatures.ICE_CREAM_PLACED);
+            base.add(ModPlacedFeatures.CHOCOLATE_ICE_CREAM_PLACED);
         }
     }
 }

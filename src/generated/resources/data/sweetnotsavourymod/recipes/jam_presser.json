@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAD",
+    "SGD",
+    "SFF"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:strawberry_candy_window"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:raspberry_candy_window"
+    },
+    "D": {
+      "item": "sweetnotsavourymod:blackberry_candy_window"
+    },
+    "F": {
+      "item": "sweetnotsavourymod:blueberry_candy_window"
+    },
+    "G": {
+      "item": "sweetnotsavourymod:candycanesugar"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:jam_presser"
+  }
+}

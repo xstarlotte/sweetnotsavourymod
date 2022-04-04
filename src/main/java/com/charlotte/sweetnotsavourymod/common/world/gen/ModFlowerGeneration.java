@@ -23,8 +23,18 @@ public class ModFlowerGeneration {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
+            base.add(ModPlacedFeatures.CHOCOLATECINERARIA_PLACED);
+            base.add(ModPlacedFeatures.TOFFEETULIP_PLACED);
             base.add(ModPlacedFeatures.CANDYCANEBUSH_PLACED);
             base.add(ModPlacedFeatures.CANDY_CANE_SPREAD_PLACED);
         }
+
+        if(types.contains(BiomeDictionary.Type.PLAINS)) {
+            List<Holder<PlacedFeature>> base =
+                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+
+            base.add(ModPlacedFeatures.CANDY_BUSH_SPREAD_PLACED);
+        }
+
     }
 }

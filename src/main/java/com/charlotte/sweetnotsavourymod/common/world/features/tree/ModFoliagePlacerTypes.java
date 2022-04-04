@@ -12,4 +12,7 @@ public class ModFoliagePlacerTypes {
 
     public static final RegistryObject<FoliagePlacerType<IceCreamFoliagePlacer>> ICE_CREAM_FOLIAGE_PLACER =
             FOLIAGE_PLACER_TYPES.register("coconut_foliage_placer", () -> new FoliagePlacerType<>(IceCreamFoliagePlacer.CODEC));
+
+    public static final RegistryObject<FoliagePlacerType<ChocolateIceCreamFoliagePlacer>> CHOCOLATE_ICE_CREAM_FOLIAGE_PLACER =
+            FOLIAGE_PLACER_TYPES.register("coconut2_foliage_placer", () -> new FoliagePlacerType<>(ChocolateIceCreamFoliagePlacer.CODEC));
 }

@@ -25,6 +25,18 @@ public class MenuTypesInit {
     public static final RegistryObject<MenuType<WaffleConeMachineMenu>> WAFFLE_CONE_MACHINE_MENU =
             registerMenuType(WaffleConeMachineMenu::new, "waffle_cone_machine_menu");
 
+    public static final RegistryObject<MenuType<CakeBakerMenu>> CAKE_BAKER_MENU =
+            registerMenuType(CakeBakerMenu::new, "cake_baker_menu");
+
+    public static final RegistryObject<MenuType<CandycaneFurnaceMenu>> CANDYCANE_FURNACE_MENU =
+            registerMenuType(CandycaneFurnaceMenu::new, "candycane_furnace_menu");
+
+    public static final RegistryObject<MenuType<TeddyBearPrinterMenu>> TEDDY_BEAR_PRINTER_MENU =
+            registerMenuType(TeddyBearPrinterMenu::new, "teddy_bear_printer_menu");
+
+    public static final RegistryObject<MenuType<CandyflossCrystalizerMenu>> CANDYFLOSS_CRYSTALIZER_MENU =
+            registerMenuType(CandyflossCrystalizerMenu::new, "candyfloss_crystalizer_menu");
+
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SAS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:raspberry_candy_window"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:candycanesugar"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:candyfloss_crystalizer"
+  }
+}

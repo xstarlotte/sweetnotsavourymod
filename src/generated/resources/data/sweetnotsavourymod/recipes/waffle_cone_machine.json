@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SAS",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:waferwoodblock"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:candycanesugar"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:waffle_cone_machine"
+  }
+}

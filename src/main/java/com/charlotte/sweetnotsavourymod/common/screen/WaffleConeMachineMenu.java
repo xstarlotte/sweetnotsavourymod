@@ -1,8 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.screen;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.JamPresserBlockEntity;
-import com.charlotte.sweetnotsavourymod.common.blockentities.WaffleConeMachineBlockEntity;
-import com.charlotte.sweetnotsavourymod.common.screen.slot.SNSFuelSlot;
+import com.charlotte.sweetnotsavourymod.common.blockentities.machines.WaffleConeMachineBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.screen.slot.SNSResultSlot;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.network.FriendlyByteBuf;

@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sweetnotsavourymod:jam_presser"
+    ]
+  },
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sweetnotsavourymod:candycanesugar",
+              "sweetnotsavourymod:strawberry_candy_window",
+              "sweetnotsavourymod:raspberry_candy_window",
+              "sweetnotsavourymod:blackberry_candy_window",
+              "sweetnotsavourymod:blueberry_candy_window"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sweetnotsavourymod:jam_presser"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material",
+      "has_the_recipe"
+    ]
+  ]
+}

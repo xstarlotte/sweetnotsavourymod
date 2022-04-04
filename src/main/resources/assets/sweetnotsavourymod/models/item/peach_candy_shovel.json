@@ -1,0 +1,6 @@
+{
+"parent": "item/handheld",
+  "textures": {
+    "layer0": "sweetnotsavourymod:items/peach_candy_shovel"
+  }
+}

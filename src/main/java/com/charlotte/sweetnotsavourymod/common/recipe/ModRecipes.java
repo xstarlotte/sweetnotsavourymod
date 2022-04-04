@@ -15,6 +15,18 @@ public class ModRecipes {
     public static final RegistryObject<RecipeSerializer<IceCreamMachineRecipe>> ICE_CREAM_MACHINE_SERIALIZER =
             SERIALIZERS.register("ice_creaming", () -> IceCreamMachineRecipe.Serializer.INSTANCE);
 
+    public static final RegistryObject<RecipeSerializer<JamPresserRecipe>> JAM_PRESSER_SERIALIZER =
+            SERIALIZERS.register("jam_pressing", () -> JamPresserRecipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<CandycaneFurnaceRecipe>> CANDYCANE_FURNACE_SERIALIZER =
+            SERIALIZERS.register("candycane_smelting", () -> CandycaneFurnaceRecipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<TeddyBearPrinterRecipe>> TEDDY_BEAR_PRINTER_SERIALIZER =
+            SERIALIZERS.register("teddy_bear_printing", () -> TeddyBearPrinterRecipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<CakeBakerRecipe>> CAKE_BAKER_SERIALIZER =
+            SERIALIZERS.register("cake_baking", () -> CakeBakerRecipe.Serializer.INSTANCE);
+
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

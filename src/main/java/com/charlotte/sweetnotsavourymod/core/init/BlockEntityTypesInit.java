@@ -1,12 +1,9 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.blockentities.BananaBakerBlockEntity;
-import com.charlotte.sweetnotsavourymod.common.blockentities.IceCreamMachineBlockEntity;
-import com.charlotte.sweetnotsavourymod.common.blockentities.JamPresserBlockEntity;
-import com.charlotte.sweetnotsavourymod.common.blockentities.WaffleConeMachineBlockEntity;
-import com.charlotte.sweetnotsavourymod.common.blockentities.beds.*;
-import net.minecraft.world.level.block.Block;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.icecream.*;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.waffle.*;
+import com.charlotte.sweetnotsavourymod.common.blockentities.machines.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -96,4 +93,20 @@ public class BlockEntityTypesInit{
     public static final RegistryObject<BlockEntityType<WaffleConeMachineBlockEntity>> WAFFLE_CONE_MACHINE = BLOCK_ENTITY_TYPE
             .register("waffle_cone_machine", () -> BlockEntityType.Builder.of(WaffleConeMachineBlockEntity::new,
                     BlockInit.WAFFLE_CONE_MACHINE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CakeBakerBlockEntity>> CAKE_BAKER = BLOCK_ENTITY_TYPE
+            .register("cake_baker", () -> BlockEntityType.Builder.of(CakeBakerBlockEntity::new,
+                    BlockInit.CAKE_BAKER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<TeddyBearPrinterBlockEntity>> TEDDY_BEAR_PRINTER = BLOCK_ENTITY_TYPE
+            .register("teddy_bear_printer", () -> BlockEntityType.Builder.of(TeddyBearPrinterBlockEntity::new,
+                    BlockInit.TEDDY_BEAR_PRINTER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CandyflossCrystalizerBlockEntity>> CANDYFLOSS_CRYSTALIZER = BLOCK_ENTITY_TYPE
+            .register("candyfloss_crystalizer", () -> BlockEntityType.Builder.of(CandyflossCrystalizerBlockEntity::new,
+                    BlockInit.CANDYFLOSS_CRYSTALIZER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CandycaneFurnaceBlockEntity>> CANDYCANE_FURNACE = BLOCK_ENTITY_TYPE
+            .register("candycane_furnace", () -> BlockEntityType.Builder.of(CandycaneFurnaceBlockEntity::new,
+                    BlockInit.CANDYCANE_FURNACE.get()).build(null));
 }

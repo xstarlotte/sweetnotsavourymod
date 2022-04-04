@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sweetnotsavourymod:block/teddy_bear_printer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sweetnotsavourymod:block/teddy_bear_printer"
+    },
+    "facing=south": {
+      "model": "sweetnotsavourymod:block/teddy_bear_printer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sweetnotsavourymod:block/teddy_bear_printer",
+      "y": 270
+    }
+  }
+}

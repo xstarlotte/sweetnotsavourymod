@@ -2,8 +2,7 @@ package com.charlotte.sweetnotsavourymod.common.entity.cats;
 
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import com.charlotte.sweetnotsavourymod.core.util.CatFlavourVariant;
-import com.charlotte.sweetnotsavourymod.core.util.SpiderFlavourVariant;
+import com.charlotte.sweetnotsavourymod.core.util.variants.CatVariants.CatFlavourVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -117,40 +116,36 @@ public class SNSCCCatEntity extends TamableAnimal implements IAnimatable {
 
 	public static AttributeSupplier setAttributes() {
 		return TamableAnimal.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 20.0D)
-				.add(Attributes.ATTACK_DAMAGE, 8.0f)
+				.add(Attributes.MAX_HEALTH, 80.0D)
+				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.MOVEMENT_SPEED, 0.3f).build();
+				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
 	}
 
 	protected void registerGoals() {
-		this.goalSelector.addGoal(1, new FloatGoal(this));
-		this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-		this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
-		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
-		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
-		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 8.0F));
-		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(1, new SitWhenOrderedToGoal(this));
+		this.goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, true));
+		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.0D, true));
+		this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(5, new BreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
+		this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(8, new FloatGoal(this));
 		this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
 		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
-		this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
-
 	}
 
 	@Override
-	public void setTame(boolean tamed)
-	{
+	public void setTame(boolean tamed) {
 		super.setTame(tamed);
 		if (tamed) {
-			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
-			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(80.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
 			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.35f);
-			this.setHealth(20.0F);
 		} else {
-			getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0D);
-			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8F);
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
 		}
 	}
 

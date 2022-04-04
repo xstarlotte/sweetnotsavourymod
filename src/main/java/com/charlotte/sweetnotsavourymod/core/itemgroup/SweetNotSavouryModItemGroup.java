@@ -17,7 +17,7 @@ public class SweetNotSavouryModItemGroup {
 	public static final CreativeModeTab SNSMODBLOCKS = new CreativeModeTab("snsmodblocks") {
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(BlockInit.RAINBOWFROSTINGLEAVES.get());
+			return new ItemStack(BlockInit.WAFERWOODBLOCK.get());
 		}
 	};
 
@@ -25,6 +25,13 @@ public class SweetNotSavouryModItemGroup {
 		@Override
 		public ItemStack makeIcon() {
 			return new ItemStack(BlockInit.LEMONLOLLIPOPLAMP.get());
+		}
+	};
+
+	public static final CreativeModeTab SNSMODMACHINES = new CreativeModeTab("snsmodmachines") {
+		@Override
+		public ItemStack makeIcon() {
+			return new ItemStack(BlockInit.ICE_CREAM_MACHINE.get());
 		}
 	};
 
@@ -45,7 +52,7 @@ public class SweetNotSavouryModItemGroup {
 	public static final CreativeModeTab SNSMODTOOLS = new CreativeModeTab("snsmodtools") {
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(ItemInit.VANILLA_ICE_CREAM_HELMET.get());
+			return new ItemStack(ItemInit.CANDY_CANE_SWORD.get());
 		}
 	};
 

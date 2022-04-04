@@ -4,7 +4,8 @@ import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
 import com.charlotte.sweetnotsavourymod.common.fuel.CandyCaneSugarFuel;
 import com.charlotte.sweetnotsavourymod.common.item.*;
-import com.charlotte.sweetnotsavourymod.common.item.SweetTier.SweetSwordItem;
+import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
+import com.charlotte.sweetnotsavourymod.common.item.SweetTierTools.SweetSwordItem;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 
 import com.charlotte.sweetnotsavourymod.core.sound.SoundsInit;
@@ -32,6 +33,9 @@ public class ItemInit {
 	//elf-Blackberry, Blueberry, Strawberry, Raspberry, Lemon, Orange, Vanilla, Chocolate, Toffee
 	public static final RegistryObject<CustomSpawnEggItem> SNSELFSPAWNEGG = ITEMS.register("snselfspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSELF, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> CHOCOLATECHICKENSPAWNEGG = ITEMS.register("chocolatechickenspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.CHOCOLATECHICKEN, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
 	public static final RegistryObject<CustomSpawnEggItem> SNSRABBITSPAWNEGG = ITEMS.register("snsrabbitspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSRABBIT, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
@@ -118,6 +122,9 @@ public class ItemInit {
 
 
 
+	public static final RegistryObject<CustomSpawnEggItem> SNSCANDYCANEFISHSPAWNEGG = ITEMS.register("snscandycanefishspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSCANDYCANEFISH, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
 	public static final RegistryObject<CustomSpawnEggItem> SNSICFISHSPAWNEGG = ITEMS.register("snsicfishspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSICFISH, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
@@ -168,6 +175,22 @@ public class ItemInit {
 					.build())));
 
 	public static final RegistryObject<Item> CANDY_CANE = ITEMS.register("candy_cane", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 300, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> CANDYFLOSS = ITEMS.register("candyfloss", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 300, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> PRETZEL = ITEMS.register("pretzel", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
 					.nutrition(1)
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
@@ -232,6 +255,30 @@ public class ItemInit {
 			        .effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
 			        .saturationMod(1.2f)
 			        .build())));
+
+	public static final RegistryObject<Item> LIMECANDY = ITEMS.register("limecandy", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> MANGOCANDY = ITEMS.register("mangocandy", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> PEACHCANDY = ITEMS.register("peachcandy", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
 	
 	public static final RegistryObject<Item> LEMONLOLLIPOP = ITEMS.register("lemonlollipop", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
@@ -377,6 +424,14 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
+	public static final RegistryObject<Item> PEACHICECREAMSCOOP = ITEMS.register("peachicecreamscoop", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
 	public static final RegistryObject<Item> CHOCOLATEICECREAMSCOOP = ITEMS.register("chocolateicecreamscoop", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
 					.nutrition(1)
@@ -465,6 +520,14 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
+	public static final RegistryObject<Item> PEACHICECREAM = ITEMS.register("peachicecream", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
 	public static final RegistryObject<Item> CHOCOLATEICECREAM = ITEMS.register("chocolateicecream", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
 					.nutrition(1)
@@ -482,6 +545,30 @@ public class ItemInit {
 					.build())));
 
 	public static final RegistryObject<Item> STRAWBERRY_JAM = ITEMS.register("strawberry_jam", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> RASPBERRY_JAM = ITEMS.register("raspberry_jam", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> BLUEBERRY_JAM = ITEMS.register("blueberry_jam", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> BLACKBERRY_JAM = ITEMS.register("blackberry_jam", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
 					.nutrition(3)
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 6), 1.0f)
@@ -736,7 +823,7 @@ public class ItemInit {
 					.build())));
 	
 //tools
-
+	//candy_cane
 	public static final RegistryObject<Item> CANDY_CANE_SWORD = ITEMS.register("candy_cane_sword",
 			() -> new SweetSwordItem(ModTiers.CANDY_CANE, 2, 3f,
 					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
@@ -757,6 +844,202 @@ public class ItemInit {
 			() -> new HoeItem(ModTiers.CANDY_CANE, 2, 3f,
 					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
 
+	//strawberry_candy
+	public static final RegistryObject<Item> STRAWBERRY_CANDY_SWORD = ITEMS.register("strawberry_candy_sword",
+			() -> new SweetSwordItem(ModTiers.STRAWBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> STRAWBERRY_CANDY_SHOVEL = ITEMS.register("strawberry_candy_shovel",
+			() -> new ShovelItem(ModTiers.STRAWBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> STRAWBERRY_CANDY_AXE = ITEMS.register("strawberry_candy_axe",
+			() -> new AxeItem(ModTiers.STRAWBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> STRAWBERRY_CANDY_PICKAXE = ITEMS.register("strawberry_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.STRAWBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> STRAWBERRY_CANDY_HOE = ITEMS.register("strawberry_candy_hoe",
+			() -> new HoeItem(ModTiers.STRAWBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+
+	//raspberry_candy
+	public static final RegistryObject<Item> RASPBERRY_CANDY_SWORD = ITEMS.register("raspberry_candy_sword",
+			() -> new SweetSwordItem(ModTiers.RASPBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> RASPBERRY_CANDY_SHOVEL = ITEMS.register("raspberry_candy_shovel",
+			() -> new ShovelItem(ModTiers.RASPBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> RASPBERRY_CANDY_AXE = ITEMS.register("raspberry_candy_axe",
+			() -> new AxeItem(ModTiers.RASPBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> RASPBERRY_CANDY_PICKAXE = ITEMS.register("raspberry_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.RASPBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> RASPBERRY_CANDY_HOE = ITEMS.register("raspberry_candy_hoe",
+			() -> new HoeItem(ModTiers.RASPBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+
+	//blueberry
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_SWORD = ITEMS.register("blueberry_candy_sword",
+			() -> new SweetSwordItem(ModTiers.BLUEBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_SHOVEL = ITEMS.register("blueberry_candy_shovel",
+			() -> new ShovelItem(ModTiers.BLUEBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_AXE = ITEMS.register("blueberry_candy_axe",
+			() -> new AxeItem(ModTiers.BLUEBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_PICKAXE = ITEMS.register("blueberry_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.BLUEBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_HOE = ITEMS.register("blueberry_candy_hoe",
+			() -> new HoeItem(ModTiers.BLUEBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	//blackberry
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_SWORD = ITEMS.register("blackberry_candy_sword",
+			() -> new SweetSwordItem(ModTiers.BLACKBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_SHOVEL = ITEMS.register("blackberry_candy_shovel",
+			() -> new ShovelItem(ModTiers.BLACKBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_AXE = ITEMS.register("blackberry_candy_axe",
+			() -> new AxeItem(ModTiers.BLACKBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_PICKAXE = ITEMS.register("blackberry_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.BLACKBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_HOE = ITEMS.register("blackberry_candy_hoe",
+			() -> new HoeItem(ModTiers.BLACKBERRY_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+
+	//orange_candy
+	public static final RegistryObject<Item> ORANGE_CANDY_SWORD = ITEMS.register("orange_candy_sword",
+			() -> new SweetSwordItem(ModTiers.ORANGE_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> ORANGE_CANDY_SHOVEL = ITEMS.register("orange_candy_shovel",
+			() -> new ShovelItem(ModTiers.ORANGE_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> ORANGE_CANDY_AXE = ITEMS.register("orange_candy_axe",
+			() -> new AxeItem(ModTiers.ORANGE_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> ORANGE_CANDY_PICKAXE = ITEMS.register("orange_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.ORANGE_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> ORANGE_CANDY_HOE = ITEMS.register("orange_candy_hoe",
+			() -> new HoeItem(ModTiers.ORANGE_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+
+	//lemon_candy
+	public static final RegistryObject<Item> LEMON_CANDY_SWORD = ITEMS.register("lemon_candy_sword",
+			() -> new SweetSwordItem(ModTiers.LEMON_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> LEMON_CANDY_SHOVEL = ITEMS.register("lemon_candy_shovel",
+			() -> new ShovelItem(ModTiers.LEMON_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> LEMON_CANDY_AXE = ITEMS.register("lemon_candy_axe",
+			() -> new AxeItem(ModTiers.LEMON_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> LEMON_CANDY_PICKAXE = ITEMS.register("lemon_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.LEMON_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> LEMON_CANDY_HOE = ITEMS.register("lemon_candy_hoe",
+			() -> new HoeItem(ModTiers.LEMON_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+
+	//lime
+	public static final RegistryObject<Item> LIME_CANDY_SWORD = ITEMS.register("lime_candy_sword",
+			() -> new SweetSwordItem(ModTiers.LIME_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> LIME_CANDY_SHOVEL = ITEMS.register("lime_candy_shovel",
+			() -> new ShovelItem(ModTiers.LIME_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> LIME_CANDY_AXE = ITEMS.register("lime_candy_axe",
+			() -> new AxeItem(ModTiers.LIME_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> LIME_CANDY_PICKAXE = ITEMS.register("lime_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.LIME_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> LIME_CANDY_HOE = ITEMS.register("lime_candy_hoe",
+			() -> new HoeItem(ModTiers.LIME_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+
+	//mango_candy
+	public static final RegistryObject<Item> MANGO_CANDY_SWORD = ITEMS.register("mango_candy_sword",
+			() -> new SweetSwordItem(ModTiers.MANGO_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> MANGO_CANDY_SHOVEL = ITEMS.register("mango_candy_shovel",
+			() -> new ShovelItem(ModTiers.MANGO_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> MANGO_CANDY_AXE = ITEMS.register("mango_candy_axe",
+			() -> new AxeItem(ModTiers.MANGO_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> MANGO_CANDY_PICKAXE = ITEMS.register("mango_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.MANGO_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> MANGO_CANDY_HOE = ITEMS.register("mango_candy_hoe",
+			() -> new HoeItem(ModTiers.MANGO_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+
+	//peach_candy
+	public static final RegistryObject<Item> PEACH_CANDY_SWORD = ITEMS.register("peach_candy_sword",
+			() -> new SweetSwordItem(ModTiers.PEACH_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> PEACH_CANDY_SHOVEL = ITEMS.register("peach_candy_shovel",
+			() -> new ShovelItem(ModTiers.PEACH_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> PEACH_CANDY_AXE = ITEMS.register("peach_candy_axe",
+			() -> new AxeItem(ModTiers.PEACH_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> PEACH_CANDY_PICKAXE = ITEMS.register("peach_candy_pickaxe",
+			() -> new PickaxeItem(ModTiers.PEACH_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> PEACH_CANDY_HOE = ITEMS.register("peach_candy_hoe",
+			() -> new HoeItem(ModTiers.PEACH_CANDY, 2, 3f,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
 //armor
 	//ice_cream
 	public static final RegistryObject<Item> VANILLA_ICE_CREAM_HELMET = ITEMS.register("vanilla_ice_cream_helmet",
@@ -772,75 +1055,131 @@ public class ItemInit {
 			() -> new ArmorItem(ModArmorMaterials.VANILLA_ICE_CREAM, EquipmentSlot.FEET,
 			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	
-	//lemon_candy
-	public static final RegistryObject<Item> LEMON_CANDY_HELMET = ITEMS.register("lemon_candy_helmet",
-			() -> new ArmorItem(ModArmorMaterials.LEMON_CANDY, EquipmentSlot.HEAD,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-	public static final RegistryObject<Item> LEMON_CANDY_CHESTPLATE = ITEMS.register("lemon_candy_chestplate",
-			() -> new ArmorItem(ModArmorMaterials.LEMON_CANDY, EquipmentSlot.CHEST,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-	public static final RegistryObject<Item> LEMON_CANDY_LEGGINGS = ITEMS.register("lemon_candy_leggings",
-			() -> new ArmorItem(ModArmorMaterials.LEMON_CANDY, EquipmentSlot.LEGS,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-	public static final RegistryObject<Item> LEMON_CANDY_BOOTS = ITEMS.register("lemon_candy_boots",
-			() -> new ArmorItem(ModArmorMaterials.LEMON_CANDY, EquipmentSlot.FEET,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-	
-	//blueberry_candy
-	public static final RegistryObject<Item> BLUEBERRY_CANDY_HELMET = ITEMS.register("blueberry_candy_helmet",
-			() -> new ArmorItem(ModArmorMaterials.BLUEBERRY_CANDY, EquipmentSlot.HEAD,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-	public static final RegistryObject<Item> BLUEBERRY_CANDY_CHESTPLATE = ITEMS.register("blueberry_candy_chestplate",
-			() -> new ArmorItem(ModArmorMaterials.BLUEBERRY_CANDY, EquipmentSlot.CHEST,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-	public static final RegistryObject<Item> BLUEBERRY_CANDY_LEGGINGS = ITEMS.register("blueberry_candy_leggings",
-			() -> new ArmorItem(ModArmorMaterials.BLUEBERRY_CANDY, EquipmentSlot.LEGS,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-	public static final RegistryObject<Item> BLUEBERRY_CANDY_BOOTS = ITEMS.register("blueberry_candy_boots",
-			() -> new ArmorItem(ModArmorMaterials.BLUEBERRY_CANDY, EquipmentSlot.FEET,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
-	
 	//strawberry_candy
 	public static final RegistryObject<Item> STRAWBERRY_CANDY_HELMET = ITEMS.register("strawberry_candy_helmet",
 			() -> new StrawberryCandyArmorItem(ModArmorMaterials.STRAWBERRY_CANDY, EquipmentSlot.HEAD,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> STRAWBERRY_CANDY_CHESTPLATE = ITEMS.register("strawberry_candy_chestplate",
 			() -> new StrawberryCandyArmorItem(ModArmorMaterials.STRAWBERRY_CANDY, EquipmentSlot.CHEST,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> STRAWBERRY_CANDY_LEGGINGS = ITEMS.register("strawberry_candy_leggings",
 			() -> new StrawberryCandyArmorItem(ModArmorMaterials.STRAWBERRY_CANDY, EquipmentSlot.LEGS,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> STRAWBERRY_CANDY_BOOTS = ITEMS.register("strawberry_candy_boots",
 			() -> new StrawberryCandyArmorItem(ModArmorMaterials.STRAWBERRY_CANDY, EquipmentSlot.FEET,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	
+	//blueberry_candy
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_HELMET = ITEMS.register("blueberry_candy_helmet",
+			() -> new BlueberryCandyArmorItem(ModArmorMaterials.BLUEBERRY_CANDY, EquipmentSlot.HEAD,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_CHESTPLATE = ITEMS.register("blueberry_candy_chestplate",
+			() -> new BlueberryCandyArmorItem(ModArmorMaterials.BLUEBERRY_CANDY, EquipmentSlot.CHEST,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_LEGGINGS = ITEMS.register("blueberry_candy_leggings",
+			() -> new BlueberryCandyArmorItem(ModArmorMaterials.BLUEBERRY_CANDY, EquipmentSlot.LEGS,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> BLUEBERRY_CANDY_BOOTS = ITEMS.register("blueberry_candy_boots",
+			() -> new BlueberryCandyArmorItem(ModArmorMaterials.BLUEBERRY_CANDY, EquipmentSlot.FEET,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+
 	//raspberry_candy
 	public static final RegistryObject<Item> RASPBERRY_CANDY_HELMET = ITEMS.register("raspberry_candy_helmet",
-			() -> new ModArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.HEAD,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+			() -> new RaspberryCandyArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.HEAD,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> RASPBERRY_CANDY_CHESTPLATE = ITEMS.register("raspberry_candy_chestplate",
-			() -> new ArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.CHEST,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+			() -> new RaspberryCandyArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.CHEST,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> RASPBERRY_CANDY_LEGGINGS = ITEMS.register("raspberry_candy_leggings",
-			() -> new ArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.LEGS,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+			() -> new RaspberryCandyArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.LEGS,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> RASPBERRY_CANDY_BOOTS = ITEMS.register("raspberry_candy_boots",
-			() -> new ArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.FEET,
+			() -> new RaspberryCandyArmorItem(ModArmorMaterials.RASPBERRY_CANDY, EquipmentSlot.FEET,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+
+	//BLACKBERRY
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_HELMET = ITEMS.register("blackberry_candy_helmet",
+			() -> new BlackberryCandyArmorItem(ModArmorMaterials.BLACKBERRY_CANDY, EquipmentSlot.HEAD,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_CHESTPLATE = ITEMS.register("blackberry_candy_chestplate",
+			() -> new BlackberryCandyArmorItem(ModArmorMaterials.BLACKBERRY_CANDY, EquipmentSlot.CHEST,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_LEGGINGS = ITEMS.register("blackberry_candy_leggings",
+			() -> new BlackberryCandyArmorItem(ModArmorMaterials.BLACKBERRY_CANDY, EquipmentSlot.LEGS,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> BLACKBERRY_CANDY_BOOTS = ITEMS.register("blackberry_candy_boots",
+			() -> new BlackberryCandyArmorItem(ModArmorMaterials.BLACKBERRY_CANDY, EquipmentSlot.FEET,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	
+	//lemon_candy
+	public static final RegistryObject<Item> LEMON_CANDY_HELMET = ITEMS.register("lemon_candy_helmet",
+			() -> new LemonCandyArmorItem(ModArmorMaterials.LEMON_CANDY, EquipmentSlot.HEAD,
+			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> LEMON_CANDY_CHESTPLATE = ITEMS.register("lemon_candy_chestplate",
+			() -> new LemonCandyArmorItem(ModArmorMaterials.LEMON_CANDY, EquipmentSlot.CHEST,
+			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> LEMON_CANDY_LEGGINGS = ITEMS.register("lemon_candy_leggings",
+			() -> new LemonCandyArmorItem(ModArmorMaterials.LEMON_CANDY, EquipmentSlot.LEGS,
+			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> LEMON_CANDY_BOOTS = ITEMS.register("lemon_candy_boots",
+			() -> new LemonCandyArmorItem(ModArmorMaterials.LEMON_CANDY, EquipmentSlot.FEET,
 			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	
 	//orange_candy
 	public static final RegistryObject<Item> ORANGE_CANDY_HELMET = ITEMS.register("orange_candy_helmet",
-			() -> new ArmorItem(ModArmorMaterials.ORANGE_CANDY, EquipmentSlot.HEAD,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+			() -> new OrangeCandyArmorItem(ModArmorMaterials.ORANGE_CANDY, EquipmentSlot.HEAD,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> ORANGE_CANDY_CHESTPLATE = ITEMS.register("orange_candy_chestplate",
-			() -> new ArmorItem(ModArmorMaterials.ORANGE_CANDY, EquipmentSlot.CHEST,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+			() -> new OrangeCandyArmorItem(ModArmorMaterials.ORANGE_CANDY, EquipmentSlot.CHEST,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> ORANGE_CANDY_LEGGINGS = ITEMS.register("orange_candy_leggings",
-			() -> new ArmorItem(ModArmorMaterials.ORANGE_CANDY, EquipmentSlot.LEGS,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+			() -> new OrangeCandyArmorItem(ModArmorMaterials.ORANGE_CANDY, EquipmentSlot.LEGS,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 	public static final RegistryObject<Item> ORANGE_CANDY_BOOTS = ITEMS.register("orange_candy_boots",
-			() -> new ArmorItem(ModArmorMaterials.ORANGE_CANDY, EquipmentSlot.FEET,
-			new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+			() -> new OrangeCandyArmorItem(ModArmorMaterials.ORANGE_CANDY, EquipmentSlot.FEET,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+
+	//LIME_CANDY
+	public static final RegistryObject<Item> LIME_CANDY_HELMET = ITEMS.register("lime_candy_helmet",
+			() -> new LimeCandyArmorItem(ModArmorMaterials.LIME_CANDY, EquipmentSlot.HEAD,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> LIME_CANDY_CHESTPLATE = ITEMS.register("lime_candy_chestplate",
+			() -> new LimeCandyArmorItem(ModArmorMaterials.LIME_CANDY, EquipmentSlot.CHEST,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> LIME_CANDY_LEGGINGS = ITEMS.register("lime_candy_leggings",
+			() -> new LimeCandyArmorItem(ModArmorMaterials.LIME_CANDY, EquipmentSlot.LEGS,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> LIME_CANDY_BOOTS = ITEMS.register("lime_candy_boots",
+			() -> new LimeCandyArmorItem(ModArmorMaterials.LIME_CANDY, EquipmentSlot.FEET,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+
+	//MANGO_CANDY
+	public static final RegistryObject<Item> MANGO_CANDY_HELMET = ITEMS.register("mango_candy_helmet",
+			() -> new MangoCandyArmorItem(ModArmorMaterials.MANGO_CANDY, EquipmentSlot.HEAD,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> MANGO_CANDY_CHESTPLATE = ITEMS.register("mango_candy_chestplate",
+			() -> new MangoCandyArmorItem(ModArmorMaterials.MANGO_CANDY, EquipmentSlot.CHEST,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> MANGO_CANDY_LEGGINGS = ITEMS.register("mango_candy_leggings",
+			() -> new MangoCandyArmorItem(ModArmorMaterials.MANGO_CANDY, EquipmentSlot.LEGS,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> MANGO_CANDY_BOOTS = ITEMS.register("mango_candy_boots",
+			() -> new MangoCandyArmorItem(ModArmorMaterials.MANGO_CANDY, EquipmentSlot.FEET,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+
+	//PEACH_CANDY
+	public static final RegistryObject<Item> PEACH_CANDY_HELMET = ITEMS.register("peach_candy_helmet",
+			() -> new PeachCandyArmorItem(ModArmorMaterials.PEACH_CANDY, EquipmentSlot.HEAD,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> PEACH_CANDY_CHESTPLATE = ITEMS.register("peach_candy_chestplate",
+			() -> new PeachCandyArmorItem(ModArmorMaterials.PEACH_CANDY, EquipmentSlot.CHEST,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> PEACH_CANDY_LEGGINGS = ITEMS.register("peach_candy_leggings",
+			() -> new PeachCandyArmorItem(ModArmorMaterials.PEACH_CANDY, EquipmentSlot.LEGS,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
+	public static final RegistryObject<Item> PEACH_CANDY_BOOTS = ITEMS.register("peach_candy_boots",
+			() -> new PeachCandyArmorItem(ModArmorMaterials.PEACH_CANDY, EquipmentSlot.FEET,
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODARMOUR)));
 
 //currency
 	

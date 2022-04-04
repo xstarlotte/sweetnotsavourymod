@@ -25,43 +25,43 @@ public class ModEntityGeneration {
 //SNOWY
 
         addEntityToSpecificBiomes(event, EntityTypesInit.ICECREAMCOW.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA);
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSCCCAT.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA);
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSCCWOLF.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA);
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSICECREAMPARROT.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA);
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSICECREAMPUG.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA);
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSPARFAITPIXIE.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA);
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSWAFERSCHUND.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA);
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
 
 
         //MOUNTAINS
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSGP.get(),
-                10, 1, 2, Biomes.STONY_PEAKS, Biomes.JAGGED_PEAKS, Biomes.FROZEN_PEAKS);
+                10, 1, 2, Biomes.STONY_PEAKS, Biomes.JAGGED_PEAKS);
 
 
         //BEACH
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSGUMMYBEAR.get(),
-                10, 1, 2, Biomes.BEACH);
+                5, 1, 2, Biomes.BEACH);
 
 
         //JUNGLE
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSPARROT.get(),
-                10, 1, 2, Biomes.JUNGLE, Biomes.BAMBOO_JUNGLE, Biomes.SPARSE_JUNGLE);
+                5, 1, 2, Biomes.JUNGLE, Biomes.BAMBOO_JUNGLE, Biomes.SPARSE_JUNGLE);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSCOOKIECAT.get(),
-                10, 1, 2, Biomes.JUNGLE, Biomes.BAMBOO_JUNGLE, Biomes.SPARSE_JUNGLE);
+                5, 1, 2, Biomes.JUNGLE, Biomes.BAMBOO_JUNGLE, Biomes.SPARSE_JUNGLE);
 
 
         //DESERT
@@ -76,7 +76,7 @@ public class ModEntityGeneration {
         //SWAMP
 
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSTOAD.get(),
-                10, 1, 2, Biomes.SWAMP);
+                5, 1, 2, Biomes.SWAMP);
 
 
 
@@ -84,68 +84,75 @@ public class ModEntityGeneration {
         //SAVANNAHS
 
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSZEBRA.get(),
-                10, 1, 2, Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU, Biomes.WINDSWEPT_SAVANNA);
+                5, 1, 2, Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU, Biomes.WINDSWEPT_SAVANNA);
 
 
         //FORESTS
 
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSUNICORN.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                1, 1, 1, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSCHIPMUNK.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                5, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSBOARRY.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                5, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSSQUIRROLL.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                5, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSMOUSE.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                5, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSELF.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                5, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
 
 
         //PLAINS
 
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSLION.get(),
-                10, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
+                5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
                 Biomes.MEADOW);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSSHEEP.get(),
-                10, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
+                5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
                 Biomes.MEADOW);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSPRETZELFLY.get(),
                 10, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
                 Biomes.MEADOW);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSRABBIT.get(),
-                10, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
+                5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
                 Biomes.MEADOW);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSPUG.get(),
-                10, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
+                5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.MEADOW);
+        addEntityToSpecificBiomes(event, EntityTypesInit.CHOCOLATECHICKEN.get(),
+                5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
                 Biomes.MEADOW);
 
 
         //OCEAN/RIVER
 
+
+        addEntityToSpecificBiomes(event, EntityTypesInit.SNSCANDYCANEFISH.get(),
+                80, 4, 6, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
+                Biomes.FROZEN_RIVER, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN, Biomes.OCEAN, Biomes.FROZEN_OCEAN);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSWAFFLEFISH.get(),
-                60, 4, 6, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
+                80, 4, 6, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
                 Biomes.FROZEN_RIVER, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN, Biomes.OCEAN, Biomes.FROZEN_OCEAN);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSMINIWAFFLEFISH.get(),
-                60, 4, 6, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
+                80, 4, 6, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
                 Biomes.FROZEN_RIVER, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN, Biomes.OCEAN, Biomes.FROZEN_OCEAN);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSICFISH.get(),
-                60, 4, 6, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
+                80, 4, 6, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
                 Biomes.FROZEN_RIVER, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN, Biomes.OCEAN, Biomes.FROZEN_OCEAN);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSWHALE.get(),
-                60, 4, 6, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
+                80, 1, 2, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
                 Biomes.FROZEN_RIVER, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN, Biomes.OCEAN, Biomes.FROZEN_OCEAN);
 
 
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSANGELFISH.get(),
-                60, 4, 6, Biomes.OCEAN, Biomes.DEEP_OCEAN,
+                80, 4, 6, Biomes.OCEAN, Biomes.DEEP_OCEAN,
                 Biomes.RIVER, Biomes.DEEP_OCEAN, Biomes.DEEP_LUKEWARM_OCEAN, Biomes.LUKEWARM_OCEAN, Biomes.WARM_OCEAN);
 
 
@@ -153,11 +160,11 @@ public class ModEntityGeneration {
 
         addEntityToSpecificBiomes(event, EntityTypesInit.CANDYCANECROOK.get(),
                 10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA);
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
 
         addEntityToSpecificBiomes(event, EntityTypesInit.RSWMUMMY.get(),
                 10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
-                Biomes.SNOWY_TAIGA, Biomes.FROZEN_PEAKS, Biomes.TAIGA, Biomes.DESERT);
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA, Biomes.DESERT);
 
         addEntityToSpecificBiomes(event, EntityTypesInit.POISONBERRYATTACKER.get(),
                 10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,

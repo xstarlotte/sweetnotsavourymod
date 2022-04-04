@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "SSS",
+    "DDD"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:orange_candy_window"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:rainbowfrostingleaves"
+    },
+    "D": {
+      "item": "sweetnotsavourymod:waferwoodblock"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:cake_baker"
+  }
+}

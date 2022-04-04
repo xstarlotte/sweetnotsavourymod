@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sweetnotsavourymod:block/cake_baker",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sweetnotsavourymod:block/cake_baker"
+    },
+    "facing=south": {
+      "model": "sweetnotsavourymod:block/cake_baker",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sweetnotsavourymod:block/cake_baker",
+      "y": 270
+    }
+  }
+}

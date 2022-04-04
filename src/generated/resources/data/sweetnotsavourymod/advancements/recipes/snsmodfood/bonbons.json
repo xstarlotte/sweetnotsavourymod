@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sweetnotsavourymod:bonbons"
+    ]
+  },
+  "criteria": {
+    "has_toffee": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sweetnotsavourymod:toffee"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sweetnotsavourymod:bonbons"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_toffee",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/candycane_furnace",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/candycane_furnace"
+  }
+}

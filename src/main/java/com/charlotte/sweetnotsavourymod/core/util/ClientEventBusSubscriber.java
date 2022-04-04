@@ -1,43 +1,46 @@
 package com.charlotte.sweetnotsavourymod.core.util;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.entity.angelfish.SNSAngelFishRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.boarries.SNSBoarryRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.boats.ModBoatRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.cats.SNSCCCatRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.cats.SNSCookieCatRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.chipmunk.SNSChipmunkRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.cows.IceCreamCowRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.crooks.CandyCaneCrookRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.guineapigs.SNSGPRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.gummybears.SNSGummyBearRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.icecreamfish.SNSICFishRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.jamsters.SNSJamsterRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.lions.SNSLionRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.mice.SNSMouseRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.mummies.RSWMummyRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pixies.SNSParfaitPixieRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.elves.SNSElfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.SNSIceCreamParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.parrots.SNSParrotRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.poisonberries.PBArcherRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.poisonberries.PBAttackerRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.poisonberries.PBDefenderRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pretzelflies.SNSPretzelflyRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.SNSIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.pugs.SNSPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.rabbits.SNSRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.sheep.SNSSheepRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.spiders.SNSSpiderRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.squirrels.SNSSquirrollRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.toads.SNSToadRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.unicorns.SNSUnicornRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.waferschunds.SNSWaferschundRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.wafflefish.SNSMiniWafflefishRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.wafflefish.SNSWafflefishRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.whales.SNSWhaleRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.wolves.SNSCandyCaneWolfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entity.zebras.SNSZebraRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.birds.ChocolateChickenRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSAngelFishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSBoarryRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.boats.ModBoatRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSCandyCanefishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCCCatRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCookieCatRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSChipmunkRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cows.IceCreamCowRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.crooks.CandyCaneCrookRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSGPRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.SNSGummyBearRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSICFishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSJamsterRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSLionRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSMouseRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mummies.RSWMummyRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSParfaitPixieRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSElfRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.birds.SNSIceCreamParrotRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.birds.SNSParrotRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.poisonberries.PBArcherRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.poisonberries.PBAttackerRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.poisonberries.PBDefenderRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSPretzelflyRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSIceCreamPugRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSPugRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSRabbitRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSSheepRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSSpiderRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSSquirrollRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.amphibians.SNSToadRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rideable.SNSUnicornRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSWaferschundRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSMiniWafflefishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSWafflefishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSWhaleRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSCandyCaneWolfRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rideable.SNSZebraRenderer;
+import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolateChickenEntity;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 
@@ -77,6 +80,7 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONFROSTINGFLOWER.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATECINERARIA.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.TOFFEETULIP.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYCANDYBUSH.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYCANDYBUSH.get(), RenderType.cutout());
@@ -85,6 +89,9 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.RAINBOWCANDYBUSH.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGECANDYBUSH.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONCANDYBUSH.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.LIMECANDYBUSH.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGOCANDYBUSH.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACHCANDYBUSH.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYCONEFLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYCONEFLOWER.get(), RenderType.cutout());
@@ -99,8 +106,10 @@ public class ClientEventBusSubscriber {
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //tree
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATERAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.RAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ICECREAMTREESAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATEICECREAMTREESAPLING.get(), RenderType.cutout());
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -150,6 +159,13 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKTELEVISION.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ICE_CREAM_MACHINE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.JAM_PRESSER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFFLE_CONE_MACHINE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BANANA_BAKER.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CAKE_BAKER.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.TEDDY_BEAR_PRINTER.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_FURNACE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYFLOSS_CRYSTALIZER.get(), RenderType.translucent());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRY_CANDY_WINDOW.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRY_CANDY_WINDOW.get(), RenderType.translucent());
@@ -166,6 +182,10 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRY_CANDY_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMON_CANDY_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGE_CANDY_DOOR.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.LIME_CANDY_DOOR.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGO_CANDY_DOOR.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACH_CANDY_DOOR.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYFLOSS_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFER_WOOD_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATE_WAFER_WOOD_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFER_PLANK_DOOR.get(), RenderType.translucent());
@@ -195,12 +215,6 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSZEBRA.get(), SNSZebraRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSWAFERSCHUND.get(), SNSWaferschundRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSTOAD.get(), SNSToadRenderer::new);
-		EntityRenderers.register(EntityTypesInit.SNSICFISH.get(), SNSICFishRenderer::new);
-		EntityRenderers.register(EntityTypesInit.SNSWAFFLEFISH.get(), SNSWafflefishRenderer::new);
-		EntityRenderers.register(EntityTypesInit.SNSWHALE.get(), SNSWhaleRenderer::new);
-		EntityRenderers.register(EntityTypesInit.SNSANGELFISH.get(), SNSAngelFishRenderer::new);
-		EntityRenderers.register(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishRenderer::new);
-		EntityRenderers.register(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSGUMMYBEAR.get(), SNSGummyBearRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSBOARRY.get(), SNSBoarryRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSSPIDER.get(), SNSSpiderRenderer::new);
@@ -212,6 +226,18 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSJAMSTER.get(), SNSJamsterRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSSHEEP.get(), SNSSheepRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSLION.get(), SNSLionRenderer::new);
+		EntityRenderers.register(EntityTypesInit.CHOCOLATECHICKEN.get(), ChocolateChickenRenderer::new);
+
+		EntityRenderers.register(EntityTypesInit.SNSCANDYCANEFISH.get(), SNSCandyCanefishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSICFISH.get(), SNSICFishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSWAFFLEFISH.get(), SNSWafflefishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSWHALE.get(), SNSWhaleRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSANGELFISH.get(), SNSAngelFishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishRenderer::new);
+
+		EntityRenderers.register(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyRenderer::new);
+
+
 
 		EntityRenderers.register(EntityTypesInit.POISONBERRYATTACKER.get(), PBAttackerRenderer::new);
 		EntityRenderers.register(EntityTypesInit.POISONBERRYDEFENDER.get(), PBDefenderRenderer::new);

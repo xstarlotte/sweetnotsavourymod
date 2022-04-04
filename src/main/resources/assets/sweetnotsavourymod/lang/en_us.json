@@ -8,6 +8,7 @@
 	"item.sweetnotsavourymod.snspbarcherspawnegg": "Poison Berry Archer Spawn Egg",
 	"item.sweetnotsavourymod.snspbdefenderspawnegg": "Poison Berry Defender Spawn Egg",
 	"item.sweetnotsavourymod.rswmummyspawnegg": "Rotten Sugar Wrapper Mummy Spawn Egg",
+	"item.sweetnotsavourymod.cccrookspawnegg": "Candy Cane Crook Spawn Egg",
 
 	"item.sweetnotsavourymod.snselfspawnegg": "Flavoured Elf Spawn Egg",
 
@@ -57,11 +58,14 @@
 
 	"item.sweetnotsavourymod.snswaferschundspawnegg": "Waferschund Spawn Egg",
 
+	"item.sweetnotsavourymod.chocolatechickenspawnegg": "Chocolate Chicken Spawn Egg",
+
 	"item.sweetnotsavourymod.snsicfishspawnegg": "Ice Cream Fish Spawn Egg",
+	"item.sweetnotsavourymod.snscandycanefishspawnegg": "Candycane Fish Spawn Egg",
 	"item.sweetnotsavourymod.snswafflefishspawnegg": "Wafflefish Spawn Egg",
 	"item.sweetnotsavourymod.snsminiwafflefishspawnegg": "Mini Wafflefish Spawn Egg",
 	"item.sweetnotsavourymod.snsangelfishspawnegg": "Angelfish Spawn Egg",
-	"item.sweetnotsavourymod.snswaferwhalespawnegg": "Wafer Whale Spawn Egg",
+	"item.sweetnotsavourymod.snswhalespawnegg": "Wafer Whale Spawn Egg",
 
 	"item.sweetnotsavourymod.strawberrycandy": "Strawberry Candy",
 	"item.sweetnotsavourymod.raspberrycandy": "Raspberry Candy",
@@ -69,6 +73,9 @@
 	"item.sweetnotsavourymod.orangecandy": "Orange Candy",
 	"item.sweetnotsavourymod.blueberrycandy": "Blueberry Candy",
 	"item.sweetnotsavourymod.blackberrycandy": "Blackberry Candy",
+	"item.sweetnotsavourymod.limecandy": "Lime Candy",
+	"item.sweetnotsavourymod.mangocandy": "Mango Candy",
+	"item.sweetnotsavourymod.peachcandy": "Peach Candy",
 	"item.sweetnotsavourymod.wrappedstrawberrycandy": "Wrapped Strawberry Candy",
 	"item.sweetnotsavourymod.wrappedblackberrycandy": "Wrapped Blackberry Candy",
 	"item.sweetnotsavourymod.wrappedraspberrycandy": "Wrapped Raspberry Candy",
@@ -93,6 +100,7 @@
 	"item.sweetnotsavourymod.toffeeicecreamscoop": "Toffee Ice Cream Scoop",
 	"item.sweetnotsavourymod.limeicecreamscoop": "Lime Ice Cream Scoop",
 	"item.sweetnotsavourymod.mangoicecreamscoop": "Mango Ice Cream Scoop",
+	"item.sweetnotsavourymod.peachicecreamscoop": "Peach Ice Cream Scoop",
 	"item.sweetnotsavourymod.strawberryicecreamscoop": "Strawberry Ice Cream Scoop",
 	"item.sweetnotsavourymod.blackberryicecreamscoop": "Blackberry Ice Cream Scoop",
 	"item.sweetnotsavourymod.raspberryicecreamscoop": "Raspberry Ice Cream Scoop",
@@ -104,6 +112,7 @@
 	"item.sweetnotsavourymod.toffeeicecream": "Toffee Ice Cream",
 	"item.sweetnotsavourymod.limeicecream": "Lime Ice Cream",
 	"item.sweetnotsavourymod.mangoicecream": "Mango Ice Cream",
+	"item.sweetnotsavourymod.peachicecream": "Peach Ice Cream",
 	"item.sweetnotsavourymod.strawberryicecream": "Strawberry Ice Cream",
 	"item.sweetnotsavourymod.raspberryicecream": "Raspberry Ice Cream",
 	"item.sweetnotsavourymod.blueberryicecream": "Blueberry Ice Cream",
@@ -133,16 +142,23 @@
 	"item.sweetnotsavourymod.sweetorange": "Sweet Orange",
 	"item.sweetnotsavourymod.sweetmango": "Sweet Mango",
 	"item.sweetnotsavourymod.sweetpineapple": "Sweet Pineapple",
+	"item.sweetnotsavourymod.mint": "Mint",
 
 	"item.sweetnotsavourymod.vanilla": "Vanilla",
 	"item.sweetnotsavourymod.chocolate": "Chocolate",
 	"item.sweetnotsavourymod.toffee": "Toffee",
 	"item.sweetnotsavourymod.caramel": "Caramel",
 	"item.sweetnotsavourymod.bonbons": "Bon Bons",
+	"item.sweetnotsavourymod.pretzel": "Pretzel",
+	"item.sweetnotsavourymod.candyfloss": "Candyfloss",
 	"item.sweetnotsavourymod.mintimperials": "Mint Imperials",
 	"item.sweetnotsavourymod.colabottle": "Cola Bottle",
+	"item.sweetnotsavourymod.candy_cane": "Candy Cane",
 
 	"item.sweetnotsavourymod.strawberry_jam": "Strawberry Jam",
+	"item.sweetnotsavourymod.raspberry_jam": "Raspberry Jam",
+	"item.sweetnotsavourymod.blueberry_jam": "Blueberry Jam",
+	"item.sweetnotsavourymod.blackberry_jam": "Blackberry Jam",
 
 
 	"item.sweetnotsavourymod.creamy_milk_bucket": "Creamy Milk Bucket",
@@ -153,30 +169,109 @@
 	"item.sweetnotsavourymod.candy_cane_pickaxe": "Candy Cane Pickaxe",
 	"item.sweetnotsavourymod.candy_cane_hoe": "Candy Cane Hoe",
 
+	"item.sweetnotsavourymod.strawberry_candy_sword": "Strawberry Candy Sword",
+	"item.sweetnotsavourymod.strawberry_candy_shovel": "Strawberry Candy Shovel",
+	"item.sweetnotsavourymod.strawberry_candy_axe": "Strawberry Candy Axe",
+	"item.sweetnotsavourymod.strawberry_candy_pickaxe": "Strawberry Candy Pickaxe",
+	"item.sweetnotsavourymod.strawberry_candy_hoe": "Strawberry Candy Hoe",
+
+	"item.sweetnotsavourymod.raspberry_candy_sword": "Raspberry Candy Sword",
+	"item.sweetnotsavourymod.raspberry_candy_shovel": "Raspberry Candy Shovel",
+	"item.sweetnotsavourymod.raspberry_candy_axe": "Raspberry Candy Axe",
+	"item.sweetnotsavourymod.raspberry_candy_pickaxe": "Raspberry Candy Pickaxe",
+	"item.sweetnotsavourymod.raspberry_candy_hoe": "Raspberry Candy Hoe",
+
+	"item.sweetnotsavourymod.blueberry_candy_sword": "Blueberry Candy Sword",
+	"item.sweetnotsavourymod.blueberry_candy_shovel": "Blueberry Candy Shovel",
+	"item.sweetnotsavourymod.blueberry_candy_axe": "Blueberry Candy Axe",
+	"item.sweetnotsavourymod.blueberry_candy_pickaxe": "Blueberry Candy Pickaxe",
+	"item.sweetnotsavourymod.blueberry_candy_hoe": "Blueberry Candy Hoe",
+
+	"item.sweetnotsavourymod.blackberry_candy_sword": "Blackberry Candy Sword",
+	"item.sweetnotsavourymod.blackberry_candy_shovel": "Blackberry Candy Shovel",
+	"item.sweetnotsavourymod.blackberry_candy_axe": "Blackberry Candy Axe",
+	"item.sweetnotsavourymod.blackberry_candy_pickaxe": "Blackberry Candy Pickaxe",
+	"item.sweetnotsavourymod.blackberry_candy_hoe": "Blackberry Candy Hoe",
+
+	"item.sweetnotsavourymod.orange_candy_sword": "Orange Candy Sword",
+	"item.sweetnotsavourymod.orange_candy_shovel": "Orange Candy Shovel",
+	"item.sweetnotsavourymod.orange_candy_axe": "Orange Candy Axe",
+	"item.sweetnotsavourymod.orange_candy_pickaxe": "Orange Candy Pickaxe",
+	"item.sweetnotsavourymod.orange_candy_hoe": "Orange Candy Hoe",
+
+	"item.sweetnotsavourymod.lemon_candy_sword": "Lemon Candy Sword",
+	"item.sweetnotsavourymod.lemon_candy_shovel": "Lemon Candy Shovel",
+	"item.sweetnotsavourymod.lemon_candy_axe": "Lemon Candy Axe",
+	"item.sweetnotsavourymod.lemon_candy_pickaxe": "Lemon Candy Pickaxe",
+	"item.sweetnotsavourymod.lemon_candy_hoe": "Lemon Candy Hoe",
+
+	"item.sweetnotsavourymod.lime_candy_sword": "Lime Candy Sword",
+	"item.sweetnotsavourymod.lime_candy_shovel": "Lime Candy Shovel",
+	"item.sweetnotsavourymod.lime_candy_axe": "Lime Candy Axe",
+	"item.sweetnotsavourymod.lime_candy_pickaxe": "Lime Candy Pickaxe",
+	"item.sweetnotsavourymod.lime_candy_hoe": "Lime Candy Hoe",
+
+	"item.sweetnotsavourymod.mango_candy_sword": "Mango Candy Sword",
+	"item.sweetnotsavourymod.mango_candy_shovel": "Mango Candy Shovel",
+	"item.sweetnotsavourymod.mango_candy_axe": "Mango Candy Axe",
+	"item.sweetnotsavourymod.mango_candy_pickaxe": "Mango Candy Pickaxe",
+	"item.sweetnotsavourymod.mango_candy_hoe": "Mango Candy Hoe",
+
+	"item.sweetnotsavourymod.peach_candy_sword": "Peach Candy Sword",
+	"item.sweetnotsavourymod.peach_candy_shovel": "Peach Candy Shovel",
+	"item.sweetnotsavourymod.peach_candy_axe": "Peach Candy Axe",
+	"item.sweetnotsavourymod.peach_candy_pickaxe": "Peach Candy Pickaxe",
+	"item.sweetnotsavourymod.peach_candy_hoe": "Peach Candy Hoe",
+
 	"item.sweetnotsavourymod.vanilla_ice_cream_helmet": "Vanilla Ice Cream Helmet",
 	"item.sweetnotsavourymod.vanilla_ice_cream_chestplate": "Vanilla Ice Cream Chestplate",
 	"item.sweetnotsavourymod.vanilla_ice_cream_leggings": "Vanilla Ice Cream Leggings",
 	"item.sweetnotsavourymod.vanilla_ice_cream_boots": "Vanilla Ice Cream Boots",
+
 	"item.sweetnotsavourymod.orange_candy_helmet": "Orange Candy Helmet",
 	"item.sweetnotsavourymod.orange_candy_chestplate": "Orange Candy Chestplate",
 	"item.sweetnotsavourymod.orange_candy_leggings": "Orange Candy Leggings",
 	"item.sweetnotsavourymod.orange_candy_boots": "Orange Candy Boots",
+
 	"item.sweetnotsavourymod.strawberry_candy_helmet": "Strawberry Candy Helmet",
 	"item.sweetnotsavourymod.strawberry_candy_chestplate": "Strawberry Candy Chestplate",
 	"item.sweetnotsavourymod.strawberry_candy_leggings": "Strawberry Candy Leggings",
 	"item.sweetnotsavourymod.strawberry_candy_boots": "Strawberry Candy Boots",
+
+	"item.sweetnotsavourymod.blackberry_candy_helmet": "Blackberry Candy Helmet",
+	"item.sweetnotsavourymod.blackberry_candy_chestplate": "Blackberry Candy Chestplate",
+	"item.sweetnotsavourymod.blackberry_candy_leggings": "Blackberry Candy Leggings",
+	"item.sweetnotsavourymod.blackberry_candy_boots": "Blackberry Candy Boots",
+
 	"item.sweetnotsavourymod.raspberry_candy_helmet": "Raspberry Candy Helmet",
 	"item.sweetnotsavourymod.raspberry_candy_chestplate": "Raspberry Candy Chestplate",
 	"item.sweetnotsavourymod.raspberry_candy_leggings": "Raspberry Candy Leggings",
 	"item.sweetnotsavourymod.raspberry_candy_boots": "Raspberry Candy Boots",
+
 	"item.sweetnotsavourymod.blueberry_candy_helmet": "Blueberry Candy Helmet",
 	"item.sweetnotsavourymod.blueberry_candy_chestplate": "Blueberry Candy Chestplate",
 	"item.sweetnotsavourymod.blueberry_candy_leggings": "Blueberry Candy Leggings",
 	"item.sweetnotsavourymod.blueberry_candy_boots": "Blueberry Candy Boots",
+
 	"item.sweetnotsavourymod.lemon_candy_helmet": "Lemon Candy Helmet",
 	"item.sweetnotsavourymod.lemon_candy_chestplate": "Lemon Candy Chestplate",
 	"item.sweetnotsavourymod.lemon_candy_leggings": "Lemon Candy Leggings",
 	"item.sweetnotsavourymod.lemon_candy_boots": "Lemon Candy Boots",
+
+	"item.sweetnotsavourymod.lime_candy_helmet": "Lime Candy Helmet",
+	"item.sweetnotsavourymod.lime_candy_chestplate": "Lime Candy Chestplate",
+	"item.sweetnotsavourymod.lime_candy_leggings": "Lime Candy Leggings",
+	"item.sweetnotsavourymod.lime_candy_boots": "Lime Candy Boots",
+
+	"item.sweetnotsavourymod.mango_candy_helmet": "Mango Candy Helmet",
+	"item.sweetnotsavourymod.mango_candy_chestplate": "Mango Candy Chestplate",
+	"item.sweetnotsavourymod.mango_candy_leggings": "Mango Candy Leggings",
+	"item.sweetnotsavourymod.mango_candy_boots": "Mango Candy Boots",
+
+	"item.sweetnotsavourymod.peach_candy_helmet": "Peach Candy Helmet",
+	"item.sweetnotsavourymod.peach_candy_chestplate": "Peach Candy Chestplate",
+	"item.sweetnotsavourymod.peach_candy_leggings": "Peach Candy Leggings",
+	"item.sweetnotsavourymod.peach_candy_boots": "Peach Candy Boots",
 
 	"item.sweetnotsavourymod.waferwood_boat": "Wafer Wood Boat",
 
@@ -190,6 +285,7 @@
 	"block.sweetnotsavourymod.candycanesugarcaneblock": "Candy Cane Sugar Cane Block",
 
 	"block.sweetnotsavourymod.icecreamtreesapling": "Ice Cream Tree Sapling",
+	"block.sweetnotsavourymod.chocolateicecreamtreesapling": "Chocolate Ice Cream Tree Sapling",
 
 	"block.sweetnotsavourymod.banana_crop": "Sweet Banana Crop",
 	"block.sweetnotsavourymod.peach_crop": "Sweet Peach Crop",
@@ -215,12 +311,16 @@
 	"block.sweetnotsavourymod.candy_cane_grass": "Candy Cane Grass",
 	"block.sweetnotsavourymod.candy_cane_grass_long": "Long Candy Cane Grass",
 	"block.sweetnotsavourymod.chocolatecineraria": "Chocolate Cineraria",
+	"block.sweetnotsavourymod.toffeetulip": "Toffee Tulip",
 	"block.sweetnotsavourymod.strawberrycandybush": "Strawberry Candy Bush",
 	"block.sweetnotsavourymod.raspberrycandybush": "Raspberry Candy Bush",
 	"block.sweetnotsavourymod.blackberrycandybush": "Blackberry Candy Bush",
 	"block.sweetnotsavourymod.blueberrycandybush": "Blueberry Candy Bush",
 	"block.sweetnotsavourymod.lemoncandybush": "Lemon Candy Bush",
 	"block.sweetnotsavourymod.orangecandybush": "Orange Candy Bush",
+	"block.sweetnotsavourymod.limecandybush": "Lime Candy Bush",
+	"block.sweetnotsavourymod.mangocandybush": "Mango Candy Bush",
+	"block.sweetnotsavourymod.peachcandybush": "Peach Candy Bush",
 	"block.sweetnotsavourymod.rainbowcandybush": "Rainbow Candy Bush",
 	"block.sweetnotsavourymod.frostingflower": "Frosting Flower",
 	"block.sweetnotsavourymod.strawberryfrostingflower": "Strawberry Frosting Flower",
@@ -242,6 +342,7 @@
 
 	"block.sweetnotsavourymod.waferwoodplanks": "Wafer Wood Planks",
 	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
+	"block.sweetnotsavourymod.chocolatewaferwoodblock": "Chocolate Wafer Wood Block",
 	"block.sweetnotsavourymod.waferwoodwindow": "Wafer Wood Window",
 	"block.sweetnotsavourymod.candycanewindow": "Red Candy Cane Window",
 	"block.sweetnotsavourymod.candycanewindow2": "White Candy Cane Window",
@@ -263,6 +364,9 @@
 	"block.sweetnotsavourymod.raspberrycandyblock": "Raspberry Candy Block",
 	"block.sweetnotsavourymod.lemoncandyblock": "Lemon Candy Block",
 	"block.sweetnotsavourymod.orangecandyblock": "Orange Candy Block",
+	"block.sweetnotsavourymod.limecandyblock": "Lime Candy Block",
+	"block.sweetnotsavourymod.peachcandyblock": "Peach Candy Block",
+	"block.sweetnotsavourymod.mangocandyblock": "Mango Candy Block",
 	"block.sweetnotsavourymod.blueberrycandyblock": "Blueberry Candy Block",
 	"block.sweetnotsavourymod.strawberrysorbetblock": "Strawberry Sorbet Sand",
 	"block.sweetnotsavourymod.raspberrysorbetblock": "Raspberry Sorbet Sand",
@@ -271,6 +375,7 @@
 	"block.sweetnotsavourymod.peachmangosorbetblock": "Peach and Mango Sorbet Sand",
 	"block.sweetnotsavourymod.orangesorbetblock": "Orange Sorbet Sand",
 	"block.sweetnotsavourymod.candycaneblock": "Candy Cane Block",
+	"block.sweetnotsavourymod.candyflossblock": "Candyfloss Block",
 	"block.sweetnotsavourymod.chocolatechipcookieblock": "Chocolate Chip Cookie Block",
 	"block.sweetnotsavourymod.whitechocolatechipcookieblock": "White Chocolate Chip Cookie Block",
 	"block.sweetnotsavourymod.rainbowcookieblock": "Rainbow Cookie Block",
@@ -282,6 +387,7 @@
 	"block.sweetnotsavourymod.meltingorangechocolateblock": "Melting Orange Chocolate",
 	"block.sweetnotsavourymod.raspberryicingblock": "Raspberry Icing Block",
 	"block.sweetnotsavourymod.rainbowfrostingleaves": "Rainbow Frosting Leaves",
+	"block.sweetnotsavourymod.chocolaterainbowfrostingleaves": "Chocolate Rainbow Frosting Leaves",
 	"block.sweetnotsavourymod.frostingblock": "Frosting Block",
 	"block.sweetnotsavourymod.strawberryfrostingblock": "Strawberry Frosting Grass Block",
 	"block.sweetnotsavourymod.raspberryfrostingblock": "Raspberry Frosting Grass Block",
@@ -299,7 +405,7 @@
 	"block.sweetnotsavourymod.rottenmouldycandycanebars": "Rotten Mouldy Candy Cane Bars",
 	"block.sweetnotsavourymod.rottenmouldycandycaneblock": "Rotten Mouldy Candy Cane Block",
 	"block.sweetnotsavourymod.rottenmouldycandycanebricks": "Rotten Mouldy Candy Cane Bricks",
-	"block.sweetnotsavourymod.rottenmouldycandycanewall": "Rotten Mouldy Candy Cane Wall",
+	"block.sweetnotsavourymod.rottenmouldycandycane_wall": "Rotten Mouldy Candy Cane Wall",
 
 	"block.sweetnotsavourymod.hardened_banana_stairs": "Hardened Banana Stairs",
 	"block.sweetnotsavourymod.hardened_banana_fence": "Hardened Banana Fence",
@@ -312,6 +418,30 @@
 	"block.sweetnotsavourymod.wafer_wood_fence_gate": "Wafer Wood Fence Gate",
 	"block.sweetnotsavourymod.wafer_wood_slab": "Wafer Wood Slab",
 	"block.sweetnotsavourymod.wafer_wood_wall": "Wafer Wood Wall",
+
+	"block.sweetnotsavourymod.candyfloss_stairs": "Candyfloss Stairs",
+	"block.sweetnotsavourymod.candyfloss_fence": "Candyfloss Fence",
+	"block.sweetnotsavourymod.candyfloss_fence_gate": "Candyfloss Fence Gate",
+	"block.sweetnotsavourymod.candyfloss_slab": "Candyfloss Slab",
+	"block.sweetnotsavourymod.candyfloss_wall": "Candyfloss Wall",
+
+	"block.sweetnotsavourymod.lime_candy_stairs": "Lime Candy Stairs",
+	"block.sweetnotsavourymod.lime_candy_fence": "Lime Candy Fence",
+	"block.sweetnotsavourymod.lime_candy_fence_gate": "Lime Candy Fence Gate",
+	"block.sweetnotsavourymod.lime_candy_slab": "Lime Candy Slab",
+	"block.sweetnotsavourymod.lime_candy_wall": "Lime Candy Wall",
+
+	"block.sweetnotsavourymod.peach_candy_stairs": "Peach Candy Stairs",
+	"block.sweetnotsavourymod.peach_candy_fence": "Peach Candy Fence",
+	"block.sweetnotsavourymod.peach_candy_fence_gate": "Peach Candy Fence Gate",
+	"block.sweetnotsavourymod.peach_candy_slab": "Peach Candy Slab",
+	"block.sweetnotsavourymod.peach_candy_wall": "Peach Candy Wall",
+
+	"block.sweetnotsavourymod.mango_candy_stairs": "Mango Candy Stairs",
+	"block.sweetnotsavourymod.mango_candy_fence": "Mango Candy Fence",
+	"block.sweetnotsavourymod.mango_candy_fence_gate": "Mango Candy Fence Gate",
+	"block.sweetnotsavourymod.mango_candy_slab": "Mango Candy Slab",
+	"block.sweetnotsavourymod.mango_candy_wall": "Mango Candy Wall",
 
 	"block.sweetnotsavourymod.strawberry_candy_stairs": "Strawberry Candy Stairs",
 	"block.sweetnotsavourymod.raspberry_candy_stairs": "Raspberry Candy Stairs",
@@ -370,11 +500,15 @@
 	"block.sweetnotsavourymod.raspberry_candy_door": "Raspberry Candy Door",
 	"block.sweetnotsavourymod.orange_candy_door": "Orange Candy Door",
 	"block.sweetnotsavourymod.lemon_candy_door": "Lemon Candy Door",
+	"block.sweetnotsavourymod.lime_candy_door": "Lime Candy Door",
+	"block.sweetnotsavourymod.mango_candy_door": "Mango Candy Door",
+	"block.sweetnotsavourymod.peach_candy_door": "Peach Candy Door",
 	"block.sweetnotsavourymod.wafer_wood_door": "Wafer Wood Candy Door",
 	"block.sweetnotsavourymod.chocolate_wafer_wood_door": "Chocolate Wafer Wood Door",
 	"block.sweetnotsavourymod.wafer_plank_door": "Wafer Plank Door",
 	"block.sweetnotsavourymod.chocolate_wafer_plank_door": "Chocolate Wafer Plank Door",
 	"block.sweetnotsavourymod.frosting_door": "Frosting Door",
+	"block.sweetnotsavourymod.candyfloss_door": "Candyfloss Door",
 	"block.sweetnotsavourymod.rotten_mouldy_candy_cane_door": "Rotten Mouldy Candy Cane Door",
 
 	"block.sweetnotsavourymod.strawberrylamp": "Strawberry Lamp",
@@ -532,6 +666,10 @@
 	"block.sweetnotsavourymod.banana_baker": "Banana Baker",
 	"block.sweetnotsavourymod.jam_presser": "Jam Presser",
 	"block.sweetnotsavourymod.waffle_cone_machine": "Waffle Cone Machine",
+	"block.sweetnotsavourymod.candyfloss_crystalizer": "Candyfloss Crystalizer",
+	"block.sweetnotsavourymod.candycane_furnace": "Candycane Furnace",
+	"block.sweetnotsavourymod.teddy_bear_printer": "Teddy Bear Printer",
+	"block.sweetnotsavourymod.cake_baker": "Cake Baker",
 
 	"biome.sweetnotsavourymod.icecreamforestbiome": "Ice Cream Forest Biome",
 	"biome.sweetnotsavourymod.candycaneplainsbiome": "Candy Cane Plains Biome",
@@ -541,7 +679,8 @@
 	"itemGroup.snsmoddecoration": "Decoration - Sweet Not Savoury Mod",
 	"itemGroup.snsmodtools": "Tools - Sweet Not Savoury Mod",
 	"itemGroup.snsmodarmour": "Armour - Sweet Not Savoury Mod",
-	"itemGroup.snsmodspawneggs": "Spawn Eggs - Sweet Not Savoury Mod"
+	"itemGroup.snsmodspawneggs": "Spawn Eggs - Sweet Not Savoury Mod",
+	"itemGroup.snsmodmachines": "Machines - Sweet Not Savoury Mod"
 }
 
 

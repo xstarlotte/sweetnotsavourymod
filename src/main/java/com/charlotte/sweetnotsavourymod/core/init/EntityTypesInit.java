@@ -1,44 +1,46 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.entity.SNSParfaitPixieEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.angelfish.SNSAngelFishEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.boarries.SNSBoarryEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolateChickenEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSCandyCanefishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSParfaitPixieEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSAngelFishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCookieCatEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.chipmunks.SNSChipmunkEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSChipmunkEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.crooks.CandyCaneCrookEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.guineapigs.SNSGPEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.gummybears.SNSGummyBearEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.icecreamfish.SNSICFishEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.jamsters.SNSJamsterEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.lions.SNSLionEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.mummies.RSWMummyEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PBAttackerEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PBDefenderEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.pretzelflies.SNSPretzelflyEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.crooks.CandyCaneCrookEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSGPEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSICFishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSJamsterEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.mummies.RSWMummyEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBAttackerEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBDefenderEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSPretzelflyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.spiders.SNSSpiderEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.toads.SNSToadEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.unicorns.SNSUnicornEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.waferschunds.SNSWaferschundEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.wafflefish.SNSMiniWafflefishEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.wafflefish.SNSWafflefishEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.whales.SNSWhaleEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.zebras.SNSZebraEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.mice.SNSMouseEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSIceCreamParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.poisonberries.PBArcherEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSSpiderEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.amphibians.SNSToadEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSUnicornEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSWaferschundEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSMiniWafflefishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSWafflefishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSWhaleEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSMouseEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBArcherEntity;
 
-import com.charlotte.sweetnotsavourymod.common.entity.pugs.SNSPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.pugs.SNSIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.rabbits.SNSRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.squirrels.SNSSquirrollEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.wolves.SNSCandyCaneWolfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSRabbitEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSSquirrollEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSCandyCaneWolfEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -55,6 +57,11 @@ public class EntityTypesInit {
 			.register("snspug", () -> EntityType.Builder.of(SNSPugEntity::new, MobCategory.CREATURE)
 					.sized(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snspug").toString()));
+
+	public static final RegistryObject<EntityType<ChocolateChickenEntity>>CHOCOLATECHICKEN = ENTITY_TYPES
+			.register("chocolatechicken", () -> EntityType.Builder.of(ChocolateChickenEntity::new, MobCategory.CREATURE)
+					.sized(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "chocolatechicken").toString()));
 
 	public static final RegistryObject<EntityType<SNSGPEntity>>SNSGP = ENTITY_TYPES
 			.register("snsgp", () -> EntityType.Builder.of(SNSGPEntity::new, MobCategory.CREATURE)
@@ -178,6 +185,11 @@ public class EntityTypesInit {
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snslion").toString()));
 
 //AMBIENT
+
+	public static final RegistryObject<EntityType<SNSCandyCanefishEntity>> SNSCANDYCANEFISH = ENTITY_TYPES
+			.register("snscandycanefish", () -> EntityType.Builder.of(SNSCandyCanefishEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snscandycanefish").toString()));
 
 	public static final RegistryObject<EntityType<SNSWafflefishEntity>> SNSWAFFLEFISH = ENTITY_TYPES
 			.register("snswafflefish", () -> EntityType.Builder.of(SNSWafflefishEntity::new, MobCategory.CREATURE)

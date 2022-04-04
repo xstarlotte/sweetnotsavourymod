@@ -13,6 +13,7 @@ public class StrippingMap {
 	}
 	
 	public static void registerStrippables() {
+		createStrippable(BlockInit.CHOCOLATEWAFERWOODBLOCK.get(), BlockInit.WAFERWOODBLOCK.get());
 		createStrippable(BlockInit.WAFERWOODBLOCK.get(), BlockInit.STRIPPEDWAFERWOODBLOCK.get());
 	}
 }
