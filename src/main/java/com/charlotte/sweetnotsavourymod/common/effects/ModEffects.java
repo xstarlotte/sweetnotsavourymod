@@ -15,6 +15,9 @@ public class ModEffects {
     public static final RegistryObject<MobEffect> POISON_RESISTANCE = MOB_EFFECTS.register("poison_resistance",
             () -> new PoisonResistanceEffect(MobEffectCategory.BENEFICIAL, 0x341264));
 
+    public static final RegistryObject<MobEffect> HERB_HARMING = MOB_EFFECTS.register("herb_harming",
+            () -> new HerbHarmEffect(MobEffectCategory.HARMFUL, 0x341264));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

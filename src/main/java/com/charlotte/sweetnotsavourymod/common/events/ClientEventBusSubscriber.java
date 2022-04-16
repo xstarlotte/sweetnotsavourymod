@@ -1,19 +1,20 @@
-package com.charlotte.sweetnotsavourymod.core.util;
+package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.ChocolateChickenRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSAngelFishRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fish.*;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mintimperials.MintImperialRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSBoarryRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.boats.ModBoatRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSCandyCanefishRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCCCatRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCookieCatRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSChipmunkRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cows.IceCreamCowRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.crooks.CandyCaneCrookRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSGPRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.snakes.SNSSnakeRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.BonbonbiniRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.SNSGummyBearRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSICFishRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSJamsterRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSLionRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSMouseRenderer;
@@ -35,9 +36,6 @@ import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSSquirroll
 import com.charlotte.sweetnotsavourymod.client.entityrender.amphibians.SNSToadRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rideable.SNSUnicornRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSWaferschundRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSMiniWafflefishRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSWafflefishRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSWhaleRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSCandyCaneWolfRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rideable.SNSZebraRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolateChickenEntity;
@@ -227,6 +225,8 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSSHEEP.get(), SNSSheepRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSLION.get(), SNSLionRenderer::new);
 		EntityRenderers.register(EntityTypesInit.CHOCOLATECHICKEN.get(), ChocolateChickenRenderer::new);
+		EntityRenderers.register(EntityTypesInit.BONBONBINI.get(), BonbonbiniRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSSNAKE.get(), SNSSnakeRenderer::new);
 
 		EntityRenderers.register(EntityTypesInit.SNSCANDYCANEFISH.get(), SNSCandyCanefishRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSICFISH.get(), SNSICFishRenderer::new);
@@ -234,6 +234,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.SNSWHALE.get(), SNSWhaleRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSANGELFISH.get(), SNSAngelFishRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishRenderer::new);
+		EntityRenderers.register(EntityTypesInit.SNSDOLPHIN.get(), SNSDolphinRenderer::new);
 
 		EntityRenderers.register(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyRenderer::new);
 
@@ -244,6 +245,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.POISONBERRYARCHER.get(), PBArcherRenderer::new);
 		EntityRenderers.register(EntityTypesInit.CANDYCANECROOK.get(), CandyCaneCrookRenderer::new);
 		EntityRenderers.register(EntityTypesInit.RSWMUMMY.get(), RSWMummyRenderer::new);
+		EntityRenderers.register(EntityTypesInit.MINTIMPERIAL.get(), MintImperialRenderer::new);
 
 		EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), ModBoatRenderer::new);
 		/*

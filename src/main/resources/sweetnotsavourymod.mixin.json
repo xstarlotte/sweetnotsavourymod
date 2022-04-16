@@ -1,9 +1,13 @@
 {
 	"required": true,
 	"package": "com.charlotte.sweetnotsavourymod.mixin",
-	"compatibilityLevel": "JAVA_8",
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "sweetnotsavourymod.refmap.json",
 	"mixins": [
 
-	],	
-	"refmap": "sweetnotsavourymod.refmap.json"
+	],
+	"client": [
+	],
+	"minVersion": "0.8"
+
 }			

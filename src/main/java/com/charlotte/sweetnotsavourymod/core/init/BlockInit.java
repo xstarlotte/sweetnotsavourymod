@@ -571,6 +571,11 @@ public class BlockInit {
 					.strength(0.6f,1200f)
 					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> CANDYCANEBRICKS = registerBlock("candycanebricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBLOCK = registerBlock("rottenmouldycandycaneblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)

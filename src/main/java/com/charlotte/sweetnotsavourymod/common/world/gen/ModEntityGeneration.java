@@ -46,17 +46,6 @@ public class ModEntityGeneration {
                 5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
                 Biomes.SNOWY_TAIGA, Biomes.TAIGA);
 
-
-        //MOUNTAINS
-        addEntityToSpecificBiomes(event, EntityTypesInit.SNSGP.get(),
-                10, 1, 2, Biomes.STONY_PEAKS, Biomes.JAGGED_PEAKS);
-
-
-        //BEACH
-        addEntityToSpecificBiomes(event, EntityTypesInit.SNSGUMMYBEAR.get(),
-                5, 1, 2, Biomes.BEACH);
-
-
         //JUNGLE
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSPARROT.get(),
                 5, 1, 2, Biomes.JUNGLE, Biomes.BAMBOO_JUNGLE, Biomes.SPARSE_JUNGLE);
@@ -66,9 +55,11 @@ public class ModEntityGeneration {
 
         //DESERT
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSSPIDER.get(),
-                10, 1, 2, Biomes.DESERT);
+                30, 1, 2, Biomes.DESERT);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSJAMSTER.get(),
-                10, 1, 2, Biomes.DESERT);
+                30, 1, 2, Biomes.DESERT);
+        addEntityToSpecificBiomes(event, EntityTypesInit.SNSSNAKE.get(),
+                30, 1, 2, Biomes.DESERT);
 
 
 
@@ -129,6 +120,17 @@ public class ModEntityGeneration {
         addEntityToSpecificBiomes(event, EntityTypesInit.CHOCOLATECHICKEN.get(),
                 5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
                 Biomes.MEADOW);
+        addEntityToSpecificBiomes(event, EntityTypesInit.SNSGUMMYBEAR.get(),
+                5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.MEADOW);
+
+        addEntityToSpecificBiomes(event, EntityTypesInit.SNSGP.get(),
+                5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.MEADOW);
+
+        addEntityToSpecificBiomes(event, EntityTypesInit.BONBONBINI.get(),
+                5, 1, 2, Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.MEADOW);
 
 
         //OCEAN/RIVER
@@ -150,6 +152,10 @@ public class ModEntityGeneration {
                 80, 1, 2, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
                 Biomes.FROZEN_RIVER, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN, Biomes.OCEAN, Biomes.FROZEN_OCEAN);
 
+        addEntityToSpecificBiomes(event, EntityTypesInit.SNSDOLPHIN.get(),
+                80, 1, 2, Biomes.COLD_OCEAN, Biomes.DEEP_COLD_OCEAN,
+                Biomes.FROZEN_RIVER, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN, Biomes.OCEAN, Biomes.FROZEN_OCEAN);
+
 
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSANGELFISH.get(),
                 80, 4, 6, Biomes.OCEAN, Biomes.DEEP_OCEAN,
@@ -159,6 +165,10 @@ public class ModEntityGeneration {
 //HOSTILE
 
         addEntityToSpecificBiomes(event, EntityTypesInit.CANDYCANECROOK.get(),
+                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                Biomes.SNOWY_TAIGA, Biomes.TAIGA);
+
+        addEntityToSpecificBiomes(event, EntityTypesInit.MINTIMPERIAL.get(),
                 10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
                 Biomes.SNOWY_TAIGA, Biomes.TAIGA);
 

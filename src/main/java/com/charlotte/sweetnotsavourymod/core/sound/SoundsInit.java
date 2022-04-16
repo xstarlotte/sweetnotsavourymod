@@ -15,7 +15,7 @@ public class SoundsInit {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS,
             SweetNotSavouryMod.MOD_ID);
 
-    public static RegistryObject<SoundEvent> CARTOON_WHY_WE_LOSE = registerSoundEvents("cartoon_why_we_lose");
+    public static RegistryObject<SoundEvent> CHIPTRONICAL = registerSoundEvents("chiptronical");
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         ResourceLocation id = new ResourceLocation(SweetNotSavouryMod.MOD_ID, name);

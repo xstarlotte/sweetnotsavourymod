@@ -204,6 +204,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.WAFERWOODPLANKS.get());
         this.dropSelf(BlockInit.STRIPPEDWAFERWOODBLOCK.get());
         this.dropSelf(BlockInit.CANDYCANEBLOCK.get());
+        this.dropSelf(BlockInit.CANDYCANEBRICKS.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBLOCK.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBRICKS.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBARS.get());
@@ -495,7 +496,7 @@ public class BlockInitLootTables extends BlockLoot {
         });
 
         this.add(BlockInit.CANDYCANEBUSH.get(), (p_124078_) -> {
-            return createOreDrop(p_124078_, ItemInit.CANDY_CANE.get());
+            return createOreDrop(p_124078_, ItemInit.CANDYCANESUGAR.get());
         });
 
         this.add(BlockInit.RAINBOWFROSTINGLEAVES.get(), (p_124104_) -> {

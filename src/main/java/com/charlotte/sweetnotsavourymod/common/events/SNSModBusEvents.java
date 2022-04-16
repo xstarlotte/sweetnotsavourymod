@@ -3,9 +3,9 @@ package com.charlotte.sweetnotsavourymod.common.events;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.armor.renderers.*;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolateChickenEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSCandyCanefishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fish.*;
 import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSParfaitPixieEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSAngelFishEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials.MintImperialEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCookieCatEntity;
@@ -14,8 +14,9 @@ import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.crooks.CandyCaneCrookEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSGPEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.BonbonbiniEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSICFishEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSJamsterEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSMouseEntity;
@@ -35,9 +36,6 @@ import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSSquirrollEntity
 import com.charlotte.sweetnotsavourymod.common.entity.amphibians.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSUnicornEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSWaferschundEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSMiniWafflefishEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSWafflefishEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSWhaleEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSCandyCaneWolfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity;
 import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
@@ -82,6 +80,8 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.SNSSHEEP.get(), SNSSheepEntity.setAttributes());
         event.put(EntityTypesInit.SNSLION.get(), SNSLionEntity.setAttributes());
         event.put(EntityTypesInit.CHOCOLATECHICKEN.get(), ChocolateChickenEntity.setAttributes());
+        event.put(EntityTypesInit.BONBONBINI.get(), BonbonbiniEntity.setAttributes());
+        event.put(EntityTypesInit.SNSSNAKE.get(), SNSSnakeEntity.setAttributes());
 
         event.put(EntityTypesInit.SNSCANDYCANEFISH.get(), SNSCandyCanefishEntity.setAttributes());
         event.put(EntityTypesInit.SNSICFISH.get(), SNSICFishEntity.setAttributes());
@@ -89,6 +89,7 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.SNSANGELFISH.get(), SNSAngelFishEntity.setAttributes());
         event.put(EntityTypesInit.SNSWAFFLEFISH.get(), SNSWafflefishEntity.setAttributes());
         event.put(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishEntity.setAttributes());
+        event.put(EntityTypesInit.SNSDOLPHIN.get(), SNSDolphinEntity.setAttributes());
 
         event.put(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyEntity.setAttributes());
 
@@ -97,6 +98,7 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.POISONBERRYDEFENDER.get(), PBDefenderEntity.createAttributes());
         event.put(EntityTypesInit.POISONBERRYARCHER.get(), PBArcherEntity.createAttributes());
         event.put(EntityTypesInit.CANDYCANECROOK.get(), CandyCaneCrookEntity.createAttributes());
+        event.put(EntityTypesInit.MINTIMPERIAL.get(), MintImperialEntity.createAttributes());
 
     }
 

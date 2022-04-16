@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public enum WhaleVariant {
-        WAFER(0);
+        WAFER(0),
+        CHOCOLATEWAFER(1);
 
 
    ;

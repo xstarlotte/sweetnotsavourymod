@@ -3,10 +3,13 @@ package com.charlotte.sweetnotsavourymod.common.entity.rideable;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.RideableVariants.ZebraFlavourVariant;
+import com.charlotte.sweetnotsavourymod.core.util.variants.RideableVariants.ZebraFlavourVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -25,6 +28,10 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.horse.AbstractHorse;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.Item;
@@ -44,6 +51,8 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+
+import java.util.UUID;
 
 public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumping, IAnimatable {
 
@@ -72,12 +81,14 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putInt("Variant", this.getTypeVariant());
+		tag.putBoolean("Sitting", this.isSitting());
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag p_21815_) {
 		super.readAdditionalSaveData(p_21815_);
 		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
+		setSitting(p_21815_.getBoolean("Sitting"));
 	}
 
 	@Override
@@ -91,6 +102,12 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 
 	private void setVariant(ZebraFlavourVariant variant) {
 		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+	}
+
+	@Override
+	protected Component getTypeName() {
+		return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
+				+ "." + this.getVariant().getId());
 	}
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
@@ -133,16 +150,18 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 	}
 
 	protected void registerGoals() {
-		this.goalSelector.addGoal(1, new SitWhenOrderedToGoal(this));
-		this.goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, true));
-		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.0D, true));
-		this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(5, new BreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
-		this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(8, new FloatGoal(this));
+		this.goalSelector.addGoal(1, new FloatGoal(this));
+		this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
+		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
+		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
+		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, true));
+		this.goalSelector.addGoal(6, new BreedGoal(this, 1.0D));
+		this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
+		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
 		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+		this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
 	}
 
 	@Override
@@ -173,6 +192,10 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 		ItemStack itemstack = player.getItemInHand(pHand);
 		Item item = itemstack.getItem();
 		Item tameableItem = ItemInit.CANDYCANESUGAR.get();
+
+		if(isFood(itemstack)) {
+			return super.mobInteract(player, pHand);
+		}
 
 		if (this.level.isClientSide) {
 			boolean flag = this.isOwnedBy(player) || this.isTame() || item == tameableItem
@@ -212,6 +235,72 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 			}
 
 			return super.mobInteract(player, pHand);
+		}
+	}
+
+	@Override
+	public Team getTeam() {
+		return super.getTeam();
+	}
+
+	public boolean doHurtTarget(Entity pEntity) {
+		boolean flag = pEntity.hurt(DamageSource.mobAttack(this), (float)((int)
+				this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
+		if (flag) {
+			this.doEnchantDamageEffects(this, pEntity);
+		}
+
+		return flag;
+	}
+
+	public boolean wantsToAttack(LivingEntity pTarget, LivingEntity pOwner) {
+		if (!(pTarget instanceof Creeper) && !(pTarget instanceof Ghast)) {
+
+			if (pTarget instanceof Player && pOwner instanceof Player && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
+				return false;
+			} else if (pTarget instanceof AbstractHorse && ((AbstractHorse)pTarget).isTamed()) {
+				return false;
+			} else {
+				return !(pTarget instanceof TamableAnimal) || !((TamableAnimal)pTarget).isTame();
+			}
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean isFood(ItemStack pStack) {
+		return pStack.getItem() == ItemInit.SPRINKLES.get();
+	}
+
+	@Nullable
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageablemob) {
+		com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity mob = EntityTypesInit.SNSZEBRA.get().create(serverLevel);
+		UUID uuid = this.getOwnerUUID();
+		if (uuid != null) {
+			mob.setOwnerUUID(uuid);
+			mob.setTame(true);
+		}
+		return mob;
+	}
+
+	public boolean canMate(Animal mate) {
+		if (mate == this) {
+			return false;
+		} else if (!this.isTame()) {
+			return true;
+		} else if (!(mate instanceof com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity)) {
+			return false;
+		} else {
+			com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity mob = (com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity)mate;
+			if (!mob.isTame()) {
+				return true;
+			} else if (mob.isInSittingPose()) {
+				return true;
+			} else {
+				return this.isInLove() && mob.isInLove();
+			}
 		}
 	}
 
@@ -270,16 +359,6 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 		return Mth.ceil((p_30606_ * 0.5F - 3.0F) * p_30607_);
 	}
 
-	@Override
-	public Team getTeam() {
-		return super.getTeam();
-	}
-
-	@Override
-	public boolean wantsToAttack(LivingEntity attacker, LivingEntity target) {
-		return attacker.getTeam()!= target.getTeam();
-	}
-
 	public boolean canBeLeashed(Player player) {
 		return super.canBeLeashed(player);
 	}
@@ -301,16 +380,6 @@ public class SNSZebraEntity extends TamableAnimal implements PlayerRideableJumpi
 		return 0.2F;
 	}
 
-	@Nullable
-	@Override
-	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
-		return EntityTypesInit.SNSZEBRA.get().create(serverLevel);
-	}
-
-	@Override
-	public boolean isFood(ItemStack pStack) {
-		return pStack.getItem() == ItemInit.SPRINKLES.get();
-	}
 
 	public boolean canBeControlledByRider() {
 		return this.getControllingPassenger() instanceof LivingEntity;

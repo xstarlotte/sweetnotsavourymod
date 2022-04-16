@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "S S",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:chocolatewaferwoodblock"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:chocolatewaferwood_boat"
+  }
+}

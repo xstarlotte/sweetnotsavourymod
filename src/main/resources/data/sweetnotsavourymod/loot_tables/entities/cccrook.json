@@ -1,0 +1,18 @@
+{
+  "type": "sweetnotsavourymod:candycanecrook",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "sweetnotsavourymod:savoury_essence"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "sweetnotsavourymod:candy_cane"
+        }
+      ]
+    }
+  ]
+}

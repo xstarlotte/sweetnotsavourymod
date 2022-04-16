@@ -6,6 +6,8 @@ import com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants.CCCro
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -73,6 +75,12 @@ public class CandyCaneCrookEntity extends Monster implements IAnimatable {
 		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
+	@Override
+	protected Component getTypeName() {
+		return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
+				+ "." + this.getVariant().getId());
+	}
+
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
         if (event.isMoving()) {
@@ -134,11 +142,11 @@ public class CandyCaneCrookEntity extends Monster implements IAnimatable {
 
 	@Override
 	protected int getExperienceReward(Player p_21511_) {
-		return 12;
+		return 64;
 	}
 	
 	 protected SoundEvent getAmbientSound() {
-	      return SoundEvents.BLAZE_AMBIENT;
+	      return SoundEvents.WITCH_AMBIENT;
 	}
 	      
 	 protected SoundEvent getStepSound() {
@@ -150,13 +158,13 @@ public class CandyCaneCrookEntity extends Monster implements IAnimatable {
 	} 
 	 
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-	      return SoundEvents.BLAZE_HURT;
+	      return SoundEvents.WITCH_HURT;
     } 
 	
 	@Override
 	protected SoundEvent getDeathSound() {
 		
-		return SoundEvents.BLAZE_DEATH;
+		return SoundEvents.WITCH_DEATH;
 		
 	}
 

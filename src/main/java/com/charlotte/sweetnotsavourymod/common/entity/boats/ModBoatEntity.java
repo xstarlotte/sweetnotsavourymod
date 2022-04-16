@@ -49,6 +49,46 @@ public class ModBoatEntity extends Boat {
         switch (this.getModBoatType()) {
             case WAFERWOOD:
                 return ItemInit.WAFERWOOD_BOAT.get();
+
+            case CHOCOLATEWAFERWOOD:
+                return ItemInit.CHOCOLATEWAFERWOOD_BOAT.get();
+
+            case WAFERPLANK:
+                return ItemInit.WAFERPLANK_BOAT.get();
+
+            case CANDYCANEBRICK:
+                return ItemInit.CANDYCANEBRICK_BOAT.get();
+
+            case CANDYFLOSS:
+                return ItemInit.CANDYFLOSS_BOAT.get();
+
+            case STRAWBERRYCANDY:
+                return ItemInit.STRAWBERRYCANDY_BOAT.get();
+
+            case BLUEBERRYCANDY:
+                return ItemInit.BLUEBERRYCANDY_BOAT.get();
+
+            case RASPBERRYCANDY:
+                return ItemInit.RASPBERRYCANDY_BOAT.get();
+
+            case BLACKBERRYCANDY:
+                return ItemInit.BLACKBERRYCANDY_BOAT.get();
+
+            case LEMONCANDY:
+                return ItemInit.LEMONCANDY_BOAT.get();
+
+            case LIMECANDY:
+                return ItemInit.LIMECANDY_BOAT.get();
+
+            case ORANGECANDY:
+                return ItemInit.ORANGECANDY_BOAT.get();
+
+            case MANGOCANDY:
+                return ItemInit.MANGOCANDY_BOAT.get();
+
+            case PEACHCANDY:
+                return ItemInit.PEACHCANDY_BOAT.get();
+
             default:
                 return Items.OAK_BOAT;
         }
@@ -63,7 +103,20 @@ public class ModBoatEntity extends Boat {
     }
 
     public enum Type {
-        WAFERWOOD("waferwood");
+        WAFERWOOD("waferwood"),
+        WAFERPLANK("waferplank"),
+        CANDYFLOSS("candyfloss"),
+        CANDYCANEBRICK("candycanebrick"),
+        STRAWBERRYCANDY("strawberrycandy"),
+        BLUEBERRYCANDY("blueberrycandy"),
+        RASPBERRYCANDY("raspberrycandy"),
+        BLACKBERRYCANDY("blackberrycandy"),
+        ORANGECANDY("orangecandy"),
+        LEMONCANDY("lemoncandy"),
+        LIMECANDY("limecandy"),
+        MANGOCANDY("mangocandy"),
+        PEACHCANDY("peachcandy"),
+        CHOCOLATEWAFERWOOD("chocolatewaferwood");
 
         private final String name;
         Type(String name) {

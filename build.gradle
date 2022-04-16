@@ -9,6 +9,8 @@ buildscript {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.parchmentmc:librarian:1.+'
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+
+
     }
 }
 
@@ -116,7 +118,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
 
     minecraft 'net.minecraftforge:forge:1.18.2-40.0.19'
-
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143:api")
     runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143")
     implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.12')

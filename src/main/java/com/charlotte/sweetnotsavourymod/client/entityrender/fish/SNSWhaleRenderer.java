@@ -19,6 +19,7 @@ public class SNSWhaleRenderer extends GeoEntityRenderer<SNSWhaleEntity> {
     public static final Map<WhaleVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(WhaleVariant.class), (p_114874_) -> {
                 p_114874_.put(WhaleVariant.WAFER, new ResourceLocation("sweetnotsavourymod:textures/entity/whales/waferwhale.png"));
+                p_114874_.put(WhaleVariant.CHOCOLATEWAFER, new ResourceLocation("sweetnotsavourymod:textures/entity/whales/chocolatewaferwhale.png"));
 
             });
 

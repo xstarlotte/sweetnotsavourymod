@@ -18,6 +18,8 @@ public class SNSSheepRenderer extends GeoEntityRenderer<SNSSheepEntity> {
     public static final Map<SheepVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(SheepVariant.class), (p_114874_) -> {
                 p_114874_.put(SheepVariant.CANDYFLOSS, new ResourceLocation("sweetnotsavourymod:textures/entity/sheep/candyfloss.png"));
+                p_114874_.put(SheepVariant.BLUECANDYFLOSS, new ResourceLocation("sweetnotsavourymod:textures/entity/sheep/bluecandyfloss.png"));
+
             });
 
     public SNSSheepRenderer(EntityRendererProvider.Context renderManager) {

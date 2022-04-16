@@ -18,6 +18,8 @@ public class SNSLionRenderer extends GeoEntityRenderer<SNSLionEntity> {
     public static final Map<LionVariant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(LionVariant.class), (p_114874_) -> {
                 p_114874_.put(LionVariant.CANDYFLOSS, new ResourceLocation("sweetnotsavourymod:textures/entity/lions/candyflosslion.png"));
+                p_114874_.put(LionVariant.BLUECANDYFLOSS, new ResourceLocation("sweetnotsavourymod:textures/entity/lions/bluecandyflosslion.png"));
+
             });
 
     public SNSLionRenderer(EntityRendererProvider.Context renderManager) {

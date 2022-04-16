@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "S",
-    "S",
+    "D",
     "A"
   ],
   "key": {
@@ -11,6 +11,9 @@
     },
     "A": {
       "item": "sweetnotsavourymod:sugarstick"
+    },
+    "D": {
+      "item": "sweetnotsavourymod:sweet_essence"
     }
   },
   "result": {

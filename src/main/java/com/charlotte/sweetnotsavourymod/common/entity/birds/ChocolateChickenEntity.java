@@ -23,7 +23,12 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.animal.Wolf;
+import net.minecraft.world.entity.animal.horse.AbstractHorse;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -31,6 +36,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
@@ -42,6 +48,8 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
+import java.util.UUID;
+
 public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable {
 
 	public int eggTime = this.random.nextInt(6000) + 6000;
@@ -51,16 +59,16 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 	private static final EntityDataAccessor<Boolean> SITTING =
 			SynchedEntityData.defineId(ChocolateChickenEntity.class, EntityDataSerializers.BOOLEAN);
 
-	public ChocolateChickenEntity(EntityType<? extends TamableAnimal> type, Level worldIn) {
-		super(type, worldIn);
-		setTame(false);
-		this.noCulling = true;
+	public ChocolateChickenEntity(EntityType<? extends TamableAnimal> type, Level level) {
+		super(type, level);
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag tag) {
 		super.addAdditionalSaveData(tag);
+		this.noCulling = true;
 		tag.putInt("EggLayTime", this.eggTime);
+		tag.putBoolean("Sitting", this.isSitting());
 	}
 
 
@@ -70,40 +78,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 		if (p_21815_.contains("EggLayTime")) {
 			this.eggTime = p_21815_.getInt("EggLayTime");
 		}
-	}
-
-	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-
-		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.running", true));
-			return PlayState.CONTINUE;
-		}
-
-		if (this.isSitting()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.sitting", true));
-			return PlayState.CONTINUE;
-		}
-
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.idle", true));
-		return PlayState.CONTINUE;
-	}
-
-
-
-	@Override
-	public void registerControllers(AnimationData data)
-	{
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
-	}
-
-	@Override
-	public AnimationFactory getFactory()
-	{
-		return this.factory;
-	}
-
-	protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn) {
-		return sizeIn.height * 0.65F;
+		setSitting(p_21815_.getBoolean("Sitting"));
 	}
 
 	public static AttributeSupplier setAttributes() {
@@ -126,29 +101,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
 		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
-	}
-
-	@Override
-	public void setTame(boolean tamed) {
-		super.setTame(tamed);
-		if (tamed) {
-			getAttribute(Attributes.MAX_HEALTH).setBaseValue(80.0D);
-			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.35f);
-		} else {
-			getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0D);
-			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
-		}
-	}
-
-	public void makeTamed(Player player) {
-		if (!level.isClientSide) {
-			super.tame(player);
-			this.navigation.recomputePath();
-			this.setTarget(null);
-			this.level.broadcastEntityEvent(this, (byte)7);
-		}
+		this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
 	}
 
 	public void aiStep() {
@@ -160,40 +113,81 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 		}
 	}
 
+	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+
+		if (event.isMoving()) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.running", true));
+			return PlayState.CONTINUE;
+		}
+
+		if (this.isSitting()) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.sitting", true));
+			return PlayState.CONTINUE;
+		}
+
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.idle", true));
+		return PlayState.CONTINUE;
+	}
+
+	@Override
+	public void registerControllers(AnimationData data)
+	{
+		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+	}
+
+	@Override
+	public AnimationFactory getFactory()
+	{
+		return this.factory;
+	}
+
+	protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn) {
+		return sizeIn.height * 0.65F;
+	}
+
 	@Override
 	public InteractionResult mobInteract(Player player, InteractionHand hand) {
 		ItemStack itemstack = player.getItemInHand(hand);
 		Item item = itemstack.getItem();
 
-		if (item == ItemInit.CANDYCANESUGAR.get() && !isTame()) {
-			if (level.isClientSide) {
+		Item itemForTaming = ItemInit.CANDYCANESUGAR.get();
+
+		if(isFood(itemstack)) {
+			return super.mobInteract(player, hand);
+		}
+
+		if (item == itemForTaming && !isTame()) {
+
+
+			if (this.level.isClientSide) {
 				return InteractionResult.CONSUME;
 			} else {
 				if (!player.getAbilities().instabuild) {
 					itemstack.shrink(1);
 				}
 
-				if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
-					this.tame(player);
-					this.navigation.stop();
-
-					this.setTarget((LivingEntity)null);
-					this.setOrderedToSit(true);
-					this.level.broadcastEntityEvent(this, (byte)7);
-				} else {
-					this.level.broadcastEntityEvent(this, (byte)6);
+				if (!ForgeEventFactory.onAnimalTame(this, player)) {
+					if (!this.level.isClientSide) {
+						super.tame(player);
+						this.navigation.recomputePath();
+						this.setTarget(null);
+						this.level.broadcastEntityEvent(this, (byte)7);
+						setSitting(true);
+					}
 				}
+
+
 
 				return InteractionResult.SUCCESS;
 			}
 		}
 
-		if(isTame() && !level.isClientSide && hand == InteractionHand.MAIN_HAND) {
+		if(isTame() && !this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
 			setSitting(!isSitting());
 			return InteractionResult.SUCCESS;
 		}
 
-		if (itemstack.getItem() == Items.SUGAR) {
+		if (itemstack.getItem() == itemForTaming) {
 			return InteractionResult.PASS;
 		}
 
@@ -201,7 +195,6 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 	}
 
 	public void setSitting(boolean sitting) {
-
 		this.entityData.set(SITTING, sitting);
 		this.setOrderedToSit(sitting);
 	}
@@ -211,17 +204,55 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 	}
 
 	@Override
+	public void setTame(boolean tamed) {
+		super.setTame(tamed);
+		if (tamed) {
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(80.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.5f);
+		} else {
+			getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0D);
+			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
+		}
+	}
+
+	@Override
 	public Team getTeam() {
 		return super.getTeam();
 	}
 
-	@Override
-	public boolean wantsToAttack(LivingEntity attacker, LivingEntity target) {
-		return attacker.getTeam()!= target.getTeam();
+	public boolean doHurtTarget(Entity pEntity) {
+		boolean flag = pEntity.hurt(DamageSource.mobAttack(this), (float)((int)
+				this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
+		if (flag) {
+			this.doEnchantDamageEffects(this, pEntity);
+		}
+
+		return flag;
+	}
+
+	public boolean wantsToAttack(LivingEntity pTarget, LivingEntity pOwner) {
+		if (!(pTarget instanceof Creeper) && !(pTarget instanceof Ghast)) {
+
+			 if (pTarget instanceof Player && pOwner instanceof Player && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
+				return false;
+			} else if (pTarget instanceof AbstractHorse && ((AbstractHorse)pTarget).isTamed()) {
+				return false;
+			} else {
+				return !(pTarget instanceof TamableAnimal) || !((TamableAnimal)pTarget).isTame();
+			}
+		} else {
+			return false;
+		}
 	}
 
 	public boolean canBeLeashed(Player player) {
 		return super.canBeLeashed(player);
+	}
+
+	public Vec3 getLeashOffset() {
+		return new Vec3(0.0D, (double)(0.6F * this.getEyeHeight()), (double)(this.getBbWidth() * 0.4F));
 	}
 
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
@@ -241,15 +272,40 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 		return 0.2F;
 	}
 
-	@Nullable
-	@Override
-	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
-		return EntityTypesInit.CHOCOLATECHICKEN.get().create(serverLevel);
-	}
-
 	@Override
 	public boolean isFood(ItemStack pStack) {
 		return pStack.getItem() == ItemInit.SPRINKLES.get();
+	}
+
+	@Nullable
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageablemob) {
+		ChocolateChickenEntity mob = EntityTypesInit.CHOCOLATECHICKEN.get().create(serverLevel);
+		UUID uuid = this.getOwnerUUID();
+		if (uuid != null) {
+			mob.setOwnerUUID(uuid);
+			mob.setTame(true);
+		}
+		return mob;
+	}
+
+	public boolean canMate(Animal mate) {
+		if (mate == this) {
+			return false;
+		} else if (!this.isTame()) {
+			return true;
+		} else if (!(mate instanceof ChocolateChickenEntity)) {
+			return false;
+		} else {
+			ChocolateChickenEntity mob = (ChocolateChickenEntity)mate;
+			if (!mob.isTame()) {
+				return true;
+			} else if (mob.isInSittingPose()) {
+				return true;
+			} else {
+				return this.isInLove() && mob.isInLove();
+			}
+		}
 	}
 
 	@Override

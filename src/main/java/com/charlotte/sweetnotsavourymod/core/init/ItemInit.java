@@ -5,6 +5,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
 import com.charlotte.sweetnotsavourymod.common.fuel.CandyCaneSugarFuel;
 import com.charlotte.sweetnotsavourymod.common.item.*;
 import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
+import com.charlotte.sweetnotsavourymod.common.item.SweetTierTools.HerbSwordItem;
 import com.charlotte.sweetnotsavourymod.common.item.SweetTierTools.SweetSwordItem;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 
@@ -23,8 +24,8 @@ public class ItemInit {
 
 //MUSIC_DISCS
 
-	public static final RegistryObject<Item> CARTOON_WHY_WE_LOSE_RECORD = ITEMS.register("cartoon_why_we_lose_record",
-			() -> new RecordItem(4, SoundsInit.CARTOON_WHY_WE_LOSE,
+	public static final RegistryObject<Item> CHIPTRONICAL_RECORD = ITEMS.register("chiptronical_record",
+			() -> new RecordItem(4, SoundsInit.CHIPTRONICAL,
 					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODMUSIC).stacksTo(1)));
 
 
@@ -120,6 +121,11 @@ public class ItemInit {
 	public static final RegistryObject<CustomSpawnEggItem> SNSLIONSPAWNEGG = ITEMS.register("snslionspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSLION, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
+	public static final RegistryObject<CustomSpawnEggItem> SNSSNAKESPAWNEGG = ITEMS.register("snssnakespawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSSNAKE, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> BONBONBINISPAWNEGG = ITEMS.register("bonbonbinispawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.BONBONBINI, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
 
 	public static final RegistryObject<CustomSpawnEggItem> SNSCANDYCANEFISHSPAWNEGG = ITEMS.register("snscandycanefishspawnegg",
@@ -134,6 +140,8 @@ public class ItemInit {
 	public static final RegistryObject<CustomSpawnEggItem> SNSWHALESPAWNEGG = ITEMS.register("snswhalespawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSWHALE, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
+	public static final RegistryObject<CustomSpawnEggItem> SNSDOLPHINSPAWNEGG = ITEMS.register("snsdolphinspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.SNSDOLPHIN, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
 
 	public static final RegistryObject<CustomSpawnEggItem> SNSPBATTACKERSPAWNEGG = ITEMS.register("snspbattackerspawnegg",
@@ -150,6 +158,9 @@ public class ItemInit {
 
 	public static final RegistryObject<CustomSpawnEggItem> RSWMUMMYSPAWNEGG = ITEMS.register("rswmummyspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.RSWMUMMY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
+	public static final RegistryObject<CustomSpawnEggItem> MINTIMPERIALSPAWNEGG = ITEMS.register("mintimperialspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.MINTIMPERIAL, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
 //liquid
 
@@ -825,7 +836,7 @@ public class ItemInit {
 //tools
 	//candy_cane
 	public static final RegistryObject<Item> CANDY_CANE_SWORD = ITEMS.register("candy_cane_sword",
-			() -> new SweetSwordItem(ModTiers.CANDY_CANE, 2, 3f,
+			() -> new HerbSwordItem(ModTiers.CANDY_CANE, 2, 3f,
 					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
 
 	public static final RegistryObject<Item> CANDY_CANE_SHOVEL = ITEMS.register("candy_cane_shovel",
@@ -1198,8 +1209,65 @@ public class ItemInit {
 			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
 					ModBoatEntity.Type.WAFERWOOD));
 
-	
-	
+	public static final RegistryObject<Item> CHOCOLATEWAFERWOOD_BOAT = ITEMS.register("chocolatewaferwood_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.CHOCOLATEWAFERWOOD));
+
+	public static final RegistryObject<Item> WAFERPLANK_BOAT = ITEMS.register("waferplank_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.WAFERPLANK));
+
+	public static final RegistryObject<Item> STRAWBERRYCANDY_BOAT = ITEMS.register("strawberrycandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.STRAWBERRYCANDY));
+
+	public static final RegistryObject<Item> BLACKBERRYCANDY_BOAT = ITEMS.register("blackberrycandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.BLACKBERRYCANDY));
+
+	public static final RegistryObject<Item> BLUEBERRYCANDY_BOAT = ITEMS.register("blueberrycandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.BLUEBERRYCANDY));
+
+	public static final RegistryObject<Item> RASPBERRYCANDY_BOAT = ITEMS.register("raspberrycandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.RASPBERRYCANDY));
+
+	public static final RegistryObject<Item> ORANGECANDY_BOAT = ITEMS.register("orangecandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.ORANGECANDY));
+
+	public static final RegistryObject<Item> LEMONCANDY_BOAT = ITEMS.register("lemoncandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.LEMONCANDY));
+
+	public static final RegistryObject<Item> LIMECANDY_BOAT = ITEMS.register("limecandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.LIMECANDY));
+
+	public static final RegistryObject<Item> MANGOCANDY_BOAT = ITEMS.register("mangocandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.MANGOCANDY));
+
+	public static final RegistryObject<Item> PEACHCANDY_BOAT = ITEMS.register("peachcandy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.PEACHCANDY));
+
+	public static final RegistryObject<Item> CANDYFLOSS_BOAT = ITEMS.register("candyfloss_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.CANDYFLOSS));
+
+	public static final RegistryObject<Item> CANDYCANEBRICK_BOAT = ITEMS.register("candycanebrick_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODDECORATION),
+					ModBoatEntity.Type.CANDYCANEBRICK));
+
+//animated
+
+	public static final RegistryObject<Item> SAVOURY_ESSENCE = ITEMS.register("savoury_essence",
+			() -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> SWEET_ESSENCE = ITEMS.register("sweet_essence",
+			() -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
 	
 }
 

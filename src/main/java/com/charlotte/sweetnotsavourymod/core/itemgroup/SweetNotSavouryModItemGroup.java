@@ -59,7 +59,7 @@ public class SweetNotSavouryModItemGroup {
 	public static final CreativeModeTab SNSMODMUSIC = new CreativeModeTab("snsmodmusic") {
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(ItemInit.CARTOON_WHY_WE_LOSE_RECORD.get());
+			return new ItemStack(ItemInit.CHIPTRONICAL_RECORD.get());
 		}
 	};
 

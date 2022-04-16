@@ -4,6 +4,8 @@ import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.Wafflefi
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -61,6 +63,12 @@ public class SNSMiniWafflefishEntity extends AbstractSchoolingFish implements IA
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.putInt("Variant", this.getTypeVariant());
+    }
+
+    @Override
+    protected Component getTypeName() {
+        return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
+                + "." + this.getVariant().getId());
     }
 
     @Override

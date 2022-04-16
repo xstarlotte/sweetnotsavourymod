@@ -1,0 +1,92 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.dolphin.idle": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*250)*5", 0, 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": ["-math.sin(query.anim_time*250)*5", 0, 0]
+					}
+				},
+				"flipper2": {
+					"rotation": {
+						"vector": [-23.6441, "-32.4105+math.sin(query.anim_time*250)*20", 29.154]
+					}
+				},
+				"flipper1": {
+					"rotation": {
+						"vector": [-23.64415, "32.4105-math.sin(query.anim_time*250)*20", -29.15396]
+					}
+				},
+				"tail_fin": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*250)*10", 0, 0]
+					}
+				},
+				"right_fin": {
+					"rotation": {
+						"vector": [-90, 0, "55-math.sin(query.anim_time*250)*10"]
+					},
+					"position": {
+						"vector": [0, 0, 2]
+					}
+				},
+				"left_fin": {
+					"rotation": {
+						"vector": [-90, 0, "-55+math.sin(query.anim_time*250)*10"]
+					},
+					"position": {
+						"vector": [0, 0, 2]
+					}
+				},
+				"wholebody": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*250)*1", 0]
+					}
+				}
+			}
+		},
+		"animation.dolphin.swimming": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*500)*5", 0, 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": ["-math.sin(query.anim_time*500)*20", 0, 0]
+					}
+				},
+				"flipper2": {
+					"rotation": {
+						"vector": [-23.6441, "-32.4105+math.sin(query.anim_time*500)*20", 29.154]
+					}
+				},
+				"flipper1": {
+					"rotation": {
+						"vector": [-23.64415, "32.4105-math.sin(query.anim_time*500)*20", -29.15396]
+					}
+				},
+				"tail_fin": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*500+20)*20", 0, 0]
+					}
+				},
+				"wholebody": {
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*500)*1", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

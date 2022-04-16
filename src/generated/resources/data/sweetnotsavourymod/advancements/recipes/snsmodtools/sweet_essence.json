@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sweetnotsavourymod:sweet_essence"
+    ]
+  },
+  "criteria": {
+    "has_savoury_essence": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sweetnotsavourymod:savoury_essence"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sweetnotsavourymod:sweet_essence"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_savoury_essence",
+      "has_the_recipe"
+    ]
+  ]
+}

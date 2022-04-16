@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:candycaneblock"
+    }
+  ],
+  "result": {
+    "item": "sweetnotsavourymod:candycanebricks"
+  }
+}

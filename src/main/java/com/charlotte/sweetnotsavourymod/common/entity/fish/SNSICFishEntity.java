@@ -4,6 +4,8 @@ import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.ICFishVa
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -70,6 +72,12 @@ public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatabl
     public void readAdditionalSaveData(CompoundTag p_21815_) {
         super.readAdditionalSaveData(p_21815_);
         this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
+    }
+
+    @Override
+    protected Component getTypeName() {
+        return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
+                + "." + this.getVariant().getId());
     }
 
     @Override

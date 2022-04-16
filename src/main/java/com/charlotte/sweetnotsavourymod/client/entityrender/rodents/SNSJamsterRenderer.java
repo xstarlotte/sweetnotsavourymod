@@ -19,6 +19,9 @@ public class SNSJamsterRenderer extends GeoEntityRenderer <SNSJamsterEntity> {
 			Util.make(Maps.newEnumMap(JamsterVariant.class), (p_114874_) -> {
 				p_114874_.put(JamsterVariant.STRAWBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/jamsters/strawberryjamster.png"));
 				p_114874_.put(JamsterVariant.HONEY, new ResourceLocation("sweetnotsavourymod:textures/entity/jamsters/honeyjamster.png"));
+				p_114874_.put(JamsterVariant.RASPBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/jamsters/raspberryjamster.png"));
+				p_114874_.put(JamsterVariant.BLACKBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/jamsters/blackberryjamster.png"));
+				p_114874_.put(JamsterVariant.BLUEBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/jamsters/blueberryjamster.png"));
 
 
 			});

@@ -92,7 +92,7 @@ public class PBAttackerEntity extends Monster implements IAnimatable {
 
 	@Override
 	protected int getExperienceReward(Player p_21511_) {
-		return 20;
+		return 64;
 	}
 	
 	 protected SoundEvent getAmbientSound() {

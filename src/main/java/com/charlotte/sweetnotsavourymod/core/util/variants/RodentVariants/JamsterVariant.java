@@ -5,7 +5,10 @@ import java.util.Comparator;
 
 public enum JamsterVariant {
     STRAWBERRY(0),
-    HONEY(1);
+    HONEY(1),
+    RASPBERRY(2),
+    BLACKBERRY(3),
+    BLUEBERRY(4);
 
     private static final JamsterVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(JamsterVariant::getId)).toArray(JamsterVariant[]::new);

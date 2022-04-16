@@ -4,6 +4,8 @@ import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.Wafflefi
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -78,6 +80,12 @@ public class SNSWafflefishEntity extends AbstractSchoolingFish implements IAnima
 
     private void setVariant(WafflefishVariant variant) {
         this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+    }
+
+    @Override
+    protected Component getTypeName() {
+        return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
+                + "." + this.getVariant().getId());
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
