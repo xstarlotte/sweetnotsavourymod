@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S S",
+    "SAS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:strawberrycandy"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:sweet_essence"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:strawberry_candy_chestplate"
+  }
+}

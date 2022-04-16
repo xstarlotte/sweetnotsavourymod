@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sweetnotsavourymod:meltingblueberrychocolateblock"
+    ]
+  },
+  "criteria": {
+    "has_meltingchocolateblock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sweetnotsavourymod:meltingchocolateblock"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sweetnotsavourymod:meltingblueberrychocolateblock"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_meltingchocolateblock",
+      "has_the_recipe"
+    ]
+  ]
+}

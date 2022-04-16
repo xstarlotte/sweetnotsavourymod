@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:mangocandyblock"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:mango_candy_door"
+  }
+}

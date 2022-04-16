@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:savoury_essence"
+    }
+  ],
+  "result": {
+    "item": "sweetnotsavourymod:sweet_essence"
+  }
+}

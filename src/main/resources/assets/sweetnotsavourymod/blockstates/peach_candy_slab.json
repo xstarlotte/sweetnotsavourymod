@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/peach_candy_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/peachcandyblock"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/peach_candy_slab_top"
+    }
+  }
+}

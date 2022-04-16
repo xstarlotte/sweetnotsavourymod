@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sweetnotsavourymod:block/jam_presser",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sweetnotsavourymod:block/jam_presser"
+    },
+    "facing=south": {
+      "model": "sweetnotsavourymod:block/jam_presser",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sweetnotsavourymod:block/jam_presser",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:meltingchocolateblock"
+    },
+    {
+      "item": "sweetnotsavourymod:sweetraspberry"
+    }
+  ],
+  "result": {
+    "item": "sweetnotsavourymod:meltingraspberrychocolateblock"
+  }
+}

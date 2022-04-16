@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "sweetnotsavourymod:waferwood_boat"
+    },
+    "title": "Won't this turn soggy?!",
+    "description": "Craft a wafer wood boat",
+    "background": "sweetnotsavourymod:textures/blocks/waferwoodblock.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "sweetnotsavourymod:sweet_not_savoury",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "item": {
+          "items": [
+            "sweetnotsavourymod:waferwood_boat",
+            "sweetnotsavourymod:chocolatewaferwood_boat"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AS",
+    "AS",
+    "AS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:waferwoodplanks"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:chocolate"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:chocolate_wafer_plank_door"
+  }
+}

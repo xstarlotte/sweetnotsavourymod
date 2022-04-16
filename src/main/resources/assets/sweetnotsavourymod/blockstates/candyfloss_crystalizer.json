@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sweetnotsavourymod:block/candyfloss_crystalizer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sweetnotsavourymod:block/candyfloss_crystalizer"
+    },
+    "facing=south": {
+      "model": "sweetnotsavourymod:block/candyfloss_crystalizer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sweetnotsavourymod:block/candyfloss_crystalizer",
+      "y": 270
+    }
+  }
+}

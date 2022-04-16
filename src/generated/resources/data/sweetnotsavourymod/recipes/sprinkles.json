@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:rainbowfrostingleaves"
+    }
+  ],
+  "result": {
+    "item": "sweetnotsavourymod:sprinkles"
+  }
+}

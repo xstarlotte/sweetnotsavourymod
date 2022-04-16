@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sweetnotsavourymod:sprinkles"
+    ]
+  },
+  "criteria": {
+    "has_rainbowfrostingleaves": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sweetnotsavourymod:rainbowfrostingleaves"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sweetnotsavourymod:sprinkles"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rainbowfrostingleaves",
+      "has_the_recipe"
+    ]
+  ]
+}

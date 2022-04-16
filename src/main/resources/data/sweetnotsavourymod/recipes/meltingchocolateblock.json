@@ -1,0 +1,11 @@
+{
+  "type": "sweetnotsavourymod:candycane_smelting",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:chocolate"
+    }
+  ],
+  "output": {
+    "block": "sweetnotsavourymod:meltingchocolateblock"
+  }
+}

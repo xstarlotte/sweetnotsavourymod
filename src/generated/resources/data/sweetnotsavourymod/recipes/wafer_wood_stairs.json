@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:waferwoodblock"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:wafer_wood_stairs"
+  }
+}

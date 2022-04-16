@@ -1,4 +1,4 @@
-package com.charlotte.sweetnotsavourymod.mixin;
+/*package com.charlotte.sweetnotsavourymod.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import net.minecraft.tags.BlockTags;
 
 
-@Mixin(value = SugarCaneBlock.class, priority = 1010)
+/*@Mixin(value = SugarCaneBlock.class, priority = 1010)
 public abstract class SugarCaneBlockMixin extends Block {
 
 	private SugarCaneBlockMixin(Properties p_i48440_1_) {
@@ -30,3 +30,4 @@ public abstract class SugarCaneBlockMixin extends Block {
 		return blockstate.is(SUGARCANE_CAN_LIVE_TAG) || blockstate.is(Blocks.GRASS_BLOCK);
 	}
 }
+*/

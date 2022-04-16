@@ -1,0 +1,6 @@
+{
+"parent": "item/handheld",
+  "textures": {
+    "layer0": "sweetnotsavourymod:items/orange_candy_pickaxe"
+  }
+}

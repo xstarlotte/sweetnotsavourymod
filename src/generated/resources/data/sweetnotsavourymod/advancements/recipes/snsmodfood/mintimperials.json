@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sweetnotsavourymod:mintimperials"
+    ]
+  },
+  "criteria": {
+    "has_candycanesugar": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sweetnotsavourymod:candycanesugar"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sweetnotsavourymod:mintimperials"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_candycanesugar",
+      "has_the_recipe"
+    ]
+  ]
+}

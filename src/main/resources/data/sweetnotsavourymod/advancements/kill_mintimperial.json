@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "sweetnotsavourymod:mintimperialspawnegg"
+    },
+    "title": "Imperial? More like Wimperial!",
+    "description": "Kill a Mint Imperial",
+    "background": "sweetnotsavourymod:textures/blocks/waferwoodblock.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "sweetnotsavourymod:sweet_not_savoury",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "sweetnotsavourymod:mintimperial"
+        }
+      }
+    }
+  }
+}

@@ -7,12 +7,16 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.parchmentmc:librarian:1.+'
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+
+
     }
 }
 
 repositories {
     maven { url = 'https://maven.minecraftforge.net/' }
+    maven { url = 'https://maven.parchmentmc.org' }
     maven {
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
@@ -26,14 +30,15 @@ repositories {
     mavenCentral()
 }
 apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '1.0'
-group = 'com.yourname.modid'
-archivesBaseName = 'modid'
+group = 'com.charlotte.sweetnotsavourymod'
+archivesBaseName = 'sweetnotsavourymod'
 
 
 
@@ -41,7 +46,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
 
-    mappings channel: 'official', version: '1.18.1'
+    mappings channel: 'parchment', version: '1.18.1-2022.02.13-1.18.2'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -57,7 +62,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             arg "-mixin.config=sweetnotsavourymod.mixin.json"
             mods {
-                examplemod {
+                sweetnotsavourymod {
                     source sourceSets.main
                 }
             }
@@ -73,7 +78,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                sweetnotsavourymod {
                     source sourceSets.main
                 }
             }
@@ -89,10 +94,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
 
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'sweetnotsavourymod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                examplemod {
+                sweetnotsavourymod {
                     source sourceSets.main
                 }
             }
@@ -112,11 +117,11 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
 
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.8'
-
-    compileOnly fg.deobf("mezz.jei:jei-1.18.1:9.1.0.47:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18.1:9.1.0.47")
-    implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.3')
+    minecraft 'net.minecraftforge:forge:1.18.2-40.0.19'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143")
+    implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.12')
 
 }
 
@@ -128,12 +133,12 @@ repositories {
 jar {
     manifest {
         attributes([
-                "Specification-Title": "examplemod",
-                "Specification-Vendor": "examplemodsareus",
+                "Specification-Title": "sweetnotsavourymod",
+                "Specification-Vendor": "sweetnotsavourymodsareus",
                 "Specification-Version": "1", // We are version 1 of ourselves
                 "Implementation-Title": project.name,
                 "Implementation-Version": "${version}",
-                "Implementation-Vendor" :"examplemodsareus",
+                "Implementation-Vendor" :"sweetnotsavourymodsareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
                 "TweakOrder": 0,

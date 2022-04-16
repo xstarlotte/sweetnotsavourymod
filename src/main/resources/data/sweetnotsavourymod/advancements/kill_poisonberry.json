@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "sweetnotsavourymod:pbattackerspawnegg"
+    },
+    "title": "I'm not into toxic relationships.",
+    "description": "Kill a Poison Berry",
+    "background": "sweetnotsavourymod:textures/blocks/waferwoodblock.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "sweetnotsavourymod:sweet_not_savoury",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "types": [
+          "sweetnotsavourymod:pbattacker",
+           "sweetnotsavourymod:pbarcher",
+           "sweetnotsavourymod:pbdefender"
+        ]
+        }
+      }
+    }
+  }
+}

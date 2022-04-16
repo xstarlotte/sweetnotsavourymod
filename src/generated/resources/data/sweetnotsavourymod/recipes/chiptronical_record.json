@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:candycanesugar"
+    },
+    {
+      "item": "minecraft:music_disc_cat"
+    }
+  ],
+  "result": {
+    "item": "sweetnotsavourymod:chiptronical_record"
+  }
+}

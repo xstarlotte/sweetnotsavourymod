@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/teddy_bear_printer",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/teddy_bear_printer"
+  }
+}

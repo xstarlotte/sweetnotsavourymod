@@ -1,5 +1,5 @@
 {
-	"parent": "block/cross",
+	"parent": "minecraft:block/cross",
 	"textures": {
 		"cross": "sweetnotsavourymod:blocks/icecreamtreesapling",
 		"particle": "sweetnotsavourymod:blocks/icecreamtreesapling"

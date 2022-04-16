@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:blackberrycandy"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:blackberry_candy_leggings"
+  }
+}

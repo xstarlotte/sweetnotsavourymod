@@ -5,37 +5,23 @@
 			"loop": true,
 			"bones": {
 				"wholebody": {
-					"rotation": {
-						"vector": [20, 0, 0]
-					},
-					"position": {
-						"vector": [0, "20+math.sin(query.anim_time*800)*1", "math.sin(query.anim_time*800)*1"]
-					}
+					"rotation": [20, 0, 0],
+					"position": [0, "-2+math.sin(query.anim_time*800)*1", "math.sin(query.anim_time*800)*1"]
 				},
 				"nose": {
-					"rotation": {
-						"vector": ["2.5+math.sin(query.anim_time*800)*10", 0, 0]
-					}
+					"rotation": ["2.5+math.sin(query.anim_time*800)*10", 0, 0]
 				},
 				"antennae1": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*800)*40", 0, 0]
-					}
+					"rotation": ["math.sin(query.anim_time*800)*40", 0, 0]
 				},
 				"antennae2": {
-					"rotation": {
-						"vector": ["math.sin(query.anim_time*800)*40", 0, 0]
-					}
+					"rotation": ["math.sin(query.anim_time*800)*40", 0, 0]
 				},
 				"wing1": {
-					"rotation": {
-						"vector": [0, "-45+math.sin(query.anim_time*800)*50", 0]
-					}
+					"rotation": [0, "-45+math.sin(query.anim_time*800)*50", 0]
 				},
 				"wing2": {
-					"rotation": {
-						"vector": [0, "45-math.sin(query.anim_time*800)*50", 0]
-					}
+					"rotation": [0, "45-math.sin(query.anim_time*800)*50", 0]
 				}
 			}
 		}

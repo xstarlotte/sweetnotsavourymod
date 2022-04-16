@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sweetnotsavourymod:candycanebricks"
+    ]
+  },
+  "criteria": {
+    "has_candycaneblock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sweetnotsavourymod:candycaneblock"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sweetnotsavourymod:candycanebricks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_candycaneblock",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "sweetnotsavourymod:jam_pressing",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:sweetblueberry"
+    }
+  ],
+  "output": {
+    "item": "sweetnotsavourymod:blueberry_jam"
+  }
+}

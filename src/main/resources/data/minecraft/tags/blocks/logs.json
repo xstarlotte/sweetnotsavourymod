@@ -1,7 +1,9 @@
 {
 	"replace": false,
 	"values": [
-		"sweetnotsavourymod:waferwoodblock"	
+		"sweetnotsavourymod:waferwoodblock",
+		"sweetnotsavourymod:strippedwaferwoodblock",
+		"sweetnotsavourymod:chocolatewaferwoodblock"
 			]
 			
 }

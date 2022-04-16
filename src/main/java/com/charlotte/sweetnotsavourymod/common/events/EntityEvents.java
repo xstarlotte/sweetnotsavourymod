@@ -1,18 +1,15 @@
 package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.entity.SNSParfaitPixieEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.elves.SNSElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSIceCreamParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.parrots.SNSParrotEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.pugs.SNSIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.pugs.SNSPugEntity;
-import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
+import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSParfaitPixieEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSIceCreamParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraftforge.common.world.MobSpawnSettingsBuilder;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;

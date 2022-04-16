@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "A ",
+    "A "
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:blueberrycandy"
+    },
+    "A": {
+      "item": "sweetnotsavourymod:sugarstick"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:blueberry_candy_hoe"
+  }
+}

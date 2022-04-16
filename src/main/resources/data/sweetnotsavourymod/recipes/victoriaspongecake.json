@@ -1,0 +1,14 @@
+{
+  "type": "sweetnotsavourymod:cake_baking",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:creamy_milk_bucket"
+    },
+    {
+      "item": "sweetnotsavourymod:strawberry_jam"
+    }
+  ],
+  "output": {
+    "item": "sweetnotsavourymod:victoriaspongecake"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "age=0": { "model": "sweetnotsavourymod:block/blackberry_crop_stage0" },
+    "age=1": { "model": "sweetnotsavourymod:block/blackberry_crop_stage1" },
+    "age=2": { "model": "sweetnotsavourymod:block/mango_crop_stage2" }
+  }
+}

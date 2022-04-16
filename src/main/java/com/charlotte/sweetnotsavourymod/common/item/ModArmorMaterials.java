@@ -37,8 +37,35 @@ public enum ModArmorMaterials implements ArmorMaterial {
     });
 */
 
-    RASPBERRY_CANDY("raspberry_candy", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
-            3.0F, 0.1F, () -> Ingredient.of(ItemInit.BONBONS.get()));
+    RASPBERRY_CANDY("raspberry_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.RASPBERRYCANDY.get())),
+
+    STRAWBERRY_CANDY("strawberry_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.STRAWBERRYCANDY.get())),
+
+    BLUEBERRY_CANDY("blueberry_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.BLUEBERRYCANDY.get())),
+
+    BLACKBERRY_CANDY("blackberry_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.BLACKBERRYCANDY.get())),
+
+    ORANGE_CANDY("orange_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.ORANGECANDY.get())),
+
+    LEMON_CANDY("lemon_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.LEMONCANDY.get())),
+
+    LIME_CANDY("lime_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.LIMECANDY.get())),
+
+    PEACH_CANDY("peach_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.PEACHCANDY.get())),
+
+    MANGO_CANDY("mango_candy", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.MANGOCANDY.get())),
+
+    VANILLA_ICE_CREAM("vanilla_ice_cream", 37, new int[]{5, 8, 10, 5}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.1F, () -> Ingredient.of(ItemInit.VANILLAICECREAM.get()));
 
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};

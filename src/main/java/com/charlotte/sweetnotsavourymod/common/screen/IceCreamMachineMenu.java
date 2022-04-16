@@ -1,22 +1,18 @@
 package com.charlotte.sweetnotsavourymod.common.screen;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.IceCreamMachineBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.machines.IceCreamMachineBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.screen.slot.SNSFuelSlot;
 import com.charlotte.sweetnotsavourymod.common.screen.slot.SNSResultSlot;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-import org.jetbrains.annotations.Nullable;
 
 public class IceCreamMachineMenu extends AbstractContainerMenu {
     private final IceCreamMachineBlockEntity blockEntity;
@@ -36,11 +32,12 @@ public class IceCreamMachineMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SNSFuelSlot(handler, 0, 6, 36));
-            this.addSlot(new SlotItemHandler(handler, 1, 15, 36));
-            this.addSlot(new SlotItemHandler(handler, 2, 24, 36));
-            this.addSlot(new SNSResultSlot(handler, 3, 65, 36));
+            this.addSlot(new SNSFuelSlot(handler, 0, 80, 64));
+            this.addSlot(new SlotItemHandler(handler, 1, 98, 64));
+            this.addSlot(new SlotItemHandler(handler, 2, 116, 64));
+            this.addSlot(new SNSResultSlot(handler, 3, 152, 64));
         });
+
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons

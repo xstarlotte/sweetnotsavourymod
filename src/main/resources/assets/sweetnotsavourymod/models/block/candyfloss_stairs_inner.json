@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/candyflossblock",
+    "top": "sweetnotsavourymod:blocks/candyflossblock",
+    "side": "sweetnotsavourymod:blocks/candyflossblock"
+  }
+}
