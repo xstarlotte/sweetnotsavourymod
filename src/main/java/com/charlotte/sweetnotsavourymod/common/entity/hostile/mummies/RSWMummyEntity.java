@@ -9,7 +9,9 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
@@ -87,28 +89,28 @@ public class RSWMummyEntity extends Monster implements IAnimatable {
 	protected int getExperienceReward(Player p_21511_) {
 		return 64;
 	}
-	
+
 	 protected SoundEvent getAmbientSound() {
 	      return SoundEvents.ZOMBIE_AMBIENT;
 	}
-	      
+
 	 protected SoundEvent getStepSound() {
 	      return SoundEvents.ZOMBIE_STEP;
-	}     
-	 
+	}
+
 	protected void playAmbientSound(BlockPos pos, BlockState blockIn) {
 	      this.playSound(this.getStepSound(), 0.15F, 1.0F);
-	} 
-	 
+	}
+
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
 	      return SoundEvents.ZOMBIE_HURT;
-    } 
-	
+    }
+
 	@Override
 	protected SoundEvent getDeathSound() {
-		
+
 		return SoundEvents.ZOMBIE_DEATH;
-		
+
 	}
 
 	@Override
@@ -116,9 +118,5 @@ public class RSWMummyEntity extends Monster implements IAnimatable {
 		super.defineSynchedData();
 
 	}
-	
-} 
 
-
-
-
+}

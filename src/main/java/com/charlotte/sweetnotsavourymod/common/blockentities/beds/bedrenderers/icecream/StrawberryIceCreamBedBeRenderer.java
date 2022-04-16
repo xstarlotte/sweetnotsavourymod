@@ -5,7 +5,6 @@ import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.B
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
-
 import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.STRAWBERRYICECREAMBEDBOTTOM;
 import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.STRAWBERRYICECREAMBEDHEAD;
 

@@ -1,11 +1,8 @@
 package com.charlotte.sweetnotsavourymod.client.entityrender.fish;
 
 
-import com.charlotte.sweetnotsavourymod.client.entitymodel.fish.SNSAngelFishModel;
 import com.charlotte.sweetnotsavourymod.client.entitymodel.fish.SNSDolphinModel;
-import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSAngelFishEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSDolphinEntity;
-import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.AngelFishVariant;
 import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.DolphinVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;

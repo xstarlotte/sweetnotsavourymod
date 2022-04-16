@@ -1,14 +1,13 @@
 package com.charlotte.sweetnotsavourymod.common.entity.monkeys;
 
-import net.minecraftforge.event.ForgeEventFactory;
 /*
 public class BananaMonkeyKingEntity extends TameableEntity {
 
 	public BananaMonkeyKingEntity(EntityType<? extends TameableEntity> type, World worldIn) {
-		super(type, worldIn);	
+		super(type, worldIn);
 		setTamed(false);
 	}
-	
+
 	public static AttributeModifierMap.MutableAttribute setAttributes() {
 		return TameableEntity.func_233666_p_()
 				.createMutableAttribute(Attributes.MAX_HEALTH, 20.0f)
@@ -17,7 +16,7 @@ public class BananaMonkeyKingEntity extends TameableEntity {
 				.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.64f);
 
 	}
-		
+
 protected void registerGoals() {
     this.goalSelector.addGoal(1, new SwimGoal(this));
     this.goalSelector.addGoal(2, new LeapAtTargetGoal(this, 0.4F));
@@ -31,7 +30,7 @@ protected void registerGoals() {
     this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setCallsForHelp());
 
  }
-	
+
 @Override
 public void setTamed(boolean tamed)
 {
@@ -59,7 +58,7 @@ public ActionResultType func_230254_b_(PlayerEntity player, Hand hand)
 {
 	ItemStack itemstack = player.getHeldItem(hand);
 	Item item = itemstack.getItem();
-	
+
 	if (item == Items.SUGAR && !isTamed()) {
 		if (world.isRemote) {
 			return ActionResultType.CONSUME;
@@ -71,15 +70,15 @@ public ActionResultType func_230254_b_(PlayerEntity player, Hand hand)
 			if (!ForgeEventFactory.onAnimalTame(this, player)) {
 				makeTamed(player);
 			}
-			
+
 			return ActionResultType.SUCCESS;
 		}
 	}
-	
+
 	if (itemstack.getItem() == Items.SUGAR) {
 		return ActionResultType.PASS;
 	}
-	
+
 	return super.func_230254_b_(player, hand);
 }
 

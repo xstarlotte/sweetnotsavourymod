@@ -1,10 +1,7 @@
 package com.charlotte.sweetnotsavourymod.client.entityrender.snakes;
 
-import com.charlotte.sweetnotsavourymod.client.entitymodel.bugs.SNSSpiderModel;
 import com.charlotte.sweetnotsavourymod.client.entitymodel.snakes.SNSSnakeModel;
-import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSSpiderEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
-import com.charlotte.sweetnotsavourymod.core.util.variants.BugVariants.SpiderFlavourVariant;
 import com.charlotte.sweetnotsavourymod.core.util.variants.SnakeVariants.SnakeFlavourVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;

@@ -1,19 +1,11 @@
 package com.charlotte.sweetnotsavourymod.common.world.gen;
 
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
-import com.ibm.icu.text.AlphabeticIndex;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Cow;
-import net.minecraft.world.entity.animal.WaterAnimal;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 import java.util.Arrays;

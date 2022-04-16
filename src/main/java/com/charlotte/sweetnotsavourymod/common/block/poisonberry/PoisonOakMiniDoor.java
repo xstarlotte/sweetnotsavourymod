@@ -1,14 +1,11 @@
 package com.charlotte.sweetnotsavourymod.common.block.poisonberry;
 
 import net.minecraft.core.BlockPos;
-
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
-
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -39,7 +36,7 @@ public class PoisonOakMiniDoor extends Block{
         openDoor( worldIn , state , pos , flag ? false : true );
         return InteractionResult.SUCCESS;
     }
-    
+
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder <Block, BlockState> builder){
         builder.add(FACING, OPEN, POWERED, HINGE );

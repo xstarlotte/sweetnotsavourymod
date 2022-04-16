@@ -1,8 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entity.birds;
+
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import com.charlotte.sweetnotsavourymod.core.util.variants.AmphibianVariants.ToadFlavourVariant;
-import com.charlotte.sweetnotsavourymod.core.util.variants.BirdVariants.ParrotFlavourVariant;
 import com.charlotte.sweetnotsavourymod.core.util.variants.BirdVariants.ParrotFlavourVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -36,7 +35,6 @@ import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;

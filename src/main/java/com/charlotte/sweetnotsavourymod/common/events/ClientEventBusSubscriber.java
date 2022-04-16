@@ -1,61 +1,70 @@
 package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.client.armor.renderers.*;
+import com.charlotte.sweetnotsavourymod.client.entityrender.amphibians.SNSToadRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.ChocolateChickenRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fish.*;
-import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mintimperials.MintImperialRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSBoarryRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.boats.ModBoatRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCCCatRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCookieCatRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSChipmunkRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.cows.IceCreamCowRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.crooks.CandyCaneCrookRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSGPRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.snakes.SNSSnakeRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.BonbonbiniRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.SNSGummyBearRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSJamsterRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSLionRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSMouseRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mummies.RSWMummyRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSParfaitPixieRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSElfRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.SNSIceCreamParrotRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.SNSParrotRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.boats.ModBoatRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSPretzelflyRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSSpiderRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCCCatRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCookieCatRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSLionRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cows.IceCreamCowRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSCandyCaneWolfRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSIceCreamPugRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSPugRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSWaferschundRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSElfRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSParfaitPixieRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fish.*;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.crooks.CandyCaneCrookRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mintimperials.MintImperialRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mummies.RSWMummyRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.poisonberries.PBArcherRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.poisonberries.PBAttackerRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.poisonberries.PBDefenderRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSPretzelflyRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSRabbitRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSSheepRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSSpiderRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSSquirrollRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.amphibians.SNSToadRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rideable.SNSUnicornRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSWaferschundRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSCandyCaneWolfRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rideable.SNSZebraRenderer;
-import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolateChickenEntity;
+import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.*;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSBoarryRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSSheepRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.snakes.SNSSnakeRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.BonbonbiniRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.SNSGummyBearRenderer;
+import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
-
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
+// FIXME class is essentially a duplicate of ClientEvents and should be merged into that
 @Mod.EventBusSubscriber(modid = SweetNotSavouryMod.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientEventBusSubscriber {
-	
+
+	@SubscribeEvent
+	public static void registerRecipeTypes(final EntityRenderersEvent.AddLayers event) {
+		GeoArmorRenderer.registerArmorRenderer(StrawberryCandyArmorItem.class, new StrawberryCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(BlackberryCandyArmorItem.class, new BlackberryCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(BlueberryCandyArmorItem.class, new BlueberryCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(RaspberryCandyArmorItem.class, new RaspberryCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(OrangeCandyArmorItem.class, new OrangeCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(LemonCandyArmorItem.class, new LemonCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(LimeCandyArmorItem.class, new LimeCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(MangoCandyArmorItem.class, new MangoCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(PeachCandyArmorItem.class, new PeachCandyArmorRenderer());
+	}
+
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
 
@@ -190,12 +199,12 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTING_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), RenderType.translucent());
-        
+
 		/*
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.POISONBERRYATTACKER.get(), PoisonBerryAttackerRenderer::new);
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.POISONBERRYARCHER.get(), PoisonBerryArcherRenderer::new);
-		
+
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.POISONBERRYSPRITE.get(), PoisonBerrySpriteRenderer::new);
 
 		*/
@@ -251,8 +260,8 @@ public class ClientEventBusSubscriber {
 		/*
 
 
-		
-		
+
+
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BANANAMONKEY.get(), BananaMonkeyRenderer::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BANANAMONKEYKING.get(), BananaMonkeyKingRenderer::new);
 

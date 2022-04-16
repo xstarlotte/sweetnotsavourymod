@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.client.armor.models;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.RaspberryCandyArmorItem;
-import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.StrawberryCandyArmorItem;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

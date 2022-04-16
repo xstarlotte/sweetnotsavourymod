@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.client.entityrender.dogs;
 
+import com.charlotte.sweetnotsavourymod.client.entitymodel.dogs.SNSIceCreamPugModel;
 import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSIceCreamPugEntity;
 import com.charlotte.sweetnotsavourymod.core.util.variants.DogVariants.IceCreamPugFlavourVariant;
 import com.google.common.collect.Maps;
@@ -9,7 +10,6 @@ import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import com.charlotte.sweetnotsavourymod.client.entitymodel.dogs.SNSIceCreamPugModel;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 import java.util.Map;
@@ -55,4 +55,3 @@ public class SNSIceCreamPugRenderer extends GeoEntityRenderer<SNSIceCreamPugEnti
 
 	}
 }
-

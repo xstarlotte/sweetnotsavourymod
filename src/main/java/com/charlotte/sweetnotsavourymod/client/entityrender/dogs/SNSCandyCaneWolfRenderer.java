@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.client.entityrender.dogs;
 
 import com.charlotte.sweetnotsavourymod.client.entitymodel.dogs.SNSCandyCaneWolfModel;
 import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSCandyCaneWolfEntity;
-
 import com.charlotte.sweetnotsavourymod.core.util.variants.DogVariants.CCWolfFlavourVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -51,4 +50,3 @@ public class SNSCandyCaneWolfRenderer extends GeoEntityRenderer<SNSCandyCaneWolf
 
     }
 }
-

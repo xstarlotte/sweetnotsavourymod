@@ -1,11 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.block;
 
-import javax.annotation.Nullable;
-
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -25,6 +21,8 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import javax.annotation.Nullable;
 public class SNSLampBlock extends Block implements SimpleWaterloggedBlock {
 	public static final BooleanProperty HANGING = BlockStateProperties.HANGING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -88,4 +86,3 @@ public SNSLampBlock(BlockBehaviour.Properties p_153465_) {
 		return false;
 	}
 }
-

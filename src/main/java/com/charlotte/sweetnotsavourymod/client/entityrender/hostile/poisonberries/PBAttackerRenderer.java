@@ -1,9 +1,7 @@
 package com.charlotte.sweetnotsavourymod.client.entityrender.hostile.poisonberries;
 
 
-
 import com.charlotte.sweetnotsavourymod.client.entitymodel.hostile.poisonberries.PBAttackerModel;
-
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBAttackerEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

@@ -1,7 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.item;
 
 import com.charlotte.sweetnotsavourymod.common.effects.ModEffects;
-
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -11,6 +10,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+
 import java.util.Map;
 import java.util.function.Supplier;
 

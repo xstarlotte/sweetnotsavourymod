@@ -36,7 +36,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
@@ -332,7 +331,7 @@ public class SNSBoarryEntity extends TamableAnimal implements IAnimatable {
 	protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn) {
 		return sizeIn.height * 0.65F;
 	}
-	
+
 	public void aiStep() {
 		super.aiStep();
 		if (!this.level.isClientSide && this.isAlive()  && --this.eggTime <= 0) {
@@ -343,5 +342,3 @@ public class SNSBoarryEntity extends TamableAnimal implements IAnimatable {
 	}
 
 }
-
-

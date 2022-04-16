@@ -1,11 +1,8 @@
 package com.charlotte.sweetnotsavourymod.client.entityrender.rodents;
 
 import com.charlotte.sweetnotsavourymod.client.entitymodel.rodents.SNSGPModel;
-
 import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSGPEntity;
-
 import com.charlotte.sweetnotsavourymod.core.util.variants.RodentVariants.GPFlavourVariant;
-
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -36,14 +33,14 @@ public class SNSGPRenderer extends GeoEntityRenderer <SNSGPEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(SNSGPEntity entity) {
 		return LOCATION_BY_VARIANT.get(entity.getVariant());
-	}	
-	
+	}
+
 	@Override
 	public void render(SNSGPEntity entity, float entityYaw, float partialTicks, PoseStack stack, MultiBufferSource bufferIn,
 					   int packedLightIn) {
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}
-	
+
 	@Override
 	public void renderEarly(SNSGPEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
 							VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,

@@ -3,7 +3,6 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.rideable;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rideable.SNSZebraRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity;
-
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

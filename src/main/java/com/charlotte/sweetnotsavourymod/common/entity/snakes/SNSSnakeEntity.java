@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.common.entity.snakes;
 
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import com.charlotte.sweetnotsavourymod.core.util.variants.BugVariants.SpiderFlavourVariant;
 import com.charlotte.sweetnotsavourymod.core.util.variants.SnakeVariants.SnakeFlavourVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -326,5 +325,3 @@ public class SNSSnakeEntity extends TamableAnimal implements IAnimatable {
 		return sizeIn.height * 0.65F;
 	}
 }
-
-

@@ -3,7 +3,6 @@ package com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.SweetCreatureVariants.BonbonbiniVariant;
-import com.charlotte.sweetnotsavourymod.core.util.variants.SweetCreatureVariants.GummyBearFlavourVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -325,5 +324,3 @@ public class BonbonbiniEntity extends TamableAnimal implements IAnimatable {
 		return sizeIn.height * 0.65F;
 	}
 }
-
-

@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = SweetNotSavouryMod.MOD_ID)
+@Mod.EventBusSubscriber(modid = SweetNotSavouryMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
 
     @SubscribeEvent
@@ -177,5 +177,3 @@ public class ModEvents {
 
     }
 }
-
-

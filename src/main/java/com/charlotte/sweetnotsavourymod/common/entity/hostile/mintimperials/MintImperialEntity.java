@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials;
 
 
 import com.charlotte.sweetnotsavourymod.common.entityai.RSWMummyAttackGoal;
-import com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants.CCCrookVariant;
 import com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants.MintImperialVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -145,28 +144,28 @@ public class MintImperialEntity extends Monster implements IAnimatable {
 	protected int getExperienceReward(Player p_21511_) {
 		return 64;
 	}
-	
+
 	 protected SoundEvent getAmbientSound() {
 	      return SoundEvents.PILLAGER_AMBIENT;
 	}
-	      
+
 	 protected SoundEvent getStepSound() {
 	      return SoundEvents.STRAY_STEP;
-	}     
-	 
+	}
+
 	protected void playAmbientSound(BlockPos pos, BlockState blockIn) {
 	      this.playSound(this.getStepSound(), 0.15F, 1.0F);
-	} 
-	 
+	}
+
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
 	      return SoundEvents.PILLAGER_HURT;
-    } 
-	
+    }
+
 	@Override
 	protected SoundEvent getDeathSound() {
-		
+
 		return SoundEvents.PILLAGER_DEATH;
-		
+
 	}
 
 	@Override
@@ -175,9 +174,5 @@ public class MintImperialEntity extends Monster implements IAnimatable {
 		this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
 
 	}
-	
-} 
 
-
-
-
+}

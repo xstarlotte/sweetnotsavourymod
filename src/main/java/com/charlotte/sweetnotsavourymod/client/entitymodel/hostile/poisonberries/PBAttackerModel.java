@@ -1,7 +1,6 @@
 package com.charlotte.sweetnotsavourymod.client.entitymodel.hostile.poisonberries;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBAttackerEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;

@@ -1,54 +1,45 @@
 package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.client.armor.renderers.*;
+import com.charlotte.sweetnotsavourymod.common.entity.amphibians.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolateChickenEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.fish.*;
-import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSParfaitPixieEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials.MintImperialEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSBoarryEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCookieCatEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSChipmunkEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.hostile.crooks.CandyCaneCrookEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSElfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSGPEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.BonbonbiniEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSJamsterEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSMouseEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.hostile.mummies.RSWMummyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSParrotEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSPretzelflyEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSSpiderEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCookieCatEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSCandyCaneWolfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSIceCreamPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSWaferschundEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSElfEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSParfaitPixieEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fish.*;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.crooks.CandyCaneCrookEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials.MintImperialEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.hostile.mummies.RSWMummyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBArcherEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBAttackerEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBDefenderEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSPretzelflyEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSRabbitEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSSpiderEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSSquirrollEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.amphibians.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSUnicornEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSWaferschundEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSCandyCaneWolfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity;
-import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
+import com.charlotte.sweetnotsavourymod.common.entity.rodents.*;
+import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSBoarryEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.BonbonbiniEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.recipe.*;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 @Mod.EventBusSubscriber(modid = SweetNotSavouryMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SNSModBusEvents {
@@ -100,19 +91,6 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.CANDYCANECROOK.get(), CandyCaneCrookEntity.createAttributes());
         event.put(EntityTypesInit.MINTIMPERIAL.get(), MintImperialEntity.createAttributes());
 
-    }
-
-    @SubscribeEvent
-    public static void registerRecipeTypes(final EntityRenderersEvent.AddLayers event) {
-        GeoArmorRenderer.registerArmorRenderer(StrawberryCandyArmorItem.class, new StrawberryCandyArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(BlackberryCandyArmorItem.class, new BlackberryCandyArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(BlueberryCandyArmorItem.class, new BlueberryCandyArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(RaspberryCandyArmorItem.class, new RaspberryCandyArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(OrangeCandyArmorItem.class, new OrangeCandyArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(LemonCandyArmorItem.class, new LemonCandyArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(LimeCandyArmorItem.class, new LimeCandyArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(MangoCandyArmorItem.class, new MangoCandyArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(PeachCandyArmorItem.class, new PeachCandyArmorRenderer());
     }
 
     @SubscribeEvent

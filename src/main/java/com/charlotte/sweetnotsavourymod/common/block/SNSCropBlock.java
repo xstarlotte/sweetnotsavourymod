@@ -1,6 +1,5 @@
 package com.charlotte.sweetnotsavourymod.common.block;
 
-import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;

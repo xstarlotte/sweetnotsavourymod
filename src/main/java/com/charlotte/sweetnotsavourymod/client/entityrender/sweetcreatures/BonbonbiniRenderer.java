@@ -1,11 +1,8 @@
 package com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures;
 
 import com.charlotte.sweetnotsavourymod.client.entitymodel.sweetcreatures.BonbonbiniModel;
-import com.charlotte.sweetnotsavourymod.client.entitymodel.sweetcreatures.SNSGummyBearModel;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.BonbonbiniEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.core.util.variants.SweetCreatureVariants.BonbonbiniVariant;
-import com.charlotte.sweetnotsavourymod.core.util.variants.SweetCreatureVariants.GummyBearFlavourVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -32,7 +29,7 @@ public class BonbonbiniRenderer extends GeoEntityRenderer<BonbonbiniEntity> {
 	public ResourceLocation getTextureLocation(BonbonbiniEntity entity) {
 		return LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
-	
+
 	@Override
     public void renderEarly(BonbonbiniEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
 							VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,

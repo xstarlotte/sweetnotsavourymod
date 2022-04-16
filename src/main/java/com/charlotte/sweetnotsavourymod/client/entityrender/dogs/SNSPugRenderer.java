@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.client.entityrender.dogs;
 
 import com.charlotte.sweetnotsavourymod.client.entitymodel.dogs.SNSPugModel;
 import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity;
-
 import com.charlotte.sweetnotsavourymod.core.util.variants.DogVariants.PugFlavourVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;

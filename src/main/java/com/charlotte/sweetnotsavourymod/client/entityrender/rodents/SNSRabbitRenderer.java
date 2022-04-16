@@ -4,7 +4,6 @@ import com.charlotte.sweetnotsavourymod.client.entitymodel.rodents.SNSRabbitMode
 import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSRabbitEntity;
 import com.charlotte.sweetnotsavourymod.core.util.variants.RodentVariants.RabbitFlavourVariant;
 import com.google.common.collect.Maps;
-
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.Util;
@@ -38,14 +37,14 @@ public class SNSRabbitRenderer extends GeoEntityRenderer <SNSRabbitEntity> {
 	@Override
 	public ResourceLocation getTextureLocation(SNSRabbitEntity entity) {
 		return LOCATION_BY_VARIANT.get(entity.getVariant());
-	}	
-	
+	}
+
 	@Override
 	public void render(SNSRabbitEntity entity, float entityYaw, float partialTicks, PoseStack stack, MultiBufferSource bufferIn,
 					   int packedLightIn) {
 		super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
 	}
-	
+
 	@Override
 	public void renderEarly(SNSRabbitEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
 							VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,

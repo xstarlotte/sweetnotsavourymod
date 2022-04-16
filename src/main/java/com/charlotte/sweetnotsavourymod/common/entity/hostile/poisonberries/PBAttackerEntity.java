@@ -4,15 +4,16 @@ package com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries;
 import com.charlotte.sweetnotsavourymod.common.entityai.PoisonBerryMeleeAttackGoal;
 import com.charlotte.sweetnotsavourymod.common.entityai.PoisonBerryOpensMiniDoorGoal;
 import net.minecraft.core.BlockPos;
-
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
@@ -94,28 +95,28 @@ public class PBAttackerEntity extends Monster implements IAnimatable {
 	protected int getExperienceReward(Player p_21511_) {
 		return 64;
 	}
-	
+
 	 protected SoundEvent getAmbientSound() {
 	      return SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES;
 	}
-	      
+
 	 protected SoundEvent getStepSound() {
 	      return SoundEvents.BEEHIVE_ENTER;
-	}     
-	 
+	}
+
 	protected void playAmbientSound(BlockPos pos, BlockState blockIn) {
 	      this.playSound(this.getStepSound(), 0.15F, 1.0F);
-	} 
-	 
+	}
+
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
 	      return SoundEvents.BEE_HURT;
-    } 
-	
+    }
+
 	@Override
 	protected SoundEvent getDeathSound() {
-		
+
 		return SoundEvents.BEE_DEATH;
-		
+
 	}
 
 	@Override
@@ -123,9 +124,5 @@ public class PBAttackerEntity extends Monster implements IAnimatable {
 		super.defineSynchedData();
 
 	}
-	
-} 
 
-
-
-
+}

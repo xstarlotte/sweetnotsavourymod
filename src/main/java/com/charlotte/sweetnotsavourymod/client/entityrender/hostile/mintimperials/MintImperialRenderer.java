@@ -1,10 +1,7 @@
 package com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mintimperials;
 
-import com.charlotte.sweetnotsavourymod.client.entitymodel.hostile.crooks.CandyCaneCrookModel;
 import com.charlotte.sweetnotsavourymod.client.entitymodel.hostile.mintimperials.MintImperialModel;
-import com.charlotte.sweetnotsavourymod.common.entity.hostile.crooks.CandyCaneCrookEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials.MintImperialEntity;
-import com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants.CCCrookVariant;
 import com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants.MintImperialVariant;
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.vertex.PoseStack;

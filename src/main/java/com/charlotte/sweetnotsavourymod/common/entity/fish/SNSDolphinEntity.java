@@ -1,6 +1,5 @@
 package com.charlotte.sweetnotsavourymod.common.entity.fish;
 
-import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.AngelFishVariant;
 import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.DolphinVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;

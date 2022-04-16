@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.core.itemgroup;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 

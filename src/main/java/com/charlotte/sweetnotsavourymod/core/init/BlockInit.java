@@ -1,14 +1,14 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.block.*;
+import com.charlotte.sweetnotsavourymod.common.block.ModFlammableRotatedPillarBlock;
+import com.charlotte.sweetnotsavourymod.common.block.SNSCropBlock;
+import com.charlotte.sweetnotsavourymod.common.block.SNSDimensionBlock;
 import com.charlotte.sweetnotsavourymod.common.block.SNSLampBlock;
 import com.charlotte.sweetnotsavourymod.common.block.beds.icecreambeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.wafflebeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.machineblocks.*;
-import com.charlotte.sweetnotsavourymod.common.block.SNSCropBlock;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
-
 import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.ChocolateIceCreamTreeGrower;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTreeGrower;
@@ -204,7 +204,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> ORANGEFROSTINGFLOWER = registerBlock("orangefrostingflower",
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	
+
 	public static final RegistryObject<Block> STRAWBERRYCANDYBUSH = registerBlock("strawberrycandybush",
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
@@ -904,7 +904,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> ItemInit.MINT.get()));
 
 	//beds
-	
+
 	public static final RegistryObject<Block> STRAWBERRYICECREAMBED = registerBlock("strawberryicecreambed",
 			() -> new StrawberryIceCreamBedBlock(DyeColor.RED, BlockBehaviour.Properties.of(Material.WOOD,
 				MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()),
@@ -984,8 +984,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 
-//doors	
-	
+//doors
+
 	public static final RegistryObject<Block> POISONOAKMINIDOOR = registerBlock("poisonoakminidoor",
 			() -> new PoisonOakMiniDoor(BlockBehaviour
 					.Properties
@@ -1058,8 +1058,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-//lanterns	
-	
+//lanterns
+
 	      public static final RegistryObject<Block> POISONBERRYLANTERN = registerBlock("poisonberrylantern",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1070,7 +1070,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> STRAWBERRYLAMP = registerBlock("strawberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1081,7 +1081,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> RASPBERRYLAMP = registerBlock("raspberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1092,7 +1092,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> BLUEBERRYLAMP = registerBlock("blueberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1103,7 +1103,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> BLACKBERRYLAMP = registerBlock("blackberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1114,7 +1114,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> LEMONLAMP = registerBlock("lemonlamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1125,7 +1125,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> ORANGELAMP = registerBlock("orangelamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1136,7 +1136,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> BLUEBERRYLOLLIPOPLAMP = registerBlock("blueberrylollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1147,7 +1147,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> STRAWBERRYLOLLIPOPLAMP = registerBlock("strawberrylollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1158,7 +1158,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> BLACKBERRYLOLLIPOPLAMP = registerBlock("blackberrylollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1169,7 +1169,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	  					
+
 	      public static final RegistryObject<Block> RASPBERRYLOLLIPOPLAMP = registerBlock("raspberrylollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -1180,7 +1180,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> {
 							  return 15;
 						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	      
+
 	      public static final RegistryObject<Block> ORANGELOLLIPOPLAMP = registerBlock("orangelollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
@@ -2076,7 +2076,3 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 }
-
-
-
-

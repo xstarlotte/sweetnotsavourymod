@@ -5,7 +5,8 @@ import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.B
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
-import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.*;
+import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.RASPBERRYICECREAMBEDBOTTOM;
+import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.RASPBERRYICECREAMBEDHEAD;
 
 public class RaspberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     public RaspberryIceCreamBedBeRenderer(BlockEntityRendererProvider.Context context){

@@ -1,7 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.recipe;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
