@@ -63,7 +63,7 @@ public class TeddyBearPrinterRecipe implements Recipe<SimpleContainer> {
     public static class Type implements RecipeType<TeddyBearPrinterRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "jam_pressing";
+        public static final String ID = "teddy_bear_printing";
     }
 
     public static class Serializer implements RecipeSerializer<TeddyBearPrinterRecipe> {
