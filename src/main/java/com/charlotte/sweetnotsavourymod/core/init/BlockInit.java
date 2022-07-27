@@ -1,14 +1,15 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.block.ModFlammableRotatedPillarBlock;
-import com.charlotte.sweetnotsavourymod.common.block.SNSCropBlock;
-import com.charlotte.sweetnotsavourymod.common.block.SNSLampBlock;
+import com.charlotte.sweetnotsavourymod.common.block.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.icecreambeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.wafflebeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.machineblocks.*;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
 import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
+import com.charlotte.sweetnotsavourymod.common.blockentities.SNSChestBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
+import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import com.charlotte.sweetnotsavourymod.common.world.dimension.PureHerbBlock;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.ChocolateIceCreamTreeGrower;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTreeGrower;
@@ -22,6 +23,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -30,6 +32,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import javax.annotation.Nullable;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
 public class BlockInit {
@@ -2080,5 +2084,53 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			.sound(SoundType.METAL)
 			.noOcclusion()),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+
+
+
+	public static RegistryObject<SNSChestBlock> registerChest(String name, Supplier<BlockBehaviour.Properties> properties, int containerSize, RegistryObject<SNSChestMenuType> menuSingle, @Nullable RegistryObject<SNSChestMenuType> menuDouble) {
+//		AtomicReference<BlockEntityType<SNSChestBlockEntity>> entityAtomicReference = new AtomicReference<>();
+//		RegistryObject<SNSChestBlock> chest = registerBlock(name,
+//				()->new SNSChestBlock(properties.get(), entityAtomicReference::get, menuSingle, menuDouble == null ? ()->null : menuDouble, menuDouble != null),
+//				SweetNotSavouryModItemGroup.SNSMODDECORATION);
+//
+//		BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register(name, () -> {
+//			BlockEntityType<SNSChestBlockEntity> type = BlockEntityType.Builder.of(
+//					(pos, state)->new SNSChestBlockEntity(entityAtomicReference.get(), pos, state, containerSize, menuSingle),
+//					chest.get()
+//			).build(null);
+//			entityAtomicReference.set(type);
+//			return type;
+//		});
+//
+//		return chest;
+
+
+		AtomicReference<BlockEntityType<SNSChestBlockEntity>> entityAtomicReference = new AtomicReference<>();
+		RegistryObject<SNSChestBlock> chest = registerBlock(name,
+				menuDouble == null ?
+						()->new SNSChestBlock(properties.get(), entityAtomicReference::get, menuSingle, containerSize) :
+						()->new SNSChestBlockDoubleAble(properties.get(), entityAtomicReference::get, menuSingle, menuDouble, containerSize),
+				SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+		BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register(name, () -> {
+			SNSChestBlock chestGet = chest.get();
+			BlockEntityType<SNSChestBlockEntity> type = BlockEntityType.Builder.of(
+					chestGet::newBlockEntity,
+					chestGet
+			).build(null);
+			entityAtomicReference.set(type);
+			return type;
+		});
+
+		return chest;
+	}
+
+	public static final RegistryObject<SNSChestBlock> STRAWBERRY_CHEST = registerChest("strawberry_chest",
+			()->BlockBehaviour.Properties.copy(Blocks.CHEST),
+			15, MenuTypesInit.STRAWBERRY_CHEST, null);
+	public static final RegistryObject<SNSChestBlock> WAFFLE_CHEST = registerChest("waffle_chest",
+			()->BlockBehaviour.Properties.copy(Blocks.CHEST),
+			27, MenuTypesInit.WAFFLE_CHEST, MenuTypesInit.WAFFLE_CHEST_2);
 
 }
