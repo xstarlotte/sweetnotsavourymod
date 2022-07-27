@@ -157,25 +157,25 @@ public class ModEntityGeneration {
 //HOSTILE
 
         addEntityToSpecificBiomes(event, EntityTypesInit.CANDYCANECROOK.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
                 Biomes.SNOWY_TAIGA, Biomes.TAIGA);
 
         addEntityToSpecificBiomes(event, EntityTypesInit.MINTIMPERIAL.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
                 Biomes.SNOWY_TAIGA, Biomes.TAIGA);
 
         addEntityToSpecificBiomes(event, EntityTypesInit.RSWMUMMY.get(),
-                10, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
+                5, 1, 2, Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES,
                 Biomes.SNOWY_TAIGA, Biomes.TAIGA, Biomes.DESERT);
 
         addEntityToSpecificBiomes(event, EntityTypesInit.POISONBERRYATTACKER.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                5, 1, 1, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
         addEntityToSpecificBiomes(event, EntityTypesInit.POISONBERRYARCHER.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                5, 1, 1, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
         addEntityToSpecificBiomes(event, EntityTypesInit.POISONBERRYDEFENDER.get(),
-                10, 1, 2, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
+                5, 1, 1, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.FLOWER_FOREST,
                 Biomes.DARK_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST);
 
 

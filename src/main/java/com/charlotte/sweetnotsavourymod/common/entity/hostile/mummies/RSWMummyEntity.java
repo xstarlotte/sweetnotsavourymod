@@ -79,7 +79,7 @@ public class RSWMummyEntity extends Monster implements IAnimatable {
                 .createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 70.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.3F)
-                .add(Attributes.ATTACK_DAMAGE, 8.0D)
+                .add(Attributes.ATTACK_DAMAGE, 1.0D)
                 .add(Attributes.ARMOR, 8.0D)
 				.build();
 

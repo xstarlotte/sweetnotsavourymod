@@ -85,7 +85,7 @@ public class PBAttackerEntity extends Monster implements IAnimatable {
                 .createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 70.0D)
                 .add(Attributes.MOVEMENT_SPEED, (double)0.46F)
-                .add(Attributes.ATTACK_DAMAGE, 4.0D)
+                .add(Attributes.ATTACK_DAMAGE, 1.0D)
                 .add(Attributes.ARMOR, 4.0D)
 				.build();
 

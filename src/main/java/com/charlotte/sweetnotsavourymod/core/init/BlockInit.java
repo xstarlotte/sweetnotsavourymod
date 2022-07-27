@@ -3,13 +3,13 @@ package com.charlotte.sweetnotsavourymod.core.init;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.block.ModFlammableRotatedPillarBlock;
 import com.charlotte.sweetnotsavourymod.common.block.SNSCropBlock;
-import com.charlotte.sweetnotsavourymod.common.block.SNSDimensionBlock;
 import com.charlotte.sweetnotsavourymod.common.block.SNSLampBlock;
 import com.charlotte.sweetnotsavourymod.common.block.beds.icecreambeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.wafflebeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.machineblocks.*;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
 import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
+import com.charlotte.sweetnotsavourymod.common.world.dimension.PureHerbBlock;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.ChocolateIceCreamTreeGrower;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTreeGrower;
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
@@ -116,6 +116,13 @@ public class BlockInit {
 
 
 	public static final RegistryObject<Block> RAINBOWFROSTINGGRASSBLOCK = registerBlock("rainbowfrostinggrassblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> POISONGRASSBLOCK = registerBlock("poisongrassblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
@@ -500,9 +507,6 @@ public class BlockInit {
 					.noOcclusion()
 					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> POISONGRASSBLOCK = registerBlock("poisongrassblock",
-			() -> new GrassBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)),
-			SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> POISONBERRYWOODWINDOW = registerBlock("poisonberrywoodwindow",
 			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
@@ -2057,8 +2061,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	//test
 
-	public static final RegistryObject<Block> SNS_DIMENSION_BLOCK = registerBlock("sns_dimension_block",
-			() -> new SNSDimensionBlock(BlockBehaviour.Properties
+	public static final RegistryObject<Block> PURE_HERB_BLOCK = registerBlock("pure_herb_block",
+			() -> new PureHerbBlock(BlockBehaviour.Properties
 					.of(Material.STONE)
 					.strength(5f)
 					.requiresCorrectToolForDrops()),

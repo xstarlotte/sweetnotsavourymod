@@ -366,7 +366,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.CANDYCANE_FURNACE.get());
         this.dropSelf(BlockInit.CANDYFLOSS_CRYSTALIZER.get());
         this.dropSelf(BlockInit.TEDDY_BEAR_PRINTER.get());
-        this.dropSelf(BlockInit.SNS_DIMENSION_BLOCK.get());
+        this.dropSelf(BlockInit.PURE_HERB_BLOCK.get());
 
 
 

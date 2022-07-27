@@ -1,7 +1,5 @@
-package com.charlotte.sweetnotsavourymod.common.block;
+package com.charlotte.sweetnotsavourymod.common.world.dimension;
 
-import com.charlotte.sweetnotsavourymod.common.world.dimension.SNSTeleporter;
-import com.charlotte.sweetnotsavourymod.core.init.DimensionsInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -17,8 +15,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class SNSDimensionBlock extends Block {
-    public SNSDimensionBlock(Properties p_49795_) {
+public class PureHerbBlock extends Block {
+    public PureHerbBlock(Properties p_49795_) {
         super(p_49795_);
     }
 
@@ -30,15 +28,15 @@ public class SNSDimensionBlock extends Block {
                 MinecraftServer server = pLevel.getServer();
 
                 if (server != null) {
-                    if (pLevel.dimension() == DimensionsInit.SnsDimension) {
+                    if (pLevel.dimension() == SNSDimensions.HerbMayfairDim) {
                         ServerLevel overWorld = server.getLevel(Level.OVERWORLD);
                         if (overWorld != null) {
-                            pPlayer.changeDimension(overWorld, new SNSTeleporter(pPos, false));
+                            pPlayer.changeDimension(overWorld, new HerbMayfairTeleporter(pPos, false));
                         }
                     } else {
-                        ServerLevel snsdimension = server.getLevel(DimensionsInit.SnsDimension);
-                        if (snsdimension != null) {
-                            pPlayer.changeDimension(snsdimension, new SNSTeleporter(pPos, true));
+                        ServerLevel hmDim = server.getLevel(SNSDimensions.HerbMayfairDim);
+                        if (hmDim != null) {
+                            pPlayer.changeDimension(hmDim, new HerbMayfairTeleporter(pPos, true));
                         }
                     }
                     return InteractionResult.SUCCESS;

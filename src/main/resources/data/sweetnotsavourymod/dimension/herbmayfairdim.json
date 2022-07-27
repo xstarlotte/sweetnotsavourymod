@@ -2,12 +2,12 @@
   "type": "minecraft:overworld",
   "generator": {
     "type": "minecraft:noise",
-    "seed": 1441347363,
+    "seed": -1357594205,
     "settings": "minecraft:overworld",
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:plains"
+      "biome": "minecraft:snowy_plains"
     }
   },
-  "type": "sweetnotsavourymod:snsdimension_type"
+  "type": "sweetnotsavourymod:herbmayfairdim_type"
 }

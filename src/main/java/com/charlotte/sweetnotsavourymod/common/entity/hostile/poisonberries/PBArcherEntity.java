@@ -88,7 +88,7 @@ public class PBArcherEntity extends Monster implements IAnimatable, RangedAttack
 				.createMonsterAttributes()
 				.add(Attributes.FOLLOW_RANGE, 70.0D)
 				.add(Attributes.MOVEMENT_SPEED, (double)0.34F)
-				.add(Attributes.ATTACK_DAMAGE, 4.0D)
+				.add(Attributes.ATTACK_DAMAGE, 1.0D)
 				.add(Attributes.ARMOR, 4.0D)
 				.build();
 	}

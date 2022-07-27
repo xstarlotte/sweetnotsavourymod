@@ -1,6 +1,5 @@
 package com.charlotte.sweetnotsavourymod.common.world.dimension;
 
-import com.charlotte.sweetnotsavourymod.common.block.SNSDimensionBlock;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -11,11 +10,11 @@ import net.minecraftforge.common.util.ITeleporter;
 
 import java.util.function.Function;
 
-public class SNSTeleporter implements ITeleporter {
+public class HerbMayfairTeleporter implements ITeleporter {
     public static BlockPos thisPos = BlockPos.ZERO;
     public static boolean insideDimension = true;
 
-    public SNSTeleporter(BlockPos pos, boolean insideDim) {
+    public HerbMayfairTeleporter(BlockPos pos, boolean insideDim) {
         thisPos = pos;
         insideDimension = insideDim;
     }
@@ -24,7 +23,7 @@ public class SNSTeleporter implements ITeleporter {
     public Entity placeEntity(Entity entity, ServerLevel currentWorld, ServerLevel destinationWorld,
                               float yaw, Function<Boolean, Entity> repositionEntity) {
         entity = repositionEntity.apply(false);
-        double y = 61;
+        double y = 36;
 
         if (!insideDimension) {
             y = thisPos.getY();
@@ -46,13 +45,13 @@ public class SNSTeleporter implements ITeleporter {
         if (insideDimension) {
             boolean doSetBlock = true;
             for (BlockPos checkPos : BlockPos.betweenClosed(destinationPos.below(10).west(10).south(10), destinationPos.above(10).east(10).north(10))) {
-                if (destinationWorld.getBlockState(checkPos).getBlock() instanceof SNSDimensionBlock) {
+                if (destinationWorld.getBlockState(checkPos).getBlock() instanceof PureHerbBlock) {
                     doSetBlock = false;
                     break;
                 }
             }
             if (doSetBlock) {
-                destinationWorld.setBlock(destinationPos, BlockInit.SNS_DIMENSION_BLOCK.get().defaultBlockState(), 3);
+                destinationWorld.setBlock(destinationPos, BlockInit.PURE_HERB_BLOCK.get().defaultBlockState(), 3);
             }
         }
 

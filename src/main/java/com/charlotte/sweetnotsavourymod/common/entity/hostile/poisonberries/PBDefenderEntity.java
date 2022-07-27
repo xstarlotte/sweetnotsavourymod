@@ -86,8 +86,8 @@ public class PBDefenderEntity extends Monster implements IAnimatable {
 				.add(Attributes.FOLLOW_RANGE, 70.0D)
 				.add(Attributes.MOVEMENT_SPEED, (double)0.34F)
 				.add(Attributes.ATTACK_DAMAGE, 1D)
-				.add(Attributes.ARMOR, 30.0D)
-				.add(Attributes.MAX_HEALTH, 40.0D)
+				.add(Attributes.ARMOR, 3.0D)
+				.add(Attributes.MAX_HEALTH, 4.0D)
 				.add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0.2)
 				.build();
 	}
