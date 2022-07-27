@@ -4,6 +4,8 @@ import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.icecream.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.waffle.*;
 import com.charlotte.sweetnotsavourymod.common.screen.*;
+import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
+import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestScreen;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.FluidInit;
@@ -18,6 +20,7 @@ import net.minecraftforge.client.model.ForgeModelBakery;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT, modid = SweetNotSavouryMod.MOD_ID, bus= Mod.EventBusSubscriber.Bus.MOD)
 public class ClientEvents {
@@ -336,5 +339,14 @@ public class ClientEvents {
         MenuScreens.register(MenuTypesInit.CANDYCANE_FURNACE_MENU.get(), CandycaneFurnaceScreen::new);
         MenuScreens.register(MenuTypesInit.CANDYFLOSS_CRYSTALIZER_MENU.get(), CandyflossCrystalizerScreen::new);
         MenuScreens.register(MenuTypesInit.TEDDY_BEAR_PRINTER_MENU.get(), TeddyBearPrinterScreen::new);
+
+        registerChest(MenuTypesInit.STRAWBERRY_CHEST, 15F, 10F);
+        registerChest(MenuTypesInit.WAFFLE_CHEST, 15F, 10F);
+        registerChest(MenuTypesInit.WAFFLE_CHEST_2, 15F, 10F);
+    }
+
+    private static void registerChest(RegistryObject<SNSChestMenuType> chestType, double axisDistance, double axisHeight) {
+        MenuScreens.register(chestType.get(), SNSChestScreen::new);
+        //TODO register render
     }
 }
