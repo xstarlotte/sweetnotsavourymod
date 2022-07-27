@@ -1988,6 +1988,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("SS")
                 .unlockedBy("has_material", has(ItemInit.CANDYFLOSS.get()))
                 .save(pFinishedRecipeConsumer);
+
+        ShapedRecipeBuilder.shaped(BlockInit.TOOTHPASTE_BLOCK.get())
+                .define('S', ItemInit.TOOTHPASTE.get())
+                .pattern("SS")
+                .pattern("SS")
+                .unlockedBy("has_material", has(ItemInit.TOOTHPASTE.get()))
+                .save(pFinishedRecipeConsumer);
   //lollipops
         ShapedRecipeBuilder.shaped(ItemInit.STRAWBERRYLOLLIPOP.get())
                 .define('S', ItemInit.STRAWBERRYCANDY.get())
@@ -2322,23 +2329,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
        //Sprinkles
 
-        ShapelessRecipeBuilder.shapeless(ItemInit.SPRINKLES.get())
+        ShapelessRecipeBuilder.shapeless(ItemInit.SPRINKLES.get(), 4)
                 .requires(BlockInit.RAINBOWFROSTINGLEAVES.get())
                 .unlockedBy("has_rainbowfrostingleaves", has(BlockInit.RAINBOWFROSTINGLEAVES.get()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapelessRecipeBuilder.shapeless(ItemInit.MINTIMPERIALS.get())
+        ShapelessRecipeBuilder.shapeless(ItemInit.TOOTHPASTE.get(), 4)
+                .requires(BlockInit.TOOTHPASTE_BLOCK.get())
+                .unlockedBy("has_toothpaste_block", has(BlockInit.TOOTHPASTE_BLOCK.get()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapelessRecipeBuilder.shapeless(ItemInit.ENCHANTED_TOOTHPASTE.get(), 4)
+                .requires(ItemInit.TOOTHPASTE.get())
+                .requires(Items.GOLDEN_APPLE)
+                .unlockedBy("has_toothpaste", has(ItemInit.TOOTHPASTE.get()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapelessRecipeBuilder.shapeless(ItemInit.MINTIMPERIALS.get(), 2)
                 .requires(ItemInit.CANDYCANESUGAR.get())
+                .requires(ItemInit.MINT.get())
                 .unlockedBy("has_candycanesugar", has(ItemInit.CANDYCANESUGAR.get()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapelessRecipeBuilder.shapeless(ItemInit.BONBONS.get())
+        ShapelessRecipeBuilder.shapeless(ItemInit.BONBONS.get(), 2)
                 .requires(ItemInit.TOFFEE.get())
                 .requires(ItemInit.CANDYCANESUGAR.get())
                 .unlockedBy("has_toffee", has(ItemInit.TOFFEE.get()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapelessRecipeBuilder.shapeless(ItemInit.COLABOTTLE.get())
+        ShapelessRecipeBuilder.shapeless(ItemInit.COLABOTTLE.get(), 2)
                 .requires(ItemInit.BONBONS.get())
                 .requires(ItemInit.CANDYCANESUGAR.get())
                 .unlockedBy("has_bonbons", has(ItemInit.BONBONS.get()))

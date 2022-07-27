@@ -216,6 +216,8 @@ public class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_FLOWER_4.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_GRASS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_GRASS_LONG.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_SUGAR_CANE.get(), RenderType.cutout());
+
 
         ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYPLANT.get(), RenderType.cutout());
 

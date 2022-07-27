@@ -3,9 +3,13 @@
   "ingredients": [
     {
       "item": "sweetnotsavourymod:candycanesugar"
+    },
+    {
+      "item": "sweetnotsavourymod:mint"
     }
   ],
   "result": {
-    "item": "sweetnotsavourymod:mintimperials"
+    "item": "sweetnotsavourymod:mintimperials",
+    "count": 2
   }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:toothpaste"
+    }
+  },
+  "result": {
+    "item": "sweetnotsavourymod:toothpaste_block"
+  }
+}

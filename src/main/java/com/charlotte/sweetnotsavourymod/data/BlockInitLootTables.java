@@ -218,6 +218,8 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.PEACHCANDYBLOCK.get());
         this.dropSelf(BlockInit.MANGOCANDYBLOCK.get());
 
+        this.dropSelf(BlockInit.TOOTHPASTE_BLOCK.get());
+
         this.dropSelf(BlockInit.STRAWBERRYFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.RASPBERRYFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.BLACKBERRYFROSTINGBLOCK.get());
@@ -452,6 +454,10 @@ public class BlockInitLootTables extends BlockLoot {
             return createSingleItemTableWithSilkTouch(p_124195_, BlockInit.CANDYCANEBUSH.get());
         });
 
+        this.add(BlockInit.CANDY_CANE_SUGAR_CANE.get(), (p_124195_) -> {
+            return createSingleItemTableWithSilkTouch(p_124195_, BlockInit.CANDY_CANE_SUGAR_CANE.get());
+        });
+
 
         this.add(BlockInit.STRAWBERRYCANDYBUSH.get(), (p_124078_) -> {
             return createOreDrop(p_124078_, ItemInit.STRAWBERRYCANDY.get());
@@ -493,6 +499,10 @@ public class BlockInitLootTables extends BlockLoot {
         });
 
         this.add(BlockInit.CANDYCANEBUSH.get(), (p_124078_) -> {
+            return createOreDrop(p_124078_, ItemInit.CANDYCANESUGAR.get());
+        });
+
+        this.add(BlockInit.CANDY_CANE_SUGAR_CANE.get(), (p_124078_) -> {
             return createOreDrop(p_124078_, ItemInit.CANDYCANESUGAR.get());
         });
 

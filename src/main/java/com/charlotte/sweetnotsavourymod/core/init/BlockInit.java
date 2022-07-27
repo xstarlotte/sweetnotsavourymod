@@ -328,6 +328,12 @@ public class BlockInit {
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+	public static final RegistryObject<Block> CANDY_CANE_SUGAR_CANE = registerBlock("candycanesugarcaneblock",
+			()->new SugarCaneBlock(BlockBehaviour.Properties.copy(Blocks.SUGAR_CANE)
+					.noOcclusion()
+					.noCollission()),
+			SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 	//potted flowers
 
 	public static final RegistryObject<Block> POTTED_FROSTINGFLOWER = registerBlockWithoutBlockItem("potted_frostingflower",
@@ -474,14 +480,6 @@ public class BlockInit {
 			() -> new FlowerPotBlock(null, BlockInit.POISONBERRYPLANT,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()));
 
-	//public static final RegistryObject<Block> CANDYCANESUGARCANEBLOCK = registerBlock("candycanesugarcaneblock",
-	//		() -> new CandyCaneSugarCaneBlock(BlockBehaviour.Properties
-	//				.of(Material.PLANTS)
-	//				.noCollission()
-	//				.randomTicks()
-	//				.noOcclusion()
-	//				.instabreak()
-	//				.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	//POISONBERRY-STUFF
 
@@ -722,6 +720,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> CANDYFLOSSBLOCK = registerBlock("candyflossblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.SNOW)
 					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> TOOTHPASTE_BLOCK = registerBlock("toothpaste_block",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CAKE).sound(SoundType.HONEY_BLOCK)
+					.strength(1f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 
 

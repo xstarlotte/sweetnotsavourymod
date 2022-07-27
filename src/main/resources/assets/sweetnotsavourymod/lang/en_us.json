@@ -159,6 +159,7 @@
 	"item.sweetnotsavourymod.mintimperials": "Mint Imperials",
 	"item.sweetnotsavourymod.colabottle": "Cola Bottle",
 	"item.sweetnotsavourymod.candy_cane": "Candy Cane",
+	"item.sweetnotsavourymod.toothpaste": "Toothpaste",
 
 	"item.sweetnotsavourymod.strawberry_jam": "Strawberry Jam",
 	"item.sweetnotsavourymod.raspberry_jam": "Raspberry Jam",
@@ -302,6 +303,7 @@
 
 	"item.sweetnotsavourymod.savoury_essence": "Savoury Essence",
 	"item.sweetnotsavourymod.sweet_essence": "Sweet Essence",
+	"item.sweetnotsavourymod.enchanted_toothpaste": "Enchanted Toothpaste",
 
 	"block.sweetnotsavourymod.candycanesugarcaneblock": "Candy Cane Sugar Cane Block",
 
@@ -422,6 +424,8 @@
 	"block.sweetnotsavourymod.hardenedbananastone": "Hardened Banana Stone",
 	"block.sweetnotsavourymod.hardenedbananaplanks": "Hardened Banana Planks",
 	"block.sweetnotsavourymod.smoothhardenedbananastone": "Smooth Banana Stone",
+
+	"block.sweetnotsavourymod.toothpaste_block": "Toothpaste Block",
 
 	"block.sweetnotsavourymod.rottenmouldycandycanechains": "Rotten Mouldy Candy Cane Chains",
 	"block.sweetnotsavourymod.rottenmouldycandycanebars": "Rotten Mouldy Candy Cane Bars",

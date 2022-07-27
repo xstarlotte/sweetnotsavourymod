@@ -195,6 +195,14 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
+	public static final RegistryObject<Item> TOOTHPASTE = ITEMS.register("toothpaste", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 300, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
 	public static final RegistryObject<Item> CANDYFLOSS = ITEMS.register("candyfloss", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
 					.nutrition(1)
@@ -1269,6 +1277,9 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
 
 	public static final RegistryObject<Item> SWEET_ESSENCE = ITEMS.register("sweet_essence",
+			() -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
+
+	public static final RegistryObject<Item> ENCHANTED_TOOTHPASTE = ITEMS.register("enchanted_toothpaste",
 			() -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
 
 }
