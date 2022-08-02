@@ -1,6 +1,7 @@
-package com.charlotte.sweetnotsavourymod.common.blockentities;
+package com.charlotte.sweetnotsavourymod.common.blockentities.chest;
 
 import com.charlotte.sweetnotsavourymod.common.block.SNSChestBlock;
+import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenu;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -27,10 +28,15 @@ import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.wrapper.InvWrapper;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Supplier;
 
+@SuppressWarnings("deprecation")
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implements LidBlockEntity {
@@ -51,10 +57,10 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		}
 
 		protected boolean isOwnContainer(Player p_155355_) {
-			if (!(p_155355_.containerMenu instanceof ChestMenu)) {
+			if (!(p_155355_.containerMenu instanceof SNSChestMenu)) {
 				return false;
 			} else {
-				Container container = ((ChestMenu)p_155355_.containerMenu).getContainer();
+				Container container = ((SNSChestMenu)p_155355_.containerMenu).container;
 				return container == SNSChestBlockEntity.this || container instanceof CompoundContainer && ((CompoundContainer)container).contains(SNSChestBlockEntity.this);
 			}
 		}
@@ -125,15 +131,17 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 	}
 
 	public void startOpen(Player pPlayer) {
-		if (!this.remove && !pPlayer.isSpectator()) {
-			this.openersCounter.incrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+		Level level = this.getLevel();
+		if (!this.remove && !pPlayer.isSpectator() && level != null) {
+			this.openersCounter.incrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
 		}
 
 	}
 
 	public void stopOpen(Player pPlayer) {
-		if (!this.remove && !pPlayer.isSpectator()) {
-			this.openersCounter.decrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+		Level level = this.getLevel();
+		if (!this.remove && !pPlayer.isSpectator() && level != null) {
+			this.openersCounter.decrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
 		}
 
 	}
@@ -183,8 +191,9 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		}
 	}
 
+	@Nonnull
 	@Override
-	public <T> net.minecraftforge.common.util.LazyOptional<T> getCapability(net.minecraftforge.common.capabilities.Capability<T> cap, Direction side) {
+	public <T> LazyOptional<T> getCapability(net.minecraftforge.common.capabilities.Capability<T> cap, @Nullable Direction side) {
 		if (!this.remove && cap == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
 			if (this.chestHandler == null)
 				this.chestHandler = net.minecraftforge.common.util.LazyOptional.of(this::createHandler);
@@ -195,10 +204,10 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 
 	private net.minecraftforge.items.IItemHandlerModifiable createHandler() {
 		BlockState state = this.getBlockState();
-		if (!(state.getBlock() instanceof SNSChestBlock)) {
-			return new net.minecraftforge.items.wrapper.InvWrapper(this);
-		}
-		Container inv = SNSChestBlock.getContainer((SNSChestBlock) state.getBlock(), state, getLevel(), getBlockPos(), true);
+		Level level = getLevel();
+		if (!(state.getBlock() instanceof SNSChestBlock block) || level == null)
+			return new InvWrapper(this);
+		Container inv = SNSChestBlock.getContainer(block, state, level, getBlockPos(), true);
 		return new net.minecraftforge.items.wrapper.InvWrapper(inv == null ? this : inv);
 	}
 
@@ -212,10 +221,10 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 	}
 
 	public void recheckOpen() {
-		if (!this.remove) {
-			this.openersCounter.recheckOpeners(this.getLevel(), this.getBlockPos(), this.getBlockState());
+		Level level = getLevel();
+		if (!this.remove && level != null) {
+			this.openersCounter.recheckOpeners(level, this.getBlockPos(), this.getBlockState());
 		}
-
 	}
 
 	protected void signalOpenCount(Level pLevel, BlockPos pPos, BlockState pState, int p_155336_, int p_155337_) {

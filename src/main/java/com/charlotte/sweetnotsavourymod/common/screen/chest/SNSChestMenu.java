@@ -8,6 +8,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -16,16 +17,16 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 
 public class SNSChestMenu extends AbstractContainerMenu {
-	private final Container container;
+	public final Container container;
 	public final SNSChestMenuTemplate template;
 
 	public SNSChestMenu(@Nullable MenuType<?> pMenuType, int pContainerId, SNSChestMenuTemplate template, Inventory playerInventory, @Nullable Container container) {
 		super(pMenuType, pContainerId);
 
 		if (container == null)
-			container = new SimpleContainer(template.slots.length);
+			container = new SimpleContainer(template.size);
 		else
-			checkContainerSize(container, template.slots.length);
+			checkContainerSize(container, template.size);
 
 		this.container = container;
 		this.template = template;
@@ -33,12 +34,11 @@ public class SNSChestMenu extends AbstractContainerMenu {
 
 
 
-		for (int i = 0; i < template.slots.length; i++) {
+		for (int i = 0; i < template.size; i++) {
 			SNSChestMenuTemplate.SlotPos pos = template.slots[i];
 			addSlot(new Slot(container, i, pos.x(), pos.y()));
 		}
 
-		//int i = (this.containerRows - 4) * 18;
 		int offX = (template.width - 176) >> 1;
 		int offY = template.height - (113 + 4 * 18);
 		for(int col = 0; col < 9; ++col) {
@@ -52,5 +52,31 @@ public class SNSChestMenu extends AbstractContainerMenu {
 	@Override
 	public boolean stillValid(Player player) {
 		return container.stillValid(player);
+	}
+
+	@Override
+	public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
+		ItemStack stack = ItemStack.EMPTY;
+		Slot slot = this.slots.get(pIndex);
+		if (!slot.hasItem())
+			return stack;
+
+		ItemStack slotStack = slot.getItem();
+		stack = slotStack.copy();
+		if (pIndex < this.template.size) {
+			if (!this.moveItemStackTo(slotStack, this.template.size, this.slots.size(), true)) {
+				return ItemStack.EMPTY;
+			}
+		} else if (!this.moveItemStackTo(slotStack, 0, this.template.size, false)) {
+			return ItemStack.EMPTY;
+		}
+
+		if (slotStack.isEmpty()) {
+			slot.set(ItemStack.EMPTY);
+		} else {
+			slot.setChanged();
+		}
+
+		return stack;
 	}
 }

@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.block;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.SNSChestBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -48,6 +48,7 @@ public class SNSChestBlockDoubleAble extends SNSChestBlock {
 		};
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public BlockState mirror(BlockState pState, Mirror pMirror) {
 		BlockState rotated = pState.rotate(pMirror.getRotation(pState.getValue(FACING)));

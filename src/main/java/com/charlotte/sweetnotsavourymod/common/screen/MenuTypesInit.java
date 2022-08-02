@@ -3,9 +3,6 @@ import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenu;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuTemplate;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -54,15 +51,15 @@ public class MenuTypesInit {
                                         80, 95
             ));
 
-    public static final RegistryObject<SNSChestMenuType> WAFFLE_CHEST =
-            registerChestMenu(new SNSChestMenuTemplate("waffle_chest", 176, 169,
+    public static final RegistryObject<SNSChestMenuType> WAFER_CHEST =
+            registerChestMenu(new SNSChestMenuTemplate("wafer_chest", 176, 169,
                     8, 18,   26, 18,   44, 18,   62, 18,   80, 18,   98, 18,   116, 18,   134, 18,   152, 18,
                     8, 36,   26, 36,   44, 36,   62, 36,   80, 36,   98, 36,   116, 36,   134, 36,   152, 36,
                     8, 54,   26, 54,   44, 54,   62, 54,   80, 54,   98, 54,   116, 54,   134, 54,   152, 54
             ));
 
-    public static final RegistryObject<SNSChestMenuType> WAFFLE_CHEST_2 =
-            registerChestMenu(new SNSChestMenuTemplate("waffle_chest_2", 176, 223,
+    public static final RegistryObject<SNSChestMenuType> WAFER_CHEST_2 =
+            registerChestMenu(new SNSChestMenuTemplate("wafer_chest_2", 176, 223,
                     8,  18,   26,  18,   44,  18,   62,  18,   80,  18,   98,  18,   116,  18,   134,  18,   152,  18,
                     8,  36,   26,  36,   44,  36,   62,  36,   80,  36,   98,  36,   116,  36,   134,  36,   152,  36,
                     8,  54,   26,  54,   44,  54,   62,  54,   80,  54,   98,  54,   116,  54,   134,  54,   152,  54,
