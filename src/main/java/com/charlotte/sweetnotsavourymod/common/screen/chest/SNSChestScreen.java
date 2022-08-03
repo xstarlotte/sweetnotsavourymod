@@ -25,6 +25,12 @@ public class SNSChestScreen extends AbstractContainerScreen<SNSChestMenu> {
 	}
 
 	@Override
+	public void render(PoseStack stack, int mx, int my, float partialTick) {
+		super.render(stack, mx, my, partialTick);
+		renderTooltip(stack, mx, my);
+	}
+
+	@Override
 	protected void renderBg(PoseStack stack, float partialTick, int mx, int my) {
 		renderBackground(stack);
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);

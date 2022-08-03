@@ -1,29 +1,28 @@
 package com.charlotte.sweetnotsavourymod.common.block;
 
-import com.charlotte.sweetnotsavourymod.common.blockentities.SNSChestBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuProvider;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.animal.Cat;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
@@ -34,16 +33,15 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 import java.util.function.Supplier;
 
+@SuppressWarnings("deprecation")
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class SNSChestBlock extends BaseEntityBlock {
@@ -58,41 +56,6 @@ public class SNSChestBlock extends BaseEntityBlock {
 	protected static final VoxelShape WEST_AABB = Block.box(0.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
 	protected static final VoxelShape EAST_AABB = Block.box(1.0D, 0.0D, 1.0D, 16.0D, 14.0D, 15.0D);
 	protected static final VoxelShape AABB = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
-
-
-	private static final DoubleBlockCombiner.Combiner<ChestBlockEntity, Optional<MenuProvider>> MENU_PROVIDER_COMBINER = new DoubleBlockCombiner.Combiner<ChestBlockEntity, Optional<MenuProvider>>() {
-		public Optional<MenuProvider> acceptDouble(final ChestBlockEntity p_51604_, final ChestBlockEntity p_51605_) {
-			final Container container = new CompoundContainer(p_51604_, p_51605_);
-			return Optional.of(new MenuProvider() {
-				@Nullable
-				public AbstractContainerMenu createMenu(int p_51622_, Inventory p_51623_, Player p_51624_) {
-					if (p_51604_.canOpen(p_51624_) && p_51605_.canOpen(p_51624_)) {
-						p_51604_.unpackLootTable(p_51623_.player);
-						p_51605_.unpackLootTable(p_51623_.player);
-						return ChestMenu.sixRows(p_51622_, p_51623_, container);
-					} else {
-						return null;
-					}
-				}
-
-				public Component getDisplayName() {
-					if (p_51604_.hasCustomName()) {
-						return p_51604_.getDisplayName();
-					} else {
-						return p_51605_.hasCustomName() ? p_51605_.getDisplayName() : new TranslatableComponent("container.chestDouble");
-					}
-				}
-			});
-		}
-
-		public Optional<MenuProvider> acceptSingle(ChestBlockEntity p_51602_) {
-			return Optional.of(p_51602_);
-		}
-
-		public Optional<MenuProvider> acceptNone() {
-			return Optional.empty();
-		}
-	};
 
 
 	public final Supplier<BlockEntityType<SNSChestBlockEntity>> blockEntity;

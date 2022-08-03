@@ -7,7 +7,7 @@ import com.charlotte.sweetnotsavourymod.common.block.beds.wafflebeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.machineblocks.*;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
 import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
-import com.charlotte.sweetnotsavourymod.common.blockentities.SNSChestBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import com.charlotte.sweetnotsavourymod.common.world.dimension.PureHerbBlock;
@@ -2129,8 +2129,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<SNSChestBlock> STRAWBERRY_CHEST = registerChest("strawberry_chest",
 			()->BlockBehaviour.Properties.copy(Blocks.CHEST),
 			15, MenuTypesInit.STRAWBERRY_CHEST, null);
-	public static final RegistryObject<SNSChestBlock> WAFFLE_CHEST = registerChest("waffle_chest",
+	public static final RegistryObject<SNSChestBlock> WAFER_CHEST = registerChest("wafer_chest",
 			()->BlockBehaviour.Properties.copy(Blocks.CHEST),
-			27, MenuTypesInit.WAFFLE_CHEST, MenuTypesInit.WAFFLE_CHEST_2);
+			27, MenuTypesInit.WAFER_CHEST, MenuTypesInit.WAFER_CHEST_2);
 
 }

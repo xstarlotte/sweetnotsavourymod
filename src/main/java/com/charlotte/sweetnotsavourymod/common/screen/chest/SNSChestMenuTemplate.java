@@ -9,6 +9,7 @@ public class SNSChestMenuTemplate {
 	public final String id;
 	public ResourceLocation texture;
 	public final int width, height;
+	public final int size;
 	public final SlotPos[] slots;
 
 	public SNSChestMenuTemplate(String id, int width, int height, SlotPos ... slots) {
@@ -16,6 +17,7 @@ public class SNSChestMenuTemplate {
 		this.texture = new ResourceLocation(SweetNotSavouryMod.MOD_ID, "textures/gui/chest/" + id + ".png");
 		this.width = width;
 		this.height = height;
+		this.size = slots.length;
 		this.slots = slots;
 	}
 

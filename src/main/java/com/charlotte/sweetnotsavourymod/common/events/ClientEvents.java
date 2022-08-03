@@ -1,8 +1,10 @@
 package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.common.block.SNSChestBlock;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.icecream.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.waffle.*;
+import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestRenderer;
 import com.charlotte.sweetnotsavourymod.common.screen.*;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestScreen;
@@ -100,6 +102,9 @@ public class ClientEvents {
         ForgeModelBakery.addSpecialModel(STRAWBERRYICECREAMBEDBOTTOM);
         ForgeModelBakery.addSpecialModel(STRAWBERRYICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.cutout());
+
+        addChestSpecialModel(BlockInit.STRAWBERRY_CHEST);
+        addChestSpecialModel(BlockInit.WAFER_CHEST);
 
         ForgeModelBakery.addSpecialModel(WAFFLEBEDBOTTOM);
         ForgeModelBakery.addSpecialModel(WAFFLEBEDHEAD);
@@ -313,6 +318,20 @@ public class ClientEvents {
 
     }
 
+    private static void addChestSpecialModel(RegistryObject<SNSChestBlock> chestReg) {
+        ResourceLocation id = chestReg.getId();
+        String ns = id.getNamespace();
+        String path = id.getPath();
+
+        ForgeModelBakery.addSpecialModel(new ResourceLocation(ns, "block/" + path + "_base"));
+        ForgeModelBakery.addSpecialModel(new ResourceLocation(ns, "block/" + path + "_lid"));
+
+        if (chestReg.get().doubleAble) {
+            ForgeModelBakery.addSpecialModel(new ResourceLocation(ns, "block/" + path + "_base2"));
+            ForgeModelBakery.addSpecialModel(new ResourceLocation(ns, "block/" + path + "_lid2"));
+        }
+    }
+
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         BlockEntityRenderers.register(BlockEntityTypesInit.SNS_BLACKBERRY_BED_ENTITY_TYPE.get(), BlackberryIceCreamBedBeRenderer::new);
@@ -342,13 +361,20 @@ public class ClientEvents {
         MenuScreens.register(MenuTypesInit.CANDYFLOSS_CRYSTALIZER_MENU.get(), CandyflossCrystalizerScreen::new);
         MenuScreens.register(MenuTypesInit.TEDDY_BEAR_PRINTER_MENU.get(), TeddyBearPrinterScreen::new);
 
-        registerChest(MenuTypesInit.STRAWBERRY_CHEST, 15F, 10F);
-        registerChest(MenuTypesInit.WAFFLE_CHEST, 15F, 10F);
-        registerChest(MenuTypesInit.WAFFLE_CHEST_2, 15F, 10F);
+        registerChestScreen(MenuTypesInit.STRAWBERRY_CHEST);
+        registerChestScreen(MenuTypesInit.WAFER_CHEST);
+        registerChestScreen(MenuTypesInit.WAFER_CHEST_2);
+
+        registerChestRender(BlockInit.STRAWBERRY_CHEST, 14d, 10d);
+        registerChestRender(BlockInit.WAFER_CHEST, 15d, 10d);
     }
 
-    private static void registerChest(RegistryObject<SNSChestMenuType> chestType, double axisDistance, double axisHeight) {
+    private static void registerChestScreen(RegistryObject<SNSChestMenuType> chestType) {
         MenuScreens.register(chestType.get(), SNSChestScreen::new);
-        //TODO register render
+    }
+
+    private static void registerChestRender(RegistryObject<SNSChestBlock> blockReg, double axisDistance, double axisHeight) {
+        SNSChestBlock block = blockReg.get();
+        BlockEntityRenderers.register(block.blockEntity.get(), ctx->new SNSChestRenderer(ctx, block, axisDistance / 16, axisHeight / 16));
     }
 }
