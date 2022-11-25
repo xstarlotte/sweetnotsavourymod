@@ -218,6 +218,8 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.PEACHCANDYBLOCK.get());
         this.dropSelf(BlockInit.MANGOCANDYBLOCK.get());
 
+        this.dropSelf(BlockInit.TOOTHPASTE_BLOCK.get());
+
         this.dropSelf(BlockInit.STRAWBERRYFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.RASPBERRYFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.BLACKBERRYFROSTINGBLOCK.get());
@@ -349,6 +351,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get());
         this.dropSelf(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get());
         this.dropSelf(BlockInit.FROSTING_DOOR.get());
+        this.dropSelf(BlockInit.TOOTHPASTE_DOOR.get());
 
         this.dropSelf(BlockInit.POISONOAKMINIDOOR.get());
         this.dropSelf(BlockInit.POISONOAKDRAWERS.get());
@@ -452,6 +455,10 @@ public class BlockInitLootTables extends BlockLoot {
             return createSingleItemTableWithSilkTouch(p_124195_, BlockInit.CANDYCANEBUSH.get());
         });
 
+        this.add(BlockInit.CANDY_CANE_SUGAR_CANE.get(), (p_124195_) -> {
+            return createSingleItemTableWithSilkTouch(p_124195_, BlockInit.CANDY_CANE_SUGAR_CANE.get());
+        });
+
 
         this.add(BlockInit.STRAWBERRYCANDYBUSH.get(), (p_124078_) -> {
             return createOreDrop(p_124078_, ItemInit.STRAWBERRYCANDY.get());
@@ -493,6 +500,10 @@ public class BlockInitLootTables extends BlockLoot {
         });
 
         this.add(BlockInit.CANDYCANEBUSH.get(), (p_124078_) -> {
+            return createOreDrop(p_124078_, ItemInit.CANDYCANESUGAR.get());
+        });
+
+        this.add(BlockInit.CANDY_CANE_SUGAR_CANE.get(), (p_124078_) -> {
             return createOreDrop(p_124078_, ItemInit.CANDYCANESUGAR.get());
         });
 
@@ -626,6 +637,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.add(BlockInit.CHOCOLATE_WAFER_WOOD_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.FROSTING_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(BlockInit.TOOTHPASTE_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), BlockLoot::createDoorTable);
 
         this.add(BlockInit.STRAWBERRY_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);

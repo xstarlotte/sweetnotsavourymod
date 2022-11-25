@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sweetnotsavourymod:enchanted_toothpaste"
+    ]
+  },
+  "criteria": {
+    "has_toothpaste": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sweetnotsavourymod:toothpaste"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sweetnotsavourymod:enchanted_toothpaste"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_toothpaste",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -33,6 +33,7 @@ import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSBoarryRende
 import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSSheepRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.snakes.SNSSnakeRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.BonbonbiniRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.Gingerbread_ManRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.SNSGummyBearRenderer;
 import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
@@ -77,6 +78,7 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_FLOWER_4.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_GRASS.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_GRASS_LONG.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_SUGAR_CANE.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTINGFLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYFROSTINGFLOWER.get(), RenderType.cutout());
@@ -198,6 +200,7 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFER_PLANK_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTING_DOOR.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.TOOTHPASTE_DOOR.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), RenderType.translucent());
 
 		/*
@@ -236,6 +239,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.CHOCOLATECHICKEN.get(), ChocolateChickenRenderer::new);
 		EntityRenderers.register(EntityTypesInit.BONBONBINI.get(), BonbonbiniRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSSNAKE.get(), SNSSnakeRenderer::new);
+		EntityRenderers.register(EntityTypesInit.GINGERBREAD_MAN.get(), Gingerbread_ManRenderer::new);
 
 		EntityRenderers.register(EntityTypesInit.SNSCANDYCANEFISH.get(), SNSCandyCanefishRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSICFISH.get(), SNSICFishRenderer::new);

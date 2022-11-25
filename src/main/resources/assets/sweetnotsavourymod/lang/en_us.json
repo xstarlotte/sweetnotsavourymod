@@ -64,6 +64,8 @@
 
 	"item.sweetnotsavourymod.chocolatechickenspawnegg": "Chocolate Chicken Spawn Egg",
 
+	"item.sweetnotsavourymod.gingerbread_manspawnegg": "Gingerbread Man Spawn Egg",
+
 	"item.sweetnotsavourymod.snsicfishspawnegg": "Ice Cream Fish Spawn Egg",
 	"item.sweetnotsavourymod.snscandycanefishspawnegg": "Candycane Fish Spawn Egg",
 	"item.sweetnotsavourymod.snswafflefishspawnegg": "Wafflefish Spawn Egg",
@@ -159,6 +161,7 @@
 	"item.sweetnotsavourymod.mintimperials": "Mint Imperials",
 	"item.sweetnotsavourymod.colabottle": "Cola Bottle",
 	"item.sweetnotsavourymod.candy_cane": "Candy Cane",
+	"item.sweetnotsavourymod.toothpaste": "Toothpaste",
 
 	"item.sweetnotsavourymod.strawberry_jam": "Strawberry Jam",
 	"item.sweetnotsavourymod.raspberry_jam": "Raspberry Jam",
@@ -302,6 +305,7 @@
 
 	"item.sweetnotsavourymod.savoury_essence": "Savoury Essence",
 	"item.sweetnotsavourymod.sweet_essence": "Sweet Essence",
+	"item.sweetnotsavourymod.enchanted_toothpaste": "Enchanted Toothpaste",
 
 	"block.sweetnotsavourymod.candycanesugarcaneblock": "Candy Cane Sugar Cane Block",
 
@@ -324,6 +328,7 @@
 	"block.sweetnotsavourymod.blackberry_crop": "Sweet Blackberry Crop",
 
 	"block.sweetnotsavourymod.frostinggrass": "Frosting Grass",
+	"block.sweetnotsavourymod.candycane_grass_block": "Candy Cane Grass Block",
 	"block.sweetnotsavourymod.candycanebush": "Candy Cane Bush",
 	"block.sweetnotsavourymod.candy_cane_flower": "Candy Cane Flower",
 	"block.sweetnotsavourymod.candy_cane_flower_2": "Candy Cane Flower",
@@ -422,6 +427,8 @@
 	"block.sweetnotsavourymod.hardenedbananastone": "Hardened Banana Stone",
 	"block.sweetnotsavourymod.hardenedbananaplanks": "Hardened Banana Planks",
 	"block.sweetnotsavourymod.smoothhardenedbananastone": "Smooth Banana Stone",
+
+	"block.sweetnotsavourymod.toothpaste_block": "Toothpaste Block",
 
 	"block.sweetnotsavourymod.rottenmouldycandycanechains": "Rotten Mouldy Candy Cane Chains",
 	"block.sweetnotsavourymod.rottenmouldycandycanebars": "Rotten Mouldy Candy Cane Bars",
@@ -532,6 +539,7 @@
 	"block.sweetnotsavourymod.frosting_door": "Frosting Door",
 	"block.sweetnotsavourymod.candyfloss_door": "Candyfloss Door",
 	"block.sweetnotsavourymod.rotten_mouldy_candy_cane_door": "Rotten Mouldy Candy Cane Door",
+	"block.sweetnotsavourymod.toothpaste_door": "Toothpaste Door",
 
 	"block.sweetnotsavourymod.strawberrylamp": "Strawberry Lamp",
 	"block.sweetnotsavourymod.blackberrylamp": "Blackberry Lamp",
@@ -636,6 +644,8 @@
 	"entity.sweetnotsavourymod.snsparrot.11": "Mango Parrot",
 
 	"entity.sweetnotsavourymod.chocolatechicken": "Chocolate Chicken",
+
+	"entity.sweetnotsavourymod.gingerbread_man": "Gingerbread Man",
 
 	"entity.sweetnotsavourymod.snspretzelfly.0": "Salted Pretzelfly",
 	"entity.sweetnotsavourymod.snspretzelfly.1": "Honey-Coated Pretzelfly",
@@ -862,7 +872,15 @@
 
 
 
-	"block.sweetnotsavourymod.strawberrychest": "Strawberry Chest",
+	"block.sweetnotsavourymod.strawberry_chest": "Strawberry Chest",
+	"block.sweetnotsavourymod.wafer_chest": "Wafer Wood Chest",
+	"block.sweetnotsavourymod.wafer_chest_2": "Large Wafer Wood Chest",
+
+	"entity.sweetnotsavourymod.strawberry_chest": "Strawberry Chest",
+	"entity.sweetnotsavourymod.wafer_chest": "Wafer Wood Chest",
+	"entity.sweetnotsavourymod.wafer_chest_2": "Large Wafer Wood Chest",
+
+
 
 	"block.sweetnotsavourymod.ice_cream_machine": "Ice Cream Machine",
 	"block.sweetnotsavourymod.banana_baker": "Banana Baker",

@@ -158,11 +158,16 @@ public class SweetNotSavouryMod {
                 Animal::checkAnimalSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.OR);
 
-        event.register(EntityTypesInit.SNSMOUSE.get(),
-                SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Animal::checkAnimalSpawnRules,
+            SpawnPlacements.register(EntityTypesInit.GINGERBREAD_MAN.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.OR);
+
+            SpawnPlacements.register(EntityTypesInit.SNSMOUSE.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
 
         event.register(EntityTypesInit.SNSSQUIRROLL.get(),
                 SpawnPlacements.Type.ON_GROUND,

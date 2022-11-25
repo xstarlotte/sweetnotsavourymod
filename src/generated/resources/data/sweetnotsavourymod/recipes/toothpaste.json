@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:toothpaste_block"
+    }
+  ],
+  "result": {
+    "item": "sweetnotsavourymod:toothpaste",
+    "count": 4
+  }
+}
