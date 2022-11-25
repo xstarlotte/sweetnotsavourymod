@@ -40,7 +40,7 @@ public class SweetNotSavouryMod {
         ModEffects.MOB_EFFECTS.register(bus);
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
-        ModPaintings.PAINTING_MOTIVES.register(bus);
+        ModPaintings.PAINTING_VARIANTS.register(bus);
         SoundsInit.SOUND_EVENTS.register(bus);
         FluidInit.FLUIDS.register(bus);
     	BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register(bus);
@@ -158,16 +158,17 @@ public class SweetNotSavouryMod {
                 Animal::checkAnimalSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.OR);
 
-            SpawnPlacements.register(EntityTypesInit.GINGERBREAD_MAN.get(),
-                    SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Animal::checkAnimalSpawnRules,
+        event.register(EntityTypesInit.GINGERBREAD_MAN.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.OR);
 
-            SpawnPlacements.register(EntityTypesInit.SNSMOUSE.get(),
-                    SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Animal::checkAnimalSpawnRules);
+        event.register(EntityTypesInit.SNSMOUSE.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules,
+                SpawnPlacementRegisterEvent.Operation.OR);
 
         event.register(EntityTypesInit.SNSSQUIRROLL.get(),
                 SpawnPlacements.Type.ON_GROUND,
