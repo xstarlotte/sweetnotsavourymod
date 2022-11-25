@@ -33,7 +33,7 @@ import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSBoarryRende
 import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSSheepRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.snakes.SNSSnakeRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.BonbonbiniRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.Gingerbread_ManRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.GingerbreadManRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.SNSGummyBearRenderer;
 import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
@@ -239,7 +239,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.CHOCOLATECHICKEN.get(), ChocolateChickenRenderer::new);
 		EntityRenderers.register(EntityTypesInit.BONBONBINI.get(), BonbonbiniRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSSNAKE.get(), SNSSnakeRenderer::new);
-		EntityRenderers.register(EntityTypesInit.GINGERBREAD_MAN.get(), Gingerbread_ManRenderer::new);
+		EntityRenderers.register(EntityTypesInit.GINGERBREAD_MAN.get(), GingerbreadManRenderer::new);
 
 		EntityRenderers.register(EntityTypesInit.SNSCANDYCANEFISH.get(), SNSCandyCanefishRenderer::new);
 		EntityRenderers.register(EntityTypesInit.SNSICFISH.get(), SNSICFishRenderer::new);

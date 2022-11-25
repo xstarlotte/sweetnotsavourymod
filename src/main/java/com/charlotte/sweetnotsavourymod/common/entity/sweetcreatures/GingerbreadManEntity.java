@@ -1,13 +1,13 @@
 package com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures;
 
+import com.charlotte.sweetnotsavourymod.common.entity.IVariable;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import com.charlotte.sweetnotsavourymod.core.util.variants.SweetCreatureVariants.Gingerbread_ManVariant;
+import com.charlotte.sweetnotsavourymod.core.util.variants.SweetCreatureVariants.GingerbreadManVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -41,23 +41,25 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.UUID;
 
-public class Gingerbread_ManEntity extends TamableAnimal implements IAnimatable {
+public class GingerbreadManEntity extends TamableAnimal implements IAnimatable, IVariable<GingerbreadManVariant> {
 
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
-			SynchedEntityData.defineId(Gingerbread_ManEntity.class, EntityDataSerializers.INT);
+			SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.INT);
 	private static final EntityDataAccessor<Boolean> SITTING =
-			SynchedEntityData.defineId(Gingerbread_ManEntity.class, EntityDataSerializers.BOOLEAN);
+			SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.BOOLEAN);
 
-	public Gingerbread_ManEntity(EntityType<? extends TamableAnimal> type, Level worldIn) {
+	public GingerbreadManEntity(EntityType<? extends TamableAnimal> type, Level worldIn) {
 		super(type, worldIn);
 		setTame(false);
 		this.noCulling = true;
@@ -66,14 +68,14 @@ public class Gingerbread_ManEntity extends TamableAnimal implements IAnimatable 
 	//animations
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gingerbreadman.run", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gingerbreadman.run", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		if (this.isSitting()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gingerbreadman.sit", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gingerbreadman.sit", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gingerbreadman.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gingerbreadman.idle", ILoopType.EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 	}
 
@@ -213,7 +215,7 @@ public class Gingerbread_ManEntity extends TamableAnimal implements IAnimatable 
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageablemob) {
-		Gingerbread_ManEntity mob = EntityTypesInit.GINGERBREAD_MAN.get().create(serverLevel);
+		GingerbreadManEntity mob = EntityTypesInit.GINGERBREAD_MAN.get().create(serverLevel);
 		UUID uuid = this.getOwnerUUID();
 		if (uuid != null) {
 			mob.setOwnerUUID(uuid);
@@ -227,10 +229,10 @@ public class Gingerbread_ManEntity extends TamableAnimal implements IAnimatable 
 			return false;
 		} else if (!this.isTame()) {
 			return true;
-		} else if (!(mate instanceof Gingerbread_ManEntity)) {
+		} else if (!(mate instanceof GingerbreadManEntity)) {
 			return false;
 		} else {
-			Gingerbread_ManEntity mob = (Gingerbread_ManEntity)mate;
+			GingerbreadManEntity mob = (GingerbreadManEntity)mate;
 			if (!mob.isTame()) {
 				return true;
 			} else if (mob.isInSittingPose()) {
@@ -276,27 +278,29 @@ public class Gingerbread_ManEntity extends TamableAnimal implements IAnimatable 
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
 										@Nullable CompoundTag p_146750_) {
-		Gingerbread_ManVariant variant = Util.getRandom(Gingerbread_ManVariant.values(), this.random);
+		GingerbreadManVariant variant = Util.getRandom(GingerbreadManVariant.values(), this.random);
 		setVariant(variant);
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
 	}
 
-	private void setVariant(Gingerbread_ManVariant variant) {
+	@Override
+	public void setVariant(GingerbreadManVariant variant) {
 		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
-	public Gingerbread_ManVariant getVariant() {
-		return Gingerbread_ManVariant.byId(this.getTypeVariant() & 255);
+	@Override
+	public GingerbreadManVariant getVariant() {
+		return GingerbreadManVariant.byId(this.getTypeVariant() & 255);
 	}
 
-	private int getTypeVariant() {
+	@Override
+	public int getTypeVariant() {
 		return this.entityData.get(DATA_ID_TYPE_VARIANT);
 	}
 
 	@Override
 	protected Component getTypeName() {
-		return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
-				+ "." + this.getVariant().getId());
+		return getVariantName(super.getTypeName());
 	}
 	//sound
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
