@@ -52,6 +52,8 @@ public class ModEntityGeneration {
                 30, 1, 2, Biomes.DESERT);
         addEntityToSpecificBiomes(event, EntityTypesInit.SNSSNAKE.get(),
                 30, 1, 2, Biomes.DESERT);
+        addEntityToSpecificBiomes(event, EntityTypesInit.GINGERBREAD_MAN.get(),
+                30, 1, 2, Biomes.DESERT);
 
 
 

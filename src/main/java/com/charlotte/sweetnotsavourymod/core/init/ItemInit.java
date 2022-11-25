@@ -129,6 +129,9 @@ public class ItemInit {
 	public static final RegistryObject<CustomSpawnEggItem> BONBONBINISPAWNEGG = ITEMS.register("bonbonbinispawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.BONBONBINI, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
+	public static final RegistryObject<CustomSpawnEggItem> GINGERBREAD_MANSPAWNEGG = ITEMS.register("gingerbread_manspawnegg",
+			() -> new CustomSpawnEggItem(EntityTypesInit.GINGERBREAD_MAN, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+
 
 	public static final RegistryObject<CustomSpawnEggItem> SNSCANDYCANEFISHSPAWNEGG = ITEMS.register("snscandycanefishspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.SNSCANDYCANEFISH, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
@@ -150,7 +153,7 @@ public class ItemInit {
 			() -> new CustomSpawnEggItem(EntityTypesInit.POISONBERRYATTACKER, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
 	public static final RegistryObject<CustomSpawnEggItem> SNSPBARCHERSPAWNEGG = ITEMS.register("snspbarcherspawnegg",
-			() -> new CustomSpawnEggItem(EntityTypesInit.POISONBERRYDEFENDER, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
+			() -> new CustomSpawnEggItem(EntityTypesInit.POISONBERRYARCHER, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));
 
 	public static final RegistryObject<CustomSpawnEggItem> SNSPBDEFENDERSPAWNEGG = ITEMS.register("snspbdefenderspawnegg",
 			() -> new CustomSpawnEggItem(EntityTypesInit.POISONBERRYDEFENDER, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODSPAWNEGGS)));

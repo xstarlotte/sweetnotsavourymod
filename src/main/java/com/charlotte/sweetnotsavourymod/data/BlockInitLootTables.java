@@ -351,6 +351,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get());
         this.dropSelf(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get());
         this.dropSelf(BlockInit.FROSTING_DOOR.get());
+        this.dropSelf(BlockInit.TOOTHPASTE_DOOR.get());
 
         this.dropSelf(BlockInit.POISONOAKMINIDOOR.get());
         this.dropSelf(BlockInit.POISONOAKDRAWERS.get());
@@ -636,6 +637,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.add(BlockInit.CHOCOLATE_WAFER_WOOD_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.FROSTING_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(BlockInit.TOOTHPASTE_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), BlockLoot::createDoorTable);
 
         this.add(BlockInit.STRAWBERRY_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);

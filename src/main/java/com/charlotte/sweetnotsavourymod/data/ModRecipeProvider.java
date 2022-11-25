@@ -2318,6 +2318,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(BlockInit.RAINBOWFROSTINGLEAVES.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
+        ShapedRecipeBuilder.shaped(BlockInit.TOOTHPASTE_DOOR.get())
+                .define('S', BlockInit.TOOTHPASTE_BLOCK.get())
+                .pattern("SS")
+                .pattern("SS")
+                .pattern("SS")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BlockInit.TOOTHPASTE_BLOCK.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
         ShapedRecipeBuilder.shaped(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get())
                 .define('S', BlockInit.ROTTENMOULDYCANDYCANEBRICKS.get())
                 .pattern("SS")
@@ -2339,9 +2348,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_toothpaste_block", has(BlockInit.TOOTHPASTE_BLOCK.get()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapelessRecipeBuilder.shapeless(ItemInit.ENCHANTED_TOOTHPASTE.get(), 4)
+        ShapelessRecipeBuilder.shapeless(ItemInit.ENCHANTED_TOOTHPASTE.get())
                 .requires(ItemInit.TOOTHPASTE.get())
-                .requires(Items.GOLDEN_APPLE)
+                .requires(Items.ENCHANTED_GOLDEN_APPLE)
                 .unlockedBy("has_toothpaste", has(ItemInit.TOOTHPASTE.get()))
                 .save(pFinishedRecipeConsumer);
 

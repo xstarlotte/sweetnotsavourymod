@@ -186,6 +186,13 @@ public class BlockInit {
 					.noOcclusion()
 					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> CANDYCANE_GRASS_BLOCK = registerBlock("candycane_grass_block",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 //flowers
 
 	public static final RegistryObject<Block> FROSTINGFLOWER = registerBlock("frostingflower",
@@ -1065,6 +1072,10 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> ROTTEN_MOULDY_CANDY_CANE_DOOR = registerBlock("rotten_mouldy_candy_cane_door",
+			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
+					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> TOOTHPASTE_DOOR = registerBlock("toothpaste_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2088,7 +2099,11 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 
 
-	public static RegistryObject<SNSChestBlock> registerChest(String name, Supplier<BlockBehaviour.Properties> properties, int containerSize, RegistryObject<SNSChestMenuType> menuSingle, @Nullable RegistryObject<SNSChestMenuType> menuDouble) {
+	public static RegistryObject<SNSChestBlock> registerChest(String name,
+															  Supplier<BlockBehaviour.Properties> properties,
+															  int containerSize, RegistryObject<SNSChestMenuType>
+																	  menuSingle, @Nullable RegistryObject
+			<SNSChestMenuType> menuDouble) {
 //		AtomicReference<BlockEntityType<SNSChestBlockEntity>> entityAtomicReference = new AtomicReference<>();
 //		RegistryObject<SNSChestBlock> chest = registerBlock(name,
 //				()->new SNSChestBlock(properties.get(), entityAtomicReference::get, menuSingle, menuDouble == null ? ()->null : menuDouble, menuDouble != null),
@@ -2129,6 +2144,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<SNSChestBlock> STRAWBERRY_CHEST = registerChest("strawberry_chest",
 			()->BlockBehaviour.Properties.copy(Blocks.CHEST),
 			15, MenuTypesInit.STRAWBERRY_CHEST, null);
+
 	public static final RegistryObject<SNSChestBlock> WAFER_CHEST = registerChest("wafer_chest",
 			()->BlockBehaviour.Properties.copy(Blocks.CHEST),
 			27, MenuTypesInit.WAFER_CHEST, MenuTypesInit.WAFER_CHEST_2);

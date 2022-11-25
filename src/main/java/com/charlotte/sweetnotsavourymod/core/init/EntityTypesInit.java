@@ -32,6 +32,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.BonbonbiniEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.Gingerbread_ManEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -59,6 +60,11 @@ public class EntityTypesInit {
 			.register("snsgp", () -> EntityType.Builder.of(SNSGPEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsgp").toString()));
+
+	public static final RegistryObject<EntityType<Gingerbread_ManEntity>>GINGERBREAD_MAN = ENTITY_TYPES
+			.register("gingerbread_man", () -> EntityType.Builder.of(Gingerbread_ManEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "gingerbread_man").toString()));
 
 	public static final RegistryObject<EntityType<IceCreamCowEntity>>ICECREAMCOW = ENTITY_TYPES
 			.register("icecreamcow", () -> EntityType.Builder.of(IceCreamCowEntity::new, MobCategory.CREATURE)

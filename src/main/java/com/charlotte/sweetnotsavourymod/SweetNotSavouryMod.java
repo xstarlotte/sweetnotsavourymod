@@ -145,6 +145,11 @@ public class SweetNotSavouryMod {
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Animal::checkAnimalSpawnRules);
 
+            SpawnPlacements.register(EntityTypesInit.GINGERBREAD_MAN.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Animal::checkAnimalSpawnRules);
+
             SpawnPlacements.register(EntityTypesInit.SNSMOUSE.get(),
                     SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
