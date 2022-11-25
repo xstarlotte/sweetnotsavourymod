@@ -17,8 +17,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ForgeModelBakery;
+import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -77,61 +76,61 @@ public class ClientEvents {
 
 
     @SubscribeEvent
-    public static void onClientSetup(ModelRegistryEvent event) {
-        ForgeModelBakery.addSpecialModel(BLACKBERRYICECREAMBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(BLACKBERRYICECREAMBEDHEAD);
+    public static void onClientSetup(ModelEvent.RegisterAdditional event) {
+        event.register(BLACKBERRYICECREAMBEDBOTTOM);
+        event.register(BLACKBERRYICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.cutout());
 
-        ForgeModelBakery.addSpecialModel(BLUEBERRYICECREAMBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(BLUEBERRYICECREAMBEDHEAD);
+        event.register(BLUEBERRYICECREAMBEDBOTTOM);
+        event.register(BLUEBERRYICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYICECREAMBED.get(), RenderType.cutout());
 
 
-        ForgeModelBakery.addSpecialModel(LEMONICECREAMBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(LEMONICECREAMBEDHEAD);
+        event.register(LEMONICECREAMBEDBOTTOM);
+        event.register(LEMONICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONICECREAMBED.get(), RenderType.cutout());
 
-        ForgeModelBakery.addSpecialModel(ORANGEICECREAMBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(ORANGEICECREAMBEDHEAD);
+        event.register(ORANGEICECREAMBEDBOTTOM);
+        event.register(ORANGEICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEICECREAMBED.get(), RenderType.cutout());
 
-        ForgeModelBakery.addSpecialModel(RASPBERRYICECREAMBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(RASPBERRYICECREAMBEDHEAD);
+        event.register(RASPBERRYICECREAMBEDBOTTOM);
+        event.register(RASPBERRYICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYICECREAMBED.get(), RenderType.cutout());
 
-        ForgeModelBakery.addSpecialModel(STRAWBERRYICECREAMBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(STRAWBERRYICECREAMBEDHEAD);
+        event.register(STRAWBERRYICECREAMBEDBOTTOM);
+        event.register(STRAWBERRYICECREAMBEDHEAD);
         ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.cutout());
 
-        addChestSpecialModel(BlockInit.STRAWBERRY_CHEST);
-        addChestSpecialModel(BlockInit.WAFER_CHEST);
+        addChestSpecialModel(BlockInit.STRAWBERRY_CHEST, event);
+        addChestSpecialModel(BlockInit.WAFER_CHEST, event);
 
-        ForgeModelBakery.addSpecialModel(WAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(WAFFLEBEDHEAD);
+        event.register(WAFFLEBEDBOTTOM);
+        event.register(WAFFLEBEDHEAD);
 
-        ForgeModelBakery.addSpecialModel(STRAWBERRYWAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(STRAWBERRYWAFFLEBEDHEAD);
+        event.register(STRAWBERRYWAFFLEBEDBOTTOM);
+        event.register(STRAWBERRYWAFFLEBEDHEAD);
 
-        ForgeModelBakery.addSpecialModel(RASPBERRYWAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(RASPBERRYWAFFLEBEDHEAD);
+        event.register(RASPBERRYWAFFLEBEDBOTTOM);
+        event.register(RASPBERRYWAFFLEBEDHEAD);
 
-        ForgeModelBakery.addSpecialModel(BLACKBERRYWAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(BLACKBERRYWAFFLEBEDHEAD);
+        event.register(BLACKBERRYWAFFLEBEDBOTTOM);
+        event.register(BLACKBERRYWAFFLEBEDHEAD);
 
-        ForgeModelBakery.addSpecialModel(BLUEBERRYWAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(BLUEBERRYWAFFLEBEDHEAD);
+        event.register(BLUEBERRYWAFFLEBEDBOTTOM);
+        event.register(BLUEBERRYWAFFLEBEDHEAD);
 
-        ForgeModelBakery.addSpecialModel(ORANGEWAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(ORANGEWAFFLEBEDHEAD);
+        event.register(ORANGEWAFFLEBEDBOTTOM);
+        event.register(ORANGEWAFFLEBEDHEAD);
 
-        ForgeModelBakery.addSpecialModel(LEMONWAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(LEMONWAFFLEBEDHEAD);
+        event.register(LEMONWAFFLEBEDBOTTOM);
+        event.register(LEMONWAFFLEBEDHEAD);
 
-        ForgeModelBakery.addSpecialModel(CHOCOLATEWAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(CHOCOLATEWAFFLEBEDHEAD);
+        event.register(CHOCOLATEWAFFLEBEDBOTTOM);
+        event.register(CHOCOLATEWAFFLEBEDHEAD);
 
-        ForgeModelBakery.addSpecialModel(TOFFEEWAFFLEBEDBOTTOM);
-        ForgeModelBakery.addSpecialModel(TOFFEEWAFFLEBEDHEAD);
+        event.register(TOFFEEWAFFLEBEDBOTTOM);
+        event.register(TOFFEEWAFFLEBEDHEAD);
 
         ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYWAFFLEBED.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.VANILLAWAFFLEBED.get(), RenderType.cutout());
@@ -316,17 +315,17 @@ public class ClientEvents {
 
     }
 
-    private static void addChestSpecialModel(RegistryObject<SNSChestBlock> chestReg) {
+    private static void addChestSpecialModel(RegistryObject<SNSChestBlock> chestReg, ModelEvent.RegisterAdditional event) {
         ResourceLocation id = chestReg.getId();
         String ns = id.getNamespace();
         String path = id.getPath();
 
-        ForgeModelBakery.addSpecialModel(new ResourceLocation(ns, "block/" + path + "_base"));
-        ForgeModelBakery.addSpecialModel(new ResourceLocation(ns, "block/" + path + "_lid"));
+        event.register(new ResourceLocation(ns, "block/" + path + "_base"));
+        event.register(new ResourceLocation(ns, "block/" + path + "_lid"));
 
         if (chestReg.get().doubleAble) {
-            ForgeModelBakery.addSpecialModel(new ResourceLocation(ns, "block/" + path + "_base2"));
-            ForgeModelBakery.addSpecialModel(new ResourceLocation(ns, "block/" + path + "_lid2"));
+            event.register(new ResourceLocation(ns, "block/" + path + "_base2"));
+            event.register(new ResourceLocation(ns, "block/" + path + "_lid2"));
         }
     }
 
