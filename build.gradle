@@ -8,26 +8,8 @@ buildscript {
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.parchmentmc:librarian:1.+'
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
-
-
+        classpath 'org.spongepowered:mixingradle:0.7.+'
     }
-}
-
-repositories {
-    maven { url = 'https://maven.minecraftforge.net/' }
-    maven { url = 'https://maven.parchmentmc.org' }
-    maven {
-        name = "Progwml6 maven"
-        url = "https://dvs1.progwml6.com/files/maven/"
-    }
-    maven {
-        name = "ModMaven"
-        url = "https://modmaven.dev"
-    }
-
-    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
-    mavenCentral()
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
@@ -36,9 +18,9 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
-group = 'com.charlotte.sweetnotsavourymod'
-archivesBaseName = 'sweetnotsavourymod'
+version = "${mod_version}"
+group = "${mod_group}"
+archivesBaseName = "${mod_id}"
 
 
 
@@ -46,10 +28,9 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
 
-    mappings channel: 'parchment', version: '1.18.1-2022.02.13-1.18.2'
+    mappings channel: "${mappings_id}", version: "${mappings_version}"
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
 
     runs {
         client {
@@ -115,19 +96,26 @@ mixin {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-dependencies {
-
-    minecraft 'net.minecraftforge:forge:1.18.2-40.0.19'
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143")
-    implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.12')
-
+repositories {
+    maven { url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+	maven {
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
+dependencies {
 
-repositories {
-    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    minecraft "net.minecraftforge:forge:${forge_version}"
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    compileOnly fg.deobf("mezz.jei:${jei_api_version}")
+    runtimeOnly fg.deobf("mezz.jei:${jei_version}")
+    implementation fg.deobf("software.bernie.geckolib:${geckolib_version}")
+
 }
 
 jar {
