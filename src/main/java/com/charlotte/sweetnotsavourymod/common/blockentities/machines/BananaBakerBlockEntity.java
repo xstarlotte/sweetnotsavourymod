@@ -42,7 +42,7 @@ public class BananaBakerBlockEntity extends BlockEntity implements MenuProvider 
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("sweetnotsavory");
+        return Component.translatable("sweetnotsavoury.container.banana_baker");
     }
 
     @Nullable

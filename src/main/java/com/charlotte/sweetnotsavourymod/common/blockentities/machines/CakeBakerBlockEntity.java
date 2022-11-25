@@ -1,4 +1,5 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.machines;
+
 import com.charlotte.sweetnotsavourymod.common.recipe.CakeBakerRecipe;
 import com.charlotte.sweetnotsavourymod.common.screen.CakeBakerMenu;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
@@ -6,7 +7,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -45,7 +45,7 @@ public class CakeBakerBlockEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return new TextComponent("Cake Baker");
+        return Component.translatable("sweetnotsavoury.container.cake_baker");
     }
 
     @Nullable
@@ -113,7 +113,7 @@ public class CakeBakerBlockEntity extends BlockEntity implements MenuProvider {
         }
 
         Optional<CakeBakerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(CakeBakerRecipe.Type.INSTANCE, inventory, level);
+                .getRecipeFor(CakeBakerRecipe.TYPE, inventory, level);
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
@@ -127,7 +127,7 @@ public class CakeBakerBlockEntity extends BlockEntity implements MenuProvider {
         }
 
         Optional<CakeBakerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(CakeBakerRecipe.Type.INSTANCE, inventory, level);
+                .getRecipeFor(CakeBakerRecipe.TYPE, inventory, level);
 
         if(match.isPresent()) {
             entity.itemHandler.extractItem(0, 5, false);
