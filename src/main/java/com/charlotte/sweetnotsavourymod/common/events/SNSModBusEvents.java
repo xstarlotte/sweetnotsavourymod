@@ -36,7 +36,6 @@ import com.charlotte.sweetnotsavourymod.common.recipe.*;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -91,14 +90,5 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.CANDYCANECROOK.get(), CandyCaneCrookEntity.createAttributes());
         event.put(EntityTypesInit.MINTIMPERIAL.get(), MintImperialEntity.createAttributes());
 
-    }
-
-    @SubscribeEvent
-    public static void registerRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>> event) {
-        Registry.register(Registry.RECIPE_TYPE, IceCreamMachineRecipe.Type.ID, IceCreamMachineRecipe.Type.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE, JamPresserRecipe.Type.ID, JamPresserRecipe.Type.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE, CakeBakerRecipe.Type.ID, CakeBakerRecipe.Type.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE, TeddyBearPrinterRecipe.Type.ID, TeddyBearPrinterRecipe.Type.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE, CandycaneFurnaceRecipe.Type.ID, CandycaneFurnaceRecipe.Type.INSTANCE);
     }
 }

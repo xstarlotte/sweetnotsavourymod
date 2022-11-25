@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.recipe;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.core.init.RecipeSerializerInit;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.core.NonNullList;
@@ -14,6 +15,14 @@ import net.minecraft.world.item.crafting.*;
 import javax.annotation.Nullable;
 
 public class JamPresserRecipe implements Recipe<SimpleContainer> {
+
+    public static final RecipeType<JamPresserRecipe> TYPE = new RecipeType<>() {
+        @Override
+        public String toString() {
+            return Serializer.ID.toString();
+        }
+    };
+
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
@@ -52,22 +61,15 @@ public class JamPresserRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
+        return RecipeSerializerInit.JAM_PRESSER_SERIALIZER.get();
     }
 
     @Override
     public RecipeType<?> getType() {
-        return Type.INSTANCE;
-    }
-
-    public static class Type implements RecipeType<JamPresserRecipe> {
-        private Type() { }
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "jam_pressing";
+        return TYPE;
     }
 
     public static class Serializer implements RecipeSerializer<JamPresserRecipe> {
-        public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID = new ResourceLocation(SweetNotSavouryMod.MOD_ID,"jam_pressing");
 
         @Override
@@ -103,27 +105,6 @@ public class JamPresserRecipe implements Recipe<SimpleContainer> {
                 ing.toNetwork(buf);
             }
             buf.writeItemStack(recipe.getResultItem(), false);
-        }
-
-        @Override
-        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
-            return INSTANCE;
-        }
-
-        @Nullable
-        @Override
-        public ResourceLocation getRegistryName() {
-            return ID;
-        }
-
-        @Override
-        public Class<RecipeSerializer<?>> getRegistryType() {
-            return Serializer.castClass(RecipeSerializer.class);
-        }
-
-        @SuppressWarnings("unchecked") // Need this wrapper, because generics
-        private static <G> Class<G> castClass(Class<?> cls) {
-            return (Class<G>)cls;
         }
     }
 }
