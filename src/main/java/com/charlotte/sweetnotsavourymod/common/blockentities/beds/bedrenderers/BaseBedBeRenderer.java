@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraftforge.client.model.data.ModelData;
 
 public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBaseBedBlockEntity> {
     protected SNSBaseBedBlockEntity be;
@@ -83,7 +84,7 @@ public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBaseBe
             matrixStackIn.mulPose( Vector3f.YP.rotationDegrees(rotation) );
             matrixStackIn.translate( tx, 0, tz );
             Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , bottombedmodel , state , pos , matrixStackIn , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY ,
-                    net.minecraftforge.client.model.data.EmptyModelData.INSTANCE );
+                    ModelData.EMPTY, renderType);
             matrixStackIn.popPose();
 
     }
@@ -95,7 +96,7 @@ public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBaseBe
         matrixStackIn.mulPose( Vector3f.YP.rotationDegrees(rotation) );
         matrixStackIn.translate( tx, 0, tz );
         Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , headbedmodel , state , pos , matrixStackIn , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY ,
-                net.minecraftforge.client.model.data.EmptyModelData.INSTANCE );
+                ModelData.EMPTY, renderType);
         matrixStackIn.popPose();
 
     }
