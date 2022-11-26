@@ -70,8 +70,8 @@ public class WaffleConeMachineBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof  WaffleConeMachineBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (WaffleConeMachineBlockEntity) entity, pPos);
+            if(entity instanceof WaffleConeMachineBlockEntity be) {
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer), be, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }

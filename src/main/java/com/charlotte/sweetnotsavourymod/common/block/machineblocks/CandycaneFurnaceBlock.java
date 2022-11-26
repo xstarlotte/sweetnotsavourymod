@@ -70,8 +70,8 @@ public class CandycaneFurnaceBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof  CandycaneFurnaceBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (CandycaneFurnaceBlockEntity) entity, pPos);
+            if(entity instanceof CandycaneFurnaceBlockEntity be) {
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer), be, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }

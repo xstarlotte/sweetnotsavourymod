@@ -70,8 +70,8 @@ public class JamPresserBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof  JamPresserBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (JamPresserBlockEntity) entity, pPos);
+            if(entity instanceof JamPresserBlockEntity be) {
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer), be, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }

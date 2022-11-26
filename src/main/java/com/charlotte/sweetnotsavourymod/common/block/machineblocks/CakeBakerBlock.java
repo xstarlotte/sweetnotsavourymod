@@ -70,8 +70,8 @@ public class CakeBakerBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof  CakeBakerBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (CakeBakerBlockEntity) entity, pPos);
+            if(entity instanceof CakeBakerBlockEntity be) {
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer), be, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
