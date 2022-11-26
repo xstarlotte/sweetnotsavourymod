@@ -13,6 +13,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.BeetrootBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -698,10 +699,9 @@ public class BlockInitLootTables extends BlockLoot {
         this.add(BlockInit.TOFFEEWAFFLEBED.get(), (p_124231_) -> {
             return createSinglePropConditionTable(p_124231_, BedBlock.PART, BedPart.HEAD);
         });
-
-
-
-
+        this.add(BlockInit.CANDYCANE_GRASS_BLOCK.get(), block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+        this.dropSelf(BlockInit.STRAWBERRY_CHEST.get());
+        this.dropSelf(BlockInit.WAFER_CHEST.get());
     }
 
     @Override
