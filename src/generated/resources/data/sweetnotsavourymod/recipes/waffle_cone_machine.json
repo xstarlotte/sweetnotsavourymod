@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:candycanesugar"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:waferwoodblock"
+    }
+  },
   "pattern": [
     "SSS",
     "SAS",
     " S "
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:waferwoodblock"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:candycanesugar"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:waffle_cone_machine"
   }

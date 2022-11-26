@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "SSS",
-    "SSS"
-  ],
   "key": {
     "S": {
       "item": "sweetnotsavourymod:peachcandyblock"
     }
   },
+  "pattern": [
+    "SSS",
+    "SSS"
+  ],
   "result": {
     "item": "sweetnotsavourymod:peach_candy_wall"
   }

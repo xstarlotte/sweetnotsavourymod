@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:sugarwrapper"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:orangecandy"
+    }
+  },
   "pattern": [
     "ASA"
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:orangecandy"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:sugarwrapper"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:wrappedorangecandy"
   }

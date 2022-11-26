@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:sugarstick"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:candy_cane"
+    }
+  },
   "pattern": [
     "SS",
     "AS",
     "A "
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:candy_cane"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:sugarstick"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:candy_cane_axe"
   }

@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "S  ",
-    "SS ",
-    "SSS"
-  ],
   "key": {
     "S": {
       "item": "sweetnotsavourymod:candyflossblock"
     }
   },
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
   "result": {
     "item": "sweetnotsavourymod:candyfloss_stairs"
   }

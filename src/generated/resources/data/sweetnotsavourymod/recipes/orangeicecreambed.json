@@ -1,22 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "icecreambeds",
-  "pattern": [
-    "DDD",
-    "AAA",
-    "SSS"
-  ],
   "key": {
-    "S": {
-      "item": "sweetnotsavourymod:waferwoodblock"
-    },
     "A": {
       "item": "sweetnotsavourymod:vanillaicecream"
     },
     "D": {
       "item": "sweetnotsavourymod:sweetorange"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:waferwoodblock"
     }
   },
+  "pattern": [
+    "DDD",
+    "AAA",
+    "SSS"
+  ],
   "result": {
     "item": "sweetnotsavourymod:orangeicecreambed"
   }

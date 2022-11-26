@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:sweetorange"
+    },
+    "S": {
+      "item": "minecraft:torch"
+    }
+  },
   "pattern": [
     "SA"
   ],
-  "key": {
-    "S": {
-      "item": "minecraft:torch"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:sweetorange"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:orangelamp"
   }
