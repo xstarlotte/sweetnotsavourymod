@@ -55,15 +55,15 @@ public class ClientEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void registerRecipeTypes(final EntityRenderersEvent.AddLayers event) {
-		GeoArmorRenderer.registerArmorRenderer(StrawberryCandyArmorItem.class, new StrawberryCandyArmorRenderer());
-		GeoArmorRenderer.registerArmorRenderer(BlackberryCandyArmorItem.class, new BlackberryCandyArmorRenderer());
-		GeoArmorRenderer.registerArmorRenderer(BlueberryCandyArmorItem.class, new BlueberryCandyArmorRenderer());
-		GeoArmorRenderer.registerArmorRenderer(RaspberryCandyArmorItem.class, new RaspberryCandyArmorRenderer());
-		GeoArmorRenderer.registerArmorRenderer(OrangeCandyArmorItem.class, new OrangeCandyArmorRenderer());
-		GeoArmorRenderer.registerArmorRenderer(LemonCandyArmorItem.class, new LemonCandyArmorRenderer());
-		GeoArmorRenderer.registerArmorRenderer(LimeCandyArmorItem.class, new LimeCandyArmorRenderer());
-		GeoArmorRenderer.registerArmorRenderer(MangoCandyArmorItem.class, new MangoCandyArmorRenderer());
-		GeoArmorRenderer.registerArmorRenderer(PeachCandyArmorItem.class, new PeachCandyArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(StrawberryCandyArmorItem.class, StrawberryCandyArmorRenderer::new);
+		GeoArmorRenderer.registerArmorRenderer(BlackberryCandyArmorItem.class, BlackberryCandyArmorRenderer::new);
+		GeoArmorRenderer.registerArmorRenderer(BlueberryCandyArmorItem.class, BlueberryCandyArmorRenderer::new);
+		GeoArmorRenderer.registerArmorRenderer(RaspberryCandyArmorItem.class, RaspberryCandyArmorRenderer::new);
+		GeoArmorRenderer.registerArmorRenderer(OrangeCandyArmorItem.class, OrangeCandyArmorRenderer::new);
+		GeoArmorRenderer.registerArmorRenderer(LemonCandyArmorItem.class, LemonCandyArmorRenderer::new);
+		GeoArmorRenderer.registerArmorRenderer(LimeCandyArmorItem.class, LimeCandyArmorRenderer::new);
+		GeoArmorRenderer.registerArmorRenderer(MangoCandyArmorItem.class, MangoCandyArmorRenderer::new);
+		GeoArmorRenderer.registerArmorRenderer(PeachCandyArmorItem.class, PeachCandyArmorRenderer::new);
 	}
 
 	@SubscribeEvent
@@ -260,7 +260,7 @@ public class ClientEventBusSubscriber {
 		EntityRenderers.register(EntityTypesInit.RSWMUMMY.get(), RSWMummyRenderer::new);
 		EntityRenderers.register(EntityTypesInit.MINTIMPERIAL.get(), MintImperialRenderer::new);
 
-		EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), ModBoatRenderer::new);
+		EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), pContext -> new ModBoatRenderer(pContext, false));
 		/*
 
 
