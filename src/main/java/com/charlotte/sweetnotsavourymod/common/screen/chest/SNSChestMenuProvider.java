@@ -2,7 +2,6 @@ package com.charlotte.sweetnotsavourymod.common.screen.chest;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.Container;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -25,7 +24,7 @@ public class SNSChestMenuProvider implements MenuProvider {
 
 	@Override
 	public Component getDisplayName() {
-		return new TextComponent("");
+		return Component.translatable("sweetnotsavoury.container.chest");
 	}
 
 	@Nullable
