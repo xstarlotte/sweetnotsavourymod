@@ -191,8 +191,8 @@ public class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.TEDDY_BEAR_PRINTER.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_FURNACE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYFLOSS_CRYSTALIZER.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CREAMY_MILK_BLOCK.get(), RenderType.translucent());
 
-        ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_FLUID.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_FLOWING.get(), RenderType.translucent());
 
