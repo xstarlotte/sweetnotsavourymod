@@ -5,15 +5,15 @@ import net.minecraft.util.Direction;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.block.Block;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.DirectionProperty;
-import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.stream.Stream;
@@ -41,7 +41,7 @@ public class PoisonOakDrawers extends Block {
             Block.box(1.5, 6, 11, 4.5, 9, 12),
             Block.box(7.5, 2, 7, 8.5, 3, 8),
             Block.box(2, 5.25, 13, 4, 8.25, 13)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     @Override
     public VoxelShape getShape(BlockState pState, IBlockReader pLevel, BlockPos pPos, ISelectionContext pContext) {

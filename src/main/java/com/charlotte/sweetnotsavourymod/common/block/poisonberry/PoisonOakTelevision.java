@@ -5,15 +5,15 @@ import net.minecraft.util.Direction;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.block.Block;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.DirectionProperty;
-import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.stream.Stream;
@@ -36,7 +36,7 @@ public class PoisonOakTelevision extends Block {
             Block.box(2.9509228601283866, 0, 1.9259855225358802, 12.950922860128385, 7, 4.92598552253588),
             Block.box(4.950922860128387, 0, 0.9259855225358802, 10.950922860128385, 5, 1.9259855225358802),
             Block.box(5.950922860128385, 0, -0.07401447746411982, 9.950922860128385, 2, 0.9259855225358802)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = Stream.of(
             Block.box(8.139692822278505, -0.75, 7.255360314495924, 11.139692822278505, 0.25, 8.255360314495924),
@@ -46,7 +46,7 @@ public class PoisonOakTelevision extends Block {
             Block.box(1.8134541913321343, 0, 3.8625313312037477, 4.813454191332134, 7, 13.862531331203746),
             Block.box(0.8134541913321343, 0, 5.862531331203748, 1.8134541913321343, 5, 11.862531331203746),
             Block.box(-0.18654580866786574, 0, 6.862531331203748, 0.8134541913321343, 2, 10.862531331203748)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_S = Stream.of(
             Block.box(8.558093876836208, -0.75, 8.252224153482251, 9.558093876836208, 0.25, 11.252224153482253),
@@ -56,7 +56,7 @@ public class PoisonOakTelevision extends Block {
             Block.box(2.9509228601283866, 0, 1.9259855225358802, 12.950922860128385, 7, 4.92598552253588),
             Block.box(4.950922860128387, 0, 0.9259855225358802, 10.950922860128385, 5, 1.9259855225358802),
             Block.box(5.950922860128385, 0, -0.07401447746411982, 9.950922860128385, 2, 0.9259855225358802)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_W = Stream.of(
             Block.box(4.8112300378498825, -0.75, 8.420625208039954, 7.811230037849882, 0.25, 9.420625208039954),
@@ -66,7 +66,7 @@ public class PoisonOakTelevision extends Block {
             Block.box(11.137468668796252, 0, 2.8134541913321307, 14.137468668796252, 7, 12.81345419133213),
             Block.box(14.137468668796252, 0, 4.813454191332131, 15.137468668796252, 5, 10.81345419133213),
             Block.box(15.137468668796252, 0, 5.813454191332131, 16.137468668796252, 2, 9.81345419133213)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     @Override
     public VoxelShape getShape(BlockState pState, IBlockReader pLevel, BlockPos pPos, ISelectionContext pContext) {

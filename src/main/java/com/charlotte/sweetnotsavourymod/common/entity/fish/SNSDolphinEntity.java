@@ -1,36 +1,35 @@
 package com.charlotte.sweetnotsavourymod.common.entity.fish;
 
 import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.DolphinVariant;
-import net.minecraft.util.Util;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.FindWaterGoal;
+import net.minecraft.entity.ai.goal.LookRandomlyGoal;
+import net.minecraft.entity.ai.goal.RandomSwimmingGoal;
+import net.minecraft.entity.passive.WaterMobEntity;
+import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
+import net.minecraft.entity.passive.fish.TropicalFishEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
-import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.animal.AbstractSchoolingFish;
-import net.minecraft.world.entity.animal.TropicalFish;
-import net.minecraft.world.entity.animal.WaterAnimal;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.IServerWorld;
-import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.block.BlockState;
-import javax.annotation.Nullable;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biomes;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -39,25 +38,26 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
+import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-public class SNSDolphinEntity extends AbstractSchoolingFish implements IAnimatable {
+public class SNSDolphinEntity extends AbstractGroupFishEntity implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
     private static final DataParameter<Integer> DATA_ID_TYPE_VARIANT =
             EntityDataManager.defineId(SNSDolphinEntity.class, DataSerializers.INT);
 
-    public SNSDolphinEntity(EntityType<? extends AbstractSchoolingFish> type, World worldIn) {
+    public SNSDolphinEntity(EntityType<? extends AbstractGroupFishEntity> type, World worldIn) {
         super(type, worldIn);
         this.noCulling = true;
     }
 
-    public static boolean checkTropicalFishSpawnRules(EntityType<TropicalFish> p_186232_, IWorld p_186233_,
-                                                      MobSpawnType p_186234_, BlockPos p_186235_, Random p_186236_) {
+    public static boolean checkTropicalFishSpawnRules(EntityType<TropicalFishEntity> p_186232_, IWorld p_186233_,
+                                                      SpawnReason p_186234_, BlockPos p_186235_, Random p_186236_) {
         return p_186233_.getFluidState(p_186235_.below()).is(FluidTags.WATER) && (Objects.equals(p_186233_
-                .getBiome(p_186235_), Optional.of(Biomes.RIVER)) || WaterAnimal
-                .checkSurfaceWaterAnimalSpawnRules(p_186232_, p_186233_, p_186234_, p_186235_, p_186236_));
+                .getBiome(p_186235_), Optional.of(Biomes.RIVER)) || WaterMobEntity
+                .checkMobSpawnRules(p_186232_, p_186233_, p_186234_, p_186235_, p_186236_));
     }
 
     @Override
@@ -73,8 +73,8 @@ public class SNSDolphinEntity extends AbstractSchoolingFish implements IAnimatab
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
-                                        MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
+    public ILivingEntityData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
+                                        SpawnReason p_146748_, @Nullable ILivingEntityData p_146749_,
                                         @Nullable CompoundNBT p_146750_) {
         DolphinVariant variant = Util.getRandom(DolphinVariant.values(), this.random);
         setVariant(variant);
@@ -111,16 +111,16 @@ public class SNSDolphinEntity extends AbstractSchoolingFish implements IAnimatab
     }
 
     public static AttributeModifierMap setAttributes() {
-        return Mob.createMobAttributes()
+        return MobEntity.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f).build();
     }
 
     protected void registerGoals() {
 
-        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1, new LookRandomlyGoal(this));
         this.goalSelector.addGoal(2, new RandomSwimmingGoal(this, 5F, 3));
-        this.goalSelector.addGoal(3, new TryFindWaterGoal(this));
+        this.goalSelector.addGoal(3, new FindWaterGoal(this));
 
 
     }

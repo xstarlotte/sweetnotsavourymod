@@ -1,38 +1,37 @@
 package com.charlotte.sweetnotsavourymod.common.entity.fish;
 
 import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.WafflefishVariant;
-import net.minecraft.util.Util;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.FindWaterGoal;
+import net.minecraft.entity.ai.goal.LookRandomlyGoal;
+import net.minecraft.entity.ai.goal.RandomSwimmingGoal;
+import net.minecraft.entity.passive.WaterMobEntity;
+import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
+import net.minecraft.entity.passive.fish.TropicalFishEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
-import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.animal.AbstractSchoolingFish;
-import net.minecraft.world.entity.animal.TropicalFish;
-import net.minecraft.world.entity.animal.WaterAnimal;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.IServerWorld;
-import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.block.BlockState;
-import javax.annotation.Nullable;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biomes;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -41,25 +40,26 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
+import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-public class SNSWafflefishEntity extends AbstractSchoolingFish implements IAnimatable {
+public class SNSWafflefishEntity extends AbstractGroupFishEntity implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
     private static final DataParameter<Integer> DATA_ID_TYPE_VARIANT =
             EntityDataManager.defineId(SNSWafflefishEntity.class, DataSerializers.INT);
 
-    public SNSWafflefishEntity(EntityType<? extends AbstractSchoolingFish> type, World worldIn) {
+    public SNSWafflefishEntity(EntityType<? extends AbstractGroupFishEntity> type, World worldIn) {
         super(type, worldIn);
         this.noCulling = true;
     }
 
-    public static boolean checkTropicalFishSpawnRules(EntityType<TropicalFish> p_186232_, IWorld p_186233_,
-                                                      MobSpawnType p_186234_, BlockPos p_186235_, Random p_186236_) {
+    public static boolean checkTropicalFishSpawnRules(EntityType<TropicalFishEntity> p_186232_, IWorld p_186233_,
+                                                      SpawnReason p_186234_, BlockPos p_186235_, Random p_186236_) {
         return p_186233_.getFluidState(p_186235_.below()).is(FluidTags.WATER) && (Objects.equals(p_186233_
-                .getBiome(p_186235_), Optional.of(Biomes.OCEAN)) || WaterAnimal
-                .checkSurfaceWaterAnimalSpawnRules(p_186232_, p_186233_, p_186234_, p_186235_, p_186236_));
+                .getBiome(p_186235_), Optional.of(Biomes.OCEAN)) || WaterMobEntity
+                .checkMobSpawnRules(p_186232_, p_186233_, p_186234_, p_186235_, p_186236_));
     }
 
     @Override
@@ -75,8 +75,8 @@ public class SNSWafflefishEntity extends AbstractSchoolingFish implements IAnima
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
-                                        MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
+    public ILivingEntityData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
+                                        SpawnReason p_146748_, @Nullable ILivingEntityData p_146749_,
                                         @Nullable CompoundNBT p_146750_) {
         WafflefishVariant variant = Util.getRandom(WafflefishVariant.values(), this.random);
         setVariant(variant);
@@ -88,8 +88,8 @@ public class SNSWafflefishEntity extends AbstractSchoolingFish implements IAnima
     }
 
     @Override
-    protected Component getTypeName() {
-        return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
+    protected ITextComponent getTypeName() {
+        return new TranslationTextComponent(((TranslationTextComponent)super.getTypeName()).getKey()
                 + "." + this.getVariant().getId());
     }
 
@@ -119,16 +119,16 @@ public class SNSWafflefishEntity extends AbstractSchoolingFish implements IAnima
     }
 
     public static AttributeModifierMap setAttributes() {
-        return Mob.createMobAttributes()
+        return MobEntity.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f).build();
     }
 
     protected void registerGoals() {
 
-        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1, new LookRandomlyGoal(this));
         this.goalSelector.addGoal(2, new RandomSwimmingGoal(this, 5F, 3));
-        this.goalSelector.addGoal(3, new TryFindWaterGoal(this));
+        this.goalSelector.addGoal(3, new FindWaterGoal(this));
 
 
     }

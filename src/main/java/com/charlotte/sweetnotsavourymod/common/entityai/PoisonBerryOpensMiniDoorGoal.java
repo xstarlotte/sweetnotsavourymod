@@ -2,26 +2,26 @@ package com.charlotte.sweetnotsavourymod.common.entityai;
 
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.PoisonOakMiniDoor;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
-import net.minecraft.world.entity.ai.util.GoalUtils;
 import net.minecraft.block.BlockState;
-import net.minecraft.world.level.pathfinder.Node;
-import net.minecraft.world.level.pathfinder.Path;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.ai.goal.Goal;
+import net.minecraft.pathfinding.GroundPathNavigator;
+import net.minecraft.pathfinding.Path;
+import net.minecraft.pathfinding.PathPoint;
+import net.minecraft.util.GroundPathHelper;
+import net.minecraft.util.math.BlockPos;
 
 public class PoisonBerryOpensMiniDoorGoal extends Goal {
-    protected Mob entity;
+    protected MobEntity entity;
     protected BlockPos doorPosition = BlockPos.ZERO;
     protected boolean doorInteract;
     private boolean hasStoppedDoorInteraction;
     private float entityPositionX;
     private float entityPositionZ;
 
-    public PoisonBerryOpensMiniDoorGoal(Mob entityIn) {
+    public PoisonBerryOpensMiniDoorGoal(MobEntity entityIn) {
         this.entity = entityIn;
-        if(!GoalUtils.hasGroundPathNavigation( entityIn )){
+        if(!GroundPathHelper.hasGroundPathNavigation( entityIn )){
             throw new IllegalArgumentException( "Unsupported mob type for DoorInteractGoal" );
         }
     }
@@ -43,16 +43,16 @@ public class PoisonBerryOpensMiniDoorGoal extends Goal {
      * method as well.
      */
     public boolean canUse() {
-        if(!GoalUtils.hasGroundPathNavigation( this.entity )){
+        if(!GroundPathHelper.hasGroundPathNavigation( this.entity )){
             return false;
         }else if(!this.entity.horizontalCollision){
             return false;
         }else{
-            GroundPathNavigation groundpathnavigator = (GroundPathNavigation) this.entity.getNavigation();
+            GroundPathNavigator groundpathnavigator = (GroundPathNavigator)this.entity.getNavigation();
             Path path = groundpathnavigator.getPath();
             if(path != null && !path.isDone() && groundpathnavigator.canOpenDoors()){ // might be passDoors
                 for(int i = 0; i < Math.min(path.getNextNodeIndex() + 2 , path.getNodeCount()); ++i){
-                    Node pathpoint = path.getNode(i);
+                    PathPoint pathpoint = path.getNode(i);
                     this.doorPosition = new BlockPos( pathpoint.x , pathpoint.y , pathpoint.z );
                     if(!(this.entity.distanceToSqr(this.doorPosition.getX(), this.entity.getY(),
                             this.doorPosition.getZ() ) > 2.25D)){

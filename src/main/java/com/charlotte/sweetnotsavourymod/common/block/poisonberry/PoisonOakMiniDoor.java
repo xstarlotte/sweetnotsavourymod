@@ -1,27 +1,27 @@
 package com.charlotte.sweetnotsavourymod.common.block.poisonberry;
 
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ActionResultType;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
-import net.minecraft.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.block.BlockState;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.DirectionProperty;
+import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
-import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.DoorHingeSide;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 
 public class PoisonOakMiniDoor extends Block{
 
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final DirectionProperty FACING = HorizontalBlock.FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     protected static final VoxelShape SOUTH_AABB = Block.box( 0.0D , 0.0D , 0.0D , 16.0D , 16.0D , 1.0D );
@@ -69,7 +69,7 @@ public class PoisonOakMiniDoor extends Block{
     public void openDoor( World worldIn , BlockState state , BlockPos pos , boolean open ){
         if(state.is( this ) && state.getValue( OPEN ) != open){
             worldIn.setBlock( pos , state.setValue( OPEN , Boolean.valueOf( open ) ) , 10 );
-            worldIn.playSound( null , pos , open ? SoundEvents.WOODEN_DOOR_OPEN : SoundEvents.WOODEN_DOOR_CLOSE , SoundSource.BLOCKS , 1.0f , 1.0f );
+            worldIn.playSound( null , pos , open ? SoundEvents.WOODEN_DOOR_OPEN : SoundEvents.WOODEN_DOOR_CLOSE , SoundCategory.BLOCKS , 1.0f , 1.0f );
 
         }
     }

@@ -3,46 +3,37 @@ package com.charlotte.sweetnotsavourymod.common.entity.rideable;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.RideableVariants.ZebraFlavourVariant;
-import net.minecraft.util.Util;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Direction;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.monster.CreeperEntity;
+import net.minecraft.entity.monster.GhastEntity;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
+import net.minecraft.potion.Effects;
+import net.minecraft.scoreboard.Team;
+import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.horse.AbstractHorse;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Ghast;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.entity.vehicle.DismountHelper;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import net.minecraft.world.IServerWorld;
-import net.minecraft.block.BlockState;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.scores.Team;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
-import javax.annotation.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -51,9 +42,10 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
+import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class SNSZebraEntity extends TameableEntity implements PlayerRideableJumping, IAnimatable {
+public class SNSZebraEntity extends TameableEntity implements IJumpingMount, IAnimatable {
 
 	protected boolean isJumping;
 	protected float playerJumpPendingScale;
@@ -91,8 +83,8 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
-										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
+	public ILivingEntityData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
+										SpawnReason p_146748_, @Nullable ILivingEntityData p_146749_,
 										@Nullable CompoundNBT p_146750_) {
 		ZebraFlavourVariant variant = Util.getRandom(ZebraFlavourVariant.values(), this.random);
 		setVariant(variant);
@@ -104,8 +96,8 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 	}
 
 	@Override
-	protected Component getTypeName() {
-		return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
+	protected ITextComponent getTypeName() {
+		return new TranslationTextComponent(((TranslationTextComponent)super.getTypeName()).getKey()
 				+ "." + this.getVariant().getId());
 	}
 
@@ -135,7 +127,7 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 		return this.factory;
 	}
 
-	protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn) {
+	protected float getStandingEyeHeight(Pose poseIn, EntitySize sizeIn) {
 		return sizeIn.height * 0.65F;
 	}
 
@@ -149,15 +141,15 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 	}
 
 	protected void registerGoals() {
-		this.goalSelector.addGoal(1, new FloatGoal(this));
-		this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
+		this.goalSelector.addGoal(1, new SwimGoal(this));
+		this.goalSelector.addGoal(2, new SitGoal(this));
 		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
 		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, true));
 		this.goalSelector.addGoal(6, new BreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
-		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1));
+		this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+		this.goalSelector.addGoal(9, new LookRandomlyGoal(this));
 		this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
 		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
 		this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
@@ -207,7 +199,7 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 				}
 
 				if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
-					if (!player.getAbilities().instabuild) {
+					if (!player.abilities.instabuild) {
 						itemstack.shrink(1);
 					}
 
@@ -216,7 +208,7 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 				}
 				player.startRiding(this);
 			} else if (item == tameableItem && !this.isOnFire()) {
-				if (!player.getAbilities().instabuild) {
+				if (!player.abilities.instabuild) {
 					itemstack.shrink(1);
 				}
 
@@ -253,11 +245,11 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 	}
 
 	public boolean wantsToAttack(LivingEntity pTarget, LivingEntity pOwner) {
-		if (!(pTarget instanceof Creeper) && !(pTarget instanceof Ghast)) {
+		if (!(pTarget instanceof CreeperEntity) && !(pTarget instanceof GhastEntity)) {
 
-			if (pTarget instanceof PlayerEntity && pOwner instanceof PlayerEntity && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
+			if (pTarget instanceof PlayerEntity && pOwner instanceof PlayerEntity && !((PlayerEntity)pOwner).canHarmPlayer((PlayerEntity)pTarget)) {
 				return false;
-			} else if (pTarget instanceof AbstractHorse && ((AbstractHorse)pTarget).isTamed()) {
+			} else if (pTarget instanceof AbstractHorseEntity && ((AbstractHorseEntity)pTarget).isTamed()) {
 				return false;
 			} else {
 				return !(pTarget instanceof TameableEntity) || !((TameableEntity)pTarget).isTame();
@@ -274,7 +266,7 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 
 	@Nullable
 	@Override
-	public AgeableMob getBreedOffspring(ServerWorld serverLevel, AgeableMob ageablemob) {
+	public AgeableEntity getBreedOffspring(ServerWorld serverLevel, AgeableEntity ageablemob) {
 		com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity mob = EntityTypesInit.SNSZEBRA.get().create(serverLevel);
 		UUID uuid = this.getOwnerUUID();
 		if (uuid != null) {
@@ -284,7 +276,7 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 		return mob;
 	}
 
-	public boolean canMate(Animal mate) {
+	public boolean canMate(AnimalEntity mate) {
 		if (mate == this) {
 			return false;
 		} else if (!this.isTame()) {
@@ -355,7 +347,7 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 	}
 
 	protected int calculateFallDamage(float p_30606_, float p_30607_) {
-		return Mth.ceil((p_30606_ * 0.5F - 3.0F) * p_30607_);
+		return MathHelper.ceil((p_30606_ * 0.5F - 3.0F) * p_30607_);
 	}
 
 	public boolean canBeLeashed(PlayerEntity player) {
@@ -386,18 +378,18 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 
 	@Nullable
 	public Entity getControllingPassenger() {
-		return this.getFirstPassenger();
+		return this.getPassengers().isEmpty() ? null : this.getPassengers().get(0);
 	}
 
-	public void travel(Vec3 pTravelVector) {
+	public void travel(Vector3d pTravelVector) {
 		if (this.isAlive()) {
 			if (this.isVehicle() && this.canBeControlledByRider()) {
 				LivingEntity livingentity = (LivingEntity)this.getControllingPassenger();
-				this.setYRot(livingentity.getYRot());
-				this.yRotO = this.getYRot();
-				this.setXRot(livingentity.getXRot() * 0.5F);
-				this.setRot(this.getYRot(), this.getXRot());
-				this.yBodyRot = this.getYRot();
+				this.yRot = livingentity.yRot;
+				this.yRotO = this.yRot;
+				this.xRot = livingentity.xRot * 0.5F;
+				this.setRot(this.yRot, this.xRot);
+				this.yBodyRot = this.yRot;
 				this.yHeadRot = this.yBodyRot;
 				float f = livingentity.xxa * 0.5F;
 				float f1 = livingentity.zza;
@@ -414,15 +406,20 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 
 				if (this.playerJumpPendingScale > 0.0F && !this.isJumping() && this.onGround) {
 					double d0 = this.getCustomJump() * (double)this.playerJumpPendingScale * (double)this.getBlockJumpFactor();
-					double d1 = d0 + this.getJumpBoostPower();
-					Vec3 vec3 = this.getDeltaMovement();
+					double d1;
+					if (this.hasEffect(Effects.JUMP)) {
+						d1 = d0 + (double)((float)(this.getEffect(Effects.JUMP).getAmplifier() + 1) * 0.1F);
+					} else {
+						d1 = d0;
+					}
+					Vector3d vec3 = this.getDeltaMovement();
 					this.setDeltaMovement(vec3.x, d1, vec3.z);
 					this.setIsJumping(true);
 					this.hasImpulse = true;
 					net.minecraftforge.common.ForgeHooks.onLivingJump(this);
 					if (f1 > 0.0F) {
-						float f2 = Mth.sin(this.getYRot() * ((float)Math.PI / 180F));
-						float f3 = Mth.cos(this.getYRot() * ((float)Math.PI / 180F));
+						float f2 = MathHelper.sin(this.yRot * ((float)Math.PI / 180F));
+						float f3 = MathHelper.cos(this.yRot * ((float)Math.PI / 180F));
 						this.setDeltaMovement(this.getDeltaMovement().add((double)(-0.4F * f2 * this.playerJumpPendingScale),
 								0.0D, (double)(0.4F * f3 * this.playerJumpPendingScale)));
 					}
@@ -433,9 +430,9 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 				this.flyingSpeed = this.getSpeed() * 0.1F;
 				if (this.isControlledByLocalInstance()) {
 					this.setSpeed((float)this.getAttributeValue(Attributes.MOVEMENT_SPEED));
-					super.travel(new Vec3((double)f, pTravelVector.y, (double)f1));
-				} else if (livingentity instanceof Player) {
-					this.setDeltaMovement(Vec3.ZERO);
+					super.travel(new Vector3d((double)f, pTravelVector.y, (double)f1));
+				} else if (livingentity instanceof PlayerEntity) {
+					this.setDeltaMovement(Vector3d.ZERO);
 				}
 
 				if (this.onGround) {
@@ -444,7 +441,7 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 				}
 
 				this.calculateEntityAnimation(this, false);
-				this.tryCheckInsideBlocks();
+//				this.tryCheckInsideBlocks();
 			} else {
 				this.flyingSpeed = 0.02F;
 				super.travel(pTravelVector);
@@ -489,33 +486,76 @@ public class SNSZebraEntity extends TameableEntity implements PlayerRideableJump
 	}
 
 	@Override
-	public Vec3 getDismountLocationForPassenger(LivingEntity pLivingEntity) {
-		Direction direction = this.getMotionDirection();
-		if (direction.getAxis() == Direction.Axis.Y) {
-			return super.getDismountLocationForPassenger(pLivingEntity);
+	public Vector3d getDismountLocationForPassenger(LivingEntity pLivingEntity) {
+//		Direction direction = this.getMotionDirection();
+//		if (direction.getAxis() == Direction.Axis.Y) {
+//			return super.getDismountLocationForPassenger(pLivingEntity);
+//		} else {
+//			int[][] aint = DismountHelper.offsetsForDirection(direction);
+//			BlockPos blockpos = this.blockPosition();
+//			BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
+//
+//			for(Pose pose : pLivingEntity.getDismountPoses()) {
+//				AxisAlignedBB axisalignedbb = pLivingEntity.getLocalBoundsForPose(pose);
+//
+//				for(int[] aint1 : aint) {
+//					blockpos$mutable.set(blockpos.getX() + aint1[0], blockpos.getY(), blockpos.getZ() + aint1[1]);
+//					double d0 = this.level.getBlockFloorHeight(blockpos$mutable);
+//					if (DismountHelper.isBlockFloorValid(d0)) {
+//						Vector3d vec3 = Vec3.upFromBottomCenterOf(blockpos$mutable, d0);
+//						if (DismountHelper.canDismountTo(this.level, pLivingEntity, axisalignedbb.move(vec3))) {
+//							pLivingEntity.setPose(pose);
+//							return vec3;
+//						}
+//					}
+//				}
+//			}
+//
+//			return super.getDismountLocationForPassenger(pLivingEntity);
+		Vector3d vector3d = getCollisionHorizontalEscapeVector((double)this.getBbWidth(), (double)pLivingEntity.getBbWidth(), this.yRot + (pLivingEntity.getMainArm() == HandSide.RIGHT ? 90.0F : -90.0F));
+		Vector3d vector3d1 = this.getDismountLocationInDirection(vector3d, pLivingEntity);
+		if (vector3d1 != null) {
+			return vector3d1;
 		} else {
-			int[][] aint = DismountHelper.offsetsForDirection(direction);
-			BlockPos blockpos = this.blockPosition();
-			BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
-
-			for(Pose pose : pLivingEntity.getDismountPoses()) {
-				AxisAlignedBB axisalignedbb = pLivingEntity.getLocalBoundsForPose(pose);
-
-				for(int[] aint1 : aint) {
-					blockpos$mutable.set(blockpos.getX() + aint1[0], blockpos.getY(), blockpos.getZ() + aint1[1]);
-					double d0 = this.level.getBlockFloorHeight(blockpos$mutable);
-					if (DismountHelper.isBlockFloorValid(d0)) {
-						Vec3 vec3 = Vec3.upFromBottomCenterOf(blockpos$mutable, d0);
-						if (DismountHelper.canDismountTo(this.level, pLivingEntity, axisalignedbb.move(vec3))) {
-							pLivingEntity.setPose(pose);
-							return vec3;
-						}
+			Vector3d vector3d2 = getCollisionHorizontalEscapeVector((double)this.getBbWidth(), (double)pLivingEntity.getBbWidth(), this.yRot + (pLivingEntity.getMainArm() == HandSide.LEFT ? 90.0F : -90.0F));
+			Vector3d vector3d3 = this.getDismountLocationInDirection(vector3d2, pLivingEntity);
+			return vector3d3 != null ? vector3d3 : this.position();
+		}
+	}
+	@Nullable
+	private Vector3d getDismountLocationInDirection(Vector3d p_234236_1_, LivingEntity p_234236_2_) {
+		double d0 = this.getX() + p_234236_1_.x;
+		double d1 = this.getBoundingBox().minY;
+		double d2 = this.getZ() + p_234236_1_.z;
+		BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable();
+		
+		for(Pose pose : p_234236_2_.getDismountPoses()) {
+			blockpos$mutable.set(d0, d1, d2);
+			double d3 = this.getBoundingBox().maxY + 0.75D;
+			
+			while(true) {
+				double d4 = this.level.getBlockFloorHeight(blockpos$mutable);
+				if ((double)blockpos$mutable.getY() + d4 > d3) {
+					break;
+				}
+				
+				if (TransportationHelper.isBlockFloorValid(d4)) {
+					AxisAlignedBB axisalignedbb = p_234236_2_.getLocalBoundsForPose(pose);
+					Vector3d vector3d = new Vector3d(d0, (double)blockpos$mutable.getY() + d4, d2);
+					if (TransportationHelper.canDismountTo(this.level, p_234236_2_, axisalignedbb.move(vector3d))) {
+						p_234236_2_.setPose(pose);
+						return vector3d;
 					}
 				}
+				
+				blockpos$mutable.move(Direction.UP);
+				if (!((double)blockpos$mutable.getY() < d3)) {
+					break;
+				}
 			}
-
-			return super.getDismountLocationForPassenger(pLivingEntity);
 		}
+		
+		return null;
 	}
 
 	@Override

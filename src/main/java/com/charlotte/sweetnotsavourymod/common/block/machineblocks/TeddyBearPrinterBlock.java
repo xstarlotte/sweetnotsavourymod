@@ -79,10 +79,13 @@ public class TeddyBearPrinterBlock extends Block implements ITileEntityProvider 
         }
         return ActionResultType.sidedSuccess(pLevel.isClientSide());
     }
-
-    @Nullable
+    
     @Override
     public TileEntity newBlockEntity(IBlockReader world) {
+        return newBlockEntity();
+    }
+    
+    public TileEntity newBlockEntity() {
         return new TeddyBearPrinterBlockEntity();
     }
 }

@@ -12,6 +12,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +28,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-public class CandycaneFurnaceBlockEntity extends TileEntity implements INamedContainerProvider {
+public class CandycaneFurnaceBlockEntity extends TileEntity implements INamedContainerProvider, ITickableTileEntity {
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -97,9 +98,10 @@ public class CandycaneFurnaceBlockEntity extends TileEntity implements INamedCon
     }
 
 
-    public static void tick(World pLevel, BlockPos pPos, BlockState pState, CandycaneFurnaceBlockEntity pBlockEntity) {
-        if(hasRecipe(pBlockEntity) && hasNotReachedStackLimit(pBlockEntity)) {
-            craftItem(pBlockEntity);
+    @Override
+    public void tick() {
+        if(hasRecipe(this) && hasNotReachedStackLimit(this)) {
+            craftItem(this);
         }
     }
 

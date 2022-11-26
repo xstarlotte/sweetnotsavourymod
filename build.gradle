@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.parchmentmc:librarian:1.+'
+        //classpath 'org.parchmentmc:librarian:1.+'
 
 
     }
@@ -15,7 +15,7 @@ buildscript {
 
 repositories {
     maven { url = 'https://maven.minecraftforge.net/' }
-    maven { url = 'https://maven.parchmentmc.org' }
+//    maven { url = 'https://maven.parchmentmc.org' }
     maven {
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
@@ -29,7 +29,7 @@ repositories {
     mavenCentral()
 }
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
+//apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
@@ -44,7 +44,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
 
-    mappings channel: 'parchment', version: '2022.03.06-1.16.5'
+//    mappings channel: 'parchment', version: '2022.03.06-1.16.5'
+    mappings channel: 'official', version: '1.16.5'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -58,7 +59,7 @@ minecraft {
 
 
             property 'forge.logging.console.level', 'debug'
-            arg "-mixin.config=sweetnotsavourymod.mixin.json"
+//            arg "-mixin.config=sweetnotsavourymod.mixin.json"
             mods {
                 sweetnotsavourymod {
                     source sourceSets.main
@@ -128,10 +129,10 @@ jar {
                 "Implementation-Title": project.name,
                 "Implementation-Version": "${version}",
                 "Implementation-Vendor" :"sweetnotsavourymodsareus",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
-                "TweakOrder": 0,
-                "MixinConfigs": "sweetnotsavourymod.mixin.json"
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")/*,*/
+//                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+//                "TweakOrder": 0,
+//                "MixinConfigs": "sweetnotsavourymod.mixin.json"
         ])
     }
 

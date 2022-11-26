@@ -1,13 +1,13 @@
 package com.charlotte.sweetnotsavourymod.common.entityai;
 
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.entity.monster.MonsterEntity;
 
 public class RSWMummyAttackGoal extends MeleeAttackGoal {
     private int random;
 
-    public RSWMummyAttackGoal(Monster creature, double speedIn , boolean useLongMemory ){
+    public RSWMummyAttackGoal(MonsterEntity creature, double speedIn , boolean useLongMemory ){
         super( creature , speedIn , useLongMemory );
 
         this.random = 0;

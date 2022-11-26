@@ -5,15 +5,15 @@ import net.minecraft.util.Direction;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.block.Block;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.DirectionProperty;
-import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.stream.Stream;
@@ -46,7 +46,7 @@ public class PoisonOakStove extends Block {
         Block.box(4.7695575026123365, 3.25, 8.158512667781107, 4.7695575026123365, 4.25, 10.158512667781107),
         Block.box(6.7695575026123365, 3.25, 8.158512667781107, 6.7695575026123365, 4.25, 10.158512667781107),
         Block.box(5, 3.25, 9, 7, 3.25, 11)
-        ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+        ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     @Override
     public VoxelShape getShape(BlockState pState, IBlockReader pLevel, BlockPos pPos, ISelectionContext pContext) {

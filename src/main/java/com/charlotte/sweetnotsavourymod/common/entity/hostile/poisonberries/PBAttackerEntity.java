@@ -3,24 +3,19 @@ package com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries;
 
 import com.charlotte.sweetnotsavourymod.common.entityai.PoisonBerryMeleeAttackGoal;
 import com.charlotte.sweetnotsavourymod.common.entityai.PoisonBerryOpensMiniDoorGoal;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.merchant.villager.AbstractVillagerEntity;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.block.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -29,9 +24,9 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class PBAttackerEntity extends Monster implements IAnimatable {
+public class PBAttackerEntity extends MonsterEntity implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
-    public PBAttackerEntity(EntityType<? extends Monster> type, World worldIn) {
+    public PBAttackerEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
@@ -62,26 +57,26 @@ public class PBAttackerEntity extends Monster implements IAnimatable {
 
 
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
 		this.goalSelector.addGoal(3, new PoisonBerryMeleeAttackGoal(this, 1, false));
-		this.goalSelector.addGoal(3, new FloatGoal(this));
+		this.goalSelector.addGoal(3, new SwimGoal(this));
         this.addBehaviourGoals();
     }
 
     protected void addBehaviourGoals() {
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(PBAttackerEntity.class,
 				PBDefenderEntity.class, PBArcherEntity.class));
 		this.goalSelector.addGoal(5, new PoisonBerryOpensMiniDoorGoal(this));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, true));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, true));
 
 
     }
 
     public static AttributeModifierMap createAttributes() {
-        return Monster
+        return MonsterEntity
                 .createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 70.0D)
                 .add(Attributes.MOVEMENT_SPEED, (double)0.46F)

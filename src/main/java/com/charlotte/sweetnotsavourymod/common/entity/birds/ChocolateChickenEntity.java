@@ -2,37 +2,31 @@ package com.charlotte.sweetnotsavourymod.common.entity.birds;
 
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.monster.*;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.monster.CreeperEntity;
+import net.minecraft.entity.monster.GhastEntity;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.passive.horse.AbstractHorseEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.horse.AbstractHorse;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Ghast;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.scoreboard.Team;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
-import net.minecraft.block.BlockState;
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.scores.Team;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
-import javax.annotation.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -41,6 +35,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
+import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class ChocolateChickenEntity extends TameableEntity implements IAnimatable {
@@ -83,15 +78,15 @@ public class ChocolateChickenEntity extends TameableEntity implements IAnimatabl
 	}
 
 	protected void registerGoals() {
-		this.goalSelector.addGoal(1, new FloatGoal(this));
-		this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
+		this.goalSelector.addGoal(1, new SwimGoal(this));
+		this.goalSelector.addGoal(2, new SitGoal(this));
 		this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0D, true));
 		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, true));
 		this.goalSelector.addGoal(6, new BreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
-		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1));
+		this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+		this.goalSelector.addGoal(9, new LookRandomlyGoal(this));
 		this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
 		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
 		this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
@@ -134,7 +129,7 @@ public class ChocolateChickenEntity extends TameableEntity implements IAnimatabl
 		return this.factory;
 	}
 
-	protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn) {
+	protected float getStandingEyeHeight(Pose poseIn, EntitySize sizeIn) {
 		return sizeIn.height * 0.65F;
 	}
 
@@ -155,7 +150,7 @@ public class ChocolateChickenEntity extends TameableEntity implements IAnimatabl
 			if (this.level.isClientSide) {
 				return ActionResultType.CONSUME;
 			} else {
-				if (!player.getAbilities().instabuild) {
+				if (!player.abilities.instabuild) {
 					itemstack.shrink(1);
 				}
 
@@ -226,11 +221,11 @@ public class ChocolateChickenEntity extends TameableEntity implements IAnimatabl
 	}
 
 	public boolean wantsToAttack(LivingEntity pTarget, LivingEntity pOwner) {
-		if (!(pTarget instanceof Creeper) && !(pTarget instanceof Ghast)) {
+		if (!(pTarget instanceof CreeperEntity) && !(pTarget instanceof GhastEntity)) {
 
-			 if (pTarget instanceof PlayerEntity && pOwner instanceof PlayerEntity && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
+			 if (pTarget instanceof PlayerEntity && pOwner instanceof PlayerEntity && !((PlayerEntity)pOwner).canHarmPlayer((PlayerEntity)pTarget)) {
 				return false;
-			} else if (pTarget instanceof AbstractHorse && ((AbstractHorse)pTarget).isTamed()) {
+			} else if (pTarget instanceof AbstractHorseEntity && ((AbstractHorseEntity)pTarget).isTamed()) {
 				return false;
 			} else {
 				return !(pTarget instanceof TameableEntity) || !((TameableEntity)pTarget).isTame();
@@ -244,8 +239,8 @@ public class ChocolateChickenEntity extends TameableEntity implements IAnimatabl
 		return super.canBeLeashed(player);
 	}
 
-	public Vec3 getLeashOffset() {
-		return new Vec3(0.0D, (double)(0.6F * this.getEyeHeight()), (double)(this.getBbWidth() * 0.4F));
+	public Vector3d getLeashOffset() {
+		return new Vector3d(0.0D, (double)(0.6F * this.getEyeHeight()), (double)(this.getBbWidth() * 0.4F));
 	}
 
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
@@ -272,7 +267,7 @@ public class ChocolateChickenEntity extends TameableEntity implements IAnimatabl
 
 	@Nullable
 	@Override
-	public AgeableMob getBreedOffspring(ServerWorld serverLevel, AgeableMob ageablemob) {
+	public AgeableEntity getBreedOffspring(ServerWorld serverLevel, AgeableEntity ageablemob) {
 		ChocolateChickenEntity mob = EntityTypesInit.CHOCOLATECHICKEN.get().create(serverLevel);
 		UUID uuid = this.getOwnerUUID();
 		if (uuid != null) {
@@ -282,7 +277,7 @@ public class ChocolateChickenEntity extends TameableEntity implements IAnimatabl
 		return mob;
 	}
 
-	public boolean canMate(Animal mate) {
+	public boolean canMate(AnimalEntity mate) {
 		if (mate == this) {
 			return false;
 		} else if (!this.isTame()) {

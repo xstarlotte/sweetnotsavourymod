@@ -1,17 +1,17 @@
 package com.charlotte.sweetnotsavourymod.common.world.gen;
 
-import com.charlotte.sweetnotsavourymod.common.world.features.ModPlacedFeatures;
-import net.minecraft.core.Holder;
-import net.minecraft.util.registry.Registry;
+import com.charlotte.sweetnotsavourymod.common.world.features.ModConfiguredFeature;
 import net.minecraft.util.RegistryKey;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 import java.util.List;
 import java.util.Set;
+import java.util.function.Supplier;
 
 public class ModFlowerGeneration {
     public static void generateFlowers(final BiomeLoadingEvent event) {
@@ -19,20 +19,20 @@ public class ModFlowerGeneration {
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 
         if(types.contains(BiomeDictionary.Type.SNOWY)) {
-            List<Holder<PlacedFeature>> base =
-                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+            List<Supplier<ConfiguredFeature<?,?>>> base =
+                    event.getGeneration().getFeatures(GenerationStage.Decoration.VEGETAL_DECORATION);
 
-            base.add(ModPlacedFeatures.CHOCOLATECINERARIA_PLACED);
-            base.add(ModPlacedFeatures.TOFFEETULIP_PLACED);
-            base.add(ModPlacedFeatures.CANDYCANEBUSH_PLACED);
-            base.add(ModPlacedFeatures.CANDY_CANE_SPREAD_PLACED);
+            base.add(()->ModConfiguredFeature.CHOCOLATECINERARIA);
+            base.add(()->ModConfiguredFeature.TOFFEETULIP);
+            base.add(()->ModConfiguredFeature.CANDYCANEBUSH);
+            base.add(()->ModConfiguredFeature.CANDY_CANE_SPREAD);
         }
 
         if(types.contains(BiomeDictionary.Type.PLAINS)) {
-            List<Holder<PlacedFeature>> base =
-                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+            List<Supplier<ConfiguredFeature<?,?>>> base =
+                    event.getGeneration().getFeatures(GenerationStage.Decoration.VEGETAL_DECORATION);
 
-            base.add(ModPlacedFeatures.CANDY_BUSH_SPREAD_PLACED);
+            base.add(()->ModConfiguredFeature.CANDY_BUSH_SPREAD);
         }
 
     }

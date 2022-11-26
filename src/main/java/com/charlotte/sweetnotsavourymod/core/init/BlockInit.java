@@ -2074,7 +2074,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	//bar
 
 	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBARS = registerBlock("rottenmouldycandycanebars",
-			() -> new IronBarsBlock(AbstractBlock
+			() -> new PaneBlock(AbstractBlock
 			.Properties.of(Material.METAL, MaterialColor.NONE)
 			.requiresCorrectToolForDrops()
 			.strength(5.0F, 6.0F)

@@ -1,10 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.events;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraftforge.common.world.MobSpawnSettingsBuilder;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -19,14 +16,14 @@ public class EntityEvents {
 
     }
 
-	@SubscribeEvent
-	public static void onBiomeLoad(final BiomeLoadingEvent event) {
-		if (event.getName() == null)
-			return;
-		MobSpawnSettingsBuilder spawns = event.getSpawns();
-
-		if(event.getCategory() == Biome.BiomeCategory.FOREST) {
-			// spawns.addSpawn(MobCategory.MONSTER, MobSpawnSettings.SpawnerData(EntityTypesInit.POISONBERRYATTACKER.get(), 40, 2, 4));
-		}
-	}
+//	@SubscribeEvent
+//	public static void onBiomeLoad(final BiomeLoadingEvent event) {
+//		if (event.getName() == null)
+//			return;
+//		MobSpawnInfoBuilder spawns = event.getSpawns();
+//
+//		if(event.getCategory() == Biome.BiomeCategory.FOREST) {
+//			// spawns.addSpawn(MobCategory.MONSTER, MobSpawnSettings.SpawnerData(EntityTypesInit.POISONBERRYATTACKER.get(), 40, 2, 4));
+//		}
+//	}
 }

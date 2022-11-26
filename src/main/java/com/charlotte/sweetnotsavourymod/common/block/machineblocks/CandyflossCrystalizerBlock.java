@@ -76,15 +76,13 @@ public class CandyflossCrystalizerBlock extends Block implements ITileEntityProv
         }
         return ActionResultType.sidedSuccess(pLevel.isClientSide());
     }
-
-    @Nullable
-    public TileEntity newBlockEntity() {
-        return new CandyflossCrystalizerBlockEntity();
-    }
     
-    @Nullable
     @Override
     public TileEntity newBlockEntity(IBlockReader world) {
+        return newBlockEntity();
+    }
+    
+    public TileEntity newBlockEntity() {
         return new CandyflossCrystalizerBlockEntity();
     }
 }

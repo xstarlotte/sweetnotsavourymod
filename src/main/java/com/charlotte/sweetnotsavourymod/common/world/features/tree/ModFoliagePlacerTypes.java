@@ -1,10 +1,10 @@
 package com.charlotte.sweetnotsavourymod.common.world.features.tree;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import net.minecraft.world.gen.foliageplacer.FoliagePlacerType;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ModFoliagePlacerTypes {
     public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_TYPES

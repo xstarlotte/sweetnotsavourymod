@@ -12,6 +12,6 @@ public class IceCreamTreeGrower extends Tree {
     @Nullable
     @Override
     protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random pRandom, boolean pLargeHive) {
-        return ModConfiguredFeature.ICE_CREAM_TREE.get();
+        return ModConfiguredFeature.ICE_CREAM_TREE;
     }
 }

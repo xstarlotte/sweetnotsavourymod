@@ -13,6 +13,7 @@ import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-public class CakeBakerBlockEntity extends TileEntity implements INamedContainerProvider {
+public class CakeBakerBlockEntity extends TileEntity implements INamedContainerProvider, ITickableTileEntity {
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -100,9 +101,10 @@ public class CakeBakerBlockEntity extends TileEntity implements INamedContainerP
     }
 
 
-    public static void tick(World pLevel, BlockPos pPos, BlockState pState, CakeBakerBlockEntity pBlockEntity) {
-        if(hasRecipe(pBlockEntity) && hasNotReachedStackLimit(pBlockEntity)) {
-            craftItem(pBlockEntity);
+    @Override
+    public void tick() {
+        if(hasRecipe(this) && hasNotReachedStackLimit(this)) {
+            craftItem(this);
         }
     }
 

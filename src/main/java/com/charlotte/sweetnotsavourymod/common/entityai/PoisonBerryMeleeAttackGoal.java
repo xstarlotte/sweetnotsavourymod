@@ -1,15 +1,15 @@
 package com.charlotte.sweetnotsavourymod.common.entityai;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.monster.Monster;
 
 public class PoisonBerryMeleeAttackGoal extends MeleeAttackGoal {
     private int random;
 
-    public PoisonBerryMeleeAttackGoal(Monster creature, double speedIn , boolean useLongMemory ){
+    public PoisonBerryMeleeAttackGoal(MonsterEntity creature, double speedIn , boolean useLongMemory ){
         super( creature , speedIn , useLongMemory );
 
         this.random = 0;

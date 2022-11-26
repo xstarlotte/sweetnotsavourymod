@@ -1,30 +1,30 @@
 package com.charlotte.sweetnotsavourymod.common.entity.bugs;
 
 import com.charlotte.sweetnotsavourymod.core.util.variants.BugVariants.PretzelflyVariant;
-import net.minecraft.util.Util;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.monster.*;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.controller.FlyingMovementController;
+import net.minecraft.entity.ai.goal.LookRandomlyGoal;
+import net.minecraft.entity.ai.goal.WaterAvoidingRandomFlyingGoal;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
+import net.minecraft.pathfinding.FlyingPathNavigator;
+import net.minecraft.pathfinding.PathNavigator;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomFlyingGoal;
-import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.World;
 import net.minecraft.world.IServerWorld;
-import net.minecraft.block.BlockState;
-import javax.annotation.Nullable;
+import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -34,15 +34,16 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
-public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
+public class SNSPretzelflyEntity extends CreatureEntity implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
     private static final DataParameter<Integer> DATA_ID_TYPE_VARIANT =
             EntityDataManager.defineId(SNSPretzelflyEntity.class, DataSerializers.INT);
 
-    public SNSPretzelflyEntity(EntityType<? extends PathfinderMob> type, World worldIn) {
+    public SNSPretzelflyEntity(EntityType<? extends CreatureEntity> type, World worldIn) {
         super(type, worldIn);
-        this.moveControl = new FlyingMoveControl(this, 4, true);
+        this.moveControl = new FlyingMovementController(this, 4, true);
         this.noCulling = true;
     }
 
@@ -59,8 +60,8 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
-                                        MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
+    public ILivingEntityData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
+                                        SpawnReason p_146748_, @Nullable ILivingEntityData p_146749_,
                                         @Nullable CompoundNBT p_146750_) {
         PretzelflyVariant variant = Util.getRandom(PretzelflyVariant.values(), this.random);
         setVariant(variant);
@@ -72,8 +73,8 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
     }
 
     @Override
-    protected Component getTypeName() {
-        return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
+    protected ITextComponent getTypeName() {
+        return new TranslationTextComponent(((TranslationTextComponent)super.getTypeName()).getKey()
                 + "." + this.getVariant().getId());
     }
 
@@ -95,7 +96,7 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
     }
 
     public static AttributeModifierMap setAttributes() {
-        return Mob.createMobAttributes()
+        return MobEntity.createMobAttributes()
                 .add(Attributes.FLYING_SPEED, Attributes.FLYING_SPEED.getDefaultValue())
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f).build();
@@ -103,7 +104,7 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
 
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new WaterAvoidingRandomFlyingGoal(this, 1));
-        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
 
     }
 
@@ -143,8 +144,8 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
 
     @Nonnull
     @Override
-    protected PathNavigation createNavigation(@Nonnull World level) {
-        FlyingPathNavigation flyingPathNavigator = new FlyingPathNavigation(this, level);
+    protected PathNavigator createNavigation(@Nonnull World level) {
+        FlyingPathNavigator flyingPathNavigator = new FlyingPathNavigator(this, level);
         flyingPathNavigator.setCanOpenDoors(false);
         flyingPathNavigator.setCanFloat(true);
         flyingPathNavigator.setCanPassDoors(true);

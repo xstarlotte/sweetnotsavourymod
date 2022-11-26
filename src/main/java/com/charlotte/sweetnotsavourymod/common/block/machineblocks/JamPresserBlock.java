@@ -1,29 +1,26 @@
 package com.charlotte.sweetnotsavourymod.common.block.machineblocks;
 
 import com.charlotte.sweetnotsavourymod.common.blockentities.machines.JamPresserBlockEntity;
-import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Direction;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.world.World;
-import net.minecraft.util.*;
-import net.minecraft.world.level.block.*;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.DirectionProperty;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraftforge.network.NetworkHooks;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.network.NetworkHooks;
+
 import javax.annotation.Nullable;
 
-public class JamPresserBlock extends BaseEntityBlock {
+public class JamPresserBlock extends Block implements ITileEntityProvider {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public JamPresserBlock(Properties properties) {
@@ -52,10 +49,10 @@ public class JamPresserBlock extends BaseEntityBlock {
         pBuilder.add(FACING);
     }
 
-    @Override
-    public VoxelShape getVoxelShape(BlockState pState) {
-        return VoxelShape.MODEL;
-    }
+//    @Override
+//    public VoxelShape getVoxelShape(BlockState pState) {
+//        return VoxelShape.MODEL;
+//    }
 
     @Override
     public void onRemove(BlockState pState, World pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
@@ -72,23 +69,20 @@ public class JamPresserBlock extends BaseEntityBlock {
         if (!pLevel.isClientSide()) {
             TileEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof  JamPresserBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (JamPresserBlockEntity) entity, pPos);
+                NetworkHooks.openGui(((ServerPlayerEntity) pPlayer), (JamPresserBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
         }
         return ActionResultType.sidedSuccess(pLevel.isClientSide());
     }
-
-    @Nullable
+    
     @Override
-    public TileEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new JamPresserBlockEntity(pPos, pState);
+    public TileEntity newBlockEntity(IBlockReader world) {
+        return newBlockEntity();
     }
-
-    @Nullable
-    @Override
-    public <T extends TileEntity> BlockEntityTicker<T> getTicker(World pLevel, BlockState pState, TileEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, BlockEntityTypesInit.JAM_PRESSER.get(), JamPresserBlockEntity::tick);
+    
+    public TileEntity newBlockEntity() {
+        return new JamPresserBlockEntity();
     }
 }
