@@ -1,11 +1,11 @@
 package com.charlotte.sweetnotsavourymod.common.entity.bugs;
 
+import com.charlotte.sweetnotsavourymod.common.entity.IVariable;
 import com.charlotte.sweetnotsavourymod.core.util.variants.BugVariants.PretzelflyVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -28,15 +28,17 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nonnull;
 
-public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable, IVariable<PretzelflyVariant> {
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(SNSPretzelflyEntity.class, EntityDataSerializers.INT);
 
@@ -67,18 +69,28 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
         return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
     }
 
-    private void setVariant(PretzelflyVariant variant) {
+    @Override
+    public void setVariant(PretzelflyVariant variant) {
         this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
 
     @Override
+    public PretzelflyVariant getVariant() {
+        return PretzelflyVariant.byId(this.getTypeVariant() & 255);
+    }
+
+    @Override
+    public int getTypeVariant() {
+        return this.entityData.get(DATA_ID_TYPE_VARIANT);
+    }
+
+    @Override
     protected Component getTypeName() {
-        return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
-                + "." + this.getVariant().getId());
+        return getVariantName(super.getTypeName());
     }
 
     private <E extends IAnimatable> PlayState flyingPredicate(AnimationEvent<E> event) {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.pretzelfly.flying", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.pretzelfly.flying", ILoopType.EDefaultLoopTypes.LOOP));
         return PlayState.CONTINUE;
     }
 
@@ -106,16 +118,6 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
 
     }
-
-
-    public PretzelflyVariant getVariant() {
-        return PretzelflyVariant.byId(this.getTypeVariant() & 255);
-    }
-
-    private int getTypeVariant() {
-        return this.entityData.get(DATA_ID_TYPE_VARIANT);
-    }
-
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(SoundEvents.PARROT_FLY, 0.15F, 1.0F);

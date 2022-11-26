@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.rideable;
 
+import com.charlotte.sweetnotsavourymod.common.entity.IVariable;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.RideableVariants.UnicornFlavourVariant;
@@ -8,7 +9,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -46,20 +46,22 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.UUID;
 
-public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJumping, IAnimatable {
+public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJumping, IAnimatable, IVariable<UnicornFlavourVariant> {
 
 	protected boolean isJumping;
 	protected float playerJumpPendingScale;
 	private boolean allowStandSliding;
 
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(SNSUnicornEntity.class, EntityDataSerializers.INT);
 
@@ -99,29 +101,39 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
 	}
 
-	private void setVariant(UnicornFlavourVariant variant) {
+	@Override
+	public void setVariant(UnicornFlavourVariant variant) {
 		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
 	@Override
+	public UnicornFlavourVariant getVariant() {
+		return UnicornFlavourVariant.byId(this.getTypeVariant() & 255);
+	}
+
+	@Override
+	public int getTypeVariant() {
+		return this.entityData.get(DATA_ID_TYPE_VARIANT);
+	}
+
+	@Override
 	protected Component getTypeName() {
-		return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
-				+ "." + this.getVariant().getId());
+		return getVariantName(super.getTypeName());
 	}
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
 		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.unicorn.running", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.unicorn.running", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 
 		if (this.isSitting()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.unicorn.sitting", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.unicorn.sitting", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.unicorn.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.unicorn.idle", ILoopType.EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 	}
 
@@ -301,15 +313,6 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 				return this.isInLove() && mob.isInLove();
 			}
 		}
-	}
-
-
-	public UnicornFlavourVariant getVariant() {
-		return UnicornFlavourVariant.byId(this.getTypeVariant() & 255);
-	}
-
-	private int getTypeVariant() {
-		return this.entityData.get(DATA_ID_TYPE_VARIANT);
 	}
 
 	public void setSitting(boolean sitting) {

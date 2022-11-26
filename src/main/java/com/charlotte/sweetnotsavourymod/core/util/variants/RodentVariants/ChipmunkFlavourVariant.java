@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.RodentVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum ChipmunkFlavourVariant {
+public enum ChipmunkFlavourVariant implements IVariant {
     CHOCOLATE(0),
     WHITECHOCOLATE(1);
 
@@ -11,7 +13,7 @@ public enum ChipmunkFlavourVariant {
             comparingInt(ChipmunkFlavourVariant::getId)).toArray(ChipmunkFlavourVariant[]::new);
     private final int id;
 
-    private ChipmunkFlavourVariant(int p_30984_) {
+    ChipmunkFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

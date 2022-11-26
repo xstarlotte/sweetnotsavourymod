@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.DogVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum CCWolfFlavourVariant {
+public enum CCWolfFlavourVariant implements IVariant {
     CANDYCANE(0),
     LEMON(1),
     MINT(2),
@@ -13,10 +15,10 @@ public enum CCWolfFlavourVariant {
    ;
 
     private static final CCWolfFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(CCWolfFlavourVariant::getId)).toArray((i) -> new CCWolfFlavourVariant[i]);
+            comparingInt(CCWolfFlavourVariant::getId)).toArray(CCWolfFlavourVariant[]::new);
     private final int id;
 
-    private CCWolfFlavourVariant(int p_30984_) {
+    CCWolfFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

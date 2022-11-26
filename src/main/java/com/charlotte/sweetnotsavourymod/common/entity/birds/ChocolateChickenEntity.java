@@ -36,10 +36,12 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.UUID;
 
@@ -47,7 +49,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 
 	public int eggTime = this.random.nextInt(6000) + 6000;
 
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
 	private static final EntityDataAccessor<Boolean> SITTING =
 			SynchedEntityData.defineId(ChocolateChickenEntity.class, EntityDataSerializers.BOOLEAN);
@@ -109,16 +111,16 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
 		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.running", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.running", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 
 		if (this.isSitting()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.sitting", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.sitting", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.idle", ILoopType.EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 	}
 

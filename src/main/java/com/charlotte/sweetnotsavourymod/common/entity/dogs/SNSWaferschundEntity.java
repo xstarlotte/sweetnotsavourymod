@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.dogs;
 
+import com.charlotte.sweetnotsavourymod.common.entity.IVariable;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.DogVariants.WaferschundVariant;
@@ -7,7 +8,6 @@ import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -41,16 +41,18 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.UUID;
 
-public class SNSWaferschundEntity extends TamableAnimal implements IAnimatable {
+public class SNSWaferschundEntity extends TamableAnimal implements IAnimatable, IVariable<WaferschundVariant> {
 
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSWaferschundEntity.class, EntityDataSerializers.INT);
@@ -66,14 +68,14 @@ public class SNSWaferschundEntity extends TamableAnimal implements IAnimatable {
 	//animations
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.waferschund.running", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.waferschund.running", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		if (this.isSitting()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.waferschund.sitting", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.waferschund.sitting", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.waferschund.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.waferschund.idle", ILoopType.EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 	}
 
@@ -281,22 +283,24 @@ public class SNSWaferschundEntity extends TamableAnimal implements IAnimatable {
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
 	}
 
-	private void setVariant(WaferschundVariant variant) {
+	@Override
+	public void setVariant(WaferschundVariant variant) {
 		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
+	@Override
 	public WaferschundVariant getVariant() {
 		return WaferschundVariant.byId(this.getTypeVariant() & 255);
 	}
 
-	private int getTypeVariant() {
+	@Override
+	public int getTypeVariant() {
 		return this.entityData.get(DATA_ID_TYPE_VARIANT);
 	}
 
 	@Override
 	protected Component getTypeName() {
-		return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
-				+ "." + this.getVariant().getId());
+		return getVariantName(super.getTypeName());
 	}
 	//sound
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {

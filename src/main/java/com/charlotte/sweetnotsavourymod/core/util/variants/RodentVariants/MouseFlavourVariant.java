@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.RodentVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum MouseFlavourVariant {
+public enum MouseFlavourVariant implements IVariant {
     MARSHMALLOWPIE(0),
     HAZELNUTCHEESECAKE(1),
     STRAWBERRYCHEESECAKE(2);
@@ -12,7 +14,7 @@ public enum MouseFlavourVariant {
             comparingInt(MouseFlavourVariant::getId)).toArray(MouseFlavourVariant[]::new);
     private final int id;
 
-    private MouseFlavourVariant(int p_30984_) {
+    MouseFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

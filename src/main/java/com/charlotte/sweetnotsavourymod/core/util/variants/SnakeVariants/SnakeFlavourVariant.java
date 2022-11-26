@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.SnakeVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum SnakeFlavourVariant {
+public enum SnakeFlavourVariant implements IVariant {
     STRAWBERRYLACE(0),
     COLALACE(1),
     LEMONLACE(2),
@@ -14,7 +16,7 @@ public enum SnakeFlavourVariant {
             comparingInt(SnakeFlavourVariant::getId)).toArray(SnakeFlavourVariant[]::new);
     private final int id;
 
-    private SnakeFlavourVariant(int p_30984_) {
+    SnakeFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

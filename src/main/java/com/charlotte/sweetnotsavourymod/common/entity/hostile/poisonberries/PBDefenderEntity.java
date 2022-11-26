@@ -24,13 +24,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class PBDefenderEntity extends Monster implements IAnimatable {
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	public PBDefenderEntity(EntityType<? extends Monster> type, Level worldIn) {
 		super(type, worldIn);
 	}
@@ -39,11 +41,11 @@ public class PBDefenderEntity extends Monster implements IAnimatable {
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
 		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.poisonberry.walking", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.poisonberry.walking", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.poisonberry.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.poisonberry.idle", ILoopType.EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 	}
 
@@ -93,7 +95,7 @@ public class PBDefenderEntity extends Monster implements IAnimatable {
 	}
 
 	@Override
-	protected int getExperienceReward(Player p_21511_) {
+	public int getExperienceReward() {
 		return 64;
 	}
 

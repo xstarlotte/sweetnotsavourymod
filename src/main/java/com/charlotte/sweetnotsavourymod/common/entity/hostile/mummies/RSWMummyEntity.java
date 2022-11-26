@@ -22,13 +22,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class RSWMummyEntity extends Monster implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
     public RSWMummyEntity(EntityType<? extends Monster> type, Level worldIn) {
         super(type, worldIn);
     }
@@ -37,11 +39,11 @@ public class RSWMummyEntity extends Monster implements IAnimatable {
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mummy.running", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mummy.running", ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mummy.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mummy.idle", ILoopType.EDefaultLoopTypes.LOOP));
         return PlayState.CONTINUE;
     }
 
@@ -86,7 +88,7 @@ public class RSWMummyEntity extends Monster implements IAnimatable {
     }
 
 	@Override
-	protected int getExperienceReward(Player p_21511_) {
+	public int getExperienceReward() {
 		return 64;
 	}
 

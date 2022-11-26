@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.FantasyVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum ElfFlavourVariant {
+public enum ElfFlavourVariant implements IVariant {
     BLUEBERRY(0),
     ORANGE(1),
     RASPBERRY(2),
@@ -17,13 +19,12 @@ public enum ElfFlavourVariant {
     PINEAPPLE(10),
     LIME(11),
     MANGO(12);
-   ;
 
     private static final ElfFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(ElfFlavourVariant::getId)).toArray((i) -> new ElfFlavourVariant[i]);
+            comparingInt(ElfFlavourVariant::getId)).toArray(ElfFlavourVariant[]::new);
     private final int id;
 
-    private ElfFlavourVariant(int p_30984_) {
+    ElfFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

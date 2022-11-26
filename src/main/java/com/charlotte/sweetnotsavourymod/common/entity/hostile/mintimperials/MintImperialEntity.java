@@ -1,13 +1,12 @@
 package com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials;
 
-
+import com.charlotte.sweetnotsavourymod.common.entity.IVariable;
 import com.charlotte.sweetnotsavourymod.common.entityai.RSWMummyAttackGoal;
 import com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants.MintImperialVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -36,13 +35,15 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class MintImperialEntity extends Monster implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+public class MintImperialEntity extends Monster implements IAnimatable, IVariable<MintImperialVariant> {
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(MintImperialEntity.class, EntityDataSerializers.INT);
     public MintImperialEntity(EntityType<? extends Monster> type, Level worldIn) {
@@ -71,24 +72,34 @@ public class MintImperialEntity extends Monster implements IAnimatable {
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
 	}
 
-	private void setVariant(MintImperialVariant variant) {
+	@Override
+	public void setVariant(MintImperialVariant variant) {
 		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
 	@Override
+	public MintImperialVariant getVariant() {
+		return MintImperialVariant.byId(this.getTypeVariant() & 255);
+	}
+
+	@Override
+	public int getTypeVariant() {
+		return this.entityData.get(DATA_ID_TYPE_VARIANT);
+	}
+
+	@Override
 	protected Component getTypeName() {
-		return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
-				+ "." + this.getVariant().getId());
+		return getVariantName(super.getTypeName());
 	}
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mintimperial.running", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mintimperial.running", ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mintimperial.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.mintimperial.idle", ILoopType.EDefaultLoopTypes.LOOP));
         return PlayState.CONTINUE;
     }
 
@@ -132,16 +143,8 @@ public class MintImperialEntity extends Monster implements IAnimatable {
 				.build();
     }
 
-	public MintImperialVariant getVariant() {
-		return MintImperialVariant.byId(this.getTypeVariant() & 255);
-	}
-
-	private int getTypeVariant() {
-		return this.entityData.get(DATA_ID_TYPE_VARIANT);
-	}
-
 	@Override
-	protected int getExperienceReward(Player p_21511_) {
+	public int getExperienceReward() {
 		return 64;
 	}
 

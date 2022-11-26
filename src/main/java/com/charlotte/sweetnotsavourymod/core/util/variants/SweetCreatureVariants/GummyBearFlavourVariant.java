@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.SweetCreatureVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum GummyBearFlavourVariant {
+public enum GummyBearFlavourVariant implements IVariant {
     BLACKBERRY(0),
     BLUEBERRY(1),
     RASPBERRY(2),
@@ -17,13 +19,12 @@ public enum GummyBearFlavourVariant {
     PEACH(10),
     CHERRY(11),
     APPLE(12);
-   ;
 
     private static final GummyBearFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(GummyBearFlavourVariant::getId)).toArray((i) -> new GummyBearFlavourVariant[i]);
+            comparingInt(GummyBearFlavourVariant::getId)).toArray(GummyBearFlavourVariant[]::new);
     private final int id;
 
-    private GummyBearFlavourVariant(int p_30984_) {
+    GummyBearFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 
