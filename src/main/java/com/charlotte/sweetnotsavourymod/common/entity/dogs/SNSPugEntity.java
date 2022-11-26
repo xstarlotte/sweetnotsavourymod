@@ -215,7 +215,7 @@ public class SNSPugEntity extends TamableAnimal implements IAnimatable, IVariabl
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageablemob) {
-		com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity mob = EntityTypesInit.SNSPUG.get().create(serverLevel);
+		SNSPugEntity mob = EntityTypesInit.SNSPUG.get().create(serverLevel);
 		UUID uuid = this.getOwnerUUID();
 		if (uuid != null) {
 			mob.setOwnerUUID(uuid);
@@ -229,10 +229,9 @@ public class SNSPugEntity extends TamableAnimal implements IAnimatable, IVariabl
 			return false;
 		} else if (!this.isTame()) {
 			return true;
-		} else if (!(mate instanceof com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity)) {
+		} else if (!(mate instanceof SNSPugEntity mob)) {
 			return false;
 		} else {
-			com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity mob = (com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity)mate;
 			if (!mob.isTame()) {
 				return true;
 			} else if (mob.isInSittingPose()) {
