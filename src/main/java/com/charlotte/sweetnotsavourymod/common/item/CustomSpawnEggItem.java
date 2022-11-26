@@ -41,7 +41,7 @@ public class CustomSpawnEggItem extends ForgeSpawnEggItem {
 	private final Lazy<? extends EntityType<?>> lazyEntity;
 
 	public CustomSpawnEggItem(final RegistryObject<? extends EntityType<?>> entity, final int primaryColor, final int secondaryColor, final Item.Properties properties) {
-		super(null, primaryColor, secondaryColor, properties);
+		super(entity, primaryColor, secondaryColor, properties);
 		this.lazyEntity = Lazy.of(entity);
 		EGGS_TO_ADD.add(this);
 
