@@ -3,13 +3,13 @@ package com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.SNSBaseBedBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.BaseBedBeRenderer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 
 import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.LEMONWAFFLEBEDBOTTOM;
 import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.LEMONWAFFLEBEDHEAD;
 
 public class LemonWaffleBedBeRenderer extends BaseBedBeRenderer {
-    public LemonWaffleBedBeRenderer(BlockEntityRendererProvider.Context context){
+    public LemonWaffleBedBeRenderer(TileEntityRendererDispatcher context){
         super(context);
     }
 

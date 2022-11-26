@@ -35,5 +35,12 @@ public class SNSChestMenuTemplate {
 	}
 
 
-	public static record SlotPos(int x, int y) {}
+	public static class SlotPos {
+		public final int x, y;
+		
+		public SlotPos(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+	}
 }

@@ -34,8 +34,8 @@ import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.BonbonbiniE
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
 import com.charlotte.sweetnotsavourymod.common.recipe.*;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
-import net.minecraft.core.Registry;
-import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.util.registry.Registry;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -94,7 +94,7 @@ public class SNSModBusEvents {
     }
 
     @SubscribeEvent
-    public static void registerRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>> event) {
+    public static void registerRecipeTypes(final RegistryEvent.Register<IRecipeSerializer<?>> event) {
         Registry.register(Registry.RECIPE_TYPE, IceCreamMachineRecipe.Type.ID, IceCreamMachineRecipe.Type.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, JamPresserRecipe.Type.ID, JamPresserRecipe.Type.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, CakeBakerRecipe.Type.ID, CakeBakerRecipe.Type.INSTANCE);

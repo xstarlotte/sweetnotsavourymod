@@ -42,7 +42,7 @@ public class SNSCCCatRenderer extends GeoEntityRenderer<SNSCCCatEntity> {
     }
 
     @Override
-    public void renderEarly(SNSCCCatEntity animatable, PoseStack stackIn, float ticks, IRenderTypeBuffer renderTypeBuffer,
+    public void renderEarly(SNSCCCatEntity animatable, MatrixStack stackIn, float ticks, IRenderTypeBuffer renderTypeBuffer,
                             IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
         if(animatable.isBaby()) {

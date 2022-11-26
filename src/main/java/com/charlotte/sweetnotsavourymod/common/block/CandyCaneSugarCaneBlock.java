@@ -10,11 +10,11 @@ public class CandyCaneSugarCaneBlock extends SugarCaneBlock {
 	      this.registerDefaultState(this.stateDefinition.any().with(AGE, Integer.valueOf(0)));
 	   }
 
-	   public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+	   public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 	      return SHAPE;
 	   }
 
-	   public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random rand) {
+	   public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
 	      if (!state.canSurvive(worldIn, pos)) {
 	         worldIn.destroyBlock(pos, true);
 	      }
@@ -24,7 +24,7 @@ public class CandyCaneSugarCaneBlock extends SugarCaneBlock {
 	   /**
 	    * Performs a random tick on a block.
 
-	   public void randomTick(BlockState state, ServerLevel worldIn, BlockPos pos, Random random) {
+	   public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
 	      if (worldIn.isEmptyBlock(pos.up())) {
 	         int i;
 	         for(i = 1; worldIn.getBlockState(pos.down(i)).isIn(this); ++i) {
@@ -46,7 +46,7 @@ public class CandyCaneSugarCaneBlock extends SugarCaneBlock {
 	   }
 
 
-	   public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+	   public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
 	      if (!stateIn.canSurvive(worldIn, currentPos)) {
 	         worldIn.getBlockTicks().scheduleTick(currentPos, this, 1);
 	      }
@@ -54,17 +54,17 @@ public class CandyCaneSugarCaneBlock extends SugarCaneBlock {
 	      return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	   }
 
-	   protected void fillStateContainer(StateDefinition.Builder<Block, BlockState> builder) {
+	   protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
 	      builder.add(AGE);
 	   }
 
 
-	   public net.minecraftforge.common.PlantType getPlantType(BlockGetter world, BlockPos pos) {
+	   public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
 	       return net.minecraftforge.common.PlantType.BEACH;
 	   }
 
 
-	   public BlockState getPlant(BlockGetter world, BlockPos pos) {
+	   public BlockState getPlant(IBlockReader world, BlockPos pos) {
 	      return defaultBlockState();
 	   }
 }

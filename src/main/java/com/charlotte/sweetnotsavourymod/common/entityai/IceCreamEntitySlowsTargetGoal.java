@@ -1,7 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entityai;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
@@ -30,7 +30,7 @@ public class IceCreamEntitySlowsTargetGoal extends MeleeAttackGoal {
         if(distToEnemySqr <= d0){
 
             if(random >= 0){
-                enemy.addEffect( new MobEffectInstance( MobEffects.MOVEMENT_SLOWDOWN , 60 ) );
+                enemy.addEffect( new EffectInstance( Effects.MOVEMENT_SLOWDOWN , 60 ) );
 
 
             }

@@ -1,19 +1,19 @@
 package com.charlotte.sweetnotsavourymod.common.world.dimension;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.server.ServerWorld;
 
 public class PureHerbBlock extends Block {
     public PureHerbBlock(Properties p_49795_) {
@@ -21,20 +21,20 @@ public class PureHerbBlock extends Block {
     }
 
     @Override
-    public ActionResultType use(BlockState pState, Level pLevel, BlockPos pPos,
-                                 PlayerEntity pPlayer, Hand pHand, BlockHitResult pHit) {
+    public ActionResultType use(BlockState pState, World pLevel, BlockPos pPos,
+                                 PlayerEntity pPlayer, Hand pHand, BlockRayTraceResult pHit) {
         if (!pLevel.isClientSide()) {
             if (!pPlayer.isCrouching()) {
                 MinecraftServer server = pLevel.getServer();
 
                 if (server != null) {
                     if (pLevel.dimension() == SNSDimensions.HerbMayfairDim) {
-                        ServerLevel overWorld = server.getLevel(Level.OVERWORLD);
+                        ServerWorld overWorld = server.getLevel(World.OVERWORLD);
                         if (overWorld != null) {
                             pPlayer.changeDimension(overWorld, new HerbMayfairTeleporter(pPos, false));
                         }
                     } else {
-                        ServerLevel hmDim = server.getLevel(SNSDimensions.HerbMayfairDim);
+                        ServerWorld hmDim = server.getLevel(SNSDimensions.HerbMayfairDim);
                         if (hmDim != null) {
                             pPlayer.changeDimension(hmDim, new HerbMayfairTeleporter(pPos, true));
                         }
@@ -47,14 +47,14 @@ public class PureHerbBlock extends Block {
     }
 
     @Override
-    public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+    public void stepOn(World pLevel, BlockPos pPos, Entity pEntity) {
         if(!pLevel.isClientSide()) {
             if(pEntity instanceof LivingEntity) {
                 LivingEntity entity = ((LivingEntity) pEntity);
-                entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200));
+                entity.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 200));
             }
         }
 
-        super.stepOn(pLevel, pPos, pState, pEntity);
+        super.stepOn(pLevel, pPos, pEntity);
     }
 }

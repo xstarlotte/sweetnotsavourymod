@@ -2,9 +2,9 @@ package com.charlotte.sweetnotsavourymod.common.entity.fish;
 
 import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.ICFishVariant;
 import net.minecraft.util.Util;
-import net.minecraft.core.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.chat.Component;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -28,11 +28,11 @@ import net.minecraft.world.entity.animal.TropicalFish;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.IServerWorld;
 import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.block.BlockState;
+import javax.annotation.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -50,12 +50,12 @@ public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatabl
     private static final DataParameter<Integer> DATA_ID_TYPE_VARIANT =
             EntityDataManager.defineId(SNSICFishEntity.class, DataSerializers.INT);
 
-    public SNSICFishEntity(EntityType<? extends AbstractSchoolingFish> type, Level worldIn) {
+    public SNSICFishEntity(EntityType<? extends AbstractSchoolingFish> type, World worldIn) {
         super(type, worldIn);
         this.noCulling = true;
     }
 
-    public static boolean checkTropicalFishSpawnRules(EntityType<TropicalFish> p_186232_, LevelAccessor p_186233_,
+    public static boolean checkTropicalFishSpawnRules(EntityType<TropicalFish> p_186232_, IWorld p_186233_,
                                                       MobSpawnType p_186234_, BlockPos p_186235_, Random p_186236_) {
         return p_186233_.getFluidState(p_186235_.below()).is(FluidTags.WATER) && (Objects.equals(p_186233_
                 .getBiome(p_186235_), Optional.of(Biomes.OCEAN)) || WaterAnimal
@@ -81,7 +81,7 @@ public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatabl
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
+    public SpawnGroupData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
                                         MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
                                         @Nullable CompoundNBT p_146750_) {
         ICFishVariant variant = Util.getRandom(ICFishVariant.values(), this.random);

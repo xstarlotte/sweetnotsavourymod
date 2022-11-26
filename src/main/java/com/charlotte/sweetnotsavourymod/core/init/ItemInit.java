@@ -16,15 +16,9 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.world.effect.EffectInstance;
-import net.minecraft.world.effect.Effects;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.food.Food;
-import net.minecraft.world.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemInit {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SweetNotSavouryMod.MOD_ID);
@@ -666,7 +660,7 @@ public class ItemInit {
 					.saturationMod(3.6f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETBANANA = ITEMS.register("sweetbanana", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETBANANA = ITEMS.register("sweetbanana", () -> new BlockNamedItem
 			(BlockInit.BANANA_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new Food.Builder()
 					.nutrition(1)
@@ -675,7 +669,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETCARROT = ITEMS.register("sweetcarrot", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETCARROT = ITEMS.register("sweetcarrot", () -> new BlockNamedItem
 			(BlockInit.CARROT_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new Food.Builder()
 					.nutrition(1)
@@ -684,7 +678,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETPEACH = ITEMS.register("sweetpeach", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETPEACH = ITEMS.register("sweetpeach", () -> new BlockNamedItem
 			(BlockInit.PEACH_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -693,7 +687,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETBLACKBERRY = ITEMS.register("sweetblackberry", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETBLACKBERRY = ITEMS.register("sweetblackberry", () -> new BlockNamedItem
 			(BlockInit.BLACKBERRY_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -702,7 +696,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETSTRAWBERRY = ITEMS.register("sweetstrawberry", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETSTRAWBERRY = ITEMS.register("sweetstrawberry", () -> new BlockNamedItem
 			(BlockInit.STRAWBERRY_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -711,7 +705,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETBLUEBERRY = ITEMS.register("sweetblueberry", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETBLUEBERRY = ITEMS.register("sweetblueberry", () -> new BlockNamedItem
 			(BlockInit.BLUEBERRY_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -720,7 +714,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETRASPBERRY = ITEMS.register("sweetraspberry", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETRASPBERRY = ITEMS.register("sweetraspberry", () -> new BlockNamedItem
 			(BlockInit.RASPBERRY_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -729,7 +723,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETLEMON = ITEMS.register("sweetlemon", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETLEMON = ITEMS.register("sweetlemon", () -> new BlockNamedItem
 			(BlockInit.LEMON_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -738,7 +732,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETLIME = ITEMS.register("sweetlime", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETLIME = ITEMS.register("sweetlime", () -> new BlockNamedItem
 			(BlockInit.LIME_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -747,7 +741,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETORANGE = ITEMS.register("sweetorange", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETORANGE = ITEMS.register("sweetorange", () -> new BlockNamedItem
 			(BlockInit.ORANGE_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -756,7 +750,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETMANGO = ITEMS.register("sweetmango", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETMANGO = ITEMS.register("sweetmango", () -> new BlockNamedItem
 			(BlockInit.MANGO_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -765,7 +759,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> SWEETPINEAPPLE = ITEMS.register("sweetpineapple", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> SWEETPINEAPPLE = ITEMS.register("sweetpineapple", () -> new BlockNamedItem
 			(BlockInit.PINEAPPLE_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -774,7 +768,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> VANILLA = ITEMS.register("vanilla", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> VANILLA = ITEMS.register("vanilla", () -> new BlockNamedItem
 			(BlockInit.VANILLA_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 					.nutrition(1)
@@ -783,7 +777,7 @@ public class ItemInit {
 					.saturationMod(1.2f)
 					.build())));
 
-	public static final RegistryObject<Item> MINT = ITEMS.register("mint", () -> new ItemNameBlockItem
+	public static final RegistryObject<Item> MINT = ITEMS.register("mint", () -> new BlockNamedItem
 			(BlockInit.MINT_CROP.get(), new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 					.food(new Food.Builder()
 							.nutrition(1)

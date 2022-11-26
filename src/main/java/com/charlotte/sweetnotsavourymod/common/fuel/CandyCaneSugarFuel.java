@@ -2,8 +2,8 @@ package com.charlotte.sweetnotsavourymod.common.fuel;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.item.crafting.IRecipeType;
+import javax.annotation.Nullable;
 
 public class CandyCaneSugarFuel extends Item {
     public CandyCaneSugarFuel(Properties pProperties) {
@@ -11,7 +11,7 @@ public class CandyCaneSugarFuel extends Item {
     }
 
     @Override
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+    public int getBurnTime(ItemStack itemStack, @Nullable IRecipeType<?> recipeType) {
         return 400;
     }
 }

@@ -2,24 +2,23 @@ package com.charlotte.sweetnotsavourymod.common.blockentities.chest;
 
 import com.charlotte.sweetnotsavourymod.common.block.SNSChestBlock;
 import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.math.Quaternion;
-import com.mojang.math.Vector3f;
-import net.minecraft.MethodsReturnNonnullByDefault;
+import mcp.MethodsReturnNonnullByDefault;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.model.IBakedModel;
+import net.minecraft.client.renderer.model.ModelManager;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelManager;
-import net.minecraft.core.BlockPos;
+import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
+import net.minecraft.state.properties.ChestType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Quaternion;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.world.World;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -27,13 +26,14 @@ import java.util.Objects;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class SNSChestRenderer implements BlockEntityRenderer<SNSChestBlockEntity> {
+public class SNSChestRenderer extends TileEntityRenderer<SNSChestBlockEntity> {
 	private final SNSChestBlock chestBlock;
 	private final double axisDistance, axisHeight;
 
 	private final ResourceLocation base, lid, base2, lid2;
 
-	public SNSChestRenderer(BlockEntityRendererProvider.Context ctx, SNSChestBlock chestBlock, double axisDistance, double axisHeight) {
+	public SNSChestRenderer(TileEntityRendererDispatcher dispatcher, SNSChestBlock chestBlock, double axisDistance, double axisHeight) {
+		super(dispatcher);
 		this.chestBlock = chestBlock;
 
 		this.axisDistance = axisDistance;
@@ -51,11 +51,11 @@ public class SNSChestRenderer implements BlockEntityRenderer<SNSChestBlockEntity
 
 	private static final float HALF_PI = (float)Math.PI / 2;
 	@Override
-	public void render(SNSChestBlockEntity entity, float partialTick, PoseStack stack, IRenderTypeBuffer bufferSource, int light, int overlay) {
+	public void render(SNSChestBlockEntity entity, float partialTick, MatrixStack stack, IRenderTypeBuffer bufferSource, int light, int overlay) {
 		Minecraft minecraft = Minecraft.getInstance();
 		ModelManager models = minecraft.getModelManager();
 
-		Level level = entity.getLevel();
+		World level = entity.getLevel();
 		BlockPos pos = entity.getBlockPos();
 		BlockState state = entity.getBlockState();
 		float openness = entity.getOpenNess(partialTick);
@@ -72,10 +72,10 @@ public class SNSChestRenderer implements BlockEntityRenderer<SNSChestBlockEntity
 			if (type == ChestType.RIGHT)
 				doubleChest = true;
 		}
-
-
-		BakedModel baseModel = models.getModel(doubleChest ? base2 : base);
-		BakedModel lidModel = models.getModel(doubleChest ? lid2 : lid);
+		
+		
+		IBakedModel baseModel = models.getModel(doubleChest ? base2 : base);
+		IBakedModel lidModel = models.getModel(doubleChest ? lid2 : lid);
 
 		stack.pushPose();
 
@@ -87,25 +87,25 @@ public class SNSChestRenderer implements BlockEntityRenderer<SNSChestBlockEntity
 		stack.popPose();
 	}
 
-	private static void transformFacing(PoseStack stack, Direction direction) {
+	private static void transformFacing(MatrixStack stack, Direction direction) {
 		switch (direction) {
-			case NORTH -> {}
-			case SOUTH -> {
+			case NORTH: break;
+			case SOUTH:
 				stack.mulPose(Vector3f.YP.rotationDegrees(180));
 				stack.translate(-1, 0, -1);
-			}
-			case WEST -> {
+				break;
+			case WEST:
 				stack.mulPose(Vector3f.YP.rotationDegrees(90));
 				stack.translate(-1, 0, 0);
-			}
-			case EAST -> {
+				break;
+			case EAST:
 				stack.mulPose(Vector3f.YP.rotationDegrees(270));
 				stack.translate(0, 0, -1);
-			}
+				break;
 		}
 	}
 
-	private static void transformLid(PoseStack stack, float openness, double axisHeight, double axisDistance) {
+	private static void transformLid(MatrixStack stack, float openness, double axisHeight, double axisDistance) {
 		openness = 1.0F - openness;
 		openness = 1.0F - openness * openness * openness;
 
@@ -114,10 +114,9 @@ public class SNSChestRenderer implements BlockEntityRenderer<SNSChestBlockEntity
 		stack.translate(0, -axisHeight, -axisDistance);
 	}
 
-	private void render(Level level, BlockPos pos, BlockState state, PoseStack stack, MultiBufferSource bufferIn, BakedModel model){
-		RenderType renderType = ItemBlockRenderTypes.getRenderType( state , false );
-		Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , model , state , pos , stack , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY ,
-				net.minecraftforge.client.model.data.EmptyModelData.INSTANCE );
+	private void render(World level, BlockPos pos, BlockState state, MatrixStack stack, IRenderTypeBuffer bufferIn, IBakedModel model){
+		RenderType renderType = RenderType.cutout();
+		Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , model , state , pos , stack , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY );
 
 	}
 }

@@ -1,30 +1,30 @@
 package com.charlotte.sweetnotsavourymod.common.screen.chest;
 
-import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.player.Inventory;
+import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 
-public class SNSChestMenu extends AbstractContainerMenu {
-	public final Container container;
+public class SNSChestMenu extends Container {
+	public final IInventory container;
 	public final SNSChestMenuTemplate template;
 
-	public SNSChestMenu(@Nullable MenuType<?> pMenuType, int pContainerId, SNSChestMenuTemplate template, Inventory playerInventory, @Nullable Container container) {
+	public SNSChestMenu(@Nullable ContainerType<?> pMenuType, int pContainerId, SNSChestMenuTemplate template, PlayerInventory playerInventory, @Nullable IInventory container) {
 		super(pMenuType, pContainerId);
 
 		if (container == null)
-			container = new SimpleContainer(template.size);
+			container = new Inventory(template.size);
 		else
 			checkContainerSize(container, template.size);
 
@@ -36,7 +36,7 @@ public class SNSChestMenu extends AbstractContainerMenu {
 
 		for (int i = 0; i < template.size; i++) {
 			SNSChestMenuTemplate.SlotPos pos = template.slots[i];
-			addSlot(new Slot(container, i, pos.x(), pos.y()));
+			addSlot(new Slot(container, i, pos.x, pos.y));
 		}
 
 		int offX = (template.width - 176) >> 1;

@@ -2,25 +2,26 @@ package com.charlotte.sweetnotsavourymod.common.block.machineblocks;
 
 import com.charlotte.sweetnotsavourymod.common.blockentities.machines.WaffleConeMachineBlockEntity;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
-import net.minecraft.core.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.world.World;
+import net.minecraft.util.*;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.block.BlockState;
+import net.minecraft.state.StateContainer;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.DirectionProperty;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraftforge.network.NetworkHooks;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 
 public class WaffleConeMachineBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -32,7 +33,7 @@ public class WaffleConeMachineBlock extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+    public BlockState getStateForPlacement(BlockItemUseContext pContext) {
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
@@ -47,19 +48,19 @@ public class WaffleConeMachineBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(FACING);
     }
 
     @Override
-    public RenderShape getRenderShape(BlockState pState) {
-        return RenderShape.MODEL;
+    public VoxelShape getVoxelShape(BlockState pState) {
+        return VoxelShape.MODEL;
     }
 
     @Override
     public void onRemove(BlockState pState, World pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if(pState.getBlock() != pNewState.getBlock()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            TileEntity blockEntity = pLevel.getBlockEntity(pPos);
             if (blockEntity instanceof WaffleConeMachineBlockEntity) {
                 ((WaffleConeMachineBlockEntity) blockEntity).drops();
             }
@@ -67,9 +68,9 @@ public class WaffleConeMachineBlock extends BaseEntityBlock {
     }
 
     @Override
-    public ActionResultType use(BlockState pState, World pLevel, BlockPos pPos, PlayerEntity pPlayer, Hand pHand, BlockHitResult pHit) {
+    public ActionResultType use(BlockState pState, World pLevel, BlockPos pPos, PlayerEntity pPlayer, Hand pHand, BlockRayTraceResult pHit) {
         if (!pLevel.isClientSide()) {
-            BlockEntity entity = pLevel.getBlockEntity(pPos);
+            TileEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof  WaffleConeMachineBlockEntity) {
                 NetworkHooks.openGui(((ServerPlayer) pPlayer), (WaffleConeMachineBlockEntity) entity, pPos);
             } else {
@@ -81,13 +82,13 @@ public class WaffleConeMachineBlock extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+    public TileEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new WaffleConeMachineBlockEntity(pPos, pState);
     }
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+    public <T extends TileEntity> BlockEntityTicker<T> getTicker(World pLevel, BlockState pState, TileEntityType<T> pBlockEntityType) {
         return createTickerHelper(pBlockEntityType, BlockEntityTypesInit.WAFFLE_CONE_MACHINE.get(), WaffleConeMachineBlockEntity::tick);
     }
 }

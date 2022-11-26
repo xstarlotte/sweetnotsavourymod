@@ -1,18 +1,18 @@
 package com.charlotte.sweetnotsavourymod.common.block;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.CropsBlock;
 import net.minecraft.item.Item;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.state.IntegerProperty;
+import net.minecraft.state.StateContainer;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.function.Supplier;
 
-public class SNSCropBlock extends CropBlock {
+public class SNSCropBlock extends CropsBlock {
 
     public static final int MAX_AGE = 2;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
@@ -35,7 +35,7 @@ public class SNSCropBlock extends CropBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_builder) {
+    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> p_builder) {
         p_builder.add(AGE);
     }
 
@@ -48,7 +48,7 @@ public class SNSCropBlock extends CropBlock {
     {return 2;}
 
     @Override
-    protected ItemLike getBaseSeedId() {
+    protected IItemProvider getBaseSeedId() {
         return seedItem.get();
     }
 }

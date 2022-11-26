@@ -1,32 +1,33 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.machines;
+
 import com.charlotte.sweetnotsavourymod.common.screen.BananaBakerMenu;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import net.minecraft.core.BlockPos;
-import net.minecraft.util.Direction;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.world.Containers;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-public class BananaBakerBlockEntity extends BlockEntity implements MenuProvider {
+import javax.annotation.Nullable;
+
+public class BananaBakerBlockEntity extends TileEntity implements INamedContainerProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -36,25 +37,24 @@ public class BananaBakerBlockEntity extends BlockEntity implements MenuProvider 
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    public BananaBakerBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(BlockEntityTypesInit.BANANA_BAKER.get(), p_155229_, p_155230_);
+    public BananaBakerBlockEntity() {
+        super(BlockEntityTypesInit.BANANA_BAKER.get());
     }
 
     @Override
-    public Component getDisplayName() {
-        return new TextComponent("Banana Baker");
+    public ITextComponent getDisplayName() {
+        return new StringTextComponent("Banana Baker");
     }
-
+    
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, PlayerEntity pPlayer) {
-
+    public Container createMenu(int pContainerId, PlayerInventory pInventory, PlayerEntity pPlayer) {
         return new BananaBakerMenu(pContainerId, pInventory, this);
     }
 
-    @NotNull
+    
     @Override
-    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+    public <T> LazyOptional<T> getCapability( Capability<T> cap, @Nullable Direction side) {
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             return lazyItemHandler.cast();
         }
@@ -74,28 +74,28 @@ public class BananaBakerBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     @Override
-    protected void saveAdditional(CompoundNBT tag) {
+    public CompoundNBT save(CompoundNBT tag) {
         tag.put("inventory", itemHandler.serializeNBT());
-        super.saveAdditional(tag);
+        return super.save(tag);
     }
-
+    
     @Override
-    public void load(CompoundNBT nbt) {
-        super.load(nbt);
+    public void load(BlockState state, CompoundNBT nbt) {
+        super.load(state, nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
     }
 
     public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
+        Inventory inventory = new Inventory(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
 
-        Containers.dropContents(this.level, this.worldPosition, inventory);
+        InventoryHelper.dropContents(this.level, this.worldPosition, inventory);
 
     }
 
-    public static void tick(Level pLevel, BlockPos pPos, BlockState pState, BananaBakerBlockEntity pBlockEntity) {
+    public static void tick(World pLevel, BlockPos pPos, BlockState pState, BananaBakerBlockEntity pBlockEntity) {
         if(hasRecipe(pBlockEntity) && hasNotReachedStackLimit(pBlockEntity)) {
             craftItem(pBlockEntity);
         }

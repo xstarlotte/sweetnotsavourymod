@@ -3,17 +3,18 @@ package com.charlotte.sweetnotsavourymod.common.recipe;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.minecraft.core.NonNullList;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.world.SimpleContainer;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.item.crafting.*;
+import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class JamPresserRecipe implements Recipe<SimpleContainer> {
+public class JamPresserRecipe implements IRecipe<Inventory> {
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
@@ -26,12 +27,12 @@ public class JamPresserRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public boolean matches(SimpleContainer pContainer, net.minecraft.world.level.Level pLevel) {
+    public boolean matches(Inventory pContainer, World pLevel) {
             return recipeItems.get(0).test(pContainer.getItem(1));
     }
 
     @Override
-    public ItemStack assemble(SimpleContainer pContainer) {
+    public ItemStack assemble(Inventory pContainer) {
         return output;
     }
 
@@ -51,30 +52,30 @@ public class JamPresserRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public IRecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public IRecipeType<?> getType() {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<JamPresserRecipe> {
+    public static class Type implements IRecipeType<JamPresserRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "jam_pressing";
     }
 
-    public static class Serializer implements RecipeSerializer<JamPresserRecipe> {
+    public static class Serializer implements IRecipeSerializer<JamPresserRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID = new ResourceLocation(SweetNotSavouryMod.MOD_ID,"jam_pressing");
 
         @Override
         public JamPresserRecipe fromJson(ResourceLocation id, JsonObject json) {
-            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
+            ItemStack output = ShapedRecipe.itemFromJson(JSONUtils.getAsJsonObject(json, "output"));
 
-            JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
+            JsonArray ingredients = JSONUtils.getAsJsonArray(json, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
@@ -85,7 +86,7 @@ public class JamPresserRecipe implements Recipe<SimpleContainer> {
         }
 
         @Override
-        public JamPresserRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        public JamPresserRecipe fromNetwork(ResourceLocation id, PacketBuffer buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
@@ -97,7 +98,7 @@ public class JamPresserRecipe implements Recipe<SimpleContainer> {
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buf, JamPresserRecipe recipe) {
+        public void toNetwork(PacketBuffer buf, JamPresserRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
@@ -106,7 +107,7 @@ public class JamPresserRecipe implements Recipe<SimpleContainer> {
         }
 
         @Override
-        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
+        public IRecipeSerializer<?> setRegistryName(ResourceLocation name) {
             return INSTANCE;
         }
 
@@ -117,8 +118,8 @@ public class JamPresserRecipe implements Recipe<SimpleContainer> {
         }
 
         @Override
-        public Class<RecipeSerializer<?>> getRegistryType() {
-            return Serializer.castClass(RecipeSerializer.class);
+        public Class<IRecipeSerializer<?>> getRegistryType() {
+            return Serializer.castClass(IRecipeSerializer.class);
         }
 
         @SuppressWarnings("unchecked") // Need this wrapper, because generics

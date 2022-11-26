@@ -38,7 +38,7 @@ public class SNSCookieCatRenderer extends GeoEntityRenderer<SNSCookieCatEntity> 
     }
 
     @Override
-    public void renderEarly(SNSCookieCatEntity animatable, MatrixStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
+    public void renderEarly(SNSCookieCatEntity animatable, MatrixStack stackIn, float ticks, IRenderTypeBuffer renderTypeBuffer,
                             IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
         if(animatable.isBaby()) {

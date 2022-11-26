@@ -4,27 +4,27 @@ import com.charlotte.sweetnotsavourymod.common.blockentities.machines.TeddyBearP
 import com.charlotte.sweetnotsavourymod.common.screen.slot.SNSFuelSlot;
 import com.charlotte.sweetnotsavourymod.common.screen.slot.SNSResultSlot;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.network.PacketBuffer;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.util.IWorldPosCallable;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class TeddyBearPrinterMenu extends AbstractContainerMenu {
+public class TeddyBearPrinterMenu extends Container {
     private final TeddyBearPrinterBlockEntity blockEntity;
-    private final Level level;
+    private final World level;
 
-    public TeddyBearPrinterMenu(int windowId, Inventory inv, FriendlyByteBuf extraData) {
+    public TeddyBearPrinterMenu(int windowId, PlayerInventory inv, PacketBuffer extraData) {
         this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()));
     }
 
-    public TeddyBearPrinterMenu(int windowId, Inventory inv, BlockEntity entity) {
+    public TeddyBearPrinterMenu(int windowId, PlayerInventory inv, TileEntity entity) {
         super(MenuTypesInit.TEDDY_BEAR_PRINTER_MENU.get(), windowId);
         checkContainerSize(inv, 3);
         blockEntity = ((TeddyBearPrinterBlockEntity) entity);
@@ -93,11 +93,11 @@ public class TeddyBearPrinterMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(PlayerEntity pPlayer) {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
+        return stillValid(IWorldPosCallable.create(level, blockEntity.getBlockPos()),
                 pPlayer, BlockInit.TEDDY_BEAR_PRINTER.get());
     }
 
-    private void addPlayerInventory(Inventory playerInventory) {
+    private void addPlayerInventory(PlayerInventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
                 this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
@@ -105,7 +105,7 @@ public class TeddyBearPrinterMenu extends AbstractContainerMenu {
         }
     }
 
-    private void addPlayerHotbar(Inventory playerInventory) {
+    private void addPlayerHotbar(PlayerInventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
         }

@@ -3,18 +3,23 @@ package com.charlotte.sweetnotsavourymod.data;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.criterion.ItemPredicate;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.IFinishedRecipe;
+import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.data.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.item.Items;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.common.data.ForgeRecipeProvider;
 
 import java.util.function.Consumer;
 
-public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+public class ModRecipeProvider extends ForgeRecipeProvider implements IConditionBuilder {
     public ModRecipeProvider(DataGenerator pGenerator) {
         super(pGenerator);
     }
@@ -30,12 +35,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
   //          });
  //       }
 
-   //     default <C extends Container> Optional<T> tryMatch(Recipe<C> pRecipe, Level pLevel, C pContainer) {
+   //     default <C extends Container> Optional<T> tryMatch(Recipe<C> pRecipe, World pLevel, C pContainer) {
   //          return pRecipe.matches(pContainer, pLevel) ? Optional.of((T) pRecipe) : Optional.empty();
   //      }
 //    }
+    
+    private static void createMultiInventoryTrigger() {
+    
+    }
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe>pFinishedRecipeConsumer) {
+    protected void buildCraftingRecipes(Consumer<IFinishedRecipe>pFinishedRecipeConsumer) {
 
     //machines
 

@@ -1,9 +1,9 @@
 package com.charlotte.sweetnotsavourymod.common.item.SweetTierTools;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.AxeItem;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
@@ -16,7 +16,7 @@ public class SweetAxeItem extends AxeItem {
     public boolean hurtEnemy(ItemStack p_43278_, LivingEntity pTarget, LivingEntity pAttacker) {
  //pTarget = the living entity we're attacking
  //pAttacker = the one attacking = the one causing the effects to happen
-        pTarget.addEffect(new MobEffectInstance(MobEffects.POISON, 200), pAttacker);
+        pTarget.addEffect(new EffectInstance(Effects.POISON, 200), pAttacker);
         pTarget.setSecondsOnFire(10);
         return super.hurtEnemy(p_43278_, pTarget, pAttacker);
     }

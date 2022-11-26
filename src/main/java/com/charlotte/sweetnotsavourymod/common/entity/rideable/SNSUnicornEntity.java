@@ -4,15 +4,15 @@ import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.RideableVariants.UnicornFlavourVariant;
 import net.minecraft.util.Util;
-import net.minecraft.core.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.chat.Component;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -36,13 +36,13 @@ import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.IServerWorld;
+import net.minecraft.block.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -66,7 +66,7 @@ public class SNSUnicornEntity extends TameableEntity implements PlayerRideableJu
 	private static final DataParameter<Boolean> SITTING =
 			EntityDataManager.defineId(SNSUnicornEntity.class, DataSerializers.BOOLEAN);
 
-	public SNSUnicornEntity(EntityType<? extends TameableEntity> type, Level worldIn) {
+	public SNSUnicornEntity(EntityType<? extends TameableEntity> type, World worldIn) {
 		super(type, worldIn);
 		this.maxUpStep = 1.0F;
 		setTame(false);
@@ -91,7 +91,7 @@ public class SNSUnicornEntity extends TameableEntity implements PlayerRideableJu
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
+	public SpawnGroupData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
 										@Nullable CompoundNBT p_146750_) {
 		UnicornFlavourVariant variant = Util.getRandom(UnicornFlavourVariant.values(), this.random);
@@ -274,7 +274,7 @@ public class SNSUnicornEntity extends TameableEntity implements PlayerRideableJu
 
 	@Nullable
 	@Override
-	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageablemob) {
+	public AgeableMob getBreedOffspring(ServerWorld serverLevel, AgeableMob ageablemob) {
 		com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSUnicornEntity mob = EntityTypesInit.SNSUNICORN.get().create(serverLevel);
 		UUID uuid = this.getOwnerUUID();
 		if (uuid != null) {
@@ -499,7 +499,7 @@ public class SNSUnicornEntity extends TameableEntity implements PlayerRideableJu
 			BlockPos.MutableBlockPos blockpos$mutable = new BlockPos.MutableBlockPos();
 
 			for(Pose pose : pLivingEntity.getDismountPoses()) {
-				AABB axisalignedbb = pLivingEntity.getLocalBoundsForPose(pose);
+				AxisAlignedBB axisalignedbb = pLivingEntity.getLocalBoundsForPose(pose);
 
 				for(int[] aint1 : aint) {
 					blockpos$mutable.set(blockpos.getX() + aint1[0], blockpos.getY(), blockpos.getZ() + aint1[1]);

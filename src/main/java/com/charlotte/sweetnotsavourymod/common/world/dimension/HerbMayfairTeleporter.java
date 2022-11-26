@@ -1,11 +1,11 @@
 package com.charlotte.sweetnotsavourymod.common.world.dimension;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.util.ITeleporter;
 
 import java.util.function.Function;
@@ -20,7 +20,7 @@ public class HerbMayfairTeleporter implements ITeleporter {
     }
 
     @Override
-    public Entity placeEntity(Entity entity, ServerLevel currentWorld, ServerLevel destinationWorld,
+    public Entity placeEntity(Entity entity, ServerWorld currentWorld, ServerWorld destinationWorld,
                               float yaw, Function<Boolean, Entity> repositionEntity) {
         entity = repositionEntity.apply(false);
         double y = 36;

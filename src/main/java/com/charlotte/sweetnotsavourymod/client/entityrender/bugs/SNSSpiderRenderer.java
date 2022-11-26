@@ -40,7 +40,7 @@ public class SNSSpiderRenderer extends GeoEntityRenderer<SNSSpiderEntity> {
     }
 
     @Override
-    public void renderEarly(SNSSpiderEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
+    public void renderEarly(SNSSpiderEntity animatable, MatrixStack stackIn, float ticks, IRenderTypeBuffer renderTypeBuffer,
                             IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
         if(animatable.isBaby()) {

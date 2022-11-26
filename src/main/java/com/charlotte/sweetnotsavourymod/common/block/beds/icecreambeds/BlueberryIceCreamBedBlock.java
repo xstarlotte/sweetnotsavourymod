@@ -2,10 +2,11 @@ package com.charlotte.sweetnotsavourymod.common.block.beds.icecreambeds;
 
 import com.charlotte.sweetnotsavourymod.common.block.beds.SNSBedBlock;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.icecream.BlueberryIceCreamBedBlockEntity;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.item.DyeColor;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.block.BlockState;
+import net.minecraft.world.IBlockReader;
 
 public class BlueberryIceCreamBedBlock extends SNSBedBlock {
     public BlueberryIceCreamBedBlock(DyeColor colorIn, Properties properties) {
@@ -13,7 +14,7 @@ public class BlueberryIceCreamBedBlock extends SNSBedBlock {
     }
 
     @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BlueberryIceCreamBedBlockEntity(pos, state);
+    public TileEntity newBlockEntity(IBlockReader world) {
+        return new BlueberryIceCreamBedBlockEntity();
     }
 }

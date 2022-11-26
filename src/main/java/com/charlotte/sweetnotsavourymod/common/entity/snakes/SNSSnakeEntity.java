@@ -3,24 +3,29 @@ package com.charlotte.sweetnotsavourymod.common.entity.snakes;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.SnakeVariants.SnakeFlavourVariant;
-import net.minecraft.util.Util;
-import net.minecraft.core.BlockPos;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.chat.Component;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.IServerWorld;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
@@ -29,15 +34,8 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Ghast;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -46,6 +44,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
+import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class SNSSnakeEntity extends TameableEntity implements IAnimatable {
@@ -57,7 +56,7 @@ public class SNSSnakeEntity extends TameableEntity implements IAnimatable {
 	private static final DataParameter<Boolean> SITTING =
 			EntityDataManager.defineId(SNSSnakeEntity.class, DataSerializers.BOOLEAN);
 
-	public SNSSnakeEntity(EntityType<? extends TameableEntity> type, Level worldIn) {
+	public SNSSnakeEntity(EntityType<? extends TameableEntity> type, World worldIn) {
 		super(type, worldIn);
 		setTame(false);
 		this.noCulling = true;
@@ -212,7 +211,7 @@ public class SNSSnakeEntity extends TameableEntity implements IAnimatable {
 
 	@Nullable
 	@Override
-	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageablemob) {
+	public AgeableMob getBreedOffspring(ServerWorld serverLevel, AgeableMob ageablemob) {
 		SNSSnakeEntity mob = EntityTypesInit.SNSSNAKE.get().create(serverLevel);
 		UUID uuid = this.getOwnerUUID();
 		if (uuid != null) {
@@ -273,9 +272,9 @@ public class SNSSnakeEntity extends TameableEntity implements IAnimatable {
 	}
 	//variants
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
-										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
-										@Nullable CompoundNBT p_146750_) {
+	public SpawnGroupData finalizeSpawn(IServerWorld p_146746_, DifficultyInstance p_146747_,
+	                                    MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
+	                                    @Nullable CompoundNBT p_146750_) {
 		SnakeFlavourVariant variant = Util.getRandom(SnakeFlavourVariant.values(), this.random);
 		setVariant(variant);
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);

@@ -1,23 +1,20 @@
 package com.charlotte.sweetnotsavourymod.common.screen.chest;
 
-import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenu;
-import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuTemplate;
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
-import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.player.Inventory;
+import com.mojang.blaze3d.systems.RenderSystem;
+import mcp.MethodsReturnNonnullByDefault;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class SNSChestScreen extends AbstractContainerScreen<SNSChestMenu> {
+public class SNSChestScreen extends ContainerScreen<SNSChestMenu> {
 	public final SNSChestMenuTemplate template;
 
-	public SNSChestScreen(SNSChestMenu menu, Inventory inventory, Component title) {
+	public SNSChestScreen(SNSChestMenu menu, PlayerInventory inventory, ITextComponent title) {
 		super(menu, inventory, title);
 		this.template = menu.template;
 		this.imageWidth = template.width;
@@ -25,21 +22,23 @@ public class SNSChestScreen extends AbstractContainerScreen<SNSChestMenu> {
 	}
 
 	@Override
-	public void render(PoseStack stack, int mx, int my, float partialTick) {
+	public void render(MatrixStack stack, int mx, int my, float partialTick) {
 		super.render(stack, mx, my, partialTick);
 		renderTooltip(stack, mx, my);
 	}
+	
+	
 
 	@Override
-	protected void renderBg(PoseStack stack, float partialTick, int mx, int my) {
+	protected void renderBg(MatrixStack stack, float partialTick, int mx, int my) {
 		renderBackground(stack);
-		RenderSystem.setShader(GameRenderer::getPositionTexShader);
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-		RenderSystem.setShaderTexture(0, menu.template.texture);
+		
+		RenderSystem.color4f(1.0f, 1.0f, 1.0f, 1.0f);
+		this.minecraft.getTextureManager().bind(menu.template.texture);
 
 		blit(stack, leftPos, topPos, 0, 0, imageWidth, imageHeight);
 	}
 
 	@Override
-	protected void renderLabels(PoseStack pPoseStack, int pMouseX, int pMouseY) {}
+	protected void renderLabels(MatrixStack pPoseStack, int pMouseX, int pMouseY) {}
 }

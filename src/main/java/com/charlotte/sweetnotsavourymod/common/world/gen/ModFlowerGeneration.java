@@ -2,8 +2,8 @@ package com.charlotte.sweetnotsavourymod.common.world.gen;
 
 import com.charlotte.sweetnotsavourymod.common.world.features.ModPlacedFeatures;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.util.ResourceKey;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class ModFlowerGeneration {
     public static void generateFlowers(final BiomeLoadingEvent event) {
-        ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
+        RegistryKey<Biome> key = RegistryKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 
         if(types.contains(BiomeDictionary.Type.SNOWY)) {

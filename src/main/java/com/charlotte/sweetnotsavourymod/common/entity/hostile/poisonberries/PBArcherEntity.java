@@ -2,7 +2,7 @@ package com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries;
 
 
 import com.charlotte.sweetnotsavourymod.common.entityai.PoisonBerryOpensMiniDoorGoal;
-import net.minecraft.core.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -23,7 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.World;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.block.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -34,7 +34,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class PBArcherEntity extends Monster implements IAnimatable, RangedAttackMob {
 	private AnimationFactory factory = new AnimationFactory(this);
-	public PBArcherEntity(EntityType<? extends Monster> type, Level worldIn) {
+	public PBArcherEntity(EntityType<? extends Monster> type, World worldIn) {
 		super(type, worldIn);
 	}
 

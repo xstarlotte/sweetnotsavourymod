@@ -1,11 +1,11 @@
 package com.charlotte.sweetnotsavourymod.common.block.beds;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.BedBlock;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.block.BedBlock;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.DyeColor;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public abstract class SNSBedBlock extends BedBlock {
     public SNSBedBlock(DyeColor colorIn, Properties properties){
@@ -13,7 +13,7 @@ public abstract class SNSBedBlock extends BedBlock {
     }
 
     @Override
-    public boolean isBed(BlockState state, BlockGetter world, BlockPos pos, Entity player) {
+    public boolean isBed(BlockState state, IBlockReader world, BlockPos pos, Entity player) {
     	return true;
     }
 }

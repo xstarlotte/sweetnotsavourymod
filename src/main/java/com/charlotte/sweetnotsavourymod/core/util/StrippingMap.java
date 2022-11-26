@@ -1,7 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.util;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.block.Block;
 
 public class StrippingMap {
 	public static void createStrippable(Block input, Block output) {

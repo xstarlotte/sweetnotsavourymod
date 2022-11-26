@@ -1,33 +1,29 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.chest;
 
 import com.charlotte.sweetnotsavourymod.common.block.SNSChestBlock;
-import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenu;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
-import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.core.BlockPos;
-import net.minecraft.util.Direction;
-import net.minecraft.core.NonNullList;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.CompoundContainer;
-import net.minecraft.world.Container;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.entity.player.Inventory;
+import mcp.MethodsReturnNonnullByDefault;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.ChestBlock;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ChestMenu;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.DoubleSidedInventory;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.inventory.container.ChestContainer;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.level.BlockGetter;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.state.properties.ChestType;
+import net.minecraft.tileentity.*;
+import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ChestBlock;
-import net.minecraft.world.level.block.entity.*;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
@@ -39,37 +35,20 @@ import java.util.function.Supplier;
 @SuppressWarnings("deprecation")
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implements LidBlockEntity {
-	private final Supplier<SNSChestMenuType> menuType;
+public class SNSChestBlockEntity extends LockableLootTileEntity implements IChestLid, ITickableTileEntity {
+	private final Supplier<SNSChestMenuType> menuTypeS, menuTypeD;
 	private final int containerSize;
-	private NonNullList<ItemStack> items;
-	private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
-		protected void onOpen(Level p_155357_, BlockPos p_155358_, BlockState p_155359_) {
-			playSound(p_155357_, p_155358_, p_155359_, SoundEvents.CHEST_OPEN);
-		}
+	public NonNullList<ItemStack> items;
+	
+	protected float openness;
+	protected float oOpenness;
+	protected int openCount;
+	private int tickInterval;
 
-		protected void onClose(Level p_155367_, BlockPos p_155368_, BlockState p_155369_) {
-			playSound(p_155367_, p_155368_, p_155369_, SoundEvents.CHEST_CLOSE);
-		}
-
-		protected void openerCountChanged(Level p_155361_, BlockPos p_155362_, BlockState p_155363_, int p_155364_, int p_155365_) {
-			SNSChestBlockEntity.this.signalOpenCount(p_155361_, p_155362_, p_155363_, p_155364_, p_155365_);
-		}
-
-		protected boolean isOwnContainer(PlayerEntity p_155355_) {
-			if (!(p_155355_.containerMenu instanceof SNSChestMenu)) {
-				return false;
-			} else {
-				Container container = ((SNSChestMenu)p_155355_.containerMenu).container;
-				return container == SNSChestBlockEntity.this || container instanceof CompoundContainer && ((CompoundContainer)container).contains(SNSChestBlockEntity.this);
-			}
-		}
-	};
-	private final ChestLidController chestLidController = new ChestLidController();
-
-	public SNSChestBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state, int containerSize, Supplier<SNSChestMenuType> menuType) {
-		super(type, pos, state);
-		this.menuType = menuType;
+	public SNSChestBlockEntity(TileEntityType<?> type, int containerSize, Supplier<SNSChestMenuType> menuTypeS, Supplier<SNSChestMenuType> menuTypeD) {
+		super(type);
+		this.menuTypeS = menuTypeS;
+		this.menuTypeD = menuTypeD;
 		this.containerSize = containerSize;
 		this.items = NonNullList.withSize(containerSize, ItemStack.EMPTY);
 	}
@@ -78,72 +57,115 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		return containerSize;
 	}
 
-	protected Component getDefaultName() {
-		return new TranslatableComponent("container.chest");
+	protected ITextComponent getDefaultName() {
+		return new TranslationTextComponent("container.chest");
 	}
 
-	public void load(CompoundNBT pTag) {
-		super.load(pTag);
+	public void load(BlockState state, CompoundNBT pTag) {
+		super.load(state, pTag);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		if (!this.tryLoadLootTable(pTag)) {
-			ContainerHelper.loadAllItems(pTag, this.items);
+			ItemStackHelper.loadAllItems(pTag, this.items);
 		}
 
 	}
 
-	protected void saveAdditional(CompoundNBT pTag) {
-		super.saveAdditional(pTag);
+	public CompoundNBT save(CompoundNBT pTag) {
 		if (!this.trySaveLootTable(pTag)) {
-			ContainerHelper.saveAllItems(pTag, this.items);
+			ItemStackHelper.saveAllItems(pTag, this.items);
 		}
+		return super.save(pTag);
 
 	}
-
-	public static void lidAnimateTick(Level pLevel, BlockPos pPos, BlockState pState, SNSChestBlockEntity pBlockEntity) {
-		pBlockEntity.chestLidController.tickLid();
+	
+	@Override
+	public void tick() {
+		int i = this.worldPosition.getX();
+		int j = this.worldPosition.getY();
+		int k = this.worldPosition.getZ();
+		++this.tickInterval;
+		this.openCount = getOpenCount(this.level, this, this.tickInterval, i, j, k, this.openCount);
+		this.oOpenness = this.openness;
+		float f = 0.1F;
+		if (this.openCount > 0 && this.openness == 0.0F) {
+			this.playSound(SoundEvents.CHEST_OPEN);
+		}
+		
+		if (this.openCount == 0 && this.openness > 0.0F || this.openCount > 0 && this.openness < 1.0F) {
+			float f1 = this.openness;
+			if (this.openCount > 0) {
+				this.openness += 0.1F;
+			} else {
+				this.openness -= 0.1F;
+			}
+			
+			if (this.openness > 1.0F) {
+				this.openness = 1.0F;
+			}
+			
+			float f2 = 0.5F;
+			if (this.openness < 0.5F && f1 >= 0.5F) {
+				this.playSound(SoundEvents.CHEST_CLOSE);
+			}
+			
+			if (this.openness < 0.0F) {
+				this.openness = 0.0F;
+			}
+		}
+		
 	}
-
-	private static void playSound(Level pLevel, BlockPos pPos, BlockState pState, SoundEvent pSound) {
-		ChestType chesttype = pState.getBlock() instanceof SNSChestBlock block && block.doubleAble ?
-				pState.getValue(ChestBlock.TYPE) :
-				ChestType.SINGLE;
+	private void playSound(SoundEvent p_195483_1_) {
+		ChestType chesttype = this.getBlockState().getValue(ChestBlock.TYPE);
 		if (chesttype != ChestType.LEFT) {
-			double d0 = (double)pPos.getX() + 0.5D;
-			double d1 = (double)pPos.getY() + 0.5D;
-			double d2 = (double)pPos.getZ() + 0.5D;
+			double d0 = (double)this.worldPosition.getX() + 0.5D;
+			double d1 = (double)this.worldPosition.getY() + 0.5D;
+			double d2 = (double)this.worldPosition.getZ() + 0.5D;
 			if (chesttype == ChestType.RIGHT) {
-				Direction direction = ChestBlock.getConnectedDirection(pState);
+				Direction direction = ChestBlock.getConnectedDirection(this.getBlockState());
 				d0 += (double)direction.getStepX() * 0.5D;
 				d2 += (double)direction.getStepZ() * 0.5D;
 			}
-
-			pLevel.playSound(null, d0, d1, d2, pSound, SoundSource.BLOCKS, 0.5F, pLevel.random.nextFloat() * 0.1F + 0.9F);
+			
+			this.level.playSound((PlayerEntity)null, d0, d1, d2, p_195483_1_, SoundCategory.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
 		}
 	}
-
+	
 	public boolean triggerEvent(int pId, int pType) {
 		if (pId == 1) {
-			this.chestLidController.shouldBeOpen(pType > 0);
+			this.openCount = pType;
 			return true;
 		} else {
 			return super.triggerEvent(pId, pType);
 		}
 	}
-
+	
 	public void startOpen(PlayerEntity pPlayer) {
-		Level level = this.getLevel();
-		if (!this.remove && !pPlayer.isSpectator() && level != null) {
-			this.openersCounter.incrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
+		if (!pPlayer.isSpectator()) {
+			if (this.openCount < 0) {
+				this.openCount = 0;
+			}
+			
+			++this.openCount;
+			this.signalOpenCount();
 		}
-
+		
 	}
-
+	
 	public void stopOpen(PlayerEntity pPlayer) {
-		Level level = this.getLevel();
-		if (!this.remove && !pPlayer.isSpectator() && level != null) {
-			this.openersCounter.decrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
+		if (!pPlayer.isSpectator()) {
+			--this.openCount;
+			this.signalOpenCount();
 		}
-
+		
+	}
+	
+	protected void signalOpenCount() {
+		Block block = this.getBlockState().getBlock();
+		if (block instanceof ChestBlock) {
+			this.level.blockEvent(this.worldPosition, block, 1, this.openCount);
+			this.level.updateNeighborsAt(this.worldPosition, block);
+		}
+		
 	}
 
 	protected NonNullList<ItemStack> getItems() {
@@ -155,35 +177,51 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 	}
 
 	public float getOpenNess(float pPartialTicks) {
-		return this.chestLidController.getOpenness(pPartialTicks);
+		return MathHelper.lerp(pPartialTicks, this.oOpenness, this.openness);
 	}
-
-	public static int getOpenCount(BlockGetter pLevel, BlockPos pPos) {
-		BlockState blockstate = pLevel.getBlockState(pPos);
-		if (blockstate.hasBlockEntity()) {
-			BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-			if (blockentity instanceof SNSChestBlockEntity snsChestEntity) {
-				return snsChestEntity.openersCounter.getOpenerCount();
+	
+	public static int getOpenCount(World p_213977_0_, LockableTileEntity p_213977_1_, int p_213977_2_, int p_213977_3_, int p_213977_4_, int p_213977_5_, int p_213977_6_) {
+		if (!p_213977_0_.isClientSide && p_213977_6_ != 0 && (p_213977_2_ + p_213977_3_ + p_213977_4_ + p_213977_5_) % 200 == 0) {
+			p_213977_6_ = getOpenCount(p_213977_0_, p_213977_1_, p_213977_3_, p_213977_4_, p_213977_5_);
+		}
+		
+		return p_213977_6_;
+	}
+	
+	public static int getOpenCount(World p_213976_0_, LockableTileEntity p_213976_1_, int p_213976_2_, int p_213976_3_, int p_213976_4_) {
+		int i = 0;
+		float f = 5.0F;
+		
+		for(PlayerEntity playerentity : p_213976_0_.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB((double)((float)p_213976_2_ - 5.0F), (double)((float)p_213976_3_ - 5.0F), (double)((float)p_213976_4_ - 5.0F), (double)((float)(p_213976_2_ + 1) + 5.0F), (double)((float)(p_213976_3_ + 1) + 5.0F), (double)((float)(p_213976_4_ + 1) + 5.0F)))) {
+			if (playerentity.containerMenu instanceof ChestContainer) {
+				IInventory iinventory = ((ChestContainer)playerentity.containerMenu).getContainer();
+				if (iinventory == p_213976_1_ || iinventory instanceof DoubleSidedInventory && ((DoubleSidedInventory)iinventory).contains(p_213976_1_)) {
+					++i;
+				}
 			}
 		}
-
-		return 0;
+		
+		return i;
 	}
-
+	
 	public static void swapContents(SNSChestBlockEntity pChest, SNSChestBlockEntity pOtherChest) {
 		NonNullList<ItemStack> nonnulllist = pChest.getItems();
 		pChest.setItems(pOtherChest.getItems());
 		pOtherChest.setItems(nonnulllist);
 	}
 
-	protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer) {
-		return menuType.get().create(pId, pPlayer);
+	protected Container createMenu(int pId, PlayerInventory pPlayer) {
+		boolean doubleChest = getBlockState().getBlock() instanceof SNSChestBlock &&
+				((SNSChestBlock)getBlockState().getBlock()).doubleAble &&
+				getBlockState().getValue(SNSChestBlock.TYPE) != ChestType.SINGLE;
+		return (doubleChest ? menuTypeD : menuTypeS).get().create(pId, pPlayer);
 	}
 
 	private net.minecraftforge.common.util.LazyOptional<net.minecraftforge.items.IItemHandlerModifiable> chestHandler;
+	
 	@Override
-	public void setBlockState(BlockState pBlockState) {
-		super.setBlockState(pBlockState);
+	public void clearCache() {
+		super.clearCache();
 		if (this.chestHandler != null) {
 			net.minecraftforge.common.util.LazyOptional<?> oldHandler = this.chestHandler;
 			this.chestHandler = null;
@@ -204,10 +242,10 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 
 	private net.minecraftforge.items.IItemHandlerModifiable createHandler() {
 		BlockState state = this.getBlockState();
-		Level level = getLevel();
-		if (!(state.getBlock() instanceof SNSChestBlock block) || level == null)
+		World level = getLevel();
+		if (!(state.getBlock() instanceof SNSChestBlock) || level == null)
 			return new InvWrapper(this);
-		Container inv = SNSChestBlock.getContainer(block, state, level, getBlockPos(), true);
+		IInventory inv = SNSChestBlock.getContainer((SNSChestBlock) state.getBlock(), state, level, getBlockPos(), true);
 		return new net.minecraftforge.items.wrapper.InvWrapper(inv == null ? this : inv);
 	}
 
@@ -220,14 +258,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		}
 	}
 
-	public void recheckOpen() {
-		Level level = getLevel();
-		if (!this.remove && level != null) {
-			this.openersCounter.recheckOpeners(level, this.getBlockPos(), this.getBlockState());
-		}
-	}
-
-	protected void signalOpenCount(Level pLevel, BlockPos pPos, BlockState pState, int p_155336_, int p_155337_) {
+	protected void signalOpenCount(World pLevel, BlockPos pPos, BlockState pState, int p_155336_, int p_155337_) {
 		Block block = pState.getBlock();
 		pLevel.blockEvent(pPos, block, 1, p_155337_);
 	}

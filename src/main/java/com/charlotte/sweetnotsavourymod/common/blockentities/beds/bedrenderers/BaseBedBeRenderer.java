@@ -2,38 +2,37 @@ package com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers;
 
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.SNSBaseBedBlockEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.math.Vector3f;
+import net.minecraft.block.BedBlock;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.model.IBakedModel;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.core.BlockPos;
+import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
+import net.minecraft.state.properties.BedPart;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.world.World;
-import net.minecraft.world.level.block.BedBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BedPart;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBaseBedBlockEntity> {
+public abstract class BaseBedBeRenderer extends TileEntityRenderer<SNSBaseBedBlockEntity> {
     protected SNSBaseBedBlockEntity be;
-    protected BakedModel headbedmodel;
-    protected BakedModel bottombedmodel;
+    protected IBakedModel headbedmodel;
+    protected IBakedModel bottombedmodel;
 
-    public BaseBedBeRenderer(BlockEntityRendererProvider.Context context) {
-
+    public BaseBedBeRenderer(TileEntityRendererDispatcher dispatcher) {
+        super(dispatcher);
     }
 
     protected abstract void setBlockEntityAndModels(SNSBaseBedBlockEntity be);
 
     @Override
-    public void render(SNSBaseBedBlockEntity blockentity, float partialTicks , PoseStack matrixStackIn , IRenderTypeBuffer bufferIn , int combinedLightIn , int combinedOverlayIn ){
+    public void render(SNSBaseBedBlockEntity blockentity, float partialTicks , MatrixStack matrixStackIn , IRenderTypeBuffer bufferIn , int combinedLightIn , int combinedOverlayIn ){
        setBlockEntityAndModels(blockentity);
-        Level level = be.getLevel();
+        World level = be.getLevel();
         BlockState state = be.getBlockState();
         BlockPos pos = be.getBlockPos();
         switch((be.getBlockState().getValue(BlockStateProperties.HORIZONTAL_FACING))){
@@ -76,26 +75,24 @@ public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBaseBe
         }
     }
 
-    private void renderBottomBedCorrectly(Level level, BlockPos pos, BlockState state, PoseStack matrixStackIn, BlockEntity be, MultiBufferSource bufferIn, int rotation,
+    private void renderBottomBedCorrectly(World level, BlockPos pos, BlockState state, MatrixStack matrixStackIn, TileEntity be, IRenderTypeBuffer bufferIn, int rotation,
                                     float tx, float tz){
-            RenderType renderType = ItemBlockRenderTypes.getRenderType( state , false );
+            RenderType renderType = RenderType.translucent();
             matrixStackIn.pushPose();
             matrixStackIn.mulPose( Vector3f.YP.rotationDegrees(rotation) );
             matrixStackIn.translate( tx, 0, tz );
-            Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , bottombedmodel , state , pos , matrixStackIn , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY ,
-                    net.minecraftforge.client.model.data.EmptyModelData.INSTANCE );
+            Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , bottombedmodel , state , pos , matrixStackIn , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY);
             matrixStackIn.popPose();
 
     }
 
-    private void renderHeadBedCorrectly(Level level, BlockPos pos, BlockState state, PoseStack matrixStackIn, BlockEntity be, MultiBufferSource bufferIn, int rotation,
+    private void renderHeadBedCorrectly(World level, BlockPos pos, BlockState state, MatrixStack matrixStackIn, TileEntity be, IRenderTypeBuffer bufferIn, int rotation,
                                           float tx, float tz){
-        RenderType renderType = ItemBlockRenderTypes.getRenderType( state , false );
+        RenderType renderType = RenderType.translucent();
         matrixStackIn.pushPose();
         matrixStackIn.mulPose( Vector3f.YP.rotationDegrees(rotation) );
         matrixStackIn.translate( tx, 0, tz );
-        Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , headbedmodel , state , pos , matrixStackIn , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY ,
-                net.minecraftforge.client.model.data.EmptyModelData.INSTANCE );
+        Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , headbedmodel , state , pos , matrixStackIn , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY);
         matrixStackIn.popPose();
 
     }

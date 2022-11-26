@@ -2,53 +2,52 @@ package com.charlotte.sweetnotsavourymod.data;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import net.minecraft.advancements.critereon.EnchantmentPredicate;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.MinMaxBounds;
-import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.advancements.criterion.EnchantmentPredicate;
+import net.minecraft.advancements.criterion.ItemPredicate;
+import net.minecraft.advancements.criterion.MinMaxBounds;
+import net.minecraft.advancements.criterion.StatePropertiesPredicate;
+import net.minecraft.block.BedBlock;
+import net.minecraft.block.BeetrootBlock;
+import net.minecraft.block.Block;
+import net.minecraft.data.loot.BlockLootTables;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.block.BedBlock;
-import net.minecraft.world.level.block.BeetrootBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.properties.BedPart;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.MatchTool;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.loot.ConstantRange;
+import net.minecraft.loot.ItemLootEntry;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.conditions.BlockStateProperty;
+import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.loot.conditions.MatchTool;
+import net.minecraft.loot.conditions.TableBonus;
+import net.minecraft.loot.functions.ApplyBonus;
+import net.minecraft.state.properties.BedPart;
+import net.minecraftforge.fml.RegistryObject;
 
-public class BlockInitLootTables extends BlockLoot {
+public class BlockInitLootTables extends BlockLootTables {
 
     private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
-    private static final LootItemCondition.Builder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
-    private static final LootItemCondition.Builder HAS_NO_SILK_TOUCH = HAS_SILK_TOUCH.invert();
-    private static final LootItemCondition.Builder HAS_SHEARS = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS));
-    private static final LootItemCondition.Builder HAS_SHEARS_OR_SILK_TOUCH = HAS_SHEARS.or(HAS_SILK_TOUCH);
-    private static final LootItemCondition.Builder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
+    private static final ILootCondition.IBuilder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))));
+    private static final ILootCondition.IBuilder HAS_NO_SILK_TOUCH = HAS_SILK_TOUCH.invert();
+    private static final ILootCondition.IBuilder HAS_SHEARS = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS));
+    private static final ILootCondition.IBuilder HAS_SHEARS_OR_SILK_TOUCH = HAS_SHEARS.or(HAS_SILK_TOUCH);
+    private static final ILootCondition.IBuilder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
 
-    protected static LootTable.Builder createShearsDispatchTable(Block pBlock, LootPoolEntryContainer.Builder<?> pAlternativeEntryBuilder) {
-        return createSelfDropDispatchTable(pBlock, HAS_SHEARS, pAlternativeEntryBuilder);
-    }
-
-    protected static LootTable.Builder createSilkTouchOrShearsDispatchTable(Block pBlock, LootPoolEntryContainer.Builder<?> pAlternativeEntryBuilder) {
-        return createSelfDropDispatchTable(pBlock, HAS_SHEARS_OR_SILK_TOUCH, pAlternativeEntryBuilder);
-    }
+//    protected static LootTable.Builder createShearsDispatchTable(Block pBlock, LootPoolEntryContainer.Builder<?> pAlternativeEntryBuilder) {
+//        return createSelfDropDispatchTable(pBlock, HAS_SHEARS, pAlternativeEntryBuilder);
+//    }
+//
+//    protected static LootTable.Builder createSilkTouchOrShearsDispatchTable(Block pBlock, LootPoolEntryContainer.Builder<?> pAlternativeEntryBuilder) {
+//        return createSelfDropDispatchTable(pBlock, HAS_SHEARS_OR_SILK_TOUCH, pAlternativeEntryBuilder);
+//    }
 
     protected static LootTable.Builder createOakLeavesDrops(Block pOakLeavesBlock, Block pSaplingBlock, float... pChances) {
-        return createLeavesDrops(pOakLeavesBlock, pSaplingBlock, pChances).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionCondition(pOakLeavesBlock, LootItem.lootTableItem(ItemInit.SPRINKLES.get())).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
+        return createLeavesDrops(pOakLeavesBlock, pSaplingBlock, pChances).withPool(LootPool.lootPool().setRolls(ConstantRange.exactly(1)).when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionCondition(pOakLeavesBlock, ItemLootEntry.lootTableItem(ItemInit.SPRINKLES.get())).when(TableBonus.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
     }
 
-    protected static LootTable.Builder createCropDrops(Block pCropBlock, Item pGrownCropItem, Item pSeedsItem, LootItemCondition.Builder pDropGrownCropCondition) {
-        return applyExplosionDecay(pCropBlock, LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition).otherwise(LootItem.lootTableItem(pSeedsItem)))).withPool(LootPool.lootPool().when(pDropGrownCropCondition).add(LootItem.lootTableItem(pSeedsItem).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3)))));
+    protected static LootTable.Builder createCropDrops(Block pCropBlock, Item pGrownCropItem, Item pSeedsItem, ILootCondition.IBuilder pDropGrownCropCondition) {
+            return applyExplosionDecay(pCropBlock, LootTable.lootTable().withPool(LootPool.lootPool().add(ItemLootEntry.lootTableItem(pGrownCropItem).when(pDropGrownCropCondition).otherwise(ItemLootEntry.lootTableItem(pSeedsItem)))).withPool(LootPool.lootPool().when(pDropGrownCropCondition).add(ItemLootEntry.lootTableItem(pSeedsItem).apply(ApplyBonus.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3)))));
     }
 
     @Override
@@ -503,98 +502,98 @@ public class BlockInitLootTables extends BlockLoot {
 
         //crops
 
-        LootItemCondition.Builder lootitemcondition$banana = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$banana = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.BANANA_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.BANANA_CROP.get(), createCropDrops(BlockInit.BANANA_CROP.get(), ItemInit.SWEETBANANA.get(),
                 ItemInit.SWEETBANANA.get(),
                 lootitemcondition$banana));
 
-        LootItemCondition.Builder lootitemcondition$strawberry = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$strawberry = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.STRAWBERRY_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.STRAWBERRY_CROP.get(), createCropDrops(BlockInit.STRAWBERRY_CROP.get(), ItemInit.SWEETSTRAWBERRY.get(),
                 ItemInit.SWEETSTRAWBERRY.get(),
                 lootitemcondition$strawberry));
 
-        LootItemCondition.Builder lootitemcondition$raspberry = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$raspberry = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.RASPBERRY_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.RASPBERRY_CROP.get(), createCropDrops(BlockInit.RASPBERRY_CROP.get(), ItemInit.SWEETRASPBERRY.get(),
                 ItemInit.SWEETRASPBERRY.get(),
                 lootitemcondition$raspberry));
 
-        LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$builder = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.BLACKBERRY_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.BLACKBERRY_CROP.get(), createCropDrops(BlockInit.BLACKBERRY_CROP.get(), ItemInit.SWEETBLACKBERRY.get(),
                 ItemInit.SWEETBLACKBERRY.get(),
                 lootitemcondition$builder));
 
-        LootItemCondition.Builder lootitemcondition$blueberry = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$blueberry = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.BLUEBERRY_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.BLUEBERRY_CROP.get(), createCropDrops(BlockInit.BLUEBERRY_CROP.get(), ItemInit.SWEETBLUEBERRY.get(),
                 ItemInit.SWEETBLUEBERRY.get(),
                 lootitemcondition$blueberry));
 
-        LootItemCondition.Builder lootitemcondition$lemon = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$lemon = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.LEMON_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.LEMON_CROP.get(), createCropDrops(BlockInit.LEMON_CROP.get(), ItemInit.SWEETLEMON.get(),
                 ItemInit.SWEETLEMON.get(),
                 lootitemcondition$lemon));
 
-        LootItemCondition.Builder lootitemcondition$orange = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$orange = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.ORANGE_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.ORANGE_CROP.get(), createCropDrops(BlockInit.ORANGE_CROP.get(), ItemInit.SWEETORANGE.get(),
                 ItemInit.SWEETORANGE.get(),
                 lootitemcondition$orange));
 
-        LootItemCondition.Builder lootitemcondition$lime = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$lime = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.LIME_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.LIME_CROP.get(), createCropDrops(BlockInit.LIME_CROP.get(), ItemInit.SWEETLIME.get(),
                 ItemInit.SWEETLIME.get(),
                 lootitemcondition$lime));
 
-        LootItemCondition.Builder lootitemcondition$peach = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$peach = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.PEACH_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.PEACH_CROP.get(), createCropDrops(BlockInit.PEACH_CROP.get(), ItemInit.SWEETPEACH.get(),
                 ItemInit.SWEETPEACH.get(),
                 lootitemcondition$peach));
 
-        LootItemCondition.Builder lootitemcondition$mango = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$mango = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.MANGO_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.MANGO_CROP.get(), createCropDrops(BlockInit.MANGO_CROP.get(), ItemInit.SWEETMANGO.get(),
                 ItemInit.SWEETMANGO.get(),
                 lootitemcondition$mango));
 
-        LootItemCondition.Builder lootitemcondition$pineapple = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$pineapple = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.PINEAPPLE_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.PINEAPPLE_CROP.get(), createCropDrops(BlockInit.PINEAPPLE_CROP.get(), ItemInit.SWEETPINEAPPLE.get(),
                 ItemInit.SWEETPINEAPPLE.get(),
                 lootitemcondition$pineapple));
 
-        LootItemCondition.Builder lootitemcondition$vanilla = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$vanilla = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.VANILLA_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.VANILLA_CROP.get(), createCropDrops(BlockInit.VANILLA_CROP.get(), ItemInit.VANILLA.get(),
                 ItemInit.VANILLA.get(),
                 lootitemcondition$vanilla));
 
-        LootItemCondition.Builder lootitemcondition$mint = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$mint = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.MINT_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.MINT_CROP.get(), createCropDrops(BlockInit.MINT_CROP.get(), ItemInit.MINT.get(),
                 ItemInit.MINT.get(),
                 lootitemcondition$vanilla));
 
-        LootItemCondition.Builder lootitemcondition$carrot = LootItemBlockStatePropertyCondition.hasBlockStateProperties
+        ILootCondition.IBuilder lootitemcondition$carrot = BlockStateProperty.hasBlockStateProperties
                 (BlockInit.CARROT_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty
                 (BeetrootBlock.AGE, 2));
         this.add(BlockInit.CARROT_CROP.get(), createCropDrops(BlockInit.CARROT_CROP.get(), ItemInit.SWEETCARROT.get(),
@@ -611,34 +610,34 @@ public class BlockInitLootTables extends BlockLoot {
                     NORMAL_LEAVES_SAPLING_CHANCES);
         });
 
-        this.add(BlockInit.STRAWBERRY_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.RASPBERRY_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.BLACKBERRY_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.BLUEBERRY_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.ORANGE_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.LEMON_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.LIME_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.MANGO_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.PEACH_CANDY_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.CANDYFLOSS_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.WAFER_PLANK_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.WAFER_WOOD_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.CHOCOLATE_WAFER_WOOD_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.FROSTING_DOOR.get(), BlockLoot::createDoorTable);
-        this.add(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(BlockInit.STRAWBERRY_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.RASPBERRY_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.BLACKBERRY_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.BLUEBERRY_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.ORANGE_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.LEMON_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.LIME_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.MANGO_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.PEACH_CANDY_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.CANDYFLOSS_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.WAFER_PLANK_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.WAFER_WOOD_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.CHOCOLATE_WAFER_WOOD_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.FROSTING_DOOR.get(), BlockLootTables::createDoorTable);
+        this.add(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), BlockLootTables::createDoorTable);
 
-        this.add(BlockInit.STRAWBERRY_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.BLACKBERRY_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.RASPBERRY_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.BLUEBERRY_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.ORANGE_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.LEMON_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.LIME_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.MANGO_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.PEACH_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.CANDYFLOSS_SLAB.get(), BlockLoot::createSlabItemTable);
-        this.add(BlockInit.WAFER_WOOD_SLAB.get(), BlockLoot::createSlabItemTable);
+        this.add(BlockInit.STRAWBERRY_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.BLACKBERRY_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.RASPBERRY_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.BLUEBERRY_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.ORANGE_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.LEMON_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.LIME_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.MANGO_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.PEACH_CANDY_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.CANDYFLOSS_SLAB.get(), BlockLootTables::createSlabItemTable);
+        this.add(BlockInit.WAFER_WOOD_SLAB.get(), BlockLootTables::createSlabItemTable);
 
         this.add(BlockInit.STRAWBERRYICECREAMBED.get(), (p_124231_) -> {
             return createSinglePropConditionTable(p_124231_, BedBlock.PART, BedPart.HEAD);

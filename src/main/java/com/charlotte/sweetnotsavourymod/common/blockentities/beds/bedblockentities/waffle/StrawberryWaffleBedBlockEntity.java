@@ -2,11 +2,11 @@ package com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentit
 
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.SNSBaseBedBlockEntity;
 import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.block.BlockState;
 
 public class StrawberryWaffleBedBlockEntity extends SNSBaseBedBlockEntity {
-    public StrawberryWaffleBedBlockEntity(BlockPos pos, BlockState state) {
-        super(BlockEntityTypesInit.SNS_STRAWBERRY_WAFFLE_BED_ENTITY_TYPE.get(), pos, state);
+    public StrawberryWaffleBedBlockEntity() {
+        super(BlockEntityTypesInit.SNS_STRAWBERRY_WAFFLE_BED_ENTITY_TYPE.get());
     }
 }

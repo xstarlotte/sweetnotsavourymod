@@ -1,7 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.entityai;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.monster.Monster;
@@ -30,7 +30,7 @@ public class PoisonBerryMeleeAttackGoal extends MeleeAttackGoal {
         if(distToEnemySqr <= d0){
 
             if(random >= 15){
-                enemy.addEffect( new MobEffectInstance( MobEffects.POISON , 60 ) );
+                enemy.addEffect( new EffectInstance( Effects.POISON , 60 ) );
 
 
             }

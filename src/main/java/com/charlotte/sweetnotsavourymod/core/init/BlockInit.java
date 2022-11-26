@@ -16,31 +16,19 @@ import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTreeG
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.core.BlockPos;
-import net.minecraft.util.Direction;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.potion.Effects;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.item.Item;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.AbstractBlock;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.atomic.AtomicReference;
@@ -152,7 +140,7 @@ public class BlockInit {
 					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> FROSTINGGRASS = registerBlock("frostinggrass",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> BLACKBERRYFROSTINGBLOCK = registerBlock("blackberryfrostingblock",
@@ -200,147 +188,147 @@ public class BlockInit {
 //flowers
 
 	public static final RegistryObject<Block> FROSTINGFLOWER = registerBlock("frostingflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> BLACKBERRYFROSTINGFLOWER = registerBlock("blackberryfrostingflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> RASPBERRYFROSTINGFLOWER = registerBlock("raspberryfrostingflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> BLUEBERRYFROSTINGFLOWER = registerBlock("blueberryfrostingflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> STRAWBERRYFROSTINGFLOWER = registerBlock("strawberryfrostingflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> LEMONFROSTINGFLOWER = registerBlock("lemonfrostingflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> ORANGEFROSTINGFLOWER = registerBlock("orangefrostingflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> STRAWBERRYCANDYBUSH = registerBlock("strawberrycandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> RASPBERRYCANDYBUSH = registerBlock("raspberrycandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> BLUEBERRYCANDYBUSH = registerBlock("blueberrycandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> BLACKBERRYCANDYBUSH = registerBlock("blackberrycandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> LEMONCANDYBUSH = registerBlock("lemoncandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> ORANGECANDYBUSH = registerBlock("orangecandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> LIMECANDYBUSH = registerBlock("limecandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> MANGOCANDYBUSH = registerBlock("mangocandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> PEACHCANDYBUSH = registerBlock("peachcandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> RAINBOWCANDYBUSH = registerBlock("rainbowcandybush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CHOCOLATECINERARIA = registerBlock("chocolatecineraria",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> TOFFEETULIP = registerBlock("toffeetulip",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> BLACKBERRYCONEFLOWER = registerBlock("blackberryconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> BLUEBERRYCONEFLOWER = registerBlock("blueberryconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> RASPBERRYCONEFLOWER = registerBlock("raspberryconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> STRAWBERRYCONEFLOWER = registerBlock("strawberryconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> ORANGECONEFLOWER = registerBlock("orangeconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> LEMONCONEFLOWER = registerBlock("lemonconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> VANILLACONEFLOWER = registerBlock("vanillaconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CHOCOLATECONEFLOWER = registerBlock("chocolateconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> TOFFEECONEFLOWER = registerBlock("toffeeconeflower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3, AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3, AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDYCANEBUSH = registerBlock("candycanebush",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDY_CANE_FLOWER = registerBlock("candy_cane_flower",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDY_CANE_FLOWER_2 = registerBlock("candy_cane_flower_2",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDY_CANE_FLOWER_3 = registerBlock("candy_cane_flower_3",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDY_CANE_FLOWER_4 = registerBlock("candy_cane_flower_4",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDY_CANE_GRASS = registerBlock("candy_cane_grass",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDY_CANE_GRASS_LONG = registerBlock("candy_cane_grass_long",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> POISONBERRYPLANT = registerBlock("poisonberryplant",
-			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
+			() -> new FlowerBlock(Effects.MOVEMENT_SPEED, 3,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	//potted flowers
@@ -1508,7 +1496,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> HARDENED_BANANA_STAIRS = registerBlock
 			("hardened_banana_stairs",
-					() -> new StairBlock(() -> HARDENEDBANANAPLANKS.get().defaultBlockState(),
+					() -> new StairsBlock(() -> HARDENEDBANANAPLANKS.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.STONE)
@@ -1518,7 +1506,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> WAFER_WOOD_STAIRS = registerBlock
 			("wafer_wood_stairs",
-					() -> new StairBlock(() -> STRAWBERRYCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> STRAWBERRYCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1528,7 +1516,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> STRAWBERRY_CANDY_STAIRS = registerBlock
 			("strawberry_candy_stairs",
-			() -> new StairBlock(() -> STRAWBERRYCANDYBLOCK.get().defaultBlockState(),
+			() -> new StairsBlock(() -> STRAWBERRYCANDYBLOCK.get().defaultBlockState(),
 					AbstractBlock
 							.Properties
 							.of(Material.METAL)
@@ -1538,7 +1526,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> RASPBERRY_CANDY_STAIRS = registerBlock
 			("raspberry_candy_stairs",
-					() -> new StairBlock(() -> RASPBERRYCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> RASPBERRYCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1548,7 +1536,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> BLUEBERRY_CANDY_STAIRS = registerBlock
 			("blueberry_candy_stairs",
-					() -> new StairBlock(() -> BLUEBERRYCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> BLUEBERRYCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1558,7 +1546,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> BLACKBERRY_CANDY_STAIRS = registerBlock
 			("blackberry_candy_stairs",
-					() -> new StairBlock(() -> BLACKBERRYCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> BLACKBERRYCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1568,7 +1556,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> ORANGE_CANDY_STAIRS = registerBlock
 			("orange_candy_stairs",
-					() -> new StairBlock(() -> ORANGECANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> ORANGECANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1578,7 +1566,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> LEMON_CANDY_STAIRS = registerBlock
 			("lemon_candy_stairs",
-					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1588,7 +1576,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> LIME_CANDY_STAIRS = registerBlock
 			("lime_candy_stairs",
-					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1598,7 +1586,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> MANGO_CANDY_STAIRS = registerBlock
 			("mango_candy_stairs",
-					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1608,7 +1596,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> PEACH_CANDY_STAIRS = registerBlock
 			("peach_candy_stairs",
-					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
@@ -1618,7 +1606,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 
 	public static final RegistryObject<Block> CANDYFLOSS_STAIRS = registerBlock
 			("candyfloss_stairs",
-					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
+					() -> new StairsBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							AbstractBlock
 									.Properties
 									.of(Material.METAL)
