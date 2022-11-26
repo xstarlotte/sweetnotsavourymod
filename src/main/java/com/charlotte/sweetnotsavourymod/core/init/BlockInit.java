@@ -2096,7 +2096,9 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			.noOcclusion()),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-
+	public static final RegistryObject<LiquidBlock> CREAMY_MILK_BLOCK = BlockInit.BLOCKS.register("creamy_milk",
+			() -> new LiquidBlock(FluidInit.CREAMY_MILK_FLUID, BlockBehaviour.Properties.of(Material.WATER)
+					.noCollission().strength(100f).noLootTable()));
 
 
 	public static RegistryObject<SNSChestBlock> registerChest(String name,

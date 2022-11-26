@@ -28,7 +28,7 @@ public class ItemInit {
 
 	public static final RegistryObject<Item> CHIPTRONICAL_RECORD = ITEMS.register("chiptronical_record",
 			() -> new RecordItem(4, SoundsInit.CHIPTRONICAL,
-					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODMUSIC).stacksTo(1)));
+					new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODMUSIC).stacksTo(1), 10)); // TODO: change length to proper time
 
 
 //SPAWN EGGS

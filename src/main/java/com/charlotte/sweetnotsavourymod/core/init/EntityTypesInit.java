@@ -43,10 +43,10 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class EntityTypesInit {
 
-	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES,
+	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES,
 			SweetNotSavouryMod.MOD_ID);
 
-	public static final RegistryObject<EntityType<SNSPugEntity>>SNSPUG = ENTITY_TYPES
+	public static final RegistryObject<EntityType<SNSPugEntity>> SNSPUG = ENTITY_TYPES
 			.register("snspug", () -> EntityType.Builder.of(SNSPugEntity::new, MobCategory.CREATURE)
 					.sized(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snspug").toString()));
