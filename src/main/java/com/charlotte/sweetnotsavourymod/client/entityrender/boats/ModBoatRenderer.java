@@ -17,13 +17,13 @@ import java.util.stream.Stream;
 public class ModBoatRenderer extends BoatRenderer {
     private final Map<ModBoatEntity.Type, Pair<ResourceLocation, BoatModel>> boatResources;
 
-    public ModBoatRenderer(EntityRendererProvider.Context context) {
-        super(context);
+    public ModBoatRenderer(EntityRendererProvider.Context context, boolean isChest) {
+        super(context, isChest);
         this.shadowRadius = 0.8F;
         this.boatResources = Stream.of(ModBoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap((p_173938_) -> p_173938_,
                 (type) -> Pair.of(new ResourceLocation(SweetNotSavouryMod.MOD_ID,"textures/entity/boat/" + type.getName() + ".png"),
                         new BoatModel(context.bakeLayer(
-                                new ModelLayerLocation(new ResourceLocation("minecraft", "boat/oak"),"main"))))));
+                                new ModelLayerLocation(new ResourceLocation("minecraft", "boat/oak"),"main")), isChest))));
 
     }
 
