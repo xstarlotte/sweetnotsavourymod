@@ -9,17 +9,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSSquirrollModel extends AnimatedGeoModel<SNSSquirrollEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSSquirrollEntity entity) {
+	public ResourceLocation getModelResource(SNSSquirrollEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/squirroll.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(SNSSquirrollEntity entity) {
+	public ResourceLocation getTextureResource(SNSSquirrollEntity entity) {
 		return SNSSquirrollRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSSquirrollEntity entity) {
+	public ResourceLocation getAnimationResource(SNSSquirrollEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/squirroll.animation.json");
 	}
 

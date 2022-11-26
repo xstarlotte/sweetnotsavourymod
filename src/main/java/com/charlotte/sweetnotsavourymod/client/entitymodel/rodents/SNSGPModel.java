@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSGPModel extends AnimatedGeoModel<SNSGPEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSGPEntity entity) {
+	public ResourceLocation getModelResource(SNSGPEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/guineapig.geo.json");
 	}
 	
 	@Override
-	public ResourceLocation getTextureLocation(SNSGPEntity entity) {
+	public ResourceLocation getTextureResource(SNSGPEntity entity) {
 		return SNSGPRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 	
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSGPEntity entity) {
+	public ResourceLocation getAnimationResource(SNSGPEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/guineapig.animation.json");
 	}
 	

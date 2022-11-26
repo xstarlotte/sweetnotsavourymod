@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class BonbonbiniModel extends AnimatedGeoModel<BonbonbiniEntity> {
 	@Override
-	public ResourceLocation getModelLocation(BonbonbiniEntity entity) {
+	public ResourceLocation getModelResource(BonbonbiniEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/bonbonbini.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(BonbonbiniEntity entity) {
+	public ResourceLocation getTextureResource(BonbonbiniEntity entity) {
 		return BonbonbiniRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(BonbonbiniEntity entity) {
+	public ResourceLocation getAnimationResource(BonbonbiniEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/bonbonbini.animation.json");
 	}
 }

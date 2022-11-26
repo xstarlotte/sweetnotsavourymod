@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSToadModel extends AnimatedGeoModel<SNSToadEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSToadEntity entity) {
+	public ResourceLocation getModelResource(SNSToadEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/toad.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(SNSToadEntity entity) {
+	public ResourceLocation getTextureResource(SNSToadEntity entity) {
 		return SNSToadRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSToadEntity entity) {
+	public ResourceLocation getAnimationResource(SNSToadEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/toad.animation.json");
 	}
 

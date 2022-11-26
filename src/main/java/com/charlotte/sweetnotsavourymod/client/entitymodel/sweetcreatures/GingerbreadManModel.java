@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class GingerbreadManModel extends AnimatedGeoModel<GingerbreadManEntity> {
 	@Override
-	public ResourceLocation getModelLocation(GingerbreadManEntity entity) {
+	public ResourceLocation getModelResource(GingerbreadManEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/gingerbreadman.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(GingerbreadManEntity entity) {
+	public ResourceLocation getTextureResource(GingerbreadManEntity entity) {
 		return BonbonbiniRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(GingerbreadManEntity entity) {
+	public ResourceLocation getAnimationResource(GingerbreadManEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/gingerbreadman.animation.json");
 	}
 }

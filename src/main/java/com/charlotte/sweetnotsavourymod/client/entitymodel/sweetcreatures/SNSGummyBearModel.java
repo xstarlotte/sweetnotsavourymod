@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSGummyBearModel extends AnimatedGeoModel<SNSGummyBearEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSGummyBearEntity entity) {
+	public ResourceLocation getModelResource(SNSGummyBearEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/gummybear.geo.json");
 	}
 	
 	@Override
-	public ResourceLocation getTextureLocation(SNSGummyBearEntity entity) {
+	public ResourceLocation getTextureResource(SNSGummyBearEntity entity) {
 		return SNSGummyBearRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 	
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSGummyBearEntity entity) {
+	public ResourceLocation getAnimationResource(SNSGummyBearEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/gummybear.animation.json");
 	}
 }

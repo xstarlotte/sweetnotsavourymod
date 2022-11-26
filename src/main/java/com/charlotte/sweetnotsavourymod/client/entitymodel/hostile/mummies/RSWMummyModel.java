@@ -9,19 +9,19 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 public class RSWMummyModel extends AnimatedGeoModel<RSWMummyEntity>
 {
 	@Override
-	public ResourceLocation getModelLocation(RSWMummyEntity entity)
+	public ResourceLocation getModelResource(RSWMummyEntity entity)
 	{
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/rswmummy.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(RSWMummyEntity entity)
+	public ResourceLocation getTextureResource(RSWMummyEntity entity)
 	{
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "textures/entity/mummies/rswmummy.png");
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(RSWMummyEntity entity)
+	public ResourceLocation getAnimationResource(RSWMummyEntity entity)
 	{
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/rswmummy.animation.json");
 	}

@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class IceCreamCowModel extends AnimatedGeoModel<IceCreamCowEntity> {
 	@Override
-	public ResourceLocation getModelLocation(IceCreamCowEntity entity) {
+	public ResourceLocation getModelResource(IceCreamCowEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/icecreamcow.geo.json");
 	}
 	
 	@Override
-	public ResourceLocation getTextureLocation(IceCreamCowEntity entity) {
+	public ResourceLocation getTextureResource(IceCreamCowEntity entity) {
 		return IceCreamCowRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 	
 	@Override
-	public ResourceLocation getAnimationFileLocation(IceCreamCowEntity entity) {
+	public ResourceLocation getAnimationResource(IceCreamCowEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/icecreamcow.animation.json");
 	}
 }

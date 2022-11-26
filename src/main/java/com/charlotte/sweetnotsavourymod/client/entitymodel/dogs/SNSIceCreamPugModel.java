@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSIceCreamPugModel extends AnimatedGeoModel<SNSIceCreamPugEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSIceCreamPugEntity entity)	{
+	public ResourceLocation getModelResource(SNSIceCreamPugEntity entity)	{
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/icecreampug.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(SNSIceCreamPugEntity entity) {
+	public ResourceLocation getTextureResource(SNSIceCreamPugEntity entity) {
 		return SNSIceCreamPugRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSIceCreamPugEntity entity)	{
+	public ResourceLocation getAnimationResource(SNSIceCreamPugEntity entity)	{
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/pug.animation.json");
 	}
 }

@@ -9,17 +9,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSParfaitPixieModel extends AnimatedGeoModel<SNSParfaitPixieEntity> {
     @Override
-    public ResourceLocation getModelLocation(SNSParfaitPixieEntity entity) {
+    public ResourceLocation getModelResource(SNSParfaitPixieEntity entity) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/pixie.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(SNSParfaitPixieEntity entity)	{
+    public ResourceLocation getTextureResource(SNSParfaitPixieEntity entity)	{
         return SNSParfaitPixieRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(SNSParfaitPixieEntity entity) {
+    public ResourceLocation getAnimationResource(SNSParfaitPixieEntity entity) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/pixie.animation.json");
     }
 }

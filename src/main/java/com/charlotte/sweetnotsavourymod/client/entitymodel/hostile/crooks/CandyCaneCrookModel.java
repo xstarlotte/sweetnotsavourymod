@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class CandyCaneCrookModel extends AnimatedGeoModel<CandyCaneCrookEntity> {
 	@Override
-	public ResourceLocation getModelLocation(CandyCaneCrookEntity entity) {
+	public ResourceLocation getModelResource(CandyCaneCrookEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/crook.geo.json");
 	}
 	
 	@Override
-	public ResourceLocation getTextureLocation(CandyCaneCrookEntity entity)	{
+	public ResourceLocation getTextureResource(CandyCaneCrookEntity entity)	{
 		return CandyCaneCrookRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 	
 	@Override
-	public ResourceLocation getAnimationFileLocation(CandyCaneCrookEntity entity) {
+	public ResourceLocation getAnimationResource(CandyCaneCrookEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/crook.animation.json");
 	}
 }

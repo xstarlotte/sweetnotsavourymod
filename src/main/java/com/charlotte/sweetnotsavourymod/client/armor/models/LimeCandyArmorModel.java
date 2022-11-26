@@ -7,18 +7,18 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class LimeCandyArmorModel extends AnimatedGeoModel <LimeCandyArmorItem> {
     @Override
-    public ResourceLocation getModelLocation(LimeCandyArmorItem object) {
+    public ResourceLocation getModelResource(LimeCandyArmorItem object) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/candy_armor.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(LimeCandyArmorItem object) {
+    public ResourceLocation getTextureResource(LimeCandyArmorItem object) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "textures/models/armor/" +
                 "lime_candy_armor.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(LimeCandyArmorItem animatable) {
+    public ResourceLocation getAnimationResource(LimeCandyArmorItem animatable) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/armor_animation.json");
     }
 }

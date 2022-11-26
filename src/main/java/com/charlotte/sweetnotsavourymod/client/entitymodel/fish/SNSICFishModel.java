@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSICFishModel extends AnimatedGeoModel<SNSICFishEntity> {
     @Override
-    public ResourceLocation getModelLocation(SNSICFishEntity entity) {
+    public ResourceLocation getModelResource(SNSICFishEntity entity) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/icecreamfish.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(SNSICFishEntity entity) {
+    public ResourceLocation getTextureResource(SNSICFishEntity entity) {
         return SNSICFishRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(SNSICFishEntity entity) {
+    public ResourceLocation getAnimationResource(SNSICFishEntity entity) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/fish.animation.json");
     }
 }
