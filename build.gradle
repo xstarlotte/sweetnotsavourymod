@@ -8,7 +8,6 @@ buildscript {
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.parchmentmc:librarian:1.+'
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
 
 
     }
@@ -31,7 +30,6 @@ repositories {
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'org.spongepowered.mixin'
 
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
@@ -42,11 +40,11 @@ archivesBaseName = 'sweetnotsavourymod'
 
 
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
 
-    mappings channel: 'parchment', version: '1.18.1-2022.02.13-1.18.2'
+    mappings channel: 'parchment', version: '2022.03.06-1.16.5'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -105,23 +103,14 @@ minecraft {
     }
 }
 
-mixin {
-    add sourceSets.main, "sweetnotsavourymod.refmap.json"
-    config "sweetnotsavourymod.mixin.json"
-
-    debug.verbose = true
-    debug.export = true
-}
-
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
 
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.34'
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.3.143")
-    implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.12')
+    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153")
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.16.5:3.0.104')
 
 }
 

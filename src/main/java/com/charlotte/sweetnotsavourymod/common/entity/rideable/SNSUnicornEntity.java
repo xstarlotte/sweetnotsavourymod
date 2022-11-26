@@ -3,26 +3,26 @@ package com.charlotte.sweetnotsavourymod.common.entity.rideable;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.RideableVariants.UnicornFlavourVariant;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.Direction;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
@@ -31,11 +31,11 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Ghast;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.entity.vehicle.DismountHelper;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
@@ -53,20 +53,20 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import java.util.UUID;
 
-public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJumping, IAnimatable {
+public class SNSUnicornEntity extends TameableEntity implements PlayerRideableJumping, IAnimatable {
 
 	protected boolean isJumping;
 	protected float playerJumpPendingScale;
 	private boolean allowStandSliding;
 
 	private AnimationFactory factory = new AnimationFactory(this);
-	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
-			SynchedEntityData.defineId(SNSUnicornEntity.class, EntityDataSerializers.INT);
+	private static final DataParameter<Integer> DATA_ID_TYPE_VARIANT =
+			EntityDataManager.defineId(SNSUnicornEntity.class, DataSerializers.INT);
 
-	private static final EntityDataAccessor<Boolean> SITTING =
-			SynchedEntityData.defineId(SNSUnicornEntity.class, EntityDataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> SITTING =
+			EntityDataManager.defineId(SNSUnicornEntity.class, DataSerializers.BOOLEAN);
 
-	public SNSUnicornEntity(EntityType<? extends TamableAnimal> type, Level worldIn) {
+	public SNSUnicornEntity(EntityType<? extends TameableEntity> type, Level worldIn) {
 		super(type, worldIn);
 		this.maxUpStep = 1.0F;
 		setTame(false);
@@ -77,14 +77,14 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 	}
 
 	@Override
-	public void addAdditionalSaveData(CompoundTag tag) {
+	public void addAdditionalSaveData(CompoundNBT tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putInt("Variant", this.getTypeVariant());
 		tag.putBoolean("Sitting", this.isSitting());
 	}
 
 	@Override
-	public void readAdditionalSaveData(CompoundTag p_21815_) {
+	public void readAdditionalSaveData(CompoundNBT p_21815_) {
 		super.readAdditionalSaveData(p_21815_);
 		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
 		setSitting(p_21815_.getBoolean("Sitting"));
@@ -93,7 +93,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
-										@Nullable CompoundTag p_146750_) {
+										@Nullable CompoundNBT p_146750_) {
 		UnicornFlavourVariant variant = Util.getRandom(UnicornFlavourVariant.values(), this.random);
 		setVariant(variant);
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
@@ -139,8 +139,8 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 		return sizeIn.height * 0.65F;
 	}
 
-	public static AttributeSupplier setAttributes() {
-		return TamableAnimal.createMobAttributes()
+	public static AttributeModifierMap setAttributes() {
+		return TameableEntity.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 80.0D)
 				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
@@ -177,7 +177,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 		}
 	}
 
-	public void makeTamed(Player player) {
+	public void makeTamed(PlayerEntity player) {
 		if (!this.level.isClientSide) {
 			super.tame(player);
 			this.navigation.recomputePath();
@@ -187,7 +187,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 	}
 
 	@Override
-	public InteractionResult mobInteract(Player player, InteractionHand pHand) {
+	public ActionResultType mobInteract(PlayerEntity player, Hand pHand) {
 		ItemStack itemstack = player.getItemInHand(pHand);
 		Item item = itemstack.getItem();
 		Item tameableItem = ItemInit.CANDYCANESUGAR.get();
@@ -199,10 +199,10 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 		if (this.level.isClientSide) {
 			boolean flag = this.isOwnedBy(player) || this.isTame() || item == tameableItem
 					&& !this.isTame();
-			return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
+			return flag ? ActionResultType.CONSUME : ActionResultType.PASS;
 		} else {
 			if (this.isTame()) {
-				if(player.isCrouching() && pHand == InteractionHand.MAIN_HAND) {
+				if(player.isCrouching() && pHand == Hand.MAIN_HAND) {
 					setSitting(!isSitting());
 				}
 
@@ -212,7 +212,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 					}
 
 					this.heal((float)item.getFoodProperties().getNutrition());
-					return InteractionResult.SUCCESS;
+					return ActionResultType.SUCCESS;
 				}
 				player.startRiding(this);
 			} else if (item == tameableItem && !this.isOnFire()) {
@@ -230,7 +230,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 				} else {
 					this.level.broadcastEntityEvent(this, (byte)6);
 				}
-				return InteractionResult.SUCCESS;
+				return ActionResultType.SUCCESS;
 			}
 
 			return super.mobInteract(player, pHand);
@@ -255,12 +255,12 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 	public boolean wantsToAttack(LivingEntity pTarget, LivingEntity pOwner) {
 		if (!(pTarget instanceof Creeper) && !(pTarget instanceof Ghast)) {
 
-			if (pTarget instanceof Player && pOwner instanceof Player && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
+			if (pTarget instanceof PlayerEntity && pOwner instanceof PlayerEntity && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
 				return false;
 			} else if (pTarget instanceof AbstractHorse && ((AbstractHorse)pTarget).isTamed()) {
 				return false;
 			} else {
-				return !(pTarget instanceof TamableAnimal) || !((TamableAnimal)pTarget).isTame();
+				return !(pTarget instanceof TameableEntity) || !((TameableEntity)pTarget).isTame();
 			}
 		} else {
 			return false;
@@ -358,7 +358,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 		return Mth.ceil((p_30606_ * 0.5F - 3.0F) * p_30607_);
 	}
 
-	public boolean canBeLeashed(Player player) {
+	public boolean canBeLeashed(PlayerEntity player) {
 		return super.canBeLeashed(player);
 	}
 

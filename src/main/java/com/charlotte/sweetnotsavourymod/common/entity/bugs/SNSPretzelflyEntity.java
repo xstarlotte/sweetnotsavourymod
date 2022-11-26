@@ -1,27 +1,27 @@
 package com.charlotte.sweetnotsavourymod.common.entity.bugs;
 
 import com.charlotte.sweetnotsavourymod.core.util.variants.BugVariants.PretzelflyVariant;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomFlyingGoal;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.World;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
@@ -37,23 +37,23 @@ import javax.annotation.Nonnull;
 
 public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
-    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
-            SynchedEntityData.defineId(SNSPretzelflyEntity.class, EntityDataSerializers.INT);
+    private static final DataParameter<Integer> DATA_ID_TYPE_VARIANT =
+            EntityDataManager.defineId(SNSPretzelflyEntity.class, DataSerializers.INT);
 
-    public SNSPretzelflyEntity(EntityType<? extends PathfinderMob> type, Level worldIn) {
+    public SNSPretzelflyEntity(EntityType<? extends PathfinderMob> type, World worldIn) {
         super(type, worldIn);
         this.moveControl = new FlyingMoveControl(this, 4, true);
         this.noCulling = true;
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag tag) {
+    public void addAdditionalSaveData(CompoundNBT tag) {
         super.addAdditionalSaveData(tag);
         tag.putInt("Variant", this.getTypeVariant());
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag p_21815_) {
+    public void readAdditionalSaveData(CompoundNBT p_21815_) {
         super.readAdditionalSaveData(p_21815_);
         this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
     }
@@ -61,7 +61,7 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
                                         MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
-                                        @Nullable CompoundTag p_146750_) {
+                                        @Nullable CompoundNBT p_146750_) {
         PretzelflyVariant variant = Util.getRandom(PretzelflyVariant.values(), this.random);
         setVariant(variant);
         return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
@@ -94,7 +94,7 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
         return this.factory;
     }
 
-    public static AttributeSupplier setAttributes() {
+    public static AttributeModifierMap setAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.FLYING_SPEED, Attributes.FLYING_SPEED.getDefaultValue())
                 .add(Attributes.MAX_HEALTH, 20.0D)
@@ -143,7 +143,7 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable {
 
     @Nonnull
     @Override
-    protected PathNavigation createNavigation(@Nonnull Level level) {
+    protected PathNavigation createNavigation(@Nonnull World level) {
         FlyingPathNavigation flyingPathNavigator = new FlyingPathNavigation(this, level);
         flyingPathNavigator.setCanOpenDoors(false);
         flyingPathNavigator.setCanFloat(true);

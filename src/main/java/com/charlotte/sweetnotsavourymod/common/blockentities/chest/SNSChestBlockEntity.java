@@ -5,9 +5,9 @@ import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenu;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.core.NonNullList;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvent;
@@ -17,12 +17,12 @@ import net.minecraft.world.CompoundContainer;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.World;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.*;
@@ -56,7 +56,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 			SNSChestBlockEntity.this.signalOpenCount(p_155361_, p_155362_, p_155363_, p_155364_, p_155365_);
 		}
 
-		protected boolean isOwnContainer(Player p_155355_) {
+		protected boolean isOwnContainer(PlayerEntity p_155355_) {
 			if (!(p_155355_.containerMenu instanceof SNSChestMenu)) {
 				return false;
 			} else {
@@ -82,7 +82,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		return new TranslatableComponent("container.chest");
 	}
 
-	public void load(CompoundTag pTag) {
+	public void load(CompoundNBT pTag) {
 		super.load(pTag);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		if (!this.tryLoadLootTable(pTag)) {
@@ -91,7 +91,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 
 	}
 
-	protected void saveAdditional(CompoundTag pTag) {
+	protected void saveAdditional(CompoundNBT pTag) {
 		super.saveAdditional(pTag);
 		if (!this.trySaveLootTable(pTag)) {
 			ContainerHelper.saveAllItems(pTag, this.items);
@@ -130,7 +130,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		}
 	}
 
-	public void startOpen(Player pPlayer) {
+	public void startOpen(PlayerEntity pPlayer) {
 		Level level = this.getLevel();
 		if (!this.remove && !pPlayer.isSpectator() && level != null) {
 			this.openersCounter.incrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
@@ -138,7 +138,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 
 	}
 
-	public void stopOpen(Player pPlayer) {
+	public void stopOpen(PlayerEntity pPlayer) {
 		Level level = this.getLevel();
 		if (!this.remove && !pPlayer.isSpectator() && level != null) {
 			this.openersCounter.decrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());

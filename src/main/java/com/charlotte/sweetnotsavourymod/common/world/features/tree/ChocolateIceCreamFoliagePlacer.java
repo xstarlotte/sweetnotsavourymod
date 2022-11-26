@@ -3,8 +3,10 @@ package com.charlotte.sweetnotsavourymod.common.world.features.tree;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.world.gen.feature.FeatureSpread;
+import net.minecraft.world.gen.foliageplacer.FoliagePlacer;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -21,7 +23,7 @@ public class ChocolateIceCreamFoliagePlacer extends FoliagePlacer {
     private static final Direction[] DIRECTIONS = new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH,
             Direction.WEST };
 
-    public ChocolateIceCreamFoliagePlacer(IntProvider p_161411_, IntProvider p_161412_) {
+    public ChocolateIceCreamFoliagePlacer(FeatureSpread p_161411_, FeatureSpread p_161412_) {
         super(p_161411_, p_161412_);
     }
 

@@ -4,7 +4,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.fantasy;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSParfaitPixieRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSParfaitPixieEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSParfaitPixieModel extends AnimatedGeoModel<SNSParfaitPixieEntity> {

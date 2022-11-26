@@ -4,7 +4,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.rodents;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.rodents.SNSJamsterRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSJamsterEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSJamsterModel extends AnimatedGeoModel<SNSJamsterEntity> {

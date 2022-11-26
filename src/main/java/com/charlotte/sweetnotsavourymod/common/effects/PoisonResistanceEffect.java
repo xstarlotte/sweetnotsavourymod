@@ -1,23 +1,23 @@
 package com.charlotte.sweetnotsavourymod.common.effects;
 
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.EffectType;
+import net.minecraft.potion.Effects;
 
-public class PoisonResistanceEffect extends MobEffect {
-    public PoisonResistanceEffect(MobEffectCategory p_19451_, int p_19452_) {
-        super(MobEffectCategory.BENEFICIAL, 0x341264);
+public class PoisonResistanceEffect extends Effect {
+    public PoisonResistanceEffect(EffectType p_19451_, int p_19452_) {
+        super(EffectType.BENEFICIAL, 0x341264);
     }
 
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
         if (!pLivingEntity.level.isClientSide()) {
 
-            boolean hasPoison = pLivingEntity.hasEffect(MobEffects.POISON);
+            boolean hasPoison = pLivingEntity.hasEffect(Effects.POISON);
 
             if (hasPoison) {
-                pLivingEntity.removeEffect(MobEffects.POISON);
+                pLivingEntity.removeEffect(Effects.POISON);
             }
 
         }

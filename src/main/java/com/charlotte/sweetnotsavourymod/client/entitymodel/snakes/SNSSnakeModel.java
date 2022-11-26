@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.snakes;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.snakes.SNSSnakeRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSSnakeModel extends AnimatedGeoModel<SNSSnakeEntity> {

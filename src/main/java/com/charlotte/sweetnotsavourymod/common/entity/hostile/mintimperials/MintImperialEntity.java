@@ -3,23 +3,23 @@ package com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials;
 
 import com.charlotte.sweetnotsavourymod.common.entityai.RSWMummyAttackGoal;
 import com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants.MintImperialVariant;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -28,8 +28,8 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.World;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
@@ -43,21 +43,21 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class MintImperialEntity extends Monster implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
-	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
-			SynchedEntityData.defineId(MintImperialEntity.class, EntityDataSerializers.INT);
+	private static final DataParameter<Integer> DATA_ID_TYPE_VARIANT =
+			EntityDataManager.defineId(MintImperialEntity.class, DataSerializers.INT);
     public MintImperialEntity(EntityType<? extends Monster> type, Level worldIn) {
         super(type, worldIn);
 		this.noCulling = true;
     }
 
 	@Override
-	public void addAdditionalSaveData(CompoundTag tag) {
+	public void addAdditionalSaveData(CompoundNBT tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putInt("Variant", this.getTypeVariant());
 	}
 
 	@Override
-	public void readAdditionalSaveData(CompoundTag p_21815_) {
+	public void readAdditionalSaveData(CompoundNBT p_21815_) {
 		super.readAdditionalSaveData(p_21815_);
 		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
 	}
@@ -65,7 +65,7 @@ public class MintImperialEntity extends Monster implements IAnimatable {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
-										@Nullable CompoundTag p_146750_) {
+										@Nullable CompoundNBT p_146750_) {
 		MintImperialVariant variant = Util.getRandom(MintImperialVariant.values(), this.random);
 		setVariant(variant);
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
@@ -122,7 +122,7 @@ public class MintImperialEntity extends Monster implements IAnimatable {
 
     }
 
-    public static AttributeSupplier createAttributes() {
+    public static AttributeModifierMap createAttributes() {
         return Monster
                 .createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 35.0D)
@@ -141,7 +141,7 @@ public class MintImperialEntity extends Monster implements IAnimatable {
 	}
 
 	@Override
-	protected int getExperienceReward(Player p_21511_) {
+	protected int getExperienceReward(PlayerEntity p_21511_) {
 		return 64;
 	}
 

@@ -1,6 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.block.poisonberry;
 
-import net.minecraft.core.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Mirror;

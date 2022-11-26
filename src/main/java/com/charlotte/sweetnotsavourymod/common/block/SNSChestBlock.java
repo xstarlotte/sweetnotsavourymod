@@ -5,18 +5,18 @@ import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuProvider
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.animal.Cat;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.World;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -117,7 +117,7 @@ public class SNSChestBlock extends BaseEntityBlock {
 		return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
 	}
 
-	public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+	public void onRemove(BlockState pState, World pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
 		if (!pState.is(pNewState.getBlock())) {
 			BlockEntity blockentity = pLevel.getBlockEntity(pPos);
 			if (blockentity instanceof Container) {
@@ -129,9 +129,9 @@ public class SNSChestBlock extends BaseEntityBlock {
 		}
 	}
 
-	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+	public ActionResultType use(BlockState pState, World pLevel, BlockPos pPos, PlayerEntity pPlayer, Hand pHand, BlockHitResult pHit) {
 		if (pLevel.isClientSide) {
-			return InteractionResult.SUCCESS;
+			return ActionResultType.SUCCESS;
 		} else {
 			MenuProvider menuprovider = this.getMenuProvider(pState, pLevel, pPos, pPlayer);
 			if (!isChestBlockedAt(pLevel, pPos) && menuprovider != null) {
@@ -139,7 +139,7 @@ public class SNSChestBlock extends BaseEntityBlock {
 				pPlayer.awardStat(this.getOpenChestStat());
 			}
 
-			return InteractionResult.CONSUME;
+			return ActionResultType.CONSUME;
 		}
 	}
 
@@ -148,12 +148,12 @@ public class SNSChestBlock extends BaseEntityBlock {
 	}
 
 	@Nullable
-	public static Container getContainer(SNSChestBlock pChest, BlockState pState, Level pLevel, BlockPos pPos, boolean pOverride) {
+	public static Container getContainer(SNSChestBlock pChest, BlockState pState, World pLevel, BlockPos pPos, boolean pOverride) {
 		return getContainer(pChest, pState, pLevel, pPos, pOverride, null);
 	}
 
 	@Nullable
-	public static Container getContainer(SNSChestBlock pChest, BlockState pState, Level pLevel, BlockPos pPos, boolean pOverride, @Nullable Player lootGenerator) {
+	public static Container getContainer(SNSChestBlock pChest, BlockState pState, Level pLevel, BlockPos pPos, boolean pOverride, @Nullable PlayerEntity lootGenerator) {
 		Container container0 = pLevel.getBlockEntity(pPos) instanceof Container container ? container : null;
 		Container container1 = pChest.doubleAble && pState.getValue(TYPE) != ChestType.SINGLE && pLevel.getBlockEntity(pPos.relative(getConnectedDirection(pState))) instanceof Container container ? container : null;
 
@@ -175,7 +175,7 @@ public class SNSChestBlock extends BaseEntityBlock {
 	}
 
 	@Nullable
-	public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos, @Nullable Player lootGenerator) {
+	public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos, @Nullable PlayerEntity lootGenerator) {
 		Container container = getContainer(this, state, level, pos, false, lootGenerator);
 		if (container == null)
 			return null;

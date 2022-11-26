@@ -6,10 +6,15 @@ import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamFolia
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTrunkPlacer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.core.Holder;
+import net.minecraft.data.BlockStateProvider;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureSpread;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -27,7 +32,7 @@ import java.util.List;
 import java.util.OptionalInt;
 
 public class ModConfiguredFeature {
-    public static final Holder< ? extends ConfiguredFeature<TreeConfiguration, ?>> ICE_CREAM_TREE =
+    public static final Holder< ? extends ConfiguredFeature<BaseTreeFeatureConfig, ?>> ICE_CREAM_TREE =
             FeatureUtils.register("ice_cream_tree",
                     Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(
                             BlockStateProvider.simple(BlockInit.WAFERWOODBLOCK.get()),
@@ -39,11 +44,11 @@ public class ModConfiguredFeature {
 
     public static final Holder< ? extends ConfiguredFeature<TreeConfiguration, ?>> CHOCOLATE_ICE_CREAM_TREE =
             FeatureUtils.register("chocolate_ice_cream_tree",
-                    Feature.TREE, (new TreeConfiguration.TreeConfigurationBuilder(
+                    Feature.TREE, (new BaseTreeFeatureConfig.Builder(
                             BlockStateProvider.simple(BlockInit.CHOCOLATEWAFERWOODBLOCK.get()),
                             new ChocolateIceCreamTrunkPlacer(0, 0, 0),
                             BlockStateProvider.simple(BlockInit.CHOCOLATERAINBOWFROSTINGLEAVES.get()),
-                            new ChocolateIceCreamFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+                            new ChocolateIceCreamFoliagePlacer(FeatureSpread.fixed(0), FeatureSpread.fixed(0)),
                             new TwoLayersFeatureSize(1, 0, 2, OptionalInt.empty())
                     )).ignoreVines().build());
 

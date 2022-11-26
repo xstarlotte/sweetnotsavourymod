@@ -4,11 +4,11 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -50,12 +50,12 @@ public class SNSChestMenu extends AbstractContainerMenu {
 	}
 
 	@Override
-	public boolean stillValid(Player player) {
+	public boolean stillValid(PlayerEntity player) {
 		return container.stillValid(player);
 	}
 
 	@Override
-	public ItemStack quickMoveStack(Player pPlayer, int pIndex) {
+	public ItemStack quickMoveStack(PlayerEntity pPlayer, int pIndex) {
 		ItemStack stack = ItemStack.EMPTY;
 		Slot slot = this.slots.get(pIndex);
 		if (!slot.hasItem())

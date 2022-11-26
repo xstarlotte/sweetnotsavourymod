@@ -1,26 +1,26 @@
 package com.charlotte.sweetnotsavourymod.common.entity.boats;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.item.BoatEntity;
+import net.minecraft.item.Item;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.world.World;
+import net.minecraft.item.Items;
 
-public class ModBoatEntity extends Boat {
-    private static final EntityDataAccessor<Integer> DATA_ID_TYPE =
-            SynchedEntityData.defineId(ModBoatEntity.class, EntityDataSerializers.INT);
+public class ModBoatEntity extends BoatEntity {
+    private static final DataParameter<Integer> DATA_ID_TYPE =
+        EntityDataManager.defineId(ModBoatEntity.class, DataSerializers.INT);
 
-    public ModBoatEntity(EntityType<? extends ModBoatEntity> entityType, Level level) {
+    public ModBoatEntity(EntityType<? extends ModBoatEntity> entityType, World level) {
         super(entityType, level);
         this.blocksBuilding = true;
     }
 
-    public ModBoatEntity(Level worldIn, double x, double y, double z) {
+    public ModBoatEntity(World worldIn, double x, double y, double z) {
         this(EntityTypesInit.BOAT_ENTITY.get(), worldIn);
         this.setPos(x, y, z);
         this.xo = x;
@@ -28,11 +28,11 @@ public class ModBoatEntity extends Boat {
         this.zo = z;
     }
 
-    protected void addAdditionalSaveData(CompoundTag compound) {
+    protected void addAdditionalSaveData(CompoundNBT compound) {
         compound.putString("Type", this.getModBoatType().getName());
     }
 
-    protected void readAdditionalSaveData(CompoundTag compound) {
+    protected void readAdditionalSaveData(CompoundNBT compound) {
         if (compound.contains("Type", 8)) {
             this.setBoatType(ModBoatEntity.Type.byName(compound.getString("Type")));
         }

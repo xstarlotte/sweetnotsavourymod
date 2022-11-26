@@ -3,24 +3,24 @@ package com.charlotte.sweetnotsavourymod.common.entity.cats;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.CatVariants.LionVariant;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
@@ -29,13 +29,14 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Ghast;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.scores.Team;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -48,16 +49,16 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import java.util.UUID;
 
-public class SNSLionEntity extends TamableAnimal implements IAnimatable {
+public class SNSLionEntity extends TameableEntity implements IAnimatable {
 
 	private AnimationFactory factory = new AnimationFactory(this);
 
-	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
-			SynchedEntityData.defineId(com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity.class, EntityDataSerializers.INT);
-	private static final EntityDataAccessor<Boolean> SITTING =
-			SynchedEntityData.defineId(com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity.class, EntityDataSerializers.BOOLEAN);
+	private static final DataParameter<Integer> DATA_ID_TYPE_VARIANT =
+			EntityDataManager.defineId(com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity.class, DataSerializers.INT);
+	private static final DataParameter<Boolean> SITTING =
+			EntityDataManager.defineId(com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity.class, DataSerializers.BOOLEAN);
 
-	public SNSLionEntity(EntityType<? extends TamableAnimal> type, Level worldIn) {
+	public SNSLionEntity(EntityType<? extends TameableEntity> type, World worldIn) {
 		super(type, worldIn);
 		setTame(false);
 		this.noCulling = true;
@@ -90,8 +91,8 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 	}
 
 	//attributes + goals
-	public static AttributeSupplier setAttributes() {
-		return TamableAnimal.createMobAttributes()
+	public static AttributeModifierMap setAttributes() {
+		return TameableEntity.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 80.0D)
 				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
@@ -115,7 +116,7 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 
 	//taming
 	@Override
-	public InteractionResult mobInteract(Player player, InteractionHand hand) {
+	public ActionResultType mobInteract(PlayerEntity player, Hand hand) {
 		ItemStack itemstack = player.getItemInHand(hand);
 		Item item = itemstack.getItem();
 		Item itemForTaming = ItemInit.CANDYCANESUGAR.get();
@@ -124,7 +125,7 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 		}
 		if (item == itemForTaming && !isTame()) {
 			if (this.level.isClientSide) {
-				return InteractionResult.CONSUME;
+				return ActionResultType.CONSUME;
 			} else {
 				if (!player.getAbilities().instabuild) {
 					itemstack.shrink(1);
@@ -138,15 +139,15 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 						setSitting(true);
 					}
 				}
-				return InteractionResult.SUCCESS;
+				return ActionResultType.SUCCESS;
 			}
 		}
-		if(isTame() && !this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
+		if(isTame() && !this.level.isClientSide && hand == Hand.MAIN_HAND) {
 			setSitting(!isSitting());
-			return InteractionResult.SUCCESS;
+			return ActionResultType.SUCCESS;
 		}
 		if (itemstack.getItem() == itemForTaming) {
-			return InteractionResult.PASS;
+			return ActionResultType.PASS;
 		}
 		return super.mobInteract(player, hand);
 	}
@@ -165,7 +166,7 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 		}
 	}
 
-	public void makeTamed(Player player) {
+	public void makeTamed(PlayerEntity player) {
 		if (!level.isClientSide) {
 			super.tame(player);
 			this.navigation.recomputePath();
@@ -192,12 +193,12 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 	public boolean wantsToAttack(LivingEntity pTarget, LivingEntity pOwner) {
 		if (!(pTarget instanceof Creeper) && !(pTarget instanceof Ghast)) {
 
-			if (pTarget instanceof Player && pOwner instanceof Player && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
+			if (pTarget instanceof PlayerEntity && pOwner instanceof PlayerEntity && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
 				return false;
 			} else if (pTarget instanceof AbstractHorse && ((AbstractHorse)pTarget).isTamed()) {
 				return false;
 			} else {
-				return !(pTarget instanceof TamableAnimal) || !((TamableAnimal)pTarget).isTame();
+				return !(pTarget instanceof TameableEntity) || !((TameableEntity)pTarget).isTame();
 			}
 		} else {
 			return false;
@@ -212,7 +213,7 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 
 	@Nullable
 	@Override
-	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageablemob) {
+	public AgeableMob getBreedOffspring(ServerWorld serverLevel, AgeableMob ageablemob) {
 		com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity mob = EntityTypesInit.SNSLION.get().create(serverLevel);
 		UUID uuid = this.getOwnerUUID();
 		if (uuid != null) {
@@ -242,7 +243,7 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 	}
 	//data
 	@Override
-	public void addAdditionalSaveData(CompoundTag tag) {
+	public void addAdditionalSaveData(CompoundNBT tag) {
 		super.addAdditionalSaveData(tag);
 		tag.putInt("Variant", this.getTypeVariant());
 		tag.putBoolean("Sitting", this.isSitting());
@@ -266,7 +267,7 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 	}
 
 	@Override
-	public void readAdditionalSaveData(CompoundTag p_21815_) {
+	public void readAdditionalSaveData(CompoundNBT p_21815_) {
 		super.readAdditionalSaveData(p_21815_);
 		this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
 		setSitting(p_21815_.getBoolean("Sitting"));
@@ -275,7 +276,7 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
 										MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_,
-										@Nullable CompoundTag p_146750_) {
+										@Nullable CompoundNBT p_146750_) {
 		LionVariant variant = Util.getRandom(LionVariant.values(), this.random);
 		setVariant(variant);
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
@@ -317,7 +318,7 @@ public class SNSLionEntity extends TamableAnimal implements IAnimatable {
 	}
 
 	//etc
-	public boolean canBeLeashed(Player player) {
+	public boolean canBeLeashed(PlayerEntity player) {
 		return super.canBeLeashed(player);
 	}
 	protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn) {

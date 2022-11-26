@@ -4,7 +4,7 @@ import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestBlock
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;

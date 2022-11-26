@@ -3,19 +3,19 @@ package com.charlotte.sweetnotsavourymod.common.entity.birds;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
@@ -24,10 +24,10 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Ghast;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Team;
@@ -43,21 +43,21 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import java.util.UUID;
 
-public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable {
+public class ChocolateChickenEntity extends TameableEntity implements IAnimatable {
 
 	public int eggTime = this.random.nextInt(6000) + 6000;
 
 	private AnimationFactory factory = new AnimationFactory(this);
 
-	private static final EntityDataAccessor<Boolean> SITTING =
-			SynchedEntityData.defineId(ChocolateChickenEntity.class, EntityDataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> SITTING =
+			EntityDataManager.defineId(ChocolateChickenEntity.class, DataSerializers.BOOLEAN);
 
-	public ChocolateChickenEntity(EntityType<? extends TamableAnimal> type, Level level) {
+	public ChocolateChickenEntity(EntityType<? extends TameableEntity> type, World level) {
 		super(type, level);
 	}
 
 	@Override
-	public void addAdditionalSaveData(CompoundTag tag) {
+	public void addAdditionalSaveData(CompoundNBT tag) {
 		super.addAdditionalSaveData(tag);
 		this.noCulling = true;
 		tag.putInt("EggLayTime", this.eggTime);
@@ -66,7 +66,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 
 
 	@Override
-	public void readAdditionalSaveData(CompoundTag p_21815_) {
+	public void readAdditionalSaveData(CompoundNBT p_21815_) {
 		super.readAdditionalSaveData(p_21815_);
 		if (p_21815_.contains("EggLayTime")) {
 			this.eggTime = p_21815_.getInt("EggLayTime");
@@ -74,8 +74,8 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 		setSitting(p_21815_.getBoolean("Sitting"));
 	}
 
-	public static AttributeSupplier setAttributes() {
-		return TamableAnimal.createMobAttributes()
+	public static AttributeModifierMap setAttributes() {
+		return TameableEntity.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 80.0D)
 				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
@@ -139,7 +139,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 	}
 
 	@Override
-	public InteractionResult mobInteract(Player player, InteractionHand hand) {
+	public ActionResultType mobInteract(PlayerEntity player, Hand hand) {
 		ItemStack itemstack = player.getItemInHand(hand);
 		Item item = itemstack.getItem();
 
@@ -153,7 +153,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 
 
 			if (this.level.isClientSide) {
-				return InteractionResult.CONSUME;
+				return ActionResultType.CONSUME;
 			} else {
 				if (!player.getAbilities().instabuild) {
 					itemstack.shrink(1);
@@ -171,17 +171,17 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 
 
 
-				return InteractionResult.SUCCESS;
+				return ActionResultType.SUCCESS;
 			}
 		}
 
-		if(isTame() && !this.level.isClientSide && hand == InteractionHand.MAIN_HAND) {
+		if(isTame() && !this.level.isClientSide && hand == Hand.MAIN_HAND) {
 			setSitting(!isSitting());
-			return InteractionResult.SUCCESS;
+			return ActionResultType.SUCCESS;
 		}
 
 		if (itemstack.getItem() == itemForTaming) {
-			return InteractionResult.PASS;
+			return ActionResultType.PASS;
 		}
 
 		return super.mobInteract(player, hand);
@@ -228,19 +228,19 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 	public boolean wantsToAttack(LivingEntity pTarget, LivingEntity pOwner) {
 		if (!(pTarget instanceof Creeper) && !(pTarget instanceof Ghast)) {
 
-			 if (pTarget instanceof Player && pOwner instanceof Player && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
+			 if (pTarget instanceof PlayerEntity && pOwner instanceof PlayerEntity && !((Player)pOwner).canHarmPlayer((Player)pTarget)) {
 				return false;
 			} else if (pTarget instanceof AbstractHorse && ((AbstractHorse)pTarget).isTamed()) {
 				return false;
 			} else {
-				return !(pTarget instanceof TamableAnimal) || !((TamableAnimal)pTarget).isTame();
+				return !(pTarget instanceof TameableEntity) || !((TameableEntity)pTarget).isTame();
 			}
 		} else {
 			return false;
 		}
 	}
 
-	public boolean canBeLeashed(Player player) {
+	public boolean canBeLeashed(PlayerEntity player) {
 		return super.canBeLeashed(player);
 	}
 

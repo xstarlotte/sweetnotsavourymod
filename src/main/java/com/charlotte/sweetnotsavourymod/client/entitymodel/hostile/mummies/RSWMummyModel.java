@@ -2,7 +2,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.hostile.mummies;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.mummies.RSWMummyEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 

@@ -1,34 +1,35 @@
 package com.charlotte.sweetnotsavourymod.common.item;
 
-import net.minecraft.core.BlockSource;
-import net.minecraft.core.Direction;
-import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SpawnEggItem;
-import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.block.DispenserBlock;
+import net.minecraft.dispenser.DefaultDispenseItemBehavior;
+import net.minecraft.dispenser.IBlockSource;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.SpawnEggItem;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Direction;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.common.util.Lazy;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
-import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.Nullable;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class CustomSpawnEggItem extends SpawnEggItem {
+public class CustomSpawnEggItem extends ForgeSpawnEggItem {
 
 	protected static final List<CustomSpawnEggItem> EGGS_TO_ADD = new ArrayList<>();
 	protected static DefaultDispenseItemBehavior behavior = new DefaultDispenseItemBehavior() {
 		@Override
-		public ItemStack execute(BlockSource source, ItemStack stack) {
+		public ItemStack execute(IBlockSource source, ItemStack stack) {
 			Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
-			EntityType<?> eType = ((SpawnEggItem)stack.getItem()).getType(stack.getTag());
+			EntityType<?> eType = ((ForgeSpawnEggItem)stack.getItem()).getType(stack.getTag());
 
-			eType.spawn(source.getLevel(), stack, null, source.getPos().relative(direction), MobSpawnType.SPAWN_EGG,
+			eType.spawn(source.getLevel(), stack, null, source.getPos().relative(direction), SpawnReason.SPAWN_EGG,
 					direction != Direction.UP, false);
 			stack.shrink(1);
 			return stack;
@@ -41,7 +42,7 @@ public class CustomSpawnEggItem extends SpawnEggItem {
 
 	public CustomSpawnEggItem(final RegistryObject<? extends EntityType<?>> entity, final int primaryColor, final int secondaryColor, final Item.Properties properties) {
 		super(null, primaryColor, secondaryColor, properties);
-		this.lazyEntity = Lazy.of(entity::get);
+		this.lazyEntity = Lazy.of(entity);
 		EGGS_TO_ADD.add(this);
 
 	}
@@ -59,7 +60,7 @@ public class CustomSpawnEggItem extends SpawnEggItem {
 	}
 
 	@Override
-	public EntityType<?> getType(@Nullable CompoundTag p_43229_) {
+	public EntityType<?> getType(@Nullable CompoundNBT p_43229_) {
 		return this.lazyEntity.get();
 	}
 }

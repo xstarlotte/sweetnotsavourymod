@@ -5,12 +5,12 @@ import com.charlotte.sweetnotsavourymod.client.entitymodel.fish.SNSDolphinModel;
 import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSDolphinEntity;
 import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.DolphinVariant;
 import com.google.common.collect.Maps;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.Util;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.util.Util;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 import java.util.Map;
@@ -23,7 +23,7 @@ public class SNSDolphinRenderer extends GeoEntityRenderer<SNSDolphinEntity> {
 
             });
 
-    public SNSDolphinRenderer(EntityRendererProvider.Context renderManager) {
+    public SNSDolphinRenderer(EntityRendererManager renderManager) {
         super(renderManager, new SNSDolphinModel());
         this.shadowRadius = 0.2F;
     }
@@ -34,8 +34,8 @@ public class SNSDolphinRenderer extends GeoEntityRenderer<SNSDolphinEntity> {
     }
 
     @Override
-    public void renderEarly(SNSDolphinEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
-                            VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
+    public void renderEarly(SNSDolphinEntity animatable, MatrixStack stackIn, float ticks, IRenderTypeBuffer renderTypeBuffer,
+                            IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
         super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
                 red, green, blue, partialTicks);

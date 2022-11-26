@@ -5,7 +5,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.hostile.poisonberrie
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBArcherEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class PBArcherModel extends AnimatedGeoModel<PBArcherEntity>

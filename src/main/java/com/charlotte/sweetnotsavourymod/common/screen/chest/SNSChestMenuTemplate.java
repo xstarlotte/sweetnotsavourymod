@@ -1,7 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.screen.chest;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 
 public class SNSChestMenuTemplate {
 

@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.fish;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.fish.SNSWafflefishRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSWafflefishEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSWafflefishModel extends AnimatedGeoModel<SNSWafflefishEntity> {

@@ -1,17 +1,17 @@
 package com.charlotte.sweetnotsavourymod.common.world.features.tree;
 
 import com.charlotte.sweetnotsavourymod.common.world.features.ModConfiguredFeature;
-import net.minecraft.core.Holder;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.block.trees.Tree;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
-public class IceCreamTreeGrower extends AbstractTreeGrower {
+public class IceCreamTreeGrower extends Tree {
     @Nullable
     @Override
-    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random p_60014_, boolean p_60015_) {
-        return ModConfiguredFeature.ICE_CREAM_TREE;
+    protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random pRandom, boolean pLargeHive) {
+        return ModConfiguredFeature.ICE_CREAM_TREE.get();
     }
 }

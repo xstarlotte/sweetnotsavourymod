@@ -7,9 +7,10 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.BoatRenderer;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.entity.model.BoatModel;
+import net.minecraft.entity.item.BoatEntity;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 import java.util.stream.Stream;
@@ -17,7 +18,7 @@ import java.util.stream.Stream;
 public class ModBoatRenderer extends BoatRenderer {
     private final Map<ModBoatEntity.Type, Pair<ResourceLocation, BoatModel>> boatResources;
 
-    public ModBoatRenderer(EntityRendererProvider.Context context) {
+    public ModBoatRenderer(EntityRendererManager context) {
         super(context);
         this.shadowRadius = 0.8F;
         this.boatResources = Stream.of(ModBoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap((p_173938_) -> p_173938_,
@@ -28,17 +29,17 @@ public class ModBoatRenderer extends BoatRenderer {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Boat pEntity) {
-        if(pEntity instanceof ModBoatEntity modBoat) {
-            return this.boatResources.get(modBoat.getModBoatType()).getFirst();
+    public ResourceLocation getTextureLocation(BoatEntity pEntity) {
+        if(pEntity instanceof ModBoatEntity) {
+            return this.boatResources.get(((ModBoatEntity)pEntity).getModBoatType()).getFirst();
         }
 
         return new ResourceLocation("minecraft", "boat/oak");
     }
 
-    public Pair<ResourceLocation, BoatModel> getModelWithLocation(Boat boat) {
-        if(boat instanceof ModBoatEntity modBoat) {
-            return this.boatResources.get(modBoat.getModBoatType());
+    public Pair<ResourceLocation, BoatModel> getModelWithLocation(BoatEntity boat) {
+        if(boat instanceof ModBoatEntity) {
+            return this.boatResources.get(((ModBoatEntity)boat).getModBoatType());
         }
 
         return null;

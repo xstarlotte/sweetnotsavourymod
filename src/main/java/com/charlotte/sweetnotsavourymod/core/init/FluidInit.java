@@ -1,19 +1,19 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.block.material.Material;
+import net.minecraft.fluid.FlowingFluid;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvents;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 public class FluidInit {
     public static final ResourceLocation WATER_STILL_RL = new ResourceLocation("block/water_still");
@@ -37,8 +37,8 @@ public class FluidInit {
             .color(0xbff4f2e2)).slopeFindDistance(2).levelDecreasePerBlock(2)
             .block(() -> FluidInit.CREAMY_MILK_BLOCK.get()).bucket(() -> ItemInit.CREAMY_MILK_BUCKET.get());
 
-    public static final RegistryObject<LiquidBlock> CREAMY_MILK_BLOCK = BlockInit.BLOCKS.register("creamy_milk",
-            () -> new LiquidBlock(() -> FluidInit.CREAMY_MILK_FLUID.get(), BlockBehaviour.Properties.of(Material.WATER)
+    public static final RegistryObject<FlowingFluidBlock> CREAMY_MILK_BLOCK = BlockInit.BLOCKS.register("creamy_milk",
+            () -> new FlowingFluidBlock(() -> FluidInit.CREAMY_MILK_FLUID.get(), AbstractBlock.Properties.of(Material.WATER)
                     .noCollission().strength(100f).noDrops()));
     //FlowingFluidBlock
     public static void register(IEventBus eventBus) {

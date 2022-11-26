@@ -1,16 +1,17 @@
 package com.charlotte.sweetnotsavourymod.common.item;
 
 import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.stats.Stats;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.util.Hand;
+import net.minecraft.world.ActionResultTypeHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.World;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -27,11 +28,11 @@ public class ModBoatItem extends Item {
         this.type = typeIn;
     }
 
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public ActionResultTypeHolder<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack itemstack = playerIn.getItemInHand(handIn);
         HitResult raytraceresult = getPlayerPOVHitResult(worldIn, playerIn, ClipContext.Fluid.ANY);
         if (raytraceresult.getType() == HitResult.Type.MISS) {
-            return InteractionResultHolder.pass(itemstack);
+            return ActionResultTypeHolder.pass(itemstack);
         } else {
             Vec3 vec3d = playerIn.getEyePosition(1.0F);
             double d0 = 5.0D;
@@ -41,7 +42,7 @@ public class ModBoatItem extends Item {
                 for(Entity entity : list) {
                     AABB axisalignedbb = entity.getBoundingBox().inflate((double)entity.getPickRadius());
                     if (axisalignedbb.contains(vec3d1)) {
-                        return InteractionResultHolder.pass(itemstack);
+                        return ActionResultTypeHolder.pass(itemstack);
                     }
                 }
             }
@@ -50,7 +51,7 @@ public class ModBoatItem extends Item {
                 boatentity.setBoatType(this.type);
                 boatentity.setYRot(playerIn.getYRot());
                 if (!worldIn.noCollision(boatentity, boatentity.getBoundingBox().inflate(-0.1D))) {
-                    return InteractionResultHolder.fail(itemstack);
+                    return ActionResultTypeHolder.fail(itemstack);
                 } else {
                     if (!worldIn.isClientSide) {
                         worldIn.addFreshEntity(boatentity);
@@ -59,10 +60,10 @@ public class ModBoatItem extends Item {
                         itemstack.shrink(1);
                     }
                     playerIn.awardStat(Stats.ITEM_USED.get(this));
-                    return InteractionResultHolder.success(itemstack);
+                    return ActionResultTypeHolder.success(itemstack);
                 }
             } else {
-                return InteractionResultHolder.pass(itemstack);
+                return ActionResultTypeHolder.pass(itemstack);
             }
         }
     }

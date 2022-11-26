@@ -3,26 +3,26 @@ package com.charlotte.sweetnotsavourymod.client.entityrender.hostile.poisonberri
 
 import com.charlotte.sweetnotsavourymod.client.entitymodel.hostile.poisonberries.PBAttackerModel;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBAttackerEntity;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.renderer.MultiBufferSource;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 
 public class PBAttackerRenderer extends GeoEntityRenderer<PBAttackerEntity> {
 
-    public PBAttackerRenderer(EntityRendererProvider.Context renderManager) {
+    public PBAttackerRenderer(EntityRendererManager renderManager) {
         super(renderManager, new PBAttackerModel());
         this.shadowRadius = 0.2F;
     }
 
 
     @Override
-    public RenderType getRenderType(PBAttackerEntity animatable, float partialTicks, PoseStack stack,
-                                    MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
+    public RenderType getRenderType(PBAttackerEntity animatable, float partialTicks, MatrixStack stack,
+                                    IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
         stack.scale(0.6F, 0.6F, 0.6F);
         return super.getRenderType(animatable, partialTicks, stack,

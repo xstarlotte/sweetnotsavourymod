@@ -2,7 +2,7 @@ package com.charlotte.sweetnotsavourymod.common.world.features.tree;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 

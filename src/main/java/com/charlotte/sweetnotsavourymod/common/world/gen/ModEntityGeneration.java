@@ -1,8 +1,8 @@
 package com.charlotte.sweetnotsavourymod.common.world.gen;
 
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.util.ResourceKey;
+import net.minecraft.entity.EntityType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;

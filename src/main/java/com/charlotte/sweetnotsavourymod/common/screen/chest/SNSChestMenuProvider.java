@@ -6,7 +6,7 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.Container;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import org.jetbrains.annotations.Nullable;
 
@@ -30,7 +30,7 @@ public class SNSChestMenuProvider implements MenuProvider {
 
 	@Nullable
 	@Override
-	public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
+	public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, PlayerEntity pPlayer) {
 		return new SNSChestMenu(type, pContainerId, type.template, pInventory, container);
 	}
 }

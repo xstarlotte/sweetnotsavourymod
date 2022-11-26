@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.amphibians;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.amphibians.SNSToadRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.amphibians.SNSToadEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSToadModel extends AnimatedGeoModel<SNSToadEntity> {

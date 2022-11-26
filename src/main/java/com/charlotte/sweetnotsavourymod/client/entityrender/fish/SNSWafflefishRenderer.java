@@ -4,12 +4,12 @@ import com.charlotte.sweetnotsavourymod.client.entitymodel.fish.SNSWafflefishMod
 import com.charlotte.sweetnotsavourymod.common.entity.fish.SNSWafflefishEntity;
 import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.WafflefishVariant;
 import com.google.common.collect.Maps;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.Util;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.util.Util;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 import java.util.Map;
@@ -30,7 +30,7 @@ public class SNSWafflefishRenderer extends GeoEntityRenderer<SNSWafflefishEntity
 
             });
 
-    public SNSWafflefishRenderer(EntityRendererProvider.Context renderManager) {
+    public SNSWafflefishRenderer(EntityRendererManager renderManager) {
         super(renderManager, new SNSWafflefishModel());
         this.shadowRadius = 0.2F;
     }
@@ -41,8 +41,8 @@ public class SNSWafflefishRenderer extends GeoEntityRenderer<SNSWafflefishEntity
     }
 
     @Override
-    public void renderEarly(SNSWafflefishEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
-                            VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
+    public void renderEarly(SNSWafflefishEntity animatable, MatrixStack stackIn, float ticks, IRenderTypeBuffer renderTypeBuffer,
+                            IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
         super.renderEarly(animatable, stackIn, ticks, renderTypeBuffer, vertexBuilder, packedLightIn, packedOverlayIn,
                 red, green, blue, partialTicks);

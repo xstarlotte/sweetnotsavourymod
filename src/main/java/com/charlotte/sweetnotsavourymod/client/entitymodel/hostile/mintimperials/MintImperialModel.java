@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.hostile.mintimperial
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mintimperials.MintImperialRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials.MintImperialEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class MintImperialModel extends AnimatedGeoModel<MintImperialEntity> {

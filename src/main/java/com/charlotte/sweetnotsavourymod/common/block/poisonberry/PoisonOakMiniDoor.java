@@ -1,15 +1,15 @@
 package com.charlotte.sweetnotsavourymod.common.block.poisonberry;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.World;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -30,11 +30,11 @@ public class PoisonOakMiniDoor extends Block{
     protected static final VoxelShape EAST_AABB = Block.box( 0.0D , 0.0D , 0.0D , 1.0D , 16.0D , 16.0D );
 
     @Override
-    public InteractionResult use(BlockState state , Level worldIn , BlockPos pos , Player player ,
-                                              InteractionHand handIn , BlockHitResult hit ){
+    public ActionResultType use(BlockState state , World worldIn , BlockPos pos , PlayerEntity player ,
+                                              Hand handIn , BlockHitResult hit ){
         Boolean flag = state.getValue(OPEN);
         openDoor( worldIn , state , pos , flag ? false : true );
-        return InteractionResult.SUCCESS;
+        return ActionResultType.SUCCESS;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class PoisonOakMiniDoor extends Block{
     @Override
     public BlockState getStateForPlacement( BlockPlaceContext context ) {
         BlockPos blockpos = context.getClickedPos();
-        Level world = context.getLevel();
+        World world = context.getLevel();
         boolean flag = world.hasNeighborSignal(blockpos);
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection() )
                 .setValue(HINGE, this.getHingeSide(context))
@@ -53,7 +53,7 @@ public class PoisonOakMiniDoor extends Block{
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos,
+    public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos,
                                  boolean isMoving) {
         super.neighborChanged( state , worldIn , pos , blockIn , fromPos , isMoving );
 
@@ -66,7 +66,7 @@ public class PoisonOakMiniDoor extends Block{
         }
     }
 
-    public void openDoor( Level worldIn , BlockState state , BlockPos pos , boolean open ){
+    public void openDoor( World worldIn , BlockState state , BlockPos pos , boolean open ){
         if(state.is( this ) && state.getValue( OPEN ) != open){
             worldIn.setBlock( pos , state.setValue( OPEN , Boolean.valueOf( open ) ) , 10 );
             worldIn.playSound( null , pos , open ? SoundEvents.WOODEN_DOOR_OPEN : SoundEvents.WOODEN_DOOR_CLOSE , SoundSource.BLOCKS , 1.0f , 1.0f );

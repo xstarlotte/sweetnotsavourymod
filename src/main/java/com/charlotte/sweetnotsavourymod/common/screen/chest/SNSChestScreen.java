@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.common.screen.chest;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenu;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuTemplate;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;

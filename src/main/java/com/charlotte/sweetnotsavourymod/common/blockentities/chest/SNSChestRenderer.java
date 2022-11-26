@@ -1,13 +1,13 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.chest;
 
 import com.charlotte.sweetnotsavourymod.common.block.SNSChestBlock;
-import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -15,9 +15,9 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelManager;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -51,7 +51,7 @@ public class SNSChestRenderer implements BlockEntityRenderer<SNSChestBlockEntity
 
 	private static final float HALF_PI = (float)Math.PI / 2;
 	@Override
-	public void render(SNSChestBlockEntity entity, float partialTick, PoseStack stack, MultiBufferSource bufferSource, int light, int overlay) {
+	public void render(SNSChestBlockEntity entity, float partialTick, PoseStack stack, IRenderTypeBuffer bufferSource, int light, int overlay) {
 		Minecraft minecraft = Minecraft.getInstance();
 		ModelManager models = minecraft.getModelManager();
 

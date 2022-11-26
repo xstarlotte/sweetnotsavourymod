@@ -2,12 +2,12 @@ package com.charlotte.sweetnotsavourymod.common.block;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.util.Direction;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.World;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
@@ -35,7 +35,7 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
 
     @Nullable
     @Override
-    public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player,
+    public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player,
                                            ItemStack stack, ToolAction toolAction) {
         if(stack.getItem() instanceof AxeItem) {
             if(state.is(BlockInit.WAFERWOODBLOCK.get())) {

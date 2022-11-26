@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.dogs;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSIceCreamPugRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSIceCreamPugEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSIceCreamPugModel extends AnimatedGeoModel<SNSIceCreamPugEntity> {

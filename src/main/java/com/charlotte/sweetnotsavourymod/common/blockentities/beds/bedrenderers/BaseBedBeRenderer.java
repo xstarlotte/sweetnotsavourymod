@@ -1,18 +1,18 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers;
 
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.SNSBaseBedBlockEntity;
-import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.World;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -31,7 +31,7 @@ public abstract class BaseBedBeRenderer implements BlockEntityRenderer<SNSBaseBe
     protected abstract void setBlockEntityAndModels(SNSBaseBedBlockEntity be);
 
     @Override
-    public void render(SNSBaseBedBlockEntity blockentity, float partialTicks , PoseStack matrixStackIn , MultiBufferSource bufferIn , int combinedLightIn , int combinedOverlayIn ){
+    public void render(SNSBaseBedBlockEntity blockentity, float partialTicks , PoseStack matrixStackIn , IRenderTypeBuffer bufferIn , int combinedLightIn , int combinedOverlayIn ){
        setBlockEntityAndModels(blockentity);
         Level level = be.getLevel();
         BlockState state = be.getBlockState();

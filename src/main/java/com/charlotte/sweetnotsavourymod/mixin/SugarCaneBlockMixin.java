@@ -1,7 +1,7 @@
 /*package com.charlotte.sweetnotsavourymod.mixin;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.tags.Tag;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;

@@ -3,7 +3,7 @@ package com.charlotte.sweetnotsavourymod.client.entitymodel.cats;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCookieCatRenderer;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCookieCatEntity;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSCookieCatModel extends AnimatedGeoModel<SNSCookieCatEntity> {

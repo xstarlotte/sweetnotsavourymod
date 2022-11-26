@@ -4,12 +4,12 @@ import com.charlotte.sweetnotsavourymod.client.entitymodel.snakes.SNSSnakeModel;
 import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
 import com.charlotte.sweetnotsavourymod.core.util.variants.SnakeVariants.SnakeFlavourVariant;
 import com.google.common.collect.Maps;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.Util;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.util.Util;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 import java.util.Map;
@@ -23,7 +23,7 @@ public class SNSSnakeRenderer extends GeoEntityRenderer<SNSSnakeEntity> {
                 p_114874_.put(SnakeFlavourVariant.LEMONLACE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/lemonlacesnake.png"));
             });
 
-    public SNSSnakeRenderer(EntityRendererProvider.Context renderManager) {
+    public SNSSnakeRenderer(EntityRendererManager renderManager) {
         super(renderManager, new SNSSnakeModel());
         this.shadowRadius = 0.05F;
     }
@@ -34,14 +34,14 @@ public class SNSSnakeRenderer extends GeoEntityRenderer<SNSSnakeEntity> {
     }
 
     @Override
-    public void render(SNSSnakeEntity entity, float entityYaw, float partialTicks, PoseStack stack, MultiBufferSource bufferIn,
+    public void render(SNSSnakeEntity entity, float entityYaw, float partialTicks, MatrixStack stack, IRenderTypeBuffer bufferIn,
                        int packedLightIn) {
         super.render(entity, entityYaw, partialTicks, stack, bufferIn, packedLightIn);
     }
 
     @Override
-    public void renderEarly(SNSSnakeEntity animatable, PoseStack stackIn, float ticks, MultiBufferSource renderTypeBuffer,
-                            VertexConsumer vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
+    public void renderEarly(SNSSnakeEntity animatable, MatrixStack stackIn, float ticks, IRenderTypeBuffer renderTypeBuffer,
+                            IVertexBuilder vertexBuilder, int packedLightIn, int packedOverlayIn, float red, float green, float blue,
                             float partialTicks) {
         if(animatable.isBaby()) {
             stackIn.scale(0.25F, 0.25F, 0.25F);

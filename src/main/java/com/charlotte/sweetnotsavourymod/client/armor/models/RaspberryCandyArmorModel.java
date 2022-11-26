@@ -2,7 +2,7 @@ package com.charlotte.sweetnotsavourymod.client.armor.models;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.RaspberryCandyArmorItem;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class RaspberryCandyArmorModel extends AnimatedGeoModel <RaspberryCandyArmorItem> {

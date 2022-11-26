@@ -6,9 +6,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
@@ -16,8 +16,8 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.World;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -29,7 +29,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class RSWMummyEntity extends Monster implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
-    public RSWMummyEntity(EntityType<? extends Monster> type, Level worldIn) {
+    public RSWMummyEntity(EntityType<? extends Monster> type, World worldIn) {
         super(type, worldIn);
     }
 
@@ -74,7 +74,7 @@ public class RSWMummyEntity extends Monster implements IAnimatable {
 
     }
 
-    public static AttributeSupplier createAttributes() {
+    public static AttributeModifierMap createAttributes() {
         return Monster
                 .createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 70.0D)
@@ -86,7 +86,7 @@ public class RSWMummyEntity extends Monster implements IAnimatable {
     }
 
 	@Override
-	protected int getExperienceReward(Player p_21511_) {
+	protected int getExperienceReward(PlayerEntity p_21511_) {
 		return 64;
 	}
 
