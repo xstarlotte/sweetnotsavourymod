@@ -23,13 +23,14 @@ public class FluidInit {
     public static final ResourceLocation WATER_OVERLAY_RL = new ResourceLocation("block/water_overlay");
 
     public static void register(IEventBus eventBus) {
+        FLUID_TYPES.register(eventBus);
         FLUIDS.register(eventBus);
     }
 
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.Keys.FLUIDS, SweetNotSavouryMod.MOD_ID);
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, SweetNotSavouryMod.MOD_ID);
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.Keys.FLUIDS, SweetNotSavouryMod.MOD_ID);
 
-    public static final RegistryObject<FluidType> CREAMY_MILK_TYPE = FLUID_TYPES.register("creamy_milk",
+    public static final RegistryObject<FluidType> CREAMY_MILK_TYPE = FLUID_TYPES.register("creamy_milk_type",
             () -> new FluidType(FluidType.Properties.create().density(15).lightLevel(2).viscosity(10)
                     .sound(SoundActions.BUCKET_FILL, SoundEvents.HONEY_DRINK)
                     .sound(SoundActions.BUCKET_EMPTY, SoundEvents.HONEY_DRINK)) {

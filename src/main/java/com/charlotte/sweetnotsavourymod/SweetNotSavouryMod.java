@@ -3,11 +3,14 @@ package com.charlotte.sweetnotsavourymod;
 import com.charlotte.sweetnotsavourymod.common.effects.ModEffects;
 import com.charlotte.sweetnotsavourymod.common.painting.ModPaintings;
 import com.charlotte.sweetnotsavourymod.common.screen.MenuTypesInit;
+import com.charlotte.sweetnotsavourymod.common.world.features.ModConfiguredFeatures;
+import com.charlotte.sweetnotsavourymod.common.world.features.ModPlacedFeatures;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.ModFoliagePlacerTypes;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.ModTrunkPlacerTypes;
 import com.charlotte.sweetnotsavourymod.core.init.*;
 import com.charlotte.sweetnotsavourymod.core.sound.SoundsInit;
 import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
+import com.charlotte.sweetnotsavourymod.data.worldgen.ModVegetationFeatures;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.WaterAnimal;
@@ -32,35 +35,35 @@ public class SweetNotSavouryMod {
     public SweetNotSavouryMod() {
     	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		bus.addListener(this::commonSetup);
 		bus.addListener(this::onLoadComplete);
         bus.addListener(this::setup);
+        bus.addListener(this::spawnPlacements);
 
         ModEffects.MOB_EFFECTS.register(bus);
     	ItemInit.ITEMS.register(bus);
     	BlockInit.BLOCKS.register(bus);
         ModPaintings.PAINTING_VARIANTS.register(bus);
         SoundsInit.SOUND_EVENTS.register(bus);
-        FluidInit.FLUIDS.register(bus);
+        FluidInit.register(bus);
     	BlockEntityTypesInit.BLOCK_ENTITY_TYPE.register(bus);
         MenuTypesInit.MENUS.register(bus);
         RecipeSerializerInit.register(bus);
 		EntityTypesInit.ENTITY_TYPES.register(bus);
+        ModTrunkPlacerTypes.register(bus);
         ModFoliagePlacerTypes.FOLIAGE_PLACER_TYPES.register(bus);
+        ModConfiguredFeatures.register(bus);
+
+        ModConfiguredFeatures.bootstrap();
+        ModPlacedFeatures.bootstrap();
+        ModVegetationFeatures.bootstrap();
     }
 
-	public void commonSetup(final FMLCommonSetupEvent event) {
-
-    }
-
-    public void onLoadComplete(final FMLLoadCompleteEvent event) {
+    private void onLoadComplete(final FMLLoadCompleteEvent event) {
     	StrippingMap.registerStrippables();
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            ModTrunkPlacerTypes.register();
-
             var flowerPot = (FlowerPotBlock) Blocks.FLOWER_POT;
 
            flowerPot.addPlant(BlockInit.CANDYCANEBUSH.getId(), BlockInit.POTTED_CANDYCANEBUSH);
