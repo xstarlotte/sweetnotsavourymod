@@ -61,10 +61,8 @@ public class ModConfiguredFeatures {
         add(ICE_CREAM_TREE);
         add(CHOCOLATE_ICE_CREAM_TREE);
         add(CANDY_CANE_BUSH);
-        add(CANDY_CANE_SPREAD);
         add(CHOCOLATE_CINERARIA);
         add(TOFFEE_TULIP);
-        add(CANDY_BUSH_SPREAD);
     }
 
     private <T extends FeatureConfiguration> void add(RegistryObject<ConfiguredFeature<T, ?>> holder) {
@@ -100,54 +98,23 @@ public class ModConfiguredFeatures {
 
     //flowers
 
-    public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> CANDY_CANE_BUSH =
-            register("candy_cane_bush", Feature.FLOWER,
-                    () -> new RandomPatchConfiguration(20, 80, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.CANDYCANEBUSH.get()))))
+    public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> CANDY_CANE_BUSH =
+            register("candy_cane_bush", Feature.SIMPLE_BLOCK,
+                    () -> new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.CANDYCANEBUSH.get()))
             );
 
-    public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> CANDY_CANE_SPREAD =
-            register("candy_cane_spread", Feature.FLOWER,
-                    () -> grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                            .add(BlockInit.CANDY_CANE_FLOWER.get().defaultBlockState(), 1)
-                            .add(BlockInit.CANDY_CANE_FLOWER_2.get().defaultBlockState(), 1)
-                            .add(BlockInit.CANDY_CANE_FLOWER_3.get().defaultBlockState(), 1)
-                            .add(BlockInit.CANDY_CANE_FLOWER_4.get().defaultBlockState(), 1)
-                            .add(BlockInit.CANDY_CANE_GRASS.get().defaultBlockState(), 1)
-                            .add(BlockInit.CANDY_CANE_GRASS_LONG.get().defaultBlockState(), 1)
-                    ), 64)
+    public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> CHOCOLATE_CINERARIA =
+            register("chocolate_cineraria", Feature.SIMPLE_BLOCK,
+                    () -> new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.CHOCOLATECINERARIA.get()))
             );
 
-    public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> CHOCOLATE_CINERARIA =
-            register("chocolate_cineraria", Feature.FLOWER,
-                    () -> new RandomPatchConfiguration(20, 80, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.CHOCOLATECINERARIA.get()))))
-            );
-
-    public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> TOFFEE_TULIP =
-            register("toffee_tulip", Feature.FLOWER,
-                    () -> new RandomPatchConfiguration(20, 80, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.TOFFEETULIP.get()))))
-            );
-
-    public static final RegistryObject<ConfiguredFeature<RandomPatchConfiguration, ?>> CANDY_BUSH_SPREAD =
-            register("candy_bush_spread", Feature.FLOWER,
-                    () -> grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                            .add(BlockInit.STRAWBERRYCANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.RASPBERRYCANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.BLACKBERRYCANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.BLUEBERRYCANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.ORANGECANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.LEMONCANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.LIMECANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.MANGOCANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.PEACHCANDYBUSH.get().defaultBlockState(), 1)
-                            .add(BlockInit.RAINBOWCANDYBUSH.get().defaultBlockState(), 1)
-                    ), 16)
+    public static final RegistryObject<ConfiguredFeature<SimpleBlockConfiguration, ?>> TOFFEE_TULIP =
+            register("toffee_tulip", Feature.SIMPLE_BLOCK,
+                    () -> new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.TOFFEETULIP.get()))
             );
 
 
-    private static RandomPatchConfiguration grassPatch(BlockStateProvider p_195203_, int p_195204_) {
+    public static RandomPatchConfiguration grassPatch(BlockStateProvider p_195203_, int p_195204_) {
         return FeatureUtils.simpleRandomPatchConfiguration(p_195204_,
                 PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(p_195203_)));
     }

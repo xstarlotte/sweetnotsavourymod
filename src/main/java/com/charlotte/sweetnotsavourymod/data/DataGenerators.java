@@ -33,14 +33,18 @@ public class DataGenerators {
     @SubscribeEvent
     static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
+        var fileHelper = event.getExistingFileHelper();
         generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
 
         var registryOps = RegistryOps.create(JsonOps.INSTANCE, RegistryAccess.builtinCopy());
 
-        generator.addProvider(event.includeServer(), configuredFeatures(generator, event.getExistingFileHelper(), registryOps));
-        generator.addProvider(event.includeServer(), placedFeatures(generator, event.getExistingFileHelper(), registryOps));
-        generator.addProvider(event.includeServer(), biomeModifiers(generator, event.getExistingFileHelper(), registryOps));
+        generator.addProvider(event.includeServer(), configuredFeatures(generator, fileHelper, registryOps));
+        generator.addProvider(event.includeServer(), placedFeatures(generator, fileHelper, registryOps));
+        generator.addProvider(event.includeServer(), biomeModifiers(generator, fileHelper, registryOps));
+        if (event.includeServer()) {
+            vegetationFeatures(generator, fileHelper, registryOps);
+        }
     }
 
     private static DataProvider configuredFeatures(DataGenerator generator, ExistingFileHelper fileHelper, RegistryOps<JsonElement> registryOps) {
@@ -53,6 +57,14 @@ public class DataGenerators {
         Map<ResourceLocation, PlacedFeature> map = Maps.newHashMap();
         new ModPlacedFeatures(map, registryOps);
         return JsonCodecProvider.forDatapackRegistry(generator, fileHelper, SweetNotSavouryMod.MOD_ID, registryOps, Registry.PLACED_FEATURE_REGISTRY, map);
+    }
+
+    private static void vegetationFeatures(DataGenerator generator, ExistingFileHelper fileHelper, RegistryOps<JsonElement> registryOps) {
+        Map<ResourceLocation, ConfiguredFeature<?, ?>> configuredMap = Maps.newHashMap();
+        Map<ResourceLocation, PlacedFeature> placedMap = Maps.newHashMap();
+        new ModVegetationFeatures(configuredMap, placedMap, registryOps);
+        generator.addProvider(true, JsonCodecProvider.forDatapackRegistry(generator, fileHelper, SweetNotSavouryMod.MOD_ID, registryOps, Registry.CONFIGURED_FEATURE_REGISTRY, configuredMap));
+        generator.addProvider(true, JsonCodecProvider.forDatapackRegistry(generator, fileHelper, SweetNotSavouryMod.MOD_ID, registryOps, Registry.CONFIGURED_FEATURE_REGISTRY, configuredMap));
     }
 
     private static DataProvider biomeModifiers(DataGenerator generator, ExistingFileHelper fileHelper, RegistryOps<JsonElement> registryOps) {

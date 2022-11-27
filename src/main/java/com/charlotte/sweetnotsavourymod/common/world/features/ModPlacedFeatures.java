@@ -6,6 +6,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -29,10 +30,8 @@ public class ModPlacedFeatures {
         add(ICE_CREAM_TREE_CHECKED);
         add(CHOCOLATE_ICE_CREAM_TREE_CHECKED);
         add(CANDY_CANE_BUSH_PLACED);
-        add(CANDY_CANE_SPREAD_PLACED);
         add(CHOCOLATE_CINERARIA_PLACED);
         add(TOFFEE_TULIP_PLACED);
-        add(CANDY_BUSH_SPREAD_PLACED);
     }
 
     private void add(RegistryObject<PlacedFeature> holder) {
@@ -58,41 +57,16 @@ public class ModPlacedFeatures {
 
     public static final RegistryObject<PlacedFeature> CANDY_CANE_BUSH_PLACED = ModConfiguredFeatures.register("candy_cane_bush_placed",
             ModConfiguredFeatures.CANDY_CANE_BUSH,
-            () -> List.of(RarityFilter.onAverageOnceEvery(16),
-                    InSquarePlacement.spread(),
-                    PlacementUtils.HEIGHTMAP,
-                    BiomeFilter.biome())
-    );
-
-    public static final RegistryObject<PlacedFeature> CANDY_CANE_SPREAD_PLACED = ModConfiguredFeatures.register("candy_cane_spread_placed",
-            ModConfiguredFeatures.CANDY_CANE_SPREAD,
-            () -> List.of(RarityFilter.onAverageOnceEvery(16),
-                    InSquarePlacement.spread(),
-                    PlacementUtils.HEIGHTMAP,
-                    BiomeFilter.biome())
+            () -> List.of(BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))
     );
 
     public static final RegistryObject<PlacedFeature> CHOCOLATE_CINERARIA_PLACED = ModConfiguredFeatures.register("chocolate_cineraria_spread_placed",
             ModConfiguredFeatures.CHOCOLATE_CINERARIA,
-            () -> List.of(RarityFilter.onAverageOnceEvery(16),
-                    InSquarePlacement.spread(),
-                    PlacementUtils.HEIGHTMAP,
-                    BiomeFilter.biome())
+            () -> List.of(BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))
     );
 
     public static final RegistryObject<PlacedFeature> TOFFEE_TULIP_PLACED = ModConfiguredFeatures.register("toffee_tulip_spread_placed",
             ModConfiguredFeatures.TOFFEE_TULIP,
-            () -> List.of(RarityFilter.onAverageOnceEvery(16),
-                    InSquarePlacement.spread(),
-                    PlacementUtils.HEIGHTMAP,
-                    BiomeFilter.biome())
-            );
-
-    public static final RegistryObject<PlacedFeature> CANDY_BUSH_SPREAD_PLACED = ModConfiguredFeatures.register("candy_bush_spread_placed",
-            ModConfiguredFeatures.CANDY_BUSH_SPREAD,
-            () -> List.of(RarityFilter.onAverageOnceEvery(42),
-                    InSquarePlacement.spread(),
-                    PlacementUtils.HEIGHTMAP,
-                    BiomeFilter.biome())
-            );
+            () -> List.of(BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))
+    );
 }

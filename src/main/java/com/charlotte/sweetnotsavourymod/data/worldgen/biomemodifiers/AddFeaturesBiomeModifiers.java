@@ -40,13 +40,13 @@ public class AddFeaturesBiomeModifiers {
                         ModPlacedFeatures.CHOCOLATE_CINERARIA_PLACED.getKey(),
                         ModPlacedFeatures.TOFFEE_TULIP_PLACED.getKey(),
                         ModPlacedFeatures.CANDY_CANE_BUSH_PLACED.getKey(),
-                        ModPlacedFeatures.CANDY_CANE_SPREAD_PLACED.getKey()
+                        ModVegetationFeatures.CANDY_CANE_SPREAD_PLACED.getKey()
                 ),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         addAll("plains_flowers", PLAINS_BIOMES,
                 HolderSet.direct(registryOps.registry(BuiltinRegistries.PLACED_FEATURE.key()).get()::getOrCreateHolderOrThrow,
-                        ModPlacedFeatures.CANDY_BUSH_SPREAD_PLACED.getKey()
+                        ModVegetationFeatures.CANDY_BUSH_SPREAD_PLACED.getKey()
                 ),
                 GenerationStep.Decoration.VEGETAL_DECORATION);
         addAll("snowy_trees", SNOWY_BIOMES,
