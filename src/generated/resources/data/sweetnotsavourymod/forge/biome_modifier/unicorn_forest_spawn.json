@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:forest",
+    "minecraft:birch_forest",
+    "minecraft:flower_forest",
+    "minecraft:dark_forest",
+    "minecraft:old_growth_birch_forest"
+  ],
+  "spawners": {
+    "type": "sweetnotsavourymod:snsunicorn",
+    "maxCount": 1,
+    "minCount": 1,
+    "weight": 1
+  }
+}

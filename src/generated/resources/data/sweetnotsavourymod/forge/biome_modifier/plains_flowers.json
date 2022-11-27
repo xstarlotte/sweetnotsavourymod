@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:snowy_plains",
+    "minecraft:sunflower_plains",
+    "minecraft:meadow"
+  ],
+  "features": "sweetnotsavourymod:candy_bush_spread_placed",
+  "step": "vegetal_decoration"
+}

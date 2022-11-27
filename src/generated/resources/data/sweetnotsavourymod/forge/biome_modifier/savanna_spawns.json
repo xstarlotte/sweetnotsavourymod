@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:savanna",
+    "minecraft:savanna_plateau",
+    "minecraft:windswept_savanna"
+  ],
+  "spawners": {
+    "type": "sweetnotsavourymod:snszebra",
+    "maxCount": 2,
+    "minCount": 1,
+    "weight": 5
+  }
+}
