@@ -35,7 +35,7 @@ public class IceCreamTrunkPlacer extends TrunkPlacer {
 
     @Override
     protected TrunkPlacerType<?> type() {
-        return ModTrunkPlacerTypes.ICE_TRUNK_PLACER;
+        return ModTrunkPlacerTypes.ICE_TRUNK_PLACER.get();
     }
 
     @Override

@@ -1,7 +1,8 @@
-package com.charlotte.sweetnotsavourymod.data.biomemodifiers;
+package com.charlotte.sweetnotsavourymod.data.worldgen.biomemodifiers;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.world.features.ModPlacedFeatures;
+import com.charlotte.sweetnotsavourymod.data.worldgen.ModVegetationFeatures;
 import com.google.gson.JsonElement;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
@@ -36,22 +37,22 @@ public class AddFeaturesBiomeModifiers {
 
         addAll("snowy_flowers", SNOWY_BIOMES,
                 HolderSet.direct(registryOps.registry(BuiltinRegistries.PLACED_FEATURE.key()).get()::getOrCreateHolderOrThrow,
-                        ModPlacedFeatures.CHOCOLATECINERARIA_PLACED.unwrapKey().get(),
-                        ModPlacedFeatures.TOFFEETULIP_PLACED.unwrapKey().get(),
-                        ModPlacedFeatures.CANDYCANEBUSH_PLACED.unwrapKey().get(),
-                        ModPlacedFeatures.CANDY_CANE_SPREAD_PLACED.unwrapKey().get()
+                        ModPlacedFeatures.CHOCOLATE_CINERARIA_PLACED.getKey(),
+                        ModPlacedFeatures.TOFFEE_TULIP_PLACED.getKey(),
+                        ModPlacedFeatures.CANDY_CANE_BUSH_PLACED.getKey(),
+                        ModPlacedFeatures.CANDY_CANE_SPREAD_PLACED.getKey()
                 ),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );
         addAll("plains_flowers", PLAINS_BIOMES,
                 HolderSet.direct(registryOps.registry(BuiltinRegistries.PLACED_FEATURE.key()).get()::getOrCreateHolderOrThrow,
-                        ModPlacedFeatures.CANDY_BUSH_SPREAD_PLACED.unwrapKey().get()
+                        ModPlacedFeatures.CANDY_BUSH_SPREAD_PLACED.getKey()
                 ),
                 GenerationStep.Decoration.VEGETAL_DECORATION);
         addAll("snowy_trees", SNOWY_BIOMES,
                 HolderSet.direct(registryOps.registry(BuiltinRegistries.PLACED_FEATURE.key()).get()::getOrCreateHolderOrThrow,
-                        ModPlacedFeatures.ICE_CREAM_PLACED.unwrapKey().get(),
-                        ModPlacedFeatures.CHOCOLATE_ICE_CREAM_PLACED.unwrapKey().get()
+                        ModVegetationFeatures.ICE_CREAM_PLACED.getKey(),
+                        ModVegetationFeatures.CHOCOLATE_ICE_CREAM_PLACED.getKey()
                 ),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         );

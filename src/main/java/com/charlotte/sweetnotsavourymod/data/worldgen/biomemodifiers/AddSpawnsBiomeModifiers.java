@@ -1,13 +1,10 @@
-package com.charlotte.sweetnotsavourymod.data.biomemodifiers;
+package com.charlotte.sweetnotsavourymod.data.worldgen.biomemodifiers;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
 import com.google.gson.JsonElement;
 import net.minecraft.core.HolderSet;
-import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;

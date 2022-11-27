@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:strawberrycandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:raspberrycandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:blackberrycandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:blueberrycandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:orangecandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:lemoncandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:limecandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:mangocandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:peachcandybush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "sweetnotsavourymod:rainbowcandybush"
+                },
+                "weight": 1
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 16,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

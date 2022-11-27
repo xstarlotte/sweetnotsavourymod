@@ -35,7 +35,7 @@ public class ChocolateIceCreamTrunkPlacer extends TrunkPlacer {
 
     @Override
     protected TrunkPlacerType<?> type() {
-        return ModTrunkPlacerTypes.CHOCOLATE_ICE_TRUNK_PLACER;
+        return ModTrunkPlacerTypes.CHOCOLATE_ICE_TRUNK_PLACER.get();
     }
 
     @Override
