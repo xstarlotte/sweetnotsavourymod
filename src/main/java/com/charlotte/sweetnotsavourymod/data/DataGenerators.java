@@ -34,6 +34,7 @@ public class DataGenerators {
     static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         var fileHelper = event.getExistingFileHelper();
+        generator.addProvider(event.includeClient(), new ModBlockStateProvider(generator, fileHelper));
         generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
 

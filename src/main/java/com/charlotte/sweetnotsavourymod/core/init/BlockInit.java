@@ -1011,7 +1011,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					.strength(0.6f,1200f)
 					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> STRAWBERRY_CANDY_DOOR = registerBlock("strawberry_candy_door",
+	public static final RegistryObject<DoorBlock> STRAWBERRY_CANDY_DOOR = registerBlock("strawberry_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
