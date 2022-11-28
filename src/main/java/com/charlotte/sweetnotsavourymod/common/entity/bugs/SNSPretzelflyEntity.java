@@ -38,7 +38,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 import javax.annotation.Nonnull;
 
 public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable, IVariable<PretzelflyVariant> {
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(SNSPretzelflyEntity.class, EntityDataSerializers.INT);
 

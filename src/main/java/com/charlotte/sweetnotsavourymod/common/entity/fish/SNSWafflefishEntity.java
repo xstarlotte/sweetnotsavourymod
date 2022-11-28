@@ -49,7 +49,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class SNSWafflefishEntity extends AbstractSchoolingFish implements IAnimatable, IVariable<WafflefishVariant> {
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(SNSWafflefishEntity.class, EntityDataSerializers.INT);
 

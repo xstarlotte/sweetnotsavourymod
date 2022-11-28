@@ -34,7 +34,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class PBArcherEntity extends Monster implements IAnimatable, RangedAttackMob {
-	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	public PBArcherEntity(EntityType<? extends Monster> type, Level worldIn) {
 		super(type, worldIn);
 	}
@@ -88,7 +88,7 @@ public class PBArcherEntity extends Monster implements IAnimatable, RangedAttack
 		return Monster
 				.createMonsterAttributes()
 				.add(Attributes.FOLLOW_RANGE, 70.0D)
-				.add(Attributes.MOVEMENT_SPEED, (double)0.34F)
+				.add(Attributes.MOVEMENT_SPEED, 0.34F)
 				.add(Attributes.ATTACK_DAMAGE, 1.0D)
 				.add(Attributes.ARMOR, 4.0D)
 				.build();

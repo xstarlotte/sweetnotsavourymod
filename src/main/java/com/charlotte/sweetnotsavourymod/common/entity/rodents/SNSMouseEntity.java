@@ -52,7 +52,7 @@ import java.util.UUID;
 
 public class SNSMouseEntity extends TamableAnimal implements IAnimatable, IVariable<MouseFlavourVariant> {
 
-	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(com.charlotte.sweetnotsavourymod.common.entity.rodents.SNSMouseEntity.class, EntityDataSerializers.INT);
@@ -97,7 +97,7 @@ public class SNSMouseEntity extends TamableAnimal implements IAnimatable, IVaria
 				.add(Attributes.MAX_HEALTH, 80.0D)
 				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.25f).build();
 	}
 
 	protected void registerGoals() {
@@ -163,7 +163,7 @@ public class SNSMouseEntity extends TamableAnimal implements IAnimatable, IVaria
 		} else {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.25f);
 		}
 	}
 

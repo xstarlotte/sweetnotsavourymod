@@ -56,7 +56,7 @@ import javax.annotation.Nonnull;
 import java.util.UUID;
 
 public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatable, IVariable<IceCreamParrotFlavourVariant> {
-	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(com.charlotte.sweetnotsavourymod.common.entity.birds.SNSIceCreamParrotEntity.class, EntityDataSerializers.INT);
 
@@ -133,7 +133,7 @@ public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatabl
 
 	@Override
 	public void registerControllers(AnimationData data) {
-		AnimationController<com.charlotte.sweetnotsavourymod.common.entity.birds.SNSIceCreamParrotEntity> flyingController = new AnimationController<>(this,
+		AnimationController<SNSIceCreamParrotEntity> flyingController = new AnimationController<>(this,
 				"flyingController", 0, this::flyingPredicate);
 		data.addAnimationController(flyingController);
 	}
@@ -149,11 +149,11 @@ public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatabl
 
 	public static AttributeSupplier setAttributes() {
 		return TamableAnimal.createMobAttributes()
-				.add(Attributes.FLYING_SPEED, 1.5f)
+				.add(Attributes.FLYING_SPEED, 1.5D)
 				.add(Attributes.MAX_HEALTH, 80.0D)
 				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.25D).build();
 	}
 
 	protected void registerGoals() {
@@ -175,15 +175,15 @@ public class SNSIceCreamParrotEntity extends TamableAnimal implements IAnimatabl
 	public void setTame(boolean tamed) {
 		super.setTame(tamed);
 		if (tamed) {
-			getAttribute(Attributes.FLYING_SPEED).setBaseValue(5.0f);
+			getAttribute(Attributes.FLYING_SPEED).setBaseValue(5.0D);
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(80.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.5f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.5D);
 		} else {
-			getAttribute(Attributes.FLYING_SPEED).setBaseValue(0.7f);
+			getAttribute(Attributes.FLYING_SPEED).setBaseValue(0.7D);
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		}
 	}
 

@@ -30,7 +30,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class RSWMummyEntity extends Monster implements IAnimatable {
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     public RSWMummyEntity(EntityType<? extends Monster> type, Level worldIn) {
         super(type, worldIn);
     }

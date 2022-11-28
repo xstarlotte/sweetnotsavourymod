@@ -12,8 +12,6 @@ public enum CCWolfFlavourVariant implements IVariant {
     PEPPERMINT(3),
     SPEARMINT(4);
 
-   ;
-
     private static final CCWolfFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(CCWolfFlavourVariant::getId)).toArray(CCWolfFlavourVariant[]::new);
     private final int id;

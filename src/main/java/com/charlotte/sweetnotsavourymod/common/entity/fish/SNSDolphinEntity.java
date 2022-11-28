@@ -47,7 +47,7 @@ import java.util.Optional;
 import java.util.Random;
 
 public class SNSDolphinEntity extends AbstractSchoolingFish implements IAnimatable {
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(SNSDolphinEntity.class, EntityDataSerializers.INT);
 

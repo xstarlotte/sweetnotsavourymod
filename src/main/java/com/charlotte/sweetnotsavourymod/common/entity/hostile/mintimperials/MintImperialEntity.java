@@ -43,7 +43,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class MintImperialEntity extends Monster implements IAnimatable, IVariable<MintImperialVariant> {
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(MintImperialEntity.class, EntityDataSerializers.INT);
     public MintImperialEntity(EntityType<? extends Monster> type, Level worldIn) {
@@ -137,7 +137,7 @@ public class MintImperialEntity extends Monster implements IAnimatable, IVariabl
         return Monster
                 .createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 35.0D)
-                .add(Attributes.MOVEMENT_SPEED, (double)0.3F)
+                .add(Attributes.MOVEMENT_SPEED, 0.3F)
                 .add(Attributes.ATTACK_DAMAGE, 1.0D)
                 .add(Attributes.ARMOR, 4.0D)
 				.build();

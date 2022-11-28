@@ -61,7 +61,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 	protected float playerJumpPendingScale;
 	private boolean allowStandSliding;
 
-	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(SNSUnicornEntity.class, EntityDataSerializers.INT);
 
@@ -157,7 +157,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
 				.add(Attributes.JUMP_STRENGTH, 1f)
-				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.25f).build();
 	}
 
 	protected void registerGoals() {
@@ -185,7 +185,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 		} else {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.25f);
 		}
 	}
 
@@ -236,7 +236,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 					this.tame(player);
 					this.navigation.stop();
 
-					this.setTarget((LivingEntity)null);
+					this.setTarget(null);
 					this.setOrderedToSit(true);
 					this.level.broadcastEntityEvent(this, (byte)7);
 				} else {
@@ -426,8 +426,8 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 					if (f1 > 0.0F) {
 						float f2 = Mth.sin(this.getYRot() * ((float)Math.PI / 180F));
 						float f3 = Mth.cos(this.getYRot() * ((float)Math.PI / 180F));
-						this.setDeltaMovement(this.getDeltaMovement().add((double)(-0.4F * f2 * this.playerJumpPendingScale),
-								0.0D, (double)(0.4F * f3 * this.playerJumpPendingScale)));
+						this.setDeltaMovement(this.getDeltaMovement().add(-0.4F * f2 * this.playerJumpPendingScale,
+								0.0D, 0.4F * f3 * this.playerJumpPendingScale));
 					}
 
 					this.playerJumpPendingScale = 0.0F;
@@ -436,7 +436,7 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 				this.flyingSpeed = this.getSpeed() * 0.1F;
 				if (this.isControlledByLocalInstance()) {
 					this.setSpeed((float)this.getAttributeValue(Attributes.MOVEMENT_SPEED));
-					super.travel(new Vec3((double)f, pTravelVector.y, (double)f1));
+					super.travel(new Vec3(f, pTravelVector.y, f1));
 				} else if (livingentity instanceof Player) {
 					this.setDeltaMovement(Vec3.ZERO);
 				}
