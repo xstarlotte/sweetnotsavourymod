@@ -1086,11 +1086,9 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .Properties
 						  .of(Material.METAL)
 						  .requiresCorrectToolForDrops()
-						  .strength(3.5F).sound(SoundType
-								  .LANTERN)
-						  .lightLevel((p_187433_) -> {
-							  return 15;
-						  }).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+						  .strength(3.5F).sound(SoundType.LANTERN)
+						  .lightLevel((p_187433_) -> 15)
+						  .noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	      public static final RegistryObject<Block> STRAWBERRYLAMP = registerBlock("strawberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
