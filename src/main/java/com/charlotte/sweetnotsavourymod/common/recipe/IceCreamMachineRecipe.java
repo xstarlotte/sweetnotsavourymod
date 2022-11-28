@@ -68,6 +68,11 @@ public class IceCreamMachineRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return recipeItems;
+    }
+
+    @Override
     public RecipeSerializer<?> getSerializer() {
         return RecipeSerializerInit.ICE_CREAM_SERIALIZER.get();
     }
