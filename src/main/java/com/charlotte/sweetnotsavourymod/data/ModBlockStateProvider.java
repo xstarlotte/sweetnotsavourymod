@@ -5,6 +5,8 @@ import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -34,6 +36,35 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlock(BlockInit.FROSTING_DOOR);
         doorBlock(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR);
         doorBlock(BlockInit.TOOTHPASTE_DOOR);
+        fenceGateBlock(BlockInit.HARDENED_BANANA_FENCE_GATE, BlockInit.HARDENEDBANANAPLANKS);
+        fenceGateBlock(BlockInit.WAFER_WOOD_FENCE_GATE, BlockInit.WAFERWOODBLOCK);
+        fenceGateBlock(BlockInit.STRAWBERRY_CANDY_FENCE_GATE, BlockInit.STRAWBERRYCANDYBLOCK);
+        fenceGateBlock(BlockInit.RASPBERRY_CANDY_FENCE_GATE, BlockInit.RASPBERRYCANDYBLOCK);
+        fenceGateBlock(BlockInit.BLACKBERRY_CANDY_FENCE_GATE, BlockInit.BLACKBERRYCANDYBLOCK);
+        fenceGateBlock(BlockInit.BLUEBERRY_CANDY_FENCE_GATE, BlockInit.BLUEBERRYCANDYBLOCK);
+        fenceGateBlock(BlockInit.ORANGE_CANDY_FENCE_GATE, BlockInit.ORANGECANDYBLOCK);
+        fenceGateBlock(BlockInit.LEMON_CANDY_FENCE_GATE, BlockInit.LEMONCANDYBLOCK);
+        fenceGateBlock(BlockInit.LIME_CANDY_FENCE_GATE, BlockInit.LIMECANDYBLOCK);
+        fenceGateBlock(BlockInit.MANGO_CANDY_FENCE_GATE, BlockInit.MANGOCANDYBLOCK);
+        fenceGateBlock(BlockInit.PEACH_CANDY_FENCE_GATE, BlockInit.PEACHCANDYBLOCK);
+        fenceGateBlock(BlockInit.CANDYFLOSS_FENCE_GATE, BlockInit.CANDYFLOSSBLOCK);
+        slabBlock(BlockInit.CANDYFLOSS_SLAB, BlockInit.CANDYFLOSSBLOCK);
+    }
+
+    private <T extends Block> void slabBlock(RegistryObject<T> slabObj, RegistryObject<Block> fullBlockObj) {
+        if (slabObj.get() instanceof SlabBlock slabBlock) {
+            slabBlock(slabBlock, modLoc("block/%s".formatted(fullBlockObj.getId().getPath())), modLoc("blocks/%s".formatted(fullBlockObj.getId().getPath())));
+        } else {
+            throw new IllegalArgumentException("%s is not an instance of SlabBlock".formatted(slabObj.get()));
+        }
+    }
+
+    private <T extends Block> void fenceGateBlock(RegistryObject<T> gateBlockObj, RegistryObject<Block> textureBlockObj) {
+        if (gateBlockObj.get() instanceof FenceGateBlock gateBlock) {
+            fenceGateBlock(gateBlock, modLoc("blocks/%s".formatted(textureBlockObj.getId().getPath())));
+        } else {
+            throw new IllegalArgumentException("%s is not an instance of FenceGateBlock".formatted(gateBlockObj.get()));
+        }
     }
 
     private <T extends Block> void doorBlock(RegistryObject<T> block) {
