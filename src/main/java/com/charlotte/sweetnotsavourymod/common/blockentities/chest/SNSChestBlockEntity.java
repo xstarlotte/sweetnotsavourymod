@@ -128,20 +128,20 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		}
 	}
 
+	@Override
 	public void startOpen(Player pPlayer) {
 		Level level = this.getLevel();
 		if (!this.remove && !pPlayer.isSpectator() && level != null) {
 			this.openersCounter.incrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
 		}
-
 	}
 
+	@Override
 	public void stopOpen(Player pPlayer) {
 		Level level = this.getLevel();
 		if (!this.remove && !pPlayer.isSpectator() && level != null) {
 			this.openersCounter.decrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
 		}
-
 	}
 
 	protected NonNullList<ItemStack> getItems() {
@@ -174,6 +174,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		pOtherChest.setItems(nonnulllist);
 	}
 
+	@Override
 	protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer) {
 		return menuType.get().create(pId, pPlayer);
 	}
