@@ -69,16 +69,15 @@ public class CandyflossCrystalizerBlock extends BaseEntityBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide()) {
-            BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof CandyflossCrystalizerBlockEntity be) {
+        BlockEntity entity = pLevel.getBlockEntity(pPos);
+        if(entity instanceof CandyflossCrystalizerBlockEntity be) {
+            if (!pLevel.isClientSide()) {
                 NetworkHooks.openScreen((ServerPlayer) pPlayer, be, pPos);
-                return InteractionResult.sidedSuccess(pLevel.isClientSide());
-            } else {
-                throw new IllegalStateException("Our Container provider is missing!");
             }
+            return InteractionResult.sidedSuccess(pLevel.isClientSide());
+        } else {
+            throw new IllegalStateException("Our Container provider is missing!");
         }
-        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 
     @Nullable
