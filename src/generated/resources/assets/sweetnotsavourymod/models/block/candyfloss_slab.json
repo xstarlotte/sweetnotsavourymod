@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab",
   "textures": {
     "bottom": "sweetnotsavourymod:blocks/candyflossblock",
-    "top": "sweetnotsavourymod:blocks/candyflossblock",
-    "side": "sweetnotsavourymod:blocks/candyflossblock"
+    "side": "sweetnotsavourymod:blocks/candyflossblock",
+    "top": "sweetnotsavourymod:blocks/candyflossblock"
   }
 }
