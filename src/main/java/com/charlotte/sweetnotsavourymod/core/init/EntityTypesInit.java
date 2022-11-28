@@ -61,7 +61,7 @@ public class EntityTypesInit {
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsgp").toString()));
 
-	public static final RegistryObject<EntityType<GingerbreadManEntity>>GINGERBREAD_MAN = ENTITY_TYPES
+	public static final RegistryObject<EntityType<GingerbreadManEntity>> GINGERBREAD_MAN = ENTITY_TYPES
 			.register("gingerbread_man", () -> EntityType.Builder.of(GingerbreadManEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "gingerbread_man").toString()));

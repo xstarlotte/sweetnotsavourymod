@@ -11,11 +11,21 @@ import com.charlotte.sweetnotsavourymod.core.init.*;
 import com.charlotte.sweetnotsavourymod.core.sound.SoundsInit;
 import com.charlotte.sweetnotsavourymod.core.util.StrippingMap;
 import com.charlotte.sweetnotsavourymod.data.worldgen.ModVegetationFeatures;
+import net.minecraft.core.Direction;
+import net.minecraft.core.dispenser.DispenseItemBehavior;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.WaterAnimal;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,6 +33,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -103,8 +114,25 @@ public class SweetNotSavouryMod {
            flowerPot.addPlant(BlockInit.TOFFEECONEFLOWER.getId(), BlockInit.POTTED_TOFFEECONEFLOWER);
            flowerPot.addPlant(BlockInit.CHOCOLATECONEFLOWER.getId(), BlockInit.POTTED_CHOCOLATECONEFLOWER);
 
-            
+           DispenseItemBehavior behavior = (pSource, pStack) -> {
+               Direction direction = pSource.getBlockState().getValue(DispenserBlock.FACING);
+               EntityType<?> entitytype = ((SpawnEggItem)pStack.getItem()).getType(pStack.getTag());
 
+               try {
+                   entitytype.spawn(pSource.getLevel(), pStack, null, pSource.getPos().relative(direction), MobSpawnType.DISPENSER, direction != Direction.UP, false);
+               } catch (Exception exception) {
+                   LOGGER.error("Error while dispensing spawn egg from dispenser at {}", pSource.getPos(), exception);
+                   return ItemStack.EMPTY;
+               }
+
+               pStack.shrink(1);
+               pSource.getLevel().gameEvent(null, GameEvent.ENTITY_PLACE, pSource.getPos());
+               return pStack;
+           };
+
+            for (RegistryObject<SpawnEggItem> egg : ItemInit.getRegisteredEggs()) {
+                DispenserBlock.registerBehavior(egg.get(), behavior);
+            }
         });
     }
 
