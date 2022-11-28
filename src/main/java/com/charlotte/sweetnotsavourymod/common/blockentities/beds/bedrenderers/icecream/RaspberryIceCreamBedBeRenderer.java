@@ -2,11 +2,9 @@ package com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.
 
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.SNSBaseBedBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.BaseBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.events.ClientEventBusSubscriber;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-
-import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.RASPBERRYICECREAMBEDBOTTOM;
-import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.RASPBERRYICECREAMBEDHEAD;
 
 public class RaspberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
     public RaspberryIceCreamBedBeRenderer(BlockEntityRendererProvider.Context context){
@@ -19,7 +17,7 @@ public class RaspberryIceCreamBedBeRenderer extends BaseBedBeRenderer {
             this.be = be;
         }
 
-        this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel(RASPBERRYICECREAMBEDBOTTOM);
-        this.headbedmodel = Minecraft.getInstance().getModelManager().getModel(RASPBERRYICECREAMBEDHEAD);
+        this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel(ClientEventBusSubscriber.RASPBERRYICECREAMBEDBOTTOM);
+        this.headbedmodel = Minecraft.getInstance().getModelManager().getModel(ClientEventBusSubscriber.RASPBERRYICECREAMBEDHEAD);
     }
 }
