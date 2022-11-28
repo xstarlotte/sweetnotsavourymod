@@ -58,10 +58,11 @@ public class CandyflossCrystalizerBlock extends BaseEntityBlock {
 
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
         if(pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof CandyflossCrystalizerBlockEntity) {
-                ((CandyflossCrystalizerBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof CandyflossCrystalizerBlockEntity be) {
+                be.drops();
             }
          }
     }
@@ -71,12 +72,13 @@ public class CandyflossCrystalizerBlock extends BaseEntityBlock {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof CandyflossCrystalizerBlockEntity be) {
-                NetworkHooks.openScreen(((ServerPlayer) pPlayer), be, pPos);
+                NetworkHooks.openScreen((ServerPlayer) pPlayer, be, pPos);
+                return InteractionResult.sidedSuccess(pLevel.isClientSide());
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
         }
-        return InteractionResult.sidedSuccess(pLevel.isClientSide());
+        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 
     @Nullable
