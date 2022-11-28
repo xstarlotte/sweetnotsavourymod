@@ -1015,67 +1015,67 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> BLUEBERRY_CANDY_DOOR = registerBlock("blueberry_candy_door",
+	public static final RegistryObject<DoorBlock> BLUEBERRY_CANDY_DOOR = registerBlock("blueberry_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> BLACKBERRY_CANDY_DOOR = registerBlock("blackberry_candy_door",
+	public static final RegistryObject<DoorBlock> BLACKBERRY_CANDY_DOOR = registerBlock("blackberry_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> RASPBERRY_CANDY_DOOR = registerBlock("raspberry_candy_door",
+	public static final RegistryObject<DoorBlock> RASPBERRY_CANDY_DOOR = registerBlock("raspberry_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> ORANGE_CANDY_DOOR = registerBlock("orange_candy_door",
+	public static final RegistryObject<DoorBlock> ORANGE_CANDY_DOOR = registerBlock("orange_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> LEMON_CANDY_DOOR = registerBlock("lemon_candy_door",
+	public static final RegistryObject<DoorBlock> LEMON_CANDY_DOOR = registerBlock("lemon_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> LIME_CANDY_DOOR = registerBlock("lime_candy_door",
+	public static final RegistryObject<DoorBlock> LIME_CANDY_DOOR = registerBlock("lime_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> MANGO_CANDY_DOOR = registerBlock("mango_candy_door",
+	public static final RegistryObject<DoorBlock> MANGO_CANDY_DOOR = registerBlock("mango_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> PEACH_CANDY_DOOR = registerBlock("peach_candy_door",
+	public static final RegistryObject<DoorBlock> PEACH_CANDY_DOOR = registerBlock("peach_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> CANDYFLOSS_DOOR = registerBlock("candyfloss_door",
+	public static final RegistryObject<DoorBlock> CANDYFLOSS_DOOR = registerBlock("candyfloss_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> WAFER_WOOD_DOOR = registerBlock("wafer_wood_door",
+	public static final RegistryObject<DoorBlock> WAFER_WOOD_DOOR = registerBlock("wafer_wood_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> CHOCOLATE_WAFER_WOOD_DOOR = registerBlock("chocolate_wafer_wood_door",
+	public static final RegistryObject<DoorBlock> CHOCOLATE_WAFER_WOOD_DOOR = registerBlock("chocolate_wafer_wood_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> WAFER_PLANK_DOOR = registerBlock("wafer_plank_door",
+	public static final RegistryObject<DoorBlock> WAFER_PLANK_DOOR = registerBlock("wafer_plank_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> CHOCOLATE_WAFER_PLANK_DOOR = registerBlock("chocolate_wafer_plank_door",
+	public static final RegistryObject<DoorBlock> CHOCOLATE_WAFER_PLANK_DOOR = registerBlock("chocolate_wafer_plank_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> FROSTING_DOOR = registerBlock("frosting_door",
+	public static final RegistryObject<DoorBlock> FROSTING_DOOR = registerBlock("frosting_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> ROTTEN_MOULDY_CANDY_CANE_DOOR = registerBlock("rotten_mouldy_candy_cane_door",
+	public static final RegistryObject<DoorBlock> ROTTEN_MOULDY_CANDY_CANE_DOOR = registerBlock("rotten_mouldy_candy_cane_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> TOOTHPASTE_DOOR = registerBlock("toothpaste_door",
+	public static final RegistryObject<DoorBlock> TOOTHPASTE_DOOR = registerBlock("toothpaste_door",
 			() -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
 					.strength(5f).requiresCorrectToolForDrops().noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 

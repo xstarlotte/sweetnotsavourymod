@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/chocolate_wafer_wood_door_bottom",
+    "top": "sweetnotsavourymod:blocks/chocolate_wafer_wood_door_top"
+  }
+}

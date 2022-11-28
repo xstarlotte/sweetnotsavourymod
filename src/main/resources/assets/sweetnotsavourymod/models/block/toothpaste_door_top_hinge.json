@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_rh",
-  "textures": {
-    "top": "sweetnotsavourymod:blocks/toothpaste_door_top",
-    "bottom": "sweetnotsavourymod:blocks/toothpaste_door_bottom"
-  }
-}
