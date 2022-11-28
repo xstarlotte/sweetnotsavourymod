@@ -42,7 +42,7 @@ public class CandyflossCrystalizerBlockEntity extends BlockEntity implements Men
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("sweetnotsavoury.container.candyfloss_crystalizer");
+        return Component.translatable("container.sweetnotsavourymod.candyfloss_crystalizer");
     }
 
     @Nullable

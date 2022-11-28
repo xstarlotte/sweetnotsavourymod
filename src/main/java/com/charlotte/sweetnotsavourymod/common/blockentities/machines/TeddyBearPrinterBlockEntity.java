@@ -44,7 +44,7 @@ public class TeddyBearPrinterBlockEntity extends BlockEntity implements MenuProv
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("sweetnotsavoury.container.teddy_bear_printer");
+        return Component.translatable("container.sweetnotsavourymod.teddy_bear_printer");
     }
 
     @Nullable

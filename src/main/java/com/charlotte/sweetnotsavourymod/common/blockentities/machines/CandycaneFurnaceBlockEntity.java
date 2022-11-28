@@ -44,7 +44,7 @@ public class CandycaneFurnaceBlockEntity extends BlockEntity implements MenuProv
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("sweetnotsavoury.container.candycane_furnace");
+        return Component.translatable("container.sweetnotsavourymod.candycane_furnace");
     }
 
     @Nullable

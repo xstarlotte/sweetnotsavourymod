@@ -45,7 +45,7 @@ public class CakeBakerBlockEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("sweetnotsavoury.container.cake_baker");
+        return Component.translatable("container.sweetnotsavourymod.cake_baker");
     }
 
     @Nullable

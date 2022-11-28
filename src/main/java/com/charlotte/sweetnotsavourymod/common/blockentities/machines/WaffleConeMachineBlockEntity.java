@@ -42,7 +42,7 @@ public class WaffleConeMachineBlockEntity extends BlockEntity implements MenuPro
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("sweetnotsavoury.container.waffle_cone_machine");
+        return Component.translatable("container.sweetnotsavourymod.waffle_cone_machine");
     }
 
     @Nullable

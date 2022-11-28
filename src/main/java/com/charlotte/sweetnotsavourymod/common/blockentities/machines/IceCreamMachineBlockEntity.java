@@ -45,7 +45,7 @@ public class IceCreamMachineBlockEntity extends BlockEntity implements MenuProvi
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("sweetnotsavoury.container.ice_cream_machine");
+        return Component.translatable("container.sweetnotsavourymod.ice_cream_machine");
     }
 
     @Nullable

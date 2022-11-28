@@ -44,7 +44,7 @@ public class JamPresserBlockEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("sweetnotsavoury.container.jam_presser");
+        return Component.translatable("container.sweetnotsavourymod.jam_presser");
     }
 
     @Nullable
