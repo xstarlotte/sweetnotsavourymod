@@ -4,7 +4,10 @@ import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestBlock
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuProvider;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import mcp.MethodsReturnNonnullByDefault;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.entity.passive.CatEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
@@ -32,17 +35,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
-import java.util.Random;
 import java.util.function.Supplier;
 
 @SuppressWarnings("deprecation")
@@ -55,19 +54,25 @@ public class SNSChestBlock extends Block implements ITileEntityProvider {
 	public static final int EVENT_SET_OPEN_COUNT = 1;
 	protected static final int AABB_OFFSET = 1;
 	protected static final int AABB_HEIGHT = 14;
-	protected static final VoxelShape NORTH_AABB = VoxelShapes.box(1.0D, 0.0D, 0.0D, 15.0D, 14.0D, 15.0D);
-	protected static final VoxelShape SOUTH_AABB = VoxelShapes.box(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 16.0D);
-	protected static final VoxelShape WEST_AABB = VoxelShapes.box(0.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
-	protected static final VoxelShape EAST_AABB = VoxelShapes.box(1.0D, 0.0D, 1.0D, 16.0D, 14.0D, 15.0D);
-	protected static final VoxelShape AABB = VoxelShapes.box(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
+	protected static final VoxelShape NORTH_AABB = box(1.0D, 0.0D, 0.0D, 15.0D, 14.0D, 15.0D);
+	protected static final VoxelShape SOUTH_AABB = box(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 16.0D);
+	protected static final VoxelShape WEST_AABB = box(0.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
+	protected static final VoxelShape EAST_AABB = box(1.0D, 0.0D, 1.0D, 16.0D, 14.0D, 15.0D);
+	protected static final VoxelShape AABB = box(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
 
 
 	public final Supplier<TileEntityType<SNSChestBlockEntity>> blockEntity;
 	public final Supplier<SNSChestMenuType> menuSingle, menuDouble;
 	public final int containerSize;
 	public final boolean doubleAble;
-
-
+	
+	@Override
+	public boolean triggerEvent(BlockState p_189539_1_, World p_189539_2_, BlockPos p_189539_3_, int p_189539_4_, int p_189539_5_) {
+		super.triggerEvent(p_189539_1_, p_189539_2_, p_189539_3_, p_189539_4_, p_189539_5_);
+		TileEntity tileentity = p_189539_2_.getBlockEntity(p_189539_3_);
+		return tileentity != null && tileentity.triggerEvent(p_189539_4_, p_189539_5_);
+	}
+	
 	public SNSChestBlock(Properties properties, Supplier<TileEntityType<SNSChestBlockEntity>> blockEntity, Supplier<SNSChestMenuType> menuSingle, Supplier<SNSChestMenuType> menuDouble, int containerSize, boolean doubleAble) {
 		super(properties);
 		this.blockEntity = blockEntity;
@@ -97,14 +102,14 @@ public class SNSChestBlock extends Block implements ITileEntityProvider {
 			pLevel.getLiquidTicks().scheduleTick(pCurrentPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
 		}
 		
-		if (pFacingState.is(this) && pFacing.getAxis().isHorizontal()) {
-			ChestType chesttype = pFacingState.getValue(TYPE);
-			if (pState.getValue(TYPE) == ChestType.SINGLE && chesttype != ChestType.SINGLE && pState.getValue(FACING) == pFacingState.getValue(FACING) && getConnectedDirection(pFacingState) == pFacing.getOpposite()) {
-				return pState.setValue(TYPE, chesttype.getOpposite());
-			}
-		} else if (getConnectedDirection(pState) == pFacing) {
-			return pState.setValue(TYPE, ChestType.SINGLE);
-		}
+//		if (pFacingState.is(this) && pFacing.getAxis().isHorizontal()) {
+//			ChestType chesttype = pFacingState.getValue(TYPE);
+//			if (pState.getValue(TYPE) == ChestType.SINGLE && chesttype != ChestType.SINGLE && pState.getValue(FACING) == pFacingState.getValue(FACING) && getConnectedDirection(pFacingState) == pFacing.getOpposite()) {
+//				return pState.setValue(TYPE, chesttype.getOpposite());
+//			}
+//		} else if (getConnectedDirection(pState) == pFacing) {
+//			return pState.setValue(TYPE, ChestType.SINGLE);
+//		}
 		
 		return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
 	}

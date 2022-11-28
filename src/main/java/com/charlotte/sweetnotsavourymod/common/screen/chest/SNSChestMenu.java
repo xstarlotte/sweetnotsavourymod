@@ -53,7 +53,13 @@ public class SNSChestMenu extends Container {
 	public boolean stillValid(PlayerEntity player) {
 		return container.stillValid(player);
 	}
-
+	
+	@Override
+	public void removed(PlayerEntity p_75134_1_) {
+		super.removed(p_75134_1_);
+		this.container.stopOpen(p_75134_1_);
+	}
+	
 	@Override
 	public ItemStack quickMoveStack(PlayerEntity pPlayer, int pIndex) {
 		ItemStack stack = ItemStack.EMPTY;

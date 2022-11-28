@@ -50,6 +50,12 @@ public class SNSChestRenderer extends TileEntityRenderer<SNSChestBlockEntity> {
 	}
 
 	private static final float HALF_PI = (float)Math.PI / 2;
+	
+	@Override
+	public boolean shouldRenderOffScreen(SNSChestBlockEntity p_188185_1_) {
+		return true;
+	}
+	
 	@Override
 	public void render(SNSChestBlockEntity entity, float partialTick, MatrixStack stack, IRenderTypeBuffer bufferSource, int light, int overlay) {
 		Minecraft minecraft = Minecraft.getInstance();

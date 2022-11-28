@@ -1,6 +1,8 @@
 package com.charlotte.sweetnotsavourymod.common.blockentities.chest;
 
 import com.charlotte.sweetnotsavourymod.common.block.SNSChestBlock;
+import com.charlotte.sweetnotsavourymod.common.block.SNSChestBlockDoubleAble;
+import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenu;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.block.Block;
@@ -11,7 +13,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.DoubleSidedInventory;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -19,7 +20,6 @@ import net.minecraft.state.properties.ChestType;
 import net.minecraft.tileentity.*;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -32,7 +32,6 @@ import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Supplier;
 
-@SuppressWarnings("deprecation")
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class SNSChestBlockEntity extends LockableLootTileEntity implements IChestLid, ITickableTileEntity {
@@ -115,7 +114,7 @@ public class SNSChestBlockEntity extends LockableLootTileEntity implements IChes
 		
 	}
 	private void playSound(SoundEvent p_195483_1_) {
-		ChestType chesttype = this.getBlockState().getValue(ChestBlock.TYPE);
+		ChestType chesttype = getBlockState().getBlock() instanceof SNSChestBlockDoubleAble ? this.getBlockState().getValue(ChestBlock.TYPE) : ChestType.SINGLE;
 		if (chesttype != ChestType.LEFT) {
 			double d0 = (double)this.worldPosition.getX() + 0.5D;
 			double d1 = (double)this.worldPosition.getY() + 0.5D;
@@ -161,7 +160,7 @@ public class SNSChestBlockEntity extends LockableLootTileEntity implements IChes
 	
 	protected void signalOpenCount() {
 		Block block = this.getBlockState().getBlock();
-		if (block instanceof ChestBlock) {
+		if (block instanceof SNSChestBlock) {
 			this.level.blockEvent(this.worldPosition, block, 1, this.openCount);
 			this.level.updateNeighborsAt(this.worldPosition, block);
 		}
@@ -193,8 +192,8 @@ public class SNSChestBlockEntity extends LockableLootTileEntity implements IChes
 		float f = 5.0F;
 		
 		for(PlayerEntity playerentity : p_213976_0_.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB((double)((float)p_213976_2_ - 5.0F), (double)((float)p_213976_3_ - 5.0F), (double)((float)p_213976_4_ - 5.0F), (double)((float)(p_213976_2_ + 1) + 5.0F), (double)((float)(p_213976_3_ + 1) + 5.0F), (double)((float)(p_213976_4_ + 1) + 5.0F)))) {
-			if (playerentity.containerMenu instanceof ChestContainer) {
-				IInventory iinventory = ((ChestContainer)playerentity.containerMenu).getContainer();
+			if (playerentity.containerMenu instanceof SNSChestMenu) {
+				IInventory iinventory = ((SNSChestMenu)playerentity.containerMenu).container;
 				if (iinventory == p_213976_1_ || iinventory instanceof DoubleSidedInventory && ((DoubleSidedInventory)iinventory).contains(p_213976_1_)) {
 					++i;
 				}
@@ -256,10 +255,5 @@ public class SNSChestBlockEntity extends LockableLootTileEntity implements IChes
 			chestHandler.invalidate();
 			chestHandler = null;
 		}
-	}
-
-	protected void signalOpenCount(World pLevel, BlockPos pPos, BlockState pState, int p_155336_, int p_155337_) {
-		Block block = pState.getBlock();
-		pLevel.blockEvent(pPos, block, 1, p_155337_);
 	}
 }
