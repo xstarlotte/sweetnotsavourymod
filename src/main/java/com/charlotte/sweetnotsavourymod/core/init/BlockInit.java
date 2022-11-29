@@ -477,14 +477,14 @@ public class BlockInit {
 			() -> new FlowerPotBlock(null, BlockInit.POISONBERRYPLANT,AbstractBlock.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()));
 
-	//public static final RegistryObject<Block> CANDYCANESUGARCANEBLOCK = registerBlock("candycanesugarcaneblock",
-	//		() -> new CandyCaneSugarCaneBlock(AbstractBlock.Properties
-	//				.of(Material.PLANTS)
-	//				.noCollission()
-	//				.randomTicks()
-	//				.noOcclusion()
-	//				.instabreak()
-	//				.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	public static final RegistryObject<Block> CANDYCANESUGARCANEBLOCK = registerBlock("candycanesugarcaneblock",
+			() -> new CandyCaneSugarCaneBlock(AbstractBlock.Properties
+					.of(Material.PLANT)
+					.noCollission()
+					.randomTicks()
+					.noOcclusion()
+					.instabreak()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	//POISONBERRY-STUFF
 

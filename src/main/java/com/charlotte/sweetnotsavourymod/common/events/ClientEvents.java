@@ -143,7 +143,7 @@ public class ClientEvents {
         RenderTypeLookup.setRenderLayer(BlockInit.LEMONWAFFLEBED.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(BlockInit.ORANGEWAFFLEBED.get(), RenderType.cutout());
 
-        // RenderTypeLookup.setRenderLayer(BlockInit.CANDYCANESUGARCANEBLOCK.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.CANDYCANESUGARCANEBLOCK.get(), RenderType.cutout());
 
         RenderTypeLookup.setRenderLayer(BlockInit.POISONBERRYLANTERN.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(BlockInit.STRAWBERRYLAMP.get(), RenderType.cutout());
