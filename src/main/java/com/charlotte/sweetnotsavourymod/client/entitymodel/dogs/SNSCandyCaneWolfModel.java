@@ -7,17 +7,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSCandyCaneWolfModel extends AnimatedGeoModel<SNSCandyCaneWolfEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSCandyCaneWolfEntity entity) {
+	public ResourceLocation getModelResource(SNSCandyCaneWolfEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/wolf.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(SNSCandyCaneWolfEntity entity) {
+	public ResourceLocation getTextureResource(SNSCandyCaneWolfEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "textures/entity/candycanewolf/candycanewolf.png");
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSCandyCaneWolfEntity entity) {
+	public ResourceLocation getAnimationResource(SNSCandyCaneWolfEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/wolf.animation.json");
 	}
 }

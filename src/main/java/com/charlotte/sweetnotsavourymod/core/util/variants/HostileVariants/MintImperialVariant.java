@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum MintImperialVariant {
+public enum MintImperialVariant implements IVariant {
     ONE(0),
     TWO(1),
     THREE(2),
@@ -13,7 +15,7 @@ public enum MintImperialVariant {
             comparingInt(MintImperialVariant::getId)).toArray(MintImperialVariant[]::new);
     private final int id;
 
-    private MintImperialVariant(int p_30984_) {
+    MintImperialVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

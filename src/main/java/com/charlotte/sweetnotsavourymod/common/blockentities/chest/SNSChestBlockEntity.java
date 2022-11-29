@@ -9,7 +9,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -19,7 +18,6 @@ import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -79,7 +77,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 	}
 
 	protected Component getDefaultName() {
-		return new TranslatableComponent("container.chest");
+		return Component.translatable("container.chest");
 	}
 
 	public void load(CompoundTag pTag) {
@@ -130,20 +128,20 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		}
 	}
 
+	@Override
 	public void startOpen(Player pPlayer) {
 		Level level = this.getLevel();
 		if (!this.remove && !pPlayer.isSpectator() && level != null) {
 			this.openersCounter.incrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
 		}
-
 	}
 
+	@Override
 	public void stopOpen(Player pPlayer) {
 		Level level = this.getLevel();
 		if (!this.remove && !pPlayer.isSpectator() && level != null) {
 			this.openersCounter.decrementOpeners(pPlayer, level, this.getBlockPos(), this.getBlockState());
 		}
-
 	}
 
 	protected NonNullList<ItemStack> getItems() {
@@ -176,6 +174,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 		pOtherChest.setItems(nonnulllist);
 	}
 
+	@Override
 	protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer) {
 		return menuType.get().create(pId, pPlayer);
 	}

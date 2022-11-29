@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class MintImperialModel extends AnimatedGeoModel<MintImperialEntity> {
 	@Override
-	public ResourceLocation getModelLocation(MintImperialEntity entity) {
+	public ResourceLocation getModelResource(MintImperialEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/mintimperial.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(MintImperialEntity entity)	{
+	public ResourceLocation getTextureResource(MintImperialEntity entity)	{
 		return MintImperialRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(MintImperialEntity entity) {
+	public ResourceLocation getAnimationResource(MintImperialEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/mintimperial.animation.json");
 	}
 }

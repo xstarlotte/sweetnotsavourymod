@@ -36,10 +36,12 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.UUID;
 
@@ -47,7 +49,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 
 	public int eggTime = this.random.nextInt(6000) + 6000;
 
-	private AnimationFactory factory = new AnimationFactory(this);
+	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
 	private static final EntityDataAccessor<Boolean> SITTING =
 			SynchedEntityData.defineId(ChocolateChickenEntity.class, EntityDataSerializers.BOOLEAN);
@@ -79,7 +81,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 				.add(Attributes.MAX_HEALTH, 80.0D)
 				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.25f).build();
 	}
 
 	protected void registerGoals() {
@@ -109,23 +111,23 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
 		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.running", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.running", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 
 		if (this.isSitting()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.sitting", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.sitting", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chicken.idle", ILoopType.EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 	}
 
 	@Override
 	public void registerControllers(AnimationData data)
 	{
-		data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
 	}
 
 	@Override
@@ -202,11 +204,11 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 		if (tamed) {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(80.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(4D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.5f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.5D);
 		} else {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		}
 	}
 
@@ -245,7 +247,7 @@ public class ChocolateChickenEntity extends TamableAnimal implements IAnimatable
 	}
 
 	public Vec3 getLeashOffset() {
-		return new Vec3(0.0D, (double)(0.6F * this.getEyeHeight()), (double)(this.getBbWidth() * 0.4F));
+		return new Vec3(0.0D, 0.6F * this.getEyeHeight(), this.getBbWidth() * 0.4F);
 	}
 
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {

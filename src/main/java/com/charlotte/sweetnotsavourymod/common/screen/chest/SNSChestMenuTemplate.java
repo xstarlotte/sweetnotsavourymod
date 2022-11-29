@@ -5,7 +5,6 @@ import net.minecraft.resources.ResourceLocation;
 
 public class SNSChestMenuTemplate {
 
-
 	public final String id;
 	public ResourceLocation texture;
 	public final int width, height;

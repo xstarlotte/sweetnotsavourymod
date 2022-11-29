@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "S",
-    "S"
-  ],
   "key": {
     "S": {
       "item": "sweetnotsavourymod:candycanesugar"
     }
   },
+  "pattern": [
+    "S",
+    "S"
+  ],
   "result": {
     "item": "sweetnotsavourymod:sugarstick"
   }

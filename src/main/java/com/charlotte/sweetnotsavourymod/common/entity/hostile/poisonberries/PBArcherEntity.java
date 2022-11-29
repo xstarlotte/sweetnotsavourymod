@@ -1,6 +1,5 @@
 package com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries;
 
-
 import com.charlotte.sweetnotsavourymod.common.entityai.PoisonBerryOpensMiniDoorGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
@@ -27,13 +26,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class PBArcherEntity extends Monster implements IAnimatable, RangedAttackMob {
-	private AnimationFactory factory = new AnimationFactory(this);
+	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	public PBArcherEntity(EntityType<? extends Monster> type, Level worldIn) {
 		super(type, worldIn);
 	}
@@ -42,11 +43,11 @@ public class PBArcherEntity extends Monster implements IAnimatable, RangedAttack
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
 		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.poisonberry.walking", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.poisonberry.walking", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.poisonberry.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.poisonberry.idle", ILoopType.EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 	}
 
@@ -87,14 +88,14 @@ public class PBArcherEntity extends Monster implements IAnimatable, RangedAttack
 		return Monster
 				.createMonsterAttributes()
 				.add(Attributes.FOLLOW_RANGE, 70.0D)
-				.add(Attributes.MOVEMENT_SPEED, (double)0.34F)
+				.add(Attributes.MOVEMENT_SPEED, 0.34F)
 				.add(Attributes.ATTACK_DAMAGE, 1.0D)
 				.add(Attributes.ARMOR, 4.0D)
 				.build();
 	}
 
 	@Override
-	protected int getExperienceReward(Player p_21511_) {
+	public int getExperienceReward() {
 		return 64;
 	}
 

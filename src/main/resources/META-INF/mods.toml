@@ -1,25 +1,31 @@
-modLoader="javafml" 
-loaderVersion="[35,)" 
+modLoader="javafml"
+loaderVersion="[43,)"
 license="MIT"
 [[mods]]
-modId="sweetnotsavourymod" 
-version="${file.jarVersion}" 
-displayName="Sweet Not Savoury Mod" 
+modId="sweetnotsavourymod"
+version="${file.jarVersion}"
+displayName="Sweet Not Savoury Mod"
 logoFile="tutorialmod.png"
 credits="Sweet Not Savoury Mod by Charlotte"
 description='''
 Mod by Charlotte.
 '''
 
-[[dependencies.tutorialmod]]
-    modId="forge" 
-    mandatory=true 
-    versionRange="[39,)"
+[[dependencies.sweetnotsavourymod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.tutorialmod]]
+[[dependencies.sweetnotsavourymod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.1,)"
+    versionRange="[1.19.2,)"
     ordering="NONE"
+    side="BOTH"
+[[dependencies.sweetnotsavourymod]]
+    modId="geckolib3"
+    mandatory=true
+    versionRange="[3.1.37,)"
+    ordering="BEFORE"
     side="BOTH"

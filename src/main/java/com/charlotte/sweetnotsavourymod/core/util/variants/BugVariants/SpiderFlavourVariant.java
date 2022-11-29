@@ -1,20 +1,21 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.BugVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum SpiderFlavourVariant {
+public enum SpiderFlavourVariant implements IVariant {
     STRAWBERRYLACE(0),
     COLALACE(1),
     LEMONLACE(2),
     LIMELACE(3);
 
-
     private static final SpiderFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(SpiderFlavourVariant::getId)).toArray(SpiderFlavourVariant[]::new);
     private final int id;
 
-    private SpiderFlavourVariant(int p_30984_) {
+    SpiderFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

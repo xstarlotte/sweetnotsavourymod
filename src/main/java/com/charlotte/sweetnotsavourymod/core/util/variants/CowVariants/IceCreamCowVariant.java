@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.CowVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum IceCreamCowVariant {
+public enum IceCreamCowVariant implements IVariant {
 
     BLACKBERRY(0),
     RASPBERRY(1),
@@ -18,14 +20,11 @@ public enum IceCreamCowVariant {
     LEMON(10),
     ORANGE(11);
 
-
-   ;
-
     private static final IceCreamCowVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(IceCreamCowVariant::getId)).toArray((i) -> new IceCreamCowVariant[i]);
+            comparingInt(IceCreamCowVariant::getId)).toArray(IceCreamCowVariant[]::new);
     private final int id;
 
-    private IceCreamCowVariant(int p_30984_) {
+    IceCreamCowVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

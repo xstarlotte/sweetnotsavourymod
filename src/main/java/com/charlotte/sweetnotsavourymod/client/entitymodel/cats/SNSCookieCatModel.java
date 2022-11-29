@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSCookieCatModel extends AnimatedGeoModel<SNSCookieCatEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSCookieCatEntity entity) {
+	public ResourceLocation getModelResource(SNSCookieCatEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/cookiecat.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(SNSCookieCatEntity entity) {
+	public ResourceLocation getTextureResource(SNSCookieCatEntity entity) {
 		return SNSCookieCatRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSCookieCatEntity entity) {
+	public ResourceLocation getAnimationResource(SNSCookieCatEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/cat.animation.json");
 	}
 

@@ -7,13 +7,11 @@ public enum DolphinVariant {
     COLABOTTLE(0);
 
 
-   ;
-
     private static final DolphinVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(DolphinVariant::getId)).toArray((i) -> new DolphinVariant[i]);
     private final int id;
 
-    private DolphinVariant(int p_30984_) {
+    DolphinVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

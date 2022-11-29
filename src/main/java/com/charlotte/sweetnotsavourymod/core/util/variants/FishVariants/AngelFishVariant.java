@@ -7,13 +7,11 @@ public enum AngelFishVariant {
     ANGELCAKE(0);
 
 
-   ;
-
     private static final AngelFishVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(AngelFishVariant::getId)).toArray((i) -> new AngelFishVariant[i]);
     private final int id;
 
-    private AngelFishVariant(int p_30984_) {
+    AngelFishVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

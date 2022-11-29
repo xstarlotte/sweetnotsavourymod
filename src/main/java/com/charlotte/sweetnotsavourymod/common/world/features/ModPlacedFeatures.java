@@ -1,47 +1,72 @@
 package com.charlotte.sweetnotsavourymod.common.world.features;
 
-import net.minecraft.core.Holder;
+import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
+import com.google.gson.JsonElement;
+import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
-import net.minecraft.world.level.levelgen.placement.BiomeFilter;
-import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.resources.RegistryOps;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
+import java.util.Map;
 
 public class ModPlacedFeatures {
 
+    private final Map<ResourceLocation, PlacedFeature> map;
+    private final RegistryOps<JsonElement> registryOps;
+
+    public ModPlacedFeatures(Map<ResourceLocation, PlacedFeature> map, RegistryOps<JsonElement> registryOps) {
+        this.map = map;
+        this.registryOps = registryOps;
+        generate();
+    }
+
+    public static void bootstrap() {}
+
+    public void generate() {
+        add(ICE_CREAM_TREE_CHECKED);
+        add(CHOCOLATE_ICE_CREAM_TREE_CHECKED);
+        add(CANDY_CANE_BUSH_PLACED);
+        add(CHOCOLATE_CINERARIA_PLACED);
+        add(TOFFEE_TULIP_PLACED);
+    }
+
+    private void add(RegistryObject<PlacedFeature> holder) {
+        var registryOptional = registryOps.registry(Registry.PLACED_FEATURE_REGISTRY);
+        var key = holder.getKey();
+        if (registryOptional.isPresent() && key != null) {
+            var regHolder = registryOptional.get().getOrCreateHolderOrThrow(key);
+            map.put(key.location(), regHolder.value());
+        }
+    }
+
  //trees
 
-    public static final Holder<PlacedFeature> ICE_CREAM_PLACED = PlacementUtils.register("ice_cream_placed",
-            ModConfiguredFeature.ICE_CREAM_TREE_SPAWN, VegetationPlacements.treePlacement(
-                    PlacementUtils.countExtra(0, 0.2f, 1)));
+    public static final RegistryObject<PlacedFeature> ICE_CREAM_TREE_CHECKED = ModConfiguredFeatures.register("ice_cream_tree_checked",
+            ModConfiguredFeatures.ICE_CREAM_TREE, () -> List.of(PlacementUtils.filteredByBlockSurvival(BlockInit.ICECREAMTREESAPLING.get())));
 
-    public static final Holder<PlacedFeature> CHOCOLATE_ICE_CREAM_PLACED = PlacementUtils.register("chocolate_ice_cream_placed",
-            ModConfiguredFeature.CHOCOLATE_ICE_CREAM_TREE_SPAWN, VegetationPlacements.treePlacement(
-                    PlacementUtils.countExtra(0, 0.2f, 1)));
+    public static final RegistryObject<PlacedFeature> CHOCOLATE_ICE_CREAM_TREE_CHECKED = ModConfiguredFeatures.register("chocolate_ice_cream_tree_checked",
+            ModConfiguredFeatures.CHOCOLATE_ICE_CREAM_TREE, () -> List.of(PlacementUtils.filteredByBlockSurvival(BlockInit.CHOCOLATEICECREAMTREESAPLING.get())));
 
 //0.3, 0.4 don't work due to them not being in the list of weighted integers
 
    //flowers
 
-    public static final Holder<PlacedFeature> CANDYCANEBUSH_PLACED = PlacementUtils.register("candycanebush_placed",
-            ModConfiguredFeature.CANDYCANEBUSH, RarityFilter.onAverageOnceEvery(16),
-                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final RegistryObject<PlacedFeature> CANDY_CANE_BUSH_PLACED = ModConfiguredFeatures.register("candy_cane_bush_placed",
+            ModConfiguredFeatures.CANDY_CANE_BUSH,
+            () -> List.of(BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))
+    );
 
-    public static final Holder <PlacedFeature> CANDY_CANE_SPREAD_PLACED = PlacementUtils.register("candy_cane_spread_placed",
-            ModConfiguredFeature.CANDY_CANE_SPREAD, RarityFilter.onAverageOnceEvery(16),
-                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final RegistryObject<PlacedFeature> CHOCOLATE_CINERARIA_PLACED = ModConfiguredFeatures.register("chocolate_cineraria_spread_placed",
+            ModConfiguredFeatures.CHOCOLATE_CINERARIA,
+            () -> List.of(BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))
+    );
 
-    public static final Holder <PlacedFeature> CHOCOLATECINERARIA_PLACED = PlacementUtils.register("chocolatecineraria_spread_placed",
-            ModConfiguredFeature.CHOCOLATECINERARIA, RarityFilter.onAverageOnceEvery(16),
-            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-
-    public static final Holder <PlacedFeature> TOFFEETULIP_PLACED = PlacementUtils.register("toffeetulip_spread_placed",
-            ModConfiguredFeature.TOFFEETULIP, RarityFilter.onAverageOnceEvery(16),
-            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-
-    public static final Holder <PlacedFeature> CANDY_BUSH_SPREAD_PLACED = PlacementUtils.register("candy_bush_spread_placed",
-            ModConfiguredFeature.CANDY_BUSH_SPREAD, RarityFilter.onAverageOnceEvery(42),
-            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-
+    public static final RegistryObject<PlacedFeature> TOFFEE_TULIP_PLACED = ModConfiguredFeatures.register("toffee_tulip_spread_placed",
+            ModConfiguredFeatures.TOFFEE_TULIP,
+            () -> List.of(BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE))
+    );
 }

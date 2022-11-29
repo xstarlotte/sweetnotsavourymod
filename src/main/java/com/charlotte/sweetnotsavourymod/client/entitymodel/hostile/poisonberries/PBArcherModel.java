@@ -11,19 +11,19 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 public class PBArcherModel extends AnimatedGeoModel<PBArcherEntity>
 {
     @Override
-    public ResourceLocation getModelLocation(PBArcherEntity entity)
+    public ResourceLocation getModelResource(PBArcherEntity entity)
     {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/poisonberryarcher.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(PBArcherEntity entity)
+    public ResourceLocation getTextureResource(PBArcherEntity entity)
     {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "textures/entity/poisonberryarcher/poisonberryarcher.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(PBArcherEntity entity)
+    public ResourceLocation getAnimationResource(PBArcherEntity entity)
     {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/poisonberryarcher.animation.json");
     }

@@ -1,0 +1,38 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:cold_ocean",
+    "minecraft:deep_cold_ocean",
+    "minecraft:frozen_river",
+    "minecraft:deep_ocean",
+    "minecraft:deep_frozen_ocean",
+    "minecraft:ocean",
+    "minecraft:frozen_ocean"
+  ],
+  "spawners": [
+    {
+      "type": "sweetnotsavourymod:snscandycanefish",
+      "maxCount": 6,
+      "minCount": 4,
+      "weight": 80
+    },
+    {
+      "type": "sweetnotsavourymod:snswafflefish",
+      "maxCount": 6,
+      "minCount": 4,
+      "weight": 80
+    },
+    {
+      "type": "sweetnotsavourymod:snsminiwafflefish",
+      "maxCount": 6,
+      "minCount": 4,
+      "weight": 80
+    },
+    {
+      "type": "sweetnotsavourymod:snsicfish",
+      "maxCount": 6,
+      "minCount": 4,
+      "weight": 80
+    }
+  ]
+}

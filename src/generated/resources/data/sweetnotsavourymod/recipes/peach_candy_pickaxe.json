@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:sugarstick"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:peachcandy"
+    }
+  },
   "pattern": [
     "SSS",
     " A ",
     " A "
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:peachcandy"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:sugarstick"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:peach_candy_pickaxe"
   }

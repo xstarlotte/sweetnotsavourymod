@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": "sweetnotsavourymod:candy_cane_bush_placed",
+    "tries": 20,
+    "xz_spread": 80,
+    "y_spread": 2
+  }
+}

@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class MenuTypesInit {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.CONTAINERS, SweetNotSavouryMod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.Keys.MENU_TYPES, SweetNotSavouryMod.MOD_ID);
 
     public static final RegistryObject<MenuType<IceCreamMachineMenu>> ICE_CREAM_MACHINE_MENU =
             registerMenuType(IceCreamMachineMenu::new, "ice_cream_machine_menu");

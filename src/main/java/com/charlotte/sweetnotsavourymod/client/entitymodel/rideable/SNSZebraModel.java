@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSZebraModel extends AnimatedGeoModel<SNSZebraEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSZebraEntity entity) {
+	public ResourceLocation getModelResource(SNSZebraEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/zebra.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(SNSZebraEntity entity)	{
+	public ResourceLocation getTextureResource(SNSZebraEntity entity)	{
 		return SNSZebraRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSZebraEntity entity) {
+	public ResourceLocation getAnimationResource(SNSZebraEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/zebra.animation.json");
 	}
 }

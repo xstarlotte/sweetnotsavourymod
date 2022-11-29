@@ -9,17 +9,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSChipmunkModel extends AnimatedGeoModel<SNSChipmunkEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSChipmunkEntity entity) {
+	public ResourceLocation getModelResource(SNSChipmunkEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/chipmunk.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(SNSChipmunkEntity entity) {
+	public ResourceLocation getTextureResource(SNSChipmunkEntity entity) {
 		return SNSChipmunkRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSChipmunkEntity entity) {
+	public ResourceLocation getAnimationResource(SNSChipmunkEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/chipmunk.animation.json");
 	}
 

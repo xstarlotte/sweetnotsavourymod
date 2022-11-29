@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/toothpaste_door_bottom",
+    "top": "sweetnotsavourymod:blocks/toothpaste_door_top"
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_rh",
-  "textures": {
-    "top": "sweetnotsavourymod:blocks/blueberry_candy_door_top",
-    "bottom": "sweetnotsavourymod:blocks/blueberry_candy_door_bottom"
-  }
-}

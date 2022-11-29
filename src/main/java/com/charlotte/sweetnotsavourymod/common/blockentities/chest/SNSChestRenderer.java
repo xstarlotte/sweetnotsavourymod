@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
+import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -117,7 +118,7 @@ public class SNSChestRenderer implements BlockEntityRenderer<SNSChestBlockEntity
 	private void render(Level level, BlockPos pos, BlockState state, PoseStack stack, MultiBufferSource bufferIn, BakedModel model){
 		RenderType renderType = ItemBlockRenderTypes.getRenderType( state , false );
 		Minecraft.getInstance().getBlockRenderer().getModelRenderer().tesselateWithoutAO( level , model , state , pos , stack , bufferIn.getBuffer( renderType ) , false , level.random , state.getSeed( pos ) , OverlayTexture.NO_OVERLAY ,
-				net.minecraftforge.client.model.data.EmptyModelData.INSTANCE );
+				ModelData.EMPTY, renderType);
 
 	}
 }

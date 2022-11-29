@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:snowy_plains",
+    "minecraft:snowy_beach",
+    "minecraft:snowy_slopes",
+    "minecraft:snowy_taiga",
+    "minecraft:taiga"
+  ],
+  "features": [
+    "sweetnotsavourymod:chocolate_cineraria_spread_placed",
+    "sweetnotsavourymod:toffee_tulip_spread_placed",
+    "sweetnotsavourymod:candy_cane_bush_placed",
+    "sweetnotsavourymod:candy_cane_spread_placed"
+  ],
+  "step": "vegetal_decoration"
+}

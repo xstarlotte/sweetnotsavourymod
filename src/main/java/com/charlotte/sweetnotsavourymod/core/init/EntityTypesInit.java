@@ -32,7 +32,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.BonbonbiniEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.Gingerbread_ManEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.GingerbreadManEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -43,10 +43,10 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class EntityTypesInit {
 
-	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES,
+	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES,
 			SweetNotSavouryMod.MOD_ID);
 
-	public static final RegistryObject<EntityType<SNSPugEntity>>SNSPUG = ENTITY_TYPES
+	public static final RegistryObject<EntityType<SNSPugEntity>> SNSPUG = ENTITY_TYPES
 			.register("snspug", () -> EntityType.Builder.of(SNSPugEntity::new, MobCategory.CREATURE)
 					.sized(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snspug").toString()));
@@ -61,8 +61,8 @@ public class EntityTypesInit {
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsgp").toString()));
 
-	public static final RegistryObject<EntityType<Gingerbread_ManEntity>>GINGERBREAD_MAN = ENTITY_TYPES
-			.register("gingerbread_man", () -> EntityType.Builder.of(Gingerbread_ManEntity::new, MobCategory.CREATURE)
+	public static final RegistryObject<EntityType<GingerbreadManEntity>> GINGERBREAD_MAN = ENTITY_TYPES
+			.register("gingerbread_man", () -> EntityType.Builder.of(GingerbreadManEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "gingerbread_man").toString()));
 

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/mango_candy_door_bottom",
+    "top": "sweetnotsavourymod:blocks/mango_candy_door_top"
+  }
+}

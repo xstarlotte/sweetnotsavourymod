@@ -1,17 +1,18 @@
 package com.charlotte.sweetnotsavourymod.common.entity.fish;
 
+import com.charlotte.sweetnotsavourymod.common.entity.IVariable;
 import com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants.ICFishVariant;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -36,17 +37,19 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatable, IVariable<ICFishVariant> {
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
             SynchedEntityData.defineId(SNSICFishEntity.class, EntityDataSerializers.INT);
 
@@ -56,7 +59,7 @@ public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatabl
     }
 
     public static boolean checkTropicalFishSpawnRules(EntityType<TropicalFish> p_186232_, LevelAccessor p_186233_,
-                                                      MobSpawnType p_186234_, BlockPos p_186235_, Random p_186236_) {
+                                                      MobSpawnType p_186234_, BlockPos p_186235_, RandomSource p_186236_) {
         return p_186233_.getFluidState(p_186235_.below()).is(FluidTags.WATER) && (Objects.equals(p_186233_
                 .getBiome(p_186235_), Optional.of(Biomes.OCEAN)) || WaterAnimal
                 .checkSurfaceWaterAnimalSpawnRules(p_186232_, p_186233_, p_186234_, p_186235_, p_186236_));
@@ -76,8 +79,7 @@ public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatabl
 
     @Override
     protected Component getTypeName() {
-        return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
-                + "." + this.getVariant().getId());
+        return getVariantName(super.getTypeName());
     }
 
     @Override
@@ -89,18 +91,29 @@ public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatabl
         return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
     }
 
-    private void setVariant(ICFishVariant variant) {
+    @Override
+    public void setVariant(ICFishVariant variant) {
         this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
+    }
+
+    @Override
+    public ICFishVariant getVariant() {
+        return ICFishVariant.byId(this.getTypeVariant() & 255);
+    }
+
+    @Override
+    public int getTypeVariant() {
+        return this.entityData.get(DATA_ID_TYPE_VARIANT);
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fish.swimming", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fish.swimming", ILoopType.EDefaultLoopTypes.LOOP));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fish.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.fish.idle", ILoopType.EDefaultLoopTypes.LOOP));
         return PlayState.CONTINUE;
     }
 
@@ -137,16 +150,6 @@ public class SNSICFishEntity extends AbstractSchoolingFish implements IAnimatabl
     protected SoundEvent getFlopSound() {
         return SoundEvents.TROPICAL_FISH_FLOP;
     }
-
-
-    public ICFishVariant getVariant() {
-        return ICFishVariant.byId(this.getTypeVariant() & 255);
-    }
-
-    private int getTypeVariant() {
-        return this.entityData.get(DATA_ID_TYPE_VARIANT);
-    }
-
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(SoundEvents.FISH_SWIM, 0.15F, 1.0F);

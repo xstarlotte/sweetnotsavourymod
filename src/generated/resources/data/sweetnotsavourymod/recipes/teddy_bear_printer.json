@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "item": "sweetnotsavourymod:candycaneblock"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:strawberry_candy_window"
+    }
+  },
   "pattern": [
     "DSD",
     "DSD",
     "DDD"
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:strawberry_candy_window"
-    },
-    "D": {
-      "item": "sweetnotsavourymod:candycaneblock"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:teddy_bear_printer"
   }

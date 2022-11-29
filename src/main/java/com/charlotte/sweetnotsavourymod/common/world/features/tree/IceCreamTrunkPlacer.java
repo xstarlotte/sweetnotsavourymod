@@ -6,6 +6,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -34,13 +35,13 @@ public class IceCreamTrunkPlacer extends TrunkPlacer {
 
     @Override
     protected TrunkPlacerType<?> type() {
-        return ModTrunkPlacerTypes.ICE_TRUNK_PLACER;
+        return ModTrunkPlacerTypes.ICE_TRUNK_PLACER.get();
     }
 
     @Override
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader reader,
                                                             BiConsumer<BlockPos, BlockState> stateBiConsumer,
-                                                            Random random, int p_161871_, BlockPos pos,
+                                                            RandomSource random, int p_161871_, BlockPos pos,
                                                             TreeConfiguration configuration) {
         int height = 4;
         for (int i = pos.getY(); i < pos.getY() + height + 1; i++) {

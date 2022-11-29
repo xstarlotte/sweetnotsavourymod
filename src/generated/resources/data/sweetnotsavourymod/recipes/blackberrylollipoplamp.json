@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:blackberrylollipop"
+    },
+    "S": {
+      "item": "minecraft:torch"
+    }
+  },
   "pattern": [
     "SA"
   ],
-  "key": {
-    "S": {
-      "item": "minecraft:torch"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:blackberrylollipop"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:blackberrylollipoplamp"
   }

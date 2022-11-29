@@ -1,0 +1,72 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:snowy_plains",
+    "minecraft:snowy_beach",
+    "minecraft:snowy_slopes",
+    "minecraft:snowy_taiga",
+    "minecraft:taiga"
+  ],
+  "spawners": [
+    {
+      "type": "sweetnotsavourymod:icecreamcow",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snscccat",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsccwolf",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsicecreamparrot",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsicecreampug",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsparfaitpixie",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snswaferschund",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:candycanecrook",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:mintimperial",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:rswmummy",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    }
+  ]
+}
