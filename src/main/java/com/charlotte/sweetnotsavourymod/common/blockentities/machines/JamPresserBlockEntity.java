@@ -102,7 +102,8 @@ public class JamPresserBlockEntity extends TileEntity implements INamedContainer
     @Override
     public void tick() {
         if(hasRecipe(this) && hasNotReachedStackLimit(this)) {
-            craftItem(this);
+            if (!itemHandler.getStackInSlot(0).isEmpty())
+                craftItem(this);
         }
     }
 

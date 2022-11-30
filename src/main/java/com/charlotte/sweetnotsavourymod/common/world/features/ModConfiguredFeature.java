@@ -66,8 +66,8 @@ public class ModConfiguredFeature {
     public static final ConfiguredFeature<BlockClusterFeatureConfig, ?> CANDYCANEBUSH =
             register("candycanebush", Feature.FLOWER, new BlockClusterFeatureConfig.Builder(
                 new SimpleBlockStateProvider(BlockInit.CANDYCANEBUSH.get().defaultBlockState()), SimpleBlockPlacer.INSTANCE)
-                .build()
-            );//20, 80, 2
+                .tries(5).xspread(5).zspread(5).yspread(2).build()
+            );
 
     public static final ConfiguredFeature<BlockClusterFeatureConfig, ?> CANDY_CANE_SPREAD =
             register("candy_cane_spread", Feature.FLOWER,
@@ -83,14 +83,14 @@ public class ModConfiguredFeature {
     public static final ConfiguredFeature<BlockClusterFeatureConfig, ?> CHOCOLATECINERARIA =
         register("chocolatecineraria", Feature.FLOWER, new BlockClusterFeatureConfig.Builder(
             new SimpleBlockStateProvider(BlockInit.CHOCOLATECINERARIA.get().defaultBlockState()), SimpleBlockPlacer.INSTANCE)
-            .build()
-        );//20, 80, 2
+            .tries(5).xspread(5).zspread(5).yspread(2).build()
+        );
 
     public static final ConfiguredFeature<BlockClusterFeatureConfig, ?> TOFFEETULIP =
         register("toffeetulip", Feature.FLOWER, new BlockClusterFeatureConfig.Builder(
             new SimpleBlockStateProvider(BlockInit.TOFFEETULIP.get().defaultBlockState()), SimpleBlockPlacer.INSTANCE)
-            .build()
-        );//20, 80, 2
+            .tries(5).xspread(5).zspread(5).yspread(2).build()
+        );
 
     public static final ConfiguredFeature<BlockClusterFeatureConfig, ?> CANDY_BUSH_SPREAD =
             register("candy_bush_spread", Feature.FLOWER,

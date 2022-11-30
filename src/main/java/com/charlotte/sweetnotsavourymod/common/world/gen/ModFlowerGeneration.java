@@ -6,6 +6,9 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
@@ -22,10 +25,30 @@ public class ModFlowerGeneration {
             List<Supplier<ConfiguredFeature<?,?>>> base =
                     event.getGeneration().getFeatures(GenerationStage.Decoration.VEGETAL_DECORATION);
 
-            base.add(()->ModConfiguredFeature.CHOCOLATECINERARIA);
-            base.add(()->ModConfiguredFeature.TOFFEETULIP);
-            base.add(()->ModConfiguredFeature.CANDYCANEBUSH);
-            base.add(()->ModConfiguredFeature.CANDY_CANE_SPREAD);
+            base.add(()->ModConfiguredFeature.CHOCOLATECINERARIA
+//                    .decorated(Features.Placements.ADD_32)
+                    .decorated(Features.Placements.HEIGHTMAP_SQUARE)
+                    .count(2).chance(30)
+//                .decorated(Features.Placements.HEIGHTMAP_SQUARE)
+//                .decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(0, 0.1F, 5)))
+            );
+            base.add(()->ModConfiguredFeature.TOFFEETULIP
+//                    .decorated(Features.Placements.ADD_32)
+                    .decorated(Features.Placements.HEIGHTMAP_SQUARE)
+                    .count(2).chance(30)
+//                .decorated(Features.Placements.HEIGHTMAP_SQUARE)
+//                .decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(0, 0.1F, 5)))
+            );
+            base.add(()->ModConfiguredFeature.CANDYCANEBUSH
+//                .decorated(Features.Placements.ADD_32)
+                .decorated(Features.Placements.HEIGHTMAP_SQUARE)
+                .count(2).chance(30)
+            );
+            base.add(()->ModConfiguredFeature.CANDY_CANE_SPREAD
+//                .decorated(Features.Placements.ADD_32)
+                .decorated(Features.Placements.HEIGHTMAP_SQUARE)
+                .count(2).chance(30)
+            );
         }
 
         if(types.contains(BiomeDictionary.Type.PLAINS)) {

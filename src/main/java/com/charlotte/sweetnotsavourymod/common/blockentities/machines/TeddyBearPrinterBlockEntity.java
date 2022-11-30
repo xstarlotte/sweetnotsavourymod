@@ -152,7 +152,8 @@ public class TeddyBearPrinterBlockEntity extends TileEntity implements INamedCon
     @Override
     public void tick() {
         if(hasRecipe(this) && hasNotReachedStackLimit(this)) {
-            craftItem(this);
+            if (!itemHandler.getStackInSlot(0).isEmpty())
+                craftItem(this);
         }
     }
 }
