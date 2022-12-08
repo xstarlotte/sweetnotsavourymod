@@ -14,9 +14,9 @@
     "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "items": [
+        "blocks": [
           {
-            "items": [
+            "blocks": [
               "sweetnotsavourymod:waferwoodblock"
             ]
           }

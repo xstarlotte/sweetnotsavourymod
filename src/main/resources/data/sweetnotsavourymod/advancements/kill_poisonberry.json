@@ -1,10 +1,10 @@
 {
   "display": {
     "icon": {
-      "item": "sweetnotsavourymod:snspbattackerspawnegg"
+      "item": "sweetnotsavourymod:poisonberryattackerspawnegg"
     },
     "title": "I'm not into toxic relationships.",
-    "description": "Kill a Poison Berry",
+    "description": "Kill a Poison Berry Attacker",
     "background": "sweetnotsavourymod:textures/blocks/waferwoodblock.png",
     "frame": "task",
     "show_toast": true,
@@ -16,13 +16,10 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "types": [
-          "sweetnotsavourymod:pbattacker",
-           "sweetnotsavourymod:pbarcher",
-           "sweetnotsavourymod:pbdefender"
-        ]
+          "type": "sweetnotsavourymod:poisonberryattacker"
         }
       }
     }
   }
 }
+
