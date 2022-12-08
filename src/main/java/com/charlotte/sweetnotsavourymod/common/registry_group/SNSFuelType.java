@@ -86,7 +86,7 @@ public class SNSFuelType {
 	public class FType implements RecipeType<FRecipe> {
 		@Override
 		public String toString() {
-			return serializer.toString();
+			return id.toString();
 		}
 	}
 	
