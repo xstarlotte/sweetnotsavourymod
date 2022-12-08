@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSWaferschundModel extends AnimatedGeoModel<SNSWaferschundEntity> {
     @Override
-    public ResourceLocation getModelLocation(SNSWaferschundEntity entity) {
+    public ResourceLocation getModelResource(SNSWaferschundEntity entity) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/waferschund.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(SNSWaferschundEntity entity) {
+    public ResourceLocation getTextureResource(SNSWaferschundEntity entity) {
         return SNSWaferschundRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(SNSWaferschundEntity entity) {
+    public ResourceLocation getAnimationResource(SNSWaferschundEntity entity) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/waferschund.animation.json");
     }
 }

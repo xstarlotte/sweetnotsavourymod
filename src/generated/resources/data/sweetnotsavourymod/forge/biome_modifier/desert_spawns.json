@@ -1,0 +1,36 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "minecraft:desert",
+  "spawners": [
+    {
+      "type": "sweetnotsavourymod:snsspider",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 30
+    },
+    {
+      "type": "sweetnotsavourymod:snsjamster",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 30
+    },
+    {
+      "type": "sweetnotsavourymod:snssnake",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 30
+    },
+    {
+      "type": "sweetnotsavourymod:gingerbread_man",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 30
+    },
+    {
+      "type": "sweetnotsavourymod:rswmummy",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 30
+    }
+  ]
+}

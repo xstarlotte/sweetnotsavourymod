@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"7": "sweetnotsavourymod:blocks/blueberryicecreamlamp",
-		"particle": "sweetnotsavourymod:block/waferwoodblock"
+		"particle": "sweetnotsavourymod:blocks/waferwoodblock"
 	},
 	"elements": [
 		{

@@ -1,0 +1,42 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:forest",
+    "minecraft:birch_forest",
+    "minecraft:flower_forest",
+    "minecraft:dark_forest",
+    "minecraft:old_growth_birch_forest"
+  ],
+  "spawners": [
+    {
+      "type": "sweetnotsavourymod:snschipmunk",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsboarry",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snssquirroll",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsmouse",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snself",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    }
+  ]
+}

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:sweet_essence"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:peachcandy"
+    }
+  },
   "pattern": [
     "SAS",
     "S S"
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:peachcandy"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:sweet_essence"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:peach_candy_helmet"
   }

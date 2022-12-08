@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.BugVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum PretzelflyVariant {
+public enum PretzelflyVariant implements IVariant {
     SALTED(0),
     HONEY(1),
     STRAWBERRY(2),
@@ -13,13 +15,11 @@ public enum PretzelflyVariant {
     WHITECHOCOLATE(6),
     CHOCOLATE(7);
 
-   ;
-
     private static final PretzelflyVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(PretzelflyVariant::getId)).toArray((i) -> new PretzelflyVariant[i]);
+            comparingInt(PretzelflyVariant::getId)).toArray(PretzelflyVariant[]::new);
     private final int id;
 
-    private PretzelflyVariant(int p_30984_) {
+    PretzelflyVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

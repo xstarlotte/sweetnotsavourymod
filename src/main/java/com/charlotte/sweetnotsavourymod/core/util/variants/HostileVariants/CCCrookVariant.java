@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.HostileVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum CCCrookVariant {
+public enum CCCrookVariant implements IVariant {
     RED(0),
     WHITE(1);
 
@@ -11,7 +13,7 @@ public enum CCCrookVariant {
             comparingInt(CCCrookVariant::getId)).toArray(CCCrookVariant[]::new);
     private final int id;
 
-    private CCCrookVariant(int p_30984_) {
+    CCCrookVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

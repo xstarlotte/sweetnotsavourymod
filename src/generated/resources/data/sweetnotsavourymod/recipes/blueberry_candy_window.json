@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:sugarwrapper"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:blueberrycandyblock"
+    }
+  },
   "pattern": [
     "AS"
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:blueberrycandyblock"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:sugarwrapper"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:blueberry_candy_window"
   }

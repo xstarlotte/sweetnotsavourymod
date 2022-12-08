@@ -1,10 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.RideableVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum ZebraFlavourVariant {
-
+public enum ZebraFlavourVariant implements IVariant {
     ZEBRACAKE(0),
     CANDYCANE(1),
     PEPPERMINTCANDYCANE(2),
@@ -12,13 +13,12 @@ public enum ZebraFlavourVariant {
     SPEARMINTCANDYCANE(4),
     LEMONCANDYCANE(5),
     CHOCOLATEORANGECAKE(6);
-   ;
 
     private static final ZebraFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(ZebraFlavourVariant::getId)).toArray((i) -> new ZebraFlavourVariant[i]);
+            comparingInt(ZebraFlavourVariant::getId)).toArray(ZebraFlavourVariant[]::new);
     private final int id;
 
-    private ZebraFlavourVariant(int p_30984_) {
+    ZebraFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

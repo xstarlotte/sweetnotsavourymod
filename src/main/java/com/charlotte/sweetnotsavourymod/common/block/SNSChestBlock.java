@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.*;
@@ -33,6 +34,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -135,7 +137,7 @@ public class SNSChestBlock extends BaseEntityBlock {
 		} else {
 			MenuProvider menuprovider = this.getMenuProvider(pState, pLevel, pPos, pPlayer);
 			if (!isChestBlockedAt(pLevel, pPos) && menuprovider != null) {
-				pPlayer.openMenu(menuprovider);
+				NetworkHooks.openScreen((ServerPlayer)pPlayer, menuprovider, pPos);
 				pPlayer.awardStat(this.getOpenChestStat());
 			}
 
@@ -188,7 +190,7 @@ public class SNSChestBlock extends BaseEntityBlock {
 
 	@Nullable
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-		return pLevel.isClientSide && pBlockEntityType == blockEntity.get() ? (a,b,c,entity)->{
+		return pLevel.isClientSide && pBlockEntityType == blockEntity.get() ? (a,b,c,entity)-> {
 			if (entity instanceof SNSChestBlockEntity chest)
 				SNSChestBlockEntity.lidAnimateTick(a,b,c, chest);
 		} : null;

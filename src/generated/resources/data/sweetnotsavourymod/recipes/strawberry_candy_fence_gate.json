@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:sugarstick"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:strawberrycandyblock"
+    }
+  },
   "pattern": [
     "ASA",
     "ASA"
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:strawberrycandyblock"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:sugarstick"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:strawberry_candy_fence_gate"
   }

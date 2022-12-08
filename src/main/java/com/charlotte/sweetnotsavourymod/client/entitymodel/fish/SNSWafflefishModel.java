@@ -8,17 +8,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSWafflefishModel extends AnimatedGeoModel<SNSWafflefishEntity> {
     @Override
-    public ResourceLocation getModelLocation(SNSWafflefishEntity entity) {
+    public ResourceLocation getModelResource(SNSWafflefishEntity entity) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/wafflefish.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(SNSWafflefishEntity entity) {
+    public ResourceLocation getTextureResource(SNSWafflefishEntity entity) {
         return SNSWafflefishRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(SNSWafflefishEntity entity) {
+    public ResourceLocation getAnimationResource(SNSWafflefishEntity entity) {
         return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/wafflefish.animation.json");
     }
 }

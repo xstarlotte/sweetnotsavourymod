@@ -10,8 +10,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BlockEntityTypesInit{
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPE = DeferredRegister
-            .create ( ForgeRegistries.BLOCK_ENTITIES , SweetNotSavouryMod.MOD_ID );
+    public static void loadClass() {}
+    
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPE = SNSReg.BLOCK_ENTITY_TYPES;
 //beds
     public static final RegistryObject<BlockEntityType<BlackberryIceCreamBedBlockEntity>> SNS_BLACKBERRY_BED_ENTITY_TYPE
             = BLOCK_ENTITY_TYPE.register("sns_bed_entity", () -> BlockEntityType.Builder.of(BlackberryIceCreamBedBlockEntity::new,

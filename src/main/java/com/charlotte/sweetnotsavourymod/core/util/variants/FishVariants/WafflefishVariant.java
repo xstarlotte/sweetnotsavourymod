@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum WafflefishVariant {
+public enum WafflefishVariant implements IVariant {
     BLACKBERRY(0),
     BLUEBERRY(1),
     RASPBERRY(2),
@@ -15,13 +17,11 @@ public enum WafflefishVariant {
     TOFFEE(8),
     PEACH(9);
 
-   ;
-
     private static final WafflefishVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(WafflefishVariant::getId)).toArray((i) -> new WafflefishVariant[i]);
+            comparingInt(WafflefishVariant::getId)).toArray(WafflefishVariant[]::new);
     private final int id;
 
-    private WafflefishVariant(int p_30984_) {
+    WafflefishVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

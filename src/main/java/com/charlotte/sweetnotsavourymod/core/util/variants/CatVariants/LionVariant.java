@@ -1,19 +1,19 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.CatVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum LionVariant {
+public enum LionVariant implements IVariant {
     CANDYFLOSS(0),
     BLUECANDYFLOSS(1);
-
-
 
     private static final LionVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(LionVariant::getId)).toArray(LionVariant[]::new);
     private final int id;
 
-    private LionVariant(int p_30984_) {
+    LionVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

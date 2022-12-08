@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:candycanesugar"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:candycaneblock"
+    }
+  },
   "pattern": [
     "SSS",
     "SAS",
     "SSS"
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:candycaneblock"
-    },
-    "A": {
-      "item": "sweetnotsavourymod:candycanesugar"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:candycane_furnace"
   }

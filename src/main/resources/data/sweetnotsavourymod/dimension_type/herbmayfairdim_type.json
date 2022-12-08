@@ -1,16 +1,25 @@
 {
+  "name": "savourynotsweetmod:herbmayfairdim",
+  "height": 256,
+  "logical_height": 256,
+  "min_y": 0,
   "ultrawarm": false,
   "natural": false,
-  "piglin_safe": false,
-  "respawn_anchor_works": false,
-  "bed_works": true,
-  "has_raids": false,
+  "coordinate_scale": 1.0,
+  "ambient_light": 0.5,
   "has_skylight": true,
   "has_ceiling": false,
-  "coordinate_scale": 1,
-  "ambient_light": 0.5,
-  "logical_height": 256,
   "infiniburn": "#minecraft:infiniburn_overworld",
-  "min_y": 0,
-  "height": 256
+  "has_raids": false,
+  "respawn_anchor_works": false,
+  "bed_works": true,
+  "piglin_safe": false,
+  "monster_spawn_block_light_limit": 0,
+  "monster_spawn_light_level": {
+    "type": "minecraft:uniform",
+    "value": {
+      "max_inclusive": 7,
+      "min_inclusive": 0
+    }
+  }
 }

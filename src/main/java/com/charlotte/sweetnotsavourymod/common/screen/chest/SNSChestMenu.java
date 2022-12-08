@@ -15,7 +15,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-
 public class SNSChestMenu extends AbstractContainerMenu {
 	public final Container container;
 	public final SNSChestMenuTemplate template;
@@ -47,6 +46,12 @@ public class SNSChestMenu extends AbstractContainerMenu {
 				this.addSlot(new Slot(playerInventory, col + row * 9 + 9, 8 + col * 18 + offX, 103 + row * 18 + offY));
 			}
 		}
+	}
+
+	@Override
+	public void removed(Player pPlayer) {
+		super.removed(pPlayer);
+		container.stopOpen(pPlayer);
 	}
 
 	@Override

@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "S  ",
-    "SS ",
-    "SSS"
-  ],
   "key": {
     "S": {
       "item": "sweetnotsavourymod:hardenedbananaplanks"
     }
   },
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
   "result": {
     "item": "sweetnotsavourymod:hardened_banana_stairs"
   }

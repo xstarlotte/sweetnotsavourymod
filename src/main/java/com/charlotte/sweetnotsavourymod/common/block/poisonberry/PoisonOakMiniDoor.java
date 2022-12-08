@@ -33,7 +33,7 @@ public class PoisonOakMiniDoor extends Block{
     public InteractionResult use(BlockState state , Level worldIn , BlockPos pos , Player player ,
                                               InteractionHand handIn , BlockHitResult hit ){
         Boolean flag = state.getValue(OPEN);
-        openDoor( worldIn , state , pos , flag ? false : true );
+        openDoor( worldIn , state , pos , !flag);
         return InteractionResult.SUCCESS;
     }
 
@@ -49,7 +49,7 @@ public class PoisonOakMiniDoor extends Block{
         boolean flag = world.hasNeighborSignal(blockpos);
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection() )
                 .setValue(HINGE, this.getHingeSide(context))
-                .setValue( POWERED , Boolean.valueOf( flag ) ).setValue( OPEN , false );
+                .setValue( POWERED , flag).setValue( OPEN , false );
     }
 
     @Override
@@ -62,13 +62,13 @@ public class PoisonOakMiniDoor extends Block{
             if(flag != state.getValue( OPEN )){
             }
 
-            worldIn.setBlock( pos , state.setValue( POWERED , Boolean.valueOf( flag ) ).setValue( OPEN , Boolean.valueOf( flag ) ) , 2 );
+            worldIn.setBlock( pos , state.setValue( POWERED , flag).setValue( OPEN , flag) , 2 );
         }
     }
 
     public void openDoor( Level worldIn , BlockState state , BlockPos pos , boolean open ){
         if(state.is( this ) && state.getValue( OPEN ) != open){
-            worldIn.setBlock( pos , state.setValue( OPEN , Boolean.valueOf( open ) ) , 10 );
+            worldIn.setBlock( pos , state.setValue( OPEN , open) , 10 );
             worldIn.playSound( null , pos , open ? SoundEvents.WOODEN_DOOR_OPEN : SoundEvents.WOODEN_DOOR_CLOSE , SoundSource.BLOCKS , 1.0f , 1.0f );
 
         }

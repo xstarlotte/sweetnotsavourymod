@@ -1,0 +1,15 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:snowy_plains",
+    "minecraft:snowy_beach",
+    "minecraft:snowy_slopes",
+    "minecraft:snowy_taiga",
+    "minecraft:taiga"
+  ],
+  "features": [
+    "sweetnotsavourymod:ice_cream_tree_placed",
+    "sweetnotsavourymod:chocolate_ice_cream_spawn_placed"
+  ],
+  "step": "vegetal_decoration"
+}

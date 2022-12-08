@@ -1,5 +1,6 @@
 package com.charlotte.sweetnotsavourymod.common.entity.dogs;
 
+import com.charlotte.sweetnotsavourymod.common.entity.IVariable;
 import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import com.charlotte.sweetnotsavourymod.core.util.variants.DogVariants.PugFlavourVariant;
@@ -7,7 +8,6 @@ import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -41,16 +41,18 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.UUID;
 
-public class SNSPugEntity extends TamableAnimal implements IAnimatable {
+public class SNSPugEntity extends TamableAnimal implements IAnimatable, IVariable<PugFlavourVariant> {
 
-	private AnimationFactory factory = new AnimationFactory(this);
+	private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
 	private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT =
 			SynchedEntityData.defineId(com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity.class, EntityDataSerializers.INT);
@@ -66,14 +68,14 @@ public class SNSPugEntity extends TamableAnimal implements IAnimatable {
 	//animations
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		if (event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.pug.running", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.pug.running", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		if (this.isSitting()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.pug.sitting", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.pug.sitting", ILoopType.EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.pug.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.pug.idle", ILoopType.EDefaultLoopTypes.LOOP));
 		return PlayState.CONTINUE;
 	}
 
@@ -95,7 +97,7 @@ public class SNSPugEntity extends TamableAnimal implements IAnimatable {
 				.add(Attributes.MAX_HEALTH, 80.0D)
 				.add(Attributes.ATTACK_DAMAGE, 4D)
 				.add(Attributes.ATTACK_SPEED, 2.0f)
-				.add(Attributes.MOVEMENT_SPEED, (double)0.25f).build();
+				.add(Attributes.MOVEMENT_SPEED, 0.25f).build();
 	}
 
 	protected void registerGoals() {
@@ -161,7 +163,7 @@ public class SNSPugEntity extends TamableAnimal implements IAnimatable {
 		} else {
 			getAttribute(Attributes.MAX_HEALTH).setBaseValue(40.0D);
 			getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(2D);
-			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((double)0.25f);
+			getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.25f);
 		}
 	}
 
@@ -213,7 +215,7 @@ public class SNSPugEntity extends TamableAnimal implements IAnimatable {
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageablemob) {
-		com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity mob = EntityTypesInit.SNSPUG.get().create(serverLevel);
+		SNSPugEntity mob = EntityTypesInit.SNSPUG.get().create(serverLevel);
 		UUID uuid = this.getOwnerUUID();
 		if (uuid != null) {
 			mob.setOwnerUUID(uuid);
@@ -227,10 +229,9 @@ public class SNSPugEntity extends TamableAnimal implements IAnimatable {
 			return false;
 		} else if (!this.isTame()) {
 			return true;
-		} else if (!(mate instanceof com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity)) {
+		} else if (!(mate instanceof SNSPugEntity mob)) {
 			return false;
 		} else {
-			com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity mob = (com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity)mate;
 			if (!mob.isTame()) {
 				return true;
 			} else if (mob.isInSittingPose()) {
@@ -281,23 +282,26 @@ public class SNSPugEntity extends TamableAnimal implements IAnimatable {
 		return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
 	}
 
-	private void setVariant(PugFlavourVariant variant) {
+	@Override
+	public void setVariant(PugFlavourVariant variant) {
 		this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
 	}
 
+	@Override
 	public PugFlavourVariant getVariant() {
 		return PugFlavourVariant.byId(this.getTypeVariant() & 255);
 	}
 
 	@Override
-	protected Component getTypeName() {
-		return new TranslatableComponent(((TranslatableComponent)super.getTypeName()).getKey()
-				+ "." + this.getVariant().getId());
-	}
-
-	private int getTypeVariant() {
+	public int getTypeVariant() {
 		return this.entityData.get(DATA_ID_TYPE_VARIANT);
 	}
+
+	@Override
+	protected Component getTypeName() {
+		return getVariantName(super.getTypeName());
+	}
+
 	//sound
 	protected void playStepSound(BlockPos pos, BlockState blockIn) {
 		this.playSound(SoundEvents.WOLF_STEP, 0.15F, 1.0F);

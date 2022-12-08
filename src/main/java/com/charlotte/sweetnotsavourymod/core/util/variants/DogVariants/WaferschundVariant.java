@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.DogVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum WaferschundVariant {
+public enum WaferschundVariant implements IVariant {
 
     STRAWBERRY(0),
     PEACH(1),
@@ -17,13 +19,12 @@ public enum WaferschundVariant {
     LEMON(9),
     CHOCOLATE(10),
     ORANGE(11);
-   ;
 
     private static final WaferschundVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(WaferschundVariant::getId)).toArray((i) -> new WaferschundVariant[i]);
+            comparingInt(WaferschundVariant::getId)).toArray(WaferschundVariant[]::new);
     private final int id;
 
-    private WaferschundVariant(int p_30984_) {
+    WaferschundVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

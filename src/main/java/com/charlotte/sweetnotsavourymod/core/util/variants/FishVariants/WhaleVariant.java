@@ -1,20 +1,19 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.FishVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum WhaleVariant {
+public enum WhaleVariant implements IVariant {
         WAFER(0),
         CHOCOLATEWAFER(1);
 
-
-   ;
-
     private static final WhaleVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(WhaleVariant::getId)).toArray((i) -> new WhaleVariant[i]);
+            comparingInt(WhaleVariant::getId)).toArray(WhaleVariant[]::new);
     private final int id;
 
-    private WhaleVariant(int p_30984_) {
+    WhaleVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

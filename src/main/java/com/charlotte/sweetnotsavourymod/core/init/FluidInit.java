@@ -1,28 +1,65 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
-import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Material;
+import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fluids.FluidAttributes;
+import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Consumer;
 
 public class FluidInit {
+    public static void loadClass() {}
+    
     public static final ResourceLocation WATER_STILL_RL = new ResourceLocation("block/water_still");
     public static final ResourceLocation WATER_FLOWING_RL = new ResourceLocation("block/water_flow");
     public static final ResourceLocation WATER_OVERLAY_RL = new ResourceLocation("block/water_overlay");
 
-    public static final DeferredRegister<Fluid> FLUIDS
-            = DeferredRegister.create(ForgeRegistries.FLUIDS, SweetNotSavouryMod.MOD_ID);
+    public static void register(IEventBus eventBus) {
+        FLUID_TYPES.register(eventBus);
+        FLUIDS.register(eventBus);
+    }
 
+    public static final DeferredRegister<FluidType> FLUID_TYPES = SNSReg.FLUID_TYPES;
+    public static final DeferredRegister<Fluid> FLUIDS = SNSReg.FLUIDS;
+
+    public static final RegistryObject<FluidType> CREAMY_MILK_TYPE = FLUID_TYPES.register("creamy_milk_type",
+            () -> new FluidType(FluidType.Properties.create().density(15).lightLevel(2).viscosity(10)
+                    .sound(SoundActions.BUCKET_FILL, SoundEvents.HONEY_DRINK)
+                    .sound(SoundActions.BUCKET_EMPTY, SoundEvents.HONEY_DRINK)) {
+                @Override
+                public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
+                    consumer.accept(new IClientFluidTypeExtensions() {
+                        @Override
+                        public int getTintColor() {
+                            return 0xbff4f2e2;
+                        }
+
+                        @Override
+                        public ResourceLocation getStillTexture() {
+                            return WATER_STILL_RL;
+                        }
+
+                        @Override
+                        public ResourceLocation getFlowingTexture() {
+                            return WATER_FLOWING_RL;
+                        }
+
+                        @Nullable
+                        @Override
+                        public ResourceLocation getOverlayTexture() {
+                            return WATER_OVERLAY_RL;
+                        }
+                    });
+                }
+            });
 
     public static final RegistryObject<FlowingFluid> CREAMY_MILK_FLUID
             = FLUIDS.register("creamy_milk_fluid", () -> new ForgeFlowingFluid.Source(FluidInit.CREAMY_MILK_PROPERTIES));
@@ -30,18 +67,5 @@ public class FluidInit {
     public static final RegistryObject<FlowingFluid> CREAMY_MILK_FLOWING
             = FLUIDS.register("creamy_milk_flowing", () -> new ForgeFlowingFluid.Flowing(FluidInit.CREAMY_MILK_PROPERTIES));
 
-
-    public static final ForgeFlowingFluid.Properties CREAMY_MILK_PROPERTIES = new ForgeFlowingFluid.Properties(
-            () -> CREAMY_MILK_FLUID.get(), () -> CREAMY_MILK_FLOWING.get(), FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
-            .density(15).luminosity(2).viscosity(10).sound(SoundEvents.HONEY_DRINK).overlay(WATER_OVERLAY_RL)
-            .color(0xbff4f2e2)).slopeFindDistance(2).levelDecreasePerBlock(2)
-            .block(() -> FluidInit.CREAMY_MILK_BLOCK.get()).bucket(() -> ItemInit.CREAMY_MILK_BUCKET.get());
-
-    public static final RegistryObject<LiquidBlock> CREAMY_MILK_BLOCK = BlockInit.BLOCKS.register("creamy_milk",
-            () -> new LiquidBlock(() -> FluidInit.CREAMY_MILK_FLUID.get(), BlockBehaviour.Properties.of(Material.WATER)
-                    .noCollission().strength(100f).noDrops()));
-    //FlowingFluidBlock
-    public static void register(IEventBus eventBus) {
-        FLUIDS.register(eventBus);
-    }
+    public static final ForgeFlowingFluid.Properties CREAMY_MILK_PROPERTIES = new ForgeFlowingFluid.Properties(CREAMY_MILK_TYPE, CREAMY_MILK_FLUID, CREAMY_MILK_FLOWING).slopeFindDistance(2).levelDecreasePerBlock(2).block(BlockInit.CREAMY_MILK_BLOCK).bucket(ItemInit.CREAMY_MILK_BUCKET);
 }

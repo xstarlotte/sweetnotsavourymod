@@ -1,24 +1,16 @@
 package com.charlotte.sweetnotsavourymod.common.world.features.tree;
 
-import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.core.init.SNSReg;
 import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
-public class ModTrunkPlacerTypes {
-    public static final TrunkPlacerType<IceCreamTrunkPlacer> ICE_TRUNK_PLACER
-            = new TrunkPlacerType<>(IceCreamTrunkPlacer.CODEC);
+public final class ModTrunkPlacerTypes {
+    public static void loadClass() {}
 
-    public static final TrunkPlacerType<ChocolateIceCreamTrunkPlacer> CHOCOLATE_ICE_TRUNK_PLACER
-            = new TrunkPlacerType<>(ChocolateIceCreamTrunkPlacer.CODEC);
+    private static final DeferredRegister<TrunkPlacerType<?>> REGISTER = SNSReg.createReg(Registry.TRUNK_PLACER_TYPE_REGISTRY);
 
-    private static <P extends TrunkPlacer> TrunkPlacerType<P> registerTrunkPlacerType(String pKey, TrunkPlacerType<P> pTrunkPlacerType) {
-        return Registry.register(Registry.TRUNK_PLACER_TYPES, new ResourceLocation(SweetNotSavouryMod.MOD_ID, pKey), pTrunkPlacerType);
-    }
-
-    public static void register() {
-        registerTrunkPlacerType("slanted_trunk_placer", ICE_TRUNK_PLACER);
-        registerTrunkPlacerType("slanted_trunk_placer2", CHOCOLATE_ICE_TRUNK_PLACER);
-    }
+    public static final RegistryObject<TrunkPlacerType<IceCreamTrunkPlacer>> ICE_TRUNK_PLACER = REGISTER.register("slanted_trunk_placer", () -> new TrunkPlacerType<>(IceCreamTrunkPlacer.CODEC));
+    public static final RegistryObject<TrunkPlacerType<ChocolateIceCreamTrunkPlacer>> CHOCOLATE_ICE_TRUNK_PLACER = REGISTER.register("slanted_trunk_placer2", () -> new TrunkPlacerType<>(ChocolateIceCreamTrunkPlacer.CODEC));
 }

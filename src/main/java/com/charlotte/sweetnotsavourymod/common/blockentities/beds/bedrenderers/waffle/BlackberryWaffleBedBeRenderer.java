@@ -2,11 +2,9 @@ package com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.
 
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.SNSBaseBedBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.BaseBedBeRenderer;
+import com.charlotte.sweetnotsavourymod.common.events.ClientEventBusSubscriber;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-
-import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.BLACKBERRYWAFFLEBEDBOTTOM;
-import static com.charlotte.sweetnotsavourymod.common.events.ClientEvents.BLACKBERRYWAFFLEBEDHEAD;
 
 public class BlackberryWaffleBedBeRenderer extends BaseBedBeRenderer {
     public BlackberryWaffleBedBeRenderer(BlockEntityRendererProvider.Context context){
@@ -19,7 +17,7 @@ public class BlackberryWaffleBedBeRenderer extends BaseBedBeRenderer {
             this.be = be;
         }
 
-        this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel(BLACKBERRYWAFFLEBEDBOTTOM);
-        this.headbedmodel = Minecraft.getInstance().getModelManager().getModel(BLACKBERRYWAFFLEBEDHEAD);
+        this.bottombedmodel = Minecraft.getInstance().getModelManager().getModel(ClientEventBusSubscriber.BLACKBERRYWAFFLEBEDBOTTOM);
+        this.headbedmodel = Minecraft.getInstance().getModelManager().getModel(ClientEventBusSubscriber.BLACKBERRYWAFFLEBEDHEAD);
     }
 }

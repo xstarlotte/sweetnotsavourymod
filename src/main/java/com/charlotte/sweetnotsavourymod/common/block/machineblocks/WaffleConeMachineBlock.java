@@ -58,6 +58,7 @@ public class WaffleConeMachineBlock extends BaseEntityBlock {
 
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
         if(pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if (blockEntity instanceof WaffleConeMachineBlockEntity) {
@@ -70,8 +71,8 @@ public class WaffleConeMachineBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof  WaffleConeMachineBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (WaffleConeMachineBlockEntity) entity, pPos);
+            if(entity instanceof WaffleConeMachineBlockEntity be) {
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer), be, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }

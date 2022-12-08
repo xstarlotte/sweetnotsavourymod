@@ -1,0 +1,17 @@
+{
+  "feature": "sweetnotsavourymod:ice_cream_tree",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "sweetnotsavourymod:icecreamtreesapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}

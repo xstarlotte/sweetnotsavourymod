@@ -1,17 +1,18 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.SweetCreatureVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum BonbonbiniVariant {
+public enum BonbonbiniVariant implements IVariant {
     RASPBERRY(0);
-   ;
 
     private static final BonbonbiniVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
-            comparingInt(BonbonbiniVariant::getId)).toArray((i) -> new BonbonbiniVariant[i]);
+            comparingInt(BonbonbiniVariant::getId)).toArray(BonbonbiniVariant[]::new);
     private final int id;
 
-    private BonbonbiniVariant(int p_30984_) {
+    BonbonbiniVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

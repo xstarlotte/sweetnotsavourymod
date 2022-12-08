@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.state.BlockState;
@@ -31,7 +32,7 @@ public class ChocolateIceCreamFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader reader, BiConsumer<BlockPos, BlockState> stateBiConsumer, Random random,
+    protected void createFoliage(LevelSimulatedReader reader, BiConsumer<BlockPos, BlockState> stateBiConsumer, RandomSource random,
                                  TreeConfiguration configuration, int p_161426_, FoliageAttachment foliageAttachment,
                                  int p_161428_, int p_161429_, int p_161430_) {
         int height = 4;
@@ -81,12 +82,12 @@ public class ChocolateIceCreamFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    public int foliageHeight(Random p_68568_, int p_68569_, TreeConfiguration p_68570_) {
+    public int foliageHeight(RandomSource p_68568_, int p_68569_, TreeConfiguration p_68570_) {
         return 0;
     }
 
     @Override
-    protected boolean shouldSkipLocation(Random p_68562_, int p_68563_, int p_68564_, int p_68565_, int p_68566_, boolean p_68567_) {
+    protected boolean shouldSkipLocation(RandomSource p_68562_, int p_68563_, int p_68564_, int p_68565_, int p_68566_, boolean p_68567_) {
         return false;
     }
 }

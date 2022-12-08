@@ -19,23 +19,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(pGenerator);
     }
 
-  //  public interface RecipeType<T extends Recipe<?>> {
-   //     RecipeType<IceCreamMachineRecipe> ICE_CREAMING = register("ice_creaming");
-
- //       static <T extends Recipe<?>> net.minecraft.world.item.crafting.RecipeType<T> register(final String pIdentifier) {
-  //          return Registry.register(Registry.RECIPE_TYPE, new ResourceLocation(pIdentifier), new net.minecraft.world.item.crafting.RecipeType<T>() {
-   //             public String toString() {
-   //                 return pIdentifier;
-  //              }
-  //          });
- //       }
-
-   //     default <C extends Container> Optional<T> tryMatch(Recipe<C> pRecipe, Level pLevel, C pContainer) {
-  //          return pRecipe.matches(pContainer, pLevel) ? Optional.of((T) pRecipe) : Optional.empty();
-  //      }
-//    }
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe>pFinishedRecipeConsumer) {
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
 
     //machines
 

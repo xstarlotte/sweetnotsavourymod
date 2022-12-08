@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/rotten_mouldy_candy_cane_door_bottom",
+    "top": "sweetnotsavourymod:blocks/rotten_mouldy_candy_cane_door_top"
+  }
+}

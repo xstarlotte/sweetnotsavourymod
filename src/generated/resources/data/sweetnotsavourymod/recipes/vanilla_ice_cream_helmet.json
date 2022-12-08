@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "SSS",
-    "S S"
-  ],
   "key": {
     "S": {
       "item": "sweetnotsavourymod:vanillaicecream"
     }
   },
+  "pattern": [
+    "SSS",
+    "S S"
+  ],
   "result": {
     "item": "sweetnotsavourymod:vanilla_ice_cream_helmet"
   }

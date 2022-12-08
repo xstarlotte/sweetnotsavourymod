@@ -7,18 +7,18 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class ChocolateChickenModel extends AnimatedGeoModel<ChocolateChickenEntity> {
 	@Override
-	public ResourceLocation getModelLocation(ChocolateChickenEntity entity) {
+	public ResourceLocation getModelResource(ChocolateChickenEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/chicken.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(ChocolateChickenEntity entity)
+	public ResourceLocation getTextureResource(ChocolateChickenEntity entity)
 	{
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "textures/entity/birds/chocolatechicken.png");
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(ChocolateChickenEntity entity) {
+	public ResourceLocation getAnimationResource(ChocolateChickenEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/chicken.animation.json");
 	}
 }

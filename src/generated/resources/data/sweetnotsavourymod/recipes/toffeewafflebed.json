@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "wafflebeds",
+  "key": {
+    "D": {
+      "item": "sweetnotsavourymod:toffeeicecreamscoop"
+    },
+    "S": {
+      "item": "sweetnotsavourymod:waferwoodblock"
+    }
+  },
   "pattern": [
     "DDD",
     "SSS",
     "SSS"
   ],
-  "key": {
-    "S": {
-      "item": "sweetnotsavourymod:waferwoodblock"
-    },
-    "D": {
-      "item": "sweetnotsavourymod:toffeeicecreamscoop"
-    }
-  },
   "result": {
     "item": "sweetnotsavourymod:toffeewafflebed"
   }

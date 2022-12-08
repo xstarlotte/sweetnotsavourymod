@@ -9,17 +9,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SNSJamsterModel extends AnimatedGeoModel<SNSJamsterEntity> {
 	@Override
-	public ResourceLocation getModelLocation(SNSJamsterEntity entity) {
+	public ResourceLocation getModelResource(SNSJamsterEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "geo/jamster.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(SNSJamsterEntity entity) {
+	public ResourceLocation getTextureResource(SNSJamsterEntity entity) {
 		return SNSJamsterRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
 	}
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(SNSJamsterEntity entity) {
+	public ResourceLocation getAnimationResource(SNSJamsterEntity entity) {
 		return new ResourceLocation(SweetNotSavouryMod.MOD_ID, "animations/jamster.animation.json");
 	}
 

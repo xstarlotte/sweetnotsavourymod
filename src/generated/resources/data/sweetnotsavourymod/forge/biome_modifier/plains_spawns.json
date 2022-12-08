@@ -1,0 +1,59 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:snowy_plains",
+    "minecraft:sunflower_plains",
+    "minecraft:meadow"
+  ],
+  "spawners": [
+    {
+      "type": "sweetnotsavourymod:snslion",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snssheep",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsrabbit",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snspug",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:chocolatechicken",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsgummybear",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:snsgp",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    },
+    {
+      "type": "sweetnotsavourymod:bonbonbini",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 5
+    }
+  ]
+}

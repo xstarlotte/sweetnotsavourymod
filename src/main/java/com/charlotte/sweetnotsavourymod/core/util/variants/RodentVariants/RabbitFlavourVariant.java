@@ -1,9 +1,11 @@
 package com.charlotte.sweetnotsavourymod.core.util.variants.RodentVariants;
 
+import com.charlotte.sweetnotsavourymod.core.util.variants.IVariant;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
-public enum RabbitFlavourVariant {
+public enum RabbitFlavourVariant implements IVariant {
     ANGEL(0),
     BANANA(1),
     CARROT(2),
@@ -19,7 +21,7 @@ public enum RabbitFlavourVariant {
             comparingInt(RabbitFlavourVariant::getId)).toArray(RabbitFlavourVariant[]::new);
     private final int id;
 
-    private RabbitFlavourVariant(int p_30984_) {
+    RabbitFlavourVariant(int p_30984_) {
         this.id = p_30984_;
     }
 

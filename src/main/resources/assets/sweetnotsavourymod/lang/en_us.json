@@ -880,7 +880,14 @@
 	"entity.sweetnotsavourymod.wafer_chest": "Wafer Wood Chest",
 	"entity.sweetnotsavourymod.wafer_chest_2": "Large Wafer Wood Chest",
 
-
+	"container.sweetnotsavourymod.banana_baker": "Banana Baker",
+	"container.sweetnotsavourymod.cake_baker": "Cake Baker",
+	"container.sweetnotsavourymod.candycane_furnace": "Candycane Furnace",
+	"container.sweetnotsavourymod.candyfloss_crystalizer": "Candyfloss Crystalizer",
+	"container.sweetnotsavourymod.ice_cream_machine": "Ice Cream Machine",
+	"container.sweetnotsavourymod.jam_presser": "Jam Presser",
+	"container.sweetnotsavourymod.teddy_bear_printer": "Teddy Bear Printer",
+	"container.sweetnotsavourymod.waffle_cone_machine": "Waffle Cone Machine",
 
 	"block.sweetnotsavourymod.ice_cream_machine": "Ice Cream Machine",
 	"block.sweetnotsavourymod.banana_baker": "Banana Baker",
@@ -905,5 +912,3 @@
 	"itemGroup.snsmodmachines": "Machines - Sweet Not Savoury Mod",
 	"itemGroup.snsmodmusic": "Music - Sweet Not Savoury Mod"
 }
-
-
