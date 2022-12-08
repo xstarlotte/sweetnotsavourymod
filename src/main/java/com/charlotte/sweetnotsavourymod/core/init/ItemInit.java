@@ -1,6 +1,5 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
-import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
 import com.charlotte.sweetnotsavourymod.common.fuel.CandyCaneSugarFuel;
 import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
@@ -21,20 +20,20 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
 import java.util.function.Supplier;
 
 public class ItemInit {
-
+	public static void loadClass() {}
+	
 	private static final Set<RegistryObject<SpawnEggItem>> REGISTERED_EGGS = Sets.newHashSet();
 	public static Set<RegistryObject<SpawnEggItem>> getRegisteredEggs() {
 		return ImmutableSet.copyOf(REGISTERED_EGGS);
 	}
 
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.Keys.ITEMS, SweetNotSavouryMod.MOD_ID);
+	public static final DeferredRegister<Item> ITEMS = SNSReg.ITEMS;
 
 //MUSIC_DISCS
 

@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.sound;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.core.init.SNSReg;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -11,8 +12,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 
 public class SoundsInit {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS,
-            SweetNotSavouryMod.MOD_ID);
+    public static void loadClass() {}
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = SNSReg.SOUND_EVENTS;
 
     public static RegistryObject<SoundEvent> CHIPTRONICAL = registerSoundEvents("chiptronical");
 

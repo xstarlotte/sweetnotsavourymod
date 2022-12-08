@@ -1,20 +1,13 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
-import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.recipe.*;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class RecipeSerializerInit {
-
-    private static final DeferredRegister<RecipeSerializer<?>> REGISTER = DeferredRegister.create(ForgeRegistries.Keys.RECIPE_SERIALIZERS, SweetNotSavouryMod.MOD_ID);
-
-    public static void register(IEventBus bus) {
-        REGISTER.register(bus);
-    }
+    public static void loadClass() {}
+    private static final DeferredRegister<RecipeSerializer<?>> REGISTER = SNSReg.RECIPE_SERIALIZERS;
 
     public static final RegistryObject<RecipeSerializer<?>> ICE_CREAM_SERIALIZER = REGISTER.register("ice_creaming", IceCreamMachineRecipe.Serializer::new);
     public static final RegistryObject<RecipeSerializer<?>> JAM_PRESSER_SERIALIZER = REGISTER.register("jam_pressing", JamPresserRecipe.Serializer::new);

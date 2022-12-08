@@ -6,6 +6,7 @@ import com.charlotte.sweetnotsavourymod.common.world.features.tree.ChocolateIceC
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamFoliagePlacer;
 import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTrunkPlacer;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
+import com.charlotte.sweetnotsavourymod.core.init.SNSReg;
 import com.google.gson.JsonElement;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -37,9 +38,9 @@ import java.util.OptionalInt;
 import java.util.function.Supplier;
 
 public class ModConfiguredFeatures {
-
-    private static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_REGISTER = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, SweetNotSavouryMod.MOD_ID);
-    private static final DeferredRegister<PlacedFeature> PLACED_REGISTER = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, SweetNotSavouryMod.MOD_ID);
+    public static void loadClass() {}
+    private static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_REGISTER = SNSReg.createReg(Registry.CONFIGURED_FEATURE_REGISTRY);
+    private static final DeferredRegister<PlacedFeature> PLACED_REGISTER = SNSReg.createReg(Registry.PLACED_FEATURE_REGISTRY);
 
     private final Map<ResourceLocation, ConfiguredFeature<?, ?>> map;
     private final RegistryOps<JsonElement> registryOps;
@@ -49,13 +50,6 @@ public class ModConfiguredFeatures {
         this.registryOps = registryOps;
         generate();
     }
-
-    public static void register(IEventBus bus) {
-        CONFIGURED_REGISTER.register(bus);
-        PLACED_REGISTER.register(bus);
-    }
-
-    public static void bootstrap() {}
 
     public void generate() {
         add(ICE_CREAM_TREE);

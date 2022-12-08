@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.common.painting;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.core.init.SNSReg;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -9,8 +10,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModPaintings {
-    public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS =
-            DeferredRegister.create(ForgeRegistries.Keys.PAINTING_VARIANTS, SweetNotSavouryMod.MOD_ID);
+    public static void loadClass() {}
+    public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS = SNSReg.PAINTING_VARIANTS;
 
     public static final RegistryObject<PaintingVariant> PLAIN = PAINTING_VARIANTS.register("plain",
             () -> new PaintingVariant(16, 16));

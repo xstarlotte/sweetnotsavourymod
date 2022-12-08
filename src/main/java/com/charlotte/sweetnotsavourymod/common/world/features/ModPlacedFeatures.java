@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ModPlacedFeatures {
+    public static void loadClass() {}
 
     private final Map<ResourceLocation, PlacedFeature> map;
     private final RegistryOps<JsonElement> registryOps;
@@ -23,8 +24,6 @@ public class ModPlacedFeatures {
         this.registryOps = registryOps;
         generate();
     }
-
-    public static void bootstrap() {}
 
     public void generate() {
         add(ICE_CREAM_TREE_CHECKED);

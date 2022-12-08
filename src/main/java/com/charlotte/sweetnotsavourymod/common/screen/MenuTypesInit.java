@@ -1,22 +1,22 @@
 package com.charlotte.sweetnotsavourymod.common.screen;
-import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenu;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuTemplate;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
+import com.charlotte.sweetnotsavourymod.core.init.SNSReg;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.network.IContainerFactory;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.concurrent.atomic.AtomicReference;
 
 public class MenuTypesInit {
-    public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.Keys.MENU_TYPES, SweetNotSavouryMod.MOD_ID);
+    public static void loadClass() {}
+    public static final DeferredRegister<MenuType<?>> MENUS = SNSReg.MENU_TYPES;
 
     public static final RegistryObject<MenuType<IceCreamMachineMenu>> ICE_CREAM_MACHINE_MENU =
             registerMenuType(IceCreamMachineMenu::new, "ice_cream_machine_menu");

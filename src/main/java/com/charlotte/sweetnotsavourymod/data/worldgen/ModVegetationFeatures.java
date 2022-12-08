@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ModVegetationFeatures {
-
+    public static void loadClass() {}
     private final Map<ResourceLocation, ConfiguredFeature<?, ?>> configMap;
     private final Map<ResourceLocation, PlacedFeature> placedMap;
     private final RegistryOps<JsonElement> registryOps;
@@ -36,8 +36,6 @@ public class ModVegetationFeatures {
         this.registryOps = registryOps;
         generate();
     }
-
-    public static void bootstrap() {}
 
     private void generate() {
         add(ICE_CREAM_TREE_SPAWN, ICE_CREAM_PLACED);
