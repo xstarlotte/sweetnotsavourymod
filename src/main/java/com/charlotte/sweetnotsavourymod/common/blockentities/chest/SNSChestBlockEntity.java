@@ -24,6 +24,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
@@ -32,6 +34,10 @@ import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Supplier;
 
+@OnlyIn(
+		value = Dist.CLIENT,
+		_interface = IChestLid.class
+)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class SNSChestBlockEntity extends LockableLootTileEntity implements IChestLid, ITickableTileEntity {
