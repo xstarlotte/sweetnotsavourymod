@@ -37,6 +37,7 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(generator, fileHelper));
         generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
         generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
+        generator.addProvider(event.includeServer(), new ModBlockTagsProvider(generator, fileHelper));
 
         var registryOps = RegistryOps.create(JsonOps.INSTANCE, RegistryAccess.builtinCopy());
 
