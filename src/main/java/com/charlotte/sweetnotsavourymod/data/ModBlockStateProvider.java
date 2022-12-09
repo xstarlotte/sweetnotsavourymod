@@ -36,6 +36,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlock(BlockInit.FROSTING_DOOR);
         doorBlock(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR);
         doorBlock(BlockInit.TOOTHPASTE_DOOR);
+        doorBlock(BlockInit.CANDYCANE_DOOR);
         fenceGateBlock(BlockInit.HARDENED_BANANA_FENCE_GATE, BlockInit.HARDENEDBANANAPLANKS);
         fenceGateBlock(BlockInit.WAFER_WOOD_FENCE_GATE, BlockInit.WAFERWOODBLOCK);
         fenceGateBlock(BlockInit.STRAWBERRY_CANDY_FENCE_GATE, BlockInit.STRAWBERRYCANDYBLOCK);

@@ -2321,6 +2321,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(BlockInit.ROTTENMOULDYCANDYCANEBRICKS.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
+        ShapedRecipeBuilder.shaped(BlockInit.CANDYCANE_DOOR.get())
+                .define('S', BlockInit.CANDYCANEBLOCK.get())
+                .pattern("SS")
+                .pattern("SS")
+                .pattern("SS")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BlockInit.CANDYCANEBLOCK.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
        //Sprinkles
 
         ShapelessRecipeBuilder.shapeless(ItemInit.SPRINKLES.get(), 4)

@@ -1,4 +1,4 @@
-// 1.19.2	2022-11-26T01:22:04.241281	LootTables
+// 1.19.2	2022-12-09T12:12:28.8436178	LootTables
 8d2dd53a93b427001766789322c473f5ef93e7e5 data/sweetnotsavourymod/loot_tables/blocks/applegummybearteddy.json
 81bb25a9b2f40b5a8d6d2ae4a21a904ffb6e4cc4 data/sweetnotsavourymod/loot_tables/blocks/banana_baker.json
 b41e067570849b4d9598621694e26772f3752851 data/sweetnotsavourymod/loot_tables/blocks/banana_crop.json
@@ -48,6 +48,7 @@ ccf32d8735c9846c111e0fb00d3cb9fa5269ca8f data/sweetnotsavourymod/loot_tables/blo
 44b00af5a2141eb0f0c6432493f0ecdaf8b7bd1c data/sweetnotsavourymod/loot_tables/blocks/candycanesugarcaneblock.json
 efd4ef448d03941011964d84250e6e9056690b8d data/sweetnotsavourymod/loot_tables/blocks/candycanewindow.json
 ae93283f9c0f387af69cf67707bda8bf45ea4143 data/sweetnotsavourymod/loot_tables/blocks/candycanewindow2.json
+35a6d80d03b4817959c4f8942eb90771d576600a data/sweetnotsavourymod/loot_tables/blocks/candycane_door.json
 b7b0c5dcda299dc18699249d8f5536e92596c5da data/sweetnotsavourymod/loot_tables/blocks/candycane_furnace.json
 24462385ade6ad98896c60c31427d273cd1c0baf data/sweetnotsavourymod/loot_tables/blocks/candycane_grass_block.json
 8eaa023c04a36aa1df3b7ef639099bad3a33df5d data/sweetnotsavourymod/loot_tables/blocks/candyflossblock.json

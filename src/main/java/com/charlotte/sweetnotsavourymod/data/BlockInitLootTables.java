@@ -353,6 +353,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get());
         this.dropSelf(BlockInit.FROSTING_DOOR.get());
         this.dropSelf(BlockInit.TOOTHPASTE_DOOR.get());
+        this.dropSelf(BlockInit.CANDYCANE_DOOR.get());
 
         this.dropSelf(BlockInit.POISONOAKMINIDOOR.get());
         this.dropSelf(BlockInit.POISONOAKDRAWERS.get());
@@ -513,6 +514,11 @@ public class BlockInitLootTables extends BlockLoot {
                     NORMAL_LEAVES_SAPLING_CHANCES);
         });
 
+        this.add(BlockInit.CHOCOLATERAINBOWFROSTINGLEAVES.get(), (p_124104_) -> {
+            return createOakLeavesDrops(p_124104_, BlockInit.ICECREAMTREESAPLING.get(),
+                    NORMAL_LEAVES_SAPLING_CHANCES);
+        });
+
         //crops
 
         LootItemCondition.Builder lootitemcondition$banana = LootItemBlockStatePropertyCondition.hasBlockStateProperties
@@ -616,12 +622,7 @@ public class BlockInitLootTables extends BlockLoot {
 
 
 
-        //--------- CHOCOLATEICECREAMTREESPLING TO BE MADE TY :)-------------
-
-        this.add(BlockInit.CHOCOLATERAINBOWFROSTINGLEAVES.get(), (p_124104_) -> {
-            return createOakLeavesDrops(p_124104_, BlockInit.ICECREAMTREESAPLING.get(),
-                    NORMAL_LEAVES_SAPLING_CHANCES);
-        });
+       //doors
 
         this.add(BlockInit.STRAWBERRY_CANDY_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.RASPBERRY_CANDY_DOOR.get(), BlockLoot::createDoorTable);
@@ -639,6 +640,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.add(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.FROSTING_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.TOOTHPASTE_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(BlockInit.CANDYCANE_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), BlockLoot::createDoorTable);
 
         this.add(BlockInit.STRAWBERRY_CANDY_SLAB.get(), BlockLoot::createSlabItemTable);

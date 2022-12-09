@@ -327,6 +327,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTING_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TOOTHPASTE_DOOR.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), RenderType.translucent());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYWAFFLEBED.get(), RenderType.cutout());
@@ -412,6 +413,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTING_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TOOTHPASTE_DOOR.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), RenderType.translucent());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANEBUSH.get(), RenderType.cutout());
