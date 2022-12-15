@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
@@ -193,7 +194,7 @@ public class SNSChestBlockEntity extends RandomizableContainerBlockEntity implem
 	@Nonnull
 	@Override
 	public <T> LazyOptional<T> getCapability(net.minecraftforge.common.capabilities.Capability<T> cap, @Nullable Direction side) {
-		if (!this.remove && cap == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+		if (!this.remove && cap == ForgeCapabilities.ITEM_HANDLER) {
 			if (this.chestHandler == null)
 				this.chestHandler = net.minecraftforge.common.util.LazyOptional.of(this::createHandler);
 			return this.chestHandler.cast();

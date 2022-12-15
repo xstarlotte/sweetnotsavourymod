@@ -126,6 +126,12 @@ public class IceCreamCowEntity extends TamableAnimal implements IAnimatable, IVa
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
+        if (itemstack.is(Items.BUCKET) && !this.isBaby()) {
+            player.playSound(SoundEvents.COW_MILK, 1.0F, 1.0F);
+            ItemStack itemstack1 = ItemUtils.createFilledResult(itemstack, player, new ItemStack(ItemInit.CREAMY_MILK_BUCKET.get()));
+            player.setItemInHand(hand, itemstack1);
+            return InteractionResult.sidedSuccess(this.level.isClientSide);
+        }
         Item item = itemstack.getItem();
         Item itemForTaming = ItemInit.CANDYCANESUGAR.get();
         if(isFood(itemstack)) {
