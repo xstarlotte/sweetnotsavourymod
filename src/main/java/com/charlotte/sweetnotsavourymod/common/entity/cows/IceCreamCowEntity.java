@@ -31,6 +31,7 @@ import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
@@ -38,6 +39,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
@@ -97,7 +99,7 @@ public class IceCreamCowEntity extends TamableAnimal implements IAnimatable, IVa
     //attributes + goals
     public static AttributeSupplier setAttributes() {
         return TamableAnimal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 80.0D)
+                .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.ATTACK_DAMAGE, 4D)
                 .add(Attributes.ATTACK_SPEED, 2.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.25f).build();
@@ -135,6 +137,15 @@ public class IceCreamCowEntity extends TamableAnimal implements IAnimatable, IVa
         Item item = itemstack.getItem();
         Item itemForTaming = ItemInit.CANDYCANESUGAR.get();
         if(isFood(itemstack)) {
+            if (this.isTame() && this.getHealth() < this.getMaxHealth()) {
+                this.heal(5);
+                if (!player.getAbilities().instabuild) {
+                    itemstack.shrink(1);
+                }
+    
+                this.gameEvent(GameEvent.EAT, this);
+                return InteractionResult.SUCCESS;
+            }
             return super.mobInteract(player, hand);
         }
         if (item == itemForTaming && !isTame()) {
