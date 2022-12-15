@@ -3,10 +3,7 @@ package com.charlotte.sweetnotsavourymod.data;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.FenceGateBlock;
-import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -49,7 +46,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceGateBlock(BlockInit.MANGO_CANDY_FENCE_GATE, BlockInit.MANGOCANDYBLOCK);
         fenceGateBlock(BlockInit.PEACH_CANDY_FENCE_GATE, BlockInit.PEACHCANDYBLOCK);
         fenceGateBlock(BlockInit.CANDYFLOSS_FENCE_GATE, BlockInit.CANDYFLOSSBLOCK);
+        fenceGateBlock(BlockInit.CANDYCANE_FENCE_GATE, BlockInit.CANDYCANEBLOCK);
+        fenceGateBlock(BlockInit.CANDYCANEBRICK_FENCE_GATE, BlockInit.CANDYCANEBRICKS);
         slabBlock(BlockInit.CANDYFLOSS_SLAB, BlockInit.CANDYFLOSSBLOCK);
+        slabBlock(BlockInit.CANDYCANE_SLAB, BlockInit.CANDYCANEBLOCK);
+        slabBlock(BlockInit.CANDYCANEBRICK_SLAB, BlockInit.CANDYCANEBRICKS);
+        slabBlock(BlockInit.ROTTENMOULDYCANDYCANE_SLAB, BlockInit.ROTTENMOULDYCANDYCANEBLOCK);
+        slabBlock(BlockInit.ROTTENMOULDYCANDYCANEBRICK_SLAB, BlockInit.ROTTENMOULDYCANDYCANEBRICKS);
+        slabBlock(BlockInit.CHOCOLATE_WAFER_WOOD_SLAB, BlockInit.CHOCOLATEWAFERWOODBLOCK);
+        slabBlock(BlockInit.WAFER_PLANK_SLAB, BlockInit.WAFERWOODPLANKS);
+        slabBlock(BlockInit.POPCORN_SLAB, BlockInit.POPCORNBLOCK);
+        slabBlock(BlockInit.CHOCOLATECHIPCOOKIE_SLAB, BlockInit.CHOCOLATECHIPCOOKIEBLOCK);
+        slabBlock(BlockInit.WHITECHOCOLATECHIPCOOKIE_SLAB, BlockInit.WHITECHOCOLATECHIPCOOKIEBLOCK);
+        slabBlock(BlockInit.RAINBOWCOOKIE_SLAB, BlockInit.RAINBOWCOOKIEBLOCK);
+        stairsBlock(BlockInit.CANDYCANE_STAIRS, BlockInit.CANDYCANEBLOCK);
+        stairsBlock(BlockInit.CANDYCANEBRICK_STAIRS, BlockInit.CANDYCANEBRICKS);
+
     }
 
     private <T extends Block> void slabBlock(RegistryObject<T> slabObj, RegistryObject<Block> fullBlockObj) {
@@ -57,6 +69,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
             slabBlock(slabBlock, modLoc("block/%s".formatted(fullBlockObj.getId().getPath())), modLoc("blocks/%s".formatted(fullBlockObj.getId().getPath())));
         } else {
             throw new IllegalArgumentException("%s is not an instance of SlabBlock".formatted(slabObj.get()));
+        }
+    }
+
+    private <T extends Block> void stairsBlock(RegistryObject<T> stairBlockObj, RegistryObject<Block> textureBlockObj) {
+        if (stairBlockObj.get() instanceof StairBlock stairBlock) {
+            stairsBlock(stairBlock, modLoc("blocks/%s".formatted(textureBlockObj.getId().getPath())));
+        } else {
+            throw new IllegalArgumentException("%s is not an instance of StairBlock".formatted(stairBlockObj.get()));
         }
     }
 

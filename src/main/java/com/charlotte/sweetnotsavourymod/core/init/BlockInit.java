@@ -607,6 +607,10 @@ public class BlockInit {
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_PINK)
 					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> BLACKBERRYSORBETBLOCK = registerBlock("blackberrysorbetblock",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_PINK)
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 	public static final RegistryObject<Block> LEMONSORBETBLOCK = registerBlock("lemonsorbetblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_YELLOW)
 					.strength(0.6f,1200f)
@@ -633,6 +637,11 @@ public class BlockInit {
 					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> MELTINGCHOCOLATEBLOCK = registerBlock("meltingchocolateblock",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> MELTINGBLACKBERRYCHOCOLATEBLOCK = registerBlock("meltingblackberrychocolateblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
 					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
@@ -1123,7 +1132,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> POISONBERRYLANTERN = registerBlock("poisonberrylantern",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType.LANTERN)
 						  .lightLevel((p_187433_) -> 15)
@@ -1132,7 +1141,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> STRAWBERRYLAMP = registerBlock("strawberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1143,7 +1152,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> RASPBERRYLAMP = registerBlock("raspberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1154,7 +1163,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> BLUEBERRYLAMP = registerBlock("blueberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1165,7 +1174,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> BLACKBERRYLAMP = registerBlock("blackberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1176,7 +1185,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> LEMONLAMP = registerBlock("lemonlamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1187,7 +1196,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> ORANGELAMP = registerBlock("orangelamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1198,7 +1207,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> BLUEBERRYLOLLIPOPLAMP = registerBlock("blueberrylollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1209,7 +1218,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> STRAWBERRYLOLLIPOPLAMP = registerBlock("strawberrylollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1220,7 +1229,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> BLACKBERRYLOLLIPOPLAMP = registerBlock("blackberrylollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1231,7 +1240,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> RASPBERRYLOLLIPOPLAMP = registerBlock("raspberrylollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1242,7 +1251,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	      public static final RegistryObject<Block> ORANGELOLLIPOPLAMP = registerBlock("orangelollipoplamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties
-						  .of(Material.METAL)
+						  .of(Material.BAMBOO)
 						  
 						  .strength(3.5F).sound(SoundType
 								  .LANTERN)
@@ -1253,7 +1262,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> LEMONLOLLIPOPLAMP = registerBlock("lemonlollipoplamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1264,7 +1273,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> VANILLAICECREAMLAMP = registerBlock("vanillaicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1275,7 +1284,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> CHOCOLATEICECREAMLAMP = registerBlock("chocolateicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1286,7 +1295,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> TOFFEEICECREAMLAMP = registerBlock("toffeeicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1297,7 +1306,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> STRAWBERRYICECREAMLAMP = registerBlock("strawberryicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1308,7 +1317,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> RASPBERRYICECREAMLAMP = registerBlock("raspberryicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1319,7 +1328,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> BLACKBERRYICECREAMLAMP = registerBlock("blackberryicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1330,7 +1339,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> BLUEBERRYICECREAMLAMP = registerBlock("blueberryicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1341,7 +1350,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> LEMONICECREAMLAMP = registerBlock("lemonicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1352,7 +1361,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> ORANGEICECREAMLAMP = registerBlock("orangeicecreamlamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
+					.of(Material.BAMBOO)
 					
 					.strength(3.5F).sound(SoundType
 							.LANTERN)
@@ -1551,7 +1560,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							BlockBehaviour
 									.Properties
 									.of(Material.STONE)
-									.strength(5f)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1560,8 +1569,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> STRAWBERRYCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1570,8 +1579,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			() -> new StairBlock(() -> STRAWBERRYCANDYBLOCK.get().defaultBlockState(),
 					BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1580,8 +1589,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> RASPBERRYCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1590,8 +1599,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> BLUEBERRYCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1600,8 +1609,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> BLACKBERRYCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1610,8 +1619,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> ORANGECANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1620,8 +1629,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1630,8 +1639,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1640,8 +1649,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1650,8 +1659,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1660,9 +1669,29 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new StairBlock(() -> LEMONCANDYBLOCK.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
-									.of(Material.METAL)
-									.strength(5f)
+									.of(Material.BAMBOO)
+									.strength(0.5f)
 									),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANE_STAIRS = registerBlock
+			("candycane_stairs",
+					() -> new StairBlock(() -> CANDYCANEBLOCK.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANEBRICK_STAIRS = registerBlock
+			("candycanebrick_stairs",
+					() -> new StairBlock(() -> CANDYCANEBRICKS.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 //fence
@@ -1672,7 +1701,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
 							.of(Material.STONE)
-							.strength(5f)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1680,8 +1709,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("wafer_wood_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1689,8 +1718,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("strawberry_candy_fence",
 			() -> new FenceBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
-					.strength(5f)
+					.of(Material.BAMBOO)
+					.strength(0.5f)
 					),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1698,8 +1727,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("raspberry_candy_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1707,8 +1736,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("blackberry_candy_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1716,8 +1745,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("blueberry_candy_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1725,8 +1754,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("orange_candy_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1734,8 +1763,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("lemon_candy_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1743,8 +1772,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("lime_candy_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1752,8 +1781,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("mango_candy_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1761,8 +1790,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("peach_candy_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1770,8 +1799,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("candyfloss_fence",
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1782,7 +1811,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new WallBlock(BlockBehaviour
 							.Properties
 							.of(Material.STONE)
-							.strength(5f)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1790,8 +1819,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("wafer_wood_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1799,8 +1828,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("strawberry_candy_wall",
 			() -> new WallBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
-					.strength(5f)
+					.of(Material.BAMBOO)
+					.strength(0.5f)
 					),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1808,8 +1837,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("raspberry_candy_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1817,8 +1846,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("blackberry_candy_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1826,8 +1855,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("blueberry_candy_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1835,8 +1864,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("orange_candy_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1844,8 +1873,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("lemon_candy_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1853,8 +1882,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("lime_candy_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1862,8 +1891,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("mango_candy_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1871,8 +1900,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("peach_candy_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1880,8 +1909,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("candyfloss_wall",
 					() -> new WallBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1890,9 +1919,10 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new WallBlock(BlockBehaviour
 							.Properties
 							.of(Material.METAL)
-							.strength(5f)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 
 //gate
 
@@ -1901,7 +1931,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
 							.of(Material.STONE)
-							.strength(5f)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1909,8 +1939,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("wafer_wood_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1918,8 +1948,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("strawberry_candy_fence_gate",
 			() -> new FenceGateBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
-					.strength(5f)
+					.of(Material.BAMBOO)
+					.strength(0.5f)
 					),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1927,8 +1957,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("raspberry_candy_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1936,8 +1966,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("blackberry_candy_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1945,8 +1975,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("blueberry_candy_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1954,8 +1984,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("orange_candy_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1963,8 +1993,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("lemon_candy_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1972,8 +2002,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("lime_candy_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1981,8 +2011,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("mango_candy_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1990,8 +2020,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("peach_candy_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1999,10 +2029,31 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("candyfloss_fence_gate",
 					() -> new FenceGateBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANE_FENCE_GATE = registerBlock
+			("candycane_fence_gate",
+					() -> new FenceGateBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANEBRICK_FENCE_GATE = registerBlock
+			("candycanebrick_fence_gate",
+					() -> new FenceGateBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+
+
 //slab
 
 	public static final RegistryObject<Block> HARDENED_BANANA_SLAB = registerBlock
@@ -2010,7 +2061,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
 							.of(Material.STONE)
-							.strength(5f)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2018,17 +2069,35 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("wafer_wood_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> WAFER_PLANK_SLAB = registerBlock
+			("wafer_plank_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CHOCOLATE_WAFER_WOOD_SLAB = registerBlock
+			("chocolate_wafer_wood_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> STRAWBERRY_CANDY_SLAB = registerBlock
 			("strawberry_candy_slab",
 			() -> new SlabBlock(BlockBehaviour
 					.Properties
-					.of(Material.METAL)
-					.strength(5f)
+					.of(Material.BAMBOO)
+					.strength(0.5f)
 					),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2036,8 +2105,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("raspberry_candy_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2045,8 +2114,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("blackberry_candy_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2054,8 +2123,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("blueberry_candy_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2063,8 +2132,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("orange_candy_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2072,8 +2141,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("lemon_candy_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2081,8 +2150,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("lime_candy_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2090,8 +2159,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("mango_candy_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2099,8 +2168,8 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("peach_candy_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -2108,9 +2177,81 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			("candyfloss_slab",
 					() -> new SlabBlock(BlockBehaviour
 							.Properties
-							.of(Material.METAL)
-							.strength(5f)
+							.of(Material.BAMBOO)
+							.strength(0.5f)
 							),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANE_SLAB = registerBlock
+			("candycane_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANE_SLAB = registerBlock
+			("rottenmouldycandycane_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> POPCORN_SLAB = registerBlock
+			("popcorn_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CHOCOLATECHIPCOOKIE_SLAB = registerBlock
+			("chocolatechipcookie_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> WHITECHOCOLATECHIPCOOKIE_SLAB = registerBlock
+			("whitechocolatechipcookie_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> RAINBOWCOOKIE_SLAB = registerBlock
+			("rainbowcookie_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANEBRICK_SLAB = registerBlock
+			("candycanebrick_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBRICK_SLAB = registerBlock
+			("rottenmouldycandycanebrick_slab",
+					() -> new SlabBlock(BlockBehaviour
+							.Properties
+							.of(Material.BAMBOO)
+							.strength(0.5f)
+					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	//test
@@ -2118,7 +2259,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> PURE_HERB_BLOCK = registerBlock("pure_herb_block",
 			() -> new PureHerbBlock(BlockBehaviour.Properties
 					.of(Material.STONE)
-					.strength(5f)
+					.strength(0.5f)
 					),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 

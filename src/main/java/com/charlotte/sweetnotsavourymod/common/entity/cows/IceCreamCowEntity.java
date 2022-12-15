@@ -26,12 +26,15 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
@@ -115,6 +118,10 @@ public class IceCreamCowEntity extends TamableAnimal implements IAnimatable, IVa
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
     }
 
+    //milking
+
+
+
     //taming
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
@@ -151,6 +158,7 @@ public class IceCreamCowEntity extends TamableAnimal implements IAnimatable, IVa
             return InteractionResult.PASS;
         }
         return super.mobInteract(player, hand);
+
     }
 
     @Override

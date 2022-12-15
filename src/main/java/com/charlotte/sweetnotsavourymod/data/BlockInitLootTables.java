@@ -238,12 +238,14 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.CANDYFLOSSBLOCK.get());
         this.dropSelf(BlockInit.STRAWBERRYSORBETBLOCK.get());
         this.dropSelf(BlockInit.RASPBERRYSORBETBLOCK.get());
+        this.dropSelf(BlockInit.BLACKBERRYSORBETBLOCK.get());
         this.dropSelf(BlockInit.BLUEBERRYSORBETBLOCK.get());
         this.dropSelf(BlockInit.LEMONSORBETBLOCK.get());
         this.dropSelf(BlockInit.ORANGESORBETBLOCK.get());
         this.dropSelf(BlockInit.PEACHMANGOSORBETBLOCK.get());
         this.dropSelf(BlockInit.RASPBERRYICINGBLOCK.get());
         this.dropSelf(BlockInit.MELTINGCHOCOLATEBLOCK.get());
+        this.dropSelf(BlockInit.MELTINGBLACKBERRYCHOCOLATEBLOCK.get());
         this.dropSelf(BlockInit.MELTINGORANGECHOCOLATEBLOCK.get());
         this.dropSelf(BlockInit.MELTINGLEMONCHOCOLATEBLOCK.get());
         this.dropSelf(BlockInit.MELTINGSTRAWBERRYCHOCOLATEBLOCK.get());
@@ -283,6 +285,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.LIME_CANDY_STAIRS.get());
         this.dropSelf(BlockInit.WAFER_WOOD_STAIRS.get());
         this.dropSelf(BlockInit.HARDENED_BANANA_STAIRS.get());
+        this.dropSelf(BlockInit.CANDYCANEBRICK_STAIRS.get());
 
         this.dropSelf(BlockInit.BLACKBERRY_CANDY_WALL.get());
         this.dropSelf(BlockInit.STRAWBERRY_CANDY_WALL.get());

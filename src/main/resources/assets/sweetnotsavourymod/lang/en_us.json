@@ -74,6 +74,17 @@
 	"item.sweetnotsavourymod.snswhalespawnegg": "Wafer Whale Spawn Egg",
 	"item.sweetnotsavourymod.snsdolphinspawnegg": "Cola Bottle-Nose Dolphin Spawn Egg",
 
+
+
+	"item.sweetnotsavourymod.wrappedstrawberrycandy": "Wrapped Strawberry Candy",
+	"item.sweetnotsavourymod.wrappedblackberrycandy": "Wrapped Blackberry Candy",
+	"item.sweetnotsavourymod.wrappedraspberrycandy": "Wrapped Raspberry Candy",
+	"item.sweetnotsavourymod.wrappedlemoncandy": "Wrapped Lemon Candy",
+	"item.sweetnotsavourymod.wrappedorangecandy": "Wrapped Orange Candy",
+	"item.sweetnotsavourymod.wrappedblueberrycandy": "Wrapped Blueberry Candy",
+
+
+
 	"item.sweetnotsavourymod.strawberrycandy": "Strawberry Candy",
 	"item.sweetnotsavourymod.raspberrycandy": "Raspberry Candy",
 	"item.sweetnotsavourymod.lemoncandy": "Lemon Candy",
@@ -83,12 +94,6 @@
 	"item.sweetnotsavourymod.limecandy": "Lime Candy",
 	"item.sweetnotsavourymod.mangocandy": "Mango Candy",
 	"item.sweetnotsavourymod.peachcandy": "Peach Candy",
-	"item.sweetnotsavourymod.wrappedstrawberrycandy": "Wrapped Strawberry Candy",
-	"item.sweetnotsavourymod.wrappedblackberrycandy": "Wrapped Blackberry Candy",
-	"item.sweetnotsavourymod.wrappedraspberrycandy": "Wrapped Raspberry Candy",
-	"item.sweetnotsavourymod.wrappedlemoncandy": "Wrapped Lemon Candy",
-	"item.sweetnotsavourymod.wrappedorangecandy": "Wrapped Orange Candy",
-	"item.sweetnotsavourymod.wrappedblueberrycandy": "Wrapped Blueberry Candy",
 	"item.sweetnotsavourymod.sugarwrapper": "Sugar Wrapper",
 	"item.sweetnotsavourymod.sugarstick": "Sugar Stick",
 	"item.sweetnotsavourymod.strawberrylollipop": "Strawberry Lollipop",
@@ -169,7 +174,10 @@
 	"item.sweetnotsavourymod.blackberry_jam": "Blackberry Jam",
 
 
+
 	"item.sweetnotsavourymod.creamy_milk_bucket": "Creamy Milk Bucket",
+
+
 
 	"item.sweetnotsavourymod.candy_cane_sword": "Candy Cane Sword",
 	"item.sweetnotsavourymod.candy_cane_shovel": "Candy Cane Shovel",
@@ -231,6 +239,8 @@
 	"item.sweetnotsavourymod.peach_candy_pickaxe": "Peach Candy Pickaxe",
 	"item.sweetnotsavourymod.peach_candy_hoe": "Peach Candy Hoe",
 
+
+
 	"item.sweetnotsavourymod.vanilla_ice_cream_helmet": "Vanilla Ice Cream Helmet",
 	"item.sweetnotsavourymod.vanilla_ice_cream_chestplate": "Vanilla Ice Cream Chestplate",
 	"item.sweetnotsavourymod.vanilla_ice_cream_leggings": "Vanilla Ice Cream Leggings",
@@ -281,6 +291,8 @@
 	"item.sweetnotsavourymod.peach_candy_leggings": "Peach Candy Leggings",
 	"item.sweetnotsavourymod.peach_candy_boots": "Peach Candy Boots",
 
+
+
 	"item.sweetnotsavourymod.waferwood_boat": "Wafer Wood Boat",
 	"item.sweetnotsavourymod.chocolatewaferwood_boat": "Chocolate Wafer Wood Boat",
 	"item.sweetnotsavourymod.waferplank_boat": "Wafer Plank Boat",
@@ -296,6 +308,8 @@
 	"item.sweetnotsavourymod.candycanebrick_boat": "Candy Cane Brick Boat",
 	"item.sweetnotsavourymod.candyfloss_boat": "Candyfloss Boat",
 
+
+
 	"item.sweetnotsavourymod.orangeicecreamsword": "Orange Ice Cream Sword",
 	"item.sweetnotsavourymod.lemonicecreamsword": "Lemon Ice Cream Sword",
 	"item.sweetnotsavourymod.strawberryicecreamsword": "Strawberry Ice Cream Sword",
@@ -303,14 +317,22 @@
 	"item.sweetnotsavourymod.vanillaicecreamsword": "Vanilla Ice Cream Sword",
 	"item.sweetnotsavourymod.blueberryicecreamsword": "Blueberry Ice Cream Sword",
 
+
+
 	"item.sweetnotsavourymod.savoury_essence": "Savoury Essence",
 	"item.sweetnotsavourymod.sweet_essence": "Sweet Essence",
 	"item.sweetnotsavourymod.enchanted_toothpaste": "Enchanted Toothpaste",
 
+
+
 	"block.sweetnotsavourymod.candycanesugarcaneblock": "Candy Cane Sugar Cane Block",
+
+
 
 	"block.sweetnotsavourymod.icecreamtreesapling": "Ice Cream Tree Sapling",
 	"block.sweetnotsavourymod.chocolateicecreamtreesapling": "Chocolate Ice Cream Tree Sapling",
+
+
 
 	"block.sweetnotsavourymod.banana_crop": "Sweet Banana Crop",
 	"block.sweetnotsavourymod.peach_crop": "Sweet Peach Crop",
@@ -326,6 +348,8 @@
 	"block.sweetnotsavourymod.orange_crop": "Sweet Orange Crop",
 	"block.sweetnotsavourymod.carrot_crop": "Sweet Carrot Crop",
 	"block.sweetnotsavourymod.blackberry_crop": "Sweet Blackberry Crop",
+
+
 
 	"block.sweetnotsavourymod.frostinggrass": "Frosting Grass",
 	"block.sweetnotsavourymod.candycane_grass_block": "Candy Cane Grass Block",
@@ -366,6 +390,8 @@
 	"block.sweetnotsavourymod.toffeeconeflower": "Toffee Cone Flower",
 	"block.sweetnotsavourymod.poisonberryplant": "Poison Berry Plant",
 
+
+
 	"block.sweetnotsavourymod.waferwoodplanks": "Wafer Wood Planks",
 	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
 	"block.sweetnotsavourymod.chocolatewaferwoodblock": "Chocolate Wafer Wood Block",
@@ -395,6 +421,7 @@
 	"block.sweetnotsavourymod.mangocandyblock": "Mango Candy Block",
 	"block.sweetnotsavourymod.blueberrycandyblock": "Blueberry Candy Block",
 	"block.sweetnotsavourymod.strawberrysorbetblock": "Strawberry Sorbet Sand",
+	"block.sweetnotsavourymod.blackberrysorbetblock": "Blackberry Sorbet Sand",
 	"block.sweetnotsavourymod.raspberrysorbetblock": "Raspberry Sorbet Sand",
 	"block.sweetnotsavourymod.lemonsorbetblock": "Lemon Sorbet Sand",
 	"block.sweetnotsavourymod.blueberrysorbetblock": "Blueberry Sorbet Sand",
@@ -409,6 +436,7 @@
 	"block.sweetnotsavourymod.meltingchocolateblock": "Melting Chocolate",
 	"block.sweetnotsavourymod.meltingstrawberrychocolateblock": "Melting Strawberry Chocolate",
 	"block.sweetnotsavourymod.meltingraspberrychocolateblock": "Melting Raspberry Chocolate",
+	"block.sweetnotsavourymod.meltingblackberrychocolateblock": "Melting Blackberry Chocolate",
 	"block.sweetnotsavourymod.meltinglemonchocolateblock": "Melting Lemon Chocolate",
 	"block.sweetnotsavourymod.meltingblueberrychocolateblock": "Melting Blueberry Chocolate",
 	"block.sweetnotsavourymod.meltingorangechocolateblock": "Melting Orange Chocolate",
@@ -427,8 +455,9 @@
 	"block.sweetnotsavourymod.hardenedbananastone": "Hardened Banana Stone",
 	"block.sweetnotsavourymod.hardenedbananaplanks": "Hardened Banana Planks",
 	"block.sweetnotsavourymod.smoothhardenedbananastone": "Smooth Banana Stone",
-
 	"block.sweetnotsavourymod.toothpaste_block": "Toothpaste Block",
+
+
 
 	"block.sweetnotsavourymod.rottenmouldycandycanechains": "Rotten Mouldy Candy Cane Chains",
 	"block.sweetnotsavourymod.rottenmouldycandycanebars": "Rotten Mouldy Candy Cane Bars",
@@ -436,48 +465,24 @@
 	"block.sweetnotsavourymod.rottenmouldycandycanebricks": "Rotten Mouldy Candy Cane Bricks",
 	"block.sweetnotsavourymod.rottenmouldycandycane_wall": "Rotten Mouldy Candy Cane Wall",
 
+
+
 	"block.sweetnotsavourymod.hardened_banana_stairs": "Hardened Banana Stairs",
-	"block.sweetnotsavourymod.hardened_banana_fence": "Hardened Banana Fence",
-	"block.sweetnotsavourymod.hardened_banana_fence_gate": "Hardened Banana Fence Gate",
-	"block.sweetnotsavourymod.hardened_banana_slab": "Hardened Banana Slab",
-	"block.sweetnotsavourymod.hardened_banana_wall": "Hardened Banana Wall",
-
 	"block.sweetnotsavourymod.wafer_wood_stairs": "Wafer Wood Stairs",
-	"block.sweetnotsavourymod.wafer_wood_fence": "Wafer Wood Fence",
-	"block.sweetnotsavourymod.wafer_wood_fence_gate": "Wafer Wood Fence Gate",
-	"block.sweetnotsavourymod.wafer_wood_slab": "Wafer Wood Slab",
-	"block.sweetnotsavourymod.wafer_wood_wall": "Wafer Wood Wall",
-
 	"block.sweetnotsavourymod.candyfloss_stairs": "Candyfloss Stairs",
-	"block.sweetnotsavourymod.candyfloss_fence": "Candyfloss Fence",
-	"block.sweetnotsavourymod.candyfloss_fence_gate": "Candyfloss Fence Gate",
-	"block.sweetnotsavourymod.candyfloss_slab": "Candyfloss Slab",
-	"block.sweetnotsavourymod.candyfloss_wall": "Candyfloss Wall",
-
 	"block.sweetnotsavourymod.lime_candy_stairs": "Lime Candy Stairs",
-	"block.sweetnotsavourymod.lime_candy_fence": "Lime Candy Fence",
-	"block.sweetnotsavourymod.lime_candy_fence_gate": "Lime Candy Fence Gate",
-	"block.sweetnotsavourymod.lime_candy_slab": "Lime Candy Slab",
-	"block.sweetnotsavourymod.lime_candy_wall": "Lime Candy Wall",
-
 	"block.sweetnotsavourymod.peach_candy_stairs": "Peach Candy Stairs",
-	"block.sweetnotsavourymod.peach_candy_fence": "Peach Candy Fence",
-	"block.sweetnotsavourymod.peach_candy_fence_gate": "Peach Candy Fence Gate",
-	"block.sweetnotsavourymod.peach_candy_slab": "Peach Candy Slab",
-	"block.sweetnotsavourymod.peach_candy_wall": "Peach Candy Wall",
-
 	"block.sweetnotsavourymod.mango_candy_stairs": "Mango Candy Stairs",
-	"block.sweetnotsavourymod.mango_candy_fence": "Mango Candy Fence",
-	"block.sweetnotsavourymod.mango_candy_fence_gate": "Mango Candy Fence Gate",
-	"block.sweetnotsavourymod.mango_candy_slab": "Mango Candy Slab",
-	"block.sweetnotsavourymod.mango_candy_wall": "Mango Candy Wall",
-
 	"block.sweetnotsavourymod.strawberry_candy_stairs": "Strawberry Candy Stairs",
 	"block.sweetnotsavourymod.raspberry_candy_stairs": "Raspberry Candy Stairs",
 	"block.sweetnotsavourymod.blackberry_candy_stairs": "Blackberry Candy Stairs",
 	"block.sweetnotsavourymod.blueberry_candy_stairs": "Blueberry Candy Stairs",
 	"block.sweetnotsavourymod.orange_candy_stairs": "Orange Candy Stairs",
 	"block.sweetnotsavourymod.lemon_candy_stairs": "Lemon Candy Stairs",
+	"block.sweetnotsavourymod.candycane_stairs": "Candycane Stairs",
+	"block.sweetnotsavourymod.candycanebrick_stairs": "Candycane Brick Stairs",
+
+
 
 	"block.sweetnotsavourymod.strawberry_candy_fence": "Strawberry Candy Fence",
 	"block.sweetnotsavourymod.raspberry_candy_fence": "Raspberry Candy Fence",
@@ -485,6 +490,14 @@
 	"block.sweetnotsavourymod.blueberry_candy_fence": "Blueberry Candy Fence",
 	"block.sweetnotsavourymod.orange_candy_fence": "Orange Candy Fence",
 	"block.sweetnotsavourymod.lemon_candy_fence": "Lemon Candy Fence",
+	"block.sweetnotsavourymod.mango_candy_fence": "Mango Candy Fence",
+	"block.sweetnotsavourymod.peach_candy_fence": "Peach Candy Fence",
+	"block.sweetnotsavourymod.lime_candy_fence": "Lime Candy Fence",
+	"block.sweetnotsavourymod.hardened_banana_fence": "Hardened Banana Fence",
+	"block.sweetnotsavourymod.candyfloss_fence": "Candyfloss Fence",
+	"block.sweetnotsavourymod.wafer_wood_fence": "Wafer Wood Fence",
+
+
 
 	"block.sweetnotsavourymod.strawberry_candy_fence_gate": "Strawberry Candy Fence Gate",
 	"block.sweetnotsavourymod.raspberry_candy_fence_gate": "Raspberry Candy Fence Gate",
@@ -492,6 +505,16 @@
 	"block.sweetnotsavourymod.blueberry_candy_fence_gate": "Blueberry Candy Fence Gate",
 	"block.sweetnotsavourymod.orange_candy_fence_gate": "Orange Candy Fence Gate",
 	"block.sweetnotsavourymod.lemon_candy_fence_gate": "Lemon Candy Fence Gate",
+	"block.sweetnotsavourymod.mango_candy_fence_gate": "Mango Candy Fence Gate",
+	"block.sweetnotsavourymod.peach_candy_fence_gate": "Peach Candy Fence Gate",
+	"block.sweetnotsavourymod.lime_candy_fence_gate": "Lime Candy Fence Gate",
+	"block.sweetnotsavourymod.candyfloss_fence_gate": "Candyfloss Fence Gate",
+	"block.sweetnotsavourymod.wafer_wood_fence_gate": "Wafer Wood Fence Gate",
+	"block.sweetnotsavourymod.hardened_banana_fence_gate": "Hardened Banana Fence Gate",
+	"block.sweetnotsavourymod.candycane_fence_gate": "Candycane Fence Gate",
+	"block.sweetnotsavourymod.candycanebrick_fence_gate": "Candycane Brick Fence Gate",
+
+
 
 	"block.sweetnotsavourymod.strawberry_candy_slab": "Strawberry Candy Slab",
 	"block.sweetnotsavourymod.raspberry_candy_slab": "Raspberry Candy Slab",
@@ -499,6 +522,24 @@
 	"block.sweetnotsavourymod.blueberry_candy_slab": "Blueberry Candy Slab",
 	"block.sweetnotsavourymod.orange_candy_slab": "Orange Candy Slab",
 	"block.sweetnotsavourymod.lemon_candy_slab": "Lemon Candy Slab",
+	"block.sweetnotsavourymod.lime_candy_slab": "Lime Candy Slab",
+	"block.sweetnotsavourymod.peach_candy_slab": "Peach Candy Slab",
+	"block.sweetnotsavourymod.mango_candy_slab": "Mango Candy Slab",
+	"block.sweetnotsavourymod.candyfloss_slab": "Candyfloss Slab",
+	"block.sweetnotsavourymod.hardened_banana_slab": "Hardened Banana Slab",
+	"block.sweetnotsavourymod.wafer_wood_slab": "Wafer Wood Slab",
+	"block.sweetnotsavourymod.wafer_plank_slab": "Wafer Plank Slab",
+	"block.sweetnotsavourymod.chocolate_wafer_wood_slab": "Chocolate Wafer Wood Slab",
+	"block.sweetnotsavourymod.candycane_slab": "Candycane Slab",
+	"block.sweetnotsavourymod.candycanebrick_slab": "Candycane Brick Slab",
+	"block.sweetnotsavourymod.rottenmouldycandycane_slab": "Rotten Mouldy Candycane Slab",
+	"block.sweetnotsavourymod.rottenmouldycandycanebrick_slab": "Candycane Slab",
+	"block.sweetnotsavourymod.popcorn_slab": "Popcorn Slab",
+	"block.sweetnotsavourymod.chocolatechipcookie_slab": "Chocolate Chip Cookie Slab",
+	"block.sweetnotsavourymod.whitechocolatechipcookie_slab": "White Chocolate Chip Cookie Slab",
+	"block.sweetnotsavourymod.rainbowcookie_slab": "Rainbow Cookie Slab",
+
+
 
 	"block.sweetnotsavourymod.strawberry_candy_wall": "Strawberry Candy Wall",
 	"block.sweetnotsavourymod.raspberry_candy_wall": "Raspberry Candy Wall",
@@ -506,6 +547,14 @@
 	"block.sweetnotsavourymod.blueberry_candy_wall": "Blueberry Candy Wall",
 	"block.sweetnotsavourymod.orange_candy_wall": "Orange Candy Wall",
 	"block.sweetnotsavourymod.lemon_candy_wall": "Lemon Candy Wall",
+	"block.sweetnotsavourymod.lime_candy_wall": "Lime Candy Wall",
+	"block.sweetnotsavourymod.peach_candy_wall": "Peach Candy Wall",
+	"block.sweetnotsavourymod.mango_candy_wall": "Mango Candy Wall",
+	"block.sweetnotsavourymod.hardened_banana_wall": "Hardened Banana Wall",
+	"block.sweetnotsavourymod.wafer_wood_wall": "Wafer Wood Wall",
+	"block.sweetnotsavourymod.candyfloss_wall": "Candyfloss Wall",
+
+
 
 	"block.sweetnotsavourymod.strawberryicecreambed": "Strawberry Ice Cream Bed",
 	"block.sweetnotsavourymod.blackberryicecreambed": "Blackberry Ice Cream Bed",
@@ -522,6 +571,8 @@
 	"block.sweetnotsavourymod.raspberrywafflebed": "Raspberry Waffle Bed",
 	"block.sweetnotsavourymod.blackberrywafflebed": "Blackberry Waffle Bed",
 	"block.sweetnotsavourymod.blueberrywafflebed": "Blueberry Waffle Bed",
+
+
 
 	"block.sweetnotsavourymod.strawberry_candy_door": "Strawberry Candy Door",
 	"block.sweetnotsavourymod.blueberry_candy_door": "Blueberry Candy Door",
@@ -541,6 +592,8 @@
 	"block.sweetnotsavourymod.rotten_mouldy_candy_cane_door": "Rotten Mouldy Candy Cane Door",
 	"block.sweetnotsavourymod.toothpaste_door": "Toothpaste Door",
 	"block.sweetnotsavourymod.candycane_door": "Candycane Door",
+
+
 
 	"block.sweetnotsavourymod.strawberrylamp": "Strawberry Lamp",
 	"block.sweetnotsavourymod.blackberrylamp": "Blackberry Lamp",
@@ -565,6 +618,8 @@
 	"block.sweetnotsavourymod.toffeeicecreamlamp": "Toffee Ice Cream Lamp",
 	"block.sweetnotsavourymod.poisonberrylantern": "Poison Berry Lantern",
 
+
+
 	"block.sweetnotsavourymod.poisonberryattackerteddy": "Poison Berry Attacker Teddy",
 	"block.sweetnotsavourymod.poisonberryarcherteddy": "Poison Berry Archer Teddy",
 	"block.sweetnotsavourymod.poisonberrydefenderteddy": "Poison Berry Defender Teddy",
@@ -583,6 +638,8 @@
 	"block.sweetnotsavourymod.colagummybearteddy": "Cola Gummy Bear Teddy",
 	"block.sweetnotsavourymod.applegummybearteddy": "Apple Gummy Bear Teddy",
 
+
+
 	"block.sweetnotsavourymod.poisonoakminidoor": "Poison Oak Mini Door",
 	"block.sweetnotsavourymod.poisonoakwindow": "Poison Oak Mini Window",
 	"block.sweetnotsavourymod.poisonberrywoodwardrobe": "Poison Oak Wardrobe",
@@ -592,6 +649,8 @@
 	"block.sweetnotsavourymod.poisonoakdrawers": "Poison Oak Drawers",
 	"block.sweetnotsavourymod.poisonoaktelevision": "Poison Oak Television",
 	"block.sweetnotsavourymod.poisonberrywoodwindow": "Poison Oak Window",
+
+
 
 	"entity.sweetnotsavourymod.poisonberryattacker": "Poison Berry Attacker",
 	"entity.sweetnotsavourymod.poisonberryarcher": "Poison Berry Archer",
