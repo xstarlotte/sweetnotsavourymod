@@ -6,6 +6,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolateChickenEnti
 import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.bugs.MintHumbugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSPretzelflyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSSpiderEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
@@ -18,6 +19,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSWaferschundEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSParfaitPixieEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.fantasy.WaferWitchEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.fish.*;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.crooks.CandyCaneCrookEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.hostile.mintimperials.MintImperialEntity;
@@ -64,6 +66,16 @@ public class EntityTypesInit {
 			.register("gingerbread_man", () -> EntityType.Builder.of(GingerbreadManEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "gingerbread_man").toString()));
+
+	public static final RegistryObject<EntityType<WaferWitchEntity>> WAFER_WITCH = ENTITY_TYPES
+			.register("wafer_witch", () -> EntityType.Builder.of(WaferWitchEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "wafer_witch").toString()));
+
+	public static final RegistryObject<EntityType<MintHumbugEntity>> MINT_HUMBUG = ENTITY_TYPES
+			.register("mint_humbug", () -> EntityType.Builder.of(MintHumbugEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "mint_humbug").toString()));
 
 	public static final RegistryObject<EntityType<IceCreamCowEntity>>ICECREAMCOW = ENTITY_TYPES
 			.register("icecreamcow", () -> EntityType.Builder.of(IceCreamCowEntity::new, MobCategory.CREATURE)

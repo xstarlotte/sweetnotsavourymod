@@ -111,6 +111,10 @@ public class ItemInit {
 
 	public static final RegistryObject<SpawnEggItem> GINGERBREAD_MANSPAWNEGG = registerDefaultEgg("gingerbread_manspawnegg", EntityTypesInit.GINGERBREAD_MAN);
 
+	public static final RegistryObject<SpawnEggItem> WAFER_WITCHSPAWNEGG = registerDefaultEgg("wafer_witchspawnegg", EntityTypesInit.WAFER_WITCH);
+
+	public static final RegistryObject<SpawnEggItem> MINT_HUMBUGSPAWNEGG = registerDefaultEgg("mint_humbugspawnegg", EntityTypesInit.MINT_HUMBUG);
+
 	public static final RegistryObject<SpawnEggItem> SNSCANDYCANEFISHSPAWNEGG = registerDefaultEgg("snscandycanefishspawnegg", EntityTypesInit.SNSCANDYCANEFISH);
 
 	public static final RegistryObject<SpawnEggItem> SNSICFISHSPAWNEGG = registerDefaultEgg("snsicfishspawnegg", EntityTypesInit.SNSICFISH);

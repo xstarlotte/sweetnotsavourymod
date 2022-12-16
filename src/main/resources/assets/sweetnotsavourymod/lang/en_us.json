@@ -61,10 +61,13 @@
 	"item.sweetnotsavourymod.snstoadspawnegg": "Flavoured Toad Spawn Egg",
 
 	"item.sweetnotsavourymod.snswaferschundspawnegg": "Waferschund Spawn Egg",
+	"item.sweetnotsavourymod.wafer_witchspawnegg": "Wafer Witch Spawn Egg",
 
 	"item.sweetnotsavourymod.chocolatechickenspawnegg": "Chocolate Chicken Spawn Egg",
 
 	"item.sweetnotsavourymod.gingerbread_manspawnegg": "Gingerbread Man Spawn Egg",
+
+	"item.sweetnotsavourymod.mint_humbugspawnegg": "Mint Humbug Spawn Egg",
 
 	"item.sweetnotsavourymod.snsicfishspawnegg": "Ice Cream Fish Spawn Egg",
 	"item.sweetnotsavourymod.snscandycanefishspawnegg": "Candycane Fish Spawn Egg",
@@ -720,6 +723,9 @@
 	"entity.sweetnotsavourymod.snsspider.1": "Cola Lace Spider",
 	"entity.sweetnotsavourymod.snsspider.2": "Lemon Lace Spider",
 	"entity.sweetnotsavourymod.snsspider.3": "Lime Lace Spider",
+	"entity.sweetnotsavourymod.snsspider.4": "Candycane Spider",
+
+	"entity.sweetnotsavourymod.mint_humbug": "Mint Humbug",
 
 	"entity.sweetnotsavourymod.snscccat.0": "Candycane Cat",
 	"entity.sweetnotsavourymod.snscccat.1": "Mint Candycane Cat",
@@ -774,6 +780,9 @@
 	"entity.sweetnotsavourymod.snswaferschund.9": "Lemon Waferschund",
 	"entity.sweetnotsavourymod.snswaferschund.10": "Chocolate Waferschund",
 	"entity.sweetnotsavourymod.snswaferschund.11": "Orange Waferschund",
+
+	"entity.sweetnotsavourymod.wafer_witch.0": "Vanilla Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.1": "Raspberry Wafer Witch",
 
 	"entity.sweetnotsavourymod.snself.0": "Blueberry Elf",
 	"entity.sweetnotsavourymod.snself.1": "Orange Elf",

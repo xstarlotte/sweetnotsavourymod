@@ -24,7 +24,7 @@ public class RSWMummyRenderer extends GeoEntityRenderer<RSWMummyEntity> {
     public RenderType getRenderType(RSWMummyEntity animatable, float partialTicks, PoseStack stack,
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
-        stack.scale(1F, 1F, 1F);
+        stack.scale(2F, 2F, 2F);
         return super.getRenderType(animatable, partialTicks, stack,
                 renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }

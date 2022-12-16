@@ -165,6 +165,30 @@ public class SweetNotSavouryMod {
         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
         WaterAnimal::checkSurfaceWaterAnimalSpawnRules,
         SpawnPlacementRegisterEvent.Operation.OR);
+
+    event.register(EntityTypesInit.SNSANGELFISH.get(),
+            SpawnPlacements.Type.IN_WATER,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            WaterAnimal::checkSurfaceWaterAnimalSpawnRules,
+            SpawnPlacementRegisterEvent.Operation.OR);
+
+    event.register(EntityTypesInit.SNSWHALE.get(),
+            SpawnPlacements.Type.IN_WATER,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            WaterAnimal::checkSurfaceWaterAnimalSpawnRules,
+            SpawnPlacementRegisterEvent.Operation.OR);
+
+    event.register(EntityTypesInit.SNSDOLPHIN.get(),
+            SpawnPlacements.Type.IN_WATER,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            WaterAnimal::checkSurfaceWaterAnimalSpawnRules,
+            SpawnPlacementRegisterEvent.Operation.OR);
+
+    event.register(EntityTypesInit.SNSICFISH.get(),
+            SpawnPlacements.Type.IN_WATER,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            WaterAnimal::checkSurfaceWaterAnimalSpawnRules,
+            SpawnPlacementRegisterEvent.Operation.OR);
     
     //ground
     
@@ -287,6 +311,18 @@ public class SweetNotSavouryMod {
         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
         Animal::checkAnimalSpawnRules,
         SpawnPlacementRegisterEvent.Operation.OR);
+
+    event.register(EntityTypesInit.SNSUNICORN.get(),
+            SpawnPlacements.Type.ON_GROUND,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            Animal::checkAnimalSpawnRules,
+            SpawnPlacementRegisterEvent.Operation.OR);
+
+    event.register(EntityTypesInit.SNSCOOKIECAT.get(),
+            SpawnPlacements.Type.ON_GROUND,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            Animal::checkAnimalSpawnRules,
+            SpawnPlacementRegisterEvent.Operation.OR);
   }
   
 }

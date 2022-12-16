@@ -9,7 +9,8 @@ public enum SpiderFlavourVariant implements IVariant {
     STRAWBERRYLACE(0),
     COLALACE(1),
     LEMONLACE(2),
-    LIMELACE(3);
+    LIMELACE(3),
+    CANDYCANE(4);
 
     private static final SpiderFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(SpiderFlavourVariant::getId)).toArray(SpiderFlavourVariant[]::new);

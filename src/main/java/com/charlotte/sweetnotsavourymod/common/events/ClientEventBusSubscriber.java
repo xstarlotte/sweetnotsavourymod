@@ -7,6 +7,7 @@ import com.charlotte.sweetnotsavourymod.client.entityrender.birds.ChocolateChick
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.SNSIceCreamParrotRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.SNSParrotRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.boats.ModBoatRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.MintHumbugRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSPretzelflyRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSSpiderRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCCCatRenderer;
@@ -19,6 +20,7 @@ import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSPugRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSWaferschundRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSElfRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSParfaitPixieRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.WaferWitchRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.fish.*;
 import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.crooks.CandyCaneCrookRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.hostile.mintimperials.MintImperialRenderer;
@@ -583,6 +585,8 @@ public class ClientEventBusSubscriber {
 		event.registerEntityRenderer(EntityTypesInit.BONBONBINI.get(), BonbonbiniRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSSNAKE.get(), SNSSnakeRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.GINGERBREAD_MAN.get(), GingerbreadManRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.WAFER_WITCH.get(), WaferWitchRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.MINT_HUMBUG.get(), MintHumbugRenderer::new);
 
 		event.registerEntityRenderer(EntityTypesInit.SNSCANDYCANEFISH.get(), SNSCandyCanefishRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSICFISH.get(), SNSICFishRenderer::new);
