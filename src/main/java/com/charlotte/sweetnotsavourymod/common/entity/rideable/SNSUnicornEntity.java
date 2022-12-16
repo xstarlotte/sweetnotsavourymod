@@ -38,6 +38,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.scores.Team;
@@ -205,6 +206,15 @@ public class SNSUnicornEntity extends TamableAnimal implements PlayerRideableJum
 		Item tameableItem = ItemInit.CANDYCANESUGAR.get();
 
 		if(isFood(itemstack)) {
+			if (this.isTame() && this.getHealth() < this.getMaxHealth()) {
+				this.heal(5);
+				if (!player.getAbilities().instabuild) {
+					itemstack.shrink(1);
+				}
+
+				this.gameEvent(GameEvent.EAT, this);
+				return InteractionResult.SUCCESS;
+			}
 			return super.mobInteract(player, pHand);
 		}
 

@@ -36,6 +36,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
@@ -125,6 +126,15 @@ public class SNSBoarryEntity extends TamableAnimal implements IAnimatable, IVari
 		Item item = itemstack.getItem();
 		Item itemForTaming = ItemInit.CANDYCANESUGAR.get();
 		if(isFood(itemstack)) {
+			if (this.isTame() && this.getHealth() < this.getMaxHealth()) {
+				this.heal(5);
+				if (!player.getAbilities().instabuild) {
+					itemstack.shrink(1);
+				}
+
+				this.gameEvent(GameEvent.EAT, this);
+				return InteractionResult.SUCCESS;
+			}
 			return super.mobInteract(player, hand);
 		}
 		if (item == itemForTaming && !isTame()) {

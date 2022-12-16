@@ -120,10 +120,6 @@ public class IceCreamCowEntity extends TamableAnimal implements IAnimatable, IVa
         this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)).setAlertOthers());
     }
 
-    //milking
-
-
-
     //taming
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
