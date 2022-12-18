@@ -31,6 +31,7 @@ public class SNSLampBlock extends Block implements SimpleWaterloggedBlock {
 public SNSLampBlock(BlockBehaviour.Properties p_153465_) {
 	   super(p_153465_);
       this.registerDefaultState(this.stateDefinition.any().setValue(HANGING, Boolean.valueOf(false)).setValue(WATERLOGGED, Boolean.valueOf(false)));
+	this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
 }
 
 	@Nullable
