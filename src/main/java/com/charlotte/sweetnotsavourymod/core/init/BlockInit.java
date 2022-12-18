@@ -185,6 +185,13 @@ public class BlockInit {
 					.noOcclusion()
 					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> PINEAPPLEFROSTINGBLOCK = registerBlock("pineapplefrostingblock",
+			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
+					.strength(0.2f,1f)
+					.randomTicks()
+					.noOcclusion()
+					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 	public static final RegistryObject<Block> CANDYCANE_GRASS_BLOCK = registerBlock("candycane_grass_block",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
@@ -222,6 +229,10 @@ public class BlockInit {
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+	public static final RegistryObject<Block> PINEAPPLEFROSTINGFLOWER = registerBlock("pineapplefrostingflower",
+			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
+					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 	public static final RegistryObject<Block> STRAWBERRYCANDYBUSH = registerBlock("strawberrycandybush",
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
@@ -255,6 +266,10 @@ public class BlockInit {
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> PEACHCANDYBUSH = registerBlock("peachcandybush",
+			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
+					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> PINEAPPLECANDYBUSH = registerBlock("pineapplecandybush",
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -304,6 +319,10 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> TOFFEECONEFLOWER = registerBlock("toffeeconeflower",
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3, BlockBehaviour.Properties.copy(Blocks.DANDELION)
+					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> PINEAPPLECONEFLOWER = registerBlock("pineappleconeflower",
+			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDYCANEBUSH = registerBlock("candycanebush",
@@ -636,6 +655,11 @@ public class BlockInit {
 					.strength(0.6f,1200f)
 					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> PINEAPPLESORBETBLOCK = registerBlock("pineapplesorbetblock",
+			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.TERRACOTTA_ORANGE)
+					.strength(0.6f,1200f)
+					.sound(SoundType.HONEY_BLOCK)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 	public static final RegistryObject<Block> MELTINGCHOCOLATEBLOCK = registerBlock("meltingchocolateblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
@@ -732,6 +756,11 @@ public class BlockInit {
 					.strength(0.6f,1200f)
 					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> PINEAPPLECANDYBLOCK = registerBlock("pineapplecandyblock",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.TERRACOTTA_ORANGE)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 	public static final RegistryObject<Block> WAFERWOODPLANKS = registerBlock("waferwoodplanks",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.BAMBOO)
 					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
@@ -784,7 +813,37 @@ public class BlockInit {
 			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
 					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> PEACHCANDYWINDOW = registerBlock("peachcandywindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> PINEAPPLECANDYWINDOW = registerBlock("pineapplecandywindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> MANGOCANDYWINDOW = registerBlock("mangocandywindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> BLACKBERRYGUMMYBEARWINDOW = registerBlock("blackberrygummybearwindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> RASPBERRYGUMMYBEARWINDOW = registerBlock("raspberrygummybearwindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> BLUEBERRYGUMMYBEARWINDOW = registerBlock("blueberrygummybearwindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> STRAWBERRYGUMMYBEARWINDOW = registerBlock("strawberrygummybearwindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> LEMONGUMMYBEARWINDOW = registerBlock("lemongummybearwindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> POPCORNBLOCK = registerBlock("popcornblock",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
@@ -1068,6 +1127,12 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<DoorBlock> PEACH_CANDY_DOOR = registerBlock("peach_candy_door",
+			() -> new DoorBlock(BlockBehaviour.Properties
+					.of(Material.WOOD)
+					.strength(0.6f,1200f)
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<DoorBlock> PINEAPPLE_CANDY_DOOR = registerBlock("pineapple_candy_door",
 			() -> new DoorBlock(BlockBehaviour.Properties
 					.of(Material.WOOD)
 					.strength(0.6f,1200f)

@@ -349,6 +349,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.LIME_CANDY_DOOR.get());
         this.dropSelf(BlockInit.MANGO_CANDY_DOOR.get());
         this.dropSelf(BlockInit.PEACH_CANDY_DOOR.get());
+        this.dropSelf(BlockInit.PINEAPPLE_CANDY_DOOR.get());
         this.dropSelf(BlockInit.CANDYFLOSS_DOOR.get());
         this.dropSelf(BlockInit.WAFER_WOOD_DOOR.get());
         this.dropSelf(BlockInit.WAFER_PLANK_DOOR.get());

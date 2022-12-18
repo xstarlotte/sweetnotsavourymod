@@ -25,6 +25,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlock(BlockInit.LIME_CANDY_DOOR);
         doorBlock(BlockInit.MANGO_CANDY_DOOR);
         doorBlock(BlockInit.PEACH_CANDY_DOOR);
+        doorBlock(BlockInit.PINEAPPLE_CANDY_DOOR);
         doorBlock(BlockInit.CANDYFLOSS_DOOR);
         doorBlock(BlockInit.WAFER_WOOD_DOOR);
         doorBlock(BlockInit.CHOCOLATE_WAFER_WOOD_DOOR);

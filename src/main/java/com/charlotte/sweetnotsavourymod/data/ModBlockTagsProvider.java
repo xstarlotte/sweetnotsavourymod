@@ -32,6 +32,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 				BlockInit.LIME_CANDY_DOOR,
 				BlockInit.MANGO_CANDY_DOOR,
 				BlockInit.PEACH_CANDY_DOOR,
+				BlockInit.PINEAPPLE_CANDY_DOOR,
 				BlockInit.CANDYFLOSS_DOOR,
 				BlockInit.WAFER_WOOD_DOOR,
 				BlockInit.CHOCOLATE_WAFER_WOOD_DOOR,

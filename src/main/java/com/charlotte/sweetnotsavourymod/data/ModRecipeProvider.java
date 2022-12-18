@@ -2263,6 +2263,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(BlockInit.PEACHCANDYBLOCK.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
+        ShapedRecipeBuilder.shaped(BlockInit.PINEAPPLE_CANDY_DOOR.get())
+                .define('S', BlockInit.PINEAPPLECANDYBLOCK.get())
+                .pattern("SS")
+                .pattern("SS")
+                .pattern("SS")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BlockInit.PINEAPPLECANDYBLOCK.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
         ShapedRecipeBuilder.shaped(BlockInit.WAFER_WOOD_DOOR.get())
                 .define('S', BlockInit.WAFERWOODBLOCK.get())
                 .pattern("SS")
