@@ -7,7 +7,8 @@ import java.util.Comparator;
 
 public enum ChipmunkFlavourVariant implements IVariant {
     CHOCOLATE(0),
-    WHITECHOCOLATE(1);
+    WHITECHOCOLATE(1),
+    MINT(2);
 
     private static final ChipmunkFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(ChipmunkFlavourVariant::getId)).toArray(ChipmunkFlavourVariant[]::new);

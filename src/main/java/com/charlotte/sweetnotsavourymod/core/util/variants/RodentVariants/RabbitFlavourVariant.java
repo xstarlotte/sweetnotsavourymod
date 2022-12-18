@@ -15,7 +15,12 @@ public enum RabbitFlavourVariant implements IVariant {
     VANILLA(6),
     VICTORIASPONGE(7),
     CHOCOLATEORANGE(8),
-    STRAWBERRY(9);
+    STRAWBERRY(9),
+    BANNOFFEEPIE(10),
+    FRUIT(11),
+    COFFEE(12),
+    PEACH(13),
+    RASPBERRY(14);
 
     private static final RabbitFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(RabbitFlavourVariant::getId)).toArray(RabbitFlavourVariant[]::new);

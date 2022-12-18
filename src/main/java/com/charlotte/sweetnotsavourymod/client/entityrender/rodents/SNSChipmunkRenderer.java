@@ -19,8 +19,7 @@ public class SNSChipmunkRenderer extends GeoEntityRenderer <SNSChipmunkEntity> {
 			Util.make(Maps.newEnumMap(ChipmunkFlavourVariant.class), (p_114874_) -> {
 				p_114874_.put(ChipmunkFlavourVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/chipmunks/chocolatechipmunk.png"));
 				p_114874_.put(ChipmunkFlavourVariant.WHITECHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/chipmunks/whitechocolatechipmunk.png"));
-
-
+				p_114874_.put(ChipmunkFlavourVariant.MINT, new ResourceLocation("sweetnotsavourymod:textures/entity/chipmunks/mintmunk.png"));
 			});
 
 	public SNSChipmunkRenderer(EntityRendererProvider.Context renderManager) {

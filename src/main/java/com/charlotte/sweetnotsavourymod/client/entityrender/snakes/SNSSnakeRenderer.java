@@ -21,6 +21,11 @@ public class SNSSnakeRenderer extends GeoEntityRenderer<SNSSnakeEntity> {
                 p_114874_.put(SnakeFlavourVariant.COLALACE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/colalacesnake.png"));
                 p_114874_.put(SnakeFlavourVariant.LIMELACE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/limelacesnake.png"));
                 p_114874_.put(SnakeFlavourVariant.LEMONLACE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/lemonlacesnake.png"));
+                p_114874_.put(SnakeFlavourVariant.CANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/candycanesnake.png"));
+                p_114874_.put(SnakeFlavourVariant.LEMONCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/lemoncandycanesnake.png"));
+                p_114874_.put(SnakeFlavourVariant.MINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/mintcandycanesnake.png"));
+                p_114874_.put(SnakeFlavourVariant.PEPPERMINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/peppermintcandycanesnake.png"));
+                p_114874_.put(SnakeFlavourVariant.SPEARMINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/snakes/spearmintcandycanesnake.png"));
             });
 
     public SNSSnakeRenderer(EntityRendererProvider.Context renderManager) {

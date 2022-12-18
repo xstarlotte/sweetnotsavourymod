@@ -115,6 +115,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.CHOCOLATEICECREAMLAMP.get());
         this.dropSelf(BlockInit.TOFFEEICECREAMLAMP.get());
         this.dropSelf(BlockInit.POISONBERRYLANTERN.get());
+        this.dropSelf(BlockInit.CANDYCANE_LAMP.get());
 
         this.dropSelf(BlockInit.BANANA_CROP.get());
         this.dropSelf(BlockInit.VANILLA_CROP.get());

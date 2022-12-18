@@ -1138,6 +1138,15 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .lightLevel((p_187433_) -> 15)
 						  .noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+	public static final RegistryObject<Block> CANDYCANE_LAMP = registerBlock("candycane_lamp",
+			() -> new SNSLampBlock(BlockBehaviour
+					.Properties
+					.of(Material.BAMBOO)
+
+					.strength(3.5F).sound(SoundType.LANTERN)
+					.lightLevel((p_187433_) -> 15)
+					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 	      public static final RegistryObject<Block> STRAWBERRYLAMP = registerBlock("strawberrylamp",
 				  () -> new SNSLampBlock(BlockBehaviour
 						  .Properties

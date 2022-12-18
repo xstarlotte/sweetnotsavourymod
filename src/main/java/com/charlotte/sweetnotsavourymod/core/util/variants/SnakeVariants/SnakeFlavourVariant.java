@@ -9,7 +9,12 @@ public enum SnakeFlavourVariant implements IVariant {
     STRAWBERRYLACE(0),
     COLALACE(1),
     LEMONLACE(2),
-    LIMELACE(3);
+    LIMELACE(3),
+    CANDYCANE(4),
+    LEMONCANDYCANE(5),
+    MINTCANDYCANE(6),
+    PEPPERMINTCANDYCANE(7),
+    SPEARMINTCANDYCANE(8);
 
 
     private static final SnakeFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.

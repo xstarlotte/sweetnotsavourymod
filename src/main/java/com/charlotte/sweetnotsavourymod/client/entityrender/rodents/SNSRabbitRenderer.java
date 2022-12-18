@@ -27,6 +27,11 @@ public class SNSRabbitRenderer extends GeoEntityRenderer <SNSRabbitEntity> {
 				p_114874_.put(RabbitFlavourVariant.VICTORIASPONGE, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/victoriaspongecakerabbit.png"));
 				p_114874_.put(RabbitFlavourVariant.CHOCOLATEORANGE, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/chocolateorangecakerabbit.png"));
 				p_114874_.put(RabbitFlavourVariant.STRAWBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/strawberrycakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.BANNOFFEEPIE, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/bannoffeepierabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.FRUIT, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/fruitcakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.COFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/coffeecakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.PEACH, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/peachcakerabbit.png"));
+				p_114874_.put(RabbitFlavourVariant.RASPBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/rabbits/raspberrycakerabbit.png"));
 			});
 
 	public SNSRabbitRenderer(EntityRendererProvider.Context renderManager) {

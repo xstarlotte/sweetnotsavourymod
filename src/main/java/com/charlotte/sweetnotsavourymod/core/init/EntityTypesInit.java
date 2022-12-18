@@ -47,6 +47,9 @@ public class EntityTypesInit {
 	public static void loadClass() {}
 	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = SNSReg.ENTITY_TYPES;
 
+//.sized is the hitbox size
+
+
 	public static final RegistryObject<EntityType<SNSPugEntity>> SNSPUG = ENTITY_TYPES
 			.register("snspug", () -> EntityType.Builder.of(SNSPugEntity::new, MobCategory.CREATURE)
 					.sized(0.6f, 0.6f)
@@ -259,7 +262,7 @@ public class EntityTypesInit {
 
 	public static final RegistryObject<EntityType<RSWMummyEntity>> RSWMUMMY = ENTITY_TYPES
 			.register("rswmummy", () -> EntityType.Builder.of(RSWMummyEntity::new, MobCategory.MONSTER)
-					.sized(1f, 1f)
+					.sized(2f, 2f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "rswmummy").toString()));
 
 	public static final RegistryObject<EntityType<PBAttackerEntity>> POISONBERRYATTACKER = ENTITY_TYPES

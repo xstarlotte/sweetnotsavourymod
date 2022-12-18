@@ -18,6 +18,13 @@ public class BonbonbiniRenderer extends GeoEntityRenderer<BonbonbiniEntity> {
 	public static final Map<BonbonbiniVariant, ResourceLocation> LOCATION_BY_VARIANT =
 			Util.make(Maps.newEnumMap(BonbonbiniVariant.class), (p_114874_) -> {
 				p_114874_.put(BonbonbiniVariant.RASPBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/bonbonbinis/bonbonbini.png"));
+				p_114874_.put(BonbonbiniVariant.STRAWBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/bonbonbinis/redbonbonbini.png"));
+				p_114874_.put(BonbonbiniVariant.BLUEBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/bonbonbinis/bluebonbonbini.png"));
+				p_114874_.put(BonbonbiniVariant.BLACKBERRY, new ResourceLocation("sweetnotsavourymod:textures/entity/bonbonbinis/purplebonbonbini.png"));
+				p_114874_.put(BonbonbiniVariant.LEMON, new ResourceLocation("sweetnotsavourymod:textures/entity/bonbonbinis/yellowbonbonbini.png"));
+				p_114874_.put(BonbonbiniVariant.ORANGE, new ResourceLocation("sweetnotsavourymod:textures/entity/bonbonbinis/orangebonbonbini.png"));
+				p_114874_.put(BonbonbiniVariant.APPLE, new ResourceLocation("sweetnotsavourymod:textures/entity/bonbonbinis/greenbonbonbini.png"));
+				p_114874_.put(BonbonbiniVariant.TOFFEE, new ResourceLocation("sweetnotsavourymod:textures/entity/bonbonbinis/whitebonbonbini.png"));
 			});
 
 	public BonbonbiniRenderer(EntityRendererProvider.Context renderManager) {

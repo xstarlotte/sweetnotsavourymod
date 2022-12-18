@@ -493,6 +493,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 Blocks.TORCH).build()))
                 .save(pFinishedRecipeConsumer);
 
+        ShapedRecipeBuilder.shaped(BlockInit.CANDYCANE_LAMP.get())
+                .define('S', Blocks.TORCH)
+                .define('A', ItemInit.CANDY_CANE.get())
+                .pattern("SA")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ItemInit.CANDY_CANE.get(),
+                                Blocks.TORCH).build()))
+                .save(pFinishedRecipeConsumer);
+
     //stairs
 
         ShapedRecipeBuilder.shaped(BlockInit.STRAWBERRY_CANDY_STAIRS.get())

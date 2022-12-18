@@ -61,13 +61,13 @@
 	"item.sweetnotsavourymod.snstoadspawnegg": "Flavoured Toad Spawn Egg",
 
 	"item.sweetnotsavourymod.snswaferschundspawnegg": "Waferschund Spawn Egg",
-	"item.sweetnotsavourymod.wafer_witchspawnegg": "Wafer Witch Spawn Egg",
+	"item.sweetnotsavourymod.waferwitchspawnegg": "Wafer Witch Spawn Egg",
 
 	"item.sweetnotsavourymod.chocolatechickenspawnegg": "Chocolate Chicken Spawn Egg",
 
 	"item.sweetnotsavourymod.gingerbread_manspawnegg": "Gingerbread Man Spawn Egg",
 
-	"item.sweetnotsavourymod.mint_humbugspawnegg": "Mint Humbug Spawn Egg",
+	"item.sweetnotsavourymod.humbugspawnegg": "Mint Humbug Spawn Egg",
 
 	"item.sweetnotsavourymod.snsicfishspawnegg": "Ice Cream Fish Spawn Egg",
 	"item.sweetnotsavourymod.snscandycanefishspawnegg": "Candycane Fish Spawn Egg",
@@ -620,6 +620,7 @@
 	"block.sweetnotsavourymod.chocolateicecreamlamp": "Chocolate Ice Cream Lamp",
 	"block.sweetnotsavourymod.toffeeicecreamlamp": "Toffee Ice Cream Lamp",
 	"block.sweetnotsavourymod.poisonberrylantern": "Poison Berry Lantern",
+	"block.sweetnotsavourymod.candycane_lamp": "Candy Cane Lamp",
 
 
 
@@ -725,7 +726,12 @@
 	"entity.sweetnotsavourymod.snsspider.3": "Lime Lace Spider",
 	"entity.sweetnotsavourymod.snsspider.4": "Candycane Spider",
 
-	"entity.sweetnotsavourymod.mint_humbug": "Mint Humbug",
+	"entity.sweetnotsavourymod.mint_humbug.0": "Mint Humbug",
+	"entity.sweetnotsavourymod.mint_humbug.1": "Mint Candycane Humbug",
+	"entity.sweetnotsavourymod.mint_humbug.2": "Spearmint Candycane Humbug",
+	"entity.sweetnotsavourymod.mint_humbug.3": "Peppermint Candycane Humbug",
+	"entity.sweetnotsavourymod.mint_humbug.4": "Candycane Humbug",
+	"entity.sweetnotsavourymod.mint_humbug.5": "Lemon Candycane Humbug",
 
 	"entity.sweetnotsavourymod.snscccat.0": "Candycane Cat",
 	"entity.sweetnotsavourymod.snscccat.1": "Mint Candycane Cat",
@@ -783,6 +789,18 @@
 
 	"entity.sweetnotsavourymod.wafer_witch.0": "Vanilla Wafer Witch",
 	"entity.sweetnotsavourymod.wafer_witch.1": "Raspberry Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.2": "Blueberry Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.3": "Blackberry Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.4": "Strawberry Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.5": "Lemon Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.6": "Orange Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.7": "Lime Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.8": "Mango Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.9": "Peach Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.10": "Pineapple Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.11": "White Chocolate Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.12": "Chocolate Wafer Witch",
+	"entity.sweetnotsavourymod.wafer_witch.13": "Toffee Wafer Witch",
 
 	"entity.sweetnotsavourymod.snself.0": "Blueberry Elf",
 	"entity.sweetnotsavourymod.snself.1": "Orange Elf",
@@ -863,7 +881,14 @@
 	"entity.sweetnotsavourymod.snsunicorn.0": "Carrotcorn",
 	"entity.sweetnotsavourymod.snsunicorn.1": "Bananacorn",
 
-	"entity.sweetnotsavourymod.bonbonbini.0": "Bonbon-bini",
+	"entity.sweetnotsavourymod.bonbonbini.0": "Raspberry Bonbon-bini",
+	"entity.sweetnotsavourymod.bonbonbini.1": "Strawberry Bonbon-bini",
+	"entity.sweetnotsavourymod.bonbonbini.2": "Blueberry Bonbon-bini",
+	"entity.sweetnotsavourymod.bonbonbini.3": "Blackberry Bonbon-bini",
+	"entity.sweetnotsavourymod.bonbonbini.4": "Lemon Bonbon-bini",
+	"entity.sweetnotsavourymod.bonbonbini.5": "Orange Bonbon-bini",
+	"entity.sweetnotsavourymod.bonbonbini.6": "Apple Bonbon-bini",
+	"entity.sweetnotsavourymod.bonbonbini.7": "Toffee Bonbon-bini",
 
 	"entity.sweetnotsavourymod.snsdolhpin.0": "Cola Bottle-Nose Dolphin",
 
@@ -876,6 +901,11 @@
 	"entity.sweetnotsavourymod.snssnake.1": "Cola Lace Snake",
 	"entity.sweetnotsavourymod.snssnake.2": "Lemon Lace Snake",
 	"entity.sweetnotsavourymod.snssnake.3": "Lime Lace Snake",
+	"entity.sweetnotsavourymod.snssnake.4": "Candycane Snake",
+	"entity.sweetnotsavourymod.snssnake.5": "Lemon Candycane Snake",
+	"entity.sweetnotsavourymod.snssnake.6": "Mint Candycane Snake",
+	"entity.sweetnotsavourymod.snssnake.7": "Peppermint Candycane Snake",
+	"entity.sweetnotsavourymod.snssnake.8": "Spearmint Candycane Snake",
 
 	"entity.sweetnotsavourymod.snszebra.0": "Zebra Cake Zebra",
 	"entity.sweetnotsavourymod.snszebra.1": "Candycane Zebra",
@@ -887,6 +917,7 @@
 
 	"entity.sweetnotsavourymod.snschipmunk.0": "Chocolate Chipmunk",
 	"entity.sweetnotsavourymod.snschipmunk.1": "White Chocolate Chipmunk",
+	"entity.sweetnotsavourymod.snschipmunk.2": "Mintmunk",
 
 	"entity.sweetnotsavourymod.snsgp.0": "Vanilla Cake Guinea Pig",
 	"entity.sweetnotsavourymod.snsgp.1": "Chocolate Cake Guinea Pig",
@@ -914,6 +945,11 @@
 	"entity.sweetnotsavourymod.snsrabbit.7": "Victoria Sponge Cake Rabbit",
 	"entity.sweetnotsavourymod.snsrabbit.8": "Chocolate Orange Cake Rabbit",
 	"entity.sweetnotsavourymod.snsrabbit.9": "Strawberry Cake Rabbit",
+	"entity.sweetnotsavourymod.snsrabbit.10": "Bannoffee Pie Rabbit",
+	"entity.sweetnotsavourymod.snsrabbit.11": "Fruit Cake Rabbit",
+	"entity.sweetnotsavourymod.snsrabbit.12": "Coffee Cake Rabbit",
+	"entity.sweetnotsavourymod.snsrabbit.13": "Peach Cake Rabbit",
+	"entity.sweetnotsavourymod.snsrabbit.14": "Raspberry Cake Rabbit",
 
 	"entity.sweetnotsavourymod.snssquirroll.0": "Cinnamon Squirroll",
 	"entity.sweetnotsavourymod.snssquirroll.1": "Strawberry Swiss Squirroll",

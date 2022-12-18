@@ -73,7 +73,6 @@ public class AddSpawnsBiomeModifiers {
                         EntityTypesInit.RSWMUMMY.get()
                 )
         );
-        addAll("swamp_spawns", 5, 1, 2, SWAMP_BIOMES, List.of(EntityTypesInit.SNSTOAD.get()));
         addAll("savanna_spawns", 5 ,1 ,2, SAVANNA_BIOMES, List.of(EntityTypesInit.SNSZEBRA.get()));
         addAll("forest_spawns", 5, 1, 2, FOREST_BIOMES,
                 List.of(
@@ -84,7 +83,17 @@ public class AddSpawnsBiomeModifiers {
                         EntityTypesInit.SNSELF.get()
                 )
         );
+
+        addAll("swamp_spawns", 5, 1, 2, SWAMP_BIOMES,
+                List.of(
+                        EntityTypesInit.MINT_HUMBUG.get(),
+                        EntityTypesInit.SNSTOAD.get(),
+                        EntityTypesInit.WAFER_WITCH.get()
+                )
+        );
+
         add("unicorn_forest_spawn", 1, 1, 1, FOREST_BIOMES, EntityTypesInit.SNSUNICORN.get());
+
         addAll("plains_spawns", 5, 1, 2, PLAINS_BIOMES,
                 List.of(
                         EntityTypesInit.SNSLION.get(),
