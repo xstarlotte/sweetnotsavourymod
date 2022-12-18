@@ -30,33 +30,31 @@ public class SNSLampBlock extends Block implements SimpleWaterloggedBlock {
 	protected static final VoxelShape HANGING_AABB = Shapes.or(Block.box(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.box(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
 public SNSLampBlock(BlockBehaviour.Properties p_153465_) {
 	   super(p_153465_);
-      this.registerDefaultState(this.stateDefinition.any().setValue(HANGING, Boolean.valueOf(false)).setValue(WATERLOGGED, Boolean.valueOf(false)));
+      this.registerDefaultState(this.stateDefinition.any().setValue(HANGING, false).setValue(WATERLOGGED, false));
 	this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
 }
 
 	@Nullable
-	public BlockState getStateForPlacement(BlockPlaceContext p_153467_) {
-		FluidState fluidstate = p_153467_.getLevel().getFluidState(p_153467_.getClickedPos());
-
-		for(Direction direction : p_153467_.getNearestLookingDirections()) {
-			if (direction.getAxis() == Direction.Axis.Y) {
-				BlockState blockstate = this.defaultBlockState().setValue(HANGING, Boolean.valueOf(direction == Direction.UP));
-				if (blockstate.canSurvive(p_153467_.getLevel(), p_153467_.getClickedPos())) {
-					return blockstate.setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
-				}
-			}
-		}
-
-		return this.defaultBlockState().setValue(FACING, p_153467_.getHorizontalDirection().getOpposite());
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		Direction facing = context.getHorizontalDirection().getOpposite();
+		
+		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+		boolean waterlogged = fluidstate.getType() == Fluids.WATER;
+		
+		boolean hanging = context.getClickedFace() == Direction.UP;
+		
+		return this.defaultBlockState()
+				.setValue(FACING, facing)
+				.setValue(WATERLOGGED, waterlogged)
+				.setValue(HANGING, hanging);
 	}
 
 	public VoxelShape getShape(BlockState p_153474_, BlockGetter p_153475_, BlockPos p_153476_, CollisionContext p_153477_) {
 		return p_153474_.getValue(HANGING) ? HANGING_AABB : AABB;
 	}
 
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_153490_) {
-		p_153490_.add(HANGING, WATERLOGGED);
-		p_153490_.add(FACING);
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(FACING, HANGING, WATERLOGGED);
 	}
 
 	@Override
@@ -69,13 +67,13 @@ public SNSLampBlock(BlockBehaviour.Properties p_153465_) {
 		return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
 	}
 
-	public boolean canSurvive(BlockState p_153479_, LevelReader p_153480_, BlockPos p_153481_) {
-		Direction direction = getConnectedDirection(p_153479_).getOpposite();
-		return Block.canSupportCenter(p_153480_, p_153481_.relative(direction), direction.getOpposite());
+	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+		Direction direction = getConnectedDirection(state).getOpposite();
+		return Block.canSupportCenter(level, pos.relative(direction), direction.getOpposite());
 	}
 
 	protected static Direction getConnectedDirection(BlockState p_153496_) {
-		return p_153496_.getValue(HANGING) ? Direction.DOWN : Direction.UP;
+		return p_153496_.getValue(HANGING) ? Direction.UP : Direction.DOWN;
 	}
 
 	public PushReaction getPistonPushReaction(BlockState p_153494_) {
