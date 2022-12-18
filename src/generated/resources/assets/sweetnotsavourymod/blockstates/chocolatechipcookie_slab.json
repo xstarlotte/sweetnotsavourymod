@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/chocolatechipcookie_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/chocolatechipcookieblock"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/chocolatechipcookie_slab_top"
+    }
+  }
+}

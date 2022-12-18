@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/popcorn_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/popcornblock"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/popcorn_slab_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/rottenmouldycandycanebrick_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/rottenmouldycandycanebricks"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/rottenmouldycandycanebrick_slab_top"
+    }
+  }
+}

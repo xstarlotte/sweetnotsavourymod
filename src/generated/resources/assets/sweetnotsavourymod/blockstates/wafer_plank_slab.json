@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/wafer_plank_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/waferwoodplanks"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/wafer_plank_slab_top"
+    }
+  }
+}

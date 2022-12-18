@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "sweetnotsavourymod:candy_cane"
+    },
+    "S": {
+      "item": "minecraft:torch"
+    }
+  },
+  "pattern": [
+    "SA"
+  ],
+  "result": {
+    "item": "sweetnotsavourymod:candycane_lamp"
+  }
+}

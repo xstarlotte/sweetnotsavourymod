@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/chocolate_wafer_wood_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/chocolatewaferwoodblock"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/chocolate_wafer_wood_slab_top"
+    }
+  }
+}

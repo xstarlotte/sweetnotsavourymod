@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/candycanebricks",
+    "side": "sweetnotsavourymod:blocks/candycanebricks",
+    "top": "sweetnotsavourymod:blocks/candycanebricks"
+  }
+}

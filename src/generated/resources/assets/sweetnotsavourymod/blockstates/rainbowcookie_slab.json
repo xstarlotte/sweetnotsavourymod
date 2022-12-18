@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/rainbowcookie_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/rainbowcookieblock"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/rainbowcookie_slab_top"
+    }
+  }
+}

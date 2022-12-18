@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/chocolatechipcookieblock",
+    "side": "sweetnotsavourymod:blocks/chocolatechipcookieblock",
+    "top": "sweetnotsavourymod:blocks/chocolatechipcookieblock"
+  }
+}
