@@ -28,11 +28,11 @@ public class SNSLampBlock extends Block implements SimpleWaterloggedBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	protected static final VoxelShape AABB = Shapes.or(Block.box(5.0D, 0.0D, 5.0D, 11.0D, 7.0D, 11.0D), Block.box(6.0D, 7.0D, 6.0D, 10.0D, 9.0D, 10.0D));
 	protected static final VoxelShape HANGING_AABB = Shapes.or(Block.box(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.box(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
-public SNSLampBlock(BlockBehaviour.Properties p_153465_) {
-	   super(p_153465_);
-      this.registerDefaultState(this.stateDefinition.any().setValue(HANGING, false).setValue(WATERLOGGED, false));
-	this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
-}
+	
+	public SNSLampBlock(BlockBehaviour.Properties p_153465_) {
+		super(p_153465_);
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HANGING, false).setValue(WATERLOGGED, false));
+	}
 
 	@Nullable
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
