@@ -4,7 +4,7 @@
     "hanging=false": { "model": "sweetnotsavourymod:block/candycane_lamp"},
     "hanging=true": { "model": "sweetnotsavourymod:block/candycane_lamp"},
 
-    "facing=north": { "model": "sweetnotsavourymod:block/candycane_lamp", "y": 180},
+    "facing=north": { "model": "sweetnotsavourymod:block/candycane_lamp", "y": 180 },
     "facing=east": { "model": "sweetnotsavourymod:block/candycane_lamp", "y": 270 },
     "facing=south": { "model": "sweetnotsavourymod:block/candycane_lamp"},
     "facing=west": { "model": "sweetnotsavourymod:block/candycane_lamp", "y": 90 }
