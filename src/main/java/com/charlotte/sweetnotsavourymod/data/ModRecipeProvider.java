@@ -1913,6 +1913,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 ItemInit.WAFFLECONE.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
+        ShapedRecipeBuilder.shaped(ItemInit.PINEAPPLEICECREAM.get())
+                .define('S', ItemInit.PINEAPPLEICECREAMSCOOP.get())
+                .define('A', ItemInit.WAFFLECONE.get())
+                .pattern("S")
+                .pattern("A")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ItemInit.PINEAPPLEICECREAMSCOOP.get(),
+                                ItemInit.WAFFLECONE.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
 //candy-blocks
         ShapedRecipeBuilder.shaped(BlockInit.STRAWBERRYCANDYBLOCK.get())
                 .define('S', ItemInit.STRAWBERRYCANDY.get())
@@ -2051,6 +2061,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 ItemInit.SUGARSTICK.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
+        ShapedRecipeBuilder.shaped(ItemInit.PINEAPPLELOLLIPOP.get())
+                .define('S', ItemInit.PINEAPPLECANDY.get())
+                .define('A', ItemInit.SUGARSTICK.get())
+                .pattern("S")
+                .pattern("A")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ItemInit.PINEAPPLECANDY.get(),
+                                ItemInit.SUGARSTICK.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
     //Currency
 
         ShapedRecipeBuilder.shaped(ItemInit.WRAPPEDSTRAWBERRYCANDY.get())
@@ -2169,6 +2189,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("AS")
                 .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(BlockInit.ORANGECANDYBLOCK.get(),
+                                ItemInit.SUGARWRAPPER.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapedRecipeBuilder.shaped(BlockInit.PINEAPPLECANDYWINDOW.get())
+                .define('S', BlockInit.PINEAPPLECANDYBLOCK.get())
+                .define('A', ItemInit.SUGARWRAPPER.get())
+                .pattern("AS")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BlockInit.PINEAPPLECANDYBLOCK.get(),
+                                ItemInit.SUGARWRAPPER.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapedRecipeBuilder.shaped(BlockInit.PEACHCANDYWINDOW.get())
+                .define('S', BlockInit.PEACHCANDYBLOCK.get())
+                .define('A', ItemInit.SUGARWRAPPER.get())
+                .pattern("AS")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BlockInit.PEACHCANDYBLOCK.get(),
+                                ItemInit.SUGARWRAPPER.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapedRecipeBuilder.shaped(BlockInit.MANGOCANDYWINDOW.get())
+                .define('S', BlockInit.MANGOCANDYBLOCK.get())
+                .define('A', ItemInit.SUGARWRAPPER.get())
+                .pattern("AS")
+                .unlockedBy("has_material", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(BlockInit.MANGOCANDYBLOCK.get(),
                                 ItemInit.SUGARWRAPPER.get()).build()))
                 .save(pFinishedRecipeConsumer);
 

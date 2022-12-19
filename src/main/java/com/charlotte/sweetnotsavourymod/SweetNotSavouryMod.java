@@ -323,6 +323,18 @@ public class SweetNotSavouryMod {
             Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
             Animal::checkAnimalSpawnRules,
             SpawnPlacementRegisterEvent.Operation.OR);
+
+    event.register(EntityTypesInit.MINT_HUMBULL.get(),
+            SpawnPlacements.Type.ON_GROUND,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            Animal::checkAnimalSpawnRules,
+            SpawnPlacementRegisterEvent.Operation.OR);
+
+    event.register(EntityTypesInit.MINT_HUMPUG.get(),
+            SpawnPlacements.Type.ON_GROUND,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            Animal::checkAnimalSpawnRules,
+            SpawnPlacementRegisterEvent.Operation.OR);
   }
   
 }

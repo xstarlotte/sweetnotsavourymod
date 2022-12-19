@@ -25,12 +25,14 @@
 	"item.sweetnotsavourymod.snscookiecatspawnegg": "Cookie Cat Spawn Egg",
 
 	"item.sweetnotsavourymod.icecreamcowspawnegg": "Ice Cream Cow Spawn Egg",
+	"item.sweetnotsavourymod.humbullspawnegg": "Mint Humbull Spawn Egg",
 
 	"item.sweetnotsavourymod.snsspiderspawnegg": "Lace Spider Spawn Egg",
 
 	"item.sweetnotsavourymod.snssnakespawnegg": "Lace Snake Spawn Egg",
 
 	"item.sweetnotsavourymod.snspugspawnegg": "Flavoured Pug Spawn Egg",
+	"item.sweetnotsavourymod.humpugspawnegg": "Mint Humpug Spawn Egg",
 	"item.sweetnotsavourymod.snsicecreampugspawnegg": "Ice Cream Pug Spawn Egg",
 
 	"item.sweetnotsavourymod.snscandycanewolfspawnegg": "Candy Cane Wolf Spawn Egg",
@@ -97,6 +99,7 @@
 	"item.sweetnotsavourymod.limecandy": "Lime Candy",
 	"item.sweetnotsavourymod.mangocandy": "Mango Candy",
 	"item.sweetnotsavourymod.peachcandy": "Peach Candy",
+	"item.sweetnotsavourymod.pineapplecandy": "Pineapple Candy",
 	"item.sweetnotsavourymod.sugarwrapper": "Sugar Wrapper",
 	"item.sweetnotsavourymod.sugarstick": "Sugar Stick",
 	"item.sweetnotsavourymod.strawberrylollipop": "Strawberry Lollipop",
@@ -105,6 +108,7 @@
 	"item.sweetnotsavourymod.lemonlollipop": "Lemon Lollipop",
 	"item.sweetnotsavourymod.orangelollipop": "Orange Lollipop",
 	"item.sweetnotsavourymod.blueberrylollipop": "Blueberry Lollipop",
+	"item.sweetnotsavourymod.pineapplelollipop": "Pineapple Lollipop",
 	"item.sweetnotsavourymod.sprinkles": "Sprinkles",
 	"item.sweetnotsavourymod.wafflecone": "Waffle Cone",
 	"item.sweetnotsavourymod.cinnamonroll": "Cinnamon Roll",
@@ -122,6 +126,7 @@
 	"item.sweetnotsavourymod.blueberryicecreamscoop": "Blueberry Ice Cream Scoop",
 	"item.sweetnotsavourymod.lemonicecreamscoop": "Lemon Ice Cream Scoop",
 	"item.sweetnotsavourymod.orangeicecreamscoop": "Orange Ice Cream Scoop",
+	"item.sweetnotsavourymod.pineappleicecreamscoop": "Pineapple Ice Cream Scoop",
 	"item.sweetnotsavourymod.vanillaicecream": "Vanilla Ice Cream",
 	"item.sweetnotsavourymod.chocolateicecream": "Chocolate Ice Cream",
 	"item.sweetnotsavourymod.toffeeicecream": "Toffee Ice Cream",
@@ -134,6 +139,7 @@
 	"item.sweetnotsavourymod.blackberryicecream": "Blackberry Ice Cream",
 	"item.sweetnotsavourymod.lemonicecream": "Lemon Ice Cream",
 	"item.sweetnotsavourymod.orangeicecream": "Orange Ice Cream",
+	"item.sweetnotsavourymod.pineappleicecream": "Orange Ice Cream",
 
 	"item.sweetnotsavourymod.angelcake": "Angel Cake",
 	"item.sweetnotsavourymod.carrotcake": "Carrot Cake",

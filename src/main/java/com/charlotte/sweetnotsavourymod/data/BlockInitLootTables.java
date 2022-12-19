@@ -146,12 +146,14 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.VANILLACONEFLOWER.get());
         this.dropSelf(BlockInit.CHOCOLATECONEFLOWER.get());
         this.dropSelf(BlockInit.TOFFEECONEFLOWER.get());
+        this.dropSelf(BlockInit.PINEAPPLECONEFLOWER.get());
         this.dropSelf(BlockInit.STRAWBERRYFROSTINGFLOWER.get());
         this.dropSelf(BlockInit.RASPBERRYFROSTINGFLOWER.get());
         this.dropSelf(BlockInit.BLACKBERRYFROSTINGFLOWER.get());
         this.dropSelf(BlockInit.BLUEBERRYFROSTINGFLOWER.get());
         this.dropSelf(BlockInit.LEMONFROSTINGFLOWER.get());
         this.dropSelf(BlockInit.ORANGEFROSTINGFLOWER.get());
+        this.dropSelf(BlockInit.PINEAPPLEFROSTINGFLOWER.get());
         this.dropSelf(BlockInit.FROSTINGFLOWER.get());
         this.dropSelf(BlockInit.FROSTINGGRASS.get());
         this.dropSelf(BlockInit.CANDYCANEBUSH.get());
@@ -220,6 +222,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.LIMECANDYBLOCK.get());
         this.dropSelf(BlockInit.PEACHCANDYBLOCK.get());
         this.dropSelf(BlockInit.MANGOCANDYBLOCK.get());
+        this.dropSelf(BlockInit.PINEAPPLECANDYBLOCK.get());
 
         this.dropSelf(BlockInit.TOOTHPASTE_BLOCK.get());
 
@@ -229,6 +232,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.BLUEBERRYFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.ORANGEFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.LEMONFROSTINGBLOCK.get());
+        this.dropSelf(BlockInit.PINEAPPLEFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.FROSTINGBLOCK.get());
         this.dropSelf(BlockInit.RAINBOWFROSTINGGRASSBLOCK.get());
         this.dropSelf(BlockInit.RAINBOWFROSTINGLEAVES.get());
@@ -245,6 +249,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.LEMONSORBETBLOCK.get());
         this.dropSelf(BlockInit.ORANGESORBETBLOCK.get());
         this.dropSelf(BlockInit.PEACHMANGOSORBETBLOCK.get());
+        this.dropSelf(BlockInit.PINEAPPLESORBETBLOCK.get());
         this.dropSelf(BlockInit.RASPBERRYICINGBLOCK.get());
         this.dropSelf(BlockInit.MELTINGCHOCOLATEBLOCK.get());
         this.dropSelf(BlockInit.MELTINGBLACKBERRYCHOCOLATEBLOCK.get());
@@ -272,6 +277,14 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.BLUEBERRY_CANDY_WINDOW.get());
         this.dropSelf(BlockInit.ORANGE_CANDY_WINDOW.get());
         this.dropSelf(BlockInit.LEMON_CANDY_WINDOW.get());
+        this.dropSelf(BlockInit.PINEAPPLECANDYWINDOW.get());
+        this.dropSelf(BlockInit.PEACHCANDYWINDOW.get());
+        this.dropSelf(BlockInit.MANGOCANDYWINDOW.get());
+        this.dropSelf(BlockInit.BLACKBERRYGUMMYBEARWINDOW.get());
+        this.dropSelf(BlockInit.RASPBERRYGUMMYBEARWINDOW.get());
+        this.dropSelf(BlockInit.BLUEBERRYGUMMYBEARWINDOW.get());
+        this.dropSelf(BlockInit.STRAWBERRYGUMMYBEARWINDOW.get());
+        this.dropSelf(BlockInit.LEMONGUMMYBEARWINDOW.get());
         this.dropSelf(BlockInit.POISONBERRYWOODWINDOW.get());
         this.dropSelf(BlockInit.POISONOAKWINDOW.get());
 
@@ -451,6 +464,10 @@ public class BlockInitLootTables extends BlockLoot {
             return createSingleItemTableWithSilkTouch(p_124195_, BlockInit.PEACHCANDYBUSH.get());
         });
 
+        this.add(BlockInit.PINEAPPLECANDYBUSH.get(), (p_124195_) -> {
+            return createSingleItemTableWithSilkTouch(p_124195_, BlockInit.PINEAPPLECANDYBUSH.get());
+        });
+
         this.add(BlockInit.CHOCOLATECINERARIA.get(), (p_124195_) -> {
             return createSingleItemTableWithSilkTouch(p_124195_, BlockInit.CHOCOLATECINERARIA.get());
         });
@@ -497,6 +514,10 @@ public class BlockInitLootTables extends BlockLoot {
 
         this.add(BlockInit.PEACHCANDYBUSH.get(), (p_124078_) -> {
             return createOreDrop(p_124078_, ItemInit.PEACHCANDY.get());
+        });
+
+        this.add(BlockInit.PINEAPPLECANDYBUSH.get(), (p_124078_) -> {
+            return createOreDrop(p_124078_, ItemInit.PINEAPPLECANDY.get());
         });
 
         this.add(BlockInit.CHOCOLATECINERARIA.get(), (p_124078_) -> {
@@ -639,6 +660,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.add(BlockInit.LIME_CANDY_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.MANGO_CANDY_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.PEACH_CANDY_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(BlockInit.PINEAPPLE_CANDY_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.CANDYFLOSS_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.WAFER_PLANK_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.WAFER_WOOD_DOOR.get(), BlockLoot::createDoorTable);
