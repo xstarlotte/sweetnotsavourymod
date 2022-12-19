@@ -26,14 +26,58 @@ public class SNSLampBlock extends Block implements SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty HANGING = BlockStateProperties.HANGING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	protected static final VoxelShape AABB = Shapes.or(Block.box(5.0D, 0.0D, 5.0D, 11.0D, 7.0D, 11.0D), Block.box(6.0D, 7.0D, 6.0D, 10.0D, 9.0D, 10.0D));
-	protected static final VoxelShape HANGING_AABB = Shapes.or(Block.box(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.box(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
+	protected static final VoxelShape SHAPE_NT = createShape(Direction.NORTH, true);
+	protected static final VoxelShape SHAPE_NF = createShape(Direction.NORTH, false);
+	protected static final VoxelShape SHAPE_ST = createShape(Direction.SOUTH, true);
+	protected static final VoxelShape SHAPE_SF = createShape(Direction.SOUTH, false);
+	protected static final VoxelShape SHAPE_ET = createShape(Direction.EAST, true);
+	protected static final VoxelShape SHAPE_EF = createShape(Direction.EAST, false);
+	protected static final VoxelShape SHAPE_WT = createShape(Direction.WEST, true);
+	protected static final VoxelShape SHAPE_WF = createShape(Direction.WEST, false);
+	
+	private static VoxelShape createShape(Direction facing, boolean hanging) {
+		VoxelShape base = Block.box(
+				7, hanging ? 9.5 : 0, 7,
+				9, hanging ? 16 : 6.5, 9
+		);
+		int dx = facing.getStepX();
+		int dz = facing.getStepZ();
+		int adx = Math.abs(dx);
+		int adz = Math.abs(dz);
+		
+		int sx = dx < 0 ? 9 : 7;
+		int ex = dx < 0 ? 7 : 9;
+		int sz = dz < 0 ? 9 : 7;
+		int ez = dz < 0 ? 7 : 9;
+		
+		VoxelShape middle = safeBox(
+				sx + dx * 0.5, hanging ? 7.5 : 6.5, sz + dz * 0.5,
+				ex + dx * 3, hanging ? 9.5 : 8.5, ez + dz * 3
+		);
+		VoxelShape top = safeBox(
+				sx + dx * 1.5, hanging ? 7 : 8.5, sz + dz * 1.5,
+				ex + dx * 2, hanging ? 7.5 : 9, ez + dz * 2
+		);
+		VoxelShape tip = safeBox(
+				sx + dx * 3.5 + adz * 0.25, hanging ? 9.5 : 5.5, sz + dz * 3.5 + adx * 0.25,
+				ex + dx * 3 - adz * 0.25, hanging ? 10.5 : 6.5, ez + dz * 3 - adx * 0.25
+		);
+		
+		return Shapes.or(base, middle, top, tip);
+	}
+	
+	private static VoxelShape safeBox(double x0, double y0, double z0, double x1, double y1, double z1) {
+		return Block.box(
+				Math.min(x0, x1), Math.min(y0, y1), Math.min(z0, z1),
+				Math.max(x0, x1), Math.max(y0, y1), Math.max(z0, z1)
+		);
+	}
 	
 	public SNSLampBlock(BlockBehaviour.Properties p_153465_) {
 		super(p_153465_);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HANGING, false).setValue(WATERLOGGED, false));
 	}
-
+	
 	@Nullable
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		Direction facing = context.getHorizontalDirection().getOpposite();
@@ -41,16 +85,24 @@ public class SNSLampBlock extends Block implements SimpleWaterloggedBlock {
 		FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
 		boolean waterlogged = fluidstate.getType() == Fluids.WATER;
 		
-		boolean hanging = context.getClickedFace() == Direction.UP;
+		boolean hanging = context.getClickedFace() == Direction.DOWN;
 		
 		return this.defaultBlockState()
 				.setValue(FACING, facing)
 				.setValue(WATERLOGGED, waterlogged)
 				.setValue(HANGING, hanging);
 	}
-
-	public VoxelShape getShape(BlockState p_153474_, BlockGetter p_153475_, BlockPos p_153476_, CollisionContext p_153477_) {
-		return p_153474_.getValue(HANGING) ? HANGING_AABB : AABB;
+	
+	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext ctx) {
+		Direction facing = state.getValue(FACING);
+		boolean hanging = state.getValue(HANGING);
+		return switch (facing) {
+			case NORTH -> hanging ? SHAPE_NT : SHAPE_NF;
+			case SOUTH -> hanging ? SHAPE_ST : SHAPE_SF;
+			case EAST -> hanging ? SHAPE_ET : SHAPE_EF;
+			case WEST -> hanging ? SHAPE_WT : SHAPE_WF;
+			default -> throw new RuntimeException("Unexpected facing");
+		};
 	}
 
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -68,7 +120,7 @@ public class SNSLampBlock extends Block implements SimpleWaterloggedBlock {
 	}
 
 	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-		Direction direction = getConnectedDirection(state).getOpposite();
+		Direction direction = getConnectedDirection(state);
 		return Block.canSupportCenter(level, pos.relative(direction), direction.getOpposite());
 	}
 
@@ -85,7 +137,7 @@ public class SNSLampBlock extends Block implements SimpleWaterloggedBlock {
 			p_153486_.scheduleTick(p_153487_, Fluids.WATER, Fluids.WATER.getTickDelay(p_153486_));
 		}
 
-		return getConnectedDirection(p_153483_).getOpposite() == p_153484_ && !p_153483_.canSurvive(p_153486_, p_153487_) ? Blocks.AIR.defaultBlockState() : super.updateShape(p_153483_, p_153484_, p_153485_, p_153486_, p_153487_, p_153488_);
+		return getConnectedDirection(p_153483_) == p_153484_ && !p_153483_.canSurvive(p_153486_, p_153487_) ? Blocks.AIR.defaultBlockState() : super.updateShape(p_153483_, p_153484_, p_153485_, p_153486_, p_153487_, p_153488_);
 	}
 
 	public FluidState getFluidState(BlockState p_153492_) {
