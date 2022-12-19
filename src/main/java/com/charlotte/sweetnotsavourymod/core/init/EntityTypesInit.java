@@ -80,6 +80,16 @@ public class EntityTypesInit {
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "mint_humbug").toString()));
 
+	public static final RegistryObject<EntityType<MintHumpugEntity>> MINT_HUMPUG = ENTITY_TYPES
+			.register("mint_humbug", () -> EntityType.Builder.of(MintHumpugEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "mint_humpug").toString()));
+
+	public static final RegistryObject<EntityType<MintHumbullEntity>> MINT_HUMBULL = ENTITY_TYPES
+			.register("mint_humbug", () -> EntityType.Builder.of(MintHumbullEntity::new, MobCategory.CREATURE)
+					.sized(1f, 1f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "mint_humbull").toString()));
+
 	public static final RegistryObject<EntityType<IceCreamCowEntity>>ICECREAMCOW = ENTITY_TYPES
 			.register("icecreamcow", () -> EntityType.Builder.of(IceCreamCowEntity::new, MobCategory.CREATURE)
 					.sized(1f, 1f)
