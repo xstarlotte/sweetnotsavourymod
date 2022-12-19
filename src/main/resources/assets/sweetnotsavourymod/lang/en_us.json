@@ -374,7 +374,9 @@
 	"block.sweetnotsavourymod.limecandybush": "Lime Candy Bush",
 	"block.sweetnotsavourymod.mangocandybush": "Mango Candy Bush",
 	"block.sweetnotsavourymod.peachcandybush": "Peach Candy Bush",
+	"block.sweetnotsavourymod.pineapplecandybush": "Pineapple Candy Bush",
 	"block.sweetnotsavourymod.rainbowcandybush": "Rainbow Candy Bush",
+
 	"block.sweetnotsavourymod.frostingflower": "Frosting Flower",
 	"block.sweetnotsavourymod.strawberryfrostingflower": "Strawberry Frosting Flower",
 	"block.sweetnotsavourymod.raspberryfrostingflower": "Raspberry Frosting Flower",
@@ -382,6 +384,8 @@
 	"block.sweetnotsavourymod.blackberryfrostingflower": "Blackberry Frosting Flower",
 	"block.sweetnotsavourymod.orangefrostingflower": "Orange Frosting Flower",
 	"block.sweetnotsavourymod.lemonfrostingflower": "Lemon Frosting Flower",
+	"block.sweetnotsavourymod.pineapplefrostingflower": "Pineapple Frosting Flower",
+
 	"block.sweetnotsavourymod.blackberryconeflower": "Blackberry Cone Flower",
 	"block.sweetnotsavourymod.blueberryconeflower": "Blueberry Cone Flower",
 	"block.sweetnotsavourymod.raspberryconeflower": "Raspberry Cone Flower",
@@ -391,13 +395,12 @@
 	"block.sweetnotsavourymod.vanillaconeflower": "Vanilla Cone Flower",
 	"block.sweetnotsavourymod.chocolateconeflower": "Chocolate Cone Flower",
 	"block.sweetnotsavourymod.toffeeconeflower": "Toffee Cone Flower",
+	"block.sweetnotsavourymod.pineappleconeflower": "Pineapple Cone Flower",
+
 	"block.sweetnotsavourymod.poisonberryplant": "Poison Berry Plant",
 
 
 
-	"block.sweetnotsavourymod.waferwoodplanks": "Wafer Wood Planks",
-	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
-	"block.sweetnotsavourymod.chocolatewaferwoodblock": "Chocolate Wafer Wood Block",
 	"block.sweetnotsavourymod.waferwoodwindow": "Wafer Wood Window",
 	"block.sweetnotsavourymod.candycanewindow": "Red Candy Cane Window",
 	"block.sweetnotsavourymod.candycanewindow2": "White Candy Cane Window",
@@ -407,6 +410,18 @@
 	"block.sweetnotsavourymod.blueberry_candy_window": "Blueberry Candy Window",
 	"block.sweetnotsavourymod.orange_candy_window": "Orange Candy Window",
 	"block.sweetnotsavourymod.lemon_candy_window": "Lemon Candy Window",
+	"block.sweetnotsavourymod.peachcandywindow": "Peach Candy Window",
+	"block.sweetnotsavourymod.mangocandywindow": "Mango Candy Window",
+	"block.sweetnotsavourymod.pineapplecandywindow": "Pineapple Candy Window",
+	"block.sweetnotsavourymod.lemongummybearwindow": "Lemon Gummy Bear Window",
+	"block.sweetnotsavourymod.blackberrygummybearwindow": "Blackberry Gummy Bear Window",
+	"block.sweetnotsavourymod.blueberrygummybearwindow": "Blueberry Gummy Bear Window",
+	"block.sweetnotsavourymod.strawberrygummybearwindow": "Strawberry Gummy Bear Window",
+	"block.sweetnotsavourymod.raspberrygummybearwindow": "Raspberry Gummy Bear Window",
+
+	"block.sweetnotsavourymod.waferwoodplanks": "Wafer Wood Planks",
+	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
+	"block.sweetnotsavourymod.chocolatewaferwoodblock": "Chocolate Wafer Wood Block",
 	"block.sweetnotsavourymod.strippedwaferwoodblock": "Stripped Wafer Wood Block",
 	"block.sweetnotsavourymod.overgrownpoisonberrywoodplanks": "Overgrown Poison Berry Wood Planks",
 	"block.sweetnotsavourymod.poisonberrywoodplanks": "Poison Berry Wood Planks",
@@ -414,6 +429,7 @@
 	"block.sweetnotsavourymod.poisongrassblock": "Poison Grass Block",
 	"block.sweetnotsavourymod.floweringpoisonberryleaves": "Flowering Poison Berry Leaves",
 	"block.sweetnotsavourymod.popcornblock": "Popcorn Block",
+
 	"block.sweetnotsavourymod.strawberrycandyblock": "Strawberry Candy Block",
 	"block.sweetnotsavourymod.blackberrycandyblock": "Blackberry Candy Block",
 	"block.sweetnotsavourymod.raspberrycandyblock": "Raspberry Candy Block",
@@ -423,19 +439,25 @@
 	"block.sweetnotsavourymod.peachcandyblock": "Peach Candy Block",
 	"block.sweetnotsavourymod.mangocandyblock": "Mango Candy Block",
 	"block.sweetnotsavourymod.blueberrycandyblock": "Blueberry Candy Block",
+	"block.sweetnotsavourymod.pineapplecandyblock": "Pineapple Candy Block",
+
 	"block.sweetnotsavourymod.strawberrysorbetblock": "Strawberry Sorbet Sand",
 	"block.sweetnotsavourymod.blackberrysorbetblock": "Blackberry Sorbet Sand",
 	"block.sweetnotsavourymod.raspberrysorbetblock": "Raspberry Sorbet Sand",
 	"block.sweetnotsavourymod.lemonsorbetblock": "Lemon Sorbet Sand",
 	"block.sweetnotsavourymod.blueberrysorbetblock": "Blueberry Sorbet Sand",
+	"block.sweetnotsavourymod.pineapplesorbetblock": "Pineapple Sorbet Sand",
 	"block.sweetnotsavourymod.peachmangosorbetblock": "Peach and Mango Sorbet Sand",
 	"block.sweetnotsavourymod.orangesorbetblock": "Orange Sorbet Sand",
+
 	"block.sweetnotsavourymod.candycaneblock": "Candy Cane Block",
 	"block.sweetnotsavourymod.candycanebricks": "Candy Cane Bricks",
 	"block.sweetnotsavourymod.candyflossblock": "Candyfloss Block",
+
 	"block.sweetnotsavourymod.chocolatechipcookieblock": "Chocolate Chip Cookie Block",
 	"block.sweetnotsavourymod.whitechocolatechipcookieblock": "White Chocolate Chip Cookie Block",
 	"block.sweetnotsavourymod.rainbowcookieblock": "Rainbow Cookie Block",
+
 	"block.sweetnotsavourymod.meltingchocolateblock": "Melting Chocolate",
 	"block.sweetnotsavourymod.meltingstrawberrychocolateblock": "Melting Strawberry Chocolate",
 	"block.sweetnotsavourymod.meltingraspberrychocolateblock": "Melting Raspberry Chocolate",
@@ -444,8 +466,10 @@
 	"block.sweetnotsavourymod.meltingblueberrychocolateblock": "Melting Blueberry Chocolate",
 	"block.sweetnotsavourymod.meltingorangechocolateblock": "Melting Orange Chocolate",
 	"block.sweetnotsavourymod.raspberryicingblock": "Raspberry Icing Block",
+
 	"block.sweetnotsavourymod.rainbowfrostingleaves": "Rainbow Frosting Leaves",
 	"block.sweetnotsavourymod.chocolaterainbowfrostingleaves": "Chocolate Rainbow Frosting Leaves",
+
 	"block.sweetnotsavourymod.frostingblock": "Frosting Block",
 	"block.sweetnotsavourymod.strawberryfrostingblock": "Strawberry Frosting Grass Block",
 	"block.sweetnotsavourymod.raspberryfrostingblock": "Raspberry Frosting Grass Block",
@@ -454,6 +478,8 @@
 	"block.sweetnotsavourymod.orangefrostingblock": "Orange Frosting Grass Block",
 	"block.sweetnotsavourymod.lemonfrostingblock": "Lemon Frosting Grass Block",
 	"block.sweetnotsavourymod.rainbowfrostinggrassblock": "Rainbow Frosting Grass Block",
+	"block.sweetnotsavourymod.pineapplefrostingblock": "Pineapple Frosting Grass Block",
+
 	"block.sweetnotsavourymod.hardenedbananabricks": "Hardened Banana Bricks",
 	"block.sweetnotsavourymod.hardenedbananastone": "Hardened Banana Stone",
 	"block.sweetnotsavourymod.hardenedbananaplanks": "Hardened Banana Planks",
@@ -586,6 +612,7 @@
 	"block.sweetnotsavourymod.lime_candy_door": "Lime Candy Door",
 	"block.sweetnotsavourymod.mango_candy_door": "Mango Candy Door",
 	"block.sweetnotsavourymod.peach_candy_door": "Peach Candy Door",
+	"block.sweetnotsavourymod.pineapple_candy_door": "Pineapple Candy Door",
 	"block.sweetnotsavourymod.wafer_wood_door": "Wafer Wood Candy Door",
 	"block.sweetnotsavourymod.chocolate_wafer_wood_door": "Chocolate Wafer Wood Door",
 	"block.sweetnotsavourymod.wafer_plank_door": "Wafer Plank Door",

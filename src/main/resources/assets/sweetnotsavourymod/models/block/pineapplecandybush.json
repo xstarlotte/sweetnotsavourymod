@@ -1,7 +1,7 @@
 {
 	"parent": "block/cross",
 	"textures": {
-		"cross": "sweetnotsavourymod:blocks/blackberrycandybush",
-		"particle": "sweetnotsavourymod:blocks/blackberrycandybush"
+		"cross": "sweetnotsavourymod:blocks/pineapplecandybush",
+		"particle": "sweetnotsavourymod:blocks/pineapplecandybush"
 	}
 }

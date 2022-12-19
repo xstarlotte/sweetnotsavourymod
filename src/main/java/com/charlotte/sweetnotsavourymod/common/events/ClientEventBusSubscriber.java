@@ -215,6 +215,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYFROSTINGFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEFROSTINGFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONFROSTINGFLOWER.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLEFROSTINGFLOWER.get(), RenderType.cutout());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATECINERARIA.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TOFFEETULIP.get(), RenderType.cutout());
@@ -229,6 +230,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LIMECANDYBUSH.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGOCANDYBUSH.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACHCANDYBUSH.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLECANDYBUSH.get(), RenderType.cutout());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYCONEFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYCONEFLOWER.get(), RenderType.cutout());
@@ -239,6 +241,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.VANILLACONEFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TOFFEECONEFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATECONEFLOWER.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLECONEFLOWER.get(), RenderType.cutout());
 
 			/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -451,6 +454,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYFROSTINGFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEFROSTINGFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONFROSTINGFLOWER.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLEFROSTINGFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATECINERARIA.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TOFFEETULIP.get(), RenderType.cutout());
 
@@ -464,6 +468,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LIMECANDYBUSH.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGOCANDYBUSH.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACHCANDYBUSH.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACHCANDYBUSH.get(), RenderType.cutout());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYCONEFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYCONEFLOWER.get(), RenderType.cutout());
@@ -474,6 +479,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.VANILLACONEFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TOFFEECONEFLOWER.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATECONEFLOWER.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLECONEFLOWER.get(), RenderType.cutout());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_CANDYCANEBUSH.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_CANDY_CANE_FLOWER.get(), RenderType.cutout());
