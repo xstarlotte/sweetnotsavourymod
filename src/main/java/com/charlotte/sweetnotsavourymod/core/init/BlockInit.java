@@ -3,7 +3,6 @@ package com.charlotte.sweetnotsavourymod.core.init;
 import com.charlotte.sweetnotsavourymod.common.block.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.icecreambeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.wafflebeds.*;
-import com.charlotte.sweetnotsavourymod.common.block.machineblocks.*;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
 import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
 import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestBlockEntity;
@@ -859,58 +858,6 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> SMOOTHHARDENEDBANANASTONE = registerBlock("smoothhardenedbananastone",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-
-
-
-//machines
-public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice_cream_machine",
-		() -> new IceCreamMachineBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
-				.strength(0.6f,1200f)
-				.noOcclusion()
-				.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODMACHINES);
-
-	public static final RegistryObject<Block> BANANA_BAKER = registerBlock("banana_baker",
-			() -> new BananaBakerBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
-					.strength(0.6f,1200f)
-					.noOcclusion()
-					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODMACHINES);
-
-	public static final RegistryObject<Block> JAM_PRESSER = registerBlock("jam_presser",
-			() -> new JamPresserBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
-					.strength(0.6f,1200f)
-					.noOcclusion()
-					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODMACHINES);
-
-	public static final RegistryObject<Block> WAFFLE_CONE_MACHINE = registerBlock("waffle_cone_machine",
-			() -> new WaffleConeMachineBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
-					.strength(0.6f,1200f)
-					.noOcclusion()
-					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODMACHINES);
-
-	public static final RegistryObject<Block> TEDDY_BEAR_PRINTER = registerBlock("teddy_bear_printer",
-			() -> new TeddyBearPrinterBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
-					.strength(0.6f,1200f)
-					.noOcclusion()
-					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODMACHINES);
-
-	public static final RegistryObject<Block> CAKE_BAKER = registerBlock("cake_baker",
-			() -> new CakeBakerBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
-					.strength(0.6f,1200f)
-					.noOcclusion()
-					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODMACHINES);
-
-	public static final RegistryObject<Block> CANDYCANE_FURNACE = registerBlock("candycane_furnace",
-			() -> new CandycaneFurnaceBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
-					.strength(0.6f,1200f)
-					.noOcclusion()
-					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODMACHINES);
-
-	public static final RegistryObject<Block> CANDYFLOSS_CRYSTALIZER = registerBlock("candyfloss_crystalizer",
-			() -> new CandyflossCrystalizerBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_GRAY)
-					.strength(0.6f,1200f)
-					.noOcclusion()
-					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODMACHINES);
 
 
 

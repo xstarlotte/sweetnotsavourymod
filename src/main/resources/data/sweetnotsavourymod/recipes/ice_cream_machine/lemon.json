@@ -1,0 +1,10 @@
+{
+  "type": "sweetnotsavourymod:ice_cream_machine",
+  "ingredient": {
+    "item": "sweetnotsavourymod:lemoncandy"
+  },
+  "output": {
+    "item": "sweetnotsavourymod:lemonicecreamscoop"
+  },
+  "time": 40
+}

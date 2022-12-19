@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/candyfloss_crystallizer",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/candyfloss_crystallizer"
+  }
+}

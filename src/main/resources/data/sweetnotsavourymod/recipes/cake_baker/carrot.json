@@ -1,0 +1,10 @@
+{
+  "type": "sweetnotsavourymod:cake_baker",
+  "ingredient": {
+    "item": "sweetnotsavourymod:sweetcarrot"
+  },
+  "output": {
+    "item": "sweetnotsavourymod:carrotcake"
+  },
+  "time": 80
+}

@@ -1,0 +1,10 @@
+{
+  "type": "sweetnotsavourymod:cake_baker",
+  "ingredient": {
+    "item": "sweetnotsavourymod:rainbowfrostingleaves"
+  },
+  "output": {
+    "item": "sweetnotsavourymod:angelcake"
+  },
+  "time": 80
+}

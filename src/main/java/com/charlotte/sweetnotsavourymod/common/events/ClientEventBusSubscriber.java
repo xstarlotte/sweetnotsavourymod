@@ -42,13 +42,12 @@ import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.i
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.waffle.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestRenderer;
 import com.charlotte.sweetnotsavourymod.common.item.CandyArmorItems.*;
+import com.charlotte.sweetnotsavourymod.common.registry_group.SNSMachineType;
+import com.charlotte.sweetnotsavourymod.common.registry_group.SlotPos;
 import com.charlotte.sweetnotsavourymod.common.screen.*;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestMenuType;
 import com.charlotte.sweetnotsavourymod.common.screen.chest.SNSChestScreen;
-import com.charlotte.sweetnotsavourymod.core.init.BlockEntityTypesInit;
-import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import com.charlotte.sweetnotsavourymod.core.init.EntityTypesInit;
-import com.charlotte.sweetnotsavourymod.core.init.FluidInit;
+import com.charlotte.sweetnotsavourymod.core.init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -300,15 +299,6 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKSTOVE.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKTELEVISION.get(), RenderType.cutout());
 
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.ICE_CREAM_MACHINE.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.JAM_PRESSER.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFFLE_CONE_MACHINE.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.BANANA_BAKER.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.CAKE_BAKER.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.TEDDY_BEAR_PRINTER.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_FURNACE.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYFLOSS_CRYSTALIZER.get(), RenderType.translucent());
-
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRY_CANDY_WINDOW.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRY_CANDY_WINDOW.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRY_CANDY_WINDOW.get(), RenderType.translucent());
@@ -357,8 +347,6 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONWAFFLEBED.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEWAFFLEBED.get(), RenderType.cutout());
 
-			// ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANESUGARCANEBLOCK.get(), RenderType.cutout());
-
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYLANTERN.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYLAMP.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYLAMP.get(), RenderType.cutout());
@@ -398,17 +386,8 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKSTOVE.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKTELEVISION.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONOAKDRAWERS.get(), RenderType.cutout());
-//machines
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.ICE_CREAM_MACHINE.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.BANANA_BAKER.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.JAM_PRESSER.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFFLE_CONE_MACHINE.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.CAKE_BAKER.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.TEDDY_BEAR_PRINTER.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_FURNACE.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYFLOSS_CRYSTALIZER.get(), RenderType.translucent());
+			
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CREAMY_MILK_BLOCK.get(), RenderType.translucent());
-
 			ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_FLUID.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(FluidInit.CREAMY_MILK_FLOWING.get(), RenderType.translucent());
 
@@ -542,15 +521,15 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONICECREAMBED.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYICECREAMBED.get(), RenderType.cutout());
-
-			MenuScreens.register(MenuTypesInit.ICE_CREAM_MACHINE_MENU.get(), IceCreamMachineScreen::new);
-			MenuScreens.register(MenuTypesInit.BANANA_BAKER_MENU.get(), BananaBakerScreen::new);
-			MenuScreens.register(MenuTypesInit.WAFFLE_CONE_MACHINE_MENU.get(), WaffleConeMachineScreen::new);
-			MenuScreens.register(MenuTypesInit.JAM_PRESSER_MENU.get(), JamPresserScreen::new);
-			MenuScreens.register(MenuTypesInit.CAKE_BAKER_MENU.get(), CakeBakerScreen::new);
-			MenuScreens.register(MenuTypesInit.CANDYCANE_FURNACE_MENU.get(), CandycaneFurnaceScreen::new);
-			MenuScreens.register(MenuTypesInit.CANDYFLOSS_CRYSTALIZER_MENU.get(), CandyflossCrystalizerScreen::new);
-			MenuScreens.register(MenuTypesInit.TEDDY_BEAR_PRINTER_MENU.get(), TeddyBearPrinterScreen::new);
+			
+			GeneralInit.MACHINE_BANANA_BAKER.clientRegister();
+			GeneralInit.MACHINE_CAKE_BAKER.clientRegister();
+			GeneralInit.MACHINE_CANDYCANE_FURNACE.clientRegister();
+			GeneralInit.MACHINE_TEDDY_BEAR_PRINTER.clientRegister();
+			GeneralInit.MACHINE_CANDYFLOSS_CRYSTALLIZER.clientRegister();
+			GeneralInit.MACHINE_ICE_CREAM_MACHINE.clientRegister();
+			GeneralInit.MACHINE_WAFFLE_CONE_MACHINE.clientRegister();
+			GeneralInit.MACHINE_JAM_PRESSER.clientRegister();
 
 			registerChestScreen(MenuTypesInit.STRAWBERRY_CHEST);
 			registerChestScreen(MenuTypesInit.WAFER_CHEST);

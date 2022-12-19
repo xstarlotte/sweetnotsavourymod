@@ -1,0 +1,10 @@
+{
+  "type": "sweetnotsavourymod:milk",
+  "item": {
+    "item": "sweetnotsavourymod:creamy_milk_bucket"
+  },
+  "result": {
+    "item": "minecraft:bucket"
+  },
+  "value": 400
+}
