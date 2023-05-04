@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/skeleton_corpse",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/skeleton_corpse"
+  }
+}

@@ -22,6 +22,7 @@ public class SNSCCCatRenderer extends GeoEntityRenderer<SNSCCCatEntity> {
                 p_114874_.put(CatFlavourVariant.PEPPERMINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/cats/peppermintcandycanecat.png"));
                 p_114874_.put(CatFlavourVariant.SPEARMINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/cats/spearmintcandycanecat.png"));
                 p_114874_.put(CatFlavourVariant.LEMONCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/cats/lemoncandycanecat.png"));
+                p_114874_.put(CatFlavourVariant.MINTHUM, new ResourceLocation("sweetnotsavourymod:textures/entity/cats/minthumcat.png"));
 
             });
 

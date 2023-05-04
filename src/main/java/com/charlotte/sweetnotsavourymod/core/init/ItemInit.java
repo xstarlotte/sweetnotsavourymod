@@ -12,6 +12,7 @@ import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGro
 import com.charlotte.sweetnotsavourymod.core.sound.SoundsInit;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
+import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -49,6 +51,8 @@ public class ItemInit {
 
 	public static final RegistryObject<SpawnEggItem> CHOCOLATECHICKENSPAWNEGG = registerDefaultEgg("chocolatechickenspawnegg", EntityTypesInit.CHOCOLATECHICKEN);
 
+	public static final RegistryObject<SpawnEggItem> CHOCOLATEPENGUINSPAWNEGG = registerDefaultEgg("chocolatepenguinspawnegg", EntityTypesInit.CHOCOLATEPENGUIN);
+
 	public static final RegistryObject<SpawnEggItem> SNSRABBITSPAWNEGG = registerDefaultEgg("snsrabbitspawnegg", EntityTypesInit.SNSRABBIT);
 
 	//parrot-Blackberry, Blueberry, Strawberry, Raspberry, Lemon, Orange, Vanilla, Chocolate, Toffee
@@ -71,6 +75,8 @@ public class ItemInit {
 
 	public static final RegistryObject<SpawnEggItem> SNSSQUIRROLLSPAWNEGG = registerDefaultEgg("snssquirrollspawnegg", EntityTypesInit.SNSSQUIRROLL);
 
+	public static final RegistryObject<SpawnEggItem> SUGARGLIDERSPAWNEGG = registerDefaultEgg("sugargliderspawnegg", EntityTypesInit.SUGARGLIDER);
+
 	public static final RegistryObject<SpawnEggItem> SNSCHIPMUNKSPAWNEGG = registerDefaultEgg("snschipmunkspawnegg", EntityTypesInit.SNSCHIPMUNK);
 
 	public static final RegistryObject<SpawnEggItem> SNSZEBRASPAWNEGG = registerDefaultEgg("snszebraspawnegg", EntityTypesInit.SNSZEBRA);
@@ -86,6 +92,8 @@ public class ItemInit {
 	public static final RegistryObject<SpawnEggItem> SNSMINIWAFFLEFISHSPAWNEGG = registerDefaultEgg("snsminiwafflefishspawnegg", EntityTypesInit.SNSMINIWAFFLEFISH);
 
 	public static final RegistryObject<SpawnEggItem> SNSGUMMYBEARSPAWNEGG = registerDefaultEgg("snsgummybearspawnegg", EntityTypesInit.SNSGUMMYBEAR);
+
+	public static final RegistryObject<SpawnEggItem> JELLYBABYSPAWNEGG = registerDefaultEgg("jellybabyspawnegg", EntityTypesInit.JELLYBABY);
 
 	public static final RegistryObject<SpawnEggItem> SNSBOARRYSPAWNEGG = registerDefaultEgg("snsboarryspawnegg", EntityTypesInit.SNSBOARRY);
 
@@ -107,6 +115,8 @@ public class ItemInit {
 
 	public static final RegistryObject<SpawnEggItem> SNSSNAKESPAWNEGG = registerDefaultEgg("snssnakespawnegg", EntityTypesInit.SNSSNAKE);
 
+	public static final RegistryObject<SpawnEggItem> SNSWORMSPAWNEGG = registerDefaultEgg("snswormspawnegg", EntityTypesInit.SNSWORM);
+
 	public static final RegistryObject<SpawnEggItem> BONBONBINISPAWNEGG = registerDefaultEgg("bonbonbinispawnegg", EntityTypesInit.BONBONBINI);
 
 	public static final RegistryObject<SpawnEggItem> GINGERBREAD_MANSPAWNEGG = registerDefaultEgg("gingerbread_manspawnegg", EntityTypesInit.GINGERBREAD_MAN);
@@ -124,6 +134,8 @@ public class ItemInit {
 	public static final RegistryObject<SpawnEggItem> SNSICFISHSPAWNEGG = registerDefaultEgg("snsicfishspawnegg", EntityTypesInit.SNSICFISH);
 
 	public static final RegistryObject<SpawnEggItem> SNSANGELFISHSPAWNEGG = registerDefaultEgg("snsangelfishspawnegg", EntityTypesInit.SNSANGELFISH);
+
+	public static final RegistryObject<SpawnEggItem> GUMMYFISHSPAWNEGG = registerDefaultEgg("gummyfishspawnegg", EntityTypesInit.GUMMYFISH);
 
 	public static final RegistryObject<SpawnEggItem> SNSWHALESPAWNEGG = registerDefaultEgg("snswhalespawnegg", EntityTypesInit.SNSWHALE);
 
@@ -210,6 +222,13 @@ public class ItemInit {
 			        .effect(() -> new MobEffectInstance(MobEffects.JUMP, 300, 3), 1.0f)
 			        .saturationMod(1.2f)
 			        .build())));
+	public static final RegistryObject<Item> GLAZEDCINNAMONROLL = ITEMS.register("glazedcinnamonroll", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 300, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
 	public static final RegistryObject<Item> STRAWBERRYSWISSROLL = ITEMS.register("strawberryswissroll", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
 			        .nutrition(1)
@@ -356,6 +375,14 @@ public class ItemInit {
 			        .effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
 			        .saturationMod(1.2f)
 			        .build())));
+
+	public static final RegistryObject<Item> CINNAMON_STICK = ITEMS.register("cinnamon_stick", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 100, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
 
 	public static final RegistryObject<Item> SUGARWRAPPER = ITEMS.register("sugarwrapper", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
@@ -850,6 +877,11 @@ public class ItemInit {
 					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
 					.saturationMod(1.2f)
 					.build())));
+
+//torches
+
+	//public static final RegistryObject<Item> CANDYCANE_TORCH = ITEMS.register("candycane_torch", () -> new StandingAndWallBlockItem(BlockInit.CANDYCANE_TORCH.get(), BlockInit.CANDYCANE_WALL_TORCH.get(),
+	//		new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODTOOLS)));
 
 //tools
 	//candy_cane

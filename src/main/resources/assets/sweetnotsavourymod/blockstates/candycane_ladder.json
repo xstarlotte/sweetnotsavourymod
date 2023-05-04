@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "sweetnotsavourymod:block/candycane_ladder" },
+    "facing=east":  { "model": "sweetnotsavourymod:block/candycane_ladder", "y": 90 },
+    "facing=south": { "model": "sweetnotsavourymod:block/candycane_ladder", "y": 180 },
+    "facing=west":  { "model": "sweetnotsavourymod:block/candycane_ladder", "y": 270 }
+  }
+}

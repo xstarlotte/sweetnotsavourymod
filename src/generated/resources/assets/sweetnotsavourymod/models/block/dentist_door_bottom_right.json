@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "sweetnotsavourymod:blocks/dentist_door_bottom",
+    "top": "sweetnotsavourymod:blocks/dentist_door_top"
+  }
+}

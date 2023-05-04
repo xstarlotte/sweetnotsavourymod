@@ -62,4 +62,11 @@ public class SweetNotSavouryModItemGroup {
 		}
 	};
 
+	public static final CreativeModeTab SNSMODDUNGEON = new CreativeModeTab("snsmoddungeon") {
+		@Override
+		public ItemStack makeIcon() {
+			return new ItemStack(BlockInit.ROTTENMOULDYCANDYCANEBRICKS.get());
+		}
+	};
+
 }

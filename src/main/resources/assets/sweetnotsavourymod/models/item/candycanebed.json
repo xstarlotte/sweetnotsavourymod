@@ -1,0 +1,6 @@
+{
+	"parent": "sweetnotsavourymod:block/candycanebed",
+	"textures": {
+		"layer0": "sweetnotsavourymod:blocks/candycanebed"
+	}
+}

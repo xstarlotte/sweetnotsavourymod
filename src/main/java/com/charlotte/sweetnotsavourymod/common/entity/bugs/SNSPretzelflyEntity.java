@@ -119,6 +119,16 @@ public class SNSPretzelflyEntity extends PathfinderMob implements IAnimatable, I
 
     }
 
+    @Override
+    protected int calculateFallDamage(float distance, float damageMultiplier) {
+        return 0;
+    }
+
+    @Override
+    public boolean causeFallDamage(float fallDistance, float multiplier, @Nonnull DamageSource source) {
+        return false;
+    }
+
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(SoundEvents.PARROT_FLY, 0.15F, 1.0F);
     }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sweetnotsavourymod:block/candycane_wall_torch"
+    },
+    "facing=north": {
+      "model": "sweetnotsavourymod:block/candycane_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "sweetnotsavourymod:block/candycane_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "sweetnotsavourymod:block/candycane_wall_torch",
+      "y": 180
+    }
+  }
+}

@@ -10,7 +10,8 @@ public enum CatFlavourVariant implements IVariant {
     MINTCANDYCANE(1),
     PEPPERMINTCANDYCANE(2),
     SPEARMINTCANDYCANE(3),
-    LEMONCANDYCANE(4);
+    LEMONCANDYCANE(4),
+    MINTHUM(5);
 
     private static final CatFlavourVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(CatFlavourVariant::getId)).toArray(CatFlavourVariant[]::new);

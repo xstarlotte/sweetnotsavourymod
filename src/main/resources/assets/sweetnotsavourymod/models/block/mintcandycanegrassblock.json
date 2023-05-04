@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "sweetnotsavourymod:blocks/mintblock",
+    "up": "sweetnotsavourymod:blocks/candycane_grass_block",
+    "down": "sweetnotsavourymod:blocks/mintblock",
+    "north": "sweetnotsavourymod:blocks/mint_candy_cane_grass_side",
+    "east": "sweetnotsavourymod:blocks/mint_candy_cane_grass_side",
+    "south": "sweetnotsavourymod:blocks/mint_candy_cane_grass_side",
+    "west": "sweetnotsavourymod:blocks/mint_candy_cane_grass_side"
+  }
+}

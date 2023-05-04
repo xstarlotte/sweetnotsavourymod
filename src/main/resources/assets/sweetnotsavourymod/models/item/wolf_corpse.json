@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/wolf_corpse",
+  "textures": {
+    "layer0": "sweetnotsavourymod:blocks/wolf_corpse"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "sweetnotsavourymod:candy_cane"
+    }
+  },
+  "pattern": [
+    "S S",
+    "SSS",
+    "S S"
+  ],
+  "result": {
+    "item": "sweetnotsavourymod:candycane_ladder"
+  }
+}

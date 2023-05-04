@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sweetnotsavourymod:block/toothpaste_slab"
+    },
+    "type=double": {
+      "model": "sweetnotsavourymod:block/toothpaste_block"
+    },
+    "type=top": {
+      "model": "sweetnotsavourymod:block/toothpaste_slab_top"
+    }
+  }
+}

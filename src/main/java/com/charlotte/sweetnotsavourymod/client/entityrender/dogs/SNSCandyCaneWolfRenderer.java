@@ -22,6 +22,7 @@ public class SNSCandyCaneWolfRenderer extends GeoEntityRenderer<SNSCandyCaneWolf
                 p_114874_.put(CCWolfFlavourVariant.MINT, new ResourceLocation("sweetnotsavourymod:textures/entity/candycanewolf/mintcandycanewolf.png"));
                 p_114874_.put(CCWolfFlavourVariant.PEPPERMINT, new ResourceLocation("sweetnotsavourymod:textures/entity/candycanewolf/peppermintcandycanewolf.png"));
                 p_114874_.put(CCWolfFlavourVariant.SPEARMINT, new ResourceLocation("sweetnotsavourymod:textures/entity/candycanewolf/spearmintcandycanewolf.png"));
+                p_114874_.put(CCWolfFlavourVariant.MINTHUM, new ResourceLocation("sweetnotsavourymod:textures/entity/candycanewolf/minthumwolf.png"));
             });
 
     public SNSCandyCaneWolfRenderer(EntityRendererProvider.Context renderManager) {

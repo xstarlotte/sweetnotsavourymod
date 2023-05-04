@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube",
+	"textures": {
+		"particle": "sweetnotsavourymod:blocks/wafer_wood_craftingtable",
+		"up": "sweetnotsavourymod:blocks/wafer_wood_craftingtable_top",
+		"down": "sweetnotsavourymod:blocks/waferwoodblock",
+		"north": "sweetnotsavourymod:blocks/wafer_wood_craftingtable_front",
+		"east": "sweetnotsavourymod:blocks/wafer_wood_craftingtable_side",
+		"south": "sweetnotsavourymod:blocks/wafer_wood_craftingtable_front",
+		"west": "sweetnotsavourymod:blocks/wafer_wood_craftingtable_side"
+	}
+}

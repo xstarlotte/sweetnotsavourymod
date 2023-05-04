@@ -25,6 +25,12 @@ public class SNSPretzelflyRenderer extends GeoEntityRenderer<SNSPretzelflyEntity
                 p_114874_.put(PretzelflyVariant.DARKCHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/darkchocolatecoatedpretzelfly.png"));
                 p_114874_.put(PretzelflyVariant.WHITECHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/whitechocolatecoatedpretzelfly.png"));
                 p_114874_.put(PretzelflyVariant.CHOCOLATE, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/chocolatecoatedpretzelfly.png"));
+                p_114874_.put(PretzelflyVariant.CANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/candycanefly.png"));
+                p_114874_.put(PretzelflyVariant.MINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/mintcandycanefly.png"));
+                p_114874_.put(PretzelflyVariant.PEPPERMINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/peppermintcandycanefly.png"));
+                p_114874_.put(PretzelflyVariant.SPEARMINTCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/spearmintcandycanefly.png"));
+                p_114874_.put(PretzelflyVariant.LEMONCANDYCANE, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/lemoncandycanefly.png"));
+                p_114874_.put(PretzelflyVariant.MINTHUM, new ResourceLocation("sweetnotsavourymod:textures/entity/pretzelfly/minthumfly.png"));
 
             });
 

@@ -73,6 +73,9 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.POISONBERRYDEFENDERTEDDY.get());
         this.dropSelf(BlockInit.POISONBERRYHEALERTEDDY.get());
 
+        this.dropSelf(BlockInit.SKELETON_CORPSE.get());
+        this.dropSelf(BlockInit.WOLF_CORPSE.get());
+
         this.dropSelf(BlockInit.STRAWBERRYICECREAMBED.get());
         this.dropSelf(BlockInit.RASPBERRYICECREAMBED.get());
         this.dropSelf(BlockInit.BLUEBERRYICECREAMBED.get());
@@ -88,6 +91,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.CHOCOLATEWAFFLEBED.get());
         this.dropSelf(BlockInit.TOFFEEWAFFLEBED.get());
         this.dropSelf(BlockInit.VANILLAWAFFLEBED.get());
+        this.dropSelf(BlockInit.CANDYCANEBED.get());
 
 
 
@@ -116,6 +120,10 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.TOFFEEICECREAMLAMP.get());
         this.dropSelf(BlockInit.POISONBERRYLANTERN.get());
         this.dropSelf(BlockInit.CANDYCANE_LAMP.get());
+        this.dropSelf(BlockInit.LEMONCANDYCANE_LAMP.get());
+        this.dropSelf(BlockInit.MINTCANDYCANE_LAMP.get());
+        this.dropSelf(BlockInit.SPEARMINTCANDYCANE_LAMP.get());
+        this.dropSelf(BlockInit.PEPPERMINTCANDYCANE_LAMP.get());
 
         this.dropSelf(BlockInit.BANANA_CROP.get());
         this.dropSelf(BlockInit.VANILLA_CROP.get());
@@ -205,7 +213,23 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.WAFERWOODPLANKS.get());
         this.dropSelf(BlockInit.STRIPPEDWAFERWOODBLOCK.get());
         this.dropSelf(BlockInit.CANDYCANEBLOCK.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK2.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK3.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK4.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK5.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK6.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK7.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK8.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK9.get());
+        this.dropSelf(BlockInit.SMOOTH_CANDYCANEBLOCK10.get());
         this.dropSelf(BlockInit.CANDYCANEBRICKS.get());
+        this.dropSelf(BlockInit.REDMINT_BLOCK.get());
+        this.dropSelf(BlockInit.WHITEMINT_BLOCK.get());
+        this.dropSelf(BlockInit.GREENMINT_BLOCK.get());
+        this.dropSelf(BlockInit.YELLOWMINT_BLOCK.get());
+        this.dropSelf(BlockInit.BLUEMINT_BLOCK.get());
+        this.dropSelf(BlockInit.LIGHTBLUEMINT_BLOCK.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBLOCK.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBRICKS.get());
         this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBARS.get());
@@ -224,6 +248,9 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.PINEAPPLECANDYBLOCK.get());
 
         this.dropSelf(BlockInit.TOOTHPASTE_BLOCK.get());
+        this.dropSelf(BlockInit.WAFER_WOOD_CRAFTINGTABLE.get());
+
+        this.dropSelf(BlockInit.CANDYCANE_LADDER.get());
 
         this.dropSelf(BlockInit.STRAWBERRYFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.RASPBERRYFROSTINGBLOCK.get());
@@ -233,9 +260,22 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.LEMONFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.PINEAPPLEFROSTINGBLOCK.get());
         this.dropSelf(BlockInit.FROSTINGBLOCK.get());
+        this.dropSelf(BlockInit.MINTBLOCK.get());
+        this.dropSelf(BlockInit.MINTCANDYCANEGRASSBLOCK.get());
         this.dropSelf(BlockInit.RAINBOWFROSTINGGRASSBLOCK.get());
         this.dropSelf(BlockInit.RAINBOWFROSTINGLEAVES.get());
         this.dropSelf(BlockInit.CHOCOLATERAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.MINTRAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.STRAWBERRYRAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.RASPBERRYRAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.BLUEBERRYRAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.BLACKBERRYRAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.LEMONRAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.ORANGERAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.ORANGERAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.PEACHRAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.MANGORAINBOWFROSTINGLEAVES.get());
+        this.dropSelf(BlockInit.PINEAPPLERAINBOWFROSTINGLEAVES.get());
         this.dropSelf(BlockInit.CHOCOLATECHIPCOOKIEBLOCK.get());
         this.dropSelf(BlockInit.WHITECHOCOLATECHIPCOOKIEBLOCK.get());
         this.dropSelf(BlockInit.RAINBOWCOOKIEBLOCK.get());
@@ -268,6 +308,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.OVERGROWNPOISONBERRYWOODPLANKS.get());
 
         this.dropSelf(BlockInit.WAFERWOODWINDOW.get());
+        this.dropSelf(BlockInit.WAFERWOODWINDOW2.get());
         this.dropSelf(BlockInit.CANDYCANEWINDOW.get());
         this.dropSelf(BlockInit.CANDYCANEWINDOW2.get());
         this.dropSelf(BlockInit.STRAWBERRY_CANDY_WINDOW.get());
@@ -300,6 +341,8 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.WAFER_WOOD_STAIRS.get());
         this.dropSelf(BlockInit.HARDENED_BANANA_STAIRS.get());
         this.dropSelf(BlockInit.CANDYCANEBRICK_STAIRS.get());
+        this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANEBRICKSTAIRS.get());
+        this.dropSelf(BlockInit.ROTTENMOULDYCANDYCANESTAIRS.get());
 
         this.dropSelf(BlockInit.BLACKBERRY_CANDY_WALL.get());
         this.dropSelf(BlockInit.STRAWBERRY_CANDY_WALL.get());
@@ -313,6 +356,8 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.ORANGE_CANDY_WALL.get());
         this.dropSelf(BlockInit.WAFER_WOOD_WALL.get());
         this.dropSelf(BlockInit.HARDENED_BANANA_WALL.get());
+        this.dropSelf(BlockInit.CANDYCANE_WALL.get());
+        this.dropSelf(BlockInit.CANDYCANEBRICK_WALL.get());
 
         this.dropSelf(BlockInit.BLACKBERRY_CANDY_FENCE.get());
         this.dropSelf(BlockInit.STRAWBERRY_CANDY_FENCE.get());
@@ -326,6 +371,8 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.ORANGE_CANDY_FENCE.get());
         this.dropSelf(BlockInit.WAFER_WOOD_FENCE.get());
         this.dropSelf(BlockInit.HARDENED_BANANA_FENCE.get());
+        this.dropSelf(BlockInit.CANDYCANE_FENCE.get());
+        this.dropSelf(BlockInit.CANDYCANEBRICK_FENCE.get());
 
         this.dropSelf(BlockInit.BLACKBERRY_CANDY_FENCE_GATE.get());
         this.dropSelf(BlockInit.RASPBERRY_CANDY_FENCE_GATE.get());
@@ -370,6 +417,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get());
         this.dropSelf(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get());
         this.dropSelf(BlockInit.FROSTING_DOOR.get());
+        this.dropSelf(BlockInit.DENTIST_DOOR.get());
         this.dropSelf(BlockInit.TOOTHPASTE_DOOR.get());
         this.dropSelf(BlockInit.CANDYCANE_DOOR.get());
 
@@ -540,6 +588,8 @@ public class BlockInitLootTables extends BlockLoot {
                     NORMAL_LEAVES_SAPLING_CHANCES);
         });
 
+
+
         this.add(BlockInit.CHOCOLATERAINBOWFROSTINGLEAVES.get(), (p_124104_) -> {
             return createOakLeavesDrops(p_124104_, BlockInit.ICECREAMTREESAPLING.get(),
                     NORMAL_LEAVES_SAPLING_CHANCES);
@@ -666,6 +716,7 @@ public class BlockInitLootTables extends BlockLoot {
         this.add(BlockInit.CHOCOLATE_WAFER_WOOD_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.FROSTING_DOOR.get(), BlockLoot::createDoorTable);
+        this.add(BlockInit.DENTIST_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.TOOTHPASTE_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.CANDYCANE_DOOR.get(), BlockLoot::createDoorTable);
         this.add(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), BlockLoot::createDoorTable);
@@ -726,6 +777,9 @@ public class BlockInitLootTables extends BlockLoot {
             return createSinglePropConditionTable(p_124231_, BedBlock.PART, BedPart.HEAD);
         });
         this.add(BlockInit.TOFFEEWAFFLEBED.get(), (p_124231_) -> {
+            return createSinglePropConditionTable(p_124231_, BedBlock.PART, BedPart.HEAD);
+        });
+        this.add(BlockInit.CANDYCANEBED.get(), (p_124231_) -> {
             return createSinglePropConditionTable(p_124231_, BedBlock.PART, BedPart.HEAD);
         });
         this.add(BlockInit.CANDYCANE_GRASS_BLOCK.get(), block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));

@@ -53,6 +53,7 @@ public class AddSpawnsBiomeModifiers {
                         EntityTypesInit.SNSWAFERSCHUND.get(),
                         EntityTypesInit.MINT_HUMPUG.get(),
                         EntityTypesInit.MINT_HUMBULL.get(),
+                        EntityTypesInit.CHOCOLATEPENGUIN.get(),
 
                         EntityTypesInit.CANDYCANECROOK.get(),
                         EntityTypesInit.MINTIMPERIAL.get(),

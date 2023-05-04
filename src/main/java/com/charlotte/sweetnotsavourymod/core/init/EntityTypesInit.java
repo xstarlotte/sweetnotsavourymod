@@ -3,20 +3,20 @@ package com.charlotte.sweetnotsavourymod.core.init;
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.common.entity.amphibians.SNSToadEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolateChickenEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.birds.ChocolatePenguinEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSIceCreamParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.birds.SNSParrotEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.boats.ModBoatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.bugs.MintHumbugEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSPretzelflyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSSpiderEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.bugs.SNSWormEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCCCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSCookieCatEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cats.SNSLionEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.cows.IceCreamCowEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSCandyCaneWolfEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSIceCreamPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSPugEntity;
-import com.charlotte.sweetnotsavourymod.common.entity.dogs.SNSWaferschundEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.cows.MintHumbullEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.dogs.*;
 import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSElfEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.fantasy.SNSParfaitPixieEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.fantasy.WaferWitchEntity;
@@ -35,6 +35,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.BonbonbiniEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.GingerbreadManEntity;
+import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.JellybabyEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sweetcreatures.SNSGummyBearEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -60,6 +61,11 @@ public class EntityTypesInit {
 					.sized(0.6f, 0.6f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "chocolatechicken").toString()));
 
+	public static final RegistryObject<EntityType<ChocolatePenguinEntity>>CHOCOLATEPENGUIN = ENTITY_TYPES
+			.register("chocolatepenguin", () -> EntityType.Builder.of(ChocolatePenguinEntity::new, MobCategory.CREATURE)
+					.sized(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "chocolatepenguin").toString()));
+
 	public static final RegistryObject<EntityType<SNSGPEntity>>SNSGP = ENTITY_TYPES
 			.register("snsgp", () -> EntityType.Builder.of(SNSGPEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
@@ -81,12 +87,12 @@ public class EntityTypesInit {
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "mint_humbug").toString()));
 
 	public static final RegistryObject<EntityType<MintHumpugEntity>> MINT_HUMPUG = ENTITY_TYPES
-			.register("mint_humbug", () -> EntityType.Builder.of(MintHumpugEntity::new, MobCategory.CREATURE)
+			.register("mint_humpug", () -> EntityType.Builder.of(MintHumpugEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "mint_humpug").toString()));
 
 	public static final RegistryObject<EntityType<MintHumbullEntity>> MINT_HUMBULL = ENTITY_TYPES
-			.register("mint_humbug", () -> EntityType.Builder.of(MintHumbullEntity::new, MobCategory.CREATURE)
+			.register("mint_humbull", () -> EntityType.Builder.of(MintHumbullEntity::new, MobCategory.CREATURE)
 					.sized(1f, 1f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "mint_humbull").toString()));
 
@@ -140,6 +146,11 @@ public class EntityTypesInit {
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snssquirroll").toString()));
 
+	public static final RegistryObject<EntityType<SugargliderEntity>> SUGARGLIDER = ENTITY_TYPES
+			.register("sugarglider", () -> EntityType.Builder.of(SugargliderEntity::new, MobCategory.CREATURE)
+					.sized(0.6f, 0.6f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "sugarglider").toString()));
+
 	public static final RegistryObject<EntityType<SNSChipmunkEntity>> SNSCHIPMUNK = ENTITY_TYPES
 			.register("snschipmunk", () -> EntityType.Builder.of(SNSChipmunkEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
@@ -170,6 +181,11 @@ public class EntityTypesInit {
 			.register("snsgummybear", () -> EntityType.Builder.of(SNSGummyBearEntity::new, MobCategory.CREATURE)
 					.sized(0.4f, 0.4f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsgummybear").toString()));
+
+	public static final RegistryObject<EntityType<JellybabyEntity>> JELLYBABY = ENTITY_TYPES
+			.register("jellybaby", () -> EntityType.Builder.of(JellybabyEntity::new, MobCategory.CREATURE)
+					.sized(0.4f, 0.4f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "jellybaby").toString()));
 
 	public static final RegistryObject<EntityType<SNSBoarryEntity>>SNSBOARRY = ENTITY_TYPES
 			.register("snsboarry", () -> EntityType.Builder.of(SNSBoarryEntity::new, MobCategory.CREATURE)
@@ -210,6 +226,11 @@ public class EntityTypesInit {
 			.register("snssnake", () -> EntityType.Builder.of(SNSSnakeEntity::new, MobCategory.CREATURE)
 					.sized(1f, 1f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snssnake").toString()));
+
+	public static final RegistryObject<EntityType<SNSWormEntity>>SNSWORM = ENTITY_TYPES
+			.register("snsworm", () -> EntityType.Builder.of(SNSWormEntity::new, MobCategory.CREATURE)
+					.sized(1f, 1f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsworm").toString()));
 
 	public static final RegistryObject<EntityType<BonbonbiniEntity>>BONBONBINI = ENTITY_TYPES
 			.register("bonbonbini", () -> EntityType.Builder.of(BonbonbiniEntity::new, MobCategory.CREATURE)
@@ -252,6 +273,11 @@ public class EntityTypesInit {
 			.register("snsdolphin", () -> EntityType.Builder.of(SNSDolphinEntity::new, MobCategory.CREATURE)
 					.sized(1f, 1f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snsdolphin").toString()));
+
+	public static final RegistryObject<EntityType<GummyfishEntity>> GUMMYFISH = ENTITY_TYPES
+			.register("gummyfish", () -> EntityType.Builder.of(GummyfishEntity::new, MobCategory.CREATURE)
+					.sized(1f, 1f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "gummyfish").toString()));
 
 	public static final RegistryObject<EntityType<SNSPretzelflyEntity>> SNSPRETZELFLY = ENTITY_TYPES
 			.register("snspretzelfly", () -> EntityType.Builder.of(SNSPretzelflyEntity::new, MobCategory.CREATURE)

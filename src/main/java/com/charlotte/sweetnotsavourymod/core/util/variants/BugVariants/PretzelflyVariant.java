@@ -13,7 +13,13 @@ public enum PretzelflyVariant implements IVariant {
     SPRINKLE(4),
     DARKCHOCOLATE(5),
     WHITECHOCOLATE(6),
-    CHOCOLATE(7);
+    CHOCOLATE(7),
+    CANDYCANE(8),
+    MINTCANDYCANE(9),
+    PEPPERMINTCANDYCANE(10),
+    SPEARMINTCANDYCANE(11),
+    LEMONCANDYCANE(12),
+    MINTHUM(13);
 
     private static final PretzelflyVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(PretzelflyVariant::getId)).toArray(PretzelflyVariant[]::new);

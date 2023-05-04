@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube",
+	"textures": {
+	"particle": "sweetnotsavourymod:blocks/floweringpoisonberryleaves",
+		"up": "sweetnotsavourymod:blocks/poisonberryleaves",
+		"down": "sweetnotsavourymod:blocks/poisonberrywoodplanks",
+		"north": "sweetnotsavourymod:blocks/veryovergrownpoisonberrywoodplanks",
+		"east": "sweetnotsavourymod:blocks/veryovergrownpoisonberrywoodplanks",
+		"south": "sweetnotsavourymod:blocks/veryovergrownpoisonberrywoodplanks",
+		"west": "sweetnotsavourymod:blocks/veryovergrownpoisonberrywoodplanks"
+	}
+}

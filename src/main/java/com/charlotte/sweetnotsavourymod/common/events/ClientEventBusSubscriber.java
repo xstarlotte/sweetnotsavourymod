@@ -4,20 +4,20 @@ import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.client.armor.renderers.*;
 import com.charlotte.sweetnotsavourymod.client.entityrender.amphibians.SNSToadRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.ChocolateChickenRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.birds.ChocolatePenguinRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.SNSIceCreamParrotRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.birds.SNSParrotRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.boats.ModBoatRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.MintHumbugRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSPretzelflyRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSSpiderRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.bugs.SNSWormRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCCCatRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSCookieCatRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cats.SNSLionRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.cows.IceCreamCowRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSCandyCaneWolfRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSIceCreamPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSPugRenderer;
-import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.SNSWaferschundRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.cows.MintHumbullRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.dogs.*;
 import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSElfRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.SNSParfaitPixieRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.fantasy.WaferWitchRenderer;
@@ -36,8 +36,10 @@ import com.charlotte.sweetnotsavourymod.client.entityrender.sheep.SNSSheepRender
 import com.charlotte.sweetnotsavourymod.client.entityrender.snakes.SNSSnakeRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.BonbonbiniRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.GingerbreadManRenderer;
+import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.JellybabyRenderer;
 import com.charlotte.sweetnotsavourymod.client.entityrender.sweetcreatures.SNSGummyBearRenderer;
 import com.charlotte.sweetnotsavourymod.common.block.SNSChestBlock;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.candycane.CandycaneBedBeRenderer;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.icecream.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedrenderers.waffle.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.chest.SNSChestRenderer;
@@ -114,6 +116,9 @@ public class ClientEventBusSubscriber {
 	public static final ResourceLocation TOFFEEWAFFLEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/toffeewafflebedheadpart");
 	public static final ResourceLocation TOFFEEWAFFLEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/toffeewafflebedbottompart");
 
+	public static final ResourceLocation CANDYCANEBEDHEAD = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/candycanebedheadpart");
+	public static final ResourceLocation CANDYCANEBEDBOTTOM = new ResourceLocation( SweetNotSavouryMod.MOD_ID, "block/candycanebedbottompart");
+
 
 
 
@@ -168,6 +173,9 @@ public class ClientEventBusSubscriber {
 
 		event.register(TOFFEEWAFFLEBEDBOTTOM);
 		event.register(TOFFEEWAFFLEBEDHEAD);
+
+		event.register(CANDYCANEBEDBOTTOM);
+		event.register(CANDYCANEBEDHEAD);
 	}
 
 	private static void addChestSpecialModel(RegistryObject<SNSChestBlock> chestReg, ModelEvent.RegisterAdditional event) {
@@ -288,6 +296,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_LAMP.get(), RenderType.cutout());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFERWOODWINDOW.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.WAFERWOODWINDOW2.get(), RenderType.translucent());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANEWINDOW.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANEWINDOW2.get(), RenderType.translucent());
@@ -327,6 +336,8 @@ public class ClientEventBusSubscriber {
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTENMOULDYCANDYCANECHAINS.get(), RenderType.cutout());
 
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_LADDER.get(), RenderType.cutout());
+
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRY_CANDY_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRY_CANDY_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRY_CANDY_DOOR.get(), RenderType.translucent());
@@ -344,6 +355,7 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTING_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TOOTHPASTE_DOOR.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.DENTIST_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), RenderType.translucent());
 
@@ -356,6 +368,15 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYWAFFLEBED.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONWAFFLEBED.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEWAFFLEBED.get(), RenderType.cutout());
+
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYICECREAMBED.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEICECREAMBED.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONICECREAMBED.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYICECREAMBED.get(), RenderType.cutout());
+
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANEBED.get(), RenderType.cutout());
 
 			// ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANESUGARCANEBLOCK.get(), RenderType.cutout());
 
@@ -373,6 +394,13 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONLOLLIPOPLAMP.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONLAMP.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_LAMP.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONCANDYCANE_LAMP.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.MINTCANDYCANE_LAMP.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.SPEARMINTCANDYCANE_LAMP.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PEPPERMINTCANDYCANE_LAMP.get(), RenderType.cutout());
+
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_TORCH.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_WALL_TORCH.get(), RenderType.cutout());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYATTACKERTEDDY.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYARCHERTEDDY.get(), RenderType.cutout());
@@ -391,6 +419,9 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.APPLEGUMMYBEARTEDDY.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.COLAGUMMYBEARTEDDY.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHERRYGUMMYBEARTEDDY.get(), RenderType.cutout());
+
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.SKELETON_CORPSE.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.WOLF_CORPSE.get(), RenderType.cutout());
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYWOODWARDROBE.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.POISONBERRYWOODBED.get(), RenderType.cutout());
@@ -415,6 +446,8 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTENMOULDYCANDYCANECHAINS.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTENMOULDYCANDYCANEBARS.get(), RenderType.translucent());
 
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_LADDER.get(), RenderType.translucent());
+
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRY_CANDY_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRY_CANDY_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRY_CANDY_DOOR.get(), RenderType.translucent());
@@ -432,8 +465,35 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.FROSTING_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TOOTHPASTE_DOOR.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.DENTIST_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANE_DOOR.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR.get(), RenderType.translucent());
+
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.RAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.RAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATERAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.CHOCOLATERAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.MINTRAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.MINTRAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONRAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONRAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGERAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGERAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGORAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGORAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACHRAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PEACHRAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLERAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.PINEAPPLERAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYRAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYRAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYRAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYRAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYRAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYRAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYRAINBOWFROSTINGLEAVES.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYRAINBOWFROSTINGLEAVES.get(), RenderType.cutout());
+
 
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDYCANEBUSH.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CANDY_CANE_FLOWER.get(), RenderType.cutout());
@@ -536,12 +596,8 @@ public class ClientEventBusSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRY_CROP.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRY_CROP.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.CARROT_CROP.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.STRAWBERRYICECREAMBED.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.RASPBERRYICECREAMBED.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.ORANGEICECREAMBED.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.LEMONICECREAMBED.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLACKBERRYICECREAMBED.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRYICECREAMBED.get(), RenderType.cutout());
+
+
 
 			MenuScreens.register(MenuTypesInit.ICE_CREAM_MACHINE_MENU.get(), IceCreamMachineScreen::new);
 			MenuScreens.register(MenuTypesInit.BANANA_BAKER_MENU.get(), BananaBakerScreen::new);
@@ -585,6 +641,7 @@ public class ClientEventBusSubscriber {
 		event.registerEntityRenderer(EntityTypesInit.SNSPARFAITPIXIE.get(), SNSParfaitPixieRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSCCWOLF.get(), SNSCandyCaneWolfRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSMOUSE.get(), SNSMouseRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.SUGARGLIDER.get(), SugargliderRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSSQUIRROLL.get(), SNSSquirrollRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSCHIPMUNK.get(), SNSChipmunkRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSZEBRA.get(), SNSZebraRenderer::new);
@@ -604,9 +661,14 @@ public class ClientEventBusSubscriber {
 		event.registerEntityRenderer(EntityTypesInit.CHOCOLATECHICKEN.get(), ChocolateChickenRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.BONBONBINI.get(), BonbonbiniRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSSNAKE.get(), SNSSnakeRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.SNSWORM.get(), SNSWormRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.GINGERBREAD_MAN.get(), GingerbreadManRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.WAFER_WITCH.get(), WaferWitchRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.MINT_HUMBUG.get(), MintHumbugRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.MINT_HUMBULL.get(), MintHumbullRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.MINT_HUMPUG.get(), MintHumpugRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.CHOCOLATEPENGUIN.get(), ChocolatePenguinRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.JELLYBABY.get(), JellybabyRenderer::new);
 
 		event.registerEntityRenderer(EntityTypesInit.SNSCANDYCANEFISH.get(), SNSCandyCanefishRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSICFISH.get(), SNSICFishRenderer::new);
@@ -615,6 +677,7 @@ public class ClientEventBusSubscriber {
 		event.registerEntityRenderer(EntityTypesInit.SNSANGELFISH.get(), SNSAngelFishRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSMINIWAFFLEFISH.get(), SNSMiniWafflefishRenderer::new);
 		event.registerEntityRenderer(EntityTypesInit.SNSDOLPHIN.get(), SNSDolphinRenderer::new);
+		event.registerEntityRenderer(EntityTypesInit.GUMMYFISH.get(), GummyfishRenderer::new);
 
 		event.registerEntityRenderer(EntityTypesInit.SNSPRETZELFLY.get(), SNSPretzelflyRenderer::new);
 
@@ -644,6 +707,7 @@ public class ClientEventBusSubscriber {
 		event.registerBlockEntityRenderer(BlockEntityTypesInit.SNS_ORANGE_WAFFLE_BED_ENTITY_TYPE.get(), OrangeWaffleBedBeRenderer::new);
 		event.registerBlockEntityRenderer(BlockEntityTypesInit.SNS_CHOCOLATE_WAFFLE_BED_ENTITY_TYPE.get(), ChocolateWaffleBedBeRenderer::new);
 		event.registerBlockEntityRenderer(BlockEntityTypesInit.SNS_TOFFEE_WAFFLE_BED_ENTITY_TYPE.get(), ToffeeWaffleBedBeRenderer::new);
+		event.registerBlockEntityRenderer(BlockEntityTypesInit.SNS_CANDY_CANE_BED_ENTITY_TYPE.get(), CandycaneBedBeRenderer::new);
 
 		registerChestRender(event, BlockInit.STRAWBERRY_CHEST, 14d, 10d);
 		registerChestRender(event, BlockInit.WAFER_CHEST, 15d, 10d);

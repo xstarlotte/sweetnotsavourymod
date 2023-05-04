@@ -1,0 +1,6 @@
+{
+  "parent": "sweetnotsavourymod:block/lemon_candycane_lamp",
+  "textures": {
+    "layer2": "sweetnotsavourymod:blocks/lemon_candycane_lamp"
+  }
+}

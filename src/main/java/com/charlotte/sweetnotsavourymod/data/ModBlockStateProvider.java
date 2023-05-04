@@ -33,6 +33,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlock(BlockInit.CHOCOLATE_WAFER_PLANK_DOOR);
         doorBlock(BlockInit.FROSTING_DOOR);
         doorBlock(BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR);
+        doorBlock(BlockInit.DENTIST_DOOR);
         doorBlock(BlockInit.TOOTHPASTE_DOOR);
         doorBlock(BlockInit.CANDYCANE_DOOR);
         fenceGateBlock(BlockInit.HARDENED_BANANA_FENCE_GATE, BlockInit.HARDENEDBANANAPLANKS);
@@ -49,6 +50,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceGateBlock(BlockInit.CANDYFLOSS_FENCE_GATE, BlockInit.CANDYFLOSSBLOCK);
         fenceGateBlock(BlockInit.CANDYCANE_FENCE_GATE, BlockInit.CANDYCANEBLOCK);
         fenceGateBlock(BlockInit.CANDYCANEBRICK_FENCE_GATE, BlockInit.CANDYCANEBRICKS);
+        fenceGateBlock(BlockInit.TOOTHPASTE_FENCE_GATE, BlockInit.TOOTHPASTE_BLOCK);
+        fenceGateBlock(BlockInit.TOOTHPASTE_BRICK_FENCE_GATE, BlockInit.TOOTHPASTE_BRICKS);
         slabBlock(BlockInit.CANDYFLOSS_SLAB, BlockInit.CANDYFLOSSBLOCK);
         slabBlock(BlockInit.CANDYCANE_SLAB, BlockInit.CANDYCANEBLOCK);
         slabBlock(BlockInit.CANDYCANEBRICK_SLAB, BlockInit.CANDYCANEBRICKS);
@@ -60,8 +63,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock(BlockInit.CHOCOLATECHIPCOOKIE_SLAB, BlockInit.CHOCOLATECHIPCOOKIEBLOCK);
         slabBlock(BlockInit.WHITECHOCOLATECHIPCOOKIE_SLAB, BlockInit.WHITECHOCOLATECHIPCOOKIEBLOCK);
         slabBlock(BlockInit.RAINBOWCOOKIE_SLAB, BlockInit.RAINBOWCOOKIEBLOCK);
+        slabBlock(BlockInit.TOOTHPASTE_SLAB, BlockInit.TOOTHPASTE_BLOCK);
+        slabBlock(BlockInit.TOOTHPASTE_BRICK_SLAB, BlockInit.TOOTHPASTE_BRICKS);
         stairsBlock(BlockInit.CANDYCANE_STAIRS, BlockInit.CANDYCANEBLOCK);
         stairsBlock(BlockInit.CANDYCANEBRICK_STAIRS, BlockInit.CANDYCANEBRICKS);
+        stairsBlock(BlockInit.WAFER_PLANK_STAIRS, BlockInit.WAFERWOODPLANKS);
+        stairsBlock(BlockInit.ROTTENMOULDYCANDYCANEBRICKSTAIRS, BlockInit.ROTTENMOULDYCANDYCANEBRICKS);
+        stairsBlock(BlockInit.ROTTENMOULDYCANDYCANESTAIRS, BlockInit.ROTTENMOULDYCANDYCANEBLOCK);
+        stairsBlock(BlockInit.TOOTHPASTE_STAIRS, BlockInit.TOOTHPASTE_BLOCK);
+        stairsBlock(BlockInit.TOOTHPASTE_BRICK_STAIRS, BlockInit.TOOTHPASTE_BRICKS);
 
     }
 
