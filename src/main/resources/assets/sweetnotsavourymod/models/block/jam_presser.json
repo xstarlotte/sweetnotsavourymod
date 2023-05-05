@@ -5,7 +5,6 @@
 		"0": "sweetnotsavourymod:blocks/jam_presser",
 		"particle": "sweetnotsavourymod:blocks/jam_presser"
 	},
-	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 0, 0],

@@ -1,7 +1,6 @@
 package com.charlotte.sweetnotsavourymod.data;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import com.charlotte.sweetnotsavourymod.core.init.GeneralInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
@@ -25,7 +24,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     //machines
 
-        ShapedRecipeBuilder.shaped(GeneralInit.MACHINE_ICE_CREAM_MACHINE.getBlock())
+        ShapedRecipeBuilder.shaped(BlockInit.ICE_CREAM_MACHINE.get())
                 .define('S', BlockInit.WAFERWOODBLOCK.get())
                 .define('A', ItemInit.CREAMY_MILK_BUCKET.get())
                 .pattern("SSS")
@@ -36,7 +35,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 BlockInit.WAFERWOODBLOCK.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapedRecipeBuilder.shaped(GeneralInit.MACHINE_CAKE_BAKER.getBlock())
+        ShapedRecipeBuilder.shaped(BlockInit.CAKE_BAKER.get())
                 .define('S', BlockInit.ORANGE_CANDY_WINDOW.get())
                 .define('A', BlockInit.RAINBOWFROSTINGLEAVES.get())
                 .define('D', BlockInit.WAFERWOODBLOCK.get())
@@ -49,7 +48,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 BlockInit.RAINBOWFROSTINGLEAVES.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapedRecipeBuilder.shaped(GeneralInit.MACHINE_TEDDY_BEAR_PRINTER.getBlock())
+        ShapedRecipeBuilder.shaped(BlockInit.TEDDY_BEAR_PRINTER.get())
                 .define('S', BlockInit.STRAWBERRY_CANDY_WINDOW.get())
                 .define('D', BlockInit.CANDYCANEBLOCK.get())
                 .pattern("DSD")
@@ -60,7 +59,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 BlockInit.CANDYCANEBLOCK.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapedRecipeBuilder.shaped(GeneralInit.MACHINE_CANDYFLOSS_CRYSTALLIZER.getBlock())
+        ShapedRecipeBuilder.shaped(BlockInit.CANDYFLOSS_CRYSTALIZER.get())
                 .define('S', BlockInit.RASPBERRY_CANDY_WINDOW.get())
                 .define('A', ItemInit.CANDYCANESUGAR.get())
                 .pattern("SSS")
@@ -72,7 +71,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 BlockInit.RAINBOWFROSTINGLEAVES.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapedRecipeBuilder.shaped(GeneralInit.MACHINE_CANDYCANE_FURNACE.getBlock())
+        ShapedRecipeBuilder.shaped(BlockInit.CANDYCANE_FURNACE.get())
                 .define('S', BlockInit.CANDYCANEBLOCK.get())
                 .define('A', ItemInit.CANDYCANESUGAR.get())
                 .pattern("SSS")
@@ -83,7 +82,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 ItemInit.CANDYCANESUGAR.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapedRecipeBuilder.shaped(GeneralInit.MACHINE_BANANA_BAKER.getBlock())
+        ShapedRecipeBuilder.shaped(BlockInit.BANANA_BAKER.get())
                 .define('S', BlockInit.WAFERWOODBLOCK.get())
                 .define('A', ItemInit.SWEETBANANA.get())
                 .pattern("SSS")
@@ -94,7 +93,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 BlockInit.WAFERWOODBLOCK.get()).build()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapedRecipeBuilder.shaped(GeneralInit.MACHINE_JAM_PRESSER.getBlock())
+        ShapedRecipeBuilder.shaped(BlockInit.JAM_PRESSER.get())
                 .define('S', BlockInit.STRAWBERRY_CANDY_WINDOW.get())
                 .define('A', BlockInit.RASPBERRY_CANDY_WINDOW.get())
                 .define('D', BlockInit.BLACKBERRY_CANDY_WINDOW.get())
@@ -112,7 +111,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                 ).build()))
                 .save(pFinishedRecipeConsumer);
 
-        ShapedRecipeBuilder.shaped(GeneralInit.MACHINE_WAFFLE_CONE_MACHINE.getBlock())
+        ShapedRecipeBuilder.shaped(BlockInit.WAFFLE_CONE_MACHINE.get())
                 .define('S', BlockInit.WAFERWOODBLOCK.get())
                 .define('A', ItemInit.CANDYCANESUGAR.get())
                 .pattern("SSS")

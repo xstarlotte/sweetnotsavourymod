@@ -1,6 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.candycane.CandycaneBedBlockEntity;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.icecream.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.waffle.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.machines.*;
@@ -77,6 +78,10 @@ public class BlockEntityTypesInit{
     public static final RegistryObject<BlockEntityType<ToffeeWaffleBedBlockEntity>> SNS_TOFFEE_WAFFLE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
             .register("sns_toffee_wafflebed_entity", () -> BlockEntityType.Builder.of(ToffeeWaffleBedBlockEntity::new,
                     BlockInit.TOFFEEWAFFLEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CandycaneBedBlockEntity>> SNS_CANDY_CANE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_candy_canebed_entity", () -> BlockEntityType.Builder.of(CandycaneBedBlockEntity::new,
+                    BlockInit.CANDYCANEBED.get()).build(null));
 
 //icecreammachine
     public static final RegistryObject<BlockEntityType<IceCreamMachineBlockEntity>> ICE_CREAM_MACHINE = BLOCK_ENTITY_TYPE

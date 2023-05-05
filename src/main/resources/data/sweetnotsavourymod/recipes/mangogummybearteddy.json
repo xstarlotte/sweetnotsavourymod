@@ -1,0 +1,11 @@
+{
+  "type": "sweetnotsavourymod:teddy_bear_printing",
+  "ingredients": [
+    {
+      "item": "sweetnotsavourymod:sweetmango"
+    }
+  ],
+  "output": {
+    "item": "sweetnotsavourymod:mangogummybearteddy"
+  }
+}

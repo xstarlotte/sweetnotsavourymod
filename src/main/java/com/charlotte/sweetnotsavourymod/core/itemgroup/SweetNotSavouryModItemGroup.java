@@ -1,7 +1,6 @@
 package com.charlotte.sweetnotsavourymod.core.itemgroup;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import com.charlotte.sweetnotsavourymod.core.init.GeneralInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -31,7 +30,7 @@ public class SweetNotSavouryModItemGroup {
 	public static final CreativeModeTab SNSMODMACHINES = new CreativeModeTab("snsmodmachines") {
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(GeneralInit.MACHINE_ICE_CREAM_MACHINE.getItem());
+			return new ItemStack(BlockInit.ICE_CREAM_MACHINE.get());
 		}
 	};
 

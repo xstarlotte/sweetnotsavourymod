@@ -1,7 +1,6 @@
 package com.charlotte.sweetnotsavourymod.data;
 
 import com.charlotte.sweetnotsavourymod.core.init.BlockInit;
-import com.charlotte.sweetnotsavourymod.core.init.GeneralInit;
 import com.charlotte.sweetnotsavourymod.core.init.ItemInit;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -430,14 +429,14 @@ public class BlockInitLootTables extends BlockLoot {
         this.dropSelf(BlockInit.POISONBERRYWOODWARDROBE.get());
         this.dropSelf(BlockInit.POISONBERRYWOODBED.get());
 
-        this.dropSelf(GeneralInit.MACHINE_ICE_CREAM_MACHINE.getBlock());
-        this.dropSelf(GeneralInit.MACHINE_BANANA_BAKER.getBlock());
-        this.dropSelf(GeneralInit.MACHINE_JAM_PRESSER.getBlock());
-        this.dropSelf(GeneralInit.MACHINE_WAFFLE_CONE_MACHINE.getBlock());
-        this.dropSelf(GeneralInit.MACHINE_CAKE_BAKER.getBlock());
-        this.dropSelf(GeneralInit.MACHINE_CANDYCANE_FURNACE.getBlock());
-        this.dropSelf(GeneralInit.MACHINE_CANDYFLOSS_CRYSTALLIZER.getBlock());
-        this.dropSelf(GeneralInit.MACHINE_TEDDY_BEAR_PRINTER.getBlock());
+        this.dropSelf(BlockInit.ICE_CREAM_MACHINE.get());
+        this.dropSelf(BlockInit.BANANA_BAKER.get());
+        this.dropSelf(BlockInit.JAM_PRESSER.get());
+        this.dropSelf(BlockInit.WAFFLE_CONE_MACHINE.get());
+        this.dropSelf(BlockInit.CAKE_BAKER.get());
+        this.dropSelf(BlockInit.CANDYCANE_FURNACE.get());
+        this.dropSelf(BlockInit.CANDYFLOSS_CRYSTALIZER.get());
+        this.dropSelf(BlockInit.TEDDY_BEAR_PRINTER.get());
         this.dropSelf(BlockInit.PURE_HERB_BLOCK.get());
 
 

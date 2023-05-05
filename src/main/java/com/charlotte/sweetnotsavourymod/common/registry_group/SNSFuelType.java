@@ -4,23 +4,19 @@ import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
 import com.charlotte.sweetnotsavourymod.core.init.SNSReg;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.RegistryObject;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Optional;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class SNSFuelType {
 	private final ResourceLocation id;
 	private final RegistryObject<FType> type;
@@ -44,33 +40,29 @@ public class SNSFuelType {
 		return serializer.get();
 	}
 	
-	public Optional<FRecipe> getFuel(MinecraftServer server, ItemStack stack) {
+	public int getValue(MinecraftServer server, ItemStack stack) {
 		return server.getRecipeManager()
 				.getAllRecipesFor(getType())
 				.stream()
 				.filter(recipe -> recipe.matches(stack))
-				.findAny();
+				.mapToInt(FRecipe::getValue)
+				.findFirst()
+				.orElse(-1);
 	}
 	
 	public class FRecipe implements Recipe<Container> {
 		private final ResourceLocation id;
 		private final Ingredient item;
-		private final ItemStack result;
 		private final int value;
 		
-		public FRecipe(ResourceLocation id, Ingredient item, ItemStack result, int value) {
+		public FRecipe(ResourceLocation id, Ingredient item, int value) {
 			this.id = id;
 			this.item = item;
-			this.result = result;
 			this.value = value;
 		}
 		
 		public Ingredient getItem() {
 			return item;
-		}
-		
-		public ItemStack getResult() {
-			return result;
 		}
 		
 		public int getValue() {
@@ -106,22 +98,18 @@ public class SNSFuelType {
 			if (!json.has("value"))
 				throw new JsonSyntaxException("Missing value");
 			Ingredient item = Ingredient.fromJson(json.get("item"));
-			ItemStack result = json.has("result") ?
-					ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result")) :
-					ItemStack.EMPTY;
 			int value = json.get("value").getAsInt();
-			return new FRecipe(id, item, result, value);
+			return new FRecipe(id, item, value);
 		}
 		
 		@Override
 		public FRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
-			return new FRecipe(id, Ingredient.fromNetwork(buf), buf.readItem(), buf.readVarInt());
+			return new FRecipe(id, Ingredient.fromNetwork(buf), buf.readVarInt());
 		}
 		
 		@Override
 		public void toNetwork(FriendlyByteBuf buf, FRecipe recipe) {
 			recipe.item.toNetwork(buf);
-			buf.writeItem(recipe.result);
 			buf.writeVarInt(recipe.value);
 		}
 	}

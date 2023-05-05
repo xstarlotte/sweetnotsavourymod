@@ -76,13 +76,13 @@ public class SweetNotSavouryMod {
     FluidInit.loadClass();
     BlockEntityTypesInit.loadClass();
     MenuTypesInit.loadClass();
+    RecipeSerializerInit.loadClass();
     EntityTypesInit.loadClass();
     ModTrunkPlacerTypes.loadClass();
     ModFoliagePlacerTypes.loadClass();
     ModConfiguredFeatures.loadClass();
     ModPlacedFeatures.loadClass();
     ModVegetationFeatures.loadClass();
-    GeneralInit.loadClass();
   }
   
   private void onLoadComplete(final FMLLoadCompleteEvent event) {

@@ -5,7 +5,6 @@
 		"0": "sweetnotsavourymod:blocks/ice_cream_machine",
 		"particle": "sweetnotsavourymod:blocks/ice_cream_machine"
 	},
-	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 0, 4],
