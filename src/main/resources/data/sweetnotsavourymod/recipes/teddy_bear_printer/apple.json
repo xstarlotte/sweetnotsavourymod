@@ -1,0 +1,10 @@
+{
+  "type": "sweetnotsavourymod:teddy_bear_printer",
+  "ingredient": {
+    "item": "minecraft:apple"
+  },
+  "output": {
+    "item": "sweetnotsavourymod:applegummybearteddy"
+  },
+  "time": 10
+}

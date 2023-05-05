@@ -1,0 +1,10 @@
+{
+  "type": "sweetnotsavourymod:teddy_bear_printer",
+  "ingredient": {
+    "item": "sweetnotsavourymod:bonbons"
+  },
+  "output": {
+    "item": "sweetnotsavourymod:cherrygummybearteddy"
+  },
+  "time": 10
+}

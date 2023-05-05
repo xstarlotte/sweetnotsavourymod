@@ -1,0 +1,10 @@
+{
+  "type": "sweetnotsavourymod:jam_presser",
+  "ingredient": {
+    "item": "sweetnotsavourymod:sweetstrawberry"
+  },
+  "output": {
+    "item": "sweetnotsavourymod:strawberry_jam"
+  },
+  "time": 10
+}

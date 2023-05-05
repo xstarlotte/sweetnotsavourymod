@@ -1,0 +1,10 @@
+{
+  "type": "sweetnotsavourymod:candycane_furnace",
+  "ingredient": {
+    "item": "sweetnotsavourymod:chocolate"
+  },
+  "output": {
+    "item": "sweetnotsavourymod:meltingchocolateblock"
+  },
+  "time": 20
+}

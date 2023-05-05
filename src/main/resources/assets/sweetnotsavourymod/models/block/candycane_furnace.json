@@ -5,6 +5,7 @@
 		"1": "sweetnotsavourymod:blocks/candycane_furnace",
 		"particle": "sweetnotsavourymod:blocks/candycane_furnace"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 0, 0],

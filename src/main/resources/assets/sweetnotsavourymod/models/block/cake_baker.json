@@ -5,6 +5,7 @@
 		"0": "sweetnotsavourymod:blocks/cake_baker",
 		"particle": "sweetnotsavourymod:blocks/cake_baker"
 	},
+	"render_type": "translucent",
 	"elements": [
 		{
 			"from": [0, 8, 1],

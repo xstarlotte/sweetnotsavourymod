@@ -1,11 +1,8 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.common.block.*;
-import com.charlotte.sweetnotsavourymod.common.block.beds.candycane.CandycaneBedBlock;
 import com.charlotte.sweetnotsavourymod.common.block.beds.icecreambeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.wafflebeds.*;
-import com.charlotte.sweetnotsavourymod.common.block.ccdungeon.CorpseBlock;
-import com.charlotte.sweetnotsavourymod.common.block.ccdungeon.WolfCorpseBlock;
 import com.charlotte.sweetnotsavourymod.common.block.machineblocks.*;
 import com.charlotte.sweetnotsavourymod.common.block.poisonberry.*;
 import com.charlotte.sweetnotsavourymod.common.block.teddies.SNSTeddyBlock;
@@ -18,7 +15,6 @@ import com.charlotte.sweetnotsavourymod.common.world.features.tree.IceCreamTreeG
 import com.charlotte.sweetnotsavourymod.core.itemgroup.SweetNotSavouryModItemGroup;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -37,8 +33,6 @@ import net.minecraftforge.registries.RegistryObject;
 import javax.annotation.Nullable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
-
-import static net.minecraft.world.level.block.Blocks.TORCH;
 
 public class BlockInit {
 	public static void loadClass() {}
@@ -113,196 +107,6 @@ public class BlockInit {
 
 			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> MINTRAINBOWFROSTINGLEAVES = registerBlock("mintrainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> LEMONRAINBOWFROSTINGLEAVES = registerBlock("lemonrainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> ORANGERAINBOWFROSTINGLEAVES = registerBlock("orangerainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> MANGORAINBOWFROSTINGLEAVES = registerBlock("mangorainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> PEACHRAINBOWFROSTINGLEAVES = registerBlock("peachrainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> PINEAPPLERAINBOWFROSTINGLEAVES = registerBlock("pineapplerainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> STRAWBERRYRAINBOWFROSTINGLEAVES = registerBlock("strawberryrainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> RASPBERRYRAINBOWFROSTINGLEAVES = registerBlock("raspberryrainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> BLUEBERRYRAINBOWFROSTINGLEAVES = registerBlock("blueberryrainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> BLACKBERRYRAINBOWFROSTINGLEAVES = registerBlock("blackberryrainbowfrostingleaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-				@Override
-				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return true;
-				}
-
-				@Override
-				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 60;
-				}
-
-				@Override
-				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-					return 30;
-				}
-
-			}, SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
 	public static final RegistryObject<Block> ICECREAMTREESAPLING = registerBlock("icecreamtreesapling",
 			() -> new SaplingBlock(new IceCreamTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)),
 	SweetNotSavouryModItemGroup.SNSMODDECORATION);
@@ -329,20 +133,6 @@ public class BlockInit {
 					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> FROSTINGBLOCK = registerBlock("frostingblock",
-			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
-					.strength(0.2f,1f)
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> MINTBLOCK = registerBlock("mintblock",
-			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
-					.strength(0.2f,1f)
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> MINTCANDYCANEGRASSBLOCK = registerBlock("mintcandycanegrassblock",
 			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
 					.strength(0.2f,1f)
 					.randomTicks()
@@ -730,10 +520,6 @@ public class BlockInit {
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)
 					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> VERYOVERGROWNPOISONBERRYWOODPLANKS = registerBlock("veryovergrownpoisonberrywoodplanks",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD)
-					.strength(2f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
 	public static final RegistryObject<Block> POISONBERRYLEAVES = registerBlock("poisonberryleaves",
 			() -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.TERRACOTTA_WHITE)
 					.strength(0.2f,1f)
@@ -811,90 +597,8 @@ public class BlockInit {
 					.noOcclusion()
 			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-//rest
-
 	public static final RegistryObject<Block> CANDYCANEBLOCK = registerBlock("candycaneblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK = registerBlock("smooth_candycaneblock",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK2 = registerBlock("smooth_candycaneblock2",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK3 = registerBlock("smooth_candycaneblock3",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK4 = registerBlock("smooth_candycaneblock4",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK5 = registerBlock("smooth_candycaneblock5",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK6 = registerBlock("smooth_candycaneblock6",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK7 = registerBlock("smooth_candycaneblock7",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK8 = registerBlock("smooth_candycaneblock8",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK9 = registerBlock("smooth_candycaneblock9",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> SMOOTH_CANDYCANEBLOCK10 = registerBlock("smooth_candycaneblock10",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> REDMINT_BLOCK = registerBlock("redmint_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> WHITEMINT_BLOCK = registerBlock("whitemint_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_GRAY)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block>YELLOWMINT_BLOCK = registerBlock("yellowmint_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_YELLOW)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> BLUEMINT_BLOCK = registerBlock("bluemint_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLUE)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> LIGHTBLUEMINT_BLOCK = registerBlock("lightbluemint_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLUE)
-					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> GREENMINT_BLOCK = registerBlock("greenmint_block",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GREEN)
 					.strength(0.6f,1200f)
 					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
@@ -906,12 +610,12 @@ public class BlockInit {
 	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBLOCK = registerBlock("rottenmouldycandycaneblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODDUNGEON);
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBRICKS = registerBlock("rottenmouldycandycanebricks",
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
-					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODDUNGEON);
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
 	public static final RegistryObject<Block> RASPBERRYICINGBLOCK = registerBlock("raspberryicingblock",
 			() -> new Block(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_PINK)
@@ -1069,26 +773,11 @@ public class BlockInit {
 			() -> new Block(BlockBehaviour.Properties.of(Material.CAKE).sound(SoundType.HONEY_BLOCK)
 					.strength(1f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> TOOTHPASTE_BRICKS = registerBlock("toothpaste_bricks",
-			() -> new Block(BlockBehaviour.Properties.of(Material.CAKE).sound(SoundType.HONEY_BLOCK)
-					.strength(1f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> TOOTHPASTE_GRASS_BLOCK = registerBlock("toothpaste_grass_block",
-			() -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.GRASS)
-					.strength(0.2f,1f)
-					.randomTicks()
-					.noOcclusion()
-					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
 
 
 //windows
 
 	public static final RegistryObject<Block> WAFERWOODWINDOW = registerBlock("waferwoodwindow",
-			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
-					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
-
-	public static final RegistryObject<Block> WAFERWOODWINDOW2 = registerBlock("waferwoodwindow2",
 			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
 					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
@@ -1171,11 +860,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTHHARDENEDBANANASTONE = registerBlock("smoothhardenedbananastone",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-//ladders
 
-	public static final RegistryObject<Block> CANDYCANE_LADDER = registerBlock("candycane_ladder",
-			() -> new SNSLadderBlock(),
-					SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 
 //machines
 public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice_cream_machine",
@@ -1334,9 +1020,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 
-	public static final RegistryObject<Block> WAFER_WOOD_CRAFTINGTABLE = registerBlock("wafer_wood_craftingtable",
-			() -> new CraftingTableBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.HONEY_BLOCK)
-					.strength(1f, 10f)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 
 	public static final RegistryObject<Block> STRAWBERRYWAFFLEBED = registerBlock("strawberrywafflebed",
 			() -> new StrawberryWaffleBedBlock(DyeColor.RED,BlockBehaviour.Properties.of(Material.WOOD,
@@ -1381,11 +1065,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 	public static final RegistryObject<Block> VANILLAWAFFLEBED = registerBlock("wafflebed",
 			() -> new WaffleBedBlock(DyeColor.YELLOW,BlockBehaviour.Properties.of(Material.WOOD,
 					MaterialColor.COLOR_YELLOW).strength(10f).sound(SoundType.WOOD).noOcclusion()),
-			SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> CANDYCANEBED = registerBlock("candycanebed",
-			() -> new CandycaneBedBlock(DyeColor.RED,BlockBehaviour.Properties.of(Material.WOOD,
-					MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 
@@ -1499,12 +1178,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			() -> new DoorBlock(BlockBehaviour.Properties
 					.of(Material.WOOD)
 					.strength(0.6f,1200f)
-					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDUNGEON);
-
-	public static final RegistryObject<DoorBlock> DENTIST_DOOR = registerBlock("dentist_door",
-			() -> new DoorBlock(BlockBehaviour.Properties
-					.of(Material.WOOD)
-					.strength(0.6f,1200f)
 					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<DoorBlock> TOOTHPASTE_DOOR = registerBlock("toothpaste_door",
@@ -1531,42 +1204,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 						  .noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> CANDYCANE_LAMP = registerBlock("candycane_lamp",
-			() -> new SNSLampBlock(BlockBehaviour
-					.Properties
-					.of(Material.BAMBOO)
-
-					.strength(3.5F).sound(SoundType.LANTERN)
-					.lightLevel((p_187433_) -> 15)
-					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> LEMONCANDYCANE_LAMP = registerBlock("lemon_candycane_lamp",
-			() -> new SNSLampBlock(BlockBehaviour
-					.Properties
-					.of(Material.BAMBOO)
-
-					.strength(3.5F).sound(SoundType.LANTERN)
-					.lightLevel((p_187433_) -> 15)
-					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> MINTCANDYCANE_LAMP = registerBlock("mint_candycane_lamp",
-			() -> new SNSLampBlock(BlockBehaviour
-					.Properties
-					.of(Material.BAMBOO)
-
-					.strength(3.5F).sound(SoundType.LANTERN)
-					.lightLevel((p_187433_) -> 15)
-					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> SPEARMINTCANDYCANE_LAMP = registerBlock("spearmint_candycane_lamp",
-			() -> new SNSLampBlock(BlockBehaviour
-					.Properties
-					.of(Material.BAMBOO)
-
-					.strength(3.5F).sound(SoundType.LANTERN)
-					.lightLevel((p_187433_) -> 15)
-					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> PEPPERMINTCANDYCANE_LAMP = registerBlock("peppermint_candycane_lamp",
 			() -> new SNSLampBlock(BlockBehaviour
 					.Properties
 					.of(Material.BAMBOO)
@@ -1978,28 +1615,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					.noCollission()
 			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-//dungeon_decoration
-
-	public static final RegistryObject<Block> SKELETON_CORPSE = registerBlock("skeleton_corpse",
-			() -> new CorpseBlock(BlockBehaviour
-					.Properties
-					.of(Material.DECORATION)
-					.strength(0F)
-					.sound(SoundType.BONE_BLOCK)
-					.noOcclusion()
-					.noCollission()
-			), SweetNotSavouryModItemGroup.SNSMODDUNGEON);
-
-	public static final RegistryObject<Block> WOLF_CORPSE = registerBlock("wolf_corpse",
-			() -> new WolfCorpseBlock(BlockBehaviour
-					.Properties
-					.of(Material.DECORATION)
-					.strength(0F)
-					.sound(SoundType.BONE_BLOCK)
-					.noOcclusion()
-					.noCollission()
-			), SweetNotSavouryModItemGroup.SNSMODDUNGEON);
-
 //chains
 
 	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANECHAINS = registerBlock("rottenmouldycandycanechains",
@@ -2009,31 +1624,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			.sound(SoundType.CHAIN)
 					.noOcclusion()
 					
-			), SweetNotSavouryModItemGroup.SNSMODDUNGEON);
-
-//bookshelves
-//torch
-
-	public static final RegistryObject<Block> CANDYCANE_TORCH = registerBlock("candycane_torch", () -> new TorchBlock(
-			BlockBehaviour.Properties.of(Material.DECORATION)
-					.noCollission()
-					.instabreak()
-					.lightLevel((x) -> 14)
-					.sound(SoundType.BAMBOO)
-					.noOcclusion()
-			, ParticleTypes.FLAME), SweetNotSavouryModItemGroup.SNSMODDECORATION);
-	public static final RegistryObject<Block> CANDYCANE_WALL_TORCH = BLOCKS.register("candycane_wall_torch", () -> new WallTorchBlock(
-			BlockBehaviour.Properties.of(Material.DECORATION)
-					.noCollission()
-					.instabreak()
-					.lightLevel((x) -> 14)
-					.sound(SoundType.BAMBOO)
-					.dropsLike(CANDYCANE_TORCH.get())
-					.noOcclusion()
-			, ParticleTypes.FLAME));
-
-	public static final RegistryObject<Block> CANDYCANE_BOOKCASE = registerBlock("candycane_bookcase",
-			() -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(1.5F).sound(SoundType.WOOD)), SweetNotSavouryModItemGroup.SNSMODDUNGEON);
+			), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 //stairs
 
@@ -2047,26 +1638,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> TOOTHPASTE_STAIRS = registerBlock
-			("toothpaste_stairs",
-					() -> new StairBlock(() -> TOOTHPASTE_BLOCK.get().defaultBlockState(),
-							BlockBehaviour
-									.Properties
-									.of(Material.STONE)
-									.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> TOOTHPASTE_BRICK_STAIRS = registerBlock
-			("toothpaste_brick_stairs",
-					() -> new StairBlock(() -> TOOTHPASTE_BRICKS.get().defaultBlockState(),
-							BlockBehaviour
-									.Properties
-									.of(Material.STONE)
-									.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
 	public static final RegistryObject<Block> WAFER_WOOD_STAIRS = registerBlock
 			("wafer_wood_stairs",
 					() -> new StairBlock(() -> STRAWBERRYCANDYBLOCK.get().defaultBlockState(),
@@ -2076,26 +1647,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 									.strength(0.5f)
 									),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANEBRICKSTAIRS = registerBlock
-			("rottenmouldycandycanebrickstairs",
-					() -> new StairBlock(() -> ROTTENMOULDYCANDYCANEBRICKS.get().defaultBlockState(),
-							BlockBehaviour
-									.Properties
-									.of(Material.BAMBOO)
-									.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDUNGEON);
-
-	public static final RegistryObject<Block> ROTTENMOULDYCANDYCANESTAIRS = registerBlock
-			("rottenmouldycandycanestairs",
-					() -> new StairBlock(() -> ROTTENMOULDYCANDYCANEBLOCK.get().defaultBlockState(),
-							BlockBehaviour
-									.Properties
-									.of(Material.BAMBOO)
-									.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDUNGEON);
 
 	public static final RegistryObject<Block> STRAWBERRY_CANDY_STAIRS = registerBlock
 			("strawberry_candy_stairs",
@@ -2217,16 +1768,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
-	public static final RegistryObject<Block> WAFER_PLANK_STAIRS = registerBlock
-			("wafer_plank_stairs",
-					() -> new StairBlock(() -> WAFERWOODPLANKS.get().defaultBlockState(),
-							BlockBehaviour
-									.Properties
-									.of(Material.BAMBOO)
-									.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
 //fence
 
 	public static final RegistryObject<Block> HARDENED_BANANA_FENCE = registerBlock
@@ -2335,51 +1876,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							.of(Material.BAMBOO)
 							.strength(0.5f)
 							),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> VERYOVERGROWNPOISONBERRYWOODPLANKS_FENCE = registerBlock
-			("veryovergrownpoisonberrywoodplanks_fence",
-					() -> new FenceBlock(BlockBehaviour
-							.Properties
-							.of(Material.BAMBOO)
-							.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> CANDYCANE_FENCE = registerBlock
-			("candycane_fence",
-					() -> new FenceBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> CANDYCANEBRICK_FENCE = registerBlock
-			("candycanebrick_fence",
-					() -> new FenceBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> TOOTHPASTE_FENCE = registerBlock
-			("toothpaste_fence",
-					() -> new FenceBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> TOOTHPASTE_BRICK_FENCE = registerBlock
-			("toothpaste_brick_fence",
-					() -> new FenceBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 //wall
@@ -2499,24 +1995,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							.of(Material.METAL)
 							.strength(0.5f)
 							),
-					SweetNotSavouryModItemGroup.SNSMODDUNGEON);
-
-	public static final RegistryObject<Block> CANDYCANE_WALL = registerBlock
-			("candycane_wall",
-					() -> new WallBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> CANDYCANEBRICK_WALL = registerBlock
-			("candycanebrick_wall",
-					() -> new WallBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 
@@ -2529,24 +2007,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							.of(Material.STONE)
 							.strength(0.5f)
 							),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> TOOTHPASTE_FENCE_GATE = registerBlock
-			("toothpaste_fence_gate",
-					() -> new FenceGateBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> TOOTHPASTE_BRICK_FENCE_GATE = registerBlock
-			("toothpaste_brick_fence_gate",
-					() -> new FenceGateBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> WAFER_WOOD_FENCE_GATE = registerBlock
@@ -2677,24 +2137,6 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							.of(Material.STONE)
 							.strength(0.5f)
 							),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> TOOTHPASTE_SLAB = registerBlock
-			("toothpaste_slab",
-					() -> new SlabBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
-					SweetNotSavouryModItemGroup.SNSMODDECORATION);
-
-	public static final RegistryObject<Block> TOOTHPASTE_BRICK_SLAB = registerBlock
-			("toothpaste_brick_slab",
-					() -> new SlabBlock(BlockBehaviour
-							.Properties
-							.of(Material.STONE)
-							.strength(0.5f)
-					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> WAFER_WOOD_SLAB = registerBlock
@@ -2830,7 +2272,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							.of(Material.BAMBOO)
 							.strength(0.5f)
 					),
-					SweetNotSavouryModItemGroup.SNSMODDUNGEON);
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<Block> POPCORN_SLAB = registerBlock
 			("popcorn_slab",
@@ -2884,7 +2326,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 							.of(Material.BAMBOO)
 							.strength(0.5f)
 					),
-					SweetNotSavouryModItemGroup.SNSMODDUNGEON);
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	//test
 
@@ -2904,7 +2346,7 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 			.strength(5.0F, 6.0F)
 			.sound(SoundType.METAL)
 			.noOcclusion()),
-			SweetNotSavouryModItemGroup.SNSMODDUNGEON);
+			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<LiquidBlock> CREAMY_MILK_BLOCK = BlockInit.BLOCKS.register("creamy_milk",
 			() -> new LiquidBlock(FluidInit.CREAMY_MILK_FLUID, BlockBehaviour.Properties.of(Material.WATER)

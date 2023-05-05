@@ -5,6 +5,7 @@
 		"1": "sweetnotsavourymod:blocks/teddy_bear_printer",
 		"particle": "sweetnotsavourymod:blocks/teddy_bear_printer"
 	},
+	"render_type": "translucent",
 	"elements": [
 		{
 			"from": [14.96566, 0, 0],
