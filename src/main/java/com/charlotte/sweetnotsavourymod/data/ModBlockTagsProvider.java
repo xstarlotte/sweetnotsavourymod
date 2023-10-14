@@ -40,8 +40,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 				BlockInit.CHOCOLATE_WAFER_PLANK_DOOR,
 				BlockInit.FROSTING_DOOR,
 				BlockInit.ROTTEN_MOULDY_CANDY_CANE_DOOR,
-				BlockInit.TOOTHPASTE_DOOR
+				BlockInit.TOOTHPASTE_DOOR,
+				BlockInit.HUMBUG_DOOR
 		);
+
+		addTags(
+				BlockTags.FENCES,
+				BlockInit.HUMBUG_BRICK_FENCE
+		);
+
 	}
 	
 	@SafeVarargs

@@ -92,6 +92,8 @@ public class ModVegetationFeatures {
                             .add(BlockInit.CANDY_CANE_FLOWER_4.get().defaultBlockState(), 1)
                             .add(BlockInit.CANDY_CANE_GRASS.get().defaultBlockState(), 1)
                             .add(BlockInit.CANDY_CANE_GRASS_LONG.get().defaultBlockState(), 1)
+                            .add(BlockInit.CANDY_CANE_CARNATION.get().defaultBlockState(), 1)
+                            .add(BlockInit.CANDY_CANE_CARNATIONS.get().defaultBlockState(), 1)
                     ), 64)
             );
 

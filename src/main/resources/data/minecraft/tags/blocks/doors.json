@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "sweetnotsavourymod:candycane_door",
+    "sweetnotsavourymod:yellow_candycane_door",
+    "sweetnotsavourymod:green_candycane_door",
+    "sweetnotsavourymod:blue_candycane_door",
+    "sweetnotsavourymod:lightblue_candycane_door",
     "sweetnotsavourymod:toothpaste_door",
     "sweetnotsavourymod:rotten_mouldy_candy_cane_door",
     "sweetnotsavourymod:dentist_door",
@@ -21,6 +25,8 @@
     "sweetnotsavourymod:chocolate_wafer_plank_door",
     "sweetnotsavourymod:wafer_wood_door",
     "sweetnotsavourymod:chocolate_wafer_wood_door",
+    "sweetnotsavourymod:humbug_door",
+    "sweetnotsavourymod:hardenedmint_door",
     "sweetnotsavourymod:toothpaste_door"
   ]
 }

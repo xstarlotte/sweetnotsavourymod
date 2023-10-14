@@ -29,6 +29,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBDe
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSUnicornEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rodents.*;
+import com.charlotte.sweetnotsavourymod.common.entity.sheep.MarshmallowSheepEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
@@ -70,6 +71,7 @@ public class SNSModBusEvents {
         event.put(EntityTypesInit.SNSUNICORN.get(), SNSUnicornEntity.setAttributes());
         event.put(EntityTypesInit.SNSJAMSTER.get(), SNSJamsterEntity.setAttributes());
         event.put(EntityTypesInit.SNSSHEEP.get(), SNSSheepEntity.setAttributes());
+        event.put(EntityTypesInit.MARSHMALLOWSHEEP.get(), MarshmallowSheepEntity.setAttributes());
         event.put(EntityTypesInit.SNSLION.get(), SNSLionEntity.setAttributes());
         event.put(EntityTypesInit.CHOCOLATECHICKEN.get(), ChocolateChickenEntity.setAttributes());
         event.put(EntityTypesInit.BONBONBINI.get(), BonbonbiniEntity.setAttributes());

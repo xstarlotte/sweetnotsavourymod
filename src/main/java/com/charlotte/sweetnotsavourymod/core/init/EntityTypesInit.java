@@ -30,6 +30,7 @@ import com.charlotte.sweetnotsavourymod.common.entity.hostile.poisonberries.PBDe
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSUnicornEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rideable.SNSZebraEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.rodents.*;
+import com.charlotte.sweetnotsavourymod.common.entity.sheep.MarshmallowSheepEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSBoarryEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.sheep.SNSSheepEntity;
 import com.charlotte.sweetnotsavourymod.common.entity.snakes.SNSSnakeEntity;
@@ -216,6 +217,11 @@ public class EntityTypesInit {
 			.register("snssheep", () -> EntityType.Builder.of(SNSSheepEntity::new, MobCategory.CREATURE)
 					.sized(1f, 1f)
 					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "snssheep").toString()));
+
+	public static final RegistryObject<EntityType<MarshmallowSheepEntity>>MARSHMALLOWSHEEP = ENTITY_TYPES
+			.register("marshmallowsheep", () -> EntityType.Builder.of(MarshmallowSheepEntity::new, MobCategory.CREATURE)
+					.sized(1f, 1f)
+					.build(new ResourceLocation(SweetNotSavouryMod.MOD_ID, "marshmallowsheep").toString()));
 
 	public static final RegistryObject<EntityType<SNSLionEntity>>SNSLION = ENTITY_TYPES
 			.register("snslion", () -> EntityType.Builder.of(SNSLionEntity::new, MobCategory.CREATURE)

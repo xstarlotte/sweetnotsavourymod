@@ -19,6 +19,8 @@
 
 	"item.sweetnotsavourymod.snssheepspawnegg": "Candyfloss Sheep Spawn Egg",
 
+	"item.sweetnotsavourymod.marshmallowsheepspawnegg": "Mint Marshmallow Sheep Spawn Egg",
+
 	"item.sweetnotsavourymod.snslionspawnegg": "Candyfloss Lion Spawn Egg",
 
 	"item.sweetnotsavourymod.snscccatspawnegg": "Candy Cane Cat Spawn Egg",
@@ -156,6 +158,8 @@
 	"item.sweetnotsavourymod.victoriaspongecake": "Victoria Sponge Cake",
 	"item.sweetnotsavourymod.vanillacake": "Vanilla Cake",
 	"item.sweetnotsavourymod.lemoncurdcake": "Lemon Curd Cake",
+	"item.sweetnotsavourymod.christmas_cake": "Christmas Cake",
+	"item.sweetnotsavourymod.mint_chocolate_cake": "Mint Chocolate Cake",
 	"item.sweetnotsavourymod.bananabread": "Banana Bread",
 
 	"item.sweetnotsavourymod.sweetbanana": "Sweet Banana",
@@ -184,6 +188,9 @@
 	"item.sweetnotsavourymod.candy_cane": "Candy Cane",
 	"item.sweetnotsavourymod.toothpaste": "Toothpaste",
 	"item.sweetnotsavourymod.cinnamon_stick": "Cinnamon Stick",
+	"item.sweetnotsavourymod.popcorn": "Popcorn",
+	"item.sweetnotsavourymod.mint_chocolate_ball": "Mint Chocolate Ball",
+	"item.sweetnotsavourymod.mint_marshmallow": "Mint Marshmallow",
 
 	"item.sweetnotsavourymod.strawberry_jam": "Strawberry Jam",
 	"item.sweetnotsavourymod.raspberry_jam": "Raspberry Jam",
@@ -371,6 +378,8 @@
 	"block.sweetnotsavourymod.frostinggrass": "Frosting Grass",
 	"block.sweetnotsavourymod.candycane_grass_block": "Candy Cane Grass Block",
 	"block.sweetnotsavourymod.candycanebush": "Candy Cane Bush",
+	"block.sweetnotsavourymod.candy_cane_carnation": "Candy Cane Carnation",
+	"block.sweetnotsavourymod.candy_cane_carnations": "Candy Cane Carnations",
 	"block.sweetnotsavourymod.candy_cane_flower": "Candy Cane Flower",
 	"block.sweetnotsavourymod.candy_cane_flower_2": "Candy Cane Flower",
 	"block.sweetnotsavourymod.candy_cane_flower_3": "Candy Cane Flower",
@@ -433,6 +442,8 @@
 	"block.sweetnotsavourymod.blueberrygummybearwindow": "Blueberry Gummy Bear Window",
 	"block.sweetnotsavourymod.strawberrygummybearwindow": "Strawberry Gummy Bear Window",
 	"block.sweetnotsavourymod.raspberrygummybearwindow": "Raspberry Gummy Bear Window",
+	"block.sweetnotsavourymod.hardenedmintwindow": "Hardened Mint Window",
+	"block.sweetnotsavourymod.humbugwindow": "Humbug Window",
 
 	"block.sweetnotsavourymod.waferwoodplanks": "Wafer Wood Planks",
 	"block.sweetnotsavourymod.waferwoodblock": "Wafer Wood Block",
@@ -468,7 +479,16 @@
 
 	"block.sweetnotsavourymod.candycaneblock": "Candy Cane Block",
 	"block.sweetnotsavourymod.candycanebricks": "Candy Cane Bricks",
+	"block.sweetnotsavourymod.yellow_candycanebricks": "Yellow Candy Cane Bricks",
+	"block.sweetnotsavourymod.green_candycanebricks": "Green Candy Cane Bricks",
+	"block.sweetnotsavourymod.blue_candycanebricks": "Blue Candy Cane Bricks",
+	"block.sweetnotsavourymod.lightblue_candycanebricks": "Light Blue Candy Cane Bricks",
 	"block.sweetnotsavourymod.candyflossblock": "Candyfloss Block",
+
+	"block.sweetnotsavourymod.mint_chocolate_bricks": "Mint Chocolate Bricks",
+	"block.sweetnotsavourymod.hardenedmintbricks": "Hardened Mint Bricks",
+	"block.sweetnotsavourymod.hardenedmintblock": "Hardened Mint Block",
+	"block.sweetnotsavourymod.orange_chocolate_bricks": "Orange Chocolate Bricks",
 
 	"block.sweetnotsavourymod.chocolatechipcookieblock": "Chocolate Chip Cookie Block",
 	"block.sweetnotsavourymod.whitechocolatechipcookieblock": "White Chocolate Chip Cookie Block",
@@ -498,6 +518,10 @@
 
 	"block.sweetnotsavourymod.frostingblock": "Frosting Block",
 	"block.sweetnotsavourymod.mintblock": "Mint Block",
+	"block.sweetnotsavourymod.hardenedmintblock": "Hardened Mint Block",
+	"block.sweetnotsavourymod.humbugblock": "Humbug Block",
+	"block.sweetnotsavourymod.hardenedhumbugblock": "Hardened Humbug Block",
+	"block.sweetnotsavourymod.humbugbricks": "Humbug Bricks",
 	"block.sweetnotsavourymod.redmint_block": "Red Mint Block",
 	"block.sweetnotsavourymod.whitemint_block": "White Mint Block",
 	"block.sweetnotsavourymod.yellowmint_block": "Yellow Mint Block",
@@ -555,12 +579,18 @@
 	"block.sweetnotsavourymod.orange_candy_stairs": "Orange Candy Stairs",
 	"block.sweetnotsavourymod.lemon_candy_stairs": "Lemon Candy Stairs",
 	"block.sweetnotsavourymod.candycane_stairs": "Candycane Stairs",
+	"block.sweetnotsavourymod.yellow_candycanebrick_stairs": "Yellow Candycane Brick Stairs",
+	"block.sweetnotsavourymod.green_candycanebrick_stairs": "Green Candycane Brick Stairs",
+	"block.sweetnotsavourymod.blue_candycanebrick_stairs": "Blue Candycane Brick Stairs",
+	"block.sweetnotsavourymod.lightblue_candycanebrick_stairs": "Light Blue Candycane Brick Stairs",
+	"block.sweetnotsavourymod.mint_chocolate_brick_stairs": "Mint Chocolate Brick Stairs",
 	"block.sweetnotsavourymod.candycanebrick_stairs": "Candycane Brick Stairs",
 	"block.sweetnotsavourymod.rottenmouldycandycanebrickstairs": "Rotten Mouldy Candycane Brick Stairs",
 	"block.sweetnotsavourymod.rottenmouldycandycanestairs": "Rotten Mouldy Candycane Stairs",
 	"block.sweetnotsavourymod.wafer_plank_stairs": "Wafer Plank Stairs",
 	"block.sweetnotsavourymod.toothpaste_stairs": "Toothpaste Stairs",
 	"block.sweetnotsavourymod.toothpaste_brick_stairs": "Toothpaste Brick Stairs",
+	"block.sweetnotsavourymod.hardenedmintbrick_stairs": "Hardened Mint Brick Stairs",
 
 
 
@@ -581,6 +611,7 @@
 	"block.sweetnotsavourymod.candycanebrick_fence": "Candycane Brick Fence",
 	"block.sweetnotsavourymod.toothpaste_fence": "Toothpaste Fence",
 	"block.sweetnotsavourymod.toothpaste_brick_fence": "Toothpaste Brick Fence",
+	"block.sweetnotsavourymod.humbug_brick_fence": "Humbug Brick Fence",
 
 
 	"block.sweetnotsavourymod.strawberry_candy_fence_gate": "Strawberry Candy Fence Gate",
@@ -665,6 +696,12 @@
 
 	"block.sweetnotsavourymod.candycanebed": "Candycane Bed",
 
+	"block.sweetnotsavourymod.candycane_brick_bed": "Candycane Bed",
+	"block.sweetnotsavourymod.candycane_yellowbrick_bed": "Yellow Candycane Brick Bed",
+	"block.sweetnotsavourymod.candycane_greenbrick_bed": "Green Candycane Brick Bed",
+	"block.sweetnotsavourymod.candycane_bluebrick_bed": "Blue Candycane Brick Bed",
+	"block.sweetnotsavourymod.candycane_lightbluebrick_bed": "Light Blue Candycane Brick Bed",
+
 
 
 	"block.sweetnotsavourymod.strawberry_candy_door": "Strawberry Candy Door",
@@ -687,6 +724,12 @@
 	"block.sweetnotsavourymod.dentist_door": "Dentist Door",
 	"block.sweetnotsavourymod.toothpaste_door":  "Toothpaste Door",
 	"block.sweetnotsavourymod.candycane_door": "Candycane Door",
+	"block.sweetnotsavourymod.yellow_candycane_door": "Yellow Candycane Door",
+	"block.sweetnotsavourymod.green_candycane_door": "Green Candycane Door",
+	"block.sweetnotsavourymod.blue_candycane_door": "Blue Candycane Door",
+	"block.sweetnotsavourymod.lightblue_candycane_door": "Light Blue Candycane Door",
+	"block.sweetnotsavourymod.hardenedmint_door": "Hardened Mint Door",
+	"block.sweetnotsavourymod.humbug_door": "Humbug Door",
 
 	"block.sweetnotsavourymod.candycane_ladder": "Candycane Ladder",
 
@@ -1103,6 +1146,8 @@
 
 	"entity.sweetnotsavourymod.snssheep.0": "Candyfloss Sheep",
 	"entity.sweetnotsavourymod.snssheep.1": "Blue Candyfloss Sheep",
+
+	"entity.sweetnotsavourymod.marshmallowsheep.0": "Mint Marshmallow Sheep",
 
 	"entity.sweetnotsavourymod.snsgummybear.0": "Blackberry Gummy Bear",
 	"entity.sweetnotsavourymod.snsgummybear.1": "Blueberry Gummy Bear",

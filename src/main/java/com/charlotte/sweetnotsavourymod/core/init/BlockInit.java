@@ -1,7 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.common.block.*;
-import com.charlotte.sweetnotsavourymod.common.block.beds.candycane.CandycaneBedBlock;
+import com.charlotte.sweetnotsavourymod.common.block.beds.candycane.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.icecreambeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.beds.wafflebeds.*;
 import com.charlotte.sweetnotsavourymod.common.block.ccdungeon.CorpseBlock;
@@ -539,6 +539,14 @@ public class BlockInit {
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+	public static final RegistryObject<Block> CANDY_CANE_CARNATION = registerBlock("candy_cane_carnation",
+			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
+					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDY_CANE_CARNATIONS = registerBlock("candy_cane_carnations",
+			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
+					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 	public static final RegistryObject<Block> CANDY_CANE_FLOWER = registerBlock("candy_cane_flower",
 			() -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 3,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()), SweetNotSavouryModItemGroup.SNSMODDECORATION);
@@ -689,6 +697,14 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> POTTED_CANDYCANEBUSH = registerBlockWithoutBlockItem("potted_candycanebush",
 			() -> new FlowerPotBlock(null, BlockInit.CANDYCANEBUSH,BlockBehaviour.Properties.copy(Blocks.DANDELION)
+					.noOcclusion()));
+
+	public static final RegistryObject<Block> POTTED_CANDY_CANE_CARNATION = registerBlockWithoutBlockItem("potted_candy_cane_carnation",
+			() -> new FlowerPotBlock(null, BlockInit.CANDY_CANE_CARNATION,BlockBehaviour.Properties.copy(Blocks.DANDELION)
+					.noOcclusion()));
+
+	public static final RegistryObject<Block> POTTED_CANDY_CANE_CARNATIONS = registerBlockWithoutBlockItem("potted_candy_cane_carnations",
+			() -> new FlowerPotBlock(null, BlockInit.CANDY_CANE_CARNATIONS,BlockBehaviour.Properties.copy(Blocks.DANDELION)
 					.noOcclusion()));
 
 	public static final RegistryObject<Block> POTTED_CANDY_CANE_FLOWER = registerBlockWithoutBlockItem("potted_candy_cane_flower",
@@ -868,6 +884,31 @@ public class BlockInit {
 					.strength(0.6f,1200f)
 					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> HARDENEDMINTBLOCK = registerBlock("hardenedmintblock",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GREEN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HARDENEDMINTBRICKS = registerBlock("hardenedmintbricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GREEN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HUMBUGBLOCK = registerBlock("humbugblock",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GREEN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HARDENEDHUMBUGBLOCK = registerBlock("hardenedhumbugblock",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GREEN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HUMBUGBRICKS = registerBlock("humbugbricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GREEN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 	public static final RegistryObject<Block> REDMINT_BLOCK = registerBlock("redmint_block",
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED)
 					.strength(0.6f,1200f)
@@ -898,7 +939,37 @@ public class BlockInit {
 					.strength(0.6f,1200f)
 					.sound(SoundType.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> MINT_CHOCOLATE_BRICKS = registerBlock("mint_chocolate_bricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> ORANGE_CHOCOLATE_BRICKS = registerBlock("orange_chocolate_bricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 	public static final RegistryObject<Block> CANDYCANEBRICKS = registerBlock("candycanebricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> YELLOW_CANDYCANEBRICKS = registerBlock("yellow_candycanebricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> GREEN_CANDYCANEBRICKS = registerBlock("green_candycanebricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> BLUE_CANDYCANEBRICKS = registerBlock("blue_candycanebricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> LIGHTBLUE_CANDYCANEBRICKS = registerBlock("lightblue_candycanebricks",
 			() -> new Block(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.COLOR_BROWN)
 					.strength(0.6f,1200f)
 					.sound(SoundType.NETHER_BRICKS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
@@ -1080,6 +1151,21 @@ public class BlockInit {
 					.noOcclusion()
 					.sound(SoundType.GRASS)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
+	public static final RegistryObject<Block> POPCORNBLOCK = registerBlock("popcornblock",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HARDENEDBANANASTONE = registerBlock("hardenedbananastone",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HARDENEDBANANABRICKS = registerBlock("hardenedbananabricks",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> HARDENEDBANANAPLANKS = registerBlock("hardenedbananaplanks",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
+	public static final RegistryObject<Block> SMOOTHHARDENEDBANANASTONE = registerBlock("smoothhardenedbananastone",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 
 
 //windows
@@ -1156,20 +1242,17 @@ public class BlockInit {
 			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
 					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> POPCORNBLOCK = registerBlock("popcornblock",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+	public static final RegistryObject<Block> HARDENEDMINTWINDOW = registerBlock("hardenedmintwindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> HARDENEDBANANASTONE = registerBlock("hardenedbananastone",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+	public static final RegistryObject<Block> HUMBUGWINDOW = registerBlock("humbugwindow",
+			() -> new GlassBlock(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS)
+					.strength(2f, 10f).noOcclusion()), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> HARDENEDBANANABRICKS = registerBlock("hardenedbananabricks",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> HARDENEDBANANAPLANKS = registerBlock("hardenedbananaplanks",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
 
-	public static final RegistryObject<Block> SMOOTHHARDENEDBANANASTONE = registerBlock("smoothhardenedbananastone",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), SweetNotSavouryModItemGroup.SNSMODBLOCKS);
+
 
 //ladders
 
@@ -1388,6 +1471,31 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()),
 			SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+	public static final RegistryObject<Block> CANDYCANE_BRICK_BED = registerBlock("candycane_brick_bed",
+			() -> new CandycaneBrickBedBlock(DyeColor.RED,BlockBehaviour.Properties.of(Material.WOOD,
+					MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()),
+			SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANE_YELLOWBRICK_BED = registerBlock("candycane_yellowbrick_bed",
+			() -> new CandycaneYellowBrickBedBlock(DyeColor.RED,BlockBehaviour.Properties.of(Material.WOOD,
+					MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()),
+			SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANE_GREENBRICK_BED = registerBlock("candycane_greenbrick_bed",
+			() -> new CandycaneGreenBrickBedBlock(DyeColor.RED,BlockBehaviour.Properties.of(Material.WOOD,
+					MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()),
+			SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANE_BLUEBRICK_BED = registerBlock("candycane_bluebrick_bed",
+			() -> new CandycaneBlueBrickBedBlock(DyeColor.RED,BlockBehaviour.Properties.of(Material.WOOD,
+					MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()),
+			SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> CANDYCANE_LIGHTBLUEBRICK_BED = registerBlock("candycane_lightbluebrick_bed",
+			() -> new CandycaneLightBlueBrickBedBlock(DyeColor.RED,BlockBehaviour.Properties.of(Material.WOOD,
+					MaterialColor.COLOR_RED).strength(10f).sound(SoundType.WOOD).noOcclusion()),
+			SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 
 //doors
 
@@ -1396,6 +1504,18 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					.Properties
 					.of(Material.WOOD,
 							MaterialColor.COLOR_BROWN)
+					.strength(0.6f,1200f)
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<DoorBlock> HARDENEDMINT_DOOR = registerBlock("hardenedmint_door",
+			() -> new DoorBlock(BlockBehaviour.Properties
+					.of(Material.WOOD)
+					.strength(0.6f,1200f)
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<DoorBlock> HUMBUG_DOOR = registerBlock("humbug_door",
+			() -> new DoorBlock(BlockBehaviour.Properties
+					.of(Material.WOOD)
 					.strength(0.6f,1200f)
 					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
@@ -1514,6 +1634,30 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
 	public static final RegistryObject<DoorBlock> CANDYCANE_DOOR = registerBlock("candycane_door",
+			() -> new DoorBlock(BlockBehaviour.Properties
+					.of(Material.WOOD)
+					.strength(0.6f,1200f)
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<DoorBlock> YELLOW_CANDYCANE_DOOR = registerBlock("yellow_candycane_door",
+			() -> new DoorBlock(BlockBehaviour.Properties
+					.of(Material.WOOD)
+					.strength(0.6f,1200f)
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<DoorBlock> GREEN_CANDYCANE_DOOR = registerBlock("green_candycane_door",
+			() -> new DoorBlock(BlockBehaviour.Properties
+					.of(Material.WOOD)
+					.strength(0.6f,1200f)
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<DoorBlock> BLUE_CANDYCANE_DOOR = registerBlock("blue_candycane_door",
+			() -> new DoorBlock(BlockBehaviour.Properties
+					.of(Material.WOOD)
+					.strength(0.6f,1200f)
+					.sound(SoundType.BAMBOO)), SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<DoorBlock> LIGHTBLUE_CANDYCANE_DOOR = registerBlock("lightblue_candycane_door",
 			() -> new DoorBlock(BlockBehaviour.Properties
 					.of(Material.WOOD)
 					.strength(0.6f,1200f)
@@ -2207,9 +2351,78 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);
 
+	public static final RegistryObject<Block> HARDENEDMINTBRICK_STAIRS = registerBlock
+			("hardenedmintbrick_stairs",
+					() -> new StairBlock(() -> HARDENEDMINTBRICKS.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> HUMBUGBRICK_STAIRS = registerBlock
+			("humbugbrick_stairs",
+					() -> new StairBlock(() -> HUMBUGBRICKS.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
 	public static final RegistryObject<Block> CANDYCANEBRICK_STAIRS = registerBlock
 			("candycanebrick_stairs",
 					() -> new StairBlock(() -> CANDYCANEBRICKS.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> YELLOW_CANDYCANEBRICK_STAIRS = registerBlock
+			("yellow_candycanebrick_stairs",
+					() -> new StairBlock(() -> YELLOW_CANDYCANEBRICKS.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+	public static final RegistryObject<Block> GREEN_CANDYCANEBRICK_STAIRS = registerBlock
+			("green_candycanebrick_stairs",
+					() -> new StairBlock(() -> GREEN_CANDYCANEBRICKS.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> BLUE_CANDYCANEBRICK_STAIRS = registerBlock
+			("blue_candycanebrick_stairs",
+					() -> new StairBlock(() -> BLUE_CANDYCANEBRICKS.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> LIGHTBLUE_CANDYCANEBRICK_STAIRS = registerBlock
+			("lightblue_candycanebrick_stairs",
+					() -> new StairBlock(() -> LIGHTBLUE_CANDYCANEBRICKS.get().defaultBlockState(),
+							BlockBehaviour
+									.Properties
+									.of(Material.BAMBOO)
+									.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> MINT_CHOCOLATE_BRICK_STAIRS = registerBlock
+			("mint_chocolate_brick_stairs",
+					() -> new StairBlock(() -> MINT_CHOCOLATE_BRICKS.get().defaultBlockState(),
 							BlockBehaviour
 									.Properties
 									.of(Material.BAMBOO)
@@ -2378,6 +2591,16 @@ public static final RegistryObject<Block> ICE_CREAM_MACHINE = registerBlock("ice
 					() -> new FenceBlock(BlockBehaviour
 							.Properties
 							.of(Material.STONE)
+							.strength(0.5f)
+					),
+					SweetNotSavouryModItemGroup.SNSMODDECORATION);
+
+	public static final RegistryObject<Block> HUMBUG_BRICK_FENCE = registerBlock
+			("humbug_brick_fence",
+					() -> new FenceBlock(BlockBehaviour
+							.Properties
+							.copy(Blocks.OAK_FENCE)
+							.sound(SoundType.BAMBOO)
 							.strength(0.5f)
 					),
 					SweetNotSavouryModItemGroup.SNSMODDECORATION);

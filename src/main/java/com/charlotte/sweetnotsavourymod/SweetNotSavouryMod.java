@@ -94,6 +94,8 @@ public class SweetNotSavouryMod {
       var flowerPot = (FlowerPotBlock) Blocks.FLOWER_POT;
       
       flowerPot.addPlant(BlockInit.CANDYCANEBUSH.getId(), BlockInit.POTTED_CANDYCANEBUSH);
+      flowerPot.addPlant(BlockInit.CANDY_CANE_CARNATION.getId(), BlockInit.POTTED_CANDY_CANE_CARNATION);
+      flowerPot.addPlant(BlockInit.CANDY_CANE_CARNATIONS.getId(), BlockInit.POTTED_CANDY_CANE_CARNATIONS);
       flowerPot.addPlant(BlockInit.CANDY_CANE_FLOWER.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER);
       flowerPot.addPlant(BlockInit.CANDY_CANE_FLOWER_2.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER_2);
       flowerPot.addPlant(BlockInit.CANDY_CANE_FLOWER_3.getId(), BlockInit.POTTED_CANDY_CANE_FLOWER_3);

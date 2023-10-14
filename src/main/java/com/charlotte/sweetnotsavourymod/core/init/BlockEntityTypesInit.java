@@ -1,7 +1,7 @@
 package com.charlotte.sweetnotsavourymod.core.init;
 
 import com.charlotte.sweetnotsavourymod.SweetNotSavouryMod;
-import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.candycane.CandycaneBedBlockEntity;
+import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.candycane.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.icecream.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.beds.bedblockentities.waffle.*;
 import com.charlotte.sweetnotsavourymod.common.blockentities.machines.*;
@@ -82,6 +82,26 @@ public class BlockEntityTypesInit{
     public static final RegistryObject<BlockEntityType<CandycaneBedBlockEntity>> SNS_CANDY_CANE_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
             .register("sns_candy_canebed_entity", () -> BlockEntityType.Builder.of(CandycaneBedBlockEntity::new,
                     BlockInit.CANDYCANEBED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CandycaneBrickBedBlockEntity>> SNS_CANDY_CANE_BRICK_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_candy_cane_brick_bed_entity", () -> BlockEntityType.Builder.of(CandycaneBrickBedBlockEntity::new,
+                    BlockInit.CANDYCANE_BRICK_BED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CandycaneYellowBrickBedBlockEntity>> SNS_CANDY_CANE_YELLOWBRICK_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_candy_cane_yellowbrick_bed_entity", () -> BlockEntityType.Builder.of(CandycaneYellowBrickBedBlockEntity::new,
+                    BlockInit.CANDYCANE_YELLOWBRICK_BED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CandycaneGreenBrickBedBlockEntity>> SNS_CANDY_CANE_GREENBRICK_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_candy_cane_greenbrick_bed_entity", () -> BlockEntityType.Builder.of(CandycaneGreenBrickBedBlockEntity::new,
+                    BlockInit.CANDYCANE_GREENBRICK_BED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CandycaneBlueBrickBedBlockEntity>> SNS_CANDY_CANE_BLUEBRICK_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_candy_cane_bluebrick_bed_entity", () -> BlockEntityType.Builder.of(CandycaneBlueBrickBedBlockEntity::new,
+                    BlockInit.CANDYCANE_BLUEBRICK_BED.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CandycaneLightBlueBrickBedBlockEntity>> SNS_CANDY_CANE_LIGHTBLUEBRICK_BED_ENTITY_TYPE = BLOCK_ENTITY_TYPE
+            .register("sns_candy_cane_lightbluebrick_bed_entity", () -> BlockEntityType.Builder.of(CandycaneLightBlueBrickBedBlockEntity::new,
+                    BlockInit.CANDYCANE_LIGHTBLUEBRICK_BED.get()).build(null));
 
 //icecreammachine
     public static final RegistryObject<BlockEntityType<IceCreamMachineBlockEntity>> ICE_CREAM_MACHINE = BLOCK_ENTITY_TYPE

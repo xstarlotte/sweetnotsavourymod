@@ -129,6 +129,8 @@ public class ItemInit {
 
 	public static final RegistryObject<SpawnEggItem> MINT_HUMBULLSPAWNEGG = registerDefaultEgg("humbullspawnegg", EntityTypesInit.MINT_HUMBULL);
 
+	public static final RegistryObject<SpawnEggItem> MARSHMALLOWSHEEPSPAWNEGG = registerDefaultEgg("marshmallowsheepspawnegg", EntityTypesInit.MARSHMALLOWSHEEP);
+
 	public static final RegistryObject<SpawnEggItem> SNSCANDYCANEFISHSPAWNEGG = registerDefaultEgg("snscandycanefishspawnegg", EntityTypesInit.SNSCANDYCANEFISH);
 
 	public static final RegistryObject<SpawnEggItem> SNSICFISHSPAWNEGG = registerDefaultEgg("snsicfishspawnegg", EntityTypesInit.SNSICFISH);
@@ -192,6 +194,30 @@ public class ItemInit {
 					.build())));
 
 	public static final RegistryObject<Item> CANDYFLOSS = ITEMS.register("candyfloss", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 300, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> POPCORN = ITEMS.register("popcorn", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 300, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> MINT_CHOCOLATE_BALL = ITEMS.register("mint_chocolate_ball", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(1)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 300, 3), 1.0f)
+					.saturationMod(1.2f)
+					.build())));
+
+	public static final RegistryObject<Item> MINT_MARSHMALLOW = ITEMS.register("mint_marshmallow", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
 					.nutrition(1)
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 3), 1.0f)
@@ -633,6 +659,22 @@ public class ItemInit {
 					.build())));
 
 	public static final RegistryObject<Item> ANGELCAKE = ITEMS.register("angelcake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 8), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> CHRISTMAS_CAKE = ITEMS.register("christmas_cake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
+			.food(new FoodProperties.Builder()
+					.nutrition(3)
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 8), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.JUMP, 600, 3), 1.0f)
+					.saturationMod(3.6f)
+					.build())));
+
+	public static final RegistryObject<Item> MINT_CHOCOLATE_CAKE = ITEMS.register("mint_chocolate_cake", () -> new Item(new Item.Properties().tab(SweetNotSavouryModItemGroup.SNSMODFOOD)
 			.food(new FoodProperties.Builder()
 					.nutrition(3)
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 8), 1.0f)
